@@ -1,0 +1,100 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+
+\section*{Revised (linear in time) Exact Solution for the Flow Control Problem with Dirichlet and Neumann BCs}
+
+\subsection*{Optimality System}
+
+\begin{align*}
+&\partial_t \rho = \Delta \rho - \nabla \cdot (w\rho) + f\\
+& \partial_t p = - \Delta p - \rho + \hat \rho - w \cdot \nabla p \\
+&w = - \frac{1}{\beta}\rho \nabla p\\
+\end{align*}
+
+\subsection*{Neumann plus 2 with linear time}
+Choose
+\begin{align*}
+\rho &= \beta^{1/2} t (\cos(\pi x) +2)\\
+p &= \beta^{1/2} (T-t) \cos(\pi x)\\
+w &= \pi t (T-t) \sin(\pi x) (\cos(\pi x) +2),
+\end{align*}
+then
+\begin{align*}
+f &= \beta^{1/2} (\cos(\pi x) +2) + \pi^2 \beta^{1/2} t \cos(\pi x) + \pi^2 \beta^{1/2} t^2 (T-t)  (\cos(\pi x) +2) \bigg( (\cos(\pi x) +2)\cos(\pi x) - 2 \sin(\pi x)^2 \bigg)\\
+\hat \rho &= \beta^{1/2}t  (\cos(\pi x) +2) - \beta^{1/2} \cos( \pi x) - \pi^2 \beta^{1/2} (T-t) \cos( \pi x) - \pi^2 \beta^{1/2} t (T-t)^2 \sin(\pi x)^2  (\cos(\pi x) +2).
+\end{align*}
+
+
+\subsection*{Dirichlet with linear time (1) -  not ideal but close to original}
+Choose (similar to the original choices)
+\begin{align*}
+\rho &= 2 t \cos(\frac{\pi x}{2}) \\
+p &= (T-t) \cos(\frac{\pi x}{2})\\
+w &= \frac{\pi}{\beta} t (T-t) \sin(\frac{\pi x}{2})\cos(\frac{\pi x}{2}),
+\end{align*}
+then
+
+\begin{align*}
+f & = 2 \cos(\frac{\pi x}{2}) + \frac{\pi^2}{2}t \cos(\frac{\pi x}{2}) + \frac{2\pi^2}{\beta} t^2 (T-t) \bigg(\frac{\pi}{2}\cos(\frac{\pi x}{2})^3 - \pi \sin(\frac{\pi x}{2})^2 \cos(\frac{\pi x}{2})\bigg)\\
+\hat \rho &=2 t \cos(\frac{\pi x}{2}) - \cos(\frac{\pi x}{2}) - \frac{\pi^2}{4}(T-t) \cos(\frac{\pi x}{2}) - \frac{\pi^2}{2 \beta}t (T-t)^2 \sin(\frac{\pi x}{2})^2 \cos(\frac{\pi x}{2}).
+\end{align*}
+
+
+\subsection*{Dirichlet with linear time (2) - better numerically}
+Choose (for better numerical results)
+\begin{align*}
+\rho &= 2 \beta^{1/2}t \cos(\frac{\pi x}{2}) \\
+p &= (T-t) \beta^{1/2}\cos(\frac{\pi x}{2})\\
+w &= \pi t (T-t) \sin(\frac{\pi x}{2})\cos(\frac{\pi x}{2}),
+\end{align*}
+then
+
+\begin{align*}
+f & = 2\beta^{1/2} \cos(\frac{\pi x}{2}) + \frac{\pi^2}{2}\beta^{1/2}t \cos(\frac{\pi x}{2}) + \beta^{1/2}2\pi^2 t^2 (T-t) \bigg(\frac{\pi}{2}\cos(\frac{\pi x}{2})^3 - \pi \sin(\frac{\pi x}{2})^2 \cos(\frac{\pi x}{2})\bigg)\\
+\hat \rho &=2 \beta^{1/2}t \cos(\frac{\pi x}{2}) - \beta^{1/2}\cos(\frac{\pi x}{2}) - \beta^{1/2}\frac{\pi^2}{4}(T-t) \cos(\frac{\pi x}{2}) - \frac{\pi^2}{2}\beta^{1/2}t (T-t)^2 \sin(\frac{\pi x}{2})^2 \cos(\frac{\pi x}{2}).
+\end{align*}
+
+
+\end{document}

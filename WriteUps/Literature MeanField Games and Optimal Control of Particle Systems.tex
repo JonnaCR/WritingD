@@ -1,0 +1,544 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{{p}_Q}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{p_{\partial Q}}
+\newcommand{\Con}{{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+\section*{Papers on Mean-Field Games and Optimal Control of Particle Systems}
+
+\section{Albi, Choi, Fornasier, Kalise: Mean Field Control Hierarchy \cite{albi2016mean}}
+This paper discusses mean field optimal control for deterministic and stochastic equations. Topics include existence of optimal controls, the derivation of optimality conditions and numerical experiments (for opinion dynamics). Further, an approximating hierarchy of sub-optimal controls (based on a Boltzmann approach) is discussed. \\
+The problem of interest is of the form:
+\begin{align*}
+J(\mu, f) =& \int_0^T \bigg(\frac{1}{2} \int |x-x_d|^2 \mu(x,t)dx + \gamma \int \Psi(f)\mu(x,t)dx\bigg) dt\\
+\partial_t \mu + \nabla & \cdot \bigg( (\mathcal{P}[\mu] +f)\mu \bigg) =\sigma \Delta \mu\\
+\mathcal{P}[\mu](x) =& \int P(x,y)(y-x)\mu(y,t)dy,
+\end{align*}
+with \textbf{zero-flux boundary conditions}:
+\begin{align*}
+\langle \sigma \nabla \mu - (\mathcal{P}[\mu] +f)\mu, n(x) \rangle=0,
+\end{align*}
+where $n(x)$ is the outward normal at $ x $ on $\partial \Omega$. This problem is a type of \textbf{flow control}.
+The numerical solution of the first-order optimality system is approached as follows:\\
+The forward equation is solved using a first-order forward scheme for time and the Chang-Cooper scheme for space discretization, based on finite volume approximations of $\mu$ and $f$. \\
+The backward equation is solved via finite differences, the integral terms are computed via Monte Carlo Methods, while the $\nabla_y$ inside the (interaction term) integral is found via numerical differentiation. The advection term is computed using a space-dependent upwind scheme, the numerical method for the diffusion term uses centred differences.\\
+The coupling of the two equations is done via a sweeping algorithm using the gradient equation to link the two PDEs.\\
+\\
+In the numerical experiments in one dimension the parameter choice is $\delta t = 2.5 \times 10^{-3}$, $\delta x = 2.5 \times 10^{-2}$ and tolerance is $10^{-5}$, where $x \in [-L,L]$ and $t \in [0,T]$.
+There are also numerical methods presented for a binary control algorithm (for the Boltzmann approach).
+In the numerical experiments, the control strategies of instantaneous, binary and optimal control are compared and a control hierarchy can be observed. 
+\section{Albi, Bongini, Cristiani, Kalise: Invisible Control of Self-Organising Agents Leaving Unknown Environments \cite{albi2016no2}}
+This paper is concerned with a model including crowd and leader interactions. Both the microscopic ODE and mesoscopic PDE models for crowd behaviour are discussed. The leaders are modelled microscopically in both cases and interact with the mesoscopic crowd model. The optimal control of these models is discussed, and numerical experiments in context of evacuation modelling (leaders directing crowds to the exits) are presented.\\
+The derivation from a system of ODEs to a Boltzmann-type model to the PDE model below is shown in the paper. The following system of PDEs and ODEs (for the leaders) is found:
+\begin{align*}
+\partial_t f + v \cdot \nabla_x f &= - \nabla_v \cdot \bigg(\mathcal{G}[f,g]f\bigg) + \frac{1}{2}\sigma^2(\theta C_z)^2 \Delta_v f\\
+\dot{y}_k = w_k &= \int_{\mathbf{R}^{2d}} K^F(y_k,x)f(x,v)dxdv + \sum_{l=1}^{N_L}K^L(y_k,y_l) +u_k,
+\end{align*}
+where $k=1,...,N^L$ is the number of leaders, $\theta$ is the characteristic function of a subdomain and $C_z$ is a constant. The functional $\mathcal{G}$ is defined by:
+\begin{align*}
+\mathcal{G}[f,g]= S + \mathcal{H}^F[f] + \mathcal{H}^L[g],
+\end{align*}
+where
+\begin{align*}
+\mathcal{H}^F[f](x,v) &= \int_{\mathbf{R}^{2d}}H^F(x,v,\tilde x,\tilde v,\pi_1f,\pi_1 g) f(\tilde x, \tilde v) d \tilde x d \tilde v,\\
+\mathcal{H}^L[g](x,v) &= \int_{\mathbf{R}^{2d}}H^L(x,v,\tilde x,\tilde v,\pi_1f,\pi_1 g) g(\tilde x, \tilde v) d \tilde x d \tilde v,
+\end{align*}
+and $S$ a deterministic self-propulsion term depending on $(x,v)$.\\
+\\
+The proposed \textbf{cost functional minimizes the total mass of followers at time $T$}:
+\begin{align*}
+\min_{u(\cdot) \in U_{adm}} \bigg( m^F(T) = \int_{\mathbf{R}^{d}} \int_{\Omega} f(T,x,v)dx dv \bigg).
+\end{align*}
+The numerical methods used are:\\
+An explicit Euler method is used for the microscopic model (time step $\Delta t =0.1$).
+The kinetic density is approxmiated by binary interaction algorithms, approximating the Boltzmann dynamics with meshless Monte Carlo. The time step is $\Delta t=0.01$ and the sample size is $N_s=10000$.
+The accuracy of solving the interaction term is of order $ O(N_s^{-1/2})$.\\
+For the optimization, a compass search method is employed. In Matlap, \texttt{fmincon} is used, which solves the problem using an SQP method.
+Since the domain is $\Omega = \mathbf{R^{2d}}$, there are no boundary conditions. Most of the numerical experiments are conducted on the microscopic model. However, one experiment on the mesoscopic model places an exit in the middle of the domain, reachable from all sides, and places the crowd within a certain radius of this exit. Then the uncontrolled case is compared to two controlled cases. One where leaders just target the exit and the crowd follows, one where the cost functional is defined as above, the total mass of people evacuated. The results show that the diffusion in the first two cases delays the evacuation, while in the final strategy there are more people evacuated.
+
+\section{Albi, Herty, Pareschi: Kinetic Description of Optimal Control Problems and Applications to Opinion Consensus \cite{albi2014kinetic}}
+The paper discusses a microscopic model of constrained opinion dynamics, a microscopic Boltzmann model for model predictive control and a Fokker-Planck continuum model derived from the microscopic dynamics. In particular, explicit stationary solutions are given for the latter.\\
+The derived Fokker-Planck Equation is:
+\begin{align*}
+\partial_t f + \partial_w \mathcal{H}[f](w)f(w) + \partial_w\mathcal{K}[f](w)f(w) dv = \frac{\xi}{2}\partial_{ww}(D(w)^2 f(w)),
+\end{align*}
+where
+\begin{align*}
+\mathcal{K}[f](w) &= \int_I P(w,v)(v-w)f(v) dv\\
+\mathcal{H}[f](w) &= \frac{4}{\kappa} \int_I \bigg(w_d -\frac{w+v}{2}\bigg)f(v)dv =\frac{4}{\kappa} \bigg(w_d -\frac{w+m}{2}\bigg),
+\end{align*}
+for $f$ the population density, $w,v$ opinion variables, $w_d$ desired state and $m$ the average opinion. The function $D$ represents the local relevance of diffusion, with $0\leq D \leq 1$. \\
+The microscopic version of the cost functional includes a term that minimizes the distance to $w_d$ and a term minimizing the cost $u$. However, using a receding horizon strategy, the \textbf{minimization is embedded in the particle interaction term}.
+\\
+The numerical results concern the comparison between the solution of the constrained Boltzmann equation, using Monte Carlo, with the steady state solutions of the Fokker-Planck equation, with \textbf{(Dirichlet) boundary conditions $f(\pm1)=0$}, since $f$ is compactly supported in $I=[-1,1]$.
+
+
+
+\section{Albi, Pareschi: Selective model-predictive control for flocking systems \cite{albi2016selective}}
+The paper considers two types of selectivity and the corresponding two models. The first considers a selective function $S$, through which the control influences flocking, where $S$ depends on the state of the system. The second approach is to let the control only be active on agents belonging to a set $\Omega \subset \mathbf{R}^d \times \mathbf{R}^d \times [0,T]$.\\
+First, the solution of the problem is approximated using model-predictive control. Cucker-Smale type models are used for the multi-agent dynamics.
+The mean-field PDE is of Vlasov-type:
+\begin{align*}
+\partial_t f + v \cdot\nabla_x f = - \nabla_v \cdot (\mathcal{H}[f]f)- \nabla_v \cdot (\mathcal{K}[f]f),
+\end{align*}
+where:
+\begin{align*}
+\mathcal{H}[f](x,v) &= \int_{\mathbf{R}^{2d}} H(|x-y|)(w-v)f(y,w,t)dy dw\\
+\mathcal{K}_\xi[f](x,v) &= \frac{1}{\kappa}S(x,v,t) \int_{\mathbf{R}^{2d}} (\bar v - w) S(y,w,t)f(y,w,t) dy dw\\
+\mathcal{K}_\zeta [f](x,v) &= \frac{1}{\kappa}(\bar v - v ) \chi_{\Omega(t)}(x,v),
+\end{align*}
+where $\xi$ and $\zeta$ denote the two different control types, $S$ is the selection function, $\chi$ is the characteristic function, $\kappa$ is a scaled regularization parameter, $\bar v$ is the desired velocity and $f$ is the probability distribution of the population.
+When considering $\mathcal{K}_\xi$, existence, uniqueness and stability of the model can be shown. When considering $\mathcal{K}_\zeta$, and the control on a subdomain $\Omega$, these results do not carry over, because of the discontinuous $\chi_\Omega$.\\
+\\
+Numerical tests are done on the domain $(x,v) \in \mathbf{R}^2 \times \mathbf{R}^2$, initial data $f_0$ normally distributed in space and a velocity uniform on a circumference of $r=5$. The desired velocity is $\bar v =(1,1)^T$. Final time is $T=4$, $\Delta t=0.01$, $N_s=5 \times 10^5$ sampled particles. The communication function is $H(x,y)=(1+|x-y|^2)^{-\gamma}$, with $\gamma=10$.
+The numerical scheme used is based on stochastic approximation of the interaction operator through a Boltzmann-like equation. The full algorithm is based on classical Monte Carlo methods of kinetic theory. The problem is solved iteratively in a transport and an interaction step. No more details on solving the transport step are given.\\
+The two control approaches are compared numerically, by defining the control region to be a confined ball $B_R$ of the space domain.\\
+\\
+In case of $\mathcal{K}_\eta$ the selective function is $S(x,v)= \chi_{B_R}(x)$. The cost functionals considered are:
+\begin{align*}
+L[f,\eta](t) &= \int_{\mathbf{R}^{4}} |v- \bar v|^2 f(x,v,t) dxdv + \kappa |\eta(t)|^2\\
+C_T &= \int_0^T L[f,\eta](t) dt.
+\end{align*}
+Numerical results show that consensus is stronger if $\kappa$ is decreasing. Further, for a larger control radius, there are better results for achieving $\bar v$.\\
+\\
+In case of $\mathcal{K}_\zeta$ we get the selective set $\mathcal{S}(t)=B_R(x)$, so that the control only acts on the part of $f$ inside $B_R$. The two cost functionals considered are, similar to above:
+\begin{align*}
+L[f,\eta](t) &= \int_{\mathbf{R}^{4}} (|v- \bar v|^2 + \kappa |\zeta(x,v,t)|^2 f(x,v,t)) dxdv  \\
+C_T &= \int_0^T L[f,\zeta](t) dt.
+\end{align*}
+Numerical results show that alignment is obtained in almost every case, since the local control enhances the consensus condition more efficiently.\\
+\\
+Finally, a sparse control strategy, using variational stabilisation of the flocking system, is proposed, which targets the agents that are furthest away from the desired state.
+
+\section{Albi, Pareschi, Zanella: Boltzmann Type Control of Optinion Consensus through Leaders \cite{Albi_2014no1}}
+This paper deals with modelling leaders and followers in a system, where the leader aim to drive opinion consensus, by aiming at reaching a desired opinion but also being close to the mean opinion of the population. The followers are influenced by leaders and other followers. Miscroscopic models are discussed, an instantaneous Boltzmann type control strategy is presented and the \textbf{minimization is imbedded in the microscopic leaders interaction}. The corresponding Fokker-Planck Equation is derived. For this, some steady state solutions are found. Numerical simulations are done on the Boltzmann model, but not on the Fokker-Planck model.
+The Fokker-Planck model for the followers is:
+\begin{align*}
+\frac{\partial f_F}{\partial t}  + \frac{\partial}{\partial w}\bigg( \frac{1}{c_F}K_F[f_F](w) + \frac{1}{c_{FL}}K_{FL}[f_L](w)\bigg)f_F(w)= \frac{1}{2} \frac{\partial^2}{\partial \tilde w^2} \bigg( \frac{\zeta^2}{c_F} \tilde D^2 (\tilde w) + \frac{\hat \zeta^2 \rho}{c_{FL}}\bigg)f_F(w),
+\end{align*}
+where
+\begin{align*}
+K_F[f_F](w) &=\int_I P(w,v)(v-w) f_F(v,t)dv,\\
+K_{FL}[f_L](w) &= \int_I S(w, \tilde w)(\tilde w - w)f_L(\tilde w)d \tilde w.
+\end{align*}
+The subscript $L$ is for leaders and $F$ for followers, the function $P$ and $S$ are the interaction functions, $f$ is the population distribution, $(w,v), (\tilde w, \tilde v)$ are opinions of two followers and two leaders, respectively. The domain is $I=[-1,1]$. The constants $c_F, c_{FL}, c_L$ are related to the interaction frequency and $\zeta, \tilde \zeta$ are related to the diffusion variances.
+The model for the leaders is:
+\begin{align*}
+\frac{\partial f_L}{\partial t} + \frac{\partial}{\partial \tilde w} \bigg( \frac{\rho}{c_L} H[f_L](\tilde w) + \frac{1}{c_L}K_L[f_L](\tilde w)\bigg)f_L(\tilde w) = \frac{1}{2} \frac{\tilde \zeta ^2 \rho}{c_L}\frac{\partial^2}{\partial \tilde w} \tilde D^2(\tilde w) f_L(\tilde w),
+\end{align*}
+where
+\begin{align*}
+K[f_L](\tilde w) &= \int_I R(\tilde w , \tilde v)( \tilde v - \tilde w)f_L(\tilde v,t)d \tilde v\\
+H[f_L](\tilde w ) &= \frac{2\psi}{\kappa}(\tilde w + m_L(t) - 2w_d) + \frac{2 \mu}{\kappa}(\tilde w + m_L(t) -2m_F(t)).
+\end{align*}
+Here $\kappa$ is a scaled version of the control, $w_d$ is the target opinion, $m_F$ is the mean opinion, $\psi$ and $\mu$ are the regularization parameters.
+(While \textbf{no boundary conditions} are stated, I suspect that the assumption is that $f$ is compactly supported in $I$, as in other papers by these authors on similar problems.)
+
+
+\section{Burger, Pinnau, Totzeck, Tse: Mean-Field Optimal Control and Optimality Conditions in the Space of Probability Measures \cite{burger2019meanfield}}
+This paper discusses the optimal controls for problems with states in the space of probability measures, and give a link between the adjoint in corresponding to this space and the one corresponding to $L^2$ -calculus.  First-order optimality conditions are rigorously derived in the Wasserstein space $\mathcal{P}_2(\mathbf{R}^d)$ and the relationships between the optimality conditions of the microscopic and mean-field model are given.
+Finally, results on the rate of convergence of optimal controls of the particle model to the ones of the mean-field model are proved.
+The PDE model considered is:
+\begin{align*}
+\partial_t \mu_t + \nabla \cdot (v(\mu_t,\mathbf{u_t})\mu_t) =0,
+\end{align*}
+where:
+\begin{align*}
+v(\mu, \mathbf{u}) = - K_1 \ast \mu - \sum_{l=1}^M K_2 (x-u^l).
+\end{align*}
+The cost functional is of separable type:
+\begin{align*}
+J(\mu, \mathbf{u}) = \int_0^T J_1(\mu_t)dt + J_2(\mathbf{u}),
+\end{align*}
+where $\mathbf{u}$ is the cost/ control (\textbf{control through the interaction term}), $v$ models interactions, $x$ is a particle state and $\mu$ is a probability.
+While \textbf{no boundary conditions are stated directly}, at some points in the paper either $\mu_0$ or $\mu$ are assumed to have compact support in the domain.
+
+
+\section{Burger, Pinnau, Totzeck, Tse, Roth: Instantaneous Control of Interacting Particle Systems in the Mean-Field Limit \cite{burger2019instantaneous}}
+The paper is concerned with the control of an interacting particle system via a few external agents. This is done using a mean-field approach, which is formally derived from the microscopic model.
+The below problem is defined on the whole space $\mathbf{R}^{2D}$, so that \textbf{no boundary conditions are necessary}. Furthermore, $f_t$ has compact support in $\Omega \subset \mathbf{R}^{2D}$.
+The mean-field problem is:
+\begin{align*}
+\partial_t p:= \bigg(\partial_t f, \frac{d}{d t} \mathbf{d}\bigg) = - (\nabla_v \cdot (S(f_t)f_t) + v \cdot \nabla_x f_t, \mathbf{w}):= G(p,\mathbf{w}),
+\end{align*}
+with state variable $p:=(f, \mathbf{d})$, external agents $\mathbf{d}$ and control $\mathbf{w}$. We have: 
+\begin{align*}
+S(\mu_t)(x,v,d)= - (K_1 \ast \rho_t)(x) - \frac{1}{M}\sum_{m=1}^M K_2(x,d_m)-\alpha v,
+\end{align*}
+\begin{align*}
+(K_1 \ast \rho_t^N)(x) = \int_{\mathbf{R}^{2D}} K_1(x, \bar{x}) d \mu_t^N(\bar{z}),
+\end{align*}
+and
+\begin{align*}
+\rho_t(A):= \mu_t(A \times \mathbf{R}^D)) = \int \int _{A \times \mathbf{R}^D}f_t(x,v)dx dv.
+\end{align*}
+Here, $f_t$ is the density of the probability measure $\mu_t$ and $\rho_t$ the macroscopic density defined above. Further, $x$ and $v$ are state and velocity of the particles and $K_j(x,y)= (\nabla \phi_j)(x-y)$.
+\\
+\\
+The cost functional is of the form:
+\begin{align*}
+J(p(\mathbf{w}), \mathbf{w})= \int_0^T \frac{\sigma_1}{4T} | V(f_t)- \bar{V} |^2 + \frac{\sigma_2}{2T}| E(f_t) - E_{des}|^2 + \frac{\sigma_3}{2M} ||\mathbf{w}_t||^2_{\mathbf{d}^{MD}} dt,
+\end{align*}
+where the centre of mass $E$ is defined as:
+\begin{align*}
+E(f_t)= \int \int_{\mathbf{R}^D \times \mathbf{R}^D} x f_t^N dxdv = \frac{1}{N}\sum_{i=1}^N x_i(t),
+\end{align*}
+and the variance $V$ is:
+\begin{align*}
+V(f_t^N) = \int \int_{\mathbf{R}^D \times \mathbf{R}^D} |x - E(f_t^N)|^2 dx dv = \frac{1}{N}\sum_{i=1}^N \bigg(x_i(t)-E_N(\mathbf{x})\bigg)^2.
+\end{align*}
+The control approach used in this paper is \textbf{instantaneous control}, where time is split into smaller intervals and the control problem is solved sequentially. Note that \textbf{the control comes from the external agents}.
+\\
+\\
+The optimality systems for the microscopic and mean field models are derived and numerical methods are presented: In order to solve the Mean-Field forward and adjoint equations a strang splitting scheme is employed, which applies a semi-Lagrangian solver in the spatial direction and a semi-implicit finite-volume scheme in the velocity space.\\
+A steepest descent method is used to update the control on each time slice, using the Projected Armijo Stepsize Rule.\\
+\\
+Numerical simulations are done using $\Omega = [-100,100]^2 \times [-5,5]^2 \subset \mathbf{d}^4$, and varying grid parameter $h= 0.04,0.02,0.01$. The interaction potentials are Morse potentials.\\
+Results are presented for the convergence of the scheme. The values are decreasing as the grid is refined and the norms are decreasing for increasing number of particles (from $N=1000$ to $N=8000$).
+For example:
+\begin{align*}
+|J-J_{ref}|/|J_{ref}| = 0.14 &(N=1000),\\= 0.29 &(N=2000),\\ =0.09 &(N=8000),
+\end{align*}
+for $\sigma_1 = 5 \times 10^{-3}$ and $\sigma_2=5 \times 10^{-1}$.
+
+
+
+\section{Burger, Pinnau, Roth, Totzeck, Tse: Controlling a Self-Organising System of Individuals Guided by a Few External Agents -- Particle Description and Mean-Field Limit \cite{burger2016controlling}}
+This paper is concerned with the same problem as the previous paper: controlling a population by a few external agents acting repulsively. This paper was published a few years before the previous one, so no convergence results for the controls were found in this paper, but only numerical results are presented, which indicate convergence.
+In this paper, not just the instantaneous control strategy is considered, but also an optimal control approach. The PDE model and the cost functional can be seen in the abstract above, so that the \textbf{control comes from the external agents} again. Note that there are \textbf{no boundary conditions of the PDE required}, since the problem is considered on the domain $\mathbf{R^d}$ with $\rho_t$ having compact support on a subdomain.
+
+The numerical schemes for solving the mean-field OCP are: A Strang splitting scheme (compare to previous paper) for the forward and adjoint system. Then there are two optimization algorithms; one for the instantaneous, one for the optimal control approach.
+The instantaneous approach is again steepest descent, to update the control on every time slice.
+For the optimal control approach, a non-linear conjugate gradient method is employed. Since there is a maximum velocity constraint, at each iteration, the controls are projected onto a feasible set. The step sizes $w_k$ are obtained using the projected Armijo step size rule (again, compare to paper above).
+\\
+\\
+Numerical simulations are done on $\Omega=[-100,100]^2 \times [-5,5]^2 \subset \mathbf{R^4}$, with varying grid parameter ($h=0.04,0.02,0.01$), $T=10$. The interaction potentials used are Morse potentials.
+The norm $||J -J_{ref}||$ for the instantaneous control approach is of order $10 ^{-2}$ to $10^{-3}$ depending on parameter values, $N$ and chosen $J_{ref}$, where $J$ is defined as in the previous paper. In the case of the optimal control approach, only the norms $||\rho-\rho_{ref}||$ and $|| u-u_{ref}||$ are computed, which are of orders $10^{-5}$ and $10^{-2}$ respectively. This matches the results for the instantaneous approach. However, the instantaneous approach uses much less memory.
+
+
+
+\section{Carrillo, Choi, Totzeck, Tse: An Analytical Framework for a Consensus-Based Global Optimization Method \cite{carrillo2018no1}}
+This paper discusses the well-posedness of the following mean-field equation and the associated microscopic model. It also covers large time behaviour and consensus formation and discusses a pseudo-inverse distribution and an extended Fokker-Planck equation, which includes nonlinear diffusion for porous media.
+
+The mean-field equation considered is:
+\begin{align*}
+\partial_t\rho_t &= \Delta( \kappa_t \rho_t) + \nabla \cdot (\mu_t \rho_t),\\
+\lim_{t \to 0}\rho_t &= \rho_0,
+\end{align*}
+where $\rho_t \in \mathcal{P}(\mathbf{R}^d)$, a Borel probability measure describing the one-particle distribution. Further:
+\begin{align*}
+\mu_t = \lambda(x-m_f[\rho_t]), \qquad
+\kappa_t = \frac{\sigma^2}{2}|x-m_f[\rho_t]|^2,
+\end{align*}
+with $\lambda, \sigma>0$
+and 
+\begin{align*}
+m_f[\rho_t] = \int x d \eta_t^\alpha, \qquad
+\eta_t^\alpha = \frac{\omega_f^\alpha \rho_t}{||\omega_f^\alpha||_{L^1(\rho_t)}},
+\qquad \omega_f^\alpha(x) = \exp(-\alpha f(x)),
+\end{align*}
+where $\alpha>0$,and $f(x)$ is the objective function. The term $\eta_t^\alpha \in \mathcal{P}(\mathbf{R}^d)$ is the $\alpha$- weighted measure, which approximates a Dirac distribution at the minimum $x_*$ for large $\alpha >>1$.
+\\
+\\
+The paper discusses that under the assumption $f \in W^{2,\infty}(\mathbf{R}^d)$, a uniform consensus is obtained as the limiting measure $t \to \infty$, $\rho_t \to \delta_{\bar{x}}$ as $t \to \infty$, converging exponentially in $t$. 
+The point of consensus $\bar{x}$ can be arbitrarily close to the minimum $x_*$ for $\alpha$ sufficiently large.  
+\\
+\\
+The pseudo-inverse distribution discussed is of the form $\chi_t(\eta) := F^{-1}_t(\eta)= \inf \{x \in \mathbf{R}| F_t(x)>\eta\}$, for $F_t(x) = \int_{-\infty}^x d \rho_t$. The corresponding evolution is : $\partial_t \chi_t + \mu_t = - \partial_\eta \bigg(\kappa_t (\partial_\eta \chi_t)^{-1}\bigg)$.
+The porous media version of the evolution equation for $\rho_t$ in one dimension becomes:
+\begin{align*}
+\partial_t \rho_t + \partial_x (\mu_t \rho_t) = \partial_{xx}(\kappa_t \rho_t^p),
+\end{align*}
+where $p \geq 1$ is the porous media coefficient. This equation is considered with \textbf{no-flux boundary conditions on the boundary of $supp (\rho_t)$}. The evolution equation of $\chi_t$ can be adapted to the porous media version of the Fokker-Planck equation, and it is shown that $supp (\rho_t)$ shrinks with $t$.
+Some numerical results for this are presented. An implicit finite difference scheme is used to discretize $\chi_t$. The results show faster convergence for nonlinear diffusion with $p=2$ than for $p=1$. 
+
+\section{Carrillo, Pimentel, Voskanyan: On a Mean Field Optimal Control Problem \cite{carrillo2019mean}}
+This paper studies the existence and regularity of the solution to the optimality system below, involving the nonlinear, nonlocal Fokker-Planck equation. The well-posedness of the forward problem is discussed.
+
+The forward problem considered is of the form:
+\begin{align*}
+\partial_t \rho &= div ((\nabla W \ast \rho)\rho + F\rho) + \Delta \rho\\
+\rho(x,0 &)= \rho_0(x),
+\end{align*}
+where $\rho$ is a density, $\Omega=\mathbf{T}^d$. The convolution term is defined by:
+\begin{align*}
+\nabla W \ast \rho(x) = \int_{Q^d} \nabla W (x-y) \rho(y) dy.
+\end{align*}
+The setting considered is 1-periodic functions on the cube $Q^d=[-1/2,1/2]^d$, with $|x|$ having \textbf{periodic boundary data} on the cube. 
+The optimal control problem considers the control $F$, so it is a \textbf{flow control} problem, but more specifically, $F= \nabla \phi$, so the control is a potential.
+The cost functional is:
+
+\begin{align*}
+\inf_{\rho,F} \{ E(F) + \int_{\mathbf{T}^d} \phi_T(x) \rho(x,T)dx\}, \qquad
+E(F) = \int_0^T \int_{\mathbf{T}^d} \bigg( L(x,\rho) + \frac{|F|^2}{2} \bigg) \rho dx dt,
+\end{align*}
+where $\phi$ is the adjoint variable.
+The optimality system is:
+\begin{align*}
+- \phi_t &+ (1/2) |\nabla \phi|^2 + (\nabla W \ast \rho)\cdot \nabla \phi + \nabla W \ast (\rho \nabla \phi) -U(x, \rho)= \Delta \phi\\
+\rho_t &= div((\nabla W \ast \rho)\rho + \rho \nabla \phi)+ \Delta \rho\\
+\phi(x,T) &=\phi_T(x), \quad \rho(x,0)= \rho_0(x),
+\end{align*}
+where $U(x,\rho) = L(x,\rho) + \frac{\delta L}{\delta \rho}(x,\rho)\rho$ and $F=-\nabla \phi$.
+
+
+
+
+\section{Fornasier, Solombrino: Mean-Field Optimal Control \cite{Fornasier_2014}}
+This paper considers optimal control problems in finite dimensional deterministic settings and in the infinite dimensional PDE setting. It is of interest how one external agent can influence the multi-agent system. The main result of the paper is answering the question of convergence of the OCP involving the ODE constraints to the OCP involving the PDE constraints as $N \to \infty$.
+The PDE model in question is:
+\begin{align*}
+\partial_t \mu + v \cdot \nabla_x \mu = \nabla_v \cdot \bigg( (H \ast \mu + f)\mu\bigg),
+\end{align*}
+with cost functional:
+\begin{align*}
+\mathcal{E}_\psi(f) = \int_0^T \int_{\mathbf{R}^{2d}} \bigg( L(x,v,\mu) + \psi(f(t,x,v))  \bigg)d \mu(t,x,v) dt,
+\end{align*}
+where $\mu$ is a probability measure, $f$ is the control (\textbf{flow control}) and $H$ is the interaction kernel. Again, there is \textbf{no explicit statement of boundary conditions}, but the assumption of compactly supported data and probability measures is mentioned at points.
+The approach is to connect the forward problems using the techniques of optimal transport to get the mean-field limit and the $\Gamma$-limit to connect the two minimizations (i.e. relate the cost functionals of the multi-agent and the PDE model).
+
+\section{Fornasier, Picculi, Rossi: Mean-Field Sparse Optimal Control \cite{Fornasier_2014no2}}
+This paper considers leader-follower interaction in the multi-agent ODE setting, as well as in the PDE setting. The convergence of the multi-agent OCP to the mean-field OCP using the mean-field limit of the forward dynamics and the $\Gamma$-limit of the optimal control (compare to Fornasier et al: Mean-Field Optimal Control) are discussed.
+The interest is in sparse control. This means that the control functions vanish for most of the agents and times in the ODE model.
+The considered mean-field model is:
+\begin{align*}
+\dot{y_k} &= w_k\\
+\dot{w_k} &= H \ast (\mu + \mu_m) (y_k,w_k) + u_k, \qquad k=1,...,m\\
+\partial_t &+ v \cdot \nabla_x \mu = \nabla_v \cdot \bigg( (H \ast (\mu + \mu_m))\mu\bigg),
+\end{align*}
+where $\mu$ is a compactly supported probability measure (\textbf{i.e. no boundary conditions}), the state vector of position/ velocities is $(y,w)$, $\mu_m(t) = \frac{1}{m}\sum_{k=1}^n \delta_{(y_k(t),w_k(t))}$, an atomic measure of the leaders.
+The cost functional is of the form:
+\begin{align*}
+\min_{u \in L^1([0,T],\mathcal{U})} \int_0^T \bigg(L(y(t),w(t),\mu(t)) + \frac{1}{m}\sum_{k=1}^m |u_k(t)|\bigg)dt,
+\end{align*} 
+so that the \textbf{leaders control the follower population through interactions}, and the control $u_k$ is part of the leaders change in velocity.
+
+\section{Fornasier: Learning and Sparse Control of Multiagent Systems \cite{Fornasier_20161no1}}
+This \textbf{review paper} deals with sparse control strategies and shows the limiting process that connects the OCPs in finite dimensions with ODE constraints to the infinite dimensional case including PDE constraints. The considered PDE is of Vlasov-type. Finally, the learnability of multi-agent systems from observational data is investigated.
+The first two sections are concerned with different ODE models and their optimal control.
+The mean- field model considered thereafter is of the form:
+\begin{align*}
+\partial_t \mu + v \cdot \nabla_x \mu = \nabla_v \cdot \bigg( (H \ast \mu + f)\mu\bigg),
+\end{align*}
+where $f$ is a force field (\textbf{flow control})and $\mu$ the particle probability distribution, i.e. $(x(t),v(t)) \sim \mu(t)$.
+The convolution is defined by: $H \ast \mu(x,v) = \int_{\mathbf{R}^{2D}} H(x-y,v-w)d \mu(y,w)$. We require some regularity of $f$ in order to conclude stability and uniqueness of this PDE, so under some assumptions, there is a function $f_\infty$, which is the solution to the OCP:
+\begin{align*}
+&\min_f \int_0^T \int_{\mathbf{R}^{2d}} \bigg( L(x,v,\mu) + \psi(f(t,x,v)) \bigg)d \mu dt,\\
+&\text{subject to the PDE constraint,}
+\end{align*}
+where $\mu$ is the weak solution to the PDE. The control $f_\infty$ is shown to be a good approximation to the optimal control of the multi-agent system.\\
+\\
+The next section is concerned with the optimal control of a crowd through controlling a few leaders. The microscopic model is discussed and the mean-field model can be formally derived as:
+\begin{align*}
+\dot{y}_k &= w_k\\
+\dot{w}_k &= H \ast (\mu + \mu_m)(y_k,w_k) + u_k, \qquad k=1,...,m\\
+\partial_t \mu &+ v \cdot \nabla_x \mu = \nabla_v \cdot \bigg( (H \ast (\mu + \mu_m))\mu\bigg),
+\end{align*}
+where $(y,w)$ is the position vector for the leaders. ''The atoms $(y_k,w_k)$ constitute the support of $\mu_m$ and are interpreted as representatives of the entire distribution $\mu$, which is \textbf{indirectly controlled} by acting on its representatives.'' Here, $\mu$ is assumed to have compact support (i.e. \textbf{no boundary conditions} stated) \\
+The corresponding OCP has cost functional:
+\begin{align*}
+\min_{u} \int_0^T \bigg( L(y(t),w(t),\mu(t)) + \frac{1}{m} \sum_{k=1}^m |u_k(t)|)\bigg)dt.
+\end{align*}
+For this OCP, an existence result is stated.\\
+Finally, in the last section, the question is whether it is possible by learning the behaviour of the interaction kernel by observation of the dynamics.
+The mean field equation is:
+\begin{align*}
+\partial_t \mu(t) = - \nabla \cdot((H[a] \ast \mu(t))\mu(t)), \qquad H[a](x)=-a(|x|)x,
+\end{align*}
+for $x \in \mathbf{R}^d$.
+The considered $\Gamma$ limit functional is:
+\begin{align*}
+\mathcal{E}(\hat a) = \frac{1}{T} \int_0^T \int_{\mathbf{R}^d} | (H[\hat a] - H[a]) \ast \mu(t) |^2 d \mu(t)(x)dt.
+\end{align*}
+Some $\Gamma$ convergence and well-posedness results are shown.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fornasier, Lisini, Orrieri, Savar\'e: Mean-Field Optimal Control as Gamma-Limit of Finite Agent Controls \cite{fornasier_lisini_orrieri_savare_2019}}
+This paper is purely theoretical without any numerical contributions. The multi-agent model is deterministic and the mean-field equation is of Vlasov-type. The fact that the underlying microscopic dynamics is deterministic makes the proof of convergence results more difficult than in the stochastic case and measure-theoretical methods are required. The paper deals with existence and consistency of mean-field optimal controls as limits of the finite agent optimal controls. A $\Gamma$-convergence argument and the superposition principle are used to derive the desired results.
+\\
+\\
+The mean field equation considered is:
+\begin{align*}
+\partial_t \mu_t + \nabla \cdot \bigg( (\mathbf{F} (x, \mu_t) + v_t) \mu_t\bigg)=0,
+\end{align*}
+where $\mu_t$ is the time dependent probability distribution and $\nu=v\mu$ is a vector control measure (\textbf{flow control}) subject to the cost functional:
+\begin{align*}
+\mathcal{E} (\mu, \nu) = \int_0^T L(x,\mu_t)d \mu_t(x) dt + \int_0^T \int_{\mathbf{R}^{d}} \psi(v(t,x))d \mu_t(x) dt.
+\end{align*}
+The domain considered is $\mathbf{R^d}$, however $\mu$ is concentrated on $\Omega \subset \mathbf{R^d}$ (i.e. \textbf{no boundary conditions explicitly stated}).
+In terms of examples of models that fit the above framework, two models are introduced. A first order model:
+\begin{align*}
+\mathbf{F}(x,\mu)= \int_{\mathbf{R}^{d}} K(x,y) d \mu(y), 
+\end{align*}
+for a continuous interaction kernel $K$, and $L$ is the variance:
+\begin{align*}
+L(x, \mu) = |x - \int_{\mathbf{R^d}} y d \mu(y)|^2.
+\end{align*}
+A second order example has the state vector $x=(q,p)$, with $q$ the position and $p$ the velocity. Then $\mathbf{F}= (\mathbf{F}_1, \mathbf{F}_2)=(p,-\nabla_pW \ast \mu)$, such that the mean-field equation becomes:
+\begin{align*}
+\partial_t \mu_t + p \cdot \nabla_q \mu_t + \nabla_p  \cdot \bigg(\mathbf{F}_2(x,\mu_t) + \nu_t\bigg).
+\end{align*}
+Further, $L$ becomes:
+\begin{align*}
+L((q,p),\mu) = | p - \int_{\mathbf{R^d}}r_2 d \mu(r_1,r_2)|^2.
+\end{align*}
+
+
+
+\section{Piccoli, Rossi, Tr\'elat: Control to Flocking of the Kinetic Cucker-Smale Model \cite{piccoli2014no1}}
+This paper is concerned with the control of the kinetic Cucker-Smale model, using a sparse (in space and time) centralized control strategy. The model is:
+\begin{align*}
+\partial_t \mu + \langle v, grad_x \mu\rangle + div_v ((\xi[\mu]+ \chi_w u)\mu)=0,
+\end{align*}
+where $\mu$ is a compactly supported probability measure on $\mathbf{R^d} \times \mathbf{R^d}$ (i.e. \textbf{no explicitly stated boundary conditions}) and $\xi[\mu]$ is the interaction kernel:
+\begin{align*}
+\xi[\mu](x,v)= \int_{\mathbf{R^d} \times \mathbf{R^d}} \phi(||x-y||)(w-v) d \mu (y,w).
+\end{align*}
+The term $\chi_w u$ is the control which consists of the control set $w \subset \mathbf{R^d} \times \mathbf{R^d}$ and the control force $u$ (\textbf{flow control}). The aim of the optimization is to steer the system (by aligning the velocity component of the state) towards flocking, asymptotically in time. The paper shows the well-posedness of the controlled Cucker-Smale equation. Existence is shown by designing an explicit control $\chi_w u$, which steers the system towards flocking. 
+\\
+\\
+The following constraints are put on the control: The control function is bounded and only allowed to act on a given proportion of the population. Note that the control domain depends on time. 
+The main result of the paper is that for every initial measure $\mu_0 \in \mathcal{P}_c^{ac}(\mathbf{R^d}\times\mathbf{R^d})$ there exists a control $\chi_w u$, satisfying the above constraints and there exists an unique solution $\mu$ of the kinetic equation converging to flocking as $t \to \infty$. 
+The explicit control designed in the paper satisfies: $w$ is piecewise constant in $t$, and $u$ is piecewise constant in $t$ for fixed states and continuous and piecewise linear in $(x,v)$ for fixed $t$. Further, for any $\mu_0$, there exists a time $T(\mu_0)$, such that $u(t,x,v)=0$ for every $t>T(\mu_0)$. The final condition originates from the fact that the system will converge to flocking without control if the crowd is close enough to it. Since $u$ depends on $(t,x,v)$ and $w$ depends on $\mu(t)$, this is a sampled feedback.
+No numerical solutions are given.
+
+\section{Pinnau, Totzeck, Tse, Martin: A Consensus-Based Model for Global Optimizatino and its Mean-Field Limit \cite{Pinnau_2017}}
+This paper is concerned with a stochastic swarm intelligence (SI) model, which is a consensus formation model. This is a consensus-based optimization algorithm (CBO), which can be passed to the mean-field limit to get the PDE model below. The paper provides numerical experiments in one and multiple dimensions and provides some convergence results.
+The mean-field equation is:
+\begin{align*}
+\partial_t \varrho_t = \Delta (\kappa[\varrho_t]\varrho_t) + div (\mu[\varrho_t]\varrho_t),
+\end{align*}
+where
+\begin{align*}
+\kappa[\varrho_t](x) = \sigma^2 |x- v_f[\varrho_t]|^2, \qquad \mu[\varrho_t](x) = - \lambda (x- v_f[\varrho_t])H^\epsilon(f(x)-f(v_f[\varrho_t])),
+\end{align*}
+such that $f$ is the objective function, $\lambda, \sigma$ are drift and noise parameters, $H^\epsilon$ is a smooth regularization of the Heaviside function, $v_f$ is the weighted average:
+\begin{align*}
+v_f[\varrho_t] = \frac{1}{\int_{\mathbf{R}^{d}}w_f^\alpha d \varrho_t}\int_{\mathbf{R}^{d}}xw_f^\alpha d \varrho_t,
+\end{align*}
+where $w_f^\alpha(x)=\exp(-\alpha f(x))$.\\
+\\
+The numerical method used to solve the PDE is a discontinuous Galerkin Scheme, where a splitting of the transport and diffusion part is used to solve the problem iteratively. The method is discussed in some detail. Then convergence of the CBO to the mean field limit in $d=1$ os shown numerically. For higher dimensions, numerical results are only provided for the CBO algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak	
+\bibliography{meanfieldbib}
+\bibliographystyle{unsrt}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fornasier, Ha\v skovec, Vyb\'iral: Particle Systems and Kinetic Equations Modelling Interacting Agents in High Dimensions}
+This paper considers high dimensional dynamical systems, such as the Cucker-Smale model, where each agent lives in high dimensions $d$ (and there is a large number of agents $N$). The main aim is a reduction of dimension, in order to simulate the high dimensional systems. The reduction of dimension is done by random projections (via Johnson-Lindenstrauss embeddings) and it is recovered by compressed sensing techniques. Some numerical results are given.\\
+In the final part of the paper, also the associated kinetic equations and their dimension reduction are considered. The assumption is that the measure $\mu$ is concentrated on sets of lower dimensions. Therefore, $\mu$ is approximated by random projections onto lower dimensions. Approximation properties are found by combining optimal numerical integration principles for $\mu$ and the results for the particle dynamical systems. It is shown that under the stated assumptions, $\mu$ can be approximated by atomic measures with a sub-exponential (in $d$) number of atoms.\\
+The mean-field equation, with domain $\mathbf{R^d}$, is:
+\begin{align*}
+\partial_t \mu + \nabla \cdot (\mathcal{H}_\mathcal{F}[\mu]\mu)=0,
+\end{align*}
+where $\mathcal{H}_\mathcal{F}[\mu]$ is a field in $\mathbf{R^d}$, which includes a particle interaction term.
+

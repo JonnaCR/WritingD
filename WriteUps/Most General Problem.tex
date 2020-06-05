@@ -1,0 +1,120 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+	
+\section*{Most General Forward Problem}	
+\textbf{The Forward Problem}
+\begin{align*}
+&\partial_t \rho = D_0\nabla^2 \rho - c_{Flow}\nabla \cdot (\rho \mathbf{w}_{Flow}) + c_{ext}\nabla \cdot (\rho \nabla V_{ext}) + \gamma\nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' \\
+&+c_{{w}}{w}_{Force} +c_{Force} f\quad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \quad\text{in} \quad \Omega,\notag\\
+\notag\\
+& \rho = \rho_0 \quad \text{at} \quad t=0.  \notag
+\end{align*}
+Possible Boundary Conditions include:
+\begin{align*}
+&\text{No-Flux}\\
+&D_0\dfrac{\partial \rho}{\partial n} - c_{Flow}\rho \mathbf{w}_{Flow} \cdot \mathbf{n} +c_{ext} \rho \dfrac{\partial V_{ext}}{\partial n} + \gamma \int_\Omega \rho(r) \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'  =0 \quad\quad \quad \quad \quad \quad \quad \text{on} \quad \partial \Omega,\notag \\
+&\text{Dirichlet}\\
+&\rho =0 \quad\quad \quad \quad \quad \quad \quad \qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \text{on} \quad \partial \Omega,\notag
+\end{align*}
+\section*{PDE-Constrained Optimization Problem 1: Flow Control}
+\begin{align*}
+&\min_{\rho,\mathbf{w}_{Flow}} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L^2}^2 + \frac{\beta}{2} \norm{\mathbf{w}_{Flow}}_{L^2}^2,\\
+\notag\\
+&\textbf{subject to the Forward Problem}\notag\\ 
+\end{align*}
+\subsection*{Adjoint Equation}
+\begin{align*}
+\partial_t p &= \rho - \hat \rho - c_{Flow} \nabla p \cdot \mathbf w_{Flow} - D_0 \nabla^2 p + c_{ext} \nabla p \cdot \nabla V_{ext} \\
+&+ \gamma\int_\Omega (\nabla  p(r)+\nabla  p(r')) \rho(r') \nabla V_2(|r-r'|) dr' , \qquad\qquad \quad \text{in} \quad  \Omega, \notag\\
+p(r,T)&=0,\notag \\
+\end{align*}
+Possible Boundary Conditions include:
+\begin{align*}
+\text{No-Flux}  \notag\\
+\frac{\partial p }{\partial n}&=0, \quad \text{on} \quad \partial \Omega, \notag\\
+\text{Dirichlet}\\
+p&=0, \quad \text{on} \quad \partial \Omega.
+\end{align*}
+\subsection*{Gradient Equation}
+\begin{align*}
+c_{Flow}\mathbf w_{Flow}=-\frac{1}{\beta}\rho \nabla p
+\end{align*} 
+\section*{PDE-Constrained Optimization Problem 2: Force Control}
+\begin{align*}
+&\min_{\rho,f{w}_{Force}} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L^2}^2 + \frac{\beta}{2} \norm{{w}_{Force}}_{L^2}^2,\\
+\notag\\
+&\textbf{subject to the Forward Problem}\notag
+\end{align*}
+\subsection*{Adjoint Equation}
+\begin{align*}
+\partial_t p &= \rho - \hat \rho - c_{Flow} \nabla p \cdot \mathbf w_{Flow} - D_0 \nabla^2 p + c_{ext} \nabla p \cdot \nabla V_{ext} \\
+&+ \gamma\int_\Omega (\nabla  p(r)+\nabla  p(r')) \rho(r') \nabla V_2(|r-r'|) dr' ,  \qquad \qquad\quad \text{in} \quad  \Omega, \notag\\
+p(r,T)&=0,\notag \\
+\end{align*}
+Possible Boundary Conditions include:
+\begin{align*}
+\text{No-Flux}  \notag\\
+\frac{\partial p }{\partial n}&=0, \quad \text{on} \quad \partial \Omega, \notag\\
+\text{Dirichlet}\\
+p&=0, \quad \text{on} \quad \partial \Omega.
+\end{align*}
+\subsection*{Gradient Equation}
+\begin{align*}
+ c_{ w} w _{Force}=-\frac{1}{\beta}p
+\end{align*} 
+\end{document}

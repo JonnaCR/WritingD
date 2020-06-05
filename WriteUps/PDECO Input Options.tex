@@ -1,0 +1,265 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+	
+\section*{PDECO - Input Options}
+A summary of all possible input options for PDECO. The options are called 'opts'. This has two substructures 'optsPhys' and 'optsNum'. These are detailed in the following.
+
+\section{optsPhys}	
+There are three sub-structures in this structure. They are 'ProbSpecs', 'DataIn' and 'Params'.
+\subsection{optsPhys.ProbSpecs}
+The structure 'ProbSpecs' contains all problem specifications that are needed to specify a given problem to solve. The input options are summarized in the table below.
+   \begin{center}
+	\begin{tabular}{ |c| c | }
+		\hline
+		Input Name & 'BCFunStr' \\ 
+		\hline
+		Description & Determines boundary conditions\\ 
+		\hline 
+		Options & 'ComputeDirichletBCs', 'ComputeNeumannBCs', 'ComputeMixedBCs' \\
+		& takes inputs: 'rho', 'rhoflux', 'bound', 'normal', 'this'. \\
+		& parameter 'eps' for Dirichlet Contribution in MixedBCs  (See 'Params') \\
+		\hline
+		\hline
+		Input Name & 'PDERHSStr' \\ 
+		\hline
+		Description & Determines which PDE is solved,\\ 
+		& all can include interaction term, switched on with 'gamma' (see 'Params')\\
+		\hline 
+		Options 1D & 'D\_Force': Diffusion, Force Control \\
+		&  AD\_Force: Advection Diffusion, Force Control (inc. Vext, Force) \\
+		&  AD\_Forcefl: Advection Diffusion, Force Control (inc. Vext, Force, wFlow) \\
+		&  AD\_Flow: Advection Diffusion, Flow Control (only Flow term) \\
+		&  AD\_Flowf: Advection Diffusion, Flow Control (Flow term and Force) \\
+		&  AD\_FlowfVext: Advection Diffusion, Flow Control (Flow term, Force, Vext) \\
+		\hline
+		Options 2D & These remain the same for 1D and 2D\\
+		\hline
+        Note: & To include a new PDE see separate table below.\\
+	    	\hline		
+			\hline
+			Input Name & 'SolverFlag' \\ 
+			\hline
+			Description & Choosing the solver for Optimization\\ 
+			\hline 
+			Options & 'fsolve': Inbuilt MatLab solver and with Multiple Shooting. \\
+			& 'Picard': Picard update and Multiple Shooting \\
+			& 'FixPt': Picard update/ Fixed Point iteration, no shooting \\
+			\hline
+			\hline
+		Input Name & 'AdaSolverStr' \\ 
+		\hline
+		Description & Option to make Picard or Fixed Point Algorithm adaptive.\\ 
+		\hline 
+		Options & Input is a function name, Function input 'Err' and 'lambda'.\\
+		& 'Adaptive': will change 'lambda' (see 'Params') to be adaptive\\
+		& '[  ]', or exclusion of this option will leave 'lambda' static. \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+   \begin{center}
+	\begin{tabular}{ |c| c | }
+		\hline
+		Input Name & 'ComputeNorm' \\ 
+		\hline
+		Description & Specifies in which norm errors are computed within the solver. \\
+		& Takes function name as input. Needs to have syntax ComputeNorm(fNew,fOld,SInt,TInt).\\ 
+		&  (SInt: Space Integration\ TInt: Time Integration)\\
+		\hline 
+		Options & 'ComputeRelL2LinfNorm': Relative Norm, L2 space, Linf time.  \\
+		& 'ComputeRelPWNorm': Relative Norm, Pointwise errors. \\
+		& 'ComputeL1Norm': Absolute Norm, L1 space and time. \\
+		\hline
+	\end{tabular}
+   \end{center}	
+
+
+  \begin{center}
+	\begin{tabular}{ |c| c | }
+\hline
+ & Adding new PDEs into PDECO: \\
+ \hline
+1D FW (\& rho Opt )& Naming convention of the function: 'ComputeFW'\&'PDERHSStr':\\ 
+Input arguments:& (rho, Dy, DDy, D0, gamma, ConvV2FW, Flow, wFlow,\\
+& Force, wForce, gradVext, this, otheropts) \\
+\hline
+1D Adjoint Equation & Naming convention of the function: 'ComputeOptp'\& 'PDERHSStr'. \\
+Input arguments:& (p, Dy, DDy, D0, gamma, ConvV2BW1, ConvV2BW2, rhoLater, rhoHat, FlowBw,\\
+& wFlowLater, gradVextBw, this, otheropts);
+\\
+\hline
+2D FW (\& rho Opt ) & Naming convention of the function: 'ComputeFW2D'\&'PDERHSStr'\\
+Input arguments: & (rho, rho2, Div, Grad, Lap, D0, gamma, ConvV2FW, Flow, wFlow, Force,\\ &wForce, gradVext, this, otheropts)\\
+2D Adjoint Equation & Naming convention of the function:'ComputeOptp2D'\& 'PDERHSStr'\\
+Input arguments:& (p, p2, gradp, rhoLater, rhoHat, Div, Grad, Lap, D0, gamma, ConvV2BW1,\\ &ConvV2BW22D,  wFlowLater, gradVextBw, FlowBw, this, otheropts)\\
+\hline
+	\end{tabular}
+\end{center}	
+\subsection{optsPhys.DataIn}	
+This structure includes all the input data to the solver. It can take the input as matrices or as function name. For each variable, the code checks whether the variable name exists as input. If it does, this will be used in the code, and interpolated where necessary. If it does not exist, then the field is created and filled by the given function. If all variables are specified by the function, then the only input in 'DataIn' is the function name! The below table illustrates the options. \\
+One special case is the initial guess for rho to the optimization problem. This can be specified to be the forward solution.
+	
+ \begin{center}
+	\begin{tabular}{ |c| c | c|}
+		\hline
+		Input Name & Input Description & Options \\ 
+		\hline
+		testFun & Function Name of input function & e.g. 'AD\_Flow\_Neumann\_Exact'. \\
+		& & Needs all the below variables in output structure. \\
+	 	& & Set variable to zero if not needed. \\ 
+		\hline
+		Optional: & & \\
+		\hline
+		rhoIC & Initial Condition for rho & Input vector ($1 \times N$) or not existent.\\
+		pIC & Final Time Condition for p & Input vector ($1 \times N$) or not existent.\\ 
+		OptirhoIG & Initial guess for Optimization & Input Matrix ($n \times N$), not existent, \\
+		& & or 'rhoFW' to call forward result as IG\\
+		OptipIG &  Initial guess for Optimization & Input Matrix ($n \times N$) or not existent. \\
+		wFlow & Flow Control term & Input Matrix ($n \times N$) or not existent. \\
+		wForce & Force Control term & Input Matrix ($n \times N$) or not existent. \\
+		Force & Additional Force term  & Input Matrix ($n \times N$) or not existent. \\
+		Flow & Additional Flow  term & Input Matrix ($n \times N$) or not existent. \\
+		Vext & External Potential term & Input Matrix ($n \times N$) or not existent. \\
+		\hline
+	\end{tabular}
+ \end{center}		
+	
+\subsection{optsPhys.Params}
+Here, any relevant parameters are specified. 
+
+	\begin{center}
+		\begin{tabular}{ |c| c | }
+			\hline
+			Input Name & Description \\ 
+			\hline
+			beta & Regularization parameter in optimization \\
+			gamma & Magnitude of particle interaction term. \\ 
+			lambda & Mixing rate of old and new solution in 'Picard' and 'FixPt' solvers.\\
+			D0 & Diffusion Coefficient.\\
+		    eps & Contribution of Dirichlet term to Mixed BCs. \\
+			other & Additional input structure to 'testFun'. \\
+			other.scalerho & scaling parameter for rho. \\
+			other.scalep & scaling parameter for p. \\
+			other.deg & degree if $t$ is 'polynomial': $t^{deg}$. \\
+			\hline
+		\end{tabular}
+	\end{center}
+\subsection{optsPhys.V2Num/optsNum.V2Num}
+'V2Num' is part of both 'optsPhys' and 'optsNum'. It contains the Kernel function for the particle interaction term and takes additional parameters.
+\begin{center}
+	\begin{tabular}{ |c| c | }
+		\hline
+		Input Name &  Description \\ 
+		\hline
+		'V2' & Takes a function name, e.g. 'ComputeGaussian'. \\
+		 & This function takes the inputs 'V2Num' and 'y', the points.\\ 
+		'alpha' & A parameter for the function. \\
+		\hline 
+	\end{tabular}
+\end{center}	
+	
+\section{optsNum}	
+
+This structure has four (five) substructures: 'PhysArea', 'PlotArea'. 'TimeArea' and 'Tols'	(and 'V2Num' - see above).
+
+\subsection{optsNum.PhysArea}
+Specifies the physical spacial domain on which computations should be carried out.
+\begin{center}
+	\begin{tabular}{ |c| c | c| c|}
+		\hline
+		Dimension &  Shape & Number of space points & Boundary \\ 
+		\hline
+		 1D & 'SpectralLine' & 'N' & 'yMin', 'yMax'\\
+		 2D & 'Box' & 'N' (input as e.g. $[50,50]$) & 'y1Min', 'y1Max', 'y2Min', 'y2Max' \\ 
+		\hline 
+	\end{tabular}
+\end{center}
+\subsection{optsNum.PlotArea}
+Specifies plotting points and area. 
+\begin{center}
+	\begin{tabular}{ |c| c | c| }
+		\hline
+		Dimension & Number of plotting points & Boundary \\ 
+		\hline
+		1D   & 'N' & 'yMin', 'yMax'\\
+		2D & 'N1', 'N2'  & 'y1Min', 'y1Max', 'y2Min', 'y2Max' \\ 
+		\hline 
+	\end{tabular}
+\end{center}	
+\subsection{optsNum.TimeArea}
+Specifies the time domain on which computations should be carried out.
+\begin{center}
+	\begin{tabular}{ | c | c | c |}
+		\hline
+		 Boundary left & Boundary right & Number of time points  \\ 
+		\hline
+	    't0' & 'TMax' & 'n'\\
+		\hline 
+	\end{tabular}
+\end{center}	
+	
+\subsection{optsNum.Tols}
+Solver tolerances etc.
+\begin{center}
+	\begin{tabular}{ | c | c | c |}
+		\hline
+	     Location of usage & Input Name  & Description  \\ 
+		\hline
+		ODE solver & 'AbsTol' & Absolute Tolerance  \\
+		ODE solver & 'RelTol' & Relative Tolerance  \\ 
+		\hline
+		fsolve & 'FunTol' & Function Tolerance  \\
+		fsolve & 'OptiTol' & Optimality Tolerance  \\ 
+		fsolve & 'StepTol' & Stepsize Tolerance  \\ 
+		\hline 
+		Picard, FixPt & 'ConsTol' & Consistency Tolerance  \\ 
+		& & Consistency condition for convergence.\\
+		\hline
+	\end{tabular}
+\end{center}
+	
+	
+\end{document}

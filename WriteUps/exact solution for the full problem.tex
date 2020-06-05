@@ -1,0 +1,299 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+	
+\maketitle
+
+\section*{The Equations: Force Control}
+\textbf{Forward Problem}
+\begin{align*}
+&\partial_t \Sta = \nabla^2 \Sta - \nabla \cdot (\rho \mathbf{w}_{Flow}) + \nabla \cdot (\Sta \nabla V_{ext}) +{w}_{Force} + f \\
+& \Sta = \Sta_0 \quad \text{at} \quad t=0.  \notag
+\end{align*}
+\begin{align*}
+&\text{No-Flux}\\
+&\dfrac{\partial \Sta}{\partial n} - \Sta \mathbf{w}_{Flow} \cdot \mathbf{n} + \Sta \dfrac{\partial V_{ext}}{\partial n}  =0  \\
+&\text{Dirichlet}\\
+&\Sta =0 
+\end{align*}
+\textbf{Adjoint Equation}
+\begin{align*}
+\partial_t \Adj &= -\Sta + \hat \Sta -  \nabla \Adj \cdot \mathbf w_{Flow} -  \nabla^2 \Adj +  \nabla \Adj \cdot \nabla V_{ext} \\
+\Adj(r,T)&=0
+\end{align*}
+\begin{align*}
+\text{No-Flux}  \notag\\
+\frac{\partial \Adj }{\partial n}&=0,  \notag\\
+\text{Dirichlet}\\
+\Adj&=0.
+\end{align*}
+
+
+
+
+\textbf{Gradient Equation}
+\begin{align*}
+{w}_{Force}=-\frac{1}{\beta}\Adj
+\end{align*} 
+
+
+
+\section*{Exact Solutions: Force Control}
+(+++ Just a very small adaptation from John's notes!+++)
+
+\subsection*{Dirichlet BCs}
+We choose:
+\begin{align*}
+\Sta &= 2 e^t \cos(\frac{\pi x}{2})\\
+\Adj &=(e^T-e^t) \cos(\frac{\pi x}{2})\\
+V_{ext} &= \frac{1}{2} \cos(\frac{\pi x}{2})
+\end{align*}
+The expression for $V_{ext}$ is chosen such that $V_{ext}= \frac{1}{2}V_{extOld}  $, where $V_{extOld}=\cos(\frac{\pi x}{2})$ is taken from John's notes. Then a valid choice of $\mathbf{w}_{Flow}$ is  $\frac{1}{2} \nabla V_{extOld}$:
+\begin{align*}
+\mathbf{w}_{Flow}= -\frac{1}{2} \nabla \cos(\frac{\pi x}{2}) = \frac{\pi}{4} \sin(\frac{\pi x}{2}).
+\end{align*}
+Note that it can be verified that $ \mathbf{w}_{Flow} - \nabla V_{ext}= - \nabla V_{extOld}$.
+Therefore, the expressions for $w_{Force}$, $f$ and $\hat \Sta$ are the same as in John's notes:
+\begin{align*}
+w_{Force}= -\frac{1}{\beta}(e^T - e^t)\cos(\frac{\pi x}{2}),
+\end{align*}
+which follows from the gradient equation and the choice of $\Adj$.
+Also, from computations and choice of $\Sta$,$\Adj$ and $V_{ext}$, we get:
+\begin{align*}
+f&= \bigg( (2  + \frac{\pi^2}{2} -\frac{1}{\beta} )e^t  + \frac{1}{\beta}e^T  \bigg)\cos(\frac{\pi x}{2}) - \frac{\pi^2}{2}e^t \bigg( \sin^2(\frac{\pi x}{2}) - \cos^2(\frac{\pi x}{2})\bigg)\\
+\hat \Sta &= e^t \cos(\frac{\pi x}{2})- \frac{\pi^2}{4}(e^T -e^t)\cos(\frac{\pi x}{2}) - \frac{\pi^2}{4}(e^T -e^t)\sin^2(\frac{\pi x}{2})
+\end{align*}
+
+
+
+
+\subsection*{Neumann BCs}
+
+We choose:
+\begin{align*}
+\Sta &= 2 e^t \cos(\pi x)\\
+\Adj &=(e^T-e^t) \cos(\pi x)\\
+V_{ext} &= \frac{1}{2} \cos(\pi x)
+\end{align*}
+The expression for $V_{ext}$ is again chosen such that $V_{ext}= \frac{1}{2}V_{extOld}  $, where $V_{extOld}=\cos(\pi x)$ is taken from John's notes. Then a valid choice of $\mathbf{w}_{Flow}$ is  $\frac{1}{2} \nabla V_{extOld}$:
+\begin{align*}
+\mathbf{w}_{Flow}= -\frac{1}{2} \nabla \cos(\pi x) = \frac{\pi}{2} \sin(\pi x).
+\end{align*}
+Note that it can be verified that $ \mathbf{w}_{Flow} - \nabla V_{ext}= - \nabla V_{extOld}$.
+Therefore, the expressions for $w_{Force}$, $f$ and $\hat \Sta$ are again the same as in John's notes:
+\begin{align*}
+w_{Force}= -\frac{1}{\beta}(e^T - e^t)\cos(\pi x),
+\end{align*}
+which follows from the gradient equation and the choice of $\Adj$.
+Also, from computations and choice of $\Sta$,$\Adj$ and $V_{ext}$, we get:
+\begin{align*}
+f&= \bigg( (2  + 2\pi^2 -\frac{1}{\beta} )e^t  + \frac{1}{\beta}e^T  \bigg)\cos(\pi x) - 2\pi^2e^t \bigg( \sin^2(\pi x) - \cos^2(\pi x)\bigg)\\
+\hat \Sta &= e^t \cos(\pi x)- \pi^2(e^T -e^t)\cos(\pi x) - \pi^2(e^T -e^t)\sin^2(\pi x)
+\end{align*}
+
+
+\section*{The Equations: Flow Control}
+\textbf{Forward Problem}
+\begin{align*}
+&\partial_t \Sta = \nabla^2 \Sta - \nabla \cdot (\rho \mathbf{w}_{Flow}) + \nabla \cdot (\Sta \nabla V_{ext}) +{w}_{Force} + f \\
+& \Sta = \Sta_0 \quad \text{at} \quad t=0.  \notag
+\end{align*}
+\begin{align*}
+&\text{No-Flux}\\
+&\dfrac{\partial \Sta}{\partial n} - \Sta \mathbf{w}_{Flow} \cdot \mathbf{n} + \Sta \dfrac{\partial V_{ext}}{\partial n}  =0  \\
+&\text{Dirichlet}\\
+&\Sta =0 
+\end{align*}
+\textbf{Adjoint Equation}
+\begin{align*}
+\partial_t \Adj &= -\Sta + \hat \Sta -  \nabla \Adj \cdot \mathbf w_{Flow} -  \nabla^2 \Adj +  \nabla \Adj \cdot \nabla V_{ext} \\
+\Adj(r,T)&=0
+\end{align*}
+\begin{align*}
+\text{No-Flux}  \notag\\
+\frac{\partial \Adj }{\partial n}&=0,  \notag\\
+\text{Dirichlet}\\
+\Adj&=0.
+\end{align*}
+\textbf{Gradient Equation                             }
+\begin{align*}
+\mathbf w_{Flow}=-\frac{1}{\beta}\Sta \nabla \Adj
+\end{align*} 
+
+
+
+
+
+\section*{Exact Solutions: Flow Control}
+(+++ Just a very small adaptation from John's notes!+++)
+
+\subsection*{Dirichlet BCs}
+We choose:
+\begin{align*}
+\Sta &= 2 e^t \cos(\frac{\pi x}{2})\\
+\Adj &=(e^T-e^t) \cos(\frac{\pi x}{2})
+\end{align*}
+Then, from the gradient equation we find that:
+\begin{align*}
+\mathbf{w}_{Flow }= \frac{\pi}{\beta}e^t(e^T -e^t)\cos(\frac{\pi x}{2}) \sin(\frac{\pi x}{2}).
+\end{align*}
+Then we need to solve the forward equation using these quantities. That is:
+\begin{align*}
+\partial_t \Sta - \nabla^2 \Sta + \nabla \cdot (\rho \mathbf{w}_{Flow}) = \nabla \cdot (\Sta \nabla V_{ext}) +{w}_{Force} + f.
+\end{align*}
+One choice is to set:
+\begin{align*}
+\nabla \cdot (\rho \mathbf{w}_{Flow}) = \nabla \cdot (\Sta \nabla V_{ext}),
+\end{align*}
+which implies that
+\begin{align*}
+ \mathbf{w}_{Flow} &= \nabla V_{ext} \\
+ &=\frac{\pi}{\beta}e^t(e^T -e^t)\cos(\frac{\pi x}{2}) \sin(\frac{\pi x}{2}).
+\end{align*}
+Then, integrating this, we find $V_{ext}$:
+\begin{align*}
+V_{ext} &= \int_\Omega \frac{\pi}{\beta}e^t(e^T -e^t)\cos(\frac{\pi x}{2}) \sin(\frac{\pi x}{2}) dx\\
+&=\frac{1}{\beta}e^t(e^T -e^t)\sin^2(\frac{\pi x}{2}).
+\end{align*}
+Since we know that $\nabla \cdot (\rho \mathbf{w}_{Flow}) = \nabla \cdot (\Sta \nabla V_{ext})$, the remaining terms to balance are:
+\begin{align*}
+\partial_t \Sta - \nabla^2 \Sta  = {w}_{Force} + f.
+\end{align*}
+Then
+\begin{align*}
+ {w}_{Force} + f = (2 + \frac{\pi^2}{2}) e^t \cos(\frac{\pi x}{2}), 
+\end{align*}
+where ${w}_{Force} + f$ is one force term.
+Now $\hat \Sta $ can be found using the adjoint equation:
+\begin{align*}
+\partial_t \Adj &=- \Sta + \hat \Sta -  \nabla \Adj \cdot \mathbf w_{Flow} -  \nabla^2 \Adj +  \nabla \Adj \cdot \nabla V_{ext},
+\end{align*}
+which reduces to:
+\begin{align*}
+\partial_t \Adj &= \Sta - \hat \Sta  -  \nabla^2 \Adj,
+\end{align*}
+due to the choices of $\mathbf{w}_{Flow}$ and $V_{ext}$, which gives:
+\begin{align*}
+ \hat \Sta &= \partial_t \Adj +\Sta   +  \nabla^2 \Adj\\
+ &=(1-\frac{\pi^2}{4})e^t\cos(\frac{\pi x}{2}) +\frac{\pi^2}{4}e^t \cos(\frac{\pi x}{2}).
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Neumann BCs}
+Choose scaling factors $c \beta $ in $\mathbf{w}_{Flow }$ to damp the advection dominance.
+We choose:
+\begin{align*}
+\Sta &= c^{1/2} \beta^{1/2} 2 e^t \cos(\pi x)\\
+\Adj &= c^{1/2} \beta^{1/2}(e^T-e^t) \cos(\pi x).
+\end{align*}
+Then, from the gradient equation, we get:
+\begin{align*}
+\mathbf{w}_{Flow }&= c \beta \frac{2\pi}{\beta}e^t(e^T -e^t)\cos(\pi x) \sin(\pi x)\\
+&= c 2\pi e^t(e^T -e^t)\cos(\pi x) \sin(\pi x),
+\end{align*}
+where it can be noted that $\beta$ is cancelled out.
+Again the choice is to set:
+\begin{align*}
+\nabla \cdot (\rho \mathbf{w}_{Flow}) = \nabla \cdot (\Sta \nabla V_{ext}),
+\end{align*}
+which implies that
+\begin{align*}
+\mathbf{w}_{Flow} &= \nabla V_{ext} \\
+&= c 2\pi e^t(e^T -e^t)\cos(\pi x) \sin(\pi x).
+\end{align*}
+Then, integrating this, we find $V_{ext}$:
+\begin{align*}
+V_{ext} &= \int_\Omega c 2\pi e^t(e^T -e^t)\cos(\pi x) \sin(\pi x) dx\\
+&=c e^t(e^T -e^t)\sin^2(\pi x).
+\end{align*}
+
+The remaining terms to balance in the forward equation are again:
+\begin{align*}
+\partial_t \Sta - \nabla^2 \Sta  = {w}_{Force} + f.
+\end{align*}
+This is:
+\begin{align*}
+{w}_{Force} + f= c^{1/2} \beta^{1/2}2e^t \cos(\pi x) + c^{1/2} \beta^{1/2} 2\pi^2 \cos (\pi x),
+\end{align*}
+where ${w}_{Force} + f$ is again one force term.
+Then, from the adjoint equation, as before, we can derive $\hat \Sta$:
+\begin{align*}
+\hat \Sta &= \partial_t \Adj +\Sta   +  \nabla^2 \Adj\\
+&= c^{1/2} \beta^{1/2} (1 -\pi^2)e^t \cos(\pi x) + c^{1/2} \beta^{1/2}\pi^2e^T \cos(\pi x).
+\end{align*}
+
+
+
+
+
+
+
+\end{document}

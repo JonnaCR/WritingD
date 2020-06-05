@@ -1,0 +1,65 @@
+In this section we introduce a number of PDE-constrained optimization problem structures that we will consider in a multiscale particle dynamics setting. In the following, the terms 'linear control' and 'nonlinear control' refer to the application of the control in the PDE constraint either linearly or nonlinearly. Alternatively, these are known as 'force control', since the control can be applied linearly through the source, 'force' term, and 'flow control', where the nonlinear control is the vector field, 'flow', in the advection term. 
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Advection--diffusion nonlinear control problem:}}}~~We commence with the following minimization problem involving $L^2$-norm terms within the entire space-time interval $\Omega$, constrained by a nonlinear time-dependent advection--diffusion equation:
+\begin{align}
+\ \label{AdvDiff} \min_{\rho,\vec{w}}~~\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+{}&\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
+\ \nonumber \text{s.t.}\quad~\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
+={}&\nabla\cdot(\rho\nabla{}V_{\text{ext}})+f\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \rho={}&\rho_{0}(\vec{x})\quad\hspace{4.9em}\text{at }t=0,
+\end{align}
+where $\Omega\subset\mathbb{R}^{d}$, $d\in\{1,2,3\}$, is some given domain with boundary $\partial\Omega$, and $T$ is a prescribed ``final time'' at which the process is considered. The scalar function $\rho$ and the vector-valued function $\vec{w}$ are the \emph{state} and \emph{control variables}, respectively, $\beta>0$ is a given \emph{regularization parameter}, and $\widehat{\rho}(\vec{x},t)$, $V_{\text{ext}}(\vec{x},t)$, $f(\vec{x},t)$, $\rho_{0}(\vec{x})$ are prescribed functions corresponding to the \emph{desired state}, \emph{external potential}, PDE source term, and initial condition, respectively. We highlight that frequently $f(\vec{x},t)=0$,
+which results in conservation of mass.
+Additionally, there is a nonlocal integral term, in order to model interactions between individual particles, where $\vec{K}$ denotes some vector function acting on the distance between particles. When the parameter $\gamma$ is set to zero, the equation reduces to a standard nonlinear advection-diffusion control problem. When $\gamma$ is positive, the integral term models repulsive interactions (check with sign of K!), when $\gamma$ is negative, attractive interactions. Typical values of $\gamma$ are in the range of $[-1,1]$, and can be interpreted as the interaction strength of the particles.
+
+
+We consider two possibilities for the boundary conditions imposed on $\rho$, specifically the Dirichlet boundary condition:
+\begin{equation}
+\ \label{Dirichlet} \rho=c\quad\text{on }\partial\Omega\times(0,T),
+\end{equation}
+where $c \in \mathbb{R}$ is often zero, and that of the boundary condition:
+\begin{equation}
+\ \label{NoFlux} \frac{\partial\rho}{\partial{}n}-\rho\vec{w}\cdot\vec{n}+\rho\frac{\partial{}V_{\text{ext}}}{\partial{}n} +\gamma\int_{\Omega}\rho(r)\rho(r') \frac{ \partial\vec{K}(|r-r'|)}{\partial{}n}~{\rm d}r'=0\quad\text{on }\partial\Omega\times(0,T),
+\end{equation}
+where $\frac{\partial}{\partial{}n}$ denotes the derivative with respect to the normal $\vec{n}$. This is a no-flux boundary condition if $f=0$.
+
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Advection--diffusion linear control problem:}}}~~We consider the following problem with $L^2$-norm terms within the entire space-time interval $\Omega$, constrained by a nonlinear time-dependent advection--diffusion equation with linear components in a scalar control variable:
+\begin{align}
+\ \label{AdvDiff_Linear} \min_{\rho,\vec{w}}~~~\frac{1}{2}\int_0^T\int_{\Omega}{}&(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
+\ \nonumber \text{s.t.}\quad\partial_{t}\rho-\nabla^{2}\rho-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
+&=\nabla\cdot(\rho\nabla{}V_{\text{ext}})+w+f\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \rho&{}=\rho_{0}(\vec{x})\quad\hspace{6.8em}\text{at }t=0,
+\end{align}
+along with the Dirichlet boundary condition \eqref{Dirichlet} or the `Neumann-type' boundary condition:
+\begin{equation}
+\ \label{NoFlux_Linear} \frac{\partial\rho}{\partial{}n}+\rho\frac{\partial{}V_{\text{ext}}}{\partial{}n}+\gamma\int_{\Omega}\rho(r)\rho(r') \frac{ \partial\vec{K}(|r-r'|)}{\partial{}n}~{\rm d}r'=0\quad\text{on }\partial\Omega\times(0,T).
+\end{equation}
+The parameter $\gamma$ in the interaction term is interpreted as in the nonlinear problem above, and can be set to zero, to recover a standard linear advection-diffusion control problem. 
+\vspace{0.75em}
+
+%\textbf{\emph{-- \underline{PDE including diffusion matrix:}}}~~As an extension to this model, we also consider the incorporation of a non-constant (symmetric positive semidefinite) diffusion coefficient matrix $D=D(\vec{x})$ within the PDE model, leading to an optimization problem of the form:
+%\begin{align}
+%\ \label{DiffusionMatrix} \min_{\rho,\vec{w}}~~\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~&{\rm d}x{\rm d}t \\
+%\ \nonumber \text{s.t.}\quad~~\partial_{t}\rho-\nabla\cdot(D(\vec{x})\nabla\rho)+\nabla\cdot(D(\vec{x})\rho\vec{w})={}&\nabla\cdot(D(\vec{x})\rho\nabla{}V_{\text{ext}})\quad\text{on }\Omega\times(0,T), \\
+%\ \nonumber \rho={}&\rho_{0}(\vec{x})\quad\hspace{5.3em}\text{at }t=0,
+%\end{align}
+%along with the Dirichlet boundary condition \eqref{Dirichlet} or no-flux condition:
+%\begin{align}
+%\ \label{NoFlux_DiffusionMatrix} D(\vec{x})\frac{\partial\rho}{\partial{}n}-(D(\vec{x})\rho\vec{w})\cdot\vec{n}+(D(\vec{x})\rho\nabla{}V_{\text{ext}})\cdot\vec{n}=0\quad\text{on }\partial\Omega\times(0,T).
+%\end{align}
+
+%\vspace{0.75em}
+
+%\textbf{\emph{-- \underline{Additional nonlocal integral term:}}}~~Finally, we consider the addition of a nonlocal integral term within the PDE, in order model interactions between individual particles. This is written as follows:
+%\begin{align}
+%\ \label{Nonlocal} \min_{\rho,\vec{w}}~~\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+{}&\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
+%\ \nonumber \text{s.t.}\quad~\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-{}&\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right) \\
+%\ \nonumber &{}=\nabla\cdot(\rho\nabla{}V_{\text{ext}})\quad\text{on }\Omega\times(0,T), \\
+%\ \nonumber \rho&{}=\rho_{0}(\vec{x})\hspace{4em}\text{at }t=0, \\
+%\ \nonumber \rho&{}=0\hspace{5.9em}\text{on }\partial\Omega\times(0,T),
+%\end{align}
+%where $\vec{K}$ denotes some vector function acting on the distance between particles.
+
+[[check sign of integral term in constraint is correct - A: I think so, is in line with code.]]

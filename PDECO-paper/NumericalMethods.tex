@@ -1,0 +1,119 @@
+\subsection{Pseudospectral method for the forward problem}\label{sec:Method_PseudospectralForward}
+
+As described in Section~\ref{sec:Background_Pseudospectral}, we solve the forward problem using
+Chebyshev pseudospectral methods, in particular implemented in Matlab using 2DChebClass~\cite{NGYSK17,2DChebClass}
+%
+The principal novelties of the method concern the computation of convolution integrals and the implementation
+of spatial boundary conditions; the boundary conditions in time will be discussed in the following section.
+
+As described in~\cite{NGYSK17}, the convolution integrals are computed in real space, in contrast to many implementations
+in which they are computed via Fourier transforms.  In this latter case, the domain must be padded to ensure that
+all functions are (approximately) periodic, with suitably large padding regions to ensure that the edges of the 
+physical domain do not interact with each other.  The principal advantage of this method is that it is
+computationally cheap, with requiring only fast Fourier transforms and multiplication of functions.  The 
+disadvantages are that, as above, one needs to pad the domain (which effectively wastes computational power
+in computing a lot of zeros), and the boundary conditions can be challenging to impose on such an extended
+grid.  The spatial method can be implemented by a single matrix--vector multiplication, with the matrix
+precomputed for all time steps and is implemented on the physical domain, allowing efficient implementation
+of the boundary conditions.  In short, for a convolution of functions $f$ and $\rho$,
+\[
+	I_f (\rho)= \int f(\vec{x}-\vec{y}) \rho(\vec{y}) ~ {\rm d}\vec{y}
+\]
+we compute a matrix $M_f$, such that for the discretized vector $\boldsymbol{\rho}$, we may approximate the
+convolution integral via the matrix multiplication $M_f \boldsymbol{\rho} \approx I_f(\rho)$.  Note that
+the matrix $M_f$ is independent of $\rho$, and as such may be precomputed.  In fact, it may be computed in parallel
+for each computational grid point.
+
+As is standard, after discretization, in this case through the use of (mapped) Chebyshev pseudospectral points,
+the forward PDE(s) are converted into a system of ODEs.  For example, the diffusion equation becomes
+\begin{equation}
+	\frac{{\rm d}}{{\rm d} t} \boldsymbol{\rho} = D_2 \boldsymbol{\rho}, \qquad \mbox{+ IC and BC},
+	\label{eq:DiscretizedDiffusion}
+\end{equation}
+where $\boldsymbol{\rho}$ is a vector of values of the solution at each of the Chebyshev points, and $D_2$ is the
+Chebyshev second order differentiation matrix.
+In the interior of the domain, this can be solved using essentially
+any ODE solver; the challenge lies in imposing the correct spatial boundary conditions.  One standard approach
+is to modify the matrix on the right hand side of \eqref{eq:DiscretizedDiffusion} so that the boundary conditions
+are automatically satisfied.  This is known as `boundary-boardering'~\cite{B01}.  For simple boundary conditions, such as
+homogenenous Dirichlet or Neumann, such an approach is relatively straightforward.  For example, for homogeneous Dirichlet,
+assuming that the initial conditions satisfy the boundary conditions, it is sufficient to set the first and last rows
+and columns of $D2$ to zero.  For homogeneous Neumann, there is a similar approach (see~\cite{T00}), which becomes
+more involved with more complex right hand sides of the PDE.  Another approach is to restrict the computation
+to interpolants (solutions) which satisfy the boundary conditions; we do not discuss this here as it is highly
+non-trivial for the non-linear, non-local problems that we are interested in.
+
+Here we take a more general approach.  The imposition of spatial boundary conditions can be seen as 
+extending the discretized system of ODEs to a system of differential-algebraic equations, where the discretized
+PDE is solved on the interior of the domain, and the boundary conditions correspond to algebraic equations.
+There are various numerical methods to solve such differential-algebraic equations, e.g.~\cite{SEK99}.
+The main advantage here is that the numerical method does not have to be explicitly adapted when 
+one changes the boundary conditions; one simply has to specify different algebraic constraints that correspond
+to the boundary conditions.  In fact, the 2DChebClass code automatically identifies the boundary of various
+geometries, allowing a simple implementation of this approach.
+
+\subsection{Pseudospectral method for the adjoint equation}\label{sec:Method_PseudospectralPDECO}
+
+For the optimization problem, we have a pair of coupled PDEs, the forward PDE with an initial time condition and the adjoint equation with a final time condition. Hence, one cannot use a standard time-stepping scheme, due to the negative Laplacian having the same sign as the time derivative
+in the state equation, and the opposite sign in the adjoint equation.(+++ Note that above it is written differently: both terms on LHS, therefore opposite true, may be confusing+++)
+This must be accounted for to ensure stable solutions. One approach
+is to apply a backward Euler method for the time derivative in the state equation, with the adjoint operator applied to the adjoint equation, whereupon a huge-scale coupled
+system of equations is obtained from matrices arising at each time-step. These may be tackled using a preconditioned iterative method, following the
+methodology in \cite{PS13,PSW12,SW10}, for instance.  As above,
+as well as boundary conditions in time, there are also boundary conditions in space.  In order to utilise our efficient and accurate forward solver, we reverse time in the adjoint problem, resulting in a set of equations with initial conditions, so that the pseudospectral method can be applied, as described in Section \ref{sec:Method_PseudospectralForward}. However, the forward and adjoint equations are coupled non-locally in time; the adjoint equation requires the value of the state variable at later times, so the two equations cannot be solved simultaneously. This difficulty is addressed using the fixed point algorithm presented in the next section.  
+
+\subsection{Optimization Solver}\label{sec:Method_Solver}
+The remaining challenges are to (i) determine the time discretization for the optimality system;
+(ii) choose a suitable optimization scheme. For (i), we again choose a Chebyshev pseudospectral scheme (1D in time), which, assuming that the solutions are smooth in time, leads to exponentially accurate interpolation. In [[REF]], we compare this approach to a standard finite difference scheme. As mentioned in Section \ref{sec:Method_PseudospectralForward}, the system of ODEs and the algebraic-differential equations, resulting from applying the pseudospectral method, can be solved with a standard ODE solver. In this paper, the Matlab inbuilt ODE solver \texttt{ode15s} is used.
+For (ii), we note that the choice of optimization solver depends strongly on the nature of the solution, and the amount of information available.  For ease of implementation, and to remove the 
+need to, e.g.\ analytically compute the Jacobian, we use a fixed point method. However, we note that this approach is highly modular and it is straightforward to replace this solver with any other optimization routine.
+In order to solve an optimality system of the form derived in Section \ref{sec:Optimality}, we adapt a fixed point method, also known as sweeping algorithm in the literature, for example in~\cite{ACFK}, to solve the system of equations iteratively. 
+\\
+\\
+During each iteration, denoted by $i$, the following steps are computed:\\
+1. The solution to the forward equation is computed, using a guess for the control $\vec{w}_i$ as input variable, alongside the initial condition $\rho(\vec{x},0)$. \\
+2. The adjoint equation is solved, using $\vec{w}_i$, and the solution $\boldsymbol\rho_i$ from the forward solve, as inputs. This circumvents the issue resulting from the non-local coupling in time, mentioned in Section \ref{sec:Method_PseudospectralPDECO}, since $\boldsymbol\rho_i$ contains the solution for all times $t \in [0,T]$. The final time condition $\adj(\vec{x},T)$ must be provided and time is reversed in the adjoint equation, as explained in Section \ref{sec:Method_PseudospectralPDECO}. The result $\boldsymbol \adj_{i,T-t}$ is transformed back to $\boldsymbol \adj_{i,t}$, to proceed.\\
+3. The gradient equation is solved, given the solutions $\boldsymbol\rho_i$ and $\boldsymbol \adj_i$. This results in a new control value $\vec{w}_g$. \\
+4. Finally, the update $\vec{w}_{i+1}$ is a linear combination of the current guess $\vec{w}_i$, and $\vec{w}_{g}$, the value obtained from solving the gradient equation:
+\begin{align*}
+\vec{w}_{i+1} = (1-\lambda)\vec{w}_{i} + \lambda \vec{w}_{g}.
+\end{align*}
+This updating method is called a mixing scheme, with mixing rate $\lambda$, and is known to stabilise fixed point methods, ++ add references ++.
+The guess for the control is updated from $\vec{w}_i$ to $\vec{w}_{i+1}$ and the steps described above are repeated until the method converges. 
++++ Notation of $\boldsymbol \rho_i$ and $\boldsymbol \adj_i$ needs to be decided and made consistent. bold for indicating that it's discretized as in Section \ref{sec:Method_PseudospectralForward}. +++
+\\
+\\
+Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is equivalent to the updating scheme presented in~\cite{Burger1}. 
+Note that, while the solutions $\boldsymbol\rho_i$ and $\boldsymbol \adj_i$ change in each iteration, the initial condition $\rho(\vec{x},0)$ and final time condition $\adj(\vec{x},T)$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $\vec{w}_i$.
+
+The convergence of the scheme is measured by computing the error between $\vec{w}_{i}$ and $\vec{w}_{g}$. If this error is lower than a set tolerance, the optimality system is self-consistent. This implies that the solution triplet ($\bar{\rho},\bar{{w}},\adj$) (++ check notation here - consistent with Section 3? ++) solves the optimality system, and is therefore an optimal solution to the PDE-constrained optimization problem of interest.
+All errors in Section \ref{sec:Method_Validation} and Section \ref{sec:Expts} are calculated as follows, where $y$ is the variable of interest and $y_R$ is the reference value that $y$ is compared to. For example, when measuring convergence of the fixed point scheme, $y = \vec{w}_g$ and $y_R = \vec{w}_i$. Alternatively, when investigating a known test problem, as considered in Section \ref{sec:Method_Validation}, $y$ is a numerical solution and $y_R$ is an exact solution.\\ 
+The relative $L^2$ error in the spatial direction is:
+\begin{align*}
+\mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) + 10^{-10}||_{L^2(\Omega)}},
+\end{align*}
+where the small additional term on the denominator prevents division by zero.
+Furthermore, the absolute $L^2$ error is:
+\begin{align*}
+\mathcal{E}_{Abs}(t) = || y(x,t) - y_R(x,t)||_{L^2(\Omega)} ,
+\end{align*}
+Then an $L_\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$ and $\mathcal{E}_{Abs}$:
+\begin{align*}
+\mathcal{E} = \max_{t \in [0,T]}\left[\min\left(\mathcal{E}_{Rel}(t), \mathcal{E}_{Abs}(t)\right)\right].
+\end{align*}
+The minimum between absolute and relative spatial error is taken to avoid choosing an erogenously large relative error, caused by division of one small term by another.
+\\
+As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality systems of interest. While it is very robust, it is also much slower in comparison to the fixed point method, which is working reliably for the types of problems considered above.
+\\
+\\
+\\
+(++ include shortcomings of the method? (e.g. advection dominated problems, good initial guess for BVP solvers) ++)
+
+
+
+
+
+\subsection{Validation}\label{sec:Method_Validation}
+
+Specific test problems are given in Appendix \ref{app:TestProblems}. 
+Further tests to validate the method are presented in Appendix \ref{app:TestProblemsPerturbed}.

@@ -1,0 +1,209 @@
+In order to obtain first-order optimality conditions for the models \eqref{AdvDiff}, and \eqref{AdvDiff_Linear}, we apply an \emph{optimize-then-discretize method}, meaning we derive appropriate conditions on the continuous level and then consider suitable discretization strategies. The alternative to this approach is the \emph{discretize-then-optimize} method, however we select the former in order to obtain numerical solutions that are more faithful to the continuous first-order optimality conditions. We highlight that an area of active interest in the PDE-constrained optimization community is to construct discretization schemes such that the two approaches coincide (see \cite{CollisHeinkenschloss} for a fundamental example of a problem for which different results are obtained using either method).
+
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Nonlinear control with Dirichlet boundary condition:}}}~~We first consider the advection--diffusion constrained optimization problem \eqref{AdvDiff} with the Dirichlet boundary condition \eqref{Dirichlet}. The interaction term is excluded ($\gamma = 0$), for readability. This leads to the continuous Lagrangian:
+\begin{align}
+\ \label{Lagrangian} \mathcal{L}(\rho,\vec{w},\adj_1,\adj_2)={}&\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-\nabla\cdot(\rho\nabla{}V_{\text{ext}})-f\right)\adj_1~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad-\int_0^T\int_{\partial\Omega}\rho{}\adj_2~{\rm d}s{\rm d}t,
+\end{align}
+where $\adj_1$ and $\adj_2$ correspond to the portions of the \emph{adjoint variable} $\adj$ arising in the interior of the spatial domain $\Omega$ and its boundary $\partial\Omega$, respectively.
+
+To obtain first-order optimality conditions, we first follow standard working for deriving the \emph{adjoint equation} for time-dependent PDE-constrained optimization, see \cite[Chapter 3]{Troeltzsch} for instance. We obtain that the derivative of $\mathcal{L}$ in the direction $\rho$ must satisfy $D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho=0$ for all $\rho$ such that $\rho(\vec{x},0)=0$. Now, from \eqref{Lagrangian},
+\begin{align*}
+\ D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho={}&\int_0^T\int_{\Omega}(\bar{\rho}-\widehat{\rho})\rho~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\bar{w})-\nabla\cdot(\rho\nabla{}V_{\text{ext}})\right)\adj_1~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\partial\Omega}\rho{}\adj_2~{\rm d}s{\rm d}t,
+\end{align*}
+whereupon upon integrating by parts and applying Green's formula, any sufficiently smooth $\rho$ such that $\rho(\vec{x},0)=0$ satisfies
+\begin{align}
+\ \nonumber 0={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}-\bar{w}\cdot\nabla{}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad+\int_0^T\int_{\Omega}\big[\nabla\cdot(\adj_{1}\nabla\rho)-\nabla\cdot(\rho\nabla{}\adj_{1})-\nabla\cdot(\rho{}\adj_{1}\bar{w})+\nabla\cdot(\rho{}\adj_{1}\nabla{}V_{\text{ext}})\big]~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x-\int_0^T\int_{\partial\Omega}\adj_2\rho~{\rm d}s{\rm d}t \\
+\ \label{OptCondrho} ={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}-\bar{w}\cdot\nabla{}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x+\int_0^T\int_{\partial\Omega}\adj_1\frac{\partial\rho}{\partial{}n}~{\rm d}s{\rm d}t \\
+\ \nonumber &\quad+\int_0^T\int_{\partial\Omega}\left[-\frac{\partial{}\adj_1}{\partial{}n}-\adj_{1}\bar{w}\cdot\vec{n}+\adj_{1}\frac{\partial{}V_{\text{ext}}}{\partial{}n}-\adj_2\right]\rho~{\rm d}s{\rm d}t.
+\end{align}
+
+Noting first that \eqref{OptCondrho} must hold for all $\rho\in{}C_0^{\infty}(\Omega\times(0,T))$ (i.e., where $\rho(\vec{x},T)$, $\rho(\vec{x},0)$, $\rho$ vanish on $\Omega$, and $\frac{\partial\rho}{\partial{}n}$ vanishes on $\partial\Omega$), and observing that $C_0^{\infty}(\Omega\times(0,T))$ is dense on $L^2(\Omega\times(0,T))$, we obtain the adjoint PDE:
+\begin{equation*}
+\ -\partial_{t}\adj_1-\nabla^{2}\adj_1-\vec{w}\cdot\nabla{}\adj_1+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_1=\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T).
+\end{equation*}
+Removing the restriction that $\rho(\vec{x},T)$ vanishes on $\Omega$, and arguing similarly, leads to the adjoint boundary condition $\adj_1(\vec{x},T)=0$. From here, we may similarly remove the condition that $\frac{\partial\rho}{\partial{}n}$ vanishes on $\partial\Omega$ to conclude that $\adj_1=0$ on $\partial\Omega\times(0,T)$. Setting the final integral term in \eqref{OptCondrho} to zero then gives the relation between $\adj_1$ and $\adj_2$. Putting all the pieces together, and relabelling the $\adj_1$ as the \emph{adjoint variable} $\adj$, we obtain the complete adjoint problem:
+\begin{align}
+\ \label{Adjoint} -\partial_{t}\adj-\nabla^{2}\adj-\vec{w}\cdot\nabla{}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T, \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T).
+\end{align}
+
+Searching for the stationary point upon differentiation with respect to each component of $\vec{w}$, using similar working as above, gives:
+\begin{equation*}
+\ D_{w_i}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)w_i=\beta\int_0^T\int_{\Omega}\bar{w}_{i}w_i~{\rm d}x{\rm d}t-\int_0^T\int_{\Omega}\frac{\partial}{\partial{}x_i}(\bar{\rho}w_i)\adj_1~{\rm d}x{\rm d}t.
+\end{equation*}
+Therefore, using integration by parts,
+\begin{equation*}
+\ 0=\beta\int_0^T\int_{\Omega}\bar{w}_{i}w_i~{\rm d}x{\rm d}t+\int_0^T\int_{\Omega}\bar{\rho}\frac{\partial{}\adj_1}{\partial{}x_i}w_i~{\rm d}x{\rm d}t-\int_0^T\int_{\Omega}\frac{\partial}{\partial{}x_i}(\bar{\rho}\adj_{1}w_i)~{\rm d}x{\rm d}t,
+\end{equation*}
+whereupon considering the derivatives with respect to the all entries of $\vec{w}$, and applying Green's formula, leads to the \emph{gradient equation}:
+\begin{equation}
+\ \label{Gradient} \beta\vec{w}+\rho\nabla{}\adj=\vec{0}.
+\end{equation}
+
+To summarize, the complete first-order optimality system for the problem \eqref{AdvDiff} with the Dirichlet boundary condition $\rho=0$ includes the PDE constraint itself (often referred to as the \emph{state equation}), the adjoint problem \eqref{Adjoint}, and the gradient equation \eqref{Gradient}.
+
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Nonlinear control with `no-flux type' boundary condition:}}}~~To provide an illustration of how the same working may be applied to problem \eqref{AdvDiff} with the no-flux boundary condition \eqref{NoFlux}, and $\gamma = 0$, we briefly consider the Lagrangian given by:
+\begin{align*}
+\ \mathcal{L}(\rho,\vec{w},\adj_1,\adj_2)={}&\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-\nabla\cdot(\rho\nabla{}V_{\text{ext}})-f\right)\adj_1~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\partial\Omega}\left(\frac{\partial\rho}{\partial{}n}-\rho\vec{w}\cdot\vec{n}+\rho\frac{\partial{}V_{\text{ext}}}{\partial{}n}\right)\adj_2~{\rm d}s{\rm d}t.
+\end{align*}
+Solving $D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho=0$ for all $\rho$ such that $\rho(\vec{x},0)=0$ gives that:
+\begin{align*}
+\ 0={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}-\bar{w}\cdot\nabla{}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+\ &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x+\int_0^T\int_{\partial\Omega}(\adj_1-\adj_2)\frac{\partial\rho}{\partial{}n}~{\rm d}s{\rm d}t \\
+\ &\quad-\int_0^T\int_{\partial\Omega}\left[\frac{\partial{}\adj_1}{\partial{}n}+(\adj_{1}-\adj_{2})\left(\bar{w}\cdot\vec{n}-\frac{\partial{}V_{\text{ext}}}{\partial{}n}\right)\right]\rho~{\rm d}s{\rm d}t.
+\end{align*}
+Applying the same reasoning as above then leads to the adjoint problem:
+\begin{align}
+\ \label{Adjoint_NoFlux} -\partial_{t}\adj-\nabla^{2}\adj-\vec{w}\cdot\nabla{}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T, \\
+\ \nonumber \frac{\partial{}\adj}{\partial{}n}={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T),
+\end{align}
+along with the state equation as in \eqref{AdvDiff}, and the gradient equation \eqref{Gradient}.
+
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Linear control with Dirichlet boundary condition:}}}~~We next consider the problem \eqref{AdvDiff_Linear} with the Dirichlet boundary condition \eqref{Dirichlet}, and $\gamma = 0$. This leads to the continuous Lagrangian:
+\begin{align}
+\ \label{Lagrangian_Linear} \mathcal{L}(\rho,w,\adj_1,\adj_2)={}&\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho-\nabla\cdot(\rho\nabla{}V_{\text{ext}})-w-f\right)\adj_1~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad-\int_0^T\int_{\partial\Omega}\rho{}\adj_2~{\rm d}s{\rm d}t.
+\end{align}
+
+Solving $D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho=0$ for all $\rho$ such that $\rho(\vec{x},0)=0$ gives that:
+\begin{align}
+\ \label{OptCondrho_Linear} ={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+\ \nonumber &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x+\int_0^T\int_{\partial\Omega}\adj_1\frac{\partial\rho}{\partial{}n}~{\rm d}s{\rm d}t \\
+\ \nonumber &\quad+\int_0^T\int_{\partial\Omega}\left[-\frac{\partial{}\adj_1}{\partial{}n}+\adj_{1}\frac{\partial{}V_{\text{ext}}}{\partial{}n}-\adj_2\right]\rho~{\rm d}s{\rm d}t.
+\end{align}
+Applying the same reasoning as above then leads to the adjoint problem:
+\begin{align}
+\ \label{Adjoint_Linear} -\partial_{t}\adj-\nabla^{2}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T, \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T).
+\end{align}
+
+
+%To obtain first-order optimality conditions, we first follow standard working for deriving the \emph{adjoint equation} for time-dependent PDE-constrained optimization, see \cite[Chapter 3]{Troeltzsch} for instance. We obtain that the derivative of $\mathcal{L}$ in the direction $\rho$ must satisfy $D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho=0$ for all $\rho$ such that $\rho(\vec{x},0)=0$. Now, from \eqref{Lagrangian_Linear},
+%\begin{align*}
+%\ D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho={}&\int_0^T\int_{\Omega}(\bar{\rho}-\widehat{\rho})\rho~{\rm d}x{\rm d}t \\
+%\ &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho-\nabla\cdot(\rho\nabla{}V_{\text{ext}})\right)\adj_1~{\rm d}x{\rm d}t \\
+%\ &\quad-\int_0^T\int_{\partial\Omega}\rho{}\adj_2~{\rm d}s{\rm d}t,
+%\end{align*}
+%whereupon upon integrating by parts and applying Green's formula, any sufficiently smooth $\rho$ such that $\rho(\vec{x},0)=0$ satisfies
+%\begin{align}
+%\ \nonumber 0={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+%\ \nonumber &\quad+\int_0^T\int_{\Omega}\big[\nabla\cdot(\adj_{1}\nabla\rho)-\nabla\cdot(\rho\nabla{}\adj_{1})+\nabla\cdot(\rho{}\adj_{1}\nabla{}V_{\text{ext}})\big]~{\rm d}x{\rm d}t \\
+%\ \nonumber &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x-\int_0^T\int_{\partial\Omega}\adj_2\rho~{\rm d}s{\rm d}t \\
+%\ \label{OptCondrho_Linear} ={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+%\ \nonumber &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x+\int_0^T\int_{\partial\Omega}\adj_1\frac{\partial\rho}{\partial{}n}~{\rm d}s{\rm d}t \\
+%\ \nonumber &\quad+\int_0^T\int_{\partial\Omega}\left[-\frac{\partial{}\adj_1}{\partial{}n}+\adj_{1}\frac{\partial{}V_{\text{ext}}}{\partial{}n}-\adj_2\right]\rho~{\rm d}s{\rm d}t.
+%\end{align}
+
+%Noting first that \eqref{OptCondrho_Linear} must hold for all $\rho\in{}C_0^{\infty}(\Omega\times(0,T))$ (i.e., where $\rho(\vec{x},T)$, $\rho(\vec{x},0)$, $\rho$ vanish on $\Omega$, and $\frac{\partial\rho}{\partial{}n}$ vanishes on $\partial\Omega$), and observing that $C_0^{\infty}(\Omega\times(0,T))$ is dense on $L^2(\Omega\times(0,T))$, we obtain the adjoint PDE:
+%\begin{equation*}
+%\ -\partial_{t}\adj_1-\nabla^{2}\adj_1+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_1=\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T).
+%\end{equation*}
+%Removing the restriction that $\rho(\vec{x},T)$ vanishes on $\Omega$, and arguing similarly, leads to the adjoint boundary condition $\adj_1(\vec{x},T)=0$. From here, we may similarly remove the condition that $\frac{\partial\rho}{\partial{}n}$ vanishes on $\partial\Omega$ to conclude that $\adj_1=0$ on $\partial\Omega\times(0,T)$. Setting the final integral term in \eqref{OptCondrho_Linear} to zero then gives the relation between $\adj_1$ and $\adj_2$. Putting all the pieces together, and relabelling the $\adj_1$ as the \emph{adjoint variable} $\adj$, we obtain the complete adjoint problem:
+%\begin{align}
+%\ \label{Adjoint_Linear} -\partial_{t}\adj-\nabla^{2}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+%\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T, \\
+%\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T).
+%\end{align}
+
+Searching for the stationary point upon differentiation with respect to $w$, using similar working as above, gives:
+\begin{equation*}
+\ D_w\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)w=\beta\int_0^T\int_{\Omega}\bar{w}w~{\rm d}x{\rm d}t+\int_0^T\int_{\Omega}\bar{w}\adj_1~{\rm d}x{\rm d}t,
+\end{equation*}
+leading to the \emph{gradient equation}:
+\begin{equation}
+\ \label{Gradient_Linear} \beta{}w+\adj=0.
+\end{equation}
+
+To summarize, the complete first-order optimality system for the problem \eqref{AdvDiff_Linear} with the Dirichlet boundary condition $\rho=c$, where $c \in \mathbb{R}$, includes the PDE constraint itself (often referred to as the \emph{state equation}), the adjoint problem \eqref{Adjoint_Linear}, and the gradient equation \eqref{Gradient_Linear}.
+
+\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Linear control with `no-flux type' boundary condition:}}}~~To provide an illustration of how the same working may be applied to problem \eqref{AdvDiff_Linear} with the no-flux boundary condition \eqref{NoFlux_Linear}, and $\gamma = 0$, we briefly consider the Lagrangian given by:
+\begin{align*}
+\ \mathcal{L}(\rho,\vec{w},\adj_1,\adj_2)={}&\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\Omega}\left(\partial_{t}\rho-\nabla^{2}\rho-\nabla\cdot(\rho\nabla{}V_{\text{ext}})-w-f\right)\adj_1~{\rm d}x{\rm d}t \\
+\ &\quad-\int_0^T\int_{\partial\Omega}\left(\frac{\partial\rho}{\partial{}n}+\rho\frac{\partial{}V_{\text{ext}}}{\partial{}n}\right)\adj_2~{\rm d}s{\rm d}t.
+\end{align*}
+%Solving $D_{\rho}\mathcal{L}(\bar{\rho},\bar{w},\adj_1,\adj_2)\rho=0$ for all $\rho$ such that $\rho(\vec{x},0)=0$ gives that:
+%\begin{align*}
+%\ 0={}&-\int_0^T\int_{\Omega}(-\partial_{t}\adj_{1}-\nabla^{2}\adj_{1}+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj_{1}+\widehat{\rho}-\bar{\rho})\rho~{\rm d}x{\rm d}t \\
+%\ &\quad+\int_{\Omega}\adj(\vec{x},T)\rho(\vec{x},T)~{\rm d}x+\int_0^T\int_{\partial\Omega}(\adj_1-\adj_2)\frac{\partial\rho}{\partial{}n}~{\rm d}s{\rm d}t \\
+%\ &\quad-\int_0^T\int_{\partial\Omega}\left[\frac{\partial{}\adj_1}{\partial{}n}-(\adj_{1}-\adj_{2})\frac{\partial{}V_{\text{ext}}}{\partial{}n}\right]\rho~{\rm d}s{\rm d}t.
+%\end{align*}
+Applying the same reasoning as above then leads to the adjoint problem:
+\begin{align*}
+\ -\partial_{t}\adj-\nabla^{2}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T, \\
+\ \nonumber \frac{\partial{}\adj}{\partial{}n}={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T),
+\end{align*}
+along with the state equation as in \eqref{AdvDiff_Linear}, and the gradient equation \eqref{Gradient_Linear}.
+
+\vspace{0.75em}
+
+%\textbf{\emph{-- \underline{PDE including diffusion matrix:}}}~~Applying similar working to the problem \eqref{DiffusionMatrix} leads to the state equation:
+%\begin{align*}
+%\ \partial_{t}\rho-\nabla\cdot(D(\vec{x})\nabla\rho)+\nabla\cdot(D(\vec{x})\rho\vec{w})={}&\nabla\cdot(D(\vec{x})\rho\nabla{}V_{\text{ext}})\quad\text{on }\Omega\times(0,T), \\
+%\ \nonumber \rho={}&\rho_{0}(\vec{x})\quad\hspace{5.3em}\text{at }t=0,
+%\end{align*}
+%the adjoint equation:
+%\begin{align*}
+%\ -\partial_{t}\adj-\nabla\cdot(D(\vec{x})\nabla{}\adj)-D(\vec{x})\vec{w}\cdot\nabla{}\adj+D(\vec{x}){}&\nabla{}V_{\text{ext}}\cdot\nabla{}\adj \\
+%\ ={}&\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+%\ \nonumber \adj={}&0\quad\hspace{1.8em}\text{at }t=T,
+%\end{align*}
+%and the gradient equation:
+%\begin{equation*}
+%\ \beta\vec{w}+D(\vec{x})\rho\nabla{}\adj=\vec{0}.
+%\end{equation*}
+%We highlight that the Dirichlet boundary condition $\rho=0$ leads to the adjoint boundary condition $\adj=0$. Further, the no-flux condition \eqref{NoFlux_DiffusionMatrix} for $\rho$ leads to the adjoint boundary condition $\frac{\partial{}\adj}{\partial{}n}=0$.
+
+%\vspace{0.75em}
+
+\textbf{\emph{-- \underline{Additional nonlocal integral term:}}}~~Finally, applying this methodology to the problem \eqref{AdvDiff}, with $\gamma \neq 0$, results in obtaining the state equation:
+\begin{align*}
+\ \partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-{}&\gamma \nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right) \\
+\ &{}=\nabla\cdot(\rho\nabla{}V_{\text{ext}})\quad\text{on }\Omega\times(0,T), \\
+\ \rho&{}=\rho_{0}(\vec{x})\hspace{4em}\text{at }t=0,
+\end{align*}
+with boundary condition \eqref{Dirichlet} or \eqref{NoFlux}.
+The adjoint equation is:
+\begin{align*}
+\ -\partial_{t}\adj-\nabla^{2}\adj-{}&\vec{w}\cdot\nabla{}\adj+\nabla{}V_{\text{ext}}\cdot\nabla{}\adj+\left(\gamma\int_{\Omega}\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\cdot\nabla_{r}\adj(r) \\
+\ &+\gamma\int_{\Omega}\left(\rho(r')\vec{K}(|r-r'|)\cdot\nabla_{r'}\adj(r')\right)~{\rm d}r'=\rho-\widehat{\rho}\quad\text{on }\Omega\times(0,T), \\
+\ &\hspace{16.15em}\adj=0\quad\hspace{1.8em}\text{at }t=T. 
+\end{align*}
+The boundary condition for the adjoint equation, corresponding to \eqref{Dirichlet} in the state equation is:
+\begin{align*}
+\ \adj=0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T),
+\end{align*}
+regardless of the value of $c$ in \eqref{Dirichlet}.
+The boundary condition for the adjoint corresponding to boundary condition \eqref{NoFlux} is: 
+\begin{align*}
+\frac{\partial{}\adj}{\partial{}n}={}&0\quad\hspace{1.8em}\text{on }\partial\Omega\times(0,T).
+\end{align*}
+Note that the boundary conditions for the adjoint equations remain unchanged when adding an interaction term, compare to \eqref{Adjoint} and \eqref{Adjoint_NoFlux}. This applies to the linear case as well and is therefore ommited here.
+Finally, the gradient equation is:
+\begin{equation*}
+\ \beta\vec{w}+\rho\nabla{}\adj=\vec{0}.
+\end{equation*}
+
+[[check against Dante's papers]]

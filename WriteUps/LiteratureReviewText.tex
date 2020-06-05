@@ -1,0 +1,181 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{{p}_Q}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{p_{\partial Q}}
+\newcommand{\Con}{{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+
+\section*{Literature Review on Related Work}
+
+While mean-field games were first introduced by Lasry and Lion, in \cite{Lasry2007}, and independently by Huang, Caines and Malham\'e, in \cite{Huang1}, under the name of Nash certainty equivalence, the optimal control of this class of problems is a new area of research. The main difficulty in the optimal control of mean-field equations is a non-linear, non-local particle interaction term, which arises in the limiting process. Therefore, standard results in optimal control theory cannot be readily applied, and new approaches have to be developed to address theoretical and numerical challenges.
+\\
+\\
+There are two type of models that most recent work has focussed on. The most popular model is a deterministic microscopic model, which is a generalization of the well-known Cucker-Smale model \cite{CuckerSmale1}\cite{CuckerSmale2}, and the corresponding Vlasov-type PDE in the mean-field limit. For control problems involving this class of models, the work by Fornasier et al. provides a range of theoretical results on the convergence of the microscopic optimal control problem to a corresponding macroscopic problem, using methods of optimal transport and a $\Gamma$-limit argument, proving existence of optimal controls in the mean-field setting, see \cite{Fornasier_2014},
+\cite{Fornasier_2014no2}
+and \cite{fornasier_lisini_orrieri_savare_2019}, as well as the review paper \cite{Fornasier_20161no1}. The work focusses on sparse control strategies of one or more agents, influencing a larger crowd.
+Additionally, in \cite{piccoli2014no1}, a sparse control strategy is designed on the macroscopic level, proving that such a strategy results in flocking for any initial condition of the kinetic Cucker-Smale PDE model.
+Further to these results, in \cite{burger2019meanfield}, in a different approach, an $L_2$ calculus is developed. Based on this, optimality conditions are derived and convergence to the mean-field optimal control problem are proved.
+Besides these results on the theoretical aspect, some numerical papers have been published, discussing the dynamics of a crowd controlled by a few external agents. In \cite{burger2019instantaneous} a sparse control strategy is discussed and in \cite{burger2016controlling} different control strategies through the external agents are considered. In both papers a Strang-Splitting scheme is applied, using a semi-Lagrangian solver in space and a finite-volume approach in velocity space, to solve the optimal control problem. The numerical results verify the convergence of the microscopic control problem to its mean-field limit.
+Furthermore, in \cite{albi2016selective} different selective control strategies are considered, one realised by a homogeneous selective function, another by considering partial control domains. Numerical experiments employ an iterative strategy, considering a transport and an interaction step. The interaction term is calculated by stochastic approximation, via a Boltzmann-type equation.
+\\
+\\
+Fewer work has been done on a stochastic microscopic dynamic and the corresponding Fokker-Planck PDE in the mean-field limit. On the theoretical aspect, in \cite{albi2016mean}, the existence of optimal controls for both versions of the problem are proved and a rigorous derivation of first-order optimality conditions is given. 
+Following this, \cite{carrillo2019mean} discusses the existence and regularity of an optimal control problem of this type on periodic domains, including the well-posedness of the Fokker-Planck equation. In \cite{carrillo2018no1} mostly numerically and in \cite{Pinnau_2017} analytically, the convergence of the microscopic optimal control problem to its mean-field limit is proved. It is shown that under mild assumptions, a uniform consensus is reached with exponential convergence in time.
+On numerical results, in \cite{carrillo2018no1}, again Strang-Splitting is employed, where a discontinuous Galerkin scheme is used to solve the mean-field equation and transport and diffusion steps are solved iteratively. In \cite{albi2016mean}, an optimal control hierarchy is proposed to solve this type of problem. An instantaneous control and a binary Boltzmann-type control are considered as a hierarchy of suboptimal controls and compared to the mean-field optimal control approach. The mean-field first-order optimality system is solved using a Chang-Cooper scheme for the forward equation, finite differences for the adjoint equation, while approximating the integrals using a Monte-Carlo scheme. These two are coupled by a sweeping algorithm, where updates are done through the gradient equation.
+Some more numerics is done in \cite{Pinnau_2017}, on a porus media version of the Fokker-Planck equation.
+
+More Boltzmann-type approaches to solving the optimal control problem are discussed in \cite{Albi_2014no1} and \cite{albi2014kinetic}. Only steady state solutions to a Fokker-Planck-type PDE are considered.
+\\
+\\
+The three most important papers related to work are \cite{albi2016mean},\cite{carrillo2018no1} and \cite{Pinnau_2017}, since the microscopic dynamics is stochastic, and the mean-field equation of Fokker-Planck type. Furthermore, \cite{albi2016mean} and \cite{carrillo2018no1} cover no-flux boundary conditions, which is one of two configurations of this paper. This choice is not common;  most papers consider the particle distribution to be of compact support and therefore no boundary conditions are applied, see for example \cite{burger2019meanfield}, \cite{fornasier_lisini_orrieri_savare_2019} or \cite{burger2016controlling}.
+While \cite{albi2016mean} considers a flow-type control, \cite{carrillo2018no1} and \cite{Pinnau_2017} work on control through the interaction term, to reach a consensus of the agents.
+In that sense, the work by \cite{albi2016mean} is the closest related to the work presented in this paper.
+\\
+\\
+As described above, some numerical methods have been developed for solving optimal control problems involving non-local, non-linear PDEs. However, it takes a considerable amount of computational effort to solve this type of problem and the accuracy of solutions is not very high.   (+ dimensionality, + sources++)
+This paper presents a new numerical framework for solving these type of problems efficiently and accurately. In order to do so, pseudospectral methods are used to discretize space and time domains, and a multiple shooting approach is taken, to solve the resulting first-order optimality system. 
+\\
+\\
+Multiple shooting for optimal control problems has been introduced by ++,++. Their work is treating direct and indirect multiple shooting methods. The first is dealing with the initial statement of an optimal control problem directly, while the indirect method focusses on solving the first-order optimality system instead.
+The solvers used on each time interval in these papers are ++ ++. Please see section ++ for a detailed description of the multiple shooting algorithm we propose.
+
+
+
+
+\subsection*{Papers Involving Stochastic Dynamics}
+\cite{albi2016mean} 
+
+
+
+\subsection*{Papers Involving Deterministic Dynamics}
+\cite{albi2016no2}
+\cite{albi2016selective} (Cucker-Smale)
+\cite{Fornasier_2014}
+\cite{Fornasier_2014no2}
+\cite{fornasier_lisini_orrieri_savare_2019}
+\cite{piccoli2014no1} (Cucker-Smale)
+
+
+\subsection*{Theoretical Papers}
+\cite{albi2016mean} (existence of our type of optimal controls)\\
+\cite{burger2019meanfield} (optimality conditions, convergence to mean field )\\
+
+\cite{carrillo2018no1} (well posedness of the mean field equation and the microscopic model, large time behaviour and consensus formation)\\
+\cite{carrillo2019mean} (existence and regularity of the solution of the OCP, well posedness of forward problem)\\
+\cite{Fornasier_2014}( convergence of microscopic to macroscopic OCP, gamma limit)\\
+\cite{Fornasier_2014no2} (compare to above)\\
+\cite{fornasier_lisini_orrieri_savare_2019} (existence and consistency of mean field OCP, gamma convergence)\\
+\cite{piccoli2014no1} (well posedness of the constrained Cucker-Smale equation)\\
+\cite{Pinnau_2017} (some convergence results)
+
+\subsection*{Numerical Papers}
+\cite{albi2016mean} (Chang Cooper, Finite Volumes, finite differences, Monte Carlo,...),\\
+\cite{albi2016no2} (Compass search method, fmincon)\\
+\cite{albi2014kinetic} (steady state fokker - planck only)\\
+\cite{albi2016selective} (comparing two control approaches, stochastic approximation of interaction, iterative solving with transport and interactions step)\\
+\cite{burger2019instantaneous} (strang splitting scheme, semi Lagrangian, finite volume)\\
+\cite{burger2016controlling} (compare to \cite{burger2019instantaneous}, this one is older!)\\
+\cite{carrillo2018no1}  (implicit finite difference for inverse distribution)\\
+\cite{Pinnau_2017} (Galerkin scheme, split transport and diffusion, iterative)
+\subsection*{Leader-Follower Interaction}
+\cite{albi2016no2}
+\cite{Albi_2014no1} (compare to \cite{albi2014kinetic} )
+\cite{burger2019instantaneous}
+
+\subsection*{Relevant Boundary Conditions}
+\cite{albi2016mean} (no flux)
+\cite{carrillo2018no1} (no flux)
+\cite{carrillo2019mean} (periodic boundary data)
+
+
+\subsection*{Control Types}
+\cite{albi2016mean} (flow control)\\
+\cite{albi2016no2} (minimizing total mass of followers)\\
+\cite{albi2014kinetic} (control via interaction term)\\
+\cite{albi2016selective} (control function vs control region, sparse control, flocking)\\
+\cite{Albi_2014no1}(embedded in microscopic interactions)\\
+\cite{burger2019meanfield}  (through interaction term)\\
+\cite{burger2019instantaneous} (control from external agents)\\
+\cite{burger2016controlling} (control from external agents)\\
+\cite{carrillo2019mean} (flow control)\\
+\cite{Fornasier_2014} (flow control)\\
+\cite{Fornasier_2014no2} (external agents, sparse)\\
+\cite{fornasier_lisini_orrieri_savare_2019} (flow control)\\
+\cite{piccoli2014no1} (flow control)
+
+
+
+
+
+++++ Multiple shooting and leon++++
+\pagebreak	
+\bibliography{meanfieldbib}
+\bibliographystyle{unsrt}
+
+\end{document}
+
+
+
+
+
+
+
+

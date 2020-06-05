@@ -1,0 +1,42 @@
+\begin{thebibliography}{1}
+
+\bibitem{RexLoewen1}
+M.~Rex and H.~Löwen.
+\newblock Dynamical density functional theory for colloidal dispersions
+  including hydrodynamic interactions.
+\newblock {\em The European Physical Journal. E, Soft Matter}, 28:139--46,
+  2008.
+
+\bibitem{bibTrefethen}
+L.~N. Trefethen.
+\newblock {\em Spectral Methods in Matlab}.
+\newblock SIAM, 2000.
+
+\bibitem{bibTrefethenBerrut1}
+J.~P. Berrut and L.~N. Trefethen.
+\newblock Barycentric {L}agrange interpolation.
+\newblock {\em SIAM Review}, 46(3):501--517, 2004.
+
+\bibitem{ClenCurt1}
+C.~W. Clenshaw and A.~R. Curtis.
+\newblock A method for numerical integration on an automatic computer.
+\newblock {\em Numerische Mathematik}, 2(1):197--205, 1960.
+
+\bibitem{Boyd1}
+J.~P. Boyd.
+\newblock {\em Chebyshev and Fourier Spectral Methods}.
+\newblock Dover Publications, Inc, 2000.
+
+\bibitem{CarraroIndMultipleShooting}
+T.~Carraro, M.~Geiger, and R.~Rannacher.
+\newblock Indirect multiple shooting for nonlinear parabolic optimal control
+  problems with control constraints.
+\newblock {\em SIAM Journal on Scientific Computing}, 36, 01 2014.
+
+\bibitem{GoddardPseudospectralCode1}
+A.~Nold, B.~D. Goddard, P.~Yatsyshin, N.~Savva, and S.~Kalliadasis.
+\newblock Pseudospectral methods for density functional theory in bounded and
+  unbounded domains.
+\newblock {\em Journal of Computational Physics}, 334:639--664, 2017.
+
+\end{thebibliography}

@@ -1,0 +1,118 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+
+\section*{Exact Solution to the Flow Control Problem with Mixed Boundary Conditions - 1D}
+Note: 2D should just be $(x^2-1)^2(y^2-1)^2$.\\
+PDECO Problem:
+\begin{align*}
+&J = \frac{1}{2}||\rho - \hat \rho||_{L_2}^2 + \frac{\beta}{2}||w||_{L_2}^2\\
+\\
+&\partial_t \rho = \Delta \rho - \nabla \cdot (w\rho) + f \\
+&\alpha (\frac{\partial \rho}{\partial n} - \rho w \cdot n) + \gamma \rho = 0, 
+\end{align*}
+where $\alpha$, $\gamma$ are constant. Note that the below holds for any choice of $\alpha$ and $\gamma$.\\
+
+Optimality System (by linearity and previous results):
+\begin{align*}
+&\partial_t \rho = \Delta \rho - \nabla \cdot (w\rho) + f\\
+& \partial_t p = - \Delta p - \rho + \hat \rho - w \cdot \nabla p \\
+&w = - \frac{1}{\beta}\rho \nabla p\\
+&\text{BCs:}\\
+&\alpha (\frac{\partial \rho}{\partial n} - \rho w \cdot n) + \gamma \rho = 0 \\
+& \alpha \frac{\partial p }{\partial n} + \gamma p = 0
+\end{align*}
+
+\subsubsection*{An exact solution}
+\begin{align*}
+p &= \beta(e^T - e^t)(x^2 - 1)^2\\
+\rho &= e^t(x^2 - 1)^2\\
+w &= -4e^t(e^T - e^t)x(x^2 - 1)^3
+\end{align*}
+These are chosen such that $p$, $\rho$, $\frac{\partial p}{\partial x}$ and $\frac{\partial \rho}{\partial x}$ are zero at $x=-1$ and $x=1$. Furthermore, $p(T) = 0$ is satisfied.
+
+Then $f$ and $\hat \rho$ are:
+\begin{align*}
+f &= e^t\bigg((x^2 - 1)^2 - 12x^2 +4 \bigg) - e^{2t} (e^T - e^t)\bigg(4(x^2 - 1)^4 (11x^2 -1)\bigg)\\
+\hat \rho &= (1 - \beta)e^t(x^2-1)^2 + \beta(e^T - e^t)(12x^2 -4) - 16 \beta e^t(e^T - e^t)^2 x^2 (x^2 - 1)^4
+\end{align*}
+
+\subsubsection*{A different exact solution}
+Here, $\beta$ is split between $\rho$ and $p$ because it seemed above for the other mixed solution that the Kalise algorithm changed the error in exact solution with $\beta$, but this may not matter so much. The term $(x^2-1)$ is replaced by $(1-x^2)$ only to create a positive exact solution for $w$ but I don't think it really matters.
+
+\begin{align*}
+p &= \beta^{1/2}(T-t)(1 - x^2 )^2\\
+\rho &= \beta^{1/2}e^t(1-x^2)^2\\
+w &= 4t(T-t)x(1-x^2)^3
+\end{align*}
+These are chosen such that $p$, $\rho$, $\frac{\partial p}{\partial x}$ and $\frac{\partial \rho}{\partial x}$ are zero at $x=-1$ and $x=1$. Furthermore, $p(T) = 0$ is satisfied.
+
+Then $f$ and $\hat \rho$ are:
+\begin{align*}
+f &= \beta^{1/2}(1 - x^2 )^2  + \beta^{1/2} t (4- 12x^2) + 4\beta^{1/2} t^2(T-t)\bigg((1 - x^2 )^4 (1- 11x^2)\bigg)\\
+\hat \rho &=-\beta^{1/2}(1-x^2)^2 +\beta^{1/2}t(1-x^2)^2 -\beta^{1/2}(T-t)(4 - 12x^2) - 16 \beta^{1/2} t(T-t)^2 x^2 (1-x^2)^4
+\end{align*}
+
+
+
+\end{document}
+	
+\maketitle

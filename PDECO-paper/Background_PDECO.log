@@ -1,0 +1,39 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.27)  25 NOV 2019 14:13
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Background_PDECO.tex
+(./Background_PDECO.tex
+LaTeX2e <2018-04-01> patch level 5
+
+./Background_PDECO.tex:1: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 I
+     n this section we introduce a number of PDE-constrained optimization pr...
+
+? 
+./Background_PDECO.tex:1: Emergency stop.
+ ...                                              
+                                                  
+l.1 I
+     n this section we introduce a number of PDE-constrained optimization pr...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ 
+Here is how much of TeX's memory you used:
+ 6 strings out of 492639
+ 296 string characters out of 6129301
+ 56952 words of memory out of 5000000
+ 3994 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,4p,176b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+./Background_PDECO.tex:1:  ==> Fatal error occurred, no output PDF file produce
+d!

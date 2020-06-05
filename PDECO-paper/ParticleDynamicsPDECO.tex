@@ -1,0 +1,118 @@
+\documentclass[final]{siamltex}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{graphicx} % Changed the graphics package but can be changed back if needed?
+\graphicspath{{Images/}}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[boxed]{algorithm}
+\usepackage{algpseudocode}
+
+\newtheorem{Def}{Definition}
+\newtheorem{Thm}{Theorem}
+\newtheorem{Lem}{Lemma}
+\newtheorem{Rem}{Remark}
+
+\newcommand{\adj}{q} % adjoint
+
+\title{PDE-Constrained Optimization Models \\ and Pseudospectral Methods \\ for Multiscale Particle Dynamics}
+
+\author{Mildred Aduamoah\thanks{The School of Mathematics and Maxwell Institute for Mathematical Sciences, The University of Edinburgh, Edinburgh, EH9 3FD, UK ({\tt s1783812@sms.ed.ac.uk})} 
+%
+\and Benjamin D. Goddard\thanks{The School of Mathematics and Maxwell Institute for Mathematical Sciences, The University of Edinburgh, Edinburgh, EH9 3FD, UK ({\tt b.goddard@ed.ac.uk})} 
+%
+\and John W. Pearson\thanks{The School of Mathematics and Maxwell Institute for Mathematical Sciences, The University of Edinburgh, Edinburgh, EH9 3FD, UK ({\tt j.pearson@ed.ac.uk})} 
+%
+\and Jonna C. Roden\thanks{The School of Mathematics and Maxwell Institute for Mathematical Sciences, The University of Edinburgh, Edinburgh, EH9 3FD, UK ({\tt J.C.Roden@sms.ed.ac.uk})}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Very abstract at the moment.
+\end{abstract}
+
+\begin{keywords}PDE-constrained optimization; Multiscale particle dynamics; Pseudospectral methods; Numerical continuation\end{keywords}
+
+\begin{AMS}35Q70, 35Q93, 49J20, 65N35, 82C22\end{AMS}
+
+
+\pagestyle{myheadings}
+\thispagestyle{plain}
+\markboth{M. ADUAMOAH, B. D. GODDARD, J. W. PEARSON, AND J. C. RODEN}{PDE-CONSTRAINED OPTIMIZATION FOR PARTICLE DYNAMICS}
+
+
+\section{Introduction}\label{sec:Intro}
+
+Recent work on particle dynamics applications within a PDE-constrained optimization framework \cite{ABCK,ACFK,AlbiKalise,BonginiButtazo,BKS,CristianiPeri}
+
+Iterative solvers for mean-field games \cite{AchdouPerez,Andreev}
+
+New things in this paper: modelling approach linking to statistical mechanics literature; pseudospectral method for control problem; continuation algorithm
+
+Minor: dealing with Neumann/no-flux BCs(??); new test problems; extension to software library
+
+Advantages of our approach: not solved on a torus (unlike many multidimensional problems) which is relatively easy; more accurate (pseudospectral) method vs finite difference methods of previous work; our ``trick'' allows us to ensure density functions are positive, unlike standard spectral-type methods
+
+Challenges: need good initial guess, especially for Neumann/no-flux condition, which is a common challenge in numerical analysis
+
+
+\section{Background}\label{sec:Background}
+
+
+\subsection{Multiscale particle dynamics}\label{sec:Background_MPS}
+
+\input{Background_ParticleDynamics.tex}
+
+
+\subsection{Pseudospectral methods}\label{sec:Background_Pseudospectral}
+
+\input{Background_Pseudospectral.tex}
+
+
+\subsection{PDE-constrained optimization}\label{sec:Background_PDECO}
+
+\input{Background_PDECO.tex}
+
+
+\section{Particle dynamics models and first-order optimality conditions}\label{sec:Optimality}
+
+\input{OptimalityConditions.tex}
+
+
+\section{Numerical method for optimization model}\label{sec:Method}
+
+\input{NumericalMethods.tex}
+
+
+\section{Numerical experiments}\label{sec:Expts}
+
+\input{NumericalExperiments.tex}
+\section{Concluding remarks}\label{sec:Conc}
+
+Many extensions: ``final-time case'', different cost functionals, applications to opinion dynamics, flocking, swarming, robotics, ...
+
+
+\vspace{0.75em}
+\textbf{Acknowledgements.}~~
+MA and JR are supported by The Maxwell Institute Graduate School in Analysis and
+its Applications, a Centre for Doctoral Training funded by the UK Engineering and Physical Sciences
+Research Council (EPSRC grant EP/L016508/01), the Scottish Funding Council, Heriot-Watt University, and
+The University of Edinburgh.
+%
+BDG gratefully acknowledges support from the EPSRC grant EP/L025159/1.
+%
+JWP gratefully acknowledges support from the EPSRC Fellowship EP/M018857/2, the EPSRC grant EP/S027785/1, and a Fellowship from The Alan Turing Institute. 
+
+
+\appendix
+
+\input{Appendix.tex}
+\input{Appendix2.tex}
+
+\bibliographystyle{plain}
+\bibliography{ParticleDynamicsPDECO}
+
+\end{document}

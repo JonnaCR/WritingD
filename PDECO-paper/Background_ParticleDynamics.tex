@@ -1,0 +1,100 @@
+The dynamics of many systems can be accurately described by interacting particles or agents.  Examples of 
+such physical particles range in scale from electrons in atoms and molecules~\cite{SO12}, 
+through biological cells in tissues~\cite{ACGL12}, up to planets and stars in galaxies~\cite{BT11}.  
+Other individual-based models include
+animals undergoing flocking and swarming~\cite{YBEM10}, pedestrians walking~\cite{CPT14}, 
+or people who interact and thus change their opinions~\cite{L07}.
+
+In principle, such situations can be modelled by differential equations for the `state' (e.g. position, momentum,
+opinion) of each individual.  However, the challenge here is that physical systems typically have huge numbers
+of particles (e.g., $10^{25}$ molecules in a litre of water) and, as such, are beyond the treatment of standard
+numerical methods, both in terms of storage and processor time.  For $N$ particles, typical algorithms scale
+as $N^2$ or $N^3$, which prevents direct computation for more than, say, $\mathcal{O}(10^4)$
+particles.  It is clear from the separation of computationally realistic problems to the size of physical systems
+that this issue cannot be overcome through the sequential improvement of computer hardware.
+
+An additional complication of directly solving the dynamics of such systems, e.g. through Newtonian dynamics,
+is the sensitive dependence on initial conditions~\cite{LM16}.  For many physical systems, 
+it is unreasonable to assume that one knows the exact initial conditions for each particle  As such, one is interested
+not in a particular realisation of the dynamics, but rather in an `average' behaviour, which is typical for
+the system.
+
+Both of these challenges suggest that it would be prudent to instead study the dynamics through a statistical
+mechanics approach, in which one is interested in the macroscopic quantities, rather than individual realisations.
+However, this approach comes with its own challenges and drawbacks.  
+
+The first is that, at least without 
+additional simplifying approximations, the resulting equations are no easier to solve than the underlying
+particle dynamics.  For example, instead of treating the Langevin stochastic differential equation (SDE), which 
+formally scales computationally as $N^2$, one may treat the corresponding Fokker-Planck (forward Kolmogorov / Smoluchowski)
+equation, which is a partial differential equation in $dN$ dimensions, where $d$ is the number of degrees of
+freedom of the one-particle phase space (typically 6 when including momentum, and 3 when only considering the
+particle positions).  A standard approach would then be to discretize each degree of freedom, reducing the
+PDE to a system of coupled ODEs, which  may then, in principle, be solved numerically.  The issue here lies
+with the curse of dimensionality: for $M$ points in each degree of freedom, one requires a total of $M^{dN}$ points.
+Taking, for the sake of argument, $M=10$ points and $N=10$ particles in three dimensions, 
+then the total number of points required is $10^{30}$, which is far too many for a reasonable computation.
+
+A common approach to overcome the is to use `coarse-graining', which reduces the dimensionality of the system,
+generally at the cost of a loss of accuracy or physical effects, and the introduction of unconstrained approximations~\cite{V08}.  
+This links to the second challenge, which concerns the multiscale nature of the problem.  In many systems of interest, physically
+crucial effects manifest themselves on scales of the particle size, all the way up to the macroscale.  Examples
+include volume exclusion of hard particles~\cite{BC12}, biological cellular alignment~\cite{ANHetal10}, 
+and nucleation of clusters and clouds~\cite{L12}.
+A standard coarse-graining approach would be to ignore effects such as volume exclusion, and treat the whole
+system as a bulk, and hence determine quantities such as average densities and orientations~\cite{LL94}.  Whilst this is viable
+in homogeneous systems close to equilibrium, it completely fails to capture heterogeneous systems, symmetry breaking,
+and many dynamical effects.
+
+An extremely efficient and accurate example of coarse-graining is Dynamic Density Functional Theory (DDFT)
+~\cite{MT99,CF05}.
+The crucial observation here is that the full $N$-body information in a system is a functional of the 1-body density,
+$\rho(\vec{x},t)$ (i.e.\ the probability of finding any one particle at a given position at a given time).  This is an extension of 
+classical density functional theory (DFT) (see, e.g., the early works~\cite{E79,RD85} 
+and later reviews~\cite{W06,WL07,L10}), which considers the equilibrium case, and is linked to the celebrated
+quantum version~\cite{HK64}.  The main challenge here is that the proof is non-constructive; it is unknown how to 
+map from $\rho$ to the full information in the system.  However, in many practical applications, it is $\rho$ itself
+that is the quantity of interest.  Hence it is desirable to derive equations of motion for the 1-body density.
+
+The simplest example is the diffusion equation, which corresponds to Brownian motion, and concerns non-interacting
+particles; hence the reduction to the 1-body density is trivial.  We are instead concerned with systems in which the 
+particles interact, e.g.\ through electrostatic forces, volume exclusion, or exchange of information.  Typical DDFTs
+can be thought of as generalised diffusion equations of the form
+\begin{equation}
+	\partial_t \rho (\vec{x},t) = \nabla \cdot \Big( \rho \nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho} \Big) = \nabla \cdot \vec{j}.
+	\label{eq:DDFT}
+\end{equation}
+Here $\mathcal{F}$ is the Helmholtz free energy of the system.  For the non-interacting case, at equilibrium, 
+it is given by
+\[
+	\mathcal{F}_{\rm id}[\rho] = \int \rho(\vec{x})( \log \rho(\vec{x}) -1 )~ {\rm d} \vec{x},
+\]	
+from which it follows that $\frac{\delta \mathcal{F}_{\rm id} [\rho]}{\delta \rho} = \nabla\rho / \rho$, which results in
+the diffusion equation.  
+
+For more general systems, the exact free energy is unknown (except in the special case of hard rods in one dimension~\cite{TCM08}).
+As such, much effort has been devoted to determine accurate approximations of the free energy for a wide range
+of systems, but particular focus is given to hard spheres~\cite{R10} and particles with soft interactions~\cite{HM13}; these cases may be
+combined in a perturbative manner~\cite{E92}. Here we will focus on a relatively simple DDFT, which closes the equation for 
+$\rho$ by considering that the particles are, in average, uncorrelated.  For particles which interact through a pairwise potential $V_2$,
+in an external potential field $V_1$, the (approximate) free energy is modelled by
+\[
+	\mathcal{F}[\rho] = \int \rho(\vec{x})( \log \rho(\vec{x}) -1 )~ {\rm d} \vec{x} + \int V_1(\vec{x}) \rho(\vec{x})~ {\rm d} \vec{x}
+	+ \frac{1}{2} \int \int \rho(\vec{x}) \rho(\vec{x}') V_2(|\vec{x} - \vec{x}'|) ~ {\rm d} \vec{x} {\rm d} \vec{x}'.
+\]	
+This is known as the mean field approximation and has been shown to be surprisingly accurate for a range of systems~\cite{ACE17}
+and is known to be exact
+in the limit of dense systems of particles with soft interactions~\cite{MS82}.  We note that this should be considered
+as a the first stepping stone on a path to treat PDE-constrained optimal control systems for general DDFTs.  Such systems
+are highly challenging, not only due to the non-local, non-linear nature of the PDEs, but also due to the complexity of 
+the free energy functionals.  For example, Fundamental Measure Theory (FMT), which describes the interactions of
+systems of hard particles, requires the computation of weighted densities through convolution integrals, followed by
+a further integral of a complicated function of these weighted densities~\cite{R10}.  As such, these challenges are postponed
+to future work.
+
+A final challenge we will address here is the implementation of (spatial) boundary conditions.  Most physical systems
+are constrained in some way, often in a `box' with impassable walls, such that the number of particles is conserved.  
+For DDFTs, the corresponding boundary condition is $\vec{j}\cdot \vec{n}=0$ on the boundary, where $j$ is the flux, as in \eqref{eq:DDFT} and
+$n$ is the unit normal to the boundary.  Whilst this is a standard Neumann boundary condition, we note that the 
+difficulty lies in the form of $j$; for interacting problems, $j$ is non-local and, as such, so is the corresponding boundary
+condition.  This results in an equation which is challenging to solve numerically (see Section [[REF]]).

@@ -1,0 +1,22 @@
+There are a number of standard methods for solving DDFT-like problems.  The two most common are the finite element method (FEM)
+and pseudospectral methods.  Here we focus on the latter, but note that the algorithm presented below [[REF]] is general and may
+be easily adapted to other numerical methods.  The main challenge in using FEM for DDFT problems lies in their non-locality.
+Heuristically, the principal benefits of FEM are that it (i) produces large, but sparse matrices, leading to systems which may be efficiently
+solved, for example through the implementation of standard timestepping schemes and carefully-chosen preconditioners [[REF PRECONDITIONERS]]; and
+(ii) may be applied to complex domains through standard triangulation/meshing routines.
+In contrast, for non-local problems such as DDFT the corresponding matrices are not only large, but they are also dense.  This prevents
+the use of standard numerical schemes and significantly increases the computational cost.
+
+Recently, accurate and efficient pseudospectral methods have been developed to tackle these non-local, non-linear DDFTs~\cite{NGYSK17}.
+Some details of the implementation will be discussed in Section [[REF]]; here we highlight the benefits and challenges.  As is widely 
+known~\cite{T00,B01}, pseudospectral methods are extremely accurate for problems with smooth solutions on `nice' 
+domains; here `nice' roughly corresponds to domains which may be mapped to the unit square in a simple (e.g.\ conformal) manner.
+They are more challenging to apply on complex domains (although spectral elements can be seen as  a compromise between FEM
+and pseudospectral methods), and are also of poor accuracy when the solutions are not smooth (heuristically, the accuracy is 
+order $(1/N)^p$ where the solution is $p$-times differentiable.
+
+Their use to treat DDFT problems stems from three main observations: (i) at least morally, the diffusion term present in
+all DDFTs should lead to smoothing of solutions for sufficiently smooth particle interactions; (ii) the matrices involved are always
+dense and, as such, treating non-local terms does not formally affect the numerical cost; (iii) the implementation of non-local 
+boundary conditions may be treated via standard algebraic-differential equations solver, thus removing the need for bespoke
+treatments of different boundary conditions.

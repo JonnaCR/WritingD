@@ -1,0 +1,143 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{{p}_Q}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{p_{\partial Q}}
+\newcommand{\Con}{{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+
+\section*{Literature Review on Related Work}
+\cite{Fornasier_20161no1} (review, compare to other works...)
+
+
+\subsection*{Papers Involving Stochastic Dynamics}
+\cite{albi2016mean} 
+
+
+
+\subsection*{Papers Involving Deterministic Dynamics}
+\cite{albi2016no2}
+\cite{albi2016selective} (Cucker-Smale)
+\cite{Fornasier_2014}
+\cite{Fornasier_2014no2}
+\cite{fornasier_lisini_orrieri_savare_2019}
+\cite{piccoli2014no1} (Cucker-Smale)
+
+
+\subsection*{Theoretical Papers}
+\cite{albi2016mean} (existence of our type of optimal controls)\\
+\cite{burger2019meanfield} (optimality conditions, convergence to mean field )\\
+
+\cite{carrillo2018no1} (well posedness of the mean field equation and the microscopic model, large time behaviour and consensus formation)\\
+\cite{carrillo2019mean} (existence and regularity of the solution of the OCP, well posedness of forward problem)\\
+\cite{Fornasier_2014}( convergence of microscopic to macroscopic OCP, gamma limit)\\
+\cite{Fornasier_2014no2} (compare to above)\\
+\cite{fornasier_lisini_orrieri_savare_2019} (existence and consistency of mean field OCP, gamma convergence)\\
+\cite{piccoli2014no1} (well posedness of the constrained Cucker-Smale equation)\\
+\cite{Pinnau_2017} (some convergence results)
+
+\subsection*{Numerical Papers}
+\cite{albi2016mean} (Chang Cooper, Finite Volumes, finite differences, Monte Carlo,...),\\
+\cite{albi2016no2} (Compass search method, fmincon)\\
+\cite{albi2014kinetic} (steady state fokker - planck only)\\
+\cite{albi2016selective} (comparing two control approaches, stochastic approximation of interaction, iterative solving with transport and interactions step)\\
+\cite{burger2019instantaneous} (strang splitting scheme, semi Lagrangian, finite volume)\\
+\cite{burger2016controlling} (compare to \cite{burger2019instantaneous}, this one is older!)\\
+\cite{carrillo2018no1}  (implicit finite difference for inverse distribution)\\
+\cite{Pinnau_2017} (Galerkin scheme, split transport and diffusion, iterative)
+\subsection*{Leader-Follower Interaction}
+\cite{albi2016no2}
+\cite{Albi_2014no1} (compare to \cite{albi2014kinetic} )
+\cite{burger2019instantaneous}
+
+\subsection*{Relevant Boundary Conditions}
+\cite{albi2016mean} (no flux)
+\cite{carrillo2018no1} (no flux)
+\cite{carrillo2019mean} (periodic boundary data)
+
+
+\subsection*{Control Types}
+\cite{albi2016mean} (flow control)\\
+\cite{albi2016no2} (minimizing total mass of followers)\\
+\cite{albi2014kinetic} (control via interaction term)\\
+\cite{albi2016selective} (control function vs control region, sparse control, flocking)\\
+\cite{Albi_2014no1}(embedded in microscopic interactions)\\
+\cite{burger2019meanfield}  (through interaction term)\\
+\cite{burger2019instantaneous} (control from external agents)\\
+\cite{burger2016controlling} (control from external agents)\\
+\cite{carrillo2019mean} (flow control)\\
+\cite{Fornasier_2014} (flow control)\\
+\cite{Fornasier_2014no2} (external agents, sparse)\\
+\cite{fornasier_lisini_orrieri_savare_2019} (flow control)\\
+\cite{piccoli2014no1} (flow control)
+
+\pagebreak	
+\bibliography{meanfieldbib}
+\bibliographystyle{unsrt}
+
+\end{document}
+
+
+
+
+
+
+
+

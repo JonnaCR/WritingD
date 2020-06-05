@@ -1,0 +1,88 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{{p}_Q}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{p_{\partial Q}}
+\newcommand{\Con}{{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+
+\section*{Notes on Project - Semester 1}
+
+\section{General Notes to Elaborate on}
+
+\begin{itemize}
+	\item Archer Paper
+	\item Archer Optimality Conditions
+	\item fsolve Research (looking at what people use together with multiple shooting, read up on different numerical methods, write report on what method would be good to try)
+	\item writing the most general problem, rewriting the code to fit all general cases, table of variables for code
+	\item 1D PDECO with Mildred 
+	\item 2D PDECO myself
+	\item the force control toy problem in one and two dimensions: works well, gives results
+	\item the flow control toy problem in 1D -- gives trouble
+	\item Picard iteration as an alternative to fsolve (works well. comparison to fsolve in 1 and 2 dimensions, different error measures to determine convergence)
+	\item Literature review on Mean Field Games and Optimal Control Problems involving integral terms
+	\item Exact solutions to various problems (Full problem Force and Flow control, missing bits on Force and Flow control)
+	\item Optimality conditions for boundary control and subdomain control problems
+	\item Optimality system for nonconstant BCS
+	\item some literature review on subdomain control and boundary control 
+\end{itemize}
+
+
+\end{document}

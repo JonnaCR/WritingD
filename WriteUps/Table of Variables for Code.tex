@@ -1,0 +1,204 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\pagenumbering{gobble}
+\begin{document}
+
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+	
+
+\section*{Tables of Variables}
+\begin{table}[h!]
+	\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{Space and Time Setup}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+		$N$ & N & Number of space points\\
+		\hline
+		$y_{min}$, $y_{max}$ & yMin, yMax & Bounds for space interval \\
+		\hline
+		- & plotN & Number of plotting points\\
+		\hline
+		$n$ & n & Number of time points\\
+		\hline
+		$t_{0}$, $T$ & t0, TMax & Bounds for time interval \\	
+		\hline
+		\hline
+	\end{tabular}
+\end{table}
+\begin{table}[h!]
+
+	\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{PDE Variables}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+		$\rho$ & rho & State variable \\
+		\hline
+		$\hat \rho$ &rhoHat(intp) or target(on $t_i$) & the target of $\rho$\\
+		\hline
+		$\rho_0$ & rho\_ic & Initial condition for $\rho$ \\
+		\hline
+		$q$ or $p$ & p & Adjoint variable\\
+		\hline
+		$\mathbf w $ & control & Control variable \\
+		\hline
+		$\mathbf w_{Force}$ & wForce & Force control \\
+		\hline
+		$\mathbf w_{Flow}$ & wFlow & Flow control \\
+		\hline
+		$V_{ext}$ & Vext & External Potential \\
+		\hline
+		$f$ & Force & Force term in PDE \\
+		\hline
+		\hline
+			\end{tabular}
+\end{table}
+
+		\begin{table}[h!]
+		\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{PDE Constants}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+		 $\beta$ & beta & Regularization parameter \\
+    	\hline
+    	$\gamma$ & gamma & Constant in front of 2 body term\\
+    	\hline
+    	$D_0$ & D0 & Diffusion constant for $\rho$\\
+    	\hline
+    	$c_{Flow}$ & cFlow & Constant in front of $\mathbf w_{Flow}$ term\\
+    	\hline
+    	$c_{ext}$ & cExt & Constant in front of $V_{ext}$\\
+    	\hline
+    	$c_w$ & cw & Constant in front of $\mathbf w_{force}$\\
+    	\hline
+    	$c_{Force}$ & cForce & Constant in front of $Force$\\
+    	\hline
+    	$\alpha$ & alpha & Constant in front of the Gaussian +++needs change to all 2-body parameters++\\
+    	\hline
+    	\hline
+    	\end{tabular}
+        \end{table}
+		
+		\begin{table}[h!]
+		\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{Flags and Tolerances}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+    	 - & BCFlag & 'Dirichlet', 'Neumann'\\
+    	\hline
+    	- & ProbType & 'Forward' , MultipleShooting' \\ 
+    	\hline
+    	- & testFun & 'AD\_Dirichlet\_Exact', 'AD\_Neumann\_Exact',\\ & & 'Diffusion\_Dirichlet\_Exact','Diffusion\_Neumann\_Exact'\\
+    	\hline
+    	- &ODETols (AbsTol, RelTol) & ODE solver tolerances\\
+    	\hline
+    	-& OptiTols (OptiTol,FunTol,StepTol)& Optimization Solver Tolerances\\
+    	\hline
+    	\hline
+    	\end{tabular}
+		 \end{table}
+		
+		\begin{table}[h!]
+		\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{Outputs of Matlab Code}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+		- & rhoNumFW (TimesFW) & Solution to the forward problem (time points)\\
+    	\hline
+    	- & rhoNumOpti (TimesOpti) & Solution to the optimization problem (time points)\\
+        \hline
+        $\rho(t)$ $p(t)$ & rhoCurrent, pCurrent & State and adjoint at time t\\
+        \hline
+        $\rho(\tau)$ $p(\tau)$ & rhoLater, pLater & State and adjoint at time $\tau=T+t_0 -t$\\
+        \hline
+        \hline
+        \end{tabular}
+        \end{table}
+
+		\begin{table}[h!]
+		\begin{tabular}{||c | c | c ||} 
+		\hline
+		\multicolumn{3}{||c||}{Exact Solutions}\\
+		\hline
+		In Latex & In Matlab & Comment\\
+		\hline
+        - & rhoExactFW & Exact solution for forward problem\\
+        \hline
+        - & rhoExact & Exact solution for optimization problem\\
+        \hline
+        - & pExact & Exact solution for adjoint problem\\
+        \hline
+        - & wForceExactFW & Exact solution for $\mathbf w_{Force}$ in forw. prob.\\
+        \hline
+        - & wForceExact & Exact solution for $\mathbf w_{Force}$ in opti prob.\\
+        \hline
+        - & VextExact & Exact solution for $V_{ext}$ \\
+        \hline
+        - & fExact & Exact solution for $Force$ \\
+        \hline
+        \hline
+	\end{tabular}
+
+\end{table}
+
+\end{document}

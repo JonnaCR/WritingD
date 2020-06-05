@@ -1,0 +1,261 @@
+\begin{thebibliography}{10}
+
+\bibitem{AchdouPerez}
+Y.~Achdou and V.~Perez.
+\newblock Iterative strategies for solving linearized discrete mean field games
+  systems.
+\newblock {\em Netw. Heterog. Media}, 7(2):197--217, 2012.
+
+\bibitem{ABCK}
+G.~Albi, M.~Bongini, E.~Cristiani, and D.~Kalise.
+\newblock Invisible control of self-organizing agents leaving unknown
+  environments.
+\newblock {\em SIAM J. Appl. Math.}, 76(4):1683--1710, 2016.
+
+\bibitem{ACFK}
+G.~Albi, Y.-P. Choi, M.~Fornasier, and D.~Kalise.
+\newblock Mean field control hierarchy.
+\newblock {\em Appl. Math. Opt.}, 76(1):93--135, 2017.
+
+\bibitem{AlbiKalise}
+G.~Albi and D.~Kalise.
+\newblock ({S}ub){O}ptimal feedback control of mean field multi-population
+  dynamics.
+\newblock {\em IFAC-PapersOnLine}, 51(3):86--91, 2018.
+
+\bibitem{ACGL12}
+Wolfgang Alt, Mark Chaplain, Michael Griebel, and J{\"u}rgen Lenz.
+\newblock {\em Polymer and cell dynamics: Multiscale modelling and numerical
+  simulations}.
+\newblock Birkh{\"a}user, 2012.
+
+\bibitem{Andreev}
+R.~Andreev.
+\newblock Preconditioning the augmented {L}agrangian method for instationary
+  mean field games with diffusion.
+\newblock {\em SIAM J. Sci. Comput.}, 39(6):A2763--A2783, 2017.
+
+\bibitem{ACE17}
+Andrew~J Archer, Blesson Chacko, and Robert Evans.
+\newblock The standard mean-field treatment of inter-particle attraction in
+  classical dft is better than one might expect.
+\newblock {\em The Journal of chemical physics}, 147(3):034501, 2017.
+
+\bibitem{ANHetal10}
+Hug Aubin, Jason~W Nichol, Ch{\'e}~B Hutson, Hojae Bae, Alisha~L Sieminski,
+  Donald~M Cropek, Payam Akhyari, and Ali Khademhosseini.
+\newblock Directed 3d cell alignment and elongation in microengineered
+  hydrogels.
+\newblock {\em Biomaterials}, 31(27):6941--6951, 2010.
+
+\bibitem{BT11}
+James Binney and Scott Tremaine.
+\newblock {\em Galactic dynamics}, volume~20.
+\newblock Princeton university press, 2011.
+
+\bibitem{BonginiButtazo}
+M.~Bongini and G.~Buttazo.
+\newblock Optimal control problems in transport dynamics.
+\newblock {\em Math. Models Methods Appl. Sci.}, 27(3):427--451, 2017.
+
+\bibitem{B01}
+John~P Boyd.
+\newblock {\em Chebyshev and Fourier spectral methods}.
+\newblock Courier Corporation, 2001.
+
+\bibitem{BKS}
+L.~M. Brice\~{n}o Aras, D.~Kalise, and F.~J. Silva.
+\newblock Proximal methods for stationary mean field games with local
+  couplings.
+\newblock {\em SIAM J. Control Opt.}, 56(2):801--836, 2018.
+
+\bibitem{BC12}
+Maria Bruna and S~Jonathan Chapman.
+\newblock Excluded-volume effects in the diffusion of hard spheres.
+\newblock {\em Physical Review E}, 85(1):011103, 2012.
+
+\bibitem{Burger1}
+M.~Burger, M.~Di~Francesco, P.~A. Markowich, and M.-T. Wolfram.
+\newblock Mean field games with nonlinear mobilities in pedestrian dynamics.
+\newblock {\em Discrete and Continuous Dynamical Systems - Series B},
+  19(5):1311 --1333, 2014.
+
+\bibitem{CF05}
+Garnet Kin-Lic Chan and Reimar Finken.
+\newblock Time-dependent density functional theory of classical fluids.
+\newblock {\em Physical review letters}, 94(18):183001, 2005.
+
+\bibitem{CollisHeinkenschloss}
+S.~S. Collis and M.~Heinkenschloss.
+\newblock Analysis of the streamline upwind/{P}etrov {G}alerkin method applied
+  to the solution of optimal control problems.
+\newblock Technical Report TR02--01, Department of Computational and Applied
+  Mathematics, Rice University, 2002.
+
+\bibitem{CristianiPeri}
+E.~Cristiani and D.~Peri.
+\newblock Robust design optimization for egressing pedestrians in unknown
+  environments.
+\newblock {\em Appl. Math. Model.}, 72:553--568, 2019.
+
+\bibitem{CPT14}
+Emiliano Cristiani, Benedetto Piccoli, and Andrea Tosin.
+\newblock {\em Multiscale modeling of pedestrian dynamics}, volume~12.
+\newblock Springer, 2014.
+
+\bibitem{E79}
+R.~Evans.
+\newblock The nature of the liquid-vapour interface and other topics in the
+  statistical mechanics of non-uniform, classical fluids.
+\newblock {\em {Adv. Phys.}}, {28}({2}):{143}, {1979}.
+
+\bibitem{E92}
+Robert Evans.
+\newblock Density functionals in the theory of nonuniform fluids.
+\newblock {\em Fundamentals of inhomogeneous fluids}, 1:85--176, 1992.
+
+\bibitem{2DChebClass}
+B.~D. Goddard, A.~Nold, and S.~Kalliadasis.
+\newblock {2DChebClass [Software]}.
+\newblock http://dx.doi.org/10.7488/ds/1991, 2017.
+
+\bibitem{HM13}
+Jean-Pierre Hansen and Ian~Ranald McDonald.
+\newblock {\em Theory of simple liquids: with applications to soft matter}.
+\newblock Academic Press, 2013.
+
+\bibitem{HK64}
+Pierre Hohenberg and Walter Kohn.
+\newblock Inhomogeneous electron gas.
+\newblock {\em Physical review}, 136(3B):B864, 1964.
+
+\bibitem{LL94}
+LD~Landau and EM~Lifshitz.
+\newblock Statistical physics, part 1, vol. 5.
+\newblock {\em Course of theoretical physics}, 3, 1994.
+
+\bibitem{LM16}
+Ben Leimkuhler and Charles Matthews.
+\newblock {\em Molecular Dynamics.}
+\newblock Springer, 2016.
+
+\bibitem{L07}
+Jan Lorenz.
+\newblock Continuous opinion dynamics under bounded confidence: A survey.
+\newblock {\em International Journal of Modern Physics C}, 18(12):1819--1838,
+  2007.
+
+\bibitem{L10}
+J.~F. Lutsko.
+\newblock Recent developments in classical density functional theory.
+\newblock {\em Adv. Chem. Phys.}, 144:1, 2010.
+
+\bibitem{L12}
+James~F Lutsko.
+\newblock A dynamical theory of nucleation for colloids and macromolecules.
+\newblock {\em The Journal of chemical physics}, 136(3):034509, 2012.
+
+\bibitem{MT99}
+U.~M.~B. Marconi and P.~Tarazona.
+\newblock Dynamic density functional theory of fluids.
+\newblock {\em The Journal of Chemical Physics}, 110(16):8032--8044, 1999.
+
+\bibitem{MS82}
+Joachim Messer and Herbert Spohn.
+\newblock Statistical mechanics of the isothermal lane-emden equation.
+\newblock {\em Journal of Statistical Physics}, 29(3):561--578, 1982.
+
+\bibitem{NGYSK17}
+Andreas Nold, Benjamin~D Goddard, Peter Yatsyshin, Nikos Savva, and Serafim
+  Kalliadasis.
+\newblock Pseudospectral methods for density functional theory in bounded and
+  unbounded domains.
+\newblock {\em Journal of Computational Physics}, 334:639--664, 2017.
+
+\bibitem{PS13}
+J.~W. Pearson and M.~Stoll.
+\newblock Fast iterative solution of reaction--diffusion control problems
+  arising from chemical processes.
+\newblock {\em SIAM J. Sci. Comput.}, 35(5):B987--B1009, 2013.
+
+\bibitem{PSW12}
+J.~W. Pearson, M.~Stoll, and A.~J. Wathen.
+\newblock Regularization-robust preconditioners for time-dependent
+  {PDE}-constrained optimization problems.
+\newblock {\em SIAM J. Matrix Anal. Appl.}, 33(4):1126--1152, 2012.
+
+\bibitem{Powell1}
+M.J.D Powell.
+\newblock A fortran subroutine for solving systems of nonlinear algebraic
+  equations.
+\newblock {\em Numerical Methods for Nonlinear Algebraic Equations}, Ch.7,
+  1970.
+
+\bibitem{RD85}
+E.~Roman and W.~Dieterich.
+\newblock Classical fluid in a periodic potential and the density-functional
+  approach.
+\newblock {\em Phys. Rev. A}, 32(6):3726, 1985.
+
+\bibitem{R10}
+Roland Roth.
+\newblock Fundamental measure theory for hard-sphere mixtures: a review.
+\newblock {\em Journal of Physics: Condensed Matter}, 22(6):063102, 2010.
+
+\bibitem{SEK99}
+Lawrence~F Shampine, Mark~W Reichelt, and Jacek~A Kierzenka.
+\newblock Solving index-1 daes in matlab and simulink.
+\newblock {\em SIAM review}, 41(3):538--552, 1999.
+
+\bibitem{SW10}
+M.~Stoll and A.~Wathen.
+\newblock All-at-once solution of time-dependent {PDE}-constrained optimization
+  problems.
+\newblock Technical Report Technical Report NA-10-13, University of Oxford,
+  2010.
+
+\bibitem{SO12}
+Attila Szabo and Neil~S Ostlund.
+\newblock {\em Modern quantum chemistry: introduction to advanced electronic
+  structure theory}.
+\newblock Courier Corporation, 2012.
+
+\bibitem{TCM08}
+Pedro Tarazona, Jos{\'e}~A Cuesta, and Yuri Mart{\'\i}nez-Rat{\'o}n.
+\newblock Density functional theories of hard particle systems.
+\newblock In {\em Theory and Simulation of Hard-Sphere Fluids and Related
+  Systems}, pages 247--341. Springer, 2008.
+
+\bibitem{T00}
+Lloyd~N Trefethen.
+\newblock {\em Spectral methods in MATLAB}, volume~10.
+\newblock Siam, 2000.
+
+\bibitem{Troeltzsch}
+F.~Tr\"{o}ltzsch.
+\newblock {\em Optimal Control of Partial Differential Equations: Theory,
+  Methods, and Applications}.
+\newblock American Mathematical Society, 2010.
+
+\bibitem{V08}
+Gregory~A Voth.
+\newblock {\em Coarse-graining of condensed phase and biomolecular systems}.
+\newblock CRC press, 2008.
+
+\bibitem{W06}
+J.-Z. Wu.
+\newblock Density functional theory for chemical engineering: {F}rom
+  capillarity to soft materials.
+\newblock {\em AIChE J.}, 52:1169--1193, 2006.
+
+\bibitem{WL07}
+J.-Z. Wu and Z.-D. Li.
+\newblock Density-functional theory for complex fluids.
+\newblock {\em Annu. Rev. Phys. Chem.}, 58:85--112, 2007.
+
+\bibitem{YBEM10}
+Christian~A Yates, Ruth~E Baker, Radek Erban, and Philip~K Maini.
+\newblock Refining self-propelled particle models for collective behaviour.
+\newblock 2010.
+
+\end{thebibliography}
