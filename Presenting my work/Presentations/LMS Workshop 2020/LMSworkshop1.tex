@@ -40,7 +40,7 @@
 	 
 	 \begin{itemize}
 	 	\item Part 1: Modelling (Multiscale Particle Dynamics)
-	 	\item Part 2: Optimization (with PDE-Constraints)
+	 	\item Part 2: Optimization (with PDE constraints)
 	 	\item Part 3: Numerical Methods 
 	 	\item Part 4: Results
 	 \end{itemize}
@@ -68,15 +68,13 @@
 	\frametitle{Part 1: What is Multiscale Particle Dynamics?}
 	\begin{columns}
 		\column{0.75 \linewidth}
-		\textbf{Modelling on Multiple Scales:}
+		\textbf{Modelling on multiple scales:}
 		\vspace{0.4cm}
 		\begin{itemize}
-			\item Experimentally \textcolor{red}{(expensive in cost and time)}
-			\item ODEs for $N$ particles AND $n$ water molecules\\ \textcolor{red}{(expensive computations)}
+			\item ODEs for $N$ particles AND $n$ water molecules, $n \gg N$\\ \textcolor{red}{(impossible computations)}
 			\item SDEs for $N$ particles \textcolor{red}{(expensive computations)}
 			\item PDEs for the $N$ particle density  \textcolor{red}{(impossible computations)}
 			\item PDEs for the $1$ particle density \textcolor{green}{(good compromise)}
-			\item PDEs for the bulk fluid \textcolor{red}{(inaccurate for many processes)}
 		\end{itemize}
 	\column{0.25 \linewidth}
 	
@@ -89,13 +87,14 @@
 	\frametitle{Part 1: Modelling}
 	\begin{columns}
 		\column{0.8 \linewidth}
-		\textbf{What effects can be described with a PDE model?}
+		\textbf{What effects can be described with a (non-local) PDE model?}
 		\begin{itemize}
 			\item Forces
-			\item Particle Interactions
-			\item Multiple Species
-			\item Self-Propelled Particles
-			\item Different Geometries
+			\item Particle interactions
+			\item Multiple species
+			\item Self-propelled particles
+			\item Anisotropic particles
+			\item Different geometries
 			\item ...
 		\end{itemize}
 		\column{0.2 \linewidth}
@@ -113,14 +112,14 @@
 	\frametitle{Part 1: Modelling}
 	\begin{columns}
 		\column{0.8 \linewidth}
-		\textbf{Diffusion, Advection and \textcolor{red}{Particle Interactions}}
+		\textbf{Diffusion, advection and \textcolor{red}{particle interactions}}
 		$	\rho: \text{ particle density at } (\vec{x},t)$
 		\begin{align*}
 		\\
-		\partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \vec{w}) +\textcolor{red}{ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}} \qquad\text{in    } \Sigma\\
+		\partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \vec{w}) +\textcolor{red}{ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad\text{in    } \Sigma\\
 		\\
 		\text{BC }& \text{and IC:}\\
-		\frac{\partial \rho}{\partial n}& - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x'}|)d\vec{x'}} = 0 \quad\ \ \qquad \qquad\text{on   } \partial \Sigma   \\
+		\frac{\partial \rho}{\partial n}& - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} = 0 \quad\ \ \qquad \qquad\text{on   } \partial \Sigma   \\
 		\rho(0&,\vec{x}) = \rho_0(\vec{x}) 
 		\end{align*}
 		\column{0.2 \linewidth}
@@ -143,14 +142,14 @@
 
 		\column{0.8 \linewidth}
 		\begin{align*}
-		&\min_{\rho,u} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2\\
+		&\min_{\rho,\vec{w}} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2\\
 		\\
 		&\text{subject to:}
 		\\
-		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \vec{w})+\textcolor{red}{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}} \qquad \text{in    } \Sigma\\
+		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \vec{w})+\textcolor{red}{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad \text{in    } \Sigma\\
 		\\
 		&\text{BC } \text{and IC:}\\
-		&\frac{\partial \rho}{\partial n} - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x'})  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x'}|)d\vec{x'}} = 0 \quad \ \ \qquad \qquad\text{on   } \partial \Sigma   \\
+		&\frac{\partial \rho}{\partial n} - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} = 0 \quad \ \ \qquad \qquad\text{on   } \partial \Sigma   \\
 		&\rho(0,\vec{x}) = \rho_0(\vec{x}) 
 		\end{align*}
 		\column{0.2 \linewidth}
@@ -170,10 +169,10 @@
 \textbf{Deriving (first-order) optimality conditions}\\
 Idea: Define the Lagrangian $\mathcal{L}(\rho, \vec{w}, q)$:
 \begin{align*}
-\mathcal{L}(\rho, \vec{w},q)&= \frac{1}{2}\norm{\rho- \hat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2\\
+\mathcal{L}(\rho, \vec{w},q)&= \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2\\
 &+ \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \vec{w})
--\textcolor{red}{ \nabla \cdot\int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}}    \bigg) d\vec{x} dt\\
-&+ \int_{\partial \Sigma} q \bigg(\frac{\partial \rho}{\partial n} - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x'})  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x'}|)d\vec{x'}} \bigg) d\vec{x} dt\\
+-\textcolor{red}{ \nabla \cdot\int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'}    \bigg) d\vec{x} dt\\
+&+ \int_{\partial \Sigma} q \bigg(\frac{\partial \rho}{\partial n} - \rho \vec{w} \cdot \vec{n} +\textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \bigg) d\vec{x} dt\\
 \end{align*}
 1. Take derivatives of $\mathcal{L}(\rho, \vec{w}, q)$ with respect to $\rho$, $\vec{w}$ and $q$. \\
 2. Set derivatives to zero to find stationary points. \\
@@ -184,8 +183,8 @@ Idea: Define the Lagrangian $\mathcal{L}(\rho, \vec{w}, q)$:
      
 	\begin{align*}
 	 \partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \textcolor{blue}{\vec{w}})
-	+ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}  \\
-	\partial_t q &= -\nabla^2 q - \nabla q \cdot \textcolor{blue}{\vec{w}} + \int_\Omega \textcolor{ForestGreen}{\rho(\vec{x'})} \bigg(\nabla q(\vec{x}) + \nabla q(\vec{x'})\bigg)\cdot  \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'} \\
+	+ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
+	\partial_t q &= -\nabla^2 q - \nabla q \cdot \textcolor{blue}{\vec{w}} + \int_\Omega \textcolor{ForestGreen}{\rho(\vec{x}\hspace{0.2em}')} \bigg(\nabla q(\vec{x}) + \nabla q(\vec{x}\hspace{0.2em}')\bigg)\cdot  \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}' \\
     \textcolor{blue}{\vec{w}} \ &= - \frac{1}{\beta}\textcolor{ForestGreen}{\rho} \nabla  \textcolor{red}{q}\\
     \\
     \rho(0,\vec{x})&=\rho_0(\vec{x}), \qquad q(T,\vec{x})= 0 \\
@@ -198,9 +197,9 @@ Idea: Define the Lagrangian $\mathcal{L}(\rho, \vec{w}, q)$:
      \textbf{Solution:} Rewrite time for this PDE: $\textcolor{magenta}{\tau = T-t}$.
 	\begin{align*}
 	\partial_t \rho (t,\vec{x}) &= \nabla^2 \rho (t,\vec{x}) - \nabla \cdot (\rho(t,\vec{x}) \vec{w}(t,\vec{x}) )
-	+ \nabla \cdot \int_\Omega \rho(t,\vec{x}) \rho(t,\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}  \\
+	+ \nabla \cdot \int_\Omega \rho(t,\vec{x}) \rho(t,\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
 	\partial_{\textcolor{magenta}{\tau}} q(\textcolor{magenta}{\tau},\vec{x})  &= \nabla^2 q(\textcolor{magenta}{\tau},\vec{x})  + \nabla q(\textcolor{magenta}{\tau},\vec{x})  \cdot \vec{w}(\textcolor{magenta}{\tau},\vec{x})  \\
-	&- \int_\Omega \textcolor{ForestGreen}{\rho(}\textcolor{magenta}{\tau}\textcolor{ForestGreen}{, \vec{x'})} \bigg(\nabla q(\textcolor{magenta}{\tau}, \vec{x} ) + \nabla q(\textcolor{magenta}{\tau}, \vec{x'})\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'} \\
+	&- \int_\Omega \textcolor{ForestGreen}{\rho(}\textcolor{magenta}{\tau}\textcolor{ForestGreen}{, \vec{x}\hspace{0.2em}')} \bigg(\nabla q(\textcolor{magenta}{\tau}, \vec{x} ) + \nabla q(\textcolor{magenta}{\tau},\vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}' \\
     \vec{w}(t,\vec{x}) \ &= - \frac{1}{\beta}\rho(t,\vec{x}) \nabla q(t,\vec{x}) \\
     \\
 	\rho(0,\vec{x})&=\rho_0(\vec{x}), \qquad q(0,\vec{x})= 0 
@@ -211,19 +210,20 @@ Idea: Define the Lagrangian $\mathcal{L}(\rho, \vec{w}, q)$:
 \begin{frame}
 	\frametitle{Part 3: Numerical Methods}
 
- Optimization = Solving the system of PDEs
+ Optimization $\rightarrow$ Solving the system of PDEs
  \vspace{0.2 cm}
 	\begin{itemize} 
-		\item Challenge 1: One PDE is forward in time, the other backward. \\How to do time stepping?
-		\item Challenge 2: Particle interaction term is nonlinear and nonlocal (+ nonlocal BCs).
-		\item Standard methods (FEM/FDM) are not easily applicable.
+		\item Challenge 1: Particle interaction term is nonlinear and nonlocal (+ nonlocal BCs).
+		\\How to avoid shortcomings of standard methods (FEM/FDM)?
+		\vspace{0.2 cm}
+		\item Challenge 2: One PDE is forward in time, the other backward. \\How to do time stepping?
 	\end{itemize}
  \vspace{0.5 cm}
-We use:
+Our approach:
  \vspace{0.2 cm}
 \begin{itemize}
 		\item Pseudospectral methods.
-		\item Fixed Point algorithm.
+		\item Fixed point algorithm.
 	\end{itemize}
 \end{frame}
 
@@ -248,7 +248,6 @@ We use:
     \begin{itemize}
     	\item Reduce both PDEs to systems of ODEs using pseudospectral methods.
     	\item Discretize time using Chebyshev points.
-    	\item Define initial condition $\rho_0$ and final time         condition $q_T$.
     	\item Given the required input variables, each equation can now be solved using a standard ODE solver.
     \end{itemize}
 	
@@ -260,10 +259,10 @@ We use:
 	 \begin{align*}
 	 &\text{State Equation:}\\
 	 &\partial_t \rho  = \nabla^2 \rho  - \nabla \cdot (\rho \textcolor{blue}{\vec{w}} )
-	 + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}  \\
+	 + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
 	 &\text{Adjoint Equation:}\\
 	 &\partial_{{\tau}} q  = \nabla^2 q  + \nabla q  \cdot \textcolor{blue}{\vec{w}}  
-	 - \int_\Omega \textcolor{ForestGreen}{\rho( \vec{x'})} \bigg(\nabla q(\vec{x}) + \nabla q(\vec{x'})\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'} \\
+	 - \int_\Omega \textcolor{ForestGreen}{\rho( \vec{x}\hspace{0.2em}')} \bigg(\nabla q(\vec{x}) + \nabla q(\vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}' \\
 	 &\text{Gradient Equation:}\\
 	 &\textcolor{blue}{\vec{w}} \ \ = - \frac{1}{\beta}\textcolor{ForestGreen}{\rho} \nabla \textcolor{red}{q} \\
 	 \end{align*}
@@ -281,12 +280,12 @@ We use:
      \item Solve the state equation; input $\textcolor{blue}{\vec{w}^{(i)}}$:
      \begin{align*}
      \partial_t \rho  = \nabla^2 \rho  - \nabla \cdot (\rho \textcolor{blue}{\vec{w}^{(i)}} )
-     + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}. \phantom{abcdefghijklmnopqrs}
+     + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'. \phantom{abcdefghijklmnopqrs}
      \end{align*}
      \item Solve the adjoint equation; input $\textcolor{blue}{\vec{w}^{(i)}}$ and $\textcolor{ForestGreen}{{\rho}^{(i)}}$:
      \begin{align*}
      \partial_{{\tau}} q  = \nabla^2 q  + \nabla q  \cdot \textcolor{blue}{\vec{w}^{(i)}}  
-     - \int_\Omega \textcolor{ForestGreen}{\rho( \vec{x'})^{(i)}} \bigg(\nabla q( \vec{x} ) + \nabla q( \vec{x'})\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}. \phantom{abcdefghijklm}
+     - \int_\Omega \textcolor{ForestGreen}{\rho^{(i)}(\vec{x}\hspace{0.2em}')} \bigg(\nabla q( \vec{x} ) + \nabla q( \vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'. \phantom{abcdefghijklm}
      \end{align*}
      \item Solve the gradient equation; input $\textcolor{ForestGreen}{{\rho}^{(i)}}$ and $\textcolor{red}{{q}^{(i)}}$:
      \begin{align*}
@@ -321,24 +320,25 @@ We use:
 
 	\textbf{Reminder: The optimization problem}
 	\begin{align*}
-	&\min_{\rho,u} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}^2 + \frac{\beta}{2} \norm{\vec{w}}^2\\
+	&\min_{\rho,\vec{w}} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2\\
 	\\
 	&\text{subject to:}
 	\\
-	& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x'}) \nabla V_2(|\vec{x}-\vec{x'}|)d\vec{x'}} \qquad \text{in    } \Sigma
+	& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad \text{in    } \Sigma
 	\end{align*}
 	%\vspace{-0.5 cm}
-    \textbf{Inputs for an example:}\\
+    \textbf{Inputs for a 2D example:}\\
     \vspace{0.2 cm}
-    	$ \quad\rho_0 = \frac{1}{4}$, $\vec{w}_{uc} = 0$,\\
-	    $ \quad\beta = 10^{-3}$, $V_2(x) = - e^{-x^2}$,\\
+    	$ \quad\rho_0 = \frac{1}{4}$, $\vec{w}^{(1)} = 0$, $\beta = 10^{-3}$, $V_2(\vec{x}) = \gamma e^{-{\norm{\vec{x}}}^2}$,\\
 	    $\quad\widehat \rho = (1-t)\rho_0 + t\bigg(\frac{1}{4}\sin \bigg(\frac{\pi}{2}(x_1 - 2)\bigg)\sin \bigg(\frac{\pi}{2}(x_2 - 2)\bigg) + \frac{1}{4}\bigg)$,\\	
-	    $\quad \Sigma = \Omega \times (0,1)$, where $\Omega = [-1,1]\times [-1,1]$.
+	    $\quad \Sigma = \Omega \times (0,1)$, where $\Omega = [-1,1]$.
 \end{frame}
-\begin{frame}
-	\frametitle{Part 4: Results}
 
-	Overall Cost: $J = \frac{1}{2}\norm{\rho- \hat{\rho}}^2 + \frac{\beta}{2} \norm{\vec{w}}^2$, $J_{uc} = 0.0130$.
+
+\begin{frame}
+	\frametitle{Part 4: 2D Results}
+    Attractive Particles: $\gamma = -1$.\\
+	Overall Cost: $J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $J_{\vec{w}=0} = 0.0130$.
 
 	\begin{figure}
 		\includegraphics[width=15cm]{Res1Ex2.png}
@@ -347,9 +347,9 @@ We use:
 \end{frame}
 
 \begin{frame}
-	\frametitle{Part 4: Results}
+	\frametitle{Part 4: 2D Results}
 	\vspace{0.3cm}
-	Overall Cost: $J = \frac{1}{2}\norm{\rho- \hat{\rho}}^2 + \frac{\beta}{2} \norm{\vec{w}}^2$, $J_{uc} = 0.0130$, $J_{c} = 7.2994 \times 10^{-4}$.
+	Overall Cost: $J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $J_{\vec{w}=0} = 0.0130$, $J_{opt} = 7.2994 \times 10^{-4}$.
 	\begin{figure}
 		\includegraphics[width=14cm]{Res2Ex2.png}
 	\end{figure}
@@ -362,7 +362,7 @@ We use:
 Up to now:
  \begin{itemize}
  	\item Modelling of multiscale particle dynamics.
- 	\item Optimization with PDE-Constraints.
+ 	\item Optimization with PDE constraints.
  	\item Development of a suitable numerical method.
  \end{itemize}
 Up next:
@@ -408,8 +408,7 @@ Up next:
 	
 	\bibitem{Autor1990}
 	A. Nold, B.D. Goddard, P. Yatsyshin, N. Savva and S. Kalliadasis. 
-	\newblock {\em 	Pseudospectral Methods for Density Functional Theory in Bounded and 
-		Unbounded Domains}.
+	\newblock {\em 	Pseudospectral methods for density functional theory in bounded and unbounded domains}.
 	\newblock {\em Journal of Computational Physics}, 334, 639-664, 2017.
 	\newblock \url{https://datashare.is.ed.ac.uk/handle/10283/2647} (2DChebClass)
 \end{thebibliography}
@@ -425,12 +424,35 @@ Up next:
 		Red and White Bloodcells. Digital Image.\newblock {\em The Franklin Institute. } \url{https://www.fi.edu/heart/white-blood-cells}
 
 		\bibitem{F3}
-		ufraction8 Logo. Digital Image. \newblock{ \em ufraction8.}
+		ufraction8 Logo. Digital Image. \newblock{ \em www.ufraction8.}
 		\url{ufraction8.com}
 		
 		\bibitem{F4}
 		WEST Logo. Digital Image. \newblock{\em WEST Brewery} \url{www.westbeer.com}
 	\end{thebibliography}	
+\end{frame}
+\begin{frame}
+	\frametitle{Part 4: 1D Results}
+	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
+	\begin{figure}
+		\includegraphics[width=15cm]{Figure4.png}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Part 4: 1D Results}
+	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
+	\begin{figure}
+		\includegraphics[width=15cm]{Figure1.png}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Part 4: 1D Results}
+	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
+	\begin{figure}
+		\includegraphics[width=14cm]{Figure2.png}
+	\end{figure}
 \end{frame}
 
 \end{document}

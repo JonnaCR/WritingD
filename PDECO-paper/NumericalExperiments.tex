@@ -6,7 +6,7 @@ The interaction kernel (++ terminology? ++) is of the form:
 \end{align*}
 Three interaction strengths are considered. Firstly, the problem is solved without an interaction term present ($\gamma = 0$). Then the considered problem is solved with an order one attractive interaction term ($\gamma = -1$) and an order one repulsive interaction term ($\gamma = 1$), respectively. Initially, the control $\vec{w}$ is set to zero. It is then investigated how the control changes from this baseline, influenced by the different interaction strengths. This is considered for different values of the regularization parameter $\beta$ and it is expected that the control will increase with decreasing $\beta$, since the cost functional in problems \eqref{AdvDiff} and \eqref{AdvDiff_Linear} allows for a larger control with smaller $\beta$.
 In the following examples, the domain considered is $\Omega \times [0,T] = [-1,1] \times [0,1]$. The number of spatial points is $N=40$, and the number of time points is $n=41$ (++will be changed++). The tolerances in the ODE solver are set to $10^{-8}$ and the tolerance for the convergence of the optimization algorithm is $10^{-4}$. The mixing parameter $\lambda$ is $0.01$, unless stated otherwise.
-\subsection{Nonlinear control problems with an additional nonlocal integral term}
+\subsection{Nonlinear control problems with an additional nonlocal integral term 1D} \label{sec:Examples1d}
 Examples of solving Problem \eqref{AdvDiff}, with 'no-flux type' boundary conditions \eqref{NoFlux} and Dirichlet boundary conditions \eqref{Dirichlet} are given in this section. 
  
 \subsubsection{Neumann boundary conditions, Example 1}	 
@@ -128,77 +128,6 @@ Table \ref{TabNFlowEx3} presents the results for this example for a range of $\b
 	\label{TabNFlowEx3}
 \end{table}
 
-+++ Two additional nonlinear control problems below, may be deleted? +++
-\subsubsection{Neumann boundary conditions, Symmetric Example 1}
-Consider the following symmetric setup:
-\begin{align*}
-\widehat \rho &= \frac{1}{2}(1-t) + t\frac{1}{4}(\cos(\pi y)+2)\\
-\rho_{0} &= \frac{1}{2}\\
-\adj_{T} &= 0\\
-\vec{w} &= 0\\
-f &=0\\
-V_{ext} &=0
-\end{align*}
-Table \ref{TabNFlowAddEx1} summarizes the results for this example.The attractive interaction term causes $\rho$ to move towards the centre of the domain. Since $\widehat \rho$ is also centred in the domain, $J_{uc}$ is small for $\gamma =-1$ in comparison to the problems with $\gamma =0$ and $\gamma =1$. This example illustrates that the particle interaction term can have a significant impact on the optimization problem considered. 
-
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $\gamma$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		& $J_{uc} = 0.0041$ & $J_{uc} = 0.0041$  & $J_{uc} = 0.0041$ & $J_{uc} = 0.0041$\\ 
-		$-1$ & $J_c = 0.0002$ & $J_c = 0.0033$ & $J_c = 0.0040$ & $J_c = 0.0041$\\ 
-		& Iter. $= 607$ & Iter. $= 637$  & Iter. $= 311$ & Iter. $= 1$\\ 
-		\hline
-		& $J_{uc} = 0.0104$ & $J_{uc} = 0.0104$  & $J_{uc} = 0.0104$& $J_{uc} = 0.0104$\\
-		$0$  & $J_c = 0.0005$ & $J_c = 0.0086$  & $J_c = 0.0104$ & $J_c = 0.0104$\\ 
-		& Iter. $= 635$ & Iter. $= 671$  & Iter. $= 340$ & Iter. $= 1$\\ 
-		\hline
-		& $J_{uc} = 0.0195$ & $J_{uc} = 0.0195$  & $J_{uc} = 0.0195$ & $J_{uc} = 0.0195$\\
-		$1$  & $J_c = 0.0011$ & $J_c = 0.0164$  & $J_c = 0.0195$ & $J_c = 0.0195$\\ 
-		& Iter. $= 656$ & Iter. $= 696$  & Iter. $= 356$ & Iter. $= 1$\\ 
-		\hline 
-	\end{tabular}
-	\caption{}
-	\label{TabNFlowAddEx1}
-\end{table}
-
-
-\subsubsection{Neumann boundary conditions, Symmetric Example 2}
-Consider the following symmetric setup, which is the opposite of the first symmetric example:
-\begin{align*}
-\widehat \rho &= \frac{1}{2}(1-t) + t\frac{1}{4}(-\cos(\pi y)+2)\\
-\rho_{0} &= \frac{1}{2}\\
-\adj_{T} &= 0\\
-\vec{w} &= 0\\
-f &=0\\
-V_{ext} &=0
-\end{align*}
-This example can be compared to the Symmetric Example 1. Here, the desired state is having $\rho$ clustered at both boundaries, which is similar to the effect of the repulsive interaction term $\gamma = 1$. Therefore, for this choice of interaction term, the value of the cost functional $J_{uc}$ is smaller than the one for $\gamma = 0$ and $\gamma = -1$. This is the opposite to the observation made in the Symmetric Example 1, which is to be expected, given the two choices of desired state.
-
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $\gamma$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		& $J_{uc} = 0.0209$ & $J_{uc} = 0.0209$  & $J_{uc} = 0.0209$ & $J_{uc} = 0.0209$\\ 
-		$-1$ & $J_c = 0.0009$ & $J_c = 0.0168$ & $J_c = 0.0209$ & $J_c = 0.0209$\\ 
-		& Iter. $= 646$ & Iter. $= 691$  & Iter. $= 379$ & Iter. $= 1$\\ 
-		\hline
-		& $J_{uc} = 0.0104$ & $J_{uc} = 0.0104$  & $J_{uc} = 0.0104$& $J_{uc} = 0.0104$\\
-		$0$  & $J_c = 0.0005$ & $J_c = 0.0086$  & $J_c = 0.0104$ & $J_c = 0.0104$\\ 
-		& Iter. $= 635$ & Iter. $= 671$  & Iter. $= 340$ & Iter. $= 1$\\ 
-		\hline
-		& $J_{uc} = 0.0047$ & $J_{uc} = 0.0047$  & $J_{uc} = 0.0047$ & $J_{uc} = 0.0047$\\
-		$1$  & $J_c = 0.00034$ & $J_c = 0.0040$  & $J_c = 0.0047$ & $J_c = 0.0047$\\ 
-		& Iter. $= 623$ & Iter. $= 651$  & Iter. $= 297$ & Iter. $= 1$\\ 
-		\hline 
-	\end{tabular}
-	\caption{}
-	\label{TabNFlowAddEx2}
-\end{table}
-
-
 
 \subsection{Linear control problems with an additional nonlocal integral term}
 In this section, examples of solving Problem \eqref{AdvDiff_Linear} with both 'no-flux type' boundary conditions \eqref{NoFlux_Linear} and Dirichlet boundary conditions \eqref{Dirichlet}.
@@ -271,3 +200,60 @@ Again, the only qualitative difference to interpreting the results is that the c
 	\caption{}
 	\label{TabNFlowEx5}
 \end{table}
+
+
+\subsection{Nonlinear control problems with an additional nonlocal integral term 1D}
+
+\subsubsection{Neumann boundary conditions, Example 1}	
+We have the following set up:
+\begin{align*}
+\widehat \rho &= \frac{1}{4}(1-t) + t\bigg(\frac{1}{4}\sin \bigg(\frac{\pi}{2}(x_1 - 2)\bigg)\sin \bigg(\frac{\pi}{2}(x_2 - 2)\bigg) + \frac{1}{4}\bigg)\\
+\rho_0 &= \frac{1}{4}\\
+q_{T} &= 0\\
+\vec{w} &= 0\\
+f &=0\\
+V_{ext} &=0
+\end{align*}
+In figures \ref{rhoHat2dEx2} and \ref{rhoOpt2dEx2} the results for this example are illustrated for one choice of parameters. This example is directly comparable to Example 1 in Section \ref{sec:Examples1d}.
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Res1Ex2.png}
+	\caption{2D Example 2, uncontrolled $\rho$ and $\widehat \rho$, $\beta = 10^{-3}$, $\gamma = -1$.++Needs update++}
+	\label{rhoHat2dEx2}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Res2Ex2.png}
+	\caption{2D Example 2, controlled $\rho$ and optimal control $\vec{w}$, $\beta = 10^{-3}$, $\gamma = -1$.++Needs update++}
+	\label{rhoOpt2dEx2}
+\end{figure}
+
+
+\subsubsection{Neumann boundary conditions, Example 2}	
+Here, we have:
+\begin{align*}
+\widehat \rho &= \frac{1}{4}(1-t) + t\frac{1}{0.9921}e^{-3((y_1+0.2)^2 + (y_2+0.2)^2))}\\
+\rho_0 &= \frac{1}{4}\\
+q_{T} &= 0\\
+\vec{w} &= 0\\
+f &=0\\
+V_{ext} &=0
+\end{align*}
+In figures \ref{rhoHat2dEx4} and \ref{rhoOpt2dEx4} the results are illustrated. It can be observed very clearly that the control is driving to the desired state. It is noticeable that the peak of the desired state does not have to be supported as much as the slopes. This is due to the attractive interactions of the particles in this configuration and cannot be observed for repulsive particles.
+
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Res1Ex4.png}
+	\caption{2D Example 4, uncontrolled $\rho$ and $\widehat \rho$, $\beta = 10^{-3}$, $\gamma = -1$. ++Needs update++}
+	\label{rhoHat2dEx4}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.3]{Res2Ex4.png}
+	\caption{2D Example 4, controlled $\rho$ and optimal control $\vec{w}$, $\beta = 10^{-3}$, $\gamma = -1$.++Needs update++}
+	\label{rhoOpt2dEx4}
+\end{figure}
+
+
+
+
+
+
+
+

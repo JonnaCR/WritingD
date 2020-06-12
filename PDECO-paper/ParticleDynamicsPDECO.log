@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 JUN 2020 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  11 JUN 2020 12:53
 entering extended mode
 **./ParticleDynamicsPDECO.tex
 (ParticleDynamicsPDECO.tex
@@ -317,46 +317,65 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]) (Ba
 ckground_Pseudospectral.tex [3])
-(Background_PDECO.tex [4]) (OptimalityConditions.tex [5]
+(Background_PDECO.tex [4]) (MeanFieldOptimalControl.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--28
+
+ []
+
+[5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-[7]
-Underfull \vbox (badness 6775) has occurred while \output is active []
-
- [8]
-[9]) (NumericalMethods.tex [10]
+ [6])
+(OptimalityConditions.tex [7] [8] [9] [10]) (NumericalMethods.tex [11]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 22.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 22.
- [11]
+ [12]
 Underfull \hbox (badness 10000) in paragraph at lines 66--78
 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 103--111
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--111
+Underfull \hbox (badness 10000) in paragraph at lines 108--117
 
  []
 
-) (NumericalExperiments.tex [13]
-<Images/Figure1.png, id=63, 1448.41125pt x 335.00156pt>
+) (NumericalExperiments.tex [14]
+<Images/Figure1.png, id=66, 1448.41125pt x 353.82187pt>
 File: Images/Figure1.png Graphic file (type png)
 <use Images/Figure1.png>
 Package pdftex.def Info: Images/Figure1.png  used on input line 25.
-(pdftex.def)             Requested size: 362.10193pt x 83.75018pt.
-<Images/Figure2.png, id=64, 1445.4pt x 685.8122pt>
+(pdftex.def)             Requested size: 362.10193pt x 88.45525pt.
+<Images/Figure2.png, id=67, 1445.4pt x 685.8122pt>
 File: Images/Figure2.png Graphic file (type png)
 <use Images/Figure2.png>
 Package pdftex.def Info: Images/Figure2.png  used on input line 30.
@@ -371,11 +390,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-<Images/Figure3.png, id=68, 1445.4pt x 685.8122pt>
+[15]
+<Images/Figure3.png, id=71, 1445.4pt x 685.8122pt>
 File: Images/Figure3.png Graphic file (type png)
 <use Images/Figure3.png>
 Package pdftex.def Info: Images/Figure3.png  used on input line 70.
@@ -385,23 +401,76 @@ Package pdftex.def Info: Images/Figure3.png  used on input line 70.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5417) has occurred while \output is active []
 
- [15 <./Images/Figure1.png (PNG copy)> <./Images/Figure2.png (PNG copy)>] [16 <
+ [16 <./Images/Figure1.png (PNG copy)> <./Images/Figure2.png (PNG copy)>] [17 <
 ./Images/Figure3.png (PNG copy)>]
-Underfull \vbox (badness 5592) has occurred while \output is active []
-
- [17]
-Overfull \hbox (3.12709pt too wide) in paragraph at lines 206--208
+Overfull \hbox (3.12709pt too wide) in paragraph at lines 135--137
  \OT1/cmr/bx/n/10 5.2.1. Dirich-let bound-ary con-di-tions, Ex-am-ple 4.[] \OT1
 /cmr/m/n/10 ++ If kept maybe change
  []
 
-[18])
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] (Appendix.tex
+
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+ [18]
+Underfull \vbox (badness 1466) has occurred while \output is active []
+
+ [19]
+<Images/Res1Ex2.png, id=92, 1441.63594pt x 474.27188pt>
+File: Images/Res1Ex2.png Graphic file (type png)
+<use Images/Res1Ex2.png>
+Package pdftex.def Info: Images/Res1Ex2.png  used on input line 219.
+(pdftex.def)             Requested size: 432.49413pt x 142.28265pt.
+
+Overfull \hbox (62.11038pt too wide) in paragraph at lines 219--220
+[][] 
+ []
+
+<Images/Res2Ex2.png, id=93, 1445.4pt x 685.8122pt>
+File: Images/Res2Ex2.png Graphic file (type png)
+<use Images/Res2Ex2.png>
+Package pdftex.def Info: Images/Res2Ex2.png  used on input line 224.
+(pdftex.def)             Requested size: 433.62335pt x 205.74524pt.
+
+Overfull \hbox (63.23961pt too wide) in paragraph at lines 224--225
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Res1Ex4.png, id=94, 1434.10782pt x 474.27188pt>
+File: Images/Res1Ex4.png Graphic file (type png)
+<use Images/Res1Ex4.png>
+Package pdftex.def Info: Images/Res1Ex4.png  used on input line 243.
+(pdftex.def)             Requested size: 430.23567pt x 142.28265pt.
+
+Overfull \hbox (59.85193pt too wide) in paragraph at lines 243--244
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Res2Ex4.png, id=95, 1445.4pt x 685.8122pt>
+File: Images/Res2Ex4.png Graphic file (type png)
+<use Images/Res2Ex4.png>
+Package pdftex.def Info: Images/Res2Ex4.png  used on input line 248.
+(pdftex.def)             Requested size: 433.62335pt x 205.74524pt.
+
+Overfull \hbox (63.23961pt too wide) in paragraph at lines 248--249
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [20 <./Images/Res1Ex2.png (PNG copy)>] (Appendix.tex [21 <./Images/Res2Ex2.pn
+g (PNG copy)> <./Images/Res1Ex4.png (PNG copy)>]
 Overfull \hbox (101.80907pt too wide) detected at line 23
 []
  []
@@ -409,7 +478,7 @@ Overfull \hbox (101.80907pt too wide) detected at line 23
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
+ [22 <./Images/Res2Ex4.png (PNG copy)>]
 Overfull \hbox (153.36606pt too wide) in paragraph at lines 31--45
 [][] 
  []
@@ -424,12 +493,12 @@ Overfull \hbox (137.73767pt too wide) in paragraph at lines 70--88
 [][] 
  []
 
-[21]
+[23]
 Overfull \hbox (12.41347pt too wide) detected at line 109
 []
  []
 
-[22]
+[24]
 Overfull \hbox (163.36609pt too wide) in paragraph at lines 115--129
 [][] 
  []
@@ -439,13 +508,13 @@ Overfull \hbox (163.36609pt too wide) in paragraph at lines 153--167
 [][] 
  []
 
-[23]
+[25]
 Overfull \hbox (163.36609pt too wide) in paragraph at lines 191--205
 [][] 
  []
 
-) (Appendix2.tex [24]
-<Images/PerturbationFunctions.jpg, id=107, 1753.55125pt x 655.44875pt>
+) (Appendix2.tex [26]
+<Images/PerturbationFunctions.jpg, id=118, 1753.55125pt x 655.44875pt>
 File: Images/PerturbationFunctions.jpg Graphic file (type jpg)
 <use Images/PerturbationFunctions.jpg>
 Package pdftex.def Info: Images/PerturbationFunctions.jpg  used on input line 3
@@ -456,14 +525,22 @@ Overfull \hbox (68.00299pt too wide) in paragraph at lines 34--35
 [][] 
  []
 
-[25]) (ParticleDynamicsPDECO.bbl [26 <./Images/PerturbationFunctions.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 118--121
+[27]) (Appendix3.tex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
+
+Overfull \hbox (158.17615pt too wide) in paragraph at lines 8--21
+[][] 
+ []
+
+) [28 <./Images/PerturbationFunctions.jpg>] (ParticleDynamicsPDECO.bbl [29]
+Underfull \hbox (badness 10000) in paragraph at lines 206--209
 []\OT1/cmr/m/n/8 B. D. God-dard, A. Nold, and S. Kalli-ada-sis.  2DCheb-Class [
 Soft-ware].
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 128--131
+Underfull \hbox (badness 1199) in paragraph at lines 216--219
 []\OT1/cmr/m/n/8 Pierre Ho-hen-berg and Wal-ter Kohn.  In-ho-mo-ge-neous elec-t
 ron gas.  \OT1/cmr/m/it/8 Phys-i-cal re-view\OT1/cmr/m/n/8 ,
  []
@@ -471,16 +548,16 @@ ron gas.  \OT1/cmr/m/it/8 Phys-i-cal re-view\OT1/cmr/m/n/8 ,
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27])
-[28] (ParticleDynamicsPDECO.aux) ) 
+ [30])
+[31] (ParticleDynamicsPDECO.aux) ) 
 Here is how much of TeX's memory you used:
- 3784 strings out of 492946
- 51757 string characters out of 3124935
- 139214 words of memory out of 3000000
- 7569 multiletter control sequences out of 15000+200000
+ 3843 strings out of 492946
+ 52528 string characters out of 3124935
+ 139377 words of memory out of 3000000
+ 7618 multiletter control sequences out of 15000+200000
  13835 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,35p,1208b,284s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,35p,1208b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s145
@@ -514,9 +591,9 @@ m/cmti8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmtt10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/s1452504/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ParticleDynamicsPDECO.pdf (28 pages, 1210623 bytes).
+Output written on ParticleDynamicsPDECO.pdf (31 pages, 1897131 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
+ 218 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

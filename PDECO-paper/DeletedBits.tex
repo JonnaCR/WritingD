@@ -1,0 +1,120 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+	\section{Some bits and pieces that are not part of the paper.}
+	
+	
+	+++ Two additional nonlinear control problems below, may be deleted? +++
+	\section{Neumann boundary conditions, Symmetric Example 1}
+	Consider the following symmetric setup:
+	\begin{align*}
+	\widehat \rho &= \frac{1}{2}(1-t) + t\frac{1}{4}(\cos(\pi y)+2)\\
+	\rho_{0} &= \frac{1}{2}\\
+	q_{T} &= 0\\
+	\vec{w} &= 0\\
+	f &=0\\
+	V_{ext} &=0
+	\end{align*}
+	Table \ref{TabNFlowAddEx1} summarizes the results for this example.The attractive interaction term causes $\rho$ to move towards the centre of the domain. Since $\widehat \rho$ is also centred in the domain, $J_{uc}$ is small for $\gamma =-1$ in comparison to the problems with $\gamma =0$ and $\gamma =1$. This example illustrates that the particle interaction term can have a significant impact on the optimization problem considered. 
+	
+	\begin{table}
+		\begin{tabular}{ ||c|| c | c |c | c ||}
+			\hline
+			$\beta$ / $\gamma$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+			\hline 
+			& $J_{uc} = 0.0041$ & $J_{uc} = 0.0041$  & $J_{uc} = 0.0041$ & $J_{uc} = 0.0041$\\ 
+			$-1$ & $J_c = 0.0002$ & $J_c = 0.0033$ & $J_c = 0.0040$ & $J_c = 0.0041$\\ 
+			& Iter. $= 607$ & Iter. $= 637$  & Iter. $= 311$ & Iter. $= 1$\\ 
+			\hline
+			& $J_{uc} = 0.0104$ & $J_{uc} = 0.0104$  & $J_{uc} = 0.0104$& $J_{uc} = 0.0104$\\
+			$0$  & $J_c = 0.0005$ & $J_c = 0.0086$  & $J_c = 0.0104$ & $J_c = 0.0104$\\ 
+			& Iter. $= 635$ & Iter. $= 671$  & Iter. $= 340$ & Iter. $= 1$\\ 
+			\hline
+			& $J_{uc} = 0.0195$ & $J_{uc} = 0.0195$  & $J_{uc} = 0.0195$ & $J_{uc} = 0.0195$\\
+			$1$  & $J_c = 0.0011$ & $J_c = 0.0164$  & $J_c = 0.0195$ & $J_c = 0.0195$\\ 
+			& Iter. $= 656$ & Iter. $= 696$  & Iter. $= 356$ & Iter. $= 1$\\ 
+			\hline 
+		\end{tabular}
+		\caption{}
+		\label{TabNFlowAddEx1}
+	\end{table}
+	
+	
+	\section{Neumann boundary conditions, Symmetric Example 2}
+	Consider the following symmetric setup, which is the opposite of the first symmetric example:
+	\begin{align*}
+	\widehat \rho &= \frac{1}{2}(1-t) + t\frac{1}{4}(-\cos(\pi y)+2)\\
+	\rho_{0} &= \frac{1}{2}\\
+	q_{T} &= 0\\
+	\vec{w} &= 0\\
+	f &=0\\
+	V_{ext} &=0
+	\end{align*}
+	This example can be compared to the Symmetric Example 1. Here, the desired state is having $\rho$ clustered at both boundaries, which is similar to the effect of the repulsive interaction term $\gamma = 1$. Therefore, for this choice of interaction term, the value of the cost functional $J_{uc}$ is smaller than the one for $\gamma = 0$ and $\gamma = -1$. This is the opposite to the observation made in the Symmetric Example 1, which is to be expected, given the two choices of desired state.
+	
+	\begin{table}
+		\begin{tabular}{ ||c|| c | c |c | c ||}
+			\hline
+			$\beta$ / $\gamma$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+			\hline 
+			& $J_{uc} = 0.0209$ & $J_{uc} = 0.0209$  & $J_{uc} = 0.0209$ & $J_{uc} = 0.0209$\\ 
+			$-1$ & $J_c = 0.0009$ & $J_c = 0.0168$ & $J_c = 0.0209$ & $J_c = 0.0209$\\ 
+			& Iter. $= 646$ & Iter. $= 691$  & Iter. $= 379$ & Iter. $= 1$\\ 
+			\hline
+			& $J_{uc} = 0.0104$ & $J_{uc} = 0.0104$  & $J_{uc} = 0.0104$& $J_{uc} = 0.0104$\\
+			$0$  & $J_c = 0.0005$ & $J_c = 0.0086$  & $J_c = 0.0104$ & $J_c = 0.0104$\\ 
+			& Iter. $= 635$ & Iter. $= 671$  & Iter. $= 340$ & Iter. $= 1$\\ 
+			\hline
+			& $J_{uc} = 0.0047$ & $J_{uc} = 0.0047$  & $J_{uc} = 0.0047$ & $J_{uc} = 0.0047$\\
+			$1$  & $J_c = 0.00034$ & $J_c = 0.0040$  & $J_c = 0.0047$ & $J_c = 0.0047$\\ 
+			& Iter. $= 623$ & Iter. $= 651$  & Iter. $= 297$ & Iter. $= 1$\\ 
+			\hline 
+		\end{tabular}
+		\caption{}
+		\label{TabNFlowAddEx2}
+	\end{table}
+	
+	
+	
+\end{document}

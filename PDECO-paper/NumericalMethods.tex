@@ -86,6 +86,11 @@ The guess for the control is updated from $\vec{w}_i$ to $\vec{w}_{i+1}$ and the
 Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is equivalent to the updating scheme presented in~\cite{Burger1}. 
 Note that, while the solutions $\boldsymbol\rho_i$ and $\boldsymbol \adj_i$ change in each iteration, the initial condition $\rho(\vec{x},0)$ and final time condition $\adj(\vec{x},T)$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $\vec{w}_i$.
 
+
+
+
+\subsection{Measures of Accuracy}\label{sec:Method_Validation}
+
 The convergence of the scheme is measured by computing the error between $\vec{w}_{i}$ and $\vec{w}_{g}$. If this error is lower than a set tolerance, the optimality system is self-consistent. This implies that the solution triplet ($\bar{\rho},\bar{{w}},\adj$) (++ check notation here - consistent with Section 3? ++) solves the optimality system, and is therefore an optimal solution to the PDE-constrained optimization problem of interest.
 All errors in Section \ref{sec:Method_Validation} and Section \ref{sec:Expts} are calculated as follows, where $y$ is the variable of interest and $y_R$ is the reference value that $y$ is compared to. For example, when measuring convergence of the fixed point scheme, $y = \vec{w}_g$ and $y_R = \vec{w}_i$. Alternatively, when investigating a known test problem, as considered in Section \ref{sec:Method_Validation}, $y$ is a numerical solution and $y_R$ is an exact solution.\\ 
 The relative $L^2$ error in the spatial direction is:
@@ -104,16 +109,12 @@ Then an $L_\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$ 
 The minimum between absolute and relative spatial error is taken to avoid choosing an erogenously large relative error, caused by division of one small term by another.
 \\
 As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality systems of interest. While it is very robust, it is also much slower in comparison to the fixed point method, which is working reliably for the types of problems considered above.
+A demonstration of this is given in Appendix \ref{app:fsolveComparison}.
 \\
 \\
 \\
 (++ include shortcomings of the method? (e.g. advection dominated problems, good initial guess for BVP solvers) ++)
 
-
-
-
-
-\subsection{Validation}\label{sec:Method_Validation}
 
 Specific test problems are given in Appendix \ref{app:TestProblems}. 
 Further tests to validate the method are presented in Appendix \ref{app:TestProblemsPerturbed}.

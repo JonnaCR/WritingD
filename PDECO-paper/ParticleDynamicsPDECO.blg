@@ -1,5 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: ParticleDynamicsPDECO.aux
 The style file: plain.bst
 Database file #1: ParticleDynamicsPDECO.bib
+I was expecting a `,' or a `}'---line 464 of file ParticleDynamicsPDECO.bib
+ :  
+ :  volume={13},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in albi2014kinetic
 Warning--empty journal in YBEM10
-(There was 1 warning)
+(There was 1 error message)

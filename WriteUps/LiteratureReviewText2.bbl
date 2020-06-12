@@ -1,0 +1,150 @@
+\begin{thebibliography}{10}
+
+\bibitem{LASRY2006619}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Jeux à champ moyen. i – le cas stationnaire.
+\newblock {\em Comptes Rendus Mathematique}, 343(9):619 -- 625, 2006.
+
+\bibitem{LASRY2006679}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Jeux à champ moyen. ii – horizon fini et contrôle optimal.
+\newblock {\em Comptes Rendus Mathematique}, 343(10):679 -- 684, 2006.
+
+\bibitem{LASRY4}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Mean field games.
+\newblock {\em Cahiers de la Chaire Finance et D\'eveloppement Durable}, 2007.
+
+\bibitem{Lasry2007}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Mean field games.
+\newblock {\em Japanese Journal of Mathematics}, 2(1):229--260, Mar 2007.
+
+\bibitem{Huang1}
+{Minyi Huang}, {Peter E. Caines}, and Roland~P. {Malham\'e}.
+\newblock Individual and mass behaviour in large population stochastic wireless
+  power control problems: centralized and {N}ash equilibrium solutions.
+\newblock In {\em 42nd IEEE International Conference on Decision and Control
+  (IEEE Cat. No.03CH37475)}, volume~1, pages 98--103, Dec 2003.
+
+\bibitem{CuckerSmale1}
+Felipe Cucker and Steve Smale.
+\newblock Emergent behavior in flocks.
+\newblock {\em Automatic Control, IEEE Transactions on}, 52:852 -- 862, 06
+  2007.
+
+\bibitem{CuckerSmale2}
+Felipe Cucker and Steve Smale.
+\newblock On the mathematics of emergence.
+\newblock {\em Japan J Math}, 2:197--227, 03 2007.
+
+\bibitem{Fornasier_2014}
+Massimo Fornasier and Francesco Solombrino.
+\newblock Mean-field optimal control.
+\newblock {\em ESAIM: Control, Optimisation and Calculus of Variations},
+  20(4):1123–1152, 2014.
+
+\bibitem{Fornasier_2014no2}
+Massimo Fornasier, Benedetto Piccoli, and Francesco Rossi.
+\newblock Mean-field sparse optimal control.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 372(2028):20130400, 2014.
+
+\bibitem{fornasier_lisini_orrieri_savare_2019}
+Massimo Fornasier, Stefano Lisini, Carlo Orrieri, and Guiseppe Savar\'e.
+\newblock Mean-field optimal control as gamma-limit of finite agent controls.
+\newblock {\em European Journal of Applied Mathematics}, 30(6):1153–1186,
+  2019.
+
+\bibitem{piccoli2014no1}
+Benedetto Piccoli, Francesco Rossi, and Emmanuel Tr\'elat.
+\newblock Control to flocking of the kinetic {C}ucker--{S}male model.
+\newblock {\em SIAM Journal on Mathematical Analysis}, 47(6):4685 -- 4719,
+  2014.
+
+\bibitem{Fornasier_20161no1}
+Massimo Fornasier.
+\newblock Learning and sparse control of multiagent systems.
+\newblock {\em Proc. 7thECM}, 2016.
+
+\bibitem{burger2019meanfield}
+Martin Burger, René Pinnau, Claudia Totzeck, and Oliver Tse.
+\newblock Mean-field optimal control and optimality conditions in the space of
+  probability measures (preprint?), 2019.
+
+\bibitem{burger2019instantaneous}
+Martin Burger, Rene Pinnau, Claudia Totzeck, Oliver Tse, and Andreas Roth.
+\newblock Instantaneous control of interacting particle systems in the
+  mean-field limit (preprint?), 2019.
+
+\bibitem{burger2016controlling}
+Martin Burger, René Pinnau, Andreas Roth, Claudia Totzeck, and Oliver Tse.
+\newblock Controlling a self-organizing system of individuals guided by a few
+  external agents -- particle description and mean-field limit (preprint?),
+  2016.
+
+\bibitem{ChengC.Z1976Tiot}
+C.Z Cheng and Georg Knorr.
+\newblock The integration of the {V}lasov equation in configuration space.
+\newblock {\em Journal of Computational Physics}, 22(3):330--351, 1976.
+
+\bibitem{albi2016selective}
+Giacomo Albi and Lorenzo Pareschi.
+\newblock Selective model-predictive control for flocking systems (preprint).
+\newblock {\em Communications in Industrial and Applied Mathematics}, 2016.
+
+\bibitem{albi2016mean}
+Giacomo Albi, Young-Pil Choi, Massimo Fornasier, and Dante Kalise.
+\newblock Mean field control hierarchy.
+\newblock {\em Applied Mathematics and Optimization}, 76(1):93 -- 135, 2016.
+
+\bibitem{carrillo2019mean}
+Jose~A. Carrillo, Edgard~A. Pimentel, and Vardan~K. Voskanyan.
+\newblock On a mean field optimal control problem (preprint?), 2019.
+
+\bibitem{Pinnau_2017}
+René Pinnau, Claudia Totzeck, Oliver Tse, and Stephan Martin.
+\newblock A consensus-based model for global optimization and its mean-field
+  limit.
+\newblock {\em Mathematical Models and Methods in Applied Sciences},
+  27(01):183–204, 2017.
+
+\bibitem{carrillo2018no1}
+Jos\'e Carrillo, Young-Pil Choi, Claudia Totzeck, and Oliver Tse.
+\newblock An analytical framework for consensus-based global optimization
+  method.
+\newblock {\em Mathematical Models and Methods in Applied Sciences},
+  28(6):1037--1066, 2018.
+
+\bibitem{gilbertstrang1}
+Gilbert Strang.
+\newblock On the construction and comparison of difference schemes.
+\newblock {\em SIAM Journal on Numerical Analysis}, 5(3):506--517, 1968.
+
+\bibitem{Albi_2014no1}
+Giacomo Albi, Lorenzo Pareschi, and Mattia Zanella.
+\newblock {B}oltzmann-type control of opinion consensus through leaders.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 372(2028):20140138, 2014.
+
+\bibitem{albi2014kinetic}
+Giacomo Albi, Michael Herty, and Lorenzo Pareschi.
+\newblock Kinetic description of optimal control problems and applications to
+  opinion consensus.
+\newblock 2014.
+
+\bibitem{CarraroDirectIndirectMultipleShooting}
+Thomas Carraro and Michael Geiger.
+\newblock Direct and indirect multiple shooting for parabolic optimal control
+  problems.
+\newblock In P.~Cinnella G.~Zavarise and M.~Campiti, editors, {\em Special
+  Issue: 86th Annual Meeting of the International Association of Applied
+  Mathematics and Mechanics (GAMM)}, pages 35--67. 01 2015.
+
+\bibitem{CarraroIndMultipleShooting}
+Thomas Carraro, Michael Geiger, and R~Rannacher.
+\newblock Indirect multiple shooting for nonlinear parabolic optimal control
+  problems with control constraints.
+\newblock {\em SIAM Journal on Scientific Computing}, 36, 01 2014.
+
+\end{thebibliography}
