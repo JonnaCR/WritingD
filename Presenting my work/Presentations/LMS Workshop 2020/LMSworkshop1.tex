@@ -113,7 +113,8 @@
 	\begin{columns}
 		\column{0.8 \linewidth}
 		\textbf{Diffusion, advection and \textcolor{red}{particle interactions}}
-		$	\rho: \text{ particle density at } (\vec{x},t)$
+		$	\rho: \text{ particle density at } (\vec{x},t)$, 
+		$\quad \Sigma = (0,T) \times \Omega$
 		\begin{align*}
 		\\
 		\partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \vec{w}) +\textcolor{red}{ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad\text{in    } \Sigma\\
@@ -329,7 +330,7 @@ Our approach:
 	%\vspace{-0.5 cm}
     \textbf{Inputs for a 2D example:}\\
     \vspace{0.2 cm}
-    	$ \quad\rho_0 = \frac{1}{4}$, $\vec{w}^{(1)} = 0$, $\beta = 10^{-3}$, $V_2(\vec{x}) = \gamma e^{-{\norm{\vec{x}}}^2}$,\\
+    	$ \quad\rho_0 = \frac{1}{4}$, $\vec{w}^{(1)} = 0$, $\beta = 10^{-3}$, $V_2(\vec{x}) = -\gamma e^{-{\norm{\vec{x}}}^2}$,\\
 	    $\quad\widehat \rho = (1-t)\rho_0 + t\bigg(\frac{1}{4}\sin \bigg(\frac{\pi}{2}(x_1 - 2)\bigg)\sin \bigg(\frac{\pi}{2}(x_2 - 2)\bigg) + \frac{1}{4}\bigg)$,\\	
 	    $\quad \Sigma = \Omega \times (0,1)$, where $\Omega = [-1,1]$.
 \end{frame}
