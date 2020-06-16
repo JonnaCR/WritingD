@@ -1,23 +1,25 @@
 \section{Comparing the fixed point algorithm with \texttt{fsolve}}
 \label{app:fsolveComparison}
 
-In order to compute the computational time taken of the fixed point algorithm and the inbuilt Matlab function \texttt{fsolve}, Example 1 in Section \ref{sec:Examples1d} is considered. Note that the comparison is slightly impacted by the fact that convergence is measured differently in these two numerical methods. However, a general comparison can be made on the efficiency of the two approaches.
+Example 1 in Section \ref{sec:Examples1d} is considered to compare the computational time taken of the fixed point algorithm and the inbuilt Matlab function \texttt{fsolve}. Note that the comparison is slightly impacted by the fact that convergence is measured differently in these two numerical methods. However, a general comparison can be made regarding the efficiency of the two approaches.
 We choose $n=20$, $N=30$, the ODE solver tolerance is set to be $10^{-8}$ and the optimality tolerance is $10^{-4}$ and $\beta = 10^{-3}$. 
-As can be seen in Table \ref{TabApp3}, the running time of the fixed point algorithm is considerably faster than for \texttt{fsolve}, while the resulting cost functionals remain the same. This can be confirmed by comparing the number of function evaluations computed with each method. The differences in $\rho$ and $\adj$ are broadly in line with the optimality tolerance set, however the control differs more (why?). (+ Note: fsolve says:'Equations solved, inaccuracies possible' - it never actually reached the optimality tolerance ++)
-\begin{table}[h]
-	\begin{tabular}{ ||c|| c | c | c | c |c | c | c | c ||}
-		\hline
-	        & $\gamma$ & Time taken (s) & F.Evals/Iters & $J_{FW}$ & $J_{Opt}$ & $\rho_{Diff}$ & $\adj_{Diff}$ & $\vec{w}_{Diff}$\\
-		\hline
-		Fixed Point & & $106.4930$ & $667$ & $0.0438$ & $0.0011$ & & & \\
-		\texttt{fsolve} & $-1$ & $6.3670 \times 10^4 (rerun)$ & $35384$ & $0.0438$ & $0.0011$ & & & \\
-		Difference &  &  &  &  &  & $3.3515 \times 10^{-4}$ & $1.0922\times 10^{-5}$ & $0.0076$\\
-		\hline
-		Fixed Point & & $101.4840$ & $656$ & $0.0434$ & $0.0020$ & & & \\
-		\texttt{fsolve} & $1$ & $3.3481 \times 10^4 $ & $31957$ & $0.0434$ & $0.0020$ & & & \\
-		Difference &  &  &  &  &  & $6.7721 \times 10^{-4}$ & $3.8226 \times 10^{-5}$ & $0.0204$\\
-		\hline        
-	\end{tabular}
-	\caption{Update this table eventually.}
-\label{TabApp3}
-\end{table}
+As can be seen in Table \ref{TabA3:Prob1}, the running time of the fixed point algorithm is considerably faster than for \texttt{fsolve}, while the resulting values of the cost functional remain the same. This can be confirmed by comparing the number of function evaluations computed with each method. The differences in $\rho$ and $\adj$ are broadly in line with the optimality tolerance set, however the control differs more because $\vec{w}$ is updated using the optimal values of $\rho$ and $\adj$. (+ Note: fsolve says:'Equations solved, inaccuracies possible' - it never actually reached the optimality tolerance ++)
+
+\input{fixptvsfsolve.tex} %\label{TabA3:Prob1}
+%\begin{table}[h]
+%	\begin{tabular}{ ||c|| c | c | c | c |c | c | c | c ||}
+%		\hline
+%	        & $\gamma$ & Time taken (s) & F.Evals/Iters & $J_{FW}$ & $J_{Opt}$ & $\rho_{Diff}$ & $\adj_{Diff}$ & $\vec{w}_{Diff}$\\
+%		\hline
+%		Fixed Point & & $106.4930$ & $667$ & $0.0438$ & $0.0011$ & & & \\
+%		\texttt{fsolve} & $-1$ & $6.3670 \times 10^4 (rerun)$ & $35384$ & $0.0438$ & $0.0011$ & & & \\
+%		Difference &  &  &  &  &  & $3.3515 \times 10^{-4}$ & $1.0922\times 10^{-5}$ & $0.0076$\\
+%		\hline
+%		Fixed Point & & $101.4840$ & $656$ & $0.0434$ & $0.0020$ & & & \\
+%		\texttt{fsolve} & $1$ & $3.3481 \times 10^4 $ & $31957$ & $0.0434$ & $0.0020$ & & & \\
+%		Difference &  &  &  &  &  & $6.7721 \times 10^{-4}$ & $3.8226 \times 10^{-5}$ & $0.0204$\\
+%		\hline        
+%	\end{tabular}
+%	\caption{Update this table eventually.}
+%\label{TabApp3}
+%\end{table}
