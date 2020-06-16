@@ -1,16 +1,17 @@
-In this section we introduce a number of PDE-constrained optimization problem structures that we will consider in a multiscale particle dynamics setting. In the following, the terms 'linear control' and 'nonlinear control' refer to the application of the control in the PDE constraint either linearly or nonlinearly. Alternatively, these are known as 'force control', since the control can be applied linearly through the source, 'force' term, and 'flow control', where the nonlinear control is the vector field, 'flow', in the advection term. 
+In this section we introduce a number of PDE-constrained optimization problem structures that we will consider in a multiscale particle dynamics setting. In the following, the terms 'linear control' and 'nonlinear control' refer to the application of the control in the PDE constraint either linearly or nonlinearly. Alternatively, these are known as 'force control', since the control can be applied linearly through the source, or 'force', term, and 'flow control', where the nonlinear control is applied via the vector field, 'flow', in the advection term. 
 \vspace{0.75em}
 
 \textbf{\emph{-- \underline{Advection--diffusion nonlinear control problem:}}}~~We commence with the following minimization problem involving $L^2$-norm terms within the entire space-time interval $\Omega$, constrained by a nonlinear time-dependent advection--diffusion equation:
 \begin{align}
 \ \label{AdvDiff} \min_{\rho,\vec{w}}~~\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+{}&\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
 \ \nonumber \text{s.t.}\quad~\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
+\nonumber
 ={}&\nabla\cdot(\rho\nabla{}V_{\text{ext}})+f\quad\text{on }\Omega\times(0,T), \\
 \ \nonumber \rho={}&\rho_{0}(\vec{x})\quad\hspace{4.9em}\text{at }t=0,
 \end{align}
 where $\Omega\subset\mathbb{R}^{d}$, $d\in\{1,2,3\}$, is some given domain with boundary $\partial\Omega$, and $T$ is a prescribed ``final time'' at which the process is considered. The scalar function $\rho$ and the vector-valued function $\vec{w}$ are the \emph{state} and \emph{control variables}, respectively, $\beta>0$ is a given \emph{regularization parameter}, and $\widehat{\rho}(\vec{x},t)$, $V_{\text{ext}}(\vec{x},t)$, $f(\vec{x},t)$, $\rho_{0}(\vec{x})$ are prescribed functions corresponding to the \emph{desired state}, \emph{external potential}, PDE source term, and initial condition, respectively. We highlight that frequently $f(\vec{x},t)=0$,
 which results in conservation of mass.
-Additionally, there is a nonlocal integral term, in order to model interactions between individual particles, where $\vec{K}$ denotes some vector function acting on the distance between particles. When the parameter $\gamma$ is set to zero, the equation reduces to a standard nonlinear advection-diffusion control problem. When $\gamma$ is positive, the integral term models repulsive interactions (check with sign of K!), when $\gamma$ is negative, attractive interactions. Typical values of $\gamma$ are in the range of $[-1,1]$, and can be interpreted as the interaction strength of the particles.
+Additionally, there is a nonlocal integral term, in order to model interactions between individual particles, where $\vec{K}$ denotes some vector function acting on the distance between particles. The parameter $\gamma$ models the particle interaction strength; typical values are in $[-1,1]$. If $\gamma$ is set to zero, the model reduces to a standard nonlinear advection-diffusion equation. When $\gamma$ is positive, the integral term models repulsive interactions, when $\gamma$ is negative, attractive interactions. 
 
 
 We consider two possibilities for the boundary conditions imposed on $\rho$, specifically the Dirichlet boundary condition:
@@ -29,7 +30,7 @@ where $\frac{\partial}{\partial{}n}$ denotes the derivative with respect to the 
 \begin{align}
 \ \label{AdvDiff_Linear} \min_{\rho,\vec{w}}~~~\frac{1}{2}\int_0^T\int_{\Omega}{}&(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
 \ \nonumber \text{s.t.}\quad\partial_{t}\rho-\nabla^{2}\rho-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
-&=\nabla\cdot(\rho\nabla{}V_{\text{ext}})+w+f\quad\text{on }\Omega\times(0,T), \\
+&\nonumber=\nabla\cdot(\rho\nabla{}V_{\text{ext}})+w+f\quad\text{on }\Omega\times(0,T), \\
 \ \nonumber \rho&{}=\rho_{0}(\vec{x})\quad\hspace{6.8em}\text{at }t=0,
 \end{align}
 along with the Dirichlet boundary condition \eqref{Dirichlet} or the `Neumann-type' boundary condition:

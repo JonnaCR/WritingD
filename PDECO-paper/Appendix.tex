@@ -26,25 +26,26 @@ where $\boldsymbol{x}=[x_1,x_2]^T$, and
 Table \ref{TabApp1} displays the results for Test Problem 1. It can be observed that the error for the uncontrolled problem ($Err_{uc}$), and the error for the optimal control problem ($Err_c$), coincide. This is because the same forward problem is solved in the first step of the fixed point algorithm as in solving the forward problem, when provided with the exact solution. 
 ++ Maybe change these tables to show the errors for $\adj$ and $w$ as well. ++
 
-
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		&$Err_{uc} = 2.1694\times 10^{-7}$ &$Err_{uc} = 1.0138\times 10^{-8}$ &$Err_{uc} = 5.532\times 10^{-9}$ &$Err_{uc} = 5.514\times 10^{-9}$\\
-		20    &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
-		\hline 
-		&$Err_{uc} =1.9745 \times 10^{-7}$ &$Err_{uc} =9.920\times 10^{-9}$ &$Err_{uc} = 5.759\times 10^{-9}$ &$Err_{uc} = 5.683 \times 10^{-9}$\\
-		30     &$Err_{c} =0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
-		\hline 
-		&$Err_{uc} = 2.1367\times 10^{-7}$ &$Err_{uc} = 1.0051\times 10^{-8}$ &$Err_{uc} = 5.643\times 10^{-9}$ &$Err_{uc} = 5.611\times 10^{-9}$\\
-		40     &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
-		\hline 
-	\end{tabular}
-	\caption{Update this table.}
-	\label{TabApp1}
-\end{table}
+\input{ExactSolProb1.tex}
+%
+%\begin{table}
+%	\begin{tabular}{ ||c|| c | c |c | c ||}
+%		\hline
+%		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+%		\hline 
+%		&$Err_{uc} = 2.1694\times 10^{-7}$ &$Err_{uc} = 1.0138\times 10^{-8}$ &$Err_{uc} = 5.532\times 10^{-9}$ &$Err_{uc} = 5.514\times 10^{-9}$\\
+%		20    &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
+%		\hline 
+%		&$Err_{uc} =1.9745 \times 10^{-7}$ &$Err_{uc} =9.920\times 10^{-9}$ &$Err_{uc} = 5.759\times 10^{-9}$ &$Err_{uc} = 5.683 \times 10^{-9}$\\
+%		30     &$Err_{c} =0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
+%		\hline 
+%		&$Err_{uc} = 2.1367\times 10^{-7}$ &$Err_{uc} = 1.0051\times 10^{-8}$ &$Err_{uc} = 5.643\times 10^{-9}$ &$Err_{uc} = 5.611\times 10^{-9}$\\
+%		40     &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$ &$Err_{c} = 0$\\
+%		\hline 
+%	\end{tabular}
+%	\caption{Update this table.}
+%	\label{TabApp1}
+%\end{table}
 
 
 
@@ -66,28 +67,30 @@ where $c>0$ is an arbitary constant, and
 \end{align*}
 +++ Maybe delete the 2? Not done in the current version of my code -- so also not in Appendix B +++ 
 Table \ref{TabApp1b} shows the results for the error in both $\rho_{uc}$ and $\rho_{c}$, the Fixed point algorithm gives the same errors as $Err_{uc}$. It can be concluded that $10$ spatial and time points are not sufficient for solving the uncontrolled PDE, and $20$ points are still not quite enough. However, $30$ points are enough to get results that are close to the ODE tolerance $10^{-8}$. 
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		$N_1, N_2$, $n$ & &  & &  \\ 
-		\hline
-		&$Err_{uc} = 0.0361$ &$Err_{uc} = 0.1727$ &$Err_{uc} = 0.1727$ &$Err_{uc} = 0.1727$\\
-		10     &$Err_{c} = 1.628\times 10^{-17}$ &$Err_{c} = 1.5116\times 10^{-16}$ &$Err_{c} = 1.0992\times 10^{-16}$ &$Err_{c} = 1.0265\times 10^{-16}$\\
-		\hline  
-		&$Err_{uc} = 2.0020\times 10^{-7}$ &$1.5986\times 10^{-6}$ &$Err_{uc} = 1.6059\times 10^{-6}$ &$Err_{uc} = 1.6059\times 10^{-6}$\\
-		20    &$Err_{c} = 2.266\times 10^{-17}$ &$Err_{c} =1.1093\times 10^{-16} $ &$Err_{c} = 1.4317\times 10^{-16}$ &$Err_{c} = 1.1007\times 10^{-16}$\\
-		\hline 
-		&$Err_{uc} = 1.2515\times 10^{-7}$ &$Err_{uc} = 5.4219\times 10^{-8}$ &$Err_{uc} = 2.9363\times 10^{-8}$ &$Err_{uc} = 2.9363\times 10^{-8}$\\
-		30     &$Err_{c} = 2.086\times 10^{-17}$ &$Err_{c} = 1.0673\times 10^{-16}$ &$Err_{c} = 1.0697\times 10^{-16}$ &$Err_{c} = 1.0779\times 10^{-16}$\\
-		\hline 
-		&$Err_{uc} =  1.2529\times 10^{-7}$ &$Err_{uc} = 5.4266\times 10^{-8}$ &$Err_{uc} = 2.9599\times 10^{-8}$ &$Err_{uc} = 2.9599\times 10^{-8}$\\
-		40     &$Err_{c} = 1.837\times 10^{-17}$ &$Err_{c} = 1.0200\times 10^{-16}$ &$Err_{c} =  1.0400\times 10^{-16}$ &$Err_{c} = 1.0319\times 10^{-16}$\\
-		\hline 
-	\end{tabular}
-	\caption{Update this table!}
-	\label{TabApp1b}
-\end{table}
+
+\input{ExactSolProb2.tex}
+%\begin{table}
+%	\begin{tabular}{ ||c|| c | c |c | c ||}
+%		\hline
+%		$\beta$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+%		$N_1, N_2$, $n$ & &  & &  \\ 
+%		\hline
+%		&$Err_{uc} = 0.0361$ &$Err_{uc} = 0.1727$ &$Err_{uc} = 0.1727$ &$Err_{uc} = 0.1727$\\
+%		10     &$Err_{c} = 1.628\times 10^{-17}$ &$Err_{c} = 1.5116\times 10^{-16}$ &$Err_{c} = 1.0992\times 10^{-16}$ &$Err_{c} = 1.0265\times 10^{-16}$\\
+%		\hline  
+%		&$Err_{uc} = 2.0020\times 10^{-7}$ &$1.5986\times 10^{-6}$ &$Err_{uc} = 1.6059\times 10^{-6}$ &$Err_{uc} = 1.6059\times 10^{-6}$\\
+%		20    &$Err_{c} = 2.266\times 10^{-17}$ &$Err_{c} =1.1093\times 10^{-16} $ &$Err_{c} = 1.4317\times 10^{-16}$ &$Err_{c} = 1.1007\times 10^{-16}$\\
+%		\hline 
+%		&$Err_{uc} = 1.2515\times 10^{-7}$ &$Err_{uc} = 5.4219\times 10^{-8}$ &$Err_{uc} = 2.9363\times 10^{-8}$ &$Err_{uc} = 2.9363\times 10^{-8}$\\
+%		30     &$Err_{c} = 2.086\times 10^{-17}$ &$Err_{c} = 1.0673\times 10^{-16}$ &$Err_{c} = 1.0697\times 10^{-16}$ &$Err_{c} = 1.0779\times 10^{-16}$\\
+%		\hline 
+%		&$Err_{uc} =  1.2529\times 10^{-7}$ &$Err_{uc} = 5.4266\times 10^{-8}$ &$Err_{uc} = 2.9599\times 10^{-8}$ &$Err_{uc} = 2.9599\times 10^{-8}$\\
+%		40     &$Err_{c} = 1.837\times 10^{-17}$ &$Err_{c} = 1.0200\times 10^{-16}$ &$Err_{c} =  1.0400\times 10^{-16}$ &$Err_{c} = 1.0319\times 10^{-16}$\\
+%		\hline 
+%	\end{tabular}
+%	\caption{Update this table!}
+%	\label{TabApp1b}
+%\end{table}
 
 \vspace{0.75em}
 
@@ -111,24 +114,26 @@ where
 
 Table \ref{TabApp1a} displays the error in $\rho_{uc}$ and $\rho_c$ for different choices of spatial and time points as well as for different $\beta$ values. It is shown that the choice of $20$ points in space and time are not sufficient to reach the accuracy of the ODE solver of $10^{-8}$, while $30$ points are sufficient for most problems. However, the error measures of the ODE solver and used in this paper may differ and therefore may not be as straightforward to compare. It can also be noted that the case with $\beta = 10^{-3}$ results in less accuracy than other choices of $\beta$. When computing this with $N_1 = N_2 = n = 50$, the error is reduced to $9.4011 \times 10^{-8}$, which is a small improvement. These results can be compared to the one dimensional case in Test Problem 2 and Table \ref{TabApp1b}. The findings for the one dimensional and the two dimensional case are very similar.
 
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		&$Err_{uc} = 1.3792 \times 10^{-6}$ &$Err_{uc} = 1.3419 \times 10^{-6}$ &$Err_{uc} = 1.3413 \times 10^{-6}$ &$Err_{uc} = 1.3412 \times 10^{-6}$\\
-		20    &$Err_{c} = 1.3792 \times 10^{-6}$ &$Err_{c} = 1.3419 \times 10^{-6}$ &$Err_{c} = 1.3413 \times 10^{-6}$ &$Err_{c} = 1.3412 \times 10^{-6}$\\
-		\hline 
-		&$Err_{uc} = 1.9316 \times 10^{-7}$ &$Err_{uc} = 5.062 \times 10^{-9}$ &$Err_{uc} = 2.739 \times 10^{-9}$ &$Err_{uc} = 2.739\times 10^{-9}$\\
-		30     &$Err_{c} = 1.9316 \times 10^{-7}$ &$Err_{c} = 5.062 \times 10^{-9}$ &$Err_{c} = 2.739 \times 10^{-9}$ &$Err_{c} = 2.739\times 10^{-9}$\\
-		\hline 
-		&$Err_{uc} = 1.8241 \times 10^{-7}$ &$Err_{uc} = 5.196\times 10^{-9}$ &$Err_{uc} = 2.563 \times 10^{-9}$ &$Err_{uc} = 2.530\times 10^{-9}$\\
-		41     &$Err_{c} = 1.8241 \times 10^{-7}$ &$Err_{c} = 5.196\times 10^{-9}$ &$Err_{c} = 2.563 \times 10^{-9}$ &$Err_{c} = 2.530\times 10^{-9}$\\
-		\hline 
-	\end{tabular}
-	\caption{}
-	\label{TabApp1a}
-\end{table}
+
+\input{ExactSolProb3.tex}
+%\begin{table}
+%	\begin{tabular}{ ||c|| c | c |c | c ||}
+%		\hline
+%		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+%		\hline 
+%		&$Err_{uc} = 1.3792 \times 10^{-6}$ &$Err_{uc} = 1.3419 \times 10^{-6}$ &$Err_{uc} = 1.3413 \times 10^{-6}$ &$Err_{uc} = 1.3412 \times 10^{-6}$\\
+%		20    &$Err_{c} = 1.3792 \times 10^{-6}$ &$Err_{c} = 1.3419 \times 10^{-6}$ &$Err_{c} = 1.3413 \times 10^{-6}$ &$Err_{c} = 1.3412 \times 10^{-6}$\\
+%		\hline 
+%		&$Err_{uc} = 1.9316 \times 10^{-7}$ &$Err_{uc} = 5.062 \times 10^{-9}$ &$Err_{uc} = 2.739 \times 10^{-9}$ &$Err_{uc} = 2.739\times 10^{-9}$\\
+%		30     &$Err_{c} = 1.9316 \times 10^{-7}$ &$Err_{c} = 5.062 \times 10^{-9}$ &$Err_{c} = 2.739 \times 10^{-9}$ &$Err_{c} = 2.739\times 10^{-9}$\\
+%		\hline 
+%		&$Err_{uc} = 1.8241 \times 10^{-7}$ &$Err_{uc} = 5.196\times 10^{-9}$ &$Err_{uc} = 2.563 \times 10^{-9}$ &$Err_{uc} = 2.530\times 10^{-9}$\\
+%		41     &$Err_{c} = 1.8241 \times 10^{-7}$ &$Err_{c} = 5.196\times 10^{-9}$ &$Err_{c} = 2.563 \times 10^{-9}$ &$Err_{c} = 2.530\times 10^{-9}$\\
+%		\hline 
+%	\end{tabular}
+%	\caption{}
+%	\label{TabApp1a}
+%\end{table}
 
 
 \vspace{0.75em}
@@ -149,24 +154,26 @@ where $\vec{x}=[x_1,...,x_d]^T$, and
 \end{align*}
 
 Table \ref{TabApp1c} shows the results for $d=1$ and the controlled problem solved by the fixed point method. In this problem, $20$ points seem to be enough to get accurate results.
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		&$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$\\
-		20    &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$\\
-		\hline 
-		&$Err_{uc} =1.5756\times 10^{-8}$ &$Err_{uc} =1.5756\times 10^{-8}$ &$Err_{uc} =1.5756\times 10^{-8}$&$Err_{uc} = 1.5756\times 10^{-8}$\\
-		30     &$Err_{c} =9.186\times 10^{-17}$ &$9.186\times 10^{-17}$ &$Err_{c} 9.186\times 10^{-17}$ &$Err_{c} =9.186\times 10^{-17}$\\
-		\hline 
-		&$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$\\
-		40     &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} =1.1053\times 10^{-16}$\\
-		\hline 
-	\end{tabular}
-	\caption{Update table!}
-	\label{TabApp1c}
-\end{table}
+
+\input{ExactSolProb4.tex}
+%\begin{table}
+%	\begin{tabular}{ ||c|| c | c |c | c ||}
+%		\hline
+%		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+%		\hline 
+%		&$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$ &$Err_{uc} = 1.5572\times 10^{-8}$\\
+%		20    &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$ &$Err_{c} = 1.0843\times 10^{-16}$\\
+%		\hline 
+%		&$Err_{uc} =1.5756\times 10^{-8}$ &$Err_{uc} =1.5756\times 10^{-8}$ &$Err_{uc} =1.5756\times 10^{-8}$&$Err_{uc} = 1.5756\times 10^{-8}$\\
+%		30     &$Err_{c} =9.186\times 10^{-17}$ &$9.186\times 10^{-17}$ &$Err_{c} 9.186\times 10^{-17}$ &$Err_{c} =9.186\times 10^{-17}$\\
+%		\hline 
+%		&$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$ &$Err_{uc} = 1.5591\times 10^{-8}$\\
+%		40     &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} = 1.1053\times 10^{-16}$ &$Err_{c} =1.1053\times 10^{-16}$\\
+%		\hline 
+%	\end{tabular}
+%	\caption{Update table!}
+%	\label{TabApp1c}
+%\end{table}
 
 
 \vspace{0.75em}
@@ -187,24 +194,25 @@ where
 \end{align*}
 Table \ref{TabApp1d} shows the results for $d=1$ and the controlled problem. It can be observed that in this case $20$ points are sufficient. This could be explained by the fact that Problem \eqref{AdvDiff_Linear} is easier to solve than Problem \eqref{NoFlux}.
 
-\begin{table}
-	\begin{tabular}{ ||c|| c | c |c | c ||}
-		\hline
-		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
-		\hline 
-		&$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$\\
-		20    &$Err_{c} = 1.0395\times 10^{-16}$ &$Err_{c} = 1.0395\times 10^{-16}$ &$Err_{c} = 1.0395\times 10^{-16}$ &$ 1.0395\times 10^{-16}$\\
-		\hline 
-		&$Err_{uc} =1.5366\times 10^{-8}$ &$Err_{uc} =1.5366\times 10^{-8}$ &$Err_{uc} = 1.5366\times 10^{-8}$ &$Err_{uc} = 1.5366 \times 10^{-8}$\\
-		30     &$Err_{c} =1.1296\times 10^{-16}$ &$Err_{c} = 1.1296\times 10^{-16}$ &$Err_{c} =1.1296\times 10^{-16}$ &$1.1296\times 10^{-16}$\\
-		\hline 
-		&$Err_{uc} = 9.298\times 10^{-9}$ &$Err_{uc} = 1.2436\times 10^{-8}$ &$Err_{uc} = 1.2584\times 10^{-8}$ &$Err_{uc} = 1.2584\times 10^{-8}$\\
-		40     &$Err_{c} = 8.992 \times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$\\
-		\hline 
-	\end{tabular}
-	\caption{}
-	\label{TabApp1d}
-\end{table}
+\input{ExactSolProb5.tex}
+%\begin{table}
+%	\begin{tabular}{ ||c|| c | c |c | c ||}
+%		\hline
+%		$\beta$ / $N_1 \times N_2$, $n$ & $10^{-3}$  & $10^{-1}$  & $10$ & $10^3$ \\ 
+%		\hline 
+%		&$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$ &$Err_{uc} = 1.5605\times 10^{-8}$\\
+%		20    &$Err_{c} = 1.0395\times 10^{-16}$ &$Err_{c} = 1.0395\times 10^{-16}$ &$Err_{c} = 1.0395\times 10^{-16}$ &$ 1.0395\times 10^{-16}$\\
+%		\hline 
+%		&$Err_{uc} =1.5366\times 10^{-8}$ &$Err_{uc} =1.5366\times 10^{-8}$ &$Err_{uc} = 1.5366\times 10^{-8}$ &$Err_{uc} = 1.5366 \times 10^{-8}$\\
+%		30     &$Err_{c} =1.1296\times 10^{-16}$ &$Err_{c} = 1.1296\times 10^{-16}$ &$Err_{c} =1.1296\times 10^{-16}$ &$1.1296\times 10^{-16}$\\
+%		\hline 
+%		&$Err_{uc} = 9.298\times 10^{-9}$ &$Err_{uc} = 1.2436\times 10^{-8}$ &$Err_{uc} = 1.2584\times 10^{-8}$ &$Err_{uc} = 1.2584\times 10^{-8}$\\
+%		40     &$Err_{c} = 8.992 \times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$ &$Err_{c} = 8.992\times 10^{-17}$\\
+%		\hline 
+%	\end{tabular}
+%	\caption{}
+%	\label{TabApp1d}
+%\end{table}
 
 [[we should check these, possibly using Maple]]
 

@@ -30,34 +30,36 @@ where $a = 0.7$, $x_0 = t_0 = -0.01$ and $\epsilon = 0.1$ or $\epsilon = 0.5$.
 The chosen number of points is $N =40$ and $n=41$, the ODE tolerances are $10^{-8}$ and Optimization tolerance is $10^{-4}$. The mixing rate for the optimization solver is $\lambda = 0.01$.
 The results presented in Table \ref{TabApp2} show the initial error in $\vec{w}$, and the final errors in $\vec{w}$, $\rho$ and $\adj$, measured in the norm presented in Section \ref{sec:Method_Solver}, with respect to the exact solution. It can be seen that most of the errors are within the optimization tolerance, such as most final errors for $\vec{w}$ and $\rho$. Since in the optimization routine $\adj$ is obtained using the final values of $\vec{w}$ and $\rho$ it can be observed that the error in $\adj$ is generally higher than for the other two variables. Overall, these results show that the method works reliably.
 
-\begin{figure}[h]
-	\includegraphics[scale=0.25]{PerturbationFunctions.jpg}
-	\caption{Perturbation functions $\tilde h(x)$ and  $\tilde g(t)$}
-	\label{Fig:PerturbationFunctions}
-\end{figure} 
-\begin{table}
-	\begin{tabular}{ ||c |c || c || c |c | c ||}
-		\hline
-		                    &	& Initial Error  & Final & Error &  \\ 
-		                	& $\beta$  & $\vec{w}$  & $\vec{w}$  & $\rho$ & $\adj$ \\ 
-		\hline
-			                & $10^{-3}$	& $0.1$  & $6.3190 \times 10^{-5}$ & $1.1648 \times 10^{-5}$ & $2.8425 \times 10^{-5}$  \\
-		 $0.1\tilde g(t)$   & $10^{-1}$	& $0.1$  & $6.1449 \times 10^{-5}$ & $7.9587 \times 10^{-5}$ & $2.8405 \times 10^{-4}$ \\
-		                 	& $10^{1}$	& $0.1$  & $6.1304 \times 10^{-5}$ & $7.9576 \times 10^{-5}$ & $5.8824 \times 10^{-4}$ \\
-		\hline 
-			                & $10^{-3}$	& $0.5$  & $2.7263 \times 10^{-4}$  & $2.9182 \times 10^{-5}$ & $3.2882 \times 10^{-5}$ \\
-		$0.5 \tilde g(t)$   & $10^{-1}$	& $0.5$  & $2.7064 \times 10^{-4}$ & $2.7098 \times 10^{-4}$ &  $3.2894 \times 10^{-4}$\\
-		                    & $10^{1}$	& $0.5$  & $2.7079 \times 10^{-4}$ & $2.7096 \times 10^{-4}$ & $6.8139 \times 10^{-4}$ \\
-		\hline 
-			                & $10^{-3}$	& $0.0855$ & $6.1809 \times 10^{-5}$ & $1.1842 \times 10^{-5}$ & $2.7355 \times 10^{-5}$ \\
-		$0.1\tilde h(x)$    & $10^{-1}$	& $0.0855$ & $6.0187 \times 10^{-5}$ & $8.0212 \times 10^{-5}$ & $2.7321 \times 10^{-4}$ \\
-		                    & $10^{1}$	& $0.0855$ & $6.0047 \times 10^{-5}$ & $8.0200 \times 10^{-5}$ & $5.7592 \times 10^{-4}$ \\
-		\hline 
-			                & $10^{-3}$	& $0.4276$  & $2.5041 \times 10^{-4}$ & $2.7429 \times 10^{-5}$ & $3.1303 \times 10^{-5}$ \\
-		$0.5\tilde h(x)$    & $10^{-1}$	& $0.4276$  & $2.4833 \times 10^{-4}$ & $2.5436 \times 10^{-4}$ & $3.1332 \times 10^{-4}$ \\
-	                     	& $10^{1}$	& $0.4276$  & $2.4846 \times 10^{-4}$ & $2.5435 \times 10^{-4}$ & $6.4922 \times 10^{-4}$ \\
-		\hline 
-    \end{tabular}
-	\caption{}
-\label{TabApp2}
-\end{table}
+\input{wPertExample.tex}
+
+%\begin{figure}[h]
+%	\includegraphics[scale=0.25]{PerturbationFunctions.jpg}
+%	\caption{Perturbation functions $\tilde h(x)$ and  $\tilde g(t)$}
+%	\label{Fig:PerturbationFunctions}
+%\end{figure} 
+%\begin{table}
+%	\begin{tabular}{ ||c |c || c || c |c | c ||}
+%		\hline
+%		                    &	& Initial Error  & Final & Error &  \\ 
+%		                	& $\beta$  & $\vec{w}$  & $\vec{w}$  & $\rho$ & $\adj$ \\ 
+%		\hline
+%			                & $10^{-3}$	& $0.1$  & $6.3190 \times 10^{-5}$ & $1.1648 \times 10^{-5}$ & $2.8425 \times 10^{-5}$  \\
+%		 $0.1\tilde g(t)$   & $10^{-1}$	& $0.1$  & $6.1449 \times 10^{-5}$ & $7.9587 \times 10^{-5}$ & $2.8405 \times 10^{-4}$ \\
+%		                 	& $10^{1}$	& $0.1$  & $6.1304 \times 10^{-5}$ & $7.9576 \times 10^{-5}$ & $5.8824 \times 10^{-4}$ \\
+%		\hline 
+%			                & $10^{-3}$	& $0.5$  & $2.7263 \times 10^{-4}$  & $2.9182 \times 10^{-5}$ & $3.2882 \times 10^{-5}$ \\
+%		$0.5 \tilde g(t)$   & $10^{-1}$	& $0.5$  & $2.7064 \times 10^{-4}$ & $2.7098 \times 10^{-4}$ &  $3.2894 \times 10^{-4}$\\
+%		                    & $10^{1}$	& $0.5$  & $2.7079 \times 10^{-4}$ & $2.7096 \times 10^{-4}$ & $6.8139 \times 10^{-4}$ \\
+%		\hline 
+%			                & $10^{-3}$	& $0.0855$ & $6.1809 \times 10^{-5}$ & $1.1842 \times 10^{-5}$ & $2.7355 \times 10^{-5}$ \\
+%		$0.1\tilde h(x)$    & $10^{-1}$	& $0.0855$ & $6.0187 \times 10^{-5}$ & $8.0212 \times 10^{-5}$ & $2.7321 \times 10^{-4}$ \\
+%		                    & $10^{1}$	& $0.0855$ & $6.0047 \times 10^{-5}$ & $8.0200 \times 10^{-5}$ & $5.7592 \times 10^{-4}$ \\
+%		\hline 
+%			                & $10^{-3}$	& $0.4276$  & $2.5041 \times 10^{-4}$ & $2.7429 \times 10^{-5}$ & $3.1303 \times 10^{-5}$ \\
+%		$0.5\tilde h(x)$    & $10^{-1}$	& $0.4276$  & $2.4833 \times 10^{-4}$ & $2.5436 \times 10^{-4}$ & $3.1332 \times 10^{-4}$ \\
+%	                     	& $10^{1}$	& $0.4276$  & $2.4846 \times 10^{-4}$ & $2.5435 \times 10^{-4}$ & $6.4922 \times 10^{-4}$ \\
+%		\hline 
+%    \end{tabular}
+%	\caption{}
+%\label{TabApp2}
+%\end{table}

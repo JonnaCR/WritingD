@@ -69,31 +69,32 @@ For (ii), we note that the choice of optimization solver depends strongly on the
 need to, e.g.\ analytically compute the Jacobian, we use a fixed point method. However, we note that this approach is highly modular and it is straightforward to replace this solver with any other optimization routine.
 In order to solve an optimality system of the form derived in Section \ref{sec:Optimality}, we adapt a fixed point method, also known as sweeping algorithm in the literature, for example in~\cite{ACFK}, to solve the system of equations iteratively. 
 \\
+
+In the following we denote the discretized versions of the variables $\rho$, $\adj$ and $\vec{w}$ with $P$, $Q$ and $W$, respectively. Each of these matrices is of the form $A = [\boldsymbol{a_0}, \boldsymbol{a_1}, ... ,\boldsymbol{a_n}]$, where the vectors $\boldsymbol{a_k}$ represents the discretized time point $k \in [0,T]$. In particular, the first column of $P$, denoted by $\boldsymbol{\rho}_0$, corresponds to the initial condition $\rho(\vec{x},0)$. If the spatial domain is one-dimensional, $P$, $Q$ and $W$ are of size $N \times n$, in two-dimensional case, $P$ and $Q$ are of size $N_1*N_2 \times n$. The discretized control $W$ is, for linear control problems, also $N_1*N_2 \times n$ dimensional, while it is $2*N_1*N_2 \times n$ dimensional for nonlinear control problems. This is due to the fact that the control is represented by a vector field, when applied nonlinearly.
 \\
-During each iteration, denoted by $i$, the following steps are computed:\\
-1. The solution to the forward equation is computed, using a guess for the control $\vec{w}_i$ as input variable, alongside the initial condition $\rho(\vec{x},0)$. \\
-2. The adjoint equation is solved, using $\vec{w}_i$, and the solution $\boldsymbol\rho_i$ from the forward solve, as inputs. This circumvents the issue resulting from the non-local coupling in time, mentioned in Section \ref{sec:Method_PseudospectralPDECO}, since $\boldsymbol\rho_i$ contains the solution for all times $t \in [0,T]$. The final time condition $\adj(\vec{x},T)$ must be provided and time is reversed in the adjoint equation, as explained in Section \ref{sec:Method_PseudospectralPDECO}. The result $\boldsymbol \adj_{i,T-t}$ is transformed back to $\boldsymbol \adj_{i,t}$, to proceed.\\
-3. The gradient equation is solved, given the solutions $\boldsymbol\rho_i$ and $\boldsymbol \adj_i$. This results in a new control value $\vec{w}_g$. \\
-4. Finally, the update $\vec{w}_{i+1}$ is a linear combination of the current guess $\vec{w}_i$, and $\vec{w}_{g}$, the value obtained from solving the gradient equation:
+\\
+The optimization algorithm is initialized with a guess for the control $W^{(0)}$. Then, during each iteration, denoted by $i$, the following steps are computed:\\
+1. Starting with a guess for the control $W^{(i)}$ as input variable, the corresponding state $P^{(i)}$ is found by solving the forward equation.\\
+2. In a next step, the adjoint $Q^{(i)}$ is found by computing the adjoint equation, using $W^{(i)}$ and $P^{(i)}$. Since $P^{(i)}$ contains the solution for all discretized times $k \in [0,T]$, this circumvents the issue resulting from the non-local coupling in time, mentioned in Section \ref{sec:Method_PseudospectralPDECO}. As illustrated in the same section, time is reversed in the adjoint equation, so that the result is a matrix $\tilde{Q}^{(i)} =  [\boldsymbol{\adj_n},\boldsymbol{\adj_{n-1}}, ..., \boldsymbol{\adj_1} ]$. The columns of $\tilde{Q}^{(i)}$ are permuted to obtain the solution  $Q^{(i)}$.\\
+3. The gradient equation is solved, given the solutions $P^{(i)}$ and $Q^{(i)}$. This results in a new control value $W^{(i)}$. \\
+4. Finally, the update $W^{(i+1)}$ is a linear combination of the current guess $W^{(i)}$, and the value obtained in 3., $W^{(i)}_{g}$:
 \begin{align*}
-\vec{w}_{i+1} = (1-\lambda)\vec{w}_{i} + \lambda \vec{w}_{g}.
+W^{(i+1)} = (1-\lambda)W^{(i)} + \lambda W^{(i)}_{g}.
 \end{align*}
-This updating method is called a mixing scheme, with mixing rate $\lambda$, and is known to stabilise fixed point methods, ++ add references ++.
-The guess for the control is updated from $\vec{w}_i$ to $\vec{w}_{i+1}$ and the steps described above are repeated until the method converges. 
-+++ Notation of $\boldsymbol \rho_i$ and $\boldsymbol \adj_i$ needs to be decided and made consistent. bold for indicating that it's discretized as in Section \ref{sec:Method_PseudospectralForward}. +++
+The guess for the control is updated from $W^{(i)} $ to $W^{(i+1)} $ and the steps described above are repeated until the method converges. 
 \\
 \\
-Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is equivalent to the updating scheme presented in~\cite{Burger1}. 
-Note that, while the solutions $\boldsymbol\rho_i$ and $\boldsymbol \adj_i$ change in each iteration, the initial condition $\rho(\vec{x},0)$ and final time condition $\adj(\vec{x},T)$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $\vec{w}_i$.
+The update scheme in 4., with mixing rate $\lambda$, is known to stabilise fixed point methods, ++ add references ++. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is equivalent to the updating scheme presented in~\cite{Burger1}. 
+Note that, while the solutions $P^{(i)}$ and $Q^{(i)}$ change in each iteration, the initial condition $\boldsymbol{\rho}_0$ and final time condition $\boldsymbol{\adj_n}$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $W^{(i)}$.
 
 
 
 
 \subsection{Measures of Accuracy}\label{sec:Method_Validation}
 
-The convergence of the scheme is measured by computing the error between $\vec{w}_{i}$ and $\vec{w}_{g}$. If this error is lower than a set tolerance, the optimality system is self-consistent. This implies that the solution triplet ($\bar{\rho},\bar{{w}},\adj$) (++ check notation here - consistent with Section 3? ++) solves the optimality system, and is therefore an optimal solution to the PDE-constrained optimization problem of interest.
-All errors in Section \ref{sec:Method_Validation} and Section \ref{sec:Expts} are calculated as follows, where $y$ is the variable of interest and $y_R$ is the reference value that $y$ is compared to. For example, when measuring convergence of the fixed point scheme, $y = \vec{w}_g$ and $y_R = \vec{w}_i$. Alternatively, when investigating a known test problem, as considered in Section \ref{sec:Method_Validation}, $y$ is a numerical solution and $y_R$ is an exact solution.\\ 
-The relative $L^2$ error in the spatial direction is:
+The convergence of the scheme is measured by computing the error between $W^{(i)}$ and $W^{(i)}_{g}$. If this error is lower than a set tolerance, the optimality system is self-consistent. This implies that the solution triplet ($\bar{P},\bar{W},\bar{Q}$) solves the (discretized) optimality system, and is therefore an optimal solution to the PDE-constrained optimization problem of interest.
+
+All errors in Section \ref{sec:Method_Validation} and Section \ref{sec:Expts} are calculated between a variable of interest, $y$, and $y_R$,the reference value that $y$ is compared to. For example, when measuring convergence of the fixed point scheme, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, see Section \ref{sec:Method_Validation}, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
 \begin{align*}
 \mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) + 10^{-10}||_{L^2(\Omega)}},
 \end{align*}
@@ -102,19 +103,13 @@ Furthermore, the absolute $L^2$ error is:
 \begin{align*}
 \mathcal{E}_{Abs}(t) = || y(x,t) - y_R(x,t)||_{L^2(\Omega)} ,
 \end{align*}
-Then an $L_\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$ and $\mathcal{E}_{Abs}$:
+Then an $L^\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$ and $\mathcal{E}_{Abs}$:
 \begin{align*}
 \mathcal{E} = \max_{t \in [0,T]}\left[\min\left(\mathcal{E}_{Rel}(t), \mathcal{E}_{Abs}(t)\right)\right].
 \end{align*}
 The minimum between absolute and relative spatial error is taken to avoid choosing an erogenously large relative error, caused by division of one small term by another.
 \\
 As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality systems of interest. While it is very robust, it is also much slower in comparison to the fixed point method, which is working reliably for the types of problems considered above.
-A demonstration of this is given in Appendix \ref{app:fsolveComparison}.
-\\
-\\
-\\
-(++ include shortcomings of the method? (e.g. advection dominated problems, good initial guess for BVP solvers) ++)
-
-
-Specific test problems are given in Appendix \ref{app:TestProblems}. 
+A comparison is given in Appendix \ref{app:fsolveComparison}.
+Specific test problems with exact solutions are given in Appendix \ref{app:TestProblems}. 
 Further tests to validate the method are presented in Appendix \ref{app:TestProblemsPerturbed}.
