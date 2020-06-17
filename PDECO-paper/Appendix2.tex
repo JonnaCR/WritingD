@@ -2,34 +2,33 @@
 
 \section{Investigating perturbations of test problems with analytic solutions} \label{app:TestProblemsPerturbed}
 
-As detailed in Section \ref{sec:Method_Solver}, it is necessary to provide an initial guess for the control $\vec{w}$ to start the optimization routine. Therefore, one method to validate the numerical method is to perturb the exact solution for $\vec{w}$ in a known test problem with analytic solution and use this as an initial guess in the optimization solver. In the first iteration, the solution for $\rho$ and $\adj$ differs from the exact solution. The optimization method then converges to the exact solution, which is an optimal solution. We consider Test Problem 2 in Appendix \ref{app:TestProblems}, which is an exact solution for Problem \eqref{AdvDiff}, with boundary conditions \eqref{NoFlux}, and $\gamma = 0$. 
+As detailed in Section \ref{sec:Method_Solver}, it is necessary to provide an initial guess for the control $\vec{w}$ to start the optimization routine. Therefore, one method to validate the numerical method is to perturb the exact solution for $\vec{w}$ taken from a test problem with analytic solution and use this as an initial guess in the optimization solver. In the first iteration, the solutions for $\rho$ and $\adj$ differ from the exact solution. The optimization method then converges to the exact, optimal solution. We consider Test Problem 2 from Appendix \ref{app:TestProblems}, which is an exact solution for Problem \eqref{AdvDiff}, with boundary conditions \eqref{NoFlux}, and $\gamma = 0$. 
 The following two perturbation functions are considered. The first perturbation is in time only and is defined as:
 \begin{align*}
 g(t) &= \frac{1}{2} f(t-t_0, a) \times f(t-t_0, -a)\\
-&= \frac{1}{2} \frac{e^{-a/(t-t_0)}}{e^{-a/(t-t_0)} + e^{-a/(1-t -t_0)}} \times \frac{e^{a/(t-t_0)}}{e^{a/(t-t_0)} + e^{a/(1-t - t_0)}}.
+&= \frac{1}{2} \frac{e^{-a/(t-t_0)}}{e^{-a/(t-t_0)} + e^{-a/(1-t -t_0)}} \times \frac{e^{a/(t-t_0)}}{e^{a/(t-t_0)} + e^{a/(1-t - t_0)}},
 \end{align*}
-The normalised version is then 
+and normalised by:
 \begin{align*}
-\tilde g(t) = \frac{g(t)}{\max{|{g(t)}|}},
+\tilde g(t) = \frac{g(t)}{\max{|{g(t)}|}}.
 \end{align*}
-so that $\max{\tilde g(t)} =1$.
-A similar perturbation can be done in space, taking into account the difference in length of spatial and time domain:
+A similar perturbation can be done in space, taking into account the difference in length of spatial and time domains:
 \begin{align*}
 h(x) &= \frac{1}{2} f(x-x_0, 2a) \times f(x-x_0, -2a)\\
 &= \frac{1}{2} \frac{e^{-2a/(x-x_0)}}{e^{-2a/(x-x_0)} + e^{-2a/(1-x-x_0)}} \times \frac{e^{2a/(x-x_0)}}{e^{2a/(x-x_0)} + e^{2a/(1-x-x_0)}}.
 \end{align*}
-Again, the normalised version is:
+Again, this is normalised:
 \begin{align*}
 \tilde h(x) = \frac{h(x)}{\max{|{h(x)}|}}.
 \end{align*}
-These perturbation functions are chosen such that the perturbation is smooth and respects the initial condition for $\rho$ as well as the final time condition for $\adj$, by not changing the first or final time point. The considered perturbations are applied to the exact solution of the control, $\vec{w}_{ex}$, as follows:
+These perturbation functions are chosen such that the perturbation is smooth and respects the initial condition for $\rho$, as well as the final time condition for $\adj$, by not changing the first or final time point. The considered perturbations are applied to the exact solution of the control, $\vec{w}_{ex}$, as follows:
 \begin{align*}
 \vec{w}_{pert1} &= \vec{w}_{ex}(1+ \epsilon \tilde g(t))\\
 \vec{w}_{pert2} &= \vec{w}_{ex}(1+ \epsilon \tilde g(t) \tilde h(x)),
 \end{align*}
-where $a = 0.7$, $x_0 = t_0 = -0.01$ and $\epsilon = 0.1$ or $\epsilon = 0.5$.
-The chosen number of points is $N =30$ and $n=20$, the ODE tolerances are $10^{-8}$ and Optimization tolerance is $10^{-4}$. The mixing rate for the optimization solver is $\lambda = 0.01$.
-The results presented in Table \ref{TabA2:Prob1} show the initial error in $\vec{w}$, $\mathcal{E}_{\vec{w}_{uc}}$, and the final errors in $\vec{w}$, $\rho$ and $\adj$, measured in the norm presented in Section \ref{sec:Method_Solver}, with respect to the exact solution. The initial error $\mathcal{E}_{\vec{w}_{uc}}$ is proportional to the perturbation strength $\epsilon$. The final errors for $\vec{w}$ and $\rho$ are within the specified optimality tolerance regardless of the perturbation strength and location. Since in the optimization routine $\adj$ is obtained using the optimal $\vec{w}$ and $\rho$ it can be observed that the error in $\adj$ is generally higher than for the other two variables. Overall, these results show that the method works reliably.
+where $a = 0.7$, $x_0 = t_0 = -0.01$ and the perturbation strength is either $\epsilon = 0.1$ or $\epsilon = 0.5$.
+The chosen number of points is $N =30$ and $n=20$, the ODE tolerances are $10^{-8}$ and the optimality tolerance is $10^{-4}$. The mixing rate for the optimization solver is $\lambda = 0.01$.
+The results presented in Table \ref{TabA2:Prob1} show the initial error in $\vec{w}$, $\mathcal{E}_{\vec{w}_{uc}}$, and the final errors in $\vec{w}$, $\rho$ and $\adj$, measured in the norm presented in Section \ref{sec:Method_Solver}, with respect to the exact solution. The initial error $\mathcal{E}_{\vec{w}_{uc}}$ is proportional to the perturbation strength $\epsilon$. The final errors for $\vec{w}$ and $\rho$ and $\adj$ are mostly within the specified optimality tolerance regardless of the perturbation strength and location. Overall, these results show that the method works reliably.
 
 \input{wPertExample.tex} %\label{TabA2:Prob1}
 
