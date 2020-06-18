@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  17 JUN 2020 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  18 JUN 2020 17:12
 entering extended mode
 **./ParticleDynamicsPDECO.tex
 (ParticleDynamicsPDECO.tex
@@ -101,6 +101,46 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\matht
+ools.sty"
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval
+.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen112
+\calc@Bdimen=\dimen113
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count104
+\calc@Cskip=\skip48
+)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mhset
+up.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count105
+\l_MT_multwidth_dim=\dimen114
+\origjot=\skip49
+\l_MT_shortvdotswithinadjustabove_dim=\dimen115
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen116
+\l_MT_above_intertext_sep=\dimen117
+\l_MT_below_intertext_sep=\dimen118
+\l_MT_above_shortintertext_sep=\dimen119
+\l_MT_below_shortintertext_sep=\dimen120
+)
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latexsym.s
 ty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
@@ -112,11 +152,6 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 cx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval
-.sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks20
-)
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphi
 cs.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
@@ -135,8 +170,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 ftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip11
@@ -169,7 +204,7 @@ nment
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty
 "
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count102
+\c@float@type=\count106
 \float@exts=\toks21
 \float@box=\box29
 \@float@everytoks=\toks22
@@ -180,7 +215,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
-\c@algorithm=\count103
+\c@algorithm=\count107
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithmicx\al
 gpseudocode.sty"
@@ -191,16 +226,16 @@ gorithmicx.sty"
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count104
-\c@ALG@rem=\count105
-\c@ALG@nested=\count106
-\ALG@tlm=\skip46
-\ALG@thistlm=\skip47
-\c@ALG@Lnr=\count107
-\c@ALG@blocknr=\count108
-\c@ALG@storecount=\count109
-\c@ALG@tmpcounter=\count110
-\ALG@tmplength=\skip48
+\c@ALG@line=\count108
+\c@ALG@rem=\count109
+\c@ALG@nested=\count110
+\ALG@tlm=\skip50
+\ALG@thistlm=\skip51
+\c@ALG@Lnr=\count111
+\c@ALG@blocknr=\count112
+\c@ALG@storecount=\count113
+\c@ALG@tmpcounter=\count114
+\ALG@tmplength=\skip52
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
@@ -211,65 +246,65 @@ Package: numprint 2012/08/20 v1.39 Print numbers (HH)
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
 "
 Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
-\col@sep=\dimen114
+\col@sep=\dimen123
 \ar@mcellbox=\box31
-\extrarowheight=\dimen115
+\extrarowheight=\dimen124
 \NC@list=\toks24
-\extratabsurround=\skip49
-\backup@length=\skip50
+\extratabsurround=\skip53
+\backup@length=\skip54
 \ar@cellbox=\box32
 )
-\c@nprt@mantissa@digitsbefore=\count111
-\c@nprt@mantissa@digitsafter=\count112
-\c@nprt@exponent@digitsbefore=\count113
-\c@nprt@exponent@digitsafter=\count114
-\nprt@digitwidth=\skip51
-\nprt@sepwidth=\skip52
-\nprt@decimalwidth=\skip53
-\nprt@blockwidth=\skip54
+\c@nprt@mantissa@digitsbefore=\count115
+\c@nprt@mantissa@digitsafter=\count116
+\c@nprt@exponent@digitsbefore=\count117
+\c@nprt@exponent@digitsafter=\count118
+\nprt@digitwidth=\skip55
+\nprt@sepwidth=\skip56
+\nprt@decimalwidth=\skip57
+\nprt@blockwidth=\skip58
 \nprt@digittoks=\toks25
 \nprt@pretoks=\toks26
 \nprt@posttoks=\toks27
-\nprt@thisdigit=\count115
-\nprt@curpos=\count116
-\nprt@rndpos=\count117
-\c@nprt@digitsfirstblock=\count118
-\c@nprt@blockcnt=\count119
-\c@nprt@cntprint=\count120
+\nprt@thisdigit=\count119
+\nprt@curpos=\count120
+\nprt@rndpos=\count121
+\c@nprt@digitsfirstblock=\count122
+\c@nprt@blockcnt=\count123
+\c@nprt@cntprint=\count124
  No configuration file `numprint.cfg' found.)
-\c@Def=\count121
-\c@Thm=\count122
-\c@Lem=\count123
-\c@Rem=\count124
+\c@Def=\count125
+\c@Thm=\count126
+\c@Lem=\count127
+\c@Rem=\count128
  (ParticleDynamicsPDECO.aux)
 \openout1 = `ParticleDynamicsPDECO.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf
 .mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen116
+\scratchcounter=\count129
+\scratchdimen=\dimen125
 \scratchbox=\box33
-\nofMPsegments=\count126
-\nofMParguments=\count127
+\nofMPsegments=\count130
+\nofMParguments=\count131
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen117
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
+\MPscratchCnt=\count132
+\MPscratchDim=\dimen126
+\MPnumerator=\count133
+\makeMPintoPDFobject=\count134
 \everyMPtoPDFconversion=\toks29
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstop
@@ -330,19 +365,19 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 32.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 33.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -517,7 +552,7 @@ Overfull \hbox (6.8643pt too wide) in paragraph at lines 2--19
  []
 
 ) [16 <./Images/Figure1.png (PNG copy)>]
-<Images/Figure3.png, id=83, 7555.22626pt x 5528.655pt>
+<Images/Figure3.png, id=82, 7555.22626pt x 5528.655pt>
 File: Images/Figure3.png Graphic file (type png)
 <use Images/Figure3.png>
 Package pdftex.def Info: Images/Figure3.png  used on input line 76.
@@ -2156,13 +2191,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [32])
 [33] (ParticleDynamicsPDECO.aux) ) 
 Here is how much of TeX's memory you used:
- 4243 strings out of 492946
- 59452 string characters out of 3124935
- 146568 words of memory out of 3000000
- 7970 multiletter control sequences out of 15000+200000
+ 4788 strings out of 492946
+ 69264 string characters out of 3124935
+ 159089 words of memory out of 3000000
+ 8505 multiletter control sequences out of 15000+200000
  14003 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,56p,1435b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,56p,1436b,288s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/s1452504/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/User
@@ -2200,7 +2235,7 @@ s/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 t10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmtt8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ParticleDynamicsPDECO.pdf (33 pages, 14991654 bytes).
+Output written on ParticleDynamicsPDECO.pdf (33 pages, 14991670 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,7 +1,7 @@
 \section{Test problems with analytic solutions}\label{app:TestProblems}
-+++ Need to double check the solutions, just in case! +++
+
 In this appendix we present test problems, posed on a domain $\Omega=(-1,1)^d$, where $d$ is the dimension of the problem. The performance of the numerical method is measured by providing it with input variables from the exact solution, $\widehat \rho_{Ex}$, $\rho_{0_{Ex}}$, $\adj_{T_{Ex}}$ and $\vec{w}_{Ex}$. The expectation is that the algorithm converges within one iteration to the exact numerical solution triplet $(P,W,Q)$. Furthermore, the values of $P$ and $Q$, should differ from the exact analytic solution only by the specified ODE tolerance. Since $W$ is updated using $P$ and $Q$, the control error is possibly larger.
-The error between the exact solution to the forward problem, $\rho_{Ex}$, evaluated at the discretized time points $k \in 0,1,...,n$, and the optimal numerical solution for the state, $P$, denoted by $\mathcal{E}_\rho$, is measured as introduced in Section \ref{sec:Method_Validation}. The errors $\mathcal{E}_\adj$ and $\mathcal{E}_{\vec{w}}$ are derived equivalently.
+The error between the exact solution, $\rho_{Ex}$, evaluated at the discretized time points $k \in 0,1,...,n$, and the optimal numerical solution for the state, $P$, denoted by $\mathcal{E}_\rho$, is measured as introduced in Section \ref{sec:Method_Validation}. The errors $\mathcal{E}_\adj$ and $\mathcal{E}_{\vec{w}}$ are derived equivalently.
 \vspace{0.75em}
 
 \textbf{\emph{-- \underline{Test Problem 1:}}}~~The following triplet $(\rho,\vec{w},\adj)$ form a solution to the first-order continuous optimality conditions derived for the advection--diffusion control problem \eqref{AdvDiff} with the zero Dirichlet boundary condition \eqref{Dirichlet}, with $d=2$ and $\gamma =0$:
@@ -67,7 +67,7 @@ and
 \ \rho_{0}={}&\beta^{1/2}\text{cos}(\pi{}x),
 \end{align*}
 
-Table \ref{TabA1:Prob2} shows the results for this problem. It can be concluded that $20$ points are not quite enough to reach the ODE tolerance. However, $30$ points are enough to get results that are closer. Note that for smaller values of $\beta$, the errors are larger. This indicates that it is a harder problem to solve accurately. 
+Table \ref{TabA1:Prob2} shows the results for this problem. It can be concluded that $20$ points in the spatial dimension are not quite enough to reach the ODE tolerance. However, $30$ points are enough to get results that are closer. Note that for smaller values of $\beta$, the errors are larger. This indicates that it is a harder problem to solve accurately. 
 
 \input{ExactSolProb2.tex} %\label{TabA1:Prob2}
 %\begin{table}
@@ -113,7 +113,7 @@ where
 \end{align*}
 
 
-Table \ref{TabA1:Prob3} displays the error in the numerical solution of Problem 3 for different choices of spatial and time points as well as for different $\beta$ values. It is shown that the choice of $20$ points in space and time are not sufficient to reach the accuracy of the ODE solver of $10^{-8}$, while $30$ points are sufficient for most problems. However, the error measure of the ODE solver and the one used in this paper may differ and therefore may not be as straightforward to compare. It can also be noted that the case with $\beta = 10^{-3}$ results in less accuracy than other choices of $\beta$. These results can be compared to the one dimensional case in Test Problem 2 and Table \ref{TabA1:Prob2}. The findings for the one dimensional and the two dimensional case are very similar.
+Table \ref{TabA1:Prob3} displays the error in the numerical solution of Problem 3 for different choices of spatial and time points as well as for different $\beta$ values. It is shown that the choice of $20$ points in space are not sufficient to reach the accuracy of the ODE solver of $10^{-8}$, while $30$ points are sufficient for most problems. However, the error measure of the ODE solver and the one used in this paper may differ and therefore may not be as straightforward to compare. It can also be noted that the case with $\beta = 10^{-3}$ results in less accuracy than other choices of $\beta$. These results can be compared to the one dimensional case in Test Problem 2 and Table \ref{TabA1:Prob2}. The findings for the one dimensional and the two dimensional case are very similar.
 
 
 \input{ExactSolProb3.tex} %{TabA1:Prob3}
@@ -154,7 +154,7 @@ where $\vec{x}=[x_1,...,x_d]^T$, and
 \ \rho_{0}={}&2\prod_{i=1}^{d}\text{cos}\left(\frac{\pi{}x_i}{2}\right),
 \end{align*}
 
-Table \ref{TabA1:Prob4} shows the results for $d=1$. In this problem, $20$ points seem to be enough to get accurate results.
+Table \ref{TabA1:Prob4} shows the results for $d=1$. In this problem, $20$ spatial points seem to be enough to get accurate results.
 
 \input{ExactSolProb4.tex} %\label{TabA1:Prob4}
 %\begin{table}

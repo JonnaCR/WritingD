@@ -3,7 +3,7 @@ In this section we introduce a number of PDE-constrained optimization problem st
 
 \textbf{\emph{-- \underline{Advection--diffusion nonlinear control problem:}}}~~We commence with the following minimization problem involving $L^2$-norm terms within the entire space-time interval $\Omega$, constrained by a nonlinear time-dependent advection--diffusion equation:
 \begin{align}
-\ \label{AdvDiff} \min_{\rho,\vec{w}}~~\frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+{}&\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
+\ \label{AdvDiff} \min_{\rho,\vec{w}}~~J(\rho, \vec{w}) \coloneqq  \frac{1}{2}\int_0^T\int_{\Omega}(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+{}&\frac{\beta}{2}\int_0^T\int_{\Omega}\left\|\vec{w}\right\|^2~{\rm d}x{\rm d}t \\
 \ \nonumber \text{s.t.}\quad~\partial_{t}\rho-\nabla^{2}\rho+\nabla\cdot(\rho\vec{w})-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
 \nonumber
 ={}&\nabla\cdot(\rho\nabla{}V_{\text{ext}})+f\quad\text{on }\Omega\times(0,T), \\
@@ -16,9 +16,9 @@ Additionally, there is a nonlocal integral term, in order to model interactions 
 
 We consider two possibilities for the boundary conditions imposed on $\rho$, specifically the Dirichlet boundary condition:
 \begin{equation}
-\ \label{Dirichlet} \rho=c\quad\text{on }\partial\Omega\times(0,T),
+\ \label{Dirichlet} \rho=0\quad\text{on }\partial\Omega\times(0,T),
 \end{equation}
-where $c \in \mathbb{R}$ is often zero, and that of the boundary condition:
+and that of the boundary condition:
 \begin{equation}
 \ \label{NoFlux} \frac{\partial\rho}{\partial{}n}-\rho\vec{w}\cdot\vec{n}+\rho\frac{\partial{}V_{\text{ext}}}{\partial{}n} +\gamma\int_{\Omega}\rho(r)\rho(r') \frac{ \partial\vec{K}(|r-r'|)}{\partial{}n}~{\rm d}r'=0\quad\text{on }\partial\Omega\times(0,T),
 \end{equation}
@@ -28,7 +28,7 @@ where $\frac{\partial}{\partial{}n}$ denotes the derivative with respect to the 
 
 \textbf{\emph{-- \underline{Advection--diffusion linear control problem:}}}~~We consider the following problem with $L^2$-norm terms within the entire space-time interval $\Omega$, constrained by a nonlinear time-dependent advection--diffusion equation with linear components in a scalar control variable:
 \begin{align}
-\ \label{AdvDiff_Linear} \min_{\rho,\vec{w}}~~~\frac{1}{2}\int_0^T\int_{\Omega}{}&(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
+\ \label{AdvDiff_Linear} \min_{\rho,{w}}~~J(\rho, {w}) = \frac{1}{2}\int_0^T\int_{\Omega}{}&(\rho-\widehat{\rho})^2~{\rm d}x{\rm d}t+\frac{\beta}{2}\int_0^T\int_{\Omega}w^2~{\rm d}x{\rm d}t \\
 \ \nonumber \text{s.t.}\quad\partial_{t}\rho-\nabla^{2}\rho-{}&\gamma\nabla_{r}\cdot\left(\int_{\Omega}\rho(r)\rho(r')\vec{K}(|r-r'|)~{\rm d}r'\right)\\
 &\nonumber=\nabla\cdot(\rho\nabla{}V_{\text{ext}})+w+f\quad\text{on }\Omega\times(0,T), \\
 \ \nonumber \rho&{}=\rho_{0}(\vec{x})\quad\hspace{6.8em}\text{at }t=0,

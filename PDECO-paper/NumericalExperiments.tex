@@ -19,17 +19,17 @@ The chosen inputs for this example are:
 &\widehat \rho = \frac{1}{2}(1-t) + t\bigg(\frac{1}{2}\sin(\pi (y - 2)/2) + \frac{1}{2}\bigg),\\
 &\rho_{0} = \frac{1}{2}, \ \
 \adj_{T} = 0, \ \
-\vec{w} = 0, \ \ 
+\vec{w} = \vec{0}, \ \ 
 f =0,\ \
 V_{ext} =0.
 \end{align*}	
 The value of the cost functional for the initial configuration ($J_{I}$), where $\vec{w} =0$, is compared with the optimized case ($J_{O}$) for different values of $\beta$ and for each of the interaction strengths in Table \ref{TabS5:Prob1}. It can be observed that in all cases $J_{O}$ is lower or equal value to $J_{I}$. The lowest values of $J_{O}$ will be observed for the smallest $\beta$ value considered. At large values of $\beta$, applying control is heavily penalised and the optimal control approaches zero, which coincides with the uncontrolled case. Furthermore, this is reflected in the number of iterations, which is small when $\beta$ is large, and vice versa. This is explained by the fact that if applying control is penalized heavily, then $\vec{w} = 0$ is a better initial guess, and less iterations are needed to find the optimal solution, than when $\beta$ is small and more control is allowed.
 
- The desired state $\widehat \rho$, and the uncontrolled state $\rho$ for $\gamma =1$ and $\gamma = -1$, with $\beta =10^{-3}$ are shown in Figure \ref{Ex12DN1}. The desired state $\widehat \rho$ and the uncontrolled $\rho$ are independent of $\beta$. However, $\rho$ changes considerably with the choice of interaction strength $\gamma$, accumulating mass in the centre of the domain for attractive interactions and at the boundary for repulsive interactions. The optimal states $\rho$ for $\gamma = 1,0,-1$ and corresponding optimal controls, with $\beta = 10^{-3}$ are shown in Figure \ref{Ex12DN2}. 
-It can be observed that in the case of $\beta = 10^{-3}$, the optimal state $\rho$ is very similar to $\hat \rho$, regardless of the choice of interaction. However, the corresponding control plot reviles that the control has to be applied differently in each case to account for the interaction effects. In general, the control is largely applied on the right half of the spatial domain, to carry mass to the left, where the desired state dictates it to be, as can be seen when $\gamma = 0$. However, when the particle interaction is repulsive, the control is moving some of the particle mass away from the boundary at $x=-1$ to correct for the repulsive particles accumulating there without control present, as illustrated in Figure \ref{Ex12DN1}. In the attractive case, the control corrects by carrying some mass to the boundary at $x=1$, since the uncontrolled particle density is clustered in the middle of the domain in this case, compare to Figure \ref{Ex12DN1}.
+ The desired state $\widehat \rho$, and the uncontrolled state $\rho$ for $\gamma =1$ and $\gamma = -1$ are shown in Figure \ref{Ex12DN1}. These two variables are independent of $\beta$. However, $\rho$ changes considerably with the choice of interaction strength $\gamma$, accumulating mass in the centre of the domain for attractive interactions and at the boundary for repulsive interactions. The optimal states $\rho$ for $\gamma = 1,0,-1$ and corresponding optimal controls, with $\beta = 10^{-3}$, are shown in Figure \ref{Ex12DN2}. 
+It can be observed that in the case of $\beta = 10^{-3}$, the optimal state $\rho$ is very similar to $\hat \rho$, regardless of the choice of interaction. However, the corresponding control plot reveals that the control has to be applied differently in each case to account for the interaction effects. In general, the control is largely applied on the right half of the spatial domain, to carry mass to the left, where the desired state dictates it to be, as can be seen when $\gamma = 0$. However, when the particle interaction is repulsive, the control is moving some of the particle mass away from the boundary at $x=-1$ to correct for the repulsive particles accumulating there without control present, as illustrated in Figure \ref{Ex12DN1}. In the attractive case, the control corrects by carrying some mass to the boundary at $x=1$, since the uncontrolled particle density is clustered in the middle of the domain in this case, compare to Figure \ref{Ex12DN1}.
 \begin{figure}[h]
 	\includegraphics[scale=0.05]{Figure1.png}
-	\caption{Example 1, desired state $\widehat \rho$ and uncontrolled state $\rho$ at $\gamma =1$ and $\gamma =-1$, $\beta = 10^{-3}$}
+	\caption{Example 1, desired state $\widehat \rho$ and uncontrolled state $\rho$ at $\gamma =1$ and $\gamma =-1$}
 	\label{Ex12DN1}
 \end{figure}
 \begin{figure}[h]
@@ -67,7 +67,7 @@ The chosen inputs for Example 2 are:
 &\widehat \rho = \bigg(\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi y) + \frac{1}{2}\bigg),\\
 &\rho_{0} = \frac{1}{2}\cos(\pi y) + \frac{1}{2},\ \
 \adj_{T} = 0,\ \
-\vec{w} = 0,\ \
+\vec{w} = \vec{0},\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
@@ -108,11 +108,11 @@ The inputs for this example are:
 &\widehat \rho = \bigg(\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi y) + \frac{1}{2}\bigg),\\
 &\rho_{0} = \frac{1}{2}\cos(\pi y) + \frac{1}{2},\ \
 \adj_{T} = 0,\ \
-\vec{w} = 0,\ \
+\vec{w} = \vec{0},\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
-Table \ref{TabS5:Prob3} presents the results for this example for a range of $\beta$ values and different interaction strengths. The observations are in line with those in Example 1 and 2. In particular, $ \widehat \rho$ and $\rho_0$ coincide with those of the problem with Neumann boundary conditions in Example 2. A comparison between the two examples is illustrated in Figure \ref{Ex22DN1}. Both the optimal state $\rho$ and the optimal control are qualitatively different when considering Dirichlet boundary conditions over Neumann conditions. The numerical result for this example was achieved with $N=40$ and $n = 30$, rather than with $N=30$ and $n=20$. This indicates that the Dirichlet boundary conditions are harder to apply in this problem, due to the steep shape of the desired state. This steepness is somewhat less impactful in Example 2, where the desired state is not closely matched by the optimal state at the boundaries. In Example 3, while the optimal state matches the desired state perfectly at the boundary, the peaks of the desired state are matched less closely. In Figure \ref{Ex22DN1}, this can be confirmed by considering the control plots. The optimal control for Example 3 is larger than for Example 2, specifically between the boundaries of the domain and the peaks of the desired state, indicating difficulties in this region.
+Table \ref{TabS5:Prob3} presents the results for this example, for a range of $\beta$ values and different interaction strengths. The observations are in line with those in Example 1 and 2. In particular, $ \widehat \rho$ and $\rho_0$ coincide with those of the problem with Neumann boundary conditions in Example 2. A comparison between the two examples is illustrated in Figure \ref{Ex22DN1}. Both the optimal state $\rho$ and the optimal control are qualitatively different when considering Dirichlet boundary conditions over Neumann conditions. The numerical result for this example was achieved with $N=40$ and $n = 30$, rather than with $N=30$ and $n=20$. This indicates that the Dirichlet boundary conditions are harder to apply in this problem, due to the steep shape of the desired state. This steepness is somewhat less impactful in Example 2, where the desired state is not closely matched by the optimal state at the boundaries. In Example 3, while the optimal state matches the desired state perfectly at the boundary, the peaks of the desired state are matched less closely. In Figure \ref{Ex22DN1}, this can be confirmed by considering the control plots. The optimal control for Example 3 is larger than for Example 2, specifically between the boundaries of the domain and the peaks of the desired state, indicating difficulties in this region.
 \input{InteractingProb3.tex} %\label{TabS5:Prob3}
 %\begin{table}
 %	\begin{tabular}{ ||c|| c | c |c | c ||}
@@ -211,19 +211,19 @@ Again, the only qualitative difference to interpreting the results is that the c
 %\end{table}
 
 
-\subsection{Nonlinear control problems with an additional nonlocal integral term 2D}
-In this section, two-dimensional examples are considered, to illustrate the fact that the application of the method differs very little from the one dimensional setting. The main difference is that in nonlinear control problems the control is a two-dimensional vector field. Furthermore, the spatial dimensions increase considerably, from $N$ to $N_1\times N_2$, which makes computations much more costly. Compensating for this increased cost is one of the arguments to develop fast optimization solvers, such as the fixed point method introduced in Section \ref{sec:Method_Solver}.
+\subsection{Nonlinear control problems with an additional nonlocal integral term in 2D}
+In this section, two-dimensional examples are considered, to illustrate the fact that the application of the method differs very little from the one dimensional setting. The main difference is that in nonlinear control problems the control is a two-dimensional vector field. Furthermore, the number of spatial points increases from $N$ to $N_1\times N_2$, which makes computations much more costly. Compensating for this increased cost is one of the motivations to develop fast optimization solvers, such as the fixed point method introduced in Section \ref{sec:Method_Solver}.
 \subsubsection{Neumann boundary conditions, Example 1}	
 We have the following set up:
 \begin{align*}
 &\widehat \rho = \frac{1}{4}(1-t) + t\bigg(\frac{1}{4}\sin \bigg(\frac{\pi}{2}(x_1 - 2)\bigg)\sin \bigg(\frac{\pi}{2}(x_2 - 2)\bigg) + \frac{1}{4}\bigg),\\
 &\rho_0 = \frac{1}{4},\ \
 q_{T} = 0,\ \
-\vec{w} = 0,\ \
+\vec{w} = \vec{0},\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
-The results for this example are displayed in Table \ref{TabS5:Prob12D}. In figures \ref{rhoHat2dEx2} and \ref{rhoOpt2dEx2} some solutions are shown at different time points, for $\beta = 10^{-3}$ and $\gamma = -1$. In Figure \ref{rhoOpt2dEx2} the control through a vector field illustrates why nonlinear control is called 'flow control'. This example is the two dimensional version of Example 1 in Section \ref{sec:Examples1d}. 
+This example is the two dimensional version of Example 1 in Section \ref{sec:Examples1d}. The results for this example are displayed in Table \ref{TabS5:Prob12D}. In Figures \ref{rhoHat2dEx2} it can be observed that as in Example 1 in Section \ref{sec:Examples1d}, the uncontrolled state forms a cluster in the centre of the domain, due to the attractive interactions. Figure \ref{rhoOpt2dEx2} shows the optimal state and control for different time points, for $\beta = 10^{-3}$ and $\gamma = -1$. Here, the control through a vector field illustrates why nonlinear control is called 'flow control'. 
 
 \input{Interacting2DProb1.tex} % \label{TabS5:Prob12D}
 
@@ -245,23 +245,23 @@ Here, we have:
 &\widehat \rho = \frac{1}{4}(1-t) + t\frac{1}{0.9921}e^{-3((y_1+0.2)^2 + (y_2+0.2)^2))},\\
 &\rho_0 = \frac{1}{4},\ \
 q_{T} = 0,\ \
-\vec{w} = 0,\ \
+\vec{w} = \vec{0},\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
-The numerical results for this example are displayed in Table \ref{TabS5:Prob22D}. In figures \ref{rhoHat2dEx4} and \ref{rhoOpt2dEx4} the results are illustrated for $\beta = 10^{-3}$ and $\gamma = -1$. It can be observed very clearly that the control is driving to the desired state. It is noticeable that the peak of the desired state does not have to be as supported as the slopes. This is due to the attractive interactions of the particles in this configuration, supporting the clustering at the peak, and cannot be observed for repulsive particles.
+The numerical results for this example are displayed in Table \ref{TabS5:Prob22D}. In figures \ref{rhoHat2dEx4} and \ref{rhoOpt2dEx4} the results are illustrated for $\beta = 10^{-3}$ and $\gamma = -1$. It can be observed very clearly that the control is driving the particle distribution to the desired state. It is noticeable that the peak of the desired state does not have to be as supported as the slopes. This is due to the attractive interactions of the particles in this configuration, supporting the clustering at the peak, and cannot be observed for repulsive particles.
 
 
 \input{Interacting2DProb2.tex} %\label{TabS5:Prob22D}
 
 \begin{figure}[h]
 	\includegraphics[scale=0.044]{Figure32D.png}
-	\caption{2D Example 4, uncontrolled $\rho$ and $\widehat \rho$, $\beta = 10^{-3}$, $\gamma = -1$. }
+	\caption{2D Example 2, uncontrolled $\rho$ and $\widehat \rho$, $\beta = 10^{-3}$, $\gamma = -1$. }
 	\label{rhoHat2dEx4}
 \end{figure}
 \begin{figure}[h]
 	\includegraphics[scale=0.04]{Figure42D.png}
-	\caption{2D Example 4, controlled $\rho$ and optimal control $\vec{w}$, $\beta = 10^{-3}$, $\gamma = -1$.}
+	\caption{2D Example 2, optimal state $\rho$ and optimal control $\vec{w}$, $\beta = 10^{-3}$, $\gamma = -1$.}
 	\label{rhoOpt2dEx4}
 \end{figure}
 
