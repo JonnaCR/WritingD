@@ -44,12 +44,15 @@
 \begin{document}
 	
 \section*{PDECO - Input Options}
-A summary of all possible input options for PDECO. The options are called 'opts'. This has two substructures 'optsPhys' and 'optsNum'. These are detailed in the following.
+A summary of all possible input options for PDECO. The options are called 'opts'. This has three substructures 'optsPhys','optsNum' and 'optsPlot'. These are detailed in the following.
 
 \section{optsPhys}	
 There are three sub-structures in this structure. They are 'ProbSpecs', 'DataIn' and 'Params'.
-\subsection{optsPhys.ProbSpecs}
-The structure 'ProbSpecs' contains all problem specifications that are needed to specify a given problem to solve. The input options are summarized in the table below.
+\subsection{optsPhys.optsPhysFW}
+The structure 'optsPhys.optsPhysFW' contains the following substructures: 'ProbSpecs', 'DataInput' and 'Params'.
+
+\subsubsection{ProbSpecs}
+The structure 'ProbSpecs' contains all problem specifications that are needed to specify a given forward problem to solve. The input options are summarized in the table below.
    \begin{center}
 	\begin{tabular}{ |c| c | }
 		\hline
@@ -77,25 +80,7 @@ The structure 'ProbSpecs' contains all problem specifications that are needed to
 		Options 2D & These remain the same for 1D and 2D\\
 		\hline
         Note: & To include a new PDE see separate table below.\\
-	    	\hline		
-			\hline
-			Input Name & 'SolverFlag' \\ 
-			\hline
-			Description & Choosing the solver for Optimization\\ 
-			\hline 
-			Options & 'fsolve': Inbuilt MatLab solver and with Multiple Shooting. \\
-			& 'Picard': Picard update and Multiple Shooting \\
-			& 'FixPt': Picard update/ Fixed Point iteration, no shooting \\
-			\hline
-			\hline
-		Input Name & 'AdaSolverStr' \\ 
-		\hline
-		Description & Option to make Picard or Fixed Point Algorithm adaptive.\\ 
-		\hline 
-		Options & Input is a function name, Function input 'Err' and 'lambda'.\\
-		& 'Adaptive': will change 'lambda' (see 'Params') to be adaptive\\
-		& '[  ]', or exclusion of this option will leave 'lambda' static. \\
-		\hline
+	    \hline		
 	\end{tabular}
 \end{center}
 
@@ -117,30 +102,40 @@ The structure 'ProbSpecs' contains all problem specifications that are needed to
    \end{center}	
 
 
-  \begin{center}
+
+\subsubsection*{Naming conventions for adding PDEs}	
+Two things to be aware of: \\
+- if your gradient equation is different than force/flow control, you need to update this in the code\\
+- generally, your PDERHSFlag needs to be added inside the code too\\
+\\
+The naming convention for adding new PDEs into the code is:\\
+- for a forward problem (also the forward problem during the optimization -- it'll be the same both times)\\
+'ComputeFW' + string to specify the problem.
+- for the adjoint equation\\
+'ComputeOptP' + the SAME string that specifies the FW problem\\
+slightly differs in 2D -- see table below
+\begin{center}
 	\begin{tabular}{ |c| c | }
 \hline
  & Adding new PDEs into PDECO: \\
  \hline
 1D FW (\& rho Opt )& Naming convention of the function: 'ComputeFW'\&'PDERHSStr':\\ 
-Input arguments:& (rho, Dy, DDy, D0, gamma, ConvV2FW, Flow, wFlow,\\
-& Force, wForce, gradVext, this, otheropts) \\
+Input arguments:& this, RHSInput \\
 \hline
 1D Adjoint Equation & Naming convention of the function: 'ComputeOptp'\& 'PDERHSStr'. \\
-Input arguments:& (p, Dy, DDy, D0, gamma, ConvV2BW1, ConvV2BW2, rhoLater, rhoHat, FlowBw,\\
-& wFlowLater, gradVextBw, this, otheropts);
-\\
+Input arguments:& this, pRHSInput\\
 \hline
 2D FW (\& rho Opt ) & Naming convention of the function: 'ComputeFW2D'\&'PDERHSStr'\\
-Input arguments: & (rho, rho2, Div, Grad, Lap, D0, gamma, ConvV2FW, Flow, wFlow, Force,\\ &wForce, gradVext, this, otheropts)\\
+Input arguments: & this, RHSInput\\ 
+\hline
 2D Adjoint Equation & Naming convention of the function:'ComputeOptp2D'\& 'PDERHSStr'\\
-Input arguments:& (p, p2, gradp, rhoLater, rhoHat, Div, Grad, Lap, D0, gamma, ConvV2BW1,\\ &ConvV2BW22D,  wFlowLater, gradVextBw, FlowBw, this, otheropts)\\
+Input arguments:& this, pRHSInput\\ 
 \hline
 	\end{tabular}
 \end{center}	
-\subsection{optsPhys.DataIn}	
+\subsubsection{optsPhysFW.DataInput}	
 This structure includes all the input data to the solver. It can take the input as matrices or as function name. For each variable, the code checks whether the variable name exists as input. If it does, this will be used in the code, and interpolated where necessary. If it does not exist, then the field is created and filled by the given function. If all variables are specified by the function, then the only input in 'DataIn' is the function name! The below table illustrates the options. \\
-One special case is the initial guess for rho to the optimization problem. This can be specified to be the forward solution.
+
 	
  \begin{center}
 	\begin{tabular}{ |c| c | c|}
@@ -150,14 +145,15 @@ One special case is the initial guess for rho to the optimization problem. This 
 		testFun & Function Name of input function & e.g. 'AD\_Flow\_Neumann\_Exact'. \\
 		& & Needs all the below variables in output structure. \\
 	 	& & Set variable to zero if not needed. \\ 
+	 	DataRecompConv & Decides whether to check for datastorage & true/ false\\
+	 	& results for the convolution matrix &\\
+	 	DataRecompFW & Decides whether to check for datastorage & true/ false\\
+	 	& results for the forward problem &\\
 		\hline
 		Optional: & & \\
 		\hline
 		rhoIC & Initial Condition for rho & Input vector ($1 \times N$) or not existent.\\
 		pIC & Final Time Condition for p & Input vector ($1 \times N$) or not existent.\\ 
-		OptirhoIG & Initial guess for Optimization & Input Matrix ($n \times N$), not existent, \\
-		& & or 'rhoFW' to call forward result as IG\\
-		OptipIG &  Initial guess for Optimization & Input Matrix ($n \times N$) or not existent. \\
 		wFlow & Flow Control term & Input Matrix ($n \times N$) or not existent. \\
 		wForce & Force Control term & Input Matrix ($n \times N$) or not existent. \\
 		Force & Additional Force term  & Input Matrix ($n \times N$) or not existent. \\
@@ -167,8 +163,9 @@ One special case is the initial guess for rho to the optimization problem. This 
 	\end{tabular}
  \end{center}		
 	
-\subsection{optsPhys.Params}
-Here, any relevant parameters are specified. 
+	Note that the 'DataRecomp...' flags are there to determine whether to recompute your function (true) or whether to find a result in the datastorage folder (false). If nothing is specified, the default is 'false'.
+\subsubsection{optsPhysFW.Params}
+Here, any relevant parameters for the FW problem are specified. 
 
 	\begin{center}
 		\begin{tabular}{ |c| c | }
@@ -177,16 +174,88 @@ Here, any relevant parameters are specified.
 			\hline
 			beta & Regularization parameter in optimization \\
 			gamma & Magnitude of particle interaction term. \\ 
-			lambda & Mixing rate of old and new solution in 'Picard' and 'FixPt' solvers.\\
 			D0 & Diffusion Coefficient.\\
 		    eps & Contribution of Dirichlet term to Mixed BCs. \\
 			other & Additional input structure to 'testFun'. \\
-			other.scalerho & scaling parameter for rho. \\
-			other.scalep & scaling parameter for p. \\
-			other.deg & degree if $t$ is 'polynomial': $t^{deg}$. \\
 			\hline
 		\end{tabular}
 	\end{center}
+\subsection{optsPhys.optsPhysOpt}
+In this structure we have the inputs that are only necessary for the optimization but not for the forward solution. The optimization problem still gets all the inputs for the forward problem.
+The structures are: 'OptSolver', and 'OptDataInput'.
+
+
+\subsubsection{OptSolver}
+All things that are needed to specify the optimization solver are specified here. 
+\begin{center}
+	\begin{tabular}{ | c | c |}
+		\hline
+		Input Name & 'SolverFlag' \\ 
+		\hline
+		Description & Choosing the solver for Optimization\\ 
+		\hline 
+		Options & 'fsolve': Inbuilt MatLab solver and with Multiple Shooting. \\
+		& 'Picard': Picard update and Multiple Shooting \\
+		& 'FixPt': Picard update/ Fixed Point iteration, no shooting \\
+		\hline
+		\hline
+		Input Name & 'AdaSolverStr' \\ 
+		\hline
+		Description & Option to make Picard or Fixed Point Algorithm adaptive.\\ 
+		\hline 
+		Options & Input is a function name, Function input 'Err' and 'lambda'.\\
+		& 'Adaptive': will change 'lambda' (see 'Params') to be adaptive\\
+		& '[  ]', or exclusion of this option will leave 'lambda' static. \\
+		\hline
+     \end{tabular}
+	\end{center}
+Other input:
+\begin{center}
+	\begin{tabular}{ | c | c |}
+		\hline
+		lambda & Mixing rate of old and new solution in 'Picard' and 'FixPt' solvers.\\
+		\hline
+		BCFunOptStr & In case the adjoint has different BCs  from rho (such as in non-zero Dirichlet case)\\
+		\hline
+		OptsTols & Tolerances for the optimization solver (structure - see below).\\
+		\hline
+	\end{tabular}
+\end{center}
+These are the tolerances for the different optimization solvers.
+\begin{center}
+	\begin{tabular}{ | c | c | c |}
+		\hline
+		Location of usage & Input Name  & Description  \\ 
+		\hline
+		fsolve & 'OptsTols.FunTol' & Function Tolerance  \\
+		fsolve & 'OptsTols.OptiTol' & Optimality Tolerance  \\ 
+		fsolve & 'OptsTols.StepTol' & Stepsize Tolerance  \\ 
+		\hline 
+		Picard, FixPt & 'OptsTols.ConsTol' & Consistency Tolerance  \\ 
+		& & Consistency condition for convergence.\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsubsection*{OptDataInput}
+The DataRecompOpt option determines whether datastorage checks for an existing solution or whether it recomputes the solution.
+\begin{center}
+	\begin{tabular}{ | c | c | c |}
+		\hline
+		Input Name & Description  & Input Format  \\ 
+		\hline
+		OptirhoIG & Initial guess for Optimization & Input Matrix ($n \times N$), not existent, \\
+		& & or 'rhoFW' to call forward result as IG\\
+		\hline
+		OptipIG &  Initial guess for Optimization & Input Matrix ($n \times N$) or not existent. \\
+		\hline
+		DataRecompOpt & whether to recompute data & true/false\\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+
 \subsection{optsPhys.V2Num/optsNum.V2Num}
 'V2Num' is part of both 'optsPhys' and 'optsNum'. It contains the Kernel function for the particle interaction term and takes additional parameters.
 \begin{center}
@@ -251,15 +320,28 @@ Solver tolerances etc.
 		ODE solver & 'AbsTol' & Absolute Tolerance  \\
 		ODE solver & 'RelTol' & Relative Tolerance  \\ 
 		\hline
-		fsolve & 'FunTol' & Function Tolerance  \\
-		fsolve & 'OptiTol' & Optimality Tolerance  \\ 
-		fsolve & 'StepTol' & Stepsize Tolerance  \\ 
-		\hline 
-		Picard, FixPt & 'ConsTol' & Consistency Tolerance  \\ 
-		& & Consistency condition for convergence.\\
-		\hline
 	\end{tabular}
 \end{center}
 	
+\section{optsPlot}
+This structure is independent of the forward or optimization computation. It contains the following:
+
+\begin{center}
+	\begin{tabular}{ | c | c |}
+		\hline
+         'plotTimes' & plotting times the solution is interpolated on\\
+		\hline
+		 'VarStruct' & structure that specifies the variables to be plotted \\
+		 & and the location on 'subplot'. up to 8 locations specifiable. \\
+		 'VarStruct' Inputs: & A string followed by a number to specify the location\\
+		 Strings & 'rhoIC', 'pIC', 'OptirhoIG', 'OptipIG', 'rhoFW', 'rhoOpt', 'pOpt'\\
+		 & 'wFW', 'wOpt', 'rhoHat', 'Force', Flow', 'Vext'\\
+		 \hline
+	\end{tabular}
+\end{center}
+There is in principle also an option to supply a matrix to be plotted. Then you can't specify the location on the plot but instead give a structure 'VecOpts' containing 'VecOpts.titleName' (title of plot), 'Vecopts.yLabel' (yLabel of plot).\\
+Example:\\
+VarStr = struct('OptirhoIG',1,'OptipIG',2,M,VecOpts);\\
+where M is the matrix you are interested in plotting.
 	
 \end{document}
