@@ -1,0 +1,69 @@
++++ this needs serious redoing on the notation front.. also, I suspect the gradient equation is in the 'boundary observation' bit? +++
+
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{observation.png}
+	\caption{Domain of Interest}
+	\label{Observation1}
+\end{figure}
+
+The problem of interest is of the form:
+\begin{align*}
+&\min_{\Sta, \Con} \quad \frac{1}{2}|| \Sta -\hat \Sta||^2_{L_2( Q_{Ob})} + \frac{\beta}{2}|| \Con||^2_{L_2(Q)}\\
+\text{subject to:}\\
+&\partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}_{Flow}) +\nabla \cdot (\rho \nabla V_{ext}) + \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' + \Con \quad  \quad\text{in} \quad Q,\notag\\
+& \rho = \rho_0 \quad \text{at} \quad t=0 \notag\\
+& - \mathbf{j} \cdot \nor = \mathbbm{1}_{\partial \Omega_L}( C_{L1}  + C_{L2}\Sta) +\mathbbm{1}_{\partial \Omega_R} ( C_{R1}  + C_{R2}\Sta) +\mathbbm{1}_{\partial \Omega_I} 0, \quad  \quad\text{on} \quad \partial Q, 
+\end{align*}
+where $C_{L1}, C_{L2}, C_{R1}$, $C_{R2}$ are constants and $\mathbbm{1}$ is the indicator function of the set (the parts of the boundary) of interest.
+Furthermore, $\mathbf{j}$ satisfies:
+\begin{align*}
+\mathbf{j}=\nabla \rho - (\rho \mathbf{w}_{Flow}) +(\rho \nabla V_{ext}) +  \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr'.
+\end{align*}
+Moreover, let $\hat \Sta$ be defined such that:
+\begin{align*}
+\hat \Sta = \mathbbm{1}_{ \Omega_{Ob1}} \tilde \Sta  +\mathbbm{1}_{ \Omega_{Ob2}} 0.
+\end{align*}
+
+\subsection*{The Lagrangian}
+The Lagrangian is of the form:
+\begin{align*}
+\mathcal{L}(\Sta,\Con,\Adja,\Adjc ) &=\frac{1}{2} \int_0^T \int_{\Omega_{Ob}} (\Sta - \hat \Sta)^2 dr dt + \frac{\beta}{2}\int_0^T \int_\Omega \Con^2 drdt \\
+&+ \int_0^T \int_\Omega \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}_{Flow}) -\nabla \cdot (\rho \nabla V_{ext}) + \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) -f \bigg) \Adja dr dt\\
+&+ \int_0^T \int_{\partial \Omega} \bigg(  \bigg(-\nabla \rho+ (\rho \mathbf{w}_{Flow}) -(\rho \nabla V_{ext}) -  \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' \bigg)\cdot \nor\\
+&  -\mathbbm{1}_{\partial \Omega_L}( C_{L1}  + C_{L2}\Sta) -\mathbbm{1}_{\partial \Omega_R} ( C_{R1}  + C_{R2}\Sta) -\mathbbm{1}_{\partial \Omega_I} 0 \bigg) \Adjc dr dt.
+\end{align*}
+
+\subsection*{The Adjoint Equation}
+The derivative of $\mathcal{L}$ with respect to $\rho$ is, as taken from the extended project:
+\begin{align*}
+&\mathcal{L}_\rho (\rho,\mathbf{w},\Adja,\Adjc)h=
+\int_\Omega h(T) \Adja(T) dr\\
+&+ \int_0^T \int_\Omega \bigg( \mathbbm{1}_{ \Omega_{Ob}} (\rho- \hat{\rho})  - \partial_t \Adja  - \nabla \Adja \cdot \mathbf{w}_{Flow}  - \nabla^2 \Adja \notag 
++  \nabla \Adja \cdot \nabla V_{ext}  \notag \\
+&+ \int_\Omega (\nabla  \Adja(r)+\nabla  \Adja(r')) \rho(r') \nabla V_2(|r-r'|) dr'+ \int_{\partial \Omega} ( \Adjc(r') - \Adja(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' \bigg) h dr dt \\
+&+  \int_0^T\int_{\partial \Omega}  \bigg(
+\bigg(\frac{\partial \Adja }{\partial n} + \Adja  \mathbf{w} \cdot \mathbf{n} - \Adjc \mathbf{w}_{Flow} \cdot \mathbf{n}  +  \Adjc \dfrac{\partial V_{ext}}{\partial n} - \Adja \frac{\partial V_{ext}}{\partial n} + ( \Adjc - \Adja)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'\\
+& -\mathbbm{1}_{\partial \Omega_L} C_{L2} \Adjc   -\mathbbm{1}_{\partial \Omega_R} C_{R2} \Adjc \bigg)h + \bigg( \Adjc- \Adja \bigg) \frac{\partial h}{\partial n} \bigg) dr dt =0.
+\end{align*}
+Then, from appropriate analysis we find that:
+\begin{align*}
+\Adjc = \Adja,
+\end{align*}
+and therefore we get:
+\begin{align*}
+\mathbbm{1}_{\Omega_{Ob}}(\rho- \hat{\rho})   - \partial_t  \Adja  - \nabla \Adja \cdot \mathbf{w}_{Flow}  - \nabla^2 \Adja \notag 
++  \nabla \Adja \cdot \nabla V_{ext}  \notag \\
++ \int_\Omega (\nabla  \Adja(r)+\nabla  \Adja(r')) \rho(r') \nabla V_2(|r-r'|) dr' &=0, \quad \text{in} \quad Q, \\
+\frac{\partial \Adja }{\partial n}  -\mathbbm{1}_{\partial \Omega_L} C_{L2} \Adja   -\mathbbm{1}_{\partial \Omega_R} C_{R2} \Adja&=0, \quad \text{on} \quad \partial Q.
+\end{align*}
+In particular, this is:
+\begin{align*}
+\mathbbm{1}_{\Omega_{Ob1}}(\rho- \hat{\rho}) +\mathbbm{1}_{\Omega_{Ob2}}\rho  - \partial_t  \Adja  - \nabla \Adja \cdot \mathbf{w}_{Flow}  - \nabla^2 \Adja \notag 
++  \nabla \Adja \cdot \nabla V_{ext}  \notag \\
++ \int_\Omega (\nabla  \Adja(r)+\nabla  \Adja(r')) \rho(r') \nabla V_2(|r-r'|) dr' &=0, \quad \text{in} \quad Q, \\
+\frac{\partial \Adja }{\partial n}  -\mathbbm{1}_{\partial \Omega_L} C_{L2} \Adja   -\mathbbm{1}_{\partial \Omega_R} C_{R2} \Adja&=0, \quad \text{on} \quad \partial Q.
+\end{align*}
+
+
+
+

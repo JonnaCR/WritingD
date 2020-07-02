@@ -1,0 +1,177 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+\section{Background on DDFT Stuff}
+\section{Background on PDE-Constrained Optimization}
+\section{Literature review on PDE-Constrained Optimization for these PDEs}
+
+\section{Deriving optimality conditions}
+- derive optimality conditions for all the systems we need \\
+- Flow/Force\\
+- Neumann / Dirichlet/ Dirichlet non-zero/ Mixed\\
+- boundary/ subdomain control/observation, non-constant flux stuff\\
+- Archer paper optimality conditions (good opportunity to link to some background stuff)
+
+\section{Numerical Methods}
+- pseudospectral methods (why they are better than others in what we do, what else would be useful, what type of method exactly, how does it work)\\
+- multiple shooting background (how is it done in literature, how do we do it)\\
+- Kalise and Burger papers, sweeping algorithms (and our adaptation - or adaptation in next section)\\
+- somewhere (not sure if in this section) discuss different ODE solvers and which one is best for this and why
+
+
+\section{Optimization Algorithms}
+- Multiple shooting\\
+- Fixed Point\\
+- discuss how fsolve works (the review done on it etc) and what alternative is there in the literature\\
+- find a way to separate but join the following subsections for the two solvers\\
+- compare the different solvers. Compare how they measure convergence and which may do better or how they differ in general.
+\subsection{Algorithms}
+- showing why running ODE solver piecewise is more accurate than on the whole time line\\
+- Chebyshev time points vs equispaced time grid for spectral accuracy\\
+\\
+- fixed point method: explain where it came from, adding mixing rate and why and that burger and ours are the same\\
+
+- explain general functionality of the algorithm, the different input options, how the optimization algorithm works, what can be changed (e.g. norms, solvers, etc), what up to date is the fastest method, what is the most robust, etc.
+\subsubsection{Investigating $\lambda$}
+- what range of values is suitable\\
+- interplay with $\beta$\\
+- adaptive for different problems\\
+- include here a study on how the convergence works: i.e. is it 'linear' over iterations, or is it behaving in any certain way. use this to justify adaptive approach
+\subsubsection{Choice of $\hat \rho$}
+- stationary vs moving\\
+- achievable or not\\
+- satisfying BCs and IC
+\subsubsection{Choice of Initial Guess for $p$ (Multiple Shooting)}
+- explain what has to be satisfied\\
+- one idea: integrate from the gradient eqn. for initial guess of w. Check that this is still tricky with our new understanding of the exact solutions (too large, advection dominance, etc). \\
+- other idea: one Kalise step to come up with p.\\
+- show how much or how little the choice of initial guess for $p$ matters in toy examples.\\
+- for both IGs show whether different IGs converge to the global minimum/ exact solution or whether it converges to some local minimum
+\subsection{The relationship between diffusion and advection}
+- investigate the size of the two terms \\
+- when do different problems break because of advection dominance\\
+- how does the interaction term come into this\\
+- break something that works and fix something that doesn't, show breaking point and whether the relationship is abrupt or linear or what else\\
+-check time interpolation for fixed x, does it get worse with larger solutions?
+- Show example where it breaks eg 2D example with too steep desired state (advection dominance/ too steep gradients)\\
+- investigate going from coarse grid to fine grid to push accuracy of solutions. see if it's to do with advection or ODE solver limitations.
+\subsection{Validation}
+
+\subsubsection{Exact Solutions}
+- all four problems \\
+- mention that $w \sim \frac{1}{\beta}$ doesn't work well - should be on $p$ or both $\rho$ and $p$ instead \\
+- compare different choices of exact solutions, i.e. linear, polynomial, exponential time; polynomial and trigonometric space \\
+- show the performance of the polynomial vs. exponential for interpolation interpolation \\
+\subsubsection{Validation against different solvers}
+- compare results of the same problem for fsolve, picard and fixed point method
+\subsubsection{Perturbing $\hat \rho$}
+- taking $\rho$ IC/IG of exact solution with $\beta_1$ and all other choices exact for $\beta_2$ and see what happens. \\
+- other tests that change $\hat \rho$ instead of $w$. Can't remember exactly
+\subsubsection{Perturbing $w$}
+- discuss why the perturbation has to be smooth (in general and wrt the initial condition, give examples, error plots) AND check if that's still true given the knowledge on advection dominance and size of the problem\\
+- perturbing in time \\
+- perturbing in space \\
+- perturbing in time and space \\
+- symmetric/ asymmetric, different strengths\\
+- relationship between this and the advection dominance\\
+- show interpolation error in perturbed $w$\\
+- perturb $\rho$ and show interpolation error there too
+\subsubsection{Investigating changing $n$ and $N$}
+- for both FW and optimization problem investigate how the error changes with the number of points\\
+- investigate effect of beta and of tolerance settings
+\subsubsection{Investigating changing tolerances}
+- for both FW and optimization problem investigate how error changes with ODE tolerances (and include how it changes with not using the same tolerances for both RelTol and AbsTol)\\
+- investigate interplay between this and number of points and beta
+- for optimization problem do this for both ODE tolerances and optimality tolerances (whatever they are - do for different solvers)\\
+- discuss how to choose tolerances given things such as interpolation errors and such.
+\subsubsection{Investigating interpolation errors}
+- investigate the effect of interpolation error in interplay with tolerances, and number of points, and other factors.
+\subsubsection{Investigating different error measures}
+- L2Linfinity Relative\\
+- Pointwise Relative\\
+- Absolute L1\\
+- other?\\
+- argue why relative is better, why one error measure is better than others etc
+
+\section{Examples}
+- Neumann Flow\\
+- Mass conservation, $\rho$ size $1$ for probability distribution\\
+- symmetric\ asymmetric\\
+- with interaction term \\
+- 1D/2D \\
+\\
+- Dirichlet Flow \\
+- Dirichlet Flow with $\rho$ size $1$ -- non-zero BCs ($0.5$ instead/ $0.25$ in 2D)
+- Force Control (Dirichlet/Neumann) \\
+- show how $w$ from zero in FW problem acts to achieve $\hat \rho$ working against or with interaction\\
+- does the control focus on where the mass of the particles is?\\
+- choose the examples in a way that each of them is making a point\\
+- two peaks example and example with gaussian asymmetric $\hat \rho$\\
+- plot space and time as surface plot (with colours) to show how the solution changes with time in 1D
+
+
+\section{Other thoughts}
+- mass correction if mass is to be one\\
+
+
+\section{Useful Resources to go back to}
+'A practical guide to pseudospectral methods', Bengt Fornberg
+\end{document}
