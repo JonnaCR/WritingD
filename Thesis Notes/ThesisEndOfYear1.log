@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  2 JUL 2020 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 JUL 2020 10:14
 entering extended mode
 **./ThesisEndOfYear1.tex
 (ThesisEndOfYear1.tex
@@ -554,7 +554,7 @@ l.86 	\newpage
 \openout4 = `ThesisEndOfYear1.toc'.
 
  [2]
-Overfull \hbox (2.37831pt too wide) in paragraph at lines 119--119
+Overfull \hbox (2.37831pt too wide) in paragraph at lines 120--120
 []\OT1/cmr/bx/n/14.4 Literature re-view on PDE-Constrained Op-ti-miza-tion for 
 these
  []
@@ -585,7 +585,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--28
  []
 
 [1] [2])
-Underfull \hbox (badness 10000) in paragraph at lines 124--127
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
@@ -633,83 +633,83 @@ Overfull \hbox (55.79614pt too wide) detected at line 47
  []
 
 [10 <./Images/observation.png>]) [11]
-Underfull \hbox (badness 10000) in paragraph at lines 145--150
+Underfull \hbox (badness 10000) in paragraph at lines 146--151
 
  []
 
 
 LaTeX Warning: Reference `sec:Method_PseudospectralPDECO' on page 12 undefined 
-on input line 152.
+on input line 153.
 
 
 LaTeX Warning: Reference `sec:Method_Validation' on page 12 undefined on input 
-line 154.
+line 155.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 156.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 157.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 156.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
  [12]
 
 Package natbib Warning: Citation `Burger1' on page 13 undefined on input line 1
-66.
+67.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--185
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
 
  []
 
 
 LaTeX Warning: Reference `sec:Method_Validation' on page 14 undefined on input 
-line 198.
+line 199.
 
 
-LaTeX Warning: Reference `sec:Expts' on page 14 undefined on input line 198.
+LaTeX Warning: Reference `sec:Expts' on page 14 undefined on input line 199.
 
 
 LaTeX Warning: Reference `sec:Method_Solver' on page 14 undefined on input line
- 198.
+ 199.
 
 
 LaTeX Warning: Reference `app:TestProblems' on page 14 undefined on input line 
-198.
+199.
 
 
 Package natbib Warning: Citation `Powell1' on page 14 undefined on input line 2
-13.
+14.
 
 
 LaTeX Warning: Reference `app:fsolveComparison' on page 14 undefined on input l
-ine 213.
+ine 214.
 
 
 LaTeX Warning: Reference `app:TestProblems' on page 14 undefined on input line 
-213.
+214.
 
 
 LaTeX Warning: Reference `app:TestProblemsPerturbed' on page 14 undefined on in
-put line 213.
+put line 214.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 217--221
+Underfull \hbox (badness 10000) in paragraph at lines 218--222
 
  []
 
@@ -718,31 +718,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--221
 LaTeX Warning: Reference `TabA3:Prob1' on page 15 undefined on input line 4.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 222--227
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--227
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 228.
+(hyperref)                removing `math shift' on input line 229.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 228.
+(hyperref)                removing `math shift' on input line 229.
 
 [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 231.
+(hyperref)                removing `math shift' on input line 232.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 231.
+(hyperref)                removing `math shift' on input line 232.
 
 (Perturbingw.tex
 
@@ -760,12 +760,12 @@ LaTeX Warning: Reference `AdvDiff' on page 16 undefined on input line 2.
 LaTeX Warning: Reference `NoFlux' on page 16 undefined on input line 2.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--4
+Underfull \hbox (badness 10000) in paragraph at lines 233--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--4
+Underfull \hbox (badness 10000) in paragraph at lines 233--4
 
  []
 
@@ -780,61 +780,61 @@ LaTeX Warning: Reference `sec:Method_Solver' on page 17 undefined on input line
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 243.
+(hyperref)                removing `math shift' on input line 244.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 254.
+(hyperref)                removing `math shift' on input line 255.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 254.
+(hyperref)                removing `\lambda' on input line 255.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 254.
+(hyperref)                removing `math shift' on input line 255.
 
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 259.
+(hyperref)                removing `math shift' on input line 260.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 259.
+(hyperref)                removing `math shift' on input line 260.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 263.
+(hyperref)                removing `math shift' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 263.
+(hyperref)                removing `math shift' on input line 264.
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 286--300
+Underfull \hbox (badness 10000) in paragraph at lines 287--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--300
+Underfull \hbox (badness 10000) in paragraph at lines 287--301
 
  []
 
@@ -847,12 +847,12 @@ LaTeX Warning: Reference `AdvDiff_Linear' on page 19 undefined on input line 2.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--4
+Underfull \hbox (badness 10000) in paragraph at lines 302--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--4
+Underfull \hbox (badness 10000) in paragraph at lines 302--4
 
  []
 
@@ -953,7 +953,7 @@ LaTeX Warning: Reference `rhoHat2dEx4' on page 24 undefined on input line 275.
 LaTeX Warning: Reference `rhoOpt2dEx4' on page 24 undefined on input line 275.
 
 ) [24] (ThesisEndOfYear1.bbl [25]) [26]
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
@@ -964,19 +964,19 @@ Package natbib Warning: There were undefined citations.
 Package caption Warning: Unused \captionsetup[sub] on input line 22.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 325.
 [27]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 325.
  (ThesisEndOfYear1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 325.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 325.
 Package rerunfilecheck Info: File `ThesisEndOfYear1.out' has not changed.
 (rerunfilecheck)             Checksum: EF88294713BE60E0EC9173D46DD4A2C5;3921.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 325.
  ) 
 Here is how much of TeX's memory you used:
  10377 strings out of 492946
@@ -1012,7 +1012,7 @@ e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
 4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><
 C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmtt10.pfb>
-Output written on ThesisEndOfYear1.pdf (31 pages, 377782 bytes).
+Output written on ThesisEndOfYear1.pdf (31 pages, 378030 bytes).
 PDF statistics:
  572 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
