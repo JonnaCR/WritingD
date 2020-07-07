@@ -3,6 +3,14 @@
 %\usetheme{Copenhagen}
 \usetheme{boxes}
 \setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{footline}{
+	\hfill%
+	\usebeamercolor[fg]{page number in head/foot}%
+	\usebeamerfont{page number in head/foot}%
+	\setbeamertemplate{page number in head/foot}[framenumber]%
+	\usebeamertemplate*{page number in head/foot}\kern1em\vskip2pt%
+}
 %\setbeamertemplate{footline}{}
 \usecolortheme{dove}   %[named=black]
 
