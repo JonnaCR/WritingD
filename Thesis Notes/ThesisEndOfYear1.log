@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 JUL 2020 10:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  10 JUL 2020 11:45
 entering extended mode
 **./ThesisEndOfYear1.tex
 (ThesisEndOfYear1.tex
@@ -554,12 +554,174 @@ l.86 	\newpage
 \openout4 = `ThesisEndOfYear1.toc'.
 
  [2]
-Overfull \hbox (2.37831pt too wide) in paragraph at lines 120--120
+Overfull \hbox (2.37831pt too wide) in paragraph at lines 115--115
 []\OT1/cmr/bx/n/14.4 Literature re-view on PDE-Constrained Op-ti-miza-tion for 
 these
  []
 
 (MeanFieldOptimalControl.tex
+
+Package natbib Warning: Citation `LASRY2006619' on page 1 undefined on input li
+ne 2.
+
+
+Package natbib Warning: Citation `LASRY2006679' on page 1 undefined on input li
+ne 2.
+
+
+Package natbib Warning: Citation `LASRY4' on page 1 undefined on input line 2.
+
+
+Package natbib Warning: Citation `Lasry2007' on page 1 undefined on input line 
+2.
+
+
+Package natbib Warning: Citation `Huang1' on page 1 undefined on input line 2.
+
+
+Package natbib Warning: Citation `CuckerSmale1' on page 1 undefined on input li
+ne 5.
+
+
+Package natbib Warning: Citation `CuckerSmale2' on page 1 undefined on input li
+ne 5.
+
+
+Package natbib Warning: Citation `Fornasier_2014' on page 1 undefined on input 
+line 5.
+
+
+Package natbib Warning: Citation `Fornasier_2014no2' on page 1 undefined on inp
+ut line 6.
+
+
+Package natbib Warning: Citation `fornasier_lisini_orrieri_savare_2019' on page
+ 1 undefined on input line 7.
+
+
+Package natbib Warning: Citation `piccoli2014no1' on page 1 undefined on input 
+line 8.
+
+
+Package natbib Warning: Citation `Fornasier_20161no1' on page 1 undefined on in
+put line 8.
+
+
+Package natbib Warning: Citation `burger2019meanfield' on page 1 undefined on i
+nput line 9.
+
+
+Package natbib Warning: Citation `burger2019instantaneous' on page 1 undefined 
+on input line 11.
+
+
+Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
+ input line 11.
+
+
+Package natbib Warning: Citation `ChengC.Z1976Tiot' on page 1 undefined on inpu
+t line 11.
+
+
+Package natbib Warning: Citation `albi2016selective' on page 1 undefined on inp
+ut line 12.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 15.
+
+
+Package natbib Warning: Citation `carrillo2019mean' on page 1 undefined on inpu
+t line 16.
+
+
+Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
+e 16.
+
+
+Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
+ line 16.
+
+
+Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
+e 17.
+
+
+Package natbib Warning: Citation `gilbertstrang1' on page 1 undefined on input 
+line 17.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 17.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 17.
+
+
+Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
+ line 18.
+
+
+Package natbib Warning: Citation `Albi_2014no1' on page 1 undefined on input li
+ne 18.
+
+
+Package natbib Warning: Citation `albi2014kinetic' on page 1 undefined on input
+ line 18.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 21.
+
+
+Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
+e 21.
+
+
+Package natbib Warning: Citation `Fornasier_2014no2' on page 1 undefined on inp
+ut line 21.
+
+
+Package natbib Warning: Citation `burger2019meanfield' on page 1 undefined on i
+nput line 22.
+
+
+Package natbib Warning: Citation `fornasier_lisini_orrieri_savare_2019' on page
+ 1 undefined on input line 22.
+
+
+Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
+ input line 22.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 22.
+
+
+Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
+ line 22.
+
+
+Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
+e 26.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 26.
+
+
+Package natbib Warning: Citation `burger2019instantaneous' on page 1 undefined 
+on input line 26.
+
+
+Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
+ input line 26.
+
+
+Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
+ne 27.
+
 
 Package natbib Warning: Citation `Burger1' on page 1 undefined on input line 27
 .
@@ -584,376 +746,391 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--28
 
  []
 
-[1] [2])
-Underfull \hbox (badness 10000) in paragraph at lines 125--128
+[1])
+Underfull \hbox (badness 10000) in paragraph at lines 120--124
 
  []
 
-(OptimalityConditionsArcher.tex
+[2] (OptimalityConditionsArcher.tex
 Overfull \hbox (36.48271pt too wide) detected at line 13
 []
  []
 
-[3]
+
 Overfull \hbox (22.04382pt too wide) detected at line 31
 []
  []
 
-[4] [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+[3] [4] [5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
 
  []
 
-) (NonconstantFluxSubdomainObservation.tex
-<Images/observation.png, id=373, 464.4853pt x 241.65282pt>
+) (NonconstantFluxBoundaryObservation.tex
+LaTeX Font Info:    Try loading font information for U+bbm on input line 10.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbm\ubbm.fd"
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (7.33934pt too wide) detected at line 10
+[]
+ []
+
+[9]
+Overfull \hbox (40.69774pt too wide) detected at line 28
+[]
+ []
+
+
+Overfull \hbox (40.3157pt too wide) detected at line 41
+[]
+ []
+
+[10]) (NonconstantFluxSubdomainObservation.tex
+<Images/observation.png, id=315, 464.4853pt x 241.65282pt>
 File: Images/observation.png Graphic file (type png)
 <use Images/observation.png>
 Package pdftex.def Info: Images/observation.png  used on input line 4.
 (pdftex.def)             Requested size: 371.58875pt x 193.32251pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Try loading font information for U+bbm on input line 16.
-("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbm\ubbm.fd"
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-Overfull \hbox (27.2795pt too wide) detected at line 16
-[]
- []
-
-[9]
-Overfull \hbox (79.0742pt too wide) detected at line 34
+Overfull \hbox (7.33934pt too wide) detected at line 16
 []
  []
 
 
-Overfull \hbox (55.79614pt too wide) detected at line 47
+Overfull \hbox (60.62062pt too wide) detected at line 34
 []
  []
 
-[10 <./Images/observation.png>]) [11]
-Underfull \hbox (badness 10000) in paragraph at lines 146--151
+[11 <./Images/observation.png>]
+Overfull \hbox (40.3157pt too wide) detected at line 47
+[]
+ []
+
+) [12]
+Underfull \hbox (badness 10000) in paragraph at lines 144--149
 
  []
 
 
-LaTeX Warning: Reference `sec:Method_PseudospectralPDECO' on page 12 undefined 
-on input line 153.
+LaTeX Warning: Reference `sec:Method_PseudospectralPDECO' on page 13 undefined 
+on input line 151.
 
+[13]
 
-LaTeX Warning: Reference `sec:Method_Validation' on page 12 undefined on input 
-line 155.
+LaTeX Warning: Reference `sec:Method_Validation' on page 14 undefined on input 
+line 153.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 157.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
- [12]
-
-Package natbib Warning: Citation `Burger1' on page 13 undefined on input line 1
-67.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
+Package natbib Warning: Citation `Burger1' on page 14 undefined on input line 1
+65.
 
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
+Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
 
-LaTeX Warning: Reference `sec:Method_Validation' on page 14 undefined on input 
-line 199.
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
-
-LaTeX Warning: Reference `sec:Expts' on page 14 undefined on input line 199.
-
-
-LaTeX Warning: Reference `sec:Method_Solver' on page 14 undefined on input line
- 199.
-
-
-LaTeX Warning: Reference `app:TestProblems' on page 14 undefined on input line 
-199.
-
-
-Package natbib Warning: Citation `Powell1' on page 14 undefined on input line 2
-14.
-
-
-LaTeX Warning: Reference `app:fsolveComparison' on page 14 undefined on input l
-ine 214.
-
-
-LaTeX Warning: Reference `app:TestProblems' on page 14 undefined on input line 
-214.
-
-
-LaTeX Warning: Reference `app:TestProblemsPerturbed' on page 14 undefined on in
-put line 214.
+ []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
+
+ []
+
+
+LaTeX Warning: Reference `sec:Method_Validation' on page 15 undefined on input 
+line 197.
+
+
+LaTeX Warning: Reference `sec:Expts' on page 15 undefined on input line 197.
+
+
+LaTeX Warning: Reference `sec:Method_Solver' on page 15 undefined on input line
+ 197.
+
+
+LaTeX Warning: Reference `app:TestProblems' on page 15 undefined on input line 
+197.
+
+[15]
+
+Package natbib Warning: Citation `Powell1' on page 16 undefined on input line 2
+12.
+
+
+LaTeX Warning: Reference `app:fsolveComparison' on page 16 undefined on input l
+ine 212.
+
+
+LaTeX Warning: Reference `app:TestProblems' on page 16 undefined on input line 
+212.
+
+
+LaTeX Warning: Reference `app:TestProblemsPerturbed' on page 16 undefined on in
+put line 212.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--220
 
  []
 
 (Comparisonwithfsolve.tex
 
-LaTeX Warning: Reference `TabA3:Prob1' on page 15 undefined on input line 4.
+LaTeX Warning: Reference `TabA3:Prob1' on page 16 undefined on input line 4.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
+Underfull \hbox (badness 10000) in paragraph at lines 221--226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--228
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 229.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 229.
-
-[15]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 232.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 232.
-
-(Perturbingw.tex
-
-LaTeX Warning: Reference `sec:Method_Solver' on page 16 undefined on input line
- 2.
-
-
-LaTeX Warning: Reference `app:TestProblems' on page 16 undefined on input line 
-2.
-
-
-LaTeX Warning: Reference `AdvDiff' on page 16 undefined on input line 2.
-
-
-LaTeX Warning: Reference `NoFlux' on page 16 undefined on input line 2.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--4
+Underfull \hbox (badness 10000) in paragraph at lines 221--226
 
  []
 
 [16]
 
-LaTeX Warning: Reference `TabA2:Prob1' on page 17 undefined on input line 28.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 227.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 227.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
+
+(Perturbingw.tex
 
 LaTeX Warning: Reference `sec:Method_Solver' on page 17 undefined on input line
+ 2.
+
+
+LaTeX Warning: Reference `app:TestProblems' on page 17 undefined on input line 
+2.
+
+
+LaTeX Warning: Reference `AdvDiff' on page 17 undefined on input line 2.
+
+
+LaTeX Warning: Reference `NoFlux' on page 17 undefined on input line 2.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--4
+
+ []
+
+[17]
+
+LaTeX Warning: Reference `TabA2:Prob1' on page 18 undefined on input line 28.
+
+
+LaTeX Warning: Reference `sec:Method_Solver' on page 18 undefined on input line
  28.
 
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(hyperref)                removing `math shift' on input line 242.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 255.
+(hyperref)                removing `math shift' on input line 253.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 255.
+(hyperref)                removing `\lambda' on input line 253.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 255.
-
-[17]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 260.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 260.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 264.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 264.
+(hyperref)                removing `math shift' on input line 253.
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 287--301
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 262.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 262.
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 285--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--299
 
  []
 
 (NumericalExperiments.tex
 
-LaTeX Warning: Reference `AdvDiff' on page 19 undefined on input line 2.
+LaTeX Warning: Reference `AdvDiff' on page 20 undefined on input line 2.
 
 
-LaTeX Warning: Reference `AdvDiff_Linear' on page 19 undefined on input line 2.
+LaTeX Warning: Reference `AdvDiff_Linear' on page 20 undefined on input line 2.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 302--4
+Underfull \hbox (badness 10000) in paragraph at lines 300--4
 
  []
 
 
-LaTeX Warning: Reference `AdvDiff' on page 19 undefined on input line 10.
+Underfull \hbox (badness 10000) in paragraph at lines 300--4
+
+ []
 
 
-LaTeX Warning: Reference `AdvDiff_Linear' on page 19 undefined on input line 10
+LaTeX Warning: Reference `AdvDiff' on page 20 undefined on input line 10.
+
+
+LaTeX Warning: Reference `AdvDiff_Linear' on page 20 undefined on input line 10
 .
-
-[19]
-
-LaTeX Warning: Reference `AdvDiff' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Reference `NoFlux' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Reference `Dirichlet' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Reference `TabS5:Prob1' on page 20 undefined on input line 26.
-
-
-LaTeX Warning: Reference `Ex12DN1' on page 20 undefined on input line 28.
-
-
-LaTeX Warning: Reference `Ex12DN2' on page 20 undefined on input line 28.
-
-
-LaTeX Warning: Reference `Ex12DN1' on page 20 undefined on input line 29.
-
-
-LaTeX Warning: Reference `Ex12DN1' on page 20 undefined on input line 29.
 
 [20]
 
-LaTeX Warning: Reference `TabS5:Prob2' on page 21 undefined on input line 74.
+LaTeX Warning: Reference `AdvDiff' on page 21 undefined on input line 14.
 
 
-LaTeX Warning: Reference `Ex22DN1' on page 21 undefined on input line 74.
+LaTeX Warning: Reference `NoFlux' on page 21 undefined on input line 14.
 
 
-LaTeX Warning: Reference `TabS5:Prob3' on page 21 undefined on input line 115.
+LaTeX Warning: Reference `Dirichlet' on page 21 undefined on input line 14.
 
 
-LaTeX Warning: Reference `Ex22DN1' on page 21 undefined on input line 115.
+LaTeX Warning: Reference `TabS5:Prob1' on page 21 undefined on input line 26.
 
 
-LaTeX Warning: Reference `Ex22DN1' on page 21 undefined on input line 115.
+LaTeX Warning: Reference `Ex12DN1' on page 21 undefined on input line 28.
+
+
+LaTeX Warning: Reference `Ex12DN2' on page 21 undefined on input line 28.
+
+
+LaTeX Warning: Reference `Ex12DN1' on page 21 undefined on input line 29.
+
+
+LaTeX Warning: Reference `Ex12DN1' on page 21 undefined on input line 29.
 
 [21]
 
-LaTeX Warning: Reference `TabNFlowAddEx1' on page 22 undefined on input line 14
-5.
+LaTeX Warning: Reference `TabS5:Prob2' on page 22 undefined on input line 74.
 
 
-LaTeX Warning: Reference `AdvDiff_Linear' on page 22 undefined on input line 16
-4.
+LaTeX Warning: Reference `Ex22DN1' on page 22 undefined on input line 74.
 
 
-LaTeX Warning: Reference `NoFlux_Linear' on page 22 undefined on input line 164
-.
+LaTeX Warning: Reference `TabS5:Prob3' on page 22 undefined on input line 115.
 
 
-LaTeX Warning: Reference `Dirichlet' on page 22 undefined on input line 164.
+LaTeX Warning: Reference `Ex22DN1' on page 22 undefined on input line 115.
+
+
+LaTeX Warning: Reference `Ex22DN1' on page 22 undefined on input line 115.
 
 [22]
 
-LaTeX Warning: Reference `TabS5:Prob4' on page 23 undefined on input line 175.
+LaTeX Warning: Reference `TabNFlowAddEx1' on page 23 undefined on input line 14
+5.
 
 
-LaTeX Warning: Reference `TabS5:Prob5' on page 23 undefined on input line 211.
+LaTeX Warning: Reference `AdvDiff_Linear' on page 23 undefined on input line 16
+4.
 
 
-LaTeX Warning: Reference `sec:Method_Solver' on page 23 undefined on input line
- 238.
+LaTeX Warning: Reference `NoFlux_Linear' on page 23 undefined on input line 164
+.
+
+
+LaTeX Warning: Reference `Dirichlet' on page 23 undefined on input line 164.
 
 [23]
 
-LaTeX Warning: Reference `TabS5:Prob12D' on page 24 undefined on input line 249
+LaTeX Warning: Reference `TabS5:Prob4' on page 24 undefined on input line 175.
+
+
+LaTeX Warning: Reference `TabS5:Prob5' on page 24 undefined on input line 211.
+
+
+LaTeX Warning: Reference `sec:Method_Solver' on page 24 undefined on input line
+ 238.
+
+[24]
+
+LaTeX Warning: Reference `TabS5:Prob12D' on page 25 undefined on input line 249
 .
 
 
-LaTeX Warning: Reference `rhoHat2dEx2' on page 24 undefined on input line 249.
+LaTeX Warning: Reference `rhoHat2dEx2' on page 25 undefined on input line 249.
 
 
-LaTeX Warning: Reference `rhoOpt2dEx2' on page 24 undefined on input line 249.
+LaTeX Warning: Reference `rhoOpt2dEx2' on page 25 undefined on input line 249.
 
 
-LaTeX Warning: Reference `TabS5:Prob22D' on page 24 undefined on input line 275
+LaTeX Warning: Reference `TabS5:Prob22D' on page 25 undefined on input line 275
 .
 
 
-LaTeX Warning: Reference `rhoHat2dEx4' on page 24 undefined on input line 275.
+LaTeX Warning: Reference `rhoHat2dEx4' on page 25 undefined on input line 275.
 
 
-LaTeX Warning: Reference `rhoOpt2dEx4' on page 24 undefined on input line 275.
+LaTeX Warning: Reference `rhoOpt2dEx4' on page 25 undefined on input line 275.
 
-) [24] (ThesisEndOfYear1.bbl [25]) [26]
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+) [25] (ThesisEndOfYear1.bbl)
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
@@ -964,28 +1141,28 @@ Package natbib Warning: There were undefined citations.
 Package caption Warning: Unused \captionsetup[sub] on input line 22.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 325.
-[27]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 325.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (ThesisEndOfYear1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 325.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 325.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
 Package rerunfilecheck Info: File `ThesisEndOfYear1.out' has not changed.
-(rerunfilecheck)             Checksum: EF88294713BE60E0EC9173D46DD4A2C5;3921.
+(rerunfilecheck)             Checksum: 363AE711B53F08086AD213045E4BF3D5;3781.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 325.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
- 10377 strings out of 492946
- 157438 string characters out of 3124935
- 443717 words of memory out of 3000000
- 13996 multiletter control sequences out of 15000+200000
+ 10278 strings out of 492946
+ 155400 string characters out of 3124935
+ 442345 words of memory out of 3000000
+ 13920 multiletter control sequences out of 15000+200000
  15163 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,1436b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,1436b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\s1452504\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbm/dpi65
 7\bbm10.pk><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cmextra/cmbsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
@@ -1008,13 +1185,14 @@ fb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmr6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s145250
-4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmtt10.pfb>
-Output written on ThesisEndOfYear1.pdf (31 pages, 378030 bytes).
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/s145250
+4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
+:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmti10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmtt10.pfb>
+Output written on ThesisEndOfYear1.pdf (30 pages, 364090 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
- 121 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

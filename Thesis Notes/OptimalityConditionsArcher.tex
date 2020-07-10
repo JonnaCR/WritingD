@@ -4,7 +4,7 @@ The domain is $\Sigma=\Omega \times [0,T]$. There are two state variables, the p
 \begin{align*}
 &\min_{\Sta,\Stav,\Con } \quad \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2 + \frac{\alpha}{2}||\Stav - \hat \Stav||_{L_2(\Sigma)}^2 +\frac{\beta}{2}||\Con||_{L_2(\Sigma)}^2\\
 &\text{subject to:}\\
-&m \Sta \frac{\partial \Stav}{\partial t} + m \Sta (\Stav \cdot \nabla)\Stav + \Sta \nabla V_{ext} + \nabla \Sta + m\gamma \Sta \Stav +\int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|)dr'  -\Con=\mathbf{0} \ \ \ \qquad \ \ \quad\text{in} \quad \Sigma\\
+&m \Sta \frac{\partial \Stav}{\partial t} + m \Sta (\Stav \cdot \nabla)\Stav + \Sta \nabla V_{ext} + \nabla \Sta + m\gamma \Sta \Stav +\int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|)dr'  +\Con=\mathbf{0} \ \ \ \qquad \ \ \quad\text{in} \quad \Sigma\\
 &\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav)=0 \qquad\qquad \qquad\qquad\qquad\quad \quad\quad\qquad \qquad\qquad \qquad\qquad\qquad\quad \qquad\qquad\qquad\quad\ \text{in} \quad \Sigma\\
 \\
 &\Sta \Stav \cdot \mathbf{n} =0\qquad\qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad \qquad\qquad \qquad\qquad\qquad \qquad\qquad\qquad\quad \qquad \text{on} \quad \partial  \Sigma\\
@@ -25,7 +25,7 @@ which matches Equation $(29)$ in Archer's paper.
 The Lagrangian for the above problem is:
 \begin{align*}
 &\mathcal{L}(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc) = \int_0^T \int_\Omega  \frac{1}{2}(\Sta - \hat \Sta)^2 drdt +\int_0^T \int_\Omega  \frac{\alpha}{2}(\Stav - \hat \Stav)^2 drdt +\int_0^T \int_\Omega  \frac{\beta}{2}\Con^2 drdt\\
-&+ \int_0^T \int_\Omega (m \Sta \frac{\partial \Stav}{\partial t} + m \Sta (\Stav \cdot \nabla)\Stav + \Sta \nabla V_{ext} + \nabla \Sta + m\gamma \Sta \Stav +\int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|)dr'-\Con) \cdot \Adja dr dt\\
+&+ \int_0^T \int_\Omega (m \Sta \frac{\partial \Stav}{\partial t} + m \Sta (\Stav \cdot \nabla)\Stav + \Sta \nabla V_{ext} + \nabla \Sta + m\gamma \Sta \Stav +\int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|)dr'+\Con) \cdot \Adja dr dt\\
 & + \int_0^T \int_\Omega (\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav)) \Adjb dr dt\\ 
 & +\int_0^T \int_{\partial\Omega} \Sta \Stav \cdot \mathbf{n} \Adjc dr dt,
 \end{align*}
@@ -62,13 +62,14 @@ I_{2B}&= \int_0^T \int_\Omega  h(r')\bigg(\int_\Omega  \rho(r)\nabla V_2(|r-r'|)
 \end{align*}
 and relabelling $r \to r'$ and $r' \to r$ gives:
 \begin{align*}
-I_{2B}&= \int_0^T \int_\Omega  h(r)\bigg(\int_\Omega  \rho(r')\nabla V_2(|r-r'|) \cdot \Adja(r') dr' \bigg)drdt,
+I_{2B}&= -\int_0^T \int_\Omega  h(r)\bigg(\int_\Omega  \rho(r')\nabla V_2(|r-r'|) \cdot \Adja(r') dr' \bigg)drdt.
 \end{align*}
+The introduction of the minus sign is due to the relationship $\nabla_r V_2(|r - r'|) = \nabla_{r'} V_2(|r' - r|)$.  (++ Check correct location of comment)+++
 Replacing $I_1, I_2, I_{2B}$ and $I_3$ in the derivative gives:
 \begin{align*}
 &\mathcal{L}_\Sta(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc)h = \int_\Omega h(T) \Adjb(T) dr dt  \\
 &+ \int_0^T \int_\Omega ( (\Sta - \hat \Sta) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m  ((\Stav \cdot \nabla)\Stav )\cdot \Adja+ \nabla V_{ext}\cdot \Adja -\nabla\cdot \Adja  - \ \nabla \Adjb \cdot \Stav  -  \frac{\partial \Adjb}{\partial t}) h dr dt \\
-&+ \int_0^T \int_\Omega  \bigg(\int_\Omega  \rho(r')(\Adja(r') + \Adja(r)) \cdot\nabla V_2(|r-r'|)   dr' + m \gamma \Stav \cdot \Adja \bigg)hdr dt\\
+&+ \int_0^T \int_\Omega  \bigg(\int_\Omega  \rho(r')(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr' + m \gamma \Stav \cdot \Adja \bigg)hdr dt\\
 &+\int_0^T \int_{\partial \Omega} ( \Adja \cdot \mathbf{n}  +  \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n})h  dr dt
 \end{align*}
 Setting $\mathcal{L}_\Sta(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc)h=0$, and restricting the admissible set of choices of $h$ to:
@@ -79,7 +80,7 @@ h(T)&=0.
 Then the derivative becomes:
 \begin{align*}
  &\int_0^T \int_\Omega ( (\Sta - \hat \Sta) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m  ((\Stav \cdot \nabla)\Stav )\cdot \Adja+ \nabla V_{ext}\cdot \Adja -\nabla\cdot \Adja  - \ \nabla \Adjb \cdot \Stav  -  \frac{\partial \Adjb}{\partial t}) h dr dt \\
- &+ \int_0^T \int_\Omega \bigg( m \gamma \Stav \cdot \Adja+ \int_\Omega  \rho(r')(\Adja(r') + \Adja(r)) \cdot\nabla V_2(|r-r'|)   dr'  \bigg)hdr dt\\
+ &+ \int_0^T \int_\Omega \bigg( m \gamma \Stav \cdot \Adja+ \int_\Omega  \rho(r')(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr'  \bigg)hdr dt\\
  &=0.
 \end{align*}
 Since this has to hold for all $h \in C_0^\infty(\Sigma)$ and $C_0^\infty(\Sigma)$ is dense in $L_2(\Sigma)$, the first adjoint equation is derived as:
@@ -110,7 +111,7 @@ Since $\Stav \cdot \mathbf{n} =0$ on $ \partial \Sigma$, the boundary condition 
 Therefore, the first adjoint equation of this problem is:
 \begin{align*}
 &(\Sta - \hat \Sta) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja -\nabla\cdot \Adja  - \ \nabla \Adjb \cdot \Stav  -  \frac{\partial \Adjb}{\partial t}\\
-&+ m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')(\Adja(r') + \Adja(r)) \cdot\nabla V_2(|r-r'|)   dr'  =0 \qquad\qquad\qquad\qquad\qquad \text{in} \quad \Sigma \\
+&+ m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr'  =0 \qquad\qquad\qquad\qquad\qquad \text{in} \quad \Sigma \\
 & \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
  &\Adjb(T) = {0} .
 \end{align*}
@@ -224,12 +225,12 @@ The second adjoint equation of the above problem is:
 \subsubsection*{The Gradient Equation}
 Taking the derivative of the Lagrangian with respect to $\Con$, in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
 \begin{align*}
-\mathcal{L}_\Con (\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \Con \cdot \mathbf{h} dr dt - \int_0^T \int_\Omega \Adja \cdot \mathbf{h} dr dt \\
-= \int_0^T \int_\Omega ( \beta \Con - \Adja) \cdot \mathbf{h} dr dt.
+\mathcal{L}_\Con (\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \Con \cdot \mathbf{h} dr dt + \int_0^T \int_\Omega \Adja \cdot \mathbf{h} dr dt \\
+= \int_0^T \int_\Omega ( \beta \Con + \Adja) \cdot \mathbf{h} dr dt.
 \end{align*}
 Employing the same density argument for the permissible $\mathbf{h}$ gives the gradient equation of the problem:
 \begin{align*}
- \beta \Con - \Adja=0 \quad \text{in} \quad \Sigma \quad \text{and on } \quad \partial\Sigma.
+ \beta \Con + \Adja=0 \quad \text{in} \quad \Sigma \quad \text{and on } \quad \partial\Sigma.
 \end{align*}
 
 

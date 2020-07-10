@@ -43,7 +43,7 @@
 \newcommand{\Stav}{\mathbf{v}}
 \newcommand{\Adja}{\mathbf{p}_\Sigma}
 \newcommand{\Adjb}{q}
-\newcommand{\Adjc}{p_{\partial \Sigma}}
+\newcommand{\Adjc}{\mathbf{p}_{\partial \Sigma}}
 \newcommand{\Con}{\mathbf{f}}
 \newcommand{\nor}{\mathbf{n}}
 
@@ -112,28 +112,26 @@
 ++ Archer paper has examples for applications - also check extended project and other papers for this ++\\
 +++get quotes right, figure out how ;) ++
 
-\section{Background on DDFT Stuff}
-+ Archer, Marconi and Tarazona  +\\
-+ Archer ref 12, 13 for DFT free energy (below eqn 5) and other refs around there +
-+ Archer ref 24 for kramers equation. is this the link with eqn 1? +
-\section{Background on PDE-Constrained Optimization}
 \section{Literature review on PDE-Constrained Optimization for these PDEs}
 \input{MeanFieldOptimalControl.tex}
 \section{Deriving optimality conditions}
 
 \subsection{Standard Problems}
++++ State them here given that the sign is wrong in the old report +++
 - derive optimality conditions for all the systems we need \\
 - Flow/Force\\
 - Neumann / Dirichlet/ Dirichlet non-zero/ Mixed\\
 \subsection{Archer Optimality Conditions}
++++ Do a bit of the Archer background here, given that you just read it! ++
 - Archer paper optimality conditions (good opportunity to link to some background stuff)
 \input{OptimalityConditionsArcher.tex}
+\subsection{Boundary Observation and Non-Constant Flux}
++++ probably combine with above section +++
+\input{NonconstantFluxBoundaryObservation.tex}
 \subsection{Subdomain Observation and Non-Constant Flux}
 - boundary/ subdomain control/observation, non-constant flux stuff\\
 \input{NonconstantFluxSubdomainObservation.tex}
-\subsection{Boundary Observation and Non-Constant Flux}
-+++ probably combine with above section +++
-%\input{NonconstantFluxBoundaryObservation.tex}
+
 \section{Numerical Methods}
 \subsection{Pseudospectral Methods}
 - pseudospectral methods (why they are better than others in what we do, what else would be useful, what type of method exactly, how does it work)
@@ -305,7 +303,7 @@ As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{f
 \input{NumericalExperiments.tex}
 
 \section{Conclusion}
-
++ outlook!
 
 
 \pagebreak	
