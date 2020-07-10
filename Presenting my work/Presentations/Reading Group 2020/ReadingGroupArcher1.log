@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  7 JUL 2020 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  10 JUL 2020 16:42
 entering extended mode
 **./ReadingGroupArcher1.tex
 (ReadingGroupArcher1.tex
@@ -1235,59 +1235,60 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 [1
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 67.
+line 65.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sansmathaccent\
 ot1mathkerncmss.fd"
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-) [2
-
-]
-<./Pictures/Arrow.png, id=30, 127.97812pt x 55.70813pt>
+)
+<./Pictures/Arrow.png, id=23, 127.97812pt x 55.70813pt>
 File: ./Pictures/Arrow.png Graphic file (type png)
 <use ./Pictures/Arrow.png>
-Package pdftex.def Info: ./Pictures/Arrow.png  used on input line 86.
+Package pdftex.def Info: ./Pictures/Arrow.png  used on input line 65.
 (pdftex.def)             Requested size: 85.35826pt x 37.15593pt.
- [3
+ [2
 
  <./Pictures/Arrow.png>]
-<./Pictures/Arrow2.png, id=44, 104.89188pt x 56.71187pt>
+<./Pictures/Arrow2.png, id=37, 104.89188pt x 56.71187pt>
 File: ./Pictures/Arrow2.png Graphic file (type png)
 <use ./Pictures/Arrow2.png>
-Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 104.
+Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 83.
 (pdftex.def)             Requested size: 85.35826pt x 46.15096pt.
- [4
+ [3
 
  <./Pictures/Arrow2.png>]
-<./Pictures/Arrow3.png, id=53, 139.01938pt x 57.21375pt>
+<./Pictures/Arrow3.png, id=46, 139.01938pt x 57.21375pt>
 File: ./Pictures/Arrow3.png Graphic file (type png)
 <use ./Pictures/Arrow3.png>
-Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 120.
+Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 99.
 (pdftex.def)             Requested size: 113.81102pt x 46.8396pt.
-[5
 
- <./Pictures/Arrow3.png>] [6
+[4
+
+ <./Pictures/Arrow3.png>] [5
 
 ]
 File: ./Pictures/Arrow2.png Graphic file (type png)
 <use ./Pictures/Arrow2.png>
-Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 142.
+Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 121.
 (pdftex.def)             Requested size: 85.35826pt x 46.15096pt.
- [7
+ [6
+
+] [7
 
 ] [8
 
@@ -1295,37 +1296,37 @@ Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 142.
 
 ] [10
 
-] [11
-
 ]
 File: ./Pictures/Arrow2.png Graphic file (type png)
 <use ./Pictures/Arrow2.png>
-Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 225.
+Package pdftex.def Info: ./Pictures/Arrow2.png  used on input line 208.
 (pdftex.def)             Requested size: 85.35826pt x 46.15096pt.
- [12
+ [11
 
-] [13
+] [12
 
 ]
 File: ./Pictures/Arrow3.png Graphic file (type png)
 <use ./Pictures/Arrow3.png>
-Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 245.
+Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 228.
 (pdftex.def)             Requested size: 113.81102pt x 46.8396pt.
- [14
+ [13
 
-] [15
-
-]
-[16
-
-] [17
+] [14
 
 ]
-Overfull \hbox (27.35075pt too wide) detected at line 311
+[15
+
+] [16
+
+]
+Overfull \hbox (27.35075pt too wide) detected at line 294
 []
  []
 
-[18
+[17
+
+] [18
 
 ] [19
 
@@ -1349,36 +1350,34 @@ Overfull \hbox (27.35075pt too wide) detected at line 311
 
 ] [29
 
-] [30
-
 ]
 File: ./Pictures/Arrow3.png Graphic file (type png)
 <use ./Pictures/Arrow3.png>
-Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 507.
+Package pdftex.def Info: ./Pictures/Arrow3.png  used on input line 490.
 (pdftex.def)             Requested size: 113.81102pt x 46.8396pt.
- [31
+ [30
 
 ]
-<./Pictures/Arrow4.png, id=225, 32.12pt x 55.20625pt>
+<./Pictures/Arrow4.png, id=217, 32.12pt x 55.20625pt>
 File: ./Pictures/Arrow4.png Graphic file (type png)
 <use ./Pictures/Arrow4.png>
-Package pdftex.def Info: ./Pictures/Arrow4.png  used on input line 533.
+Package pdftex.def Info: ./Pictures/Arrow4.png  used on input line 516.
 (pdftex.def)             Requested size: 11.38092pt x 19.56085pt.
 File: ./Pictures/Arrow4.png Graphic file (type png)
 <use ./Pictures/Arrow4.png>
-Package pdftex.def Info: ./Pictures/Arrow4.png  used on input line 533.
+Package pdftex.def Info: ./Pictures/Arrow4.png  used on input line 516.
 (pdftex.def)             Requested size: 11.38092pt x 19.56085pt.
- [32
+ [31
 
- <./Pictures/Arrow4.png>] [33
+ <./Pictures/Arrow4.png>] [32
+
+] [33
 
 ] [34
 
 ] [35
 
 ] [36
-
-] [37
 
 ]
 \tf@nav=\write6
@@ -1390,22 +1389,22 @@ Package pdftex.def Info: ./Pictures/Arrow4.png  used on input line 533.
 \tf@snm=\write8
 \openout8 = `ReadingGroupArcher1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 593.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 593.
  (ReadingGroupArcher1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 610.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 610.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 593.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 593.
 Package rerunfilecheck Info: File `ReadingGroupArcher1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29598 strings out of 492946
- 580609 string characters out of 3124935
+ 29542 strings out of 492946
+ 579277 string characters out of 3124935
  632755 words of memory out of 3000000
- 32961 multiletter control sequences out of 15000+200000
- 544058 words of font info for 66 fonts, out of 3000000 for 9000
+ 32909 multiletter control sequences out of 15000+200000
+ 540264 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,70p,804b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,14n,70p,804b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -1420,11 +1419,10 @@ Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/s
 1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msam10.pfb><C:/Users/s1452504/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ReadingGroupArcher1.pdf (37 pages, 208605 bytes).
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ReadingGroupArcher1.pdf (36 pages, 199332 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
  67 words of extra memory for PDF output out of 10000 (max. 10000000)
 

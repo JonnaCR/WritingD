@@ -44,30 +44,9 @@ A microscopic approach to fluid mechanics}
 \end{frame}
  
  
-\begin{frame}
-	\frametitle{What we'll do today}
-	 
-	 \begin{itemize}
-	 	\item Part 1: From the microscopic equations to the N-body PDE
-	 	\vspace{0.1 cm}
-	 	\begin{itemize}
-	 	\item The microscopic dynamics
-	 	\item Hand-wavy derivation of the N-dimensional Fokker-Planck Equation
-	 	\end{itemize}
- 	    \vspace{0.2 cm}
-	 	\item Part2: From the N-body PDE to the one-body equations
-	 	\vspace{0.1 cm}
-	 	\begin{itemize}
-	 		\item Limiting cases, modelling assumptions and limitations of the model
-	 		\item The derivation of the one-body equations
-	 	\end{itemize}
-     	\vspace{0.2 cm}
-        \item Part 3: Connections to simpler equations (time permitting)
-	 \end{itemize}
-\end{frame}
 
 \begin{frame}
-	\frametitle{What we're actually doing today}
+	\frametitle{What we're doing today}
 	
 	\begin{align*}
 	\frac{d \mathbf{r}_i}{dt} &= \frac{\mathbf{p}_i}{m}\\
@@ -82,7 +61,7 @@ A microscopic approach to fluid mechanics}
 	&\frac{\partial \rho}{\partial t} + \nabla \cdot \left(\rho \mathbf{v}\right) = 0 \\
 	&\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \left(\nabla \mathbf{v}\right) + \gamma \mathbf{v} = - \frac{1}{m}  \nabla \frac{\delta {F}[\rho]}{\delta \rho}
 	\end{align*}
-	
++ Bonus Material (time permitting)	
 \end{frame}
 \begin{frame}
 	\frametitle{Part 1: From the microscopic equations to the N-body PDE}
@@ -161,14 +140,18 @@ A microscopic approach to fluid mechanics}
 	\vspace{0.2cm}
 	\begin{enumerate}
 		\item Define $\psi^N(\mathbf{r}^N, \mathbf{p}^N, t)$, where $\mathbf{r}^N = \left\{\mathbf{r}_1, \mathbf{r}_2,..., \mathbf{r}_N\right\}$ and $\mathbf{p}^N = \left\{\mathbf{p}_1, \mathbf{p}_2,..., \mathbf{p}_N\right\}$
-		\item Apply It\^{o}'s Lemma to $\psi^N$\\
-		$\Rightarrow$ get process $ d\psi^N(\mathbf{r}^N, \mathbf{p}^N, t) = ...$
-		\item Define average $\langle \psi^N\rangle$ and apply to the process $ d \psi^N$:\\ $ \langle d \psi^N \rangle = \langle d [...] \rangle$\\
-		$\Rightarrow$ deterministic, since noise averages to zero
+		\item Apply It\^{o}'s Lemma to $\psi^N$, using the microscopic equations, to get:
+		\begin{align*}
+		d\psi^N = {\mathcal{L} \psi^N} dt + B dW
+		\end{align*} 
+		\item Define average $\langle \psi^N\rangle$ and apply to the process $ d \psi^N$:
+		\begin{align*}
+		\langle d \psi^N \rangle = \langle  {\mathcal{L} \psi^N} dt\rangle + \langle B dW \rangle = \langle  {\mathcal{L} \psi^N} dt\rangle + 0
+		\end{align*}
 		\item Average is integral against the probability distribution $f^N(\mathbf{r}^N, \mathbf{p}^N, t)$
 		\begin{align*}
 		 LHS = \langle \frac{d}{dt} \textcolor{blue}{\psi^N} \rangle &:= \int \int\frac{d}{dt} \textcolor{blue}{\psi^N} f^N d\mathbf{r}^N d\mathbf{p}^N\\
-		 RHS = \langle \frac{d}{dt} \textcolor{blue}{\mathcal{L} \psi^N}\rangle &:= \int \int\frac{d}{dt}\textcolor{blue}{\mathcal{L} \psi^N} f^N d\mathbf{r}^N d\mathbf{p}^N
+		 RHS = \langle \textcolor{blue}{\mathcal{L} \psi^N}\rangle &:= \int \int\textcolor{blue}{\mathcal{L} \psi^N} f^N d\mathbf{r}^N d\mathbf{p}^N
 		\end{align*}
 	\end{enumerate}
 
@@ -181,8 +164,8 @@ A microscopic approach to fluid mechanics}
 		\setcounter{enumi}{4}
 		\item Integrate by parts to get derivatives in terms of $f^N$ instead of $\psi^N$
 		\begin{align*}
-		LHS = \int \int\frac{d}{dt} \psi^N f^N d\mathbf{r}^N d\mathbf{p}^N &= \int \int \psi^N \textcolor{red}{\partial_t f^N} d\mathbf{r}^N d\mathbf{p}^N \\
-		RHS = \int \int\frac{d}{dt}\mathcal{L} \psi^N f^N d\mathbf{r}^N d\mathbf{p}^N &= \int \int \psi^N \ \textcolor{red}{\mathcal{L}^* f^N}\ d\mathbf{r}^N d\mathbf{p}^N
+		LHS = \int \int\frac{d}{dt} \psi^N f^N d\mathbf{r}^N d\mathbf{p}^N &= -\int \int \psi^N \textcolor{red}{\partial_t f^N} d\mathbf{r}^N d\mathbf{p}^N \\
+		RHS = \int \int\mathcal{L} \psi^N f^N d\mathbf{r}^N d\mathbf{p}^N &= - \int \int \psi^N \ \textcolor{red}{\mathcal{L}^* f^N}\ d\mathbf{r}^N d\mathbf{p}^N
 		\end{align*}
 		\item Since this holds for all $\psi^N$\\
 			\vspace{0.2cm}
@@ -538,7 +521,7 @@ Then Equation 2 becomes:
 \begin{frame}
 	\frametitle{Part 3: Simplifications - The Overdamped Limit}
 	We can take the overdamped limit when $\gamma$ is large.
-	Then $\textcolor{red}{\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \left(\nabla \mathbf{v}\right) = 0}$
+	Then $\textcolor{red}{\frac{D \mathbf{v}}{D t} := \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \left(\nabla \mathbf{v}\right) = 0}$
 	\begin{align*}
 	&\frac{\partial \rho}{\partial t} + \nabla \cdot \left(\rho \mathbf{v}\right) = 0 \\
 	&\textcolor{red}{\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \left(\nabla \mathbf{v}\right)} + \gamma \mathbf{v} = - \frac{1}{m}  \nabla \frac{\delta {F}[\rho]}{\delta \rho}
@@ -572,7 +555,7 @@ then
 \end{align*}
 and
 \begin{align*}
-&\frac{\partial \rho}{\partial t} -\frac{1}{m \gamma}  \nabla \cdot \textcolor{blue}{\left(\nabla \rho\right)} = 0  \quad \Rightarrow \quad \frac{\partial \rho}{\partial t} = D_0 \nabla \cdot \left(\nabla \rho\right)  = D_0 \Delta \rho
+&\frac{\partial \rho}{\partial t} -\frac{1}{m \gamma}  \nabla \cdot \textcolor{blue}{\left(\nabla \rho\right)} = 0  \quad \Rightarrow \quad \frac{\partial \rho}{\partial t} = \frac{1}{m \gamma} \nabla \cdot \left(\nabla \rho\right)  = \frac{1}{m \gamma}\Delta \rho = D_0 \Delta \rho
 \end{align*}
 	
 \end{frame}
@@ -584,11 +567,11 @@ and
 	\end{align*}
 	we can get a Mean Field Equation! Choose
 	\begin{align*}
-	\textcolor{blue}{\rho(\mathbf{r}_1,t) \frac{\delta {F}[\rho]}{\delta \rho}  = \rho(\mathbf{r}_1,t) \int \rho^{(2)}(\mathbf{r}_1, \mathbf{r_2},t) \nabla v_2(\mathbf{r}_1 - \mathbf{r}_2) d\mathbf{r}_2}
+	\textcolor{blue}{\rho(\mathbf{r}_1,t) \frac{\delta {F}[\rho]}{\delta \rho}  =  \int \rho^{(2)}(\mathbf{r}_1, \mathbf{r_2},t) \nabla v_2(\mathbf{r}_1 - \mathbf{r}_2) d\mathbf{r}_2}
 	\end{align*}
 	then
 	\begin{align*}
-	&\frac{\partial \rho(\mathbf{r}_1,t)}{\partial t} -\frac{1}{m \gamma}  \nabla \cdot {\textcolor{blue}{\left( \rho(\mathbf{r}_1,t)  \int \rho^{(2)}(\mathbf{r}_1, \mathbf{r_2},t) \nabla v_2(\mathbf{r}_1 - \mathbf{r}_2) d\mathbf{r}_2\right)}} = 0  
+	&\frac{\partial \rho(\mathbf{r}_1,t)}{\partial t} -\frac{1}{m \gamma}  \nabla \cdot {\textcolor{blue}{\left(   \int \rho^{(2)}(\mathbf{r}_1, \mathbf{r_2},t) \nabla v_2(\mathbf{r}_1 - \mathbf{r}_2) d\mathbf{r}_2\right)}} = 0  
 	\end{align*}
 	
 \end{frame}
