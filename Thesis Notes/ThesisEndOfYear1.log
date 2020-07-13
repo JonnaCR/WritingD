@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  10 JUL 2020 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  13 JUL 2020 14:13
 entering extended mode
 **./ThesisEndOfYear1.tex
 (ThesisEndOfYear1.tex
@@ -561,168 +561,6 @@ these
 
 (MeanFieldOptimalControl.tex
 
-Package natbib Warning: Citation `LASRY2006619' on page 1 undefined on input li
-ne 2.
-
-
-Package natbib Warning: Citation `LASRY2006679' on page 1 undefined on input li
-ne 2.
-
-
-Package natbib Warning: Citation `LASRY4' on page 1 undefined on input line 2.
-
-
-Package natbib Warning: Citation `Lasry2007' on page 1 undefined on input line 
-2.
-
-
-Package natbib Warning: Citation `Huang1' on page 1 undefined on input line 2.
-
-
-Package natbib Warning: Citation `CuckerSmale1' on page 1 undefined on input li
-ne 5.
-
-
-Package natbib Warning: Citation `CuckerSmale2' on page 1 undefined on input li
-ne 5.
-
-
-Package natbib Warning: Citation `Fornasier_2014' on page 1 undefined on input 
-line 5.
-
-
-Package natbib Warning: Citation `Fornasier_2014no2' on page 1 undefined on inp
-ut line 6.
-
-
-Package natbib Warning: Citation `fornasier_lisini_orrieri_savare_2019' on page
- 1 undefined on input line 7.
-
-
-Package natbib Warning: Citation `piccoli2014no1' on page 1 undefined on input 
-line 8.
-
-
-Package natbib Warning: Citation `Fornasier_20161no1' on page 1 undefined on in
-put line 8.
-
-
-Package natbib Warning: Citation `burger2019meanfield' on page 1 undefined on i
-nput line 9.
-
-
-Package natbib Warning: Citation `burger2019instantaneous' on page 1 undefined 
-on input line 11.
-
-
-Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
- input line 11.
-
-
-Package natbib Warning: Citation `ChengC.Z1976Tiot' on page 1 undefined on inpu
-t line 11.
-
-
-Package natbib Warning: Citation `albi2016selective' on page 1 undefined on inp
-ut line 12.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 15.
-
-
-Package natbib Warning: Citation `carrillo2019mean' on page 1 undefined on inpu
-t line 16.
-
-
-Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
-e 16.
-
-
-Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
- line 16.
-
-
-Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
-e 17.
-
-
-Package natbib Warning: Citation `gilbertstrang1' on page 1 undefined on input 
-line 17.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 17.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 17.
-
-
-Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
- line 18.
-
-
-Package natbib Warning: Citation `Albi_2014no1' on page 1 undefined on input li
-ne 18.
-
-
-Package natbib Warning: Citation `albi2014kinetic' on page 1 undefined on input
- line 18.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 21.
-
-
-Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
-e 21.
-
-
-Package natbib Warning: Citation `Fornasier_2014no2' on page 1 undefined on inp
-ut line 21.
-
-
-Package natbib Warning: Citation `burger2019meanfield' on page 1 undefined on i
-nput line 22.
-
-
-Package natbib Warning: Citation `fornasier_lisini_orrieri_savare_2019' on page
- 1 undefined on input line 22.
-
-
-Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
- input line 22.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 22.
-
-
-Package natbib Warning: Citation `carrillo2018no1' on page 1 undefined on input
- line 22.
-
-
-Package natbib Warning: Citation `Pinnau_2017' on page 1 undefined on input lin
-e 26.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 26.
-
-
-Package natbib Warning: Citation `burger2019instantaneous' on page 1 undefined 
-on input line 26.
-
-
-Package natbib Warning: Citation `burger2016controlling' on page 1 undefined on
- input line 26.
-
-
-Package natbib Warning: Citation `albi2016mean' on page 1 undefined on input li
-ne 27.
-
-
 Package natbib Warning: Citation `Burger1' on page 1 undefined on input line 27
 .
 
@@ -751,18 +589,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--124
 
  []
 
-[2] (OptimalityConditionsArcher.tex
-Overfull \hbox (36.48271pt too wide) detected at line 13
+[2] (OptimalityConditionsArcherNew.tex
+Overfull \hbox (36.48271pt too wide) detected at line 14
 []
  []
 
-
-Overfull \hbox (22.04382pt too wide) detected at line 31
+[3]
+Overfull \hbox (10.79741pt too wide) detected at line 43
 []
  []
 
-[3] [4] [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
+[4] [5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
 
  []
 
@@ -777,17 +615,17 @@ Overfull \hbox (7.33934pt too wide) detected at line 10
  []
 
 [9]
-Overfull \hbox (40.69774pt too wide) detected at line 28
+Overfull \hbox (25.93321pt too wide) detected at line 28
 []
  []
 
 
-Overfull \hbox (40.3157pt too wide) detected at line 41
+Overfull \hbox (8.95029pt too wide) detected at line 41
 []
  []
 
 [10]) (NonconstantFluxSubdomainObservation.tex
-<Images/observation.png, id=315, 464.4853pt x 241.65282pt>
+<Images/observation.png, id=382, 464.4853pt x 241.65282pt>
 File: Images/observation.png Graphic file (type png)
 <use Images/observation.png>
 Package pdftex.def Info: Images/observation.png  used on input line 4.
@@ -798,12 +636,12 @@ Overfull \hbox (7.33934pt too wide) detected at line 16
  []
 
 
-Overfull \hbox (60.62062pt too wide) detected at line 34
+Overfull \hbox (45.8561pt too wide) detected at line 34
 []
  []
 
 [11 <./Images/observation.png>]
-Overfull \hbox (40.3157pt too wide) detected at line 47
+Overfull \hbox (8.95029pt too wide) detected at line 47
 []
  []
 
@@ -1129,7 +967,7 @@ LaTeX Warning: Reference `rhoHat2dEx4' on page 25 undefined on input line 275.
 
 LaTeX Warning: Reference `rhoOpt2dEx4' on page 25 undefined on input line 275.
 
-) [25] (ThesisEndOfYear1.bbl)
+) [25] (ThesisEndOfYear1.bbl [26]) [27]
 Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
@@ -1142,7 +980,7 @@ Package caption Warning: Unused \captionsetup[sub] on input line 22.
 See the caption package documentation for explanation.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
-[26]
+[28]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (ThesisEndOfYear1.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
@@ -1156,13 +994,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
- 10278 strings out of 492946
- 155400 string characters out of 3124935
- 442345 words of memory out of 3000000
- 13920 multiletter control sequences out of 15000+200000
+ 10381 strings out of 492946
+ 157604 string characters out of 3124935
+ 443761 words of memory out of 3000000
+ 13995 multiletter control sequences out of 15000+200000
  15163 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,1436b,409s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,1436b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\s1452504\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbm/dpi65
 7\bbm10.pk><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cmextra/cmbsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
@@ -1190,9 +1028,9 @@ e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
 :/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmti10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb>
-Output written on ThesisEndOfYear1.pdf (30 pages, 364090 bytes).
+Output written on ThesisEndOfYear1.pdf (32 pages, 388627 bytes).
 PDF statistics:
- 491 PDF objects out of 1000 (max. 8388607)
- 95 named destinations out of 1000 (max. 500000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 123 named destinations out of 1000 (max. 500000)
  366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

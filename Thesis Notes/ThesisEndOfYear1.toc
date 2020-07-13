@@ -41,5 +41,5 @@
 \contentsline {subsubsection}{\numberline {6.3.1}Neumann boundary conditions, Example 1}{25}{subsubsection.6.3.1}% 
 \contentsline {subsubsection}{\numberline {6.3.2}Neumann boundary conditions, Example 2}{25}{subsubsection.6.3.2}% 
 \contentsline {section}{\numberline {7}Conclusion}{25}{section.7}% 
-\contentsline {section}{\numberline {A}Other thoughts - things to incorporate above}{26}{appendix.A}% 
-\contentsline {section}{\numberline {B}Useful Resources to go back to}{26}{appendix.B}% 
+\contentsline {section}{\numberline {A}Other thoughts - things to incorporate above}{28}{appendix.A}% 
+\contentsline {section}{\numberline {B}Useful Resources to go back to}{28}{appendix.B}% 
