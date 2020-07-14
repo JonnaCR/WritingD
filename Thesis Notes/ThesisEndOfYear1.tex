@@ -112,19 +112,28 @@
 ++ Archer paper has examples for applications - also check extended project and other papers for this ++\\
 +++get quotes right, figure out how ;) ++
 
-\section{Literature review on PDE-Constrained Optimization for these PDEs}
+\section{Literature Review on PDE-Constrained Optimization for these PDEs}
 \input{MeanFieldOptimalControl.tex}
-\section{Deriving optimality conditions}
+\section{Optimality Conditions}
+In this section the derivation of optimality conditions for different PDE models is discussed. In particular, this section is concerned with the derivation of the optimality conditions of an optimal control problem with constrains involving inertial equations. The inertial equations are derived in \cite{Archer1}, by A.J.Archer, and are most generally formulated as:
+\begin{align*}
+	\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav) &=0\\
+	\frac{\partial \Stav}{\partial t} + \Stav \cdot \nabla \Stav + \gamma \Stav &= - \frac{1}{m} \nabla \frac{\delta \mathcal{F}[\Sta]}{\delta \Sta}
+\end{align*}
 
-\subsection{Standard Problems}
+\subsection{Optimality Conditions for the Inertial Eqations}
++++ Do a bit of the Archer background here, given that you just read it! ++
+- Archer paper optimality conditions (good opportunity to link to some background stuff)
+
+\input{OptimalityConditionsArcherNew.tex}
+
+\subsection{Optimality Conditions for the Overdamped Equations}
 +++ State them here given that the sign is wrong in the old report +++
 - derive optimality conditions for all the systems we need \\
 - Flow/Force\\
 - Neumann / Dirichlet/ Dirichlet non-zero/ Mixed\\
-\subsection{Archer Optimality Conditions}
-+++ Do a bit of the Archer background here, given that you just read it! ++
-- Archer paper optimality conditions (good opportunity to link to some background stuff)
-\input{OptimalityConditionsArcherNew.tex}
+
+
 \subsection{Boundary Observation and Non-Constant Flux}
 +++ probably combine with above section +++
 \input{NonconstantFluxBoundaryObservation.tex}

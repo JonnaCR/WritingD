@@ -1,5 +1,5 @@
 
-\subsubsection*{PDE-Constrained Optimization Problem}
+\subsubsection{PDE-Constrained Optimization Problem}
 The domain is $\Sigma=\Omega \times [0,T]$. There are two state variables, the particle density $\Sta$ and the velocity $\Stav$. The control is a background flow term $\mathbf{w}$. 
 \begin{align*}
 &\min_{\Sta,\Stav,\mathbf{w} } \quad \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
@@ -12,7 +12,7 @@ The domain is $\Sigma=\Omega \times [0,T]$. There are two state variables, the p
 & \Sta(r,0)=\Sta_0\\
 & \Stav(r,0)=\Stav_0.
 \end{align*}
-Here, we have (I am not sure how to/ if to include $\rho \Con$, $\rho \mathbf{w}$ and $\rho \eta \nabla^2 \mathbf{v}$.):
+Here, we have (I am not sure how to/ if to include $\rho \Con$, $\rho \mathbf{w}$.):
 \begin{align*}
 \mathcal{F}[\Sta]=\int_\Omega  \bigg( V_{ext}\Sta + \Sta (\log \Sta -1) +  \int_\Omega \Sta(r) \Sta(r')V_2(|r-r'|)dr' \bigg) dr.
 \end{align*}
@@ -32,7 +32,7 @@ The Lagrangian for the above problem is:
 & +\int_0^T \int_{\partial\Omega} \Sta \Stav \cdot \mathbf{n} \Adjc dr dt,
 \end{align*}
 where $\Adja$, $\Adjb$ and $\Adjc$ are Lagrange multipliers associated with the PDE for $\Stav$, the PDE for $\Sta$ and the boundary condition, respectively.
-\subsubsection*{Adjoint Equation 1}
+\subsubsection{Adjoint Equation 1}
 
 The derivative of $\mathcal{L}$ with respect to $\Sta$ in some direction $h$ is, where ${h} \in C_0^\infty(\Sigma) $:
 \begin{align*}
@@ -90,7 +90,7 @@ Then the derivative becomes:
 Since this has to hold for all $h \in C_0^\infty(\Sigma)$ and $C_0^\infty(\Sigma)$ is dense in $L_2(\Sigma)$, the first adjoint equation is derived as:
 \begin{align}
 & \frac{\partial \Adjb}{\partial t} = (\Sta - \hat \Sta) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
-&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')(\Adja(r') + \Adja(r)) \cdot\nabla V_2(|r-r'|)   dr' \qquad \text{in} \quad \Sigma \notag
+&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')( \Adja(r) - \Adja(r') ) \cdot\nabla V_2(|r-r'|)   dr' \qquad \text{in} \quad \Sigma \notag
 \end{align}
 Then, relaxing the conditions on $h$, such that $h(T) \neq 0$ is a permissible choice, gives:
 \begin{align*}
@@ -115,12 +115,12 @@ Since $\Stav \cdot \mathbf{n} =0$ on $ \partial \Sigma$, the boundary condition 
 Therefore, the first adjoint equation of this problem is:
 \begin{align*}
 & \frac{\partial \Adjb}{\partial t} = (\Sta - \hat \Sta) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
-&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')(\Adja(r') + \Adja(r)) \cdot\nabla V_2(|r-r'|)   dr' \qquad \text{in} \quad \Sigma \\
+&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja + \int_\Omega  \rho(r')(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr' \qquad \text{in} \quad \Sigma \\
 & \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
  &\Adjb(T) = {0} .
 \end{align*}
 
-\subsubsection*{Adjoint Equation 2}
+\subsubsection{Adjoint Equation 2}
 Taking the derivative of the above Lagrangian with respect to $\Stav$ in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
 \begin{align*}
 \mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc)\mathbf{h} &=  \int_0^T \int_\Omega (m \Sta \frac{\partial \mathbf{h} }{\partial t} + m \Sta (\mathbf{h} \cdot \nabla)\Stav + m \Sta (\Stav \cdot \nabla)\mathbf{h} + m \gamma \Sta \mathbf{h} - \eta \Sta \nabla^2 \mathbf{h}) \cdot \Adja dr dt\\
@@ -150,32 +150,32 @@ I_7&=\int_0^T \int_\Omega m \Sta ((\Stav \cdot \nabla)\mathbf{h}) \cdot \Adja dr
 \end{align*}
 \begin{align*}
 I_8 &= \int_0^T \int_\Omega \eta \rho \nabla^2 \mathbf{h} \cdot \Adja = \int_0^T \int_{\partial \Omega} \eta \frac{\partial \mathbf{h}}{\partial n}  \cdot \Sta \Adja dr dt - \int_0^T \int_\Omega \eta \nabla (\Sta \Adja) \cdot \nabla\mathbf{h} dr dt\\
-& = \int_0^T \int_{\partial \Omega} \bigg( \eta \frac{\partial \mathbf{h}}{\partial n} \cdot \Sta \Adja  - \eta \frac{\partial (\Sta \Adja)}{\partial n} \cdot \mathbf{h}  \bigg)dr dt + \int_0^T \int_\Omega \nabla^2 (\Sta \Adja) \cdot \mathbf{h} dr dt
+& = \int_0^T \int_{\partial \Omega} \bigg( \eta \frac{\partial \mathbf{h}}{\partial n} \cdot \Sta \Adja  - \eta \frac{\partial (\Sta \Adja)}{\partial n} \cdot \mathbf{h}  \bigg)dr dt + \int_0^T \int_\Omega \eta \nabla^2 (\Sta \Adja) \cdot \mathbf{h} dr dt
 \end{align*}
 Replacing the rewritten integrals gives:
 \begin{align*}
 &\mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h} = \int_\Omega m \Sta(T) \Adja(T) \cdot \mathbf{h}(T) dr dt\\
 &+\int_0^T \int_\Omega 
-\bigg( -\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja  -  m\Sta \frac{\partial \Adja}{\partial t} +m \gamma \Sta \Adja\\
+\bigg( - \eta\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja  -  m\Sta \frac{\partial \Adja}{\partial t} +m \gamma \Sta \Adja\\
 &-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja 
 -m \Sta (\Stav \cdot \nabla)\Adja - m \Sta (\nabla \cdot \Stav)\Adja  - m (\Stav \cdot \nabla \Sta)\Adja  \bigg)\cdot  \mathbf{h} drdt\\
 & +\int_0^T \int_{\partial\Omega} ( m \Sta (\Stav \cdot \Adja)+\Sta  \Adjc + \Adjb \Sta)  \mathbf{n}\cdot \mathbf{h} dr dt + \int_0^T \int_{\partial \Omega} \bigg(\eta \frac{\partial (\Sta \Adja)}{\partial n} \cdot \mathbf{h} - \eta \frac{\partial \mathbf{h}}{\partial n} \cdot \Sta \Adja    \bigg)dr dt\\
 \end{align*}
 Then, setting $\mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}=\mathbf{0}$ and placing the restrictions on $\mathbf{h}$, as before:
 \begin{align*}
-\mathbf{h}&=0 \quad \text{on} \quad \partial \Sigma\\
+\mathbf{h}&=0, \ \ \frac{\partial \mathbf{h}}{\partial n} = 0 \quad \text{on} \quad \partial \Sigma\\
 \mathbf{h}(T)&=0,
 \end{align*}
 gives:
 \begin{align*}
 &\int_0^T \int_\Omega 
-\bigg( -\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja  -  m\Sta \frac{\partial \Adja}{\partial t} +m \gamma \Sta \Adja\\
+\bigg( - \eta\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja  -  m\Sta \frac{\partial \Adja}{\partial t} +m \gamma \Sta \Adja\\
 &-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja 
 -m \Sta (\Stav \cdot \nabla)\Adja - m \Sta (\nabla \cdot \Stav)\Adja  - m (\Stav \cdot \nabla \Sta)\Adja  \bigg)\cdot  \mathbf{h} drdt = 0
 \end{align*}
 Employing the density argument that $C_0^\infty(\Sigma)$ is dense in $L_2(\Sigma)$, which has to hold for all $\mathbf{h}\in C_0^\infty(\Sigma)$, results in:
 \begin{align*}
-  m\Sta \frac{\partial \Adja}{\partial t} =& -\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
+  m\Sta \frac{\partial \Adja}{\partial t} =& - \eta\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
 &-m \Sta (\Stav \cdot \nabla)\Adja - m \Sta (\nabla \cdot \Stav)\Adja  - m (\Stav \cdot \nabla \Sta)\Adja  \ \qquad\qquad \text{in} \quad \Sigma.
 \end{align*}
 Then, relaxing the conditions on $\mathbf{h}$, so that $\mathbf{h}(T) \neq 0 $ is permissible, gives
@@ -218,12 +218,12 @@ And the relationship between the adjoints becomes:
 \end{align*}
 The second adjoint equation of the above problem is:
 \begin{align*}
-  m\Sta \frac{\partial \Adja}{\partial t} =& -\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
+  m\Sta \frac{\partial \Adja}{\partial t} =& - \eta \nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
 &-m \Sta (\Stav \cdot \nabla)\Adja - m \Sta (\nabla \cdot \Stav)\Adja  - m (\Stav \cdot \nabla \Sta)\Adja  \ \qquad\qquad \text{in} \quad \Sigma\\
 &\Adja(T)=\mathbf{0}.
 \end{align*}
 
-\subsubsection*{The Gradient Equation}
+\subsubsection{The Gradient Equation}
 Taking the derivative of the Lagrangian with respect to $\Con$, in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
 \begin{align*}
 \mathcal{L}_{\mathbf{w}}(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \mathbf{w} \cdot \mathbf{h} dr dt + \int_0^T \int_\Omega \Sta \Adja \cdot \mathbf{h} dr dt \\
@@ -234,45 +234,81 @@ Employing the same density argument for the permissible $\mathbf{h}$ gives the g
  \mathbf{w} = - \frac{1}{\beta} \Sta \Adja \quad \text{in} \quad \Sigma \quad \text{and on } \quad \partial\Sigma.
 \end{align*}
 
-\subsubsection*{Rewriting the equations for implementation}
+\subsubsection{Rewriting the equations for implementation}
 We employ the transformation $\rho = e^s$, so that $s = \ln \rho$. This is in order to ensure that $\rho$ remains positive, which is a natural condition for the particle density to satisfy. For now, neglect interaction term.
 \\
 \\
-The forward equations becomes:
-\begin{align*}
-& \frac{\partial \Stav}{\partial t}= -  (\Stav \cdot \nabla)\Stav - \frac{1}{m}\Sta \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav\\
- &\frac{\partial s}{\partial t} = - \Stav \cdot \nabla s - \nabla \cdot \Stav .
-\end{align*}
-Here, we only divided the first equation by $m \Sta$ and used the fact that $\nabla \Sta = \Sta \ln \Sta$.\\
+The forward equations become:
+\begin{align}
+& \frac{\partial \Stav}{\partial t}= -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav \label{eqn:INreducedv1}\\
+ &\frac{\partial s}{\partial t} = - \Stav \cdot \nabla s - \nabla \cdot \Stav \label{eqn:INreducedrho1} .
+\end{align}
+Here, we only divided the first equation by $m \Sta$ and used the fact that $\nabla \Sta = \Sta \nabla \ln \Sta$.\\
 \\
-The first adjoint equation doesn't change much. Although it should be noted that the integral term would enter the adjoints here, so we'd get an integral involving $e^s$.
+The first adjoint equation doesn't change much. Although it should be noted that the integral term would enter the adjoints here, so we would get an integral involving $e^s$.
 \begin{align*}
 & \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
 &-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja  \qquad \\
 & \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
 &\Adjb(T) = {0} .
 \end{align*}
+Substituting the definition of $\frac{\partial \Stav}{\partial t}$ from the forward Equation \ref{eqn:INreducedv1} gives:
+\begin{align*}
+& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho) +m  \bigg( -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav\bigg)\cdot \Adja \\
+&+ m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
+&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja  \qquad \\
+& \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
+&\Adjb(T) = {0} .
+\end{align*}
+Which cancels to give:
+\begin{align*}
+& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho)  - \nabla s \cdot \Adja -\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav   \qquad \\
+& \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
+&\Adjb(T) = {0} .
+\end{align*}
 \\
 The second adjoint equation was:
 \begin{align*}
-m\Sta \frac{\partial \Adja}{\partial t} =& -\nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
+m\Sta \frac{\partial \Adja}{\partial t} =& - \eta \nabla^2 (\Sta \Adja) - m \frac{\partial \Sta}{\partial t} \Adja   +m \gamma \Sta \Adja-\Sta\nabla \Adjb +m \Sta (\nabla \Stav)^\top\Adja \\
 &-m \Sta (\Stav \cdot \nabla)\Adja - m \Sta (\nabla \cdot \Stav)\Adja  - m (\Stav \cdot \nabla \Sta)\Adja  \ \qquad\qquad \text{in} \quad \Sigma.
 \end{align*}
 Rewriting terms in the new variable $s$ gives:
 \begin{align*}
-- \nabla^2 (\rho \Adja) &= - e^s \bigg(2 \nabla \Adja \cdot \nabla s + \Adja \cdot (\nabla s)^2 + \Adja \cdot \nabla^2 s + \nabla^2 p    \bigg)\\
+- \eta \nabla^2 (\rho \Adja) &= - e^s \bigg(2 \eta \nabla \Adja \cdot \nabla s + \eta \Adja \cdot (\nabla s)^2 + \eta \Adja \cdot \nabla^2 s + \eta \nabla^2 \Adja    \bigg)\\
 \frac{\partial \Sta}{\partial t} &= e^s \frac{\partial s}{\partial t}\\
 m (\Stav \cdot \nabla \Sta) \Adja &= e^s m (\Stav \cdot \nabla s) \Adja \ \ (?!).
 \end{align*}
++++ Note: I am not sure about the first calculation since $\eta \Adja \cdot (\nabla s)^2$ doesn't really make sense... actually, I am not sure about any of them. However, that shouldn't matter in 1D +++
 And therefore the new adjoint equation is:
 \begin{align*}
 \frac{\partial \Adja}{\partial t} =& 
-- \frac{2}{m} \nabla \Adja \cdot \nabla s - \frac{1}{m} \Adja \cdot (\nabla s)^2 - \frac{1}{m} \Adja \cdot \nabla^2 s - \frac{1}{m} \nabla^2 p \\
+- \frac{2 \eta}{m} \nabla \Adja \cdot \nabla s - \frac{\eta}{m} \Adja \cdot (\nabla s)^2 - \frac{\eta}{m} \Adja \cdot \nabla^2 s - \frac{\eta}{m} \nabla^2 \Adja \\
  &- \frac{\partial s}{\partial t} \Adja   +\gamma  \Adja-\frac{1}{m} \nabla \Adjb + (\nabla \Stav)^\top\Adja \\
 &- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja  -  (\Stav \cdot \nabla s)\Adja  \ \qquad\qquad \text{in} \quad \Sigma.
 \end{align*}
-\subsubsection*{Reference}
-++ obviously will move. ++
-The paper that the forward equation is taken from is:\\
-
-A. J. Archer, Dynamical Density Functional Theory for Molecular and Colloidal Fluids: A Microscopic Approach to Fluid Mechanics. \textit{The Journal of Chemical Physics}. 130, 2009.
+Substituting the definition of $\frac{\partial s}{\partial t} $ from Equation \ref{eqn:INreducedrho1}:
+\begin{align*}
+\frac{\partial \Adja}{\partial t} =& 
+- \frac{2 \eta}{m} \nabla \Adja \cdot \nabla s - \frac{\eta}{m} \Adja \cdot (\nabla s)^2 - \frac{\eta}{m} \Adja \cdot \nabla^2 s - \frac{\eta}{m} \nabla^2 \Adja \\
+&- \bigg(- \Stav \cdot \nabla s - \nabla \cdot \Stav\bigg)\Adja   +\gamma  \Adja-\frac{1}{m} \nabla \Adjb + (\nabla \Stav)^\top\Adja \\
+&- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja  -  (\Stav \cdot \nabla s)\Adja  \ \qquad\qquad \text{in} \quad \Sigma.
+\end{align*}
+Cancellations result in the adjoint equation:
+\begin{align*}
+\frac{\partial \Adja}{\partial t} =& 
+- \frac{2 \eta}{m} \nabla \Adja \cdot \nabla s - \frac{\eta}{m} \Adja \cdot (\nabla s)^2 - \frac{\eta}{m} \Adja \cdot \nabla^2 s - \frac{\eta}{m} \nabla^2 \Adja \\
+&  +\gamma  \Adja-\frac{1}{m} \nabla \Adjb + (\nabla \Stav)^\top\Adja - (\Stav \cdot \nabla)\Adja   \ \qquad\qquad \text{in} \quad \Sigma.
+\end{align*}
+\\
+\\
+Finally, in both adjoints, time is reversed due to the negative Laplacian term and the final time conditions. 
+The first adjoint equation becomes:
+\begin{align*}
+& \frac{\partial \Adjb}{\partial \tau} = - (e^s - \hat \rho)  + \nabla s \cdot \Adja + \nabla\cdot \Adja  +  \nabla \Adjb \cdot \Stav   \qquad 
+\end{align*}
+The second adjoint equation gives:
+\begin{align*}
+\frac{\partial \Adja}{\partial \tau} =& 
+ \frac{2 \eta}{m} \nabla \Adja \cdot \nabla s + \frac{\eta}{m} \Adja \cdot (\nabla s)^2 + \frac{\eta}{m} \Adja \cdot \nabla^2 s + \frac{\eta}{m} \nabla^2 \Adja \\
+&  -\gamma  \Adja + \frac{1}{m} \nabla \Adjb - (\nabla \Stav)^\top\Adja + (\Stav \cdot \nabla)\Adja
+\end{align*}

@@ -1,45 +1,50 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Literature review on PDE-Constrained Optimization for these PDEs}{}% 2
-\BOOKMARK [1][-]{section.3}{Deriving optimality conditions}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Standard Problems}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Archer Optimality Conditions}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{Boundary Observation and Non-Constant Flux}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.4}{Subdomain Observation and Non-Constant Flux}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Numerical Methods}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{Pseudospectral Methods}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Multiple Shooting Method}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.3}{Fixed Point Algorithm}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.4}{Inbuilt Matlab functions}{section.4}% 12
-\BOOKMARK [3][-]{subsubsection.4.4.1}{The ODE solver}{subsection.4.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.4.2}{The inbuilt optimization solver}{subsection.4.4}% 14
-\BOOKMARK [1][-]{section.5}{Investigating Functionality of the Optimization Algorithms}{}% 15
-\BOOKMARK [2][-]{subsection.5.1}{Error measures}{section.5}% 16
-\BOOKMARK [3][-]{subsubsection.5.1.1}{L2Linfinity Relative Error}{subsection.5.1}% 17
-\BOOKMARK [2][-]{subsection.5.2}{Exact Solutions}{section.5}% 18
-\BOOKMARK [2][-]{subsection.5.3}{Validation against different solvers}{section.5}% 19
-\BOOKMARK [2][-]{subsection.5.4}{Perturbing }{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.5}{Perturbing w}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.6}{Investigating changing n and N}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.7}{Investigating changing tolerances}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.8}{Investigating }{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.9}{Choice of }{section.5}% 25
-\BOOKMARK [2][-]{subsection.5.10}{Choice of Initial Guess for q \(Multiple Shooting\)}{section.5}% 26
-\BOOKMARK [2][-]{subsection.5.11}{The relationship between diffusion and advection}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.12}{Tests on other parts of the code}{section.5}% 28
-\BOOKMARK [3][-]{subsubsection.5.12.1}{Investigating interpolation errors}{subsection.5.12}% 29
-\BOOKMARK [1][-]{section.6}{Examples}{}% 30
-\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 31
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 32
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 33
-\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 34
-\BOOKMARK [3][-]{subsubsection.6.1.4}{Neumann boundary conditions, Symmetric Example 1}{subsection.6.1}% 35
-\BOOKMARK [3][-]{subsubsection.6.1.5}{Neumann boundary conditions, Symmetric Example 2}{subsection.6.1}% 36
-\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 37
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 38
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 39
-\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 40
-\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 41
-\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 42
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 43
-\BOOKMARK [1][-]{appendix.A}{Other thoughts - things to incorporate above}{}% 44
-\BOOKMARK [1][-]{appendix.B}{Useful Resources to go back to}{}% 45
+\BOOKMARK [1][-]{section.2}{Literature Review on PDE-Constrained Optimization for these PDEs}{}% 2
+\BOOKMARK [1][-]{section.3}{Optimality Conditions}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Optimality Conditions for the Inertial Eqations}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{PDE-Constrained Optimization Problem}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Adjoint Equation 1}{subsection.3.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Adjoint Equation 2}{subsection.3.1}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.4}{The Gradient Equation}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Rewriting the equations for implementation}{subsection.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Optimality Conditions for the Overdamped Equations}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Boundary Observation and Non-Constant Flux}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Subdomain Observation and Non-Constant Flux}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Numerical Methods}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Pseudospectral Methods}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Multiple Shooting Method}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Fixed Point Algorithm}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{Inbuilt Matlab functions}{section.4}% 17
+\BOOKMARK [3][-]{subsubsection.4.4.1}{The ODE solver}{subsection.4.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.4.2}{The inbuilt optimization solver}{subsection.4.4}% 19
+\BOOKMARK [1][-]{section.5}{Investigating Functionality of the Optimization Algorithms}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Error measures}{section.5}% 21
+\BOOKMARK [3][-]{subsubsection.5.1.1}{L2Linfinity Relative Error}{subsection.5.1}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Exact Solutions}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.3}{Validation against different solvers}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.4}{Perturbing }{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.5}{Perturbing w}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.6}{Investigating changing n and N}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.7}{Investigating changing tolerances}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.8}{Investigating }{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.9}{Choice of }{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.10}{Choice of Initial Guess for q \(Multiple Shooting\)}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.11}{The relationship between diffusion and advection}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.12}{Tests on other parts of the code}{section.5}% 33
+\BOOKMARK [3][-]{subsubsection.5.12.1}{Investigating interpolation errors}{subsection.5.12}% 34
+\BOOKMARK [1][-]{section.6}{Examples}{}% 35
+\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 36
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 37
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 38
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 39
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Neumann boundary conditions, Symmetric Example 1}{subsection.6.1}% 40
+\BOOKMARK [3][-]{subsubsection.6.1.5}{Neumann boundary conditions, Symmetric Example 2}{subsection.6.1}% 41
+\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 42
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 43
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 44
+\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 45
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 46
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 47
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 48
+\BOOKMARK [1][-]{appendix.A}{Other thoughts - things to incorporate above}{}% 49
+\BOOKMARK [1][-]{appendix.B}{Useful Resources to go back to}{}% 50
