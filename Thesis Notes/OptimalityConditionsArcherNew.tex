@@ -14,7 +14,7 @@ The domain is $\Sigma=\Omega \times [0,T]$. There are two state variables, the p
 \end{align*}
 Here, we have (I am not sure how to/ if to include $\rho \Con$, $\rho \mathbf{w}$.):
 \begin{align*}
-\mathcal{F}[\Sta]=\int_\Omega  \bigg( V_{ext}\Sta + \Sta (\log \Sta -1) +  \int_\Omega \Sta(r) \Sta(r')V_2(|r-r'|)dr' \bigg) dr.
+\mathcal{F}[\Sta]=\int_\Omega  \bigg( V_{ext}\Sta + \Sta (\log \Sta -1) +  \frac{1}{2}\int_\Omega \Sta(r) \Sta(r')V_2(|r-r'|)dr' \bigg) dr.
 \end{align*}
 
 Then:
@@ -241,30 +241,25 @@ We employ the transformation $\rho = e^s$, so that $s = \ln \rho$. This is in or
 The forward equations become:
 \begin{align}
 & \frac{\partial \Stav}{\partial t}= -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav \label{eqn:INreducedv1}\\
+&\quad \quad  -\int_\Omega e^{s(r')} \nabla V_2(|r-r'|)dr'\\
  &\frac{\partial s}{\partial t} = - \Stav \cdot \nabla s - \nabla \cdot \Stav \label{eqn:INreducedrho1} .
 \end{align}
 Here, we only divided the first equation by $m \Sta$ and used the fact that $\nabla \Sta = \Sta \nabla \ln \Sta$.\\
 \\
 The first adjoint equation doesn't change much. Although it should be noted that the integral term would enter the adjoints here, so we would get an integral involving $e^s$.
 \begin{align*}
-& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
-&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja  \qquad \\
-& \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
-&\Adjb(T) = {0} .
+ \frac{\partial \Adjb}{\partial t} &= (e^s - \hat \rho) +m  \frac{\partial \Stav}{\partial t}\cdot \Adja + m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja\\
+&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja  + \int_\Omega  e^{s(r')}(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr' \qquad 
 \end{align*}
 Substituting the definition of $\frac{\partial \Stav}{\partial t}$ from the forward Equation \ref{eqn:INreducedv1} gives:
 \begin{align*}
-& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho) +m  \bigg( -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav\bigg)\cdot \Adja \\
+ \frac{\partial \Adjb}{\partial t} &= (e^s - \hat \rho) +m  \bigg( -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con -\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav\bigg)\cdot \Adja \\
 &+ m ( (\Stav \cdot \nabla)\Stav) \cdot \Adja+ \nabla V_{ext}\cdot \Adja + \Con \cdot \Adja + \mathbf{w} \cdot \Adja  - \eta \nabla^2 \Stav \cdot \Adja \\
-&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja  \qquad \\
-& \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
-&\Adjb(T) = {0} .
+&-\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav + m \gamma \Stav \cdot \Adja   + \int_\Omega  e^{s(r')}(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr'
 \end{align*}
 Which cancels to give:
 \begin{align*}
-& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho)  - \nabla s \cdot \Adja -\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav   \qquad \\
-& \Adja \cdot \mathbf{n} = 0 \qquad \text{on} \quad \partial \Sigma\\
-&\Adjb(T) = {0} .
+& \frac{\partial \Adjb}{\partial t} = (e^s - \hat \rho)  - \nabla s \cdot \Adja -\nabla\cdot \Adja  -  \nabla \Adjb \cdot \Stav   + \int_\Omega  e^{s(r')}(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr' 
 \end{align*}
 \\
 The second adjoint equation was:
@@ -278,7 +273,7 @@ Rewriting terms in the new variable $s$ gives:
 \frac{\partial \Sta}{\partial t} &= e^s \frac{\partial s}{\partial t}\\
 m (\Stav \cdot \nabla \Sta) \Adja &= e^s m (\Stav \cdot \nabla s) \Adja \ \ (?!).
 \end{align*}
-+++ Note: I am not sure about the first calculation since $\eta \Adja \cdot (\nabla s)^2$ doesn't really make sense... actually, I am not sure about any of them. However, that shouldn't matter in 1D +++
++++ Note: I am not sure about these calculations in terms of vector notation, since, for example, $\eta \Adja \cdot (\nabla s)^2$ doesn't really make sense in 2D (trying to compute a dot product between three terms). However, that shouldn't matter in 1D and the application of the product rule in 1D should be correct! +++
 And therefore the new adjoint equation is:
 \begin{align*}
 \frac{\partial \Adja}{\partial t} =& 
@@ -304,7 +299,7 @@ Cancellations result in the adjoint equation:
 Finally, in both adjoints, time is reversed due to the negative Laplacian term and the final time conditions. 
 The first adjoint equation becomes:
 \begin{align*}
-& \frac{\partial \Adjb}{\partial \tau} = - (e^s - \hat \rho)  + \nabla s \cdot \Adja + \nabla\cdot \Adja  +  \nabla \Adjb \cdot \Stav   \qquad 
+& \frac{\partial \Adjb}{\partial \tau} = - (e^s - \hat \rho)  + \nabla s \cdot \Adja + \nabla\cdot \Adja  +  \nabla \Adjb \cdot \Stav - \int_\Omega  e^{s(r')}(\Adja(r) - \Adja(r')) \cdot\nabla V_2(|r-r'|)   dr'   \qquad 
 \end{align*}
 The second adjoint equation gives:
 \begin{align*}

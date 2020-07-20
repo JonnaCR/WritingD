@@ -1,50 +1,50 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
-\contentsline {section}{\numberline {2}Literature Review on PDE-Constrained Optimization for these PDEs}{1}{section.2}% 
-\contentsline {section}{\numberline {3}Optimality Conditions}{3}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Optimality Conditions for the Inertial Eqations}{3}{subsection.3.1}% 
-\contentsline {subsubsection}{\numberline {3.1.1}PDE-Constrained Optimization Problem}{3}{subsubsection.3.1.1}% 
-\contentsline {subsubsection}{\numberline {3.1.2}Adjoint Equation 1}{4}{subsubsection.3.1.2}% 
-\contentsline {subsubsection}{\numberline {3.1.3}Adjoint Equation 2}{6}{subsubsection.3.1.3}% 
-\contentsline {subsubsection}{\numberline {3.1.4}The Gradient Equation}{9}{subsubsection.3.1.4}% 
-\contentsline {subsubsection}{\numberline {3.1.5}Rewriting the equations for implementation}{9}{subsubsection.3.1.5}% 
-\contentsline {subsection}{\numberline {3.2}Optimality Conditions for the Overdamped Equations}{11}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Boundary Observation and Non-Constant Flux}{12}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Subdomain Observation and Non-Constant Flux}{13}{subsection.3.4}% 
-\contentsline {section}{\numberline {4}Numerical Methods}{15}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Pseudospectral Methods}{15}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Multiple Shooting Method}{15}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Fixed Point Algorithm}{16}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}Inbuilt Matlab functions}{17}{subsection.4.4}% 
-\contentsline {subsubsection}{\numberline {4.4.1}The ODE solver}{17}{subsubsection.4.4.1}% 
-\contentsline {subsubsection}{\numberline {4.4.2}The inbuilt optimization solver}{17}{subsubsection.4.4.2}% 
-\contentsline {section}{\numberline {5}Investigating Functionality of the Optimization Algorithms}{18}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Error measures}{18}{subsection.5.1}% 
-\contentsline {subsubsection}{\numberline {5.1.1}L2Linfinity Relative Error}{18}{subsubsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.2}Exact Solutions}{19}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}Validation against different solvers}{19}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}Perturbing $\mathaccentV {hat}05E\rho $}{20}{subsection.5.4}% 
-\contentsline {subsection}{\numberline {5.5}Perturbing $w$}{20}{subsection.5.5}% 
-\contentsline {subsection}{\numberline {5.6}Investigating changing $n$ and $N$}{21}{subsection.5.6}% 
-\contentsline {subsection}{\numberline {5.7}Investigating changing tolerances}{21}{subsection.5.7}% 
-\contentsline {subsection}{\numberline {5.8}Investigating $\lambda $}{22}{subsection.5.8}% 
-\contentsline {subsection}{\numberline {5.9}Choice of $\mathaccentV {hat}05E\rho $}{22}{subsection.5.9}% 
-\contentsline {subsection}{\numberline {5.10}Choice of Initial Guess for $q$ (Multiple Shooting)}{22}{subsection.5.10}% 
-\contentsline {subsection}{\numberline {5.11}The relationship between diffusion and advection}{22}{subsection.5.11}% 
-\contentsline {subsection}{\numberline {5.12}Tests on other parts of the code}{22}{subsection.5.12}% 
-\contentsline {subsubsection}{\numberline {5.12.1}Investigating interpolation errors}{23}{subsubsection.5.12.1}% 
-\contentsline {section}{\numberline {6}Examples}{23}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Nonlinear control problems with an additional nonlocal integral term in 1D}{24}{subsection.6.1}% 
-\contentsline {subsubsection}{\numberline {6.1.1}Neumann boundary conditions, Example 1}{24}{subsubsection.6.1.1}% 
-\contentsline {subsubsection}{\numberline {6.1.2}Neumann boundary conditions, Example 2}{25}{subsubsection.6.1.2}% 
-\contentsline {subsubsection}{\numberline {6.1.3}Dirichlet boundary conditions, Example 3}{25}{subsubsection.6.1.3}% 
-\contentsline {subsubsection}{\numberline {6.1.4}Neumann boundary conditions, Symmetric Example 1}{26}{subsubsection.6.1.4}% 
-\contentsline {subsubsection}{\numberline {6.1.5}Neumann boundary conditions, Symmetric Example 2}{26}{subsubsection.6.1.5}% 
-\contentsline {subsection}{\numberline {6.2}Linear control problems with an additional nonlocal integral term}{27}{subsection.6.2}% 
-\contentsline {subsubsection}{\numberline {6.2.1}Dirichlet boundary conditions, Example 4}{27}{subsubsection.6.2.1}% 
-\contentsline {subsubsection}{\numberline {6.2.2}Neumann boundary conditions, Example 5}{27}{subsubsection.6.2.2}% 
-\contentsline {subsection}{\numberline {6.3}Nonlinear control problems with an additional nonlocal integral term in 2D}{27}{subsection.6.3}% 
-\contentsline {subsubsection}{\numberline {6.3.1}Neumann boundary conditions, Example 1}{28}{subsubsection.6.3.1}% 
-\contentsline {subsubsection}{\numberline {6.3.2}Neumann boundary conditions, Example 2}{28}{subsubsection.6.3.2}% 
-\contentsline {section}{\numberline {7}Conclusion}{28}{section.7}% 
-\contentsline {section}{\numberline {A}Other thoughts - things to incorporate above}{31}{appendix.A}% 
-\contentsline {section}{\numberline {B}Useful Resources to go back to}{31}{appendix.B}% 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Literature Review on PDE-Constrained Optimization for these PDEs}{1}{section.2}
+\contentsline {section}{\numberline {3}Optimality Conditions}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Optimality Conditions for the Inertial Eqations}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}PDE-Constrained Optimization Problem}{3}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Adjoint Equation 1}{4}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Adjoint Equation 2}{6}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}The Gradient Equation}{9}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.5}Rewriting the equations for implementation}{9}{subsubsection.3.1.5}
+\contentsline {subsection}{\numberline {3.2}Optimality Conditions for the Overdamped Equations}{11}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Boundary Observation and Non-Constant Flux}{11}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Subdomain Observation and Non-Constant Flux}{13}{subsection.3.4}
+\contentsline {section}{\numberline {4}Numerical Methods}{15}{section.4}
+\contentsline {subsection}{\numberline {4.1}Pseudospectral Methods}{15}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Multiple Shooting Method}{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Fixed Point Algorithm}{15}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Inbuilt Matlab functions}{16}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}The ODE solver}{16}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}The inbuilt optimization solver}{17}{subsubsection.4.4.2}
+\contentsline {section}{\numberline {5}Investigating Functionality of the Optimization Algorithms}{17}{section.5}
+\contentsline {subsection}{\numberline {5.1}Error measures}{17}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}L2Linfinity Relative Error}{17}{subsubsection.5.1.1}
+\contentsline {subsection}{\numberline {5.2}Exact Solutions}{18}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Validation against different solvers}{18}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Perturbing $\mathaccentV {hat}05E\rho $}{19}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Perturbing $w$}{19}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Investigating changing $n$ and $N$}{20}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Investigating changing tolerances}{20}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Investigating $\lambda $}{21}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Choice of $\mathaccentV {hat}05E\rho $}{21}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Choice of Initial Guess for $q$ (Multiple Shooting)}{21}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}The relationship between diffusion and advection}{21}{subsection.5.11}
+\contentsline {subsection}{\numberline {5.12}Tests on other parts of the code}{21}{subsection.5.12}
+\contentsline {subsubsection}{\numberline {5.12.1}Investigating interpolation errors}{22}{subsubsection.5.12.1}
+\contentsline {section}{\numberline {6}Examples}{22}{section.6}
+\contentsline {subsection}{\numberline {6.1}Nonlinear control problems with an additional nonlocal integral term in 1D}{23}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Neumann boundary conditions, Example 1}{23}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Neumann boundary conditions, Example 2}{24}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.3}Dirichlet boundary conditions, Example 3}{24}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.4}Neumann boundary conditions, Symmetric Example 1}{25}{subsubsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.5}Neumann boundary conditions, Symmetric Example 2}{25}{subsubsection.6.1.5}
+\contentsline {subsection}{\numberline {6.2}Linear control problems with an additional nonlocal integral term}{26}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Dirichlet boundary conditions, Example 4}{26}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Neumann boundary conditions, Example 5}{26}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Nonlinear control problems with an additional nonlocal integral term in 2D}{26}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Neumann boundary conditions, Example 1}{27}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Neumann boundary conditions, Example 2}{27}{subsubsection.6.3.2}
+\contentsline {section}{\numberline {7}Conclusion}{27}{section.7}
+\contentsline {section}{\numberline {A}Other thoughts - things to incorporate above}{30}{appendix.A}
+\contentsline {section}{\numberline {B}Useful Resources to go back to}{30}{appendix.B}

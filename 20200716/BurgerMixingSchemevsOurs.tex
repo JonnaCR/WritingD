@@ -1,0 +1,98 @@
+
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[warning,debug,nosepfour,autolanguage]{numprint}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+%\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\adj}{q}
+%\newcommand{\Con}{u}
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{q_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\pagenumbering{gobble}
+\begin{document}
+\section*{Comparing our update scheme to the one in the Burger paper}
+Turns out there IS a slight difference to the way they do the mixing in the Burger paper and in ours. That's due to the choice of gradient equation. Using their mixing scheme with our gradient equations is actually (more or less) the same as using our mixing scheme and our gradient equations. I'll detail below:
+\\
+\\
+The mixing scheme employed by the Burger paper is:
+\begin{align*}
+v_{i+1} = v_{i} - \tau(F(\rho) v_{i} - G(\rho) \nabla \phi),
+\end{align*}
+where the gradient equation is:
+\begin{align*}
+v_g = \frac{G(\rho)}{F(\rho)} \nabla \phi
+\end{align*}
+and the mixing parameter is $\tau$.
+
+Multiplying this out and rearranging $F(\rho)$ gives:
+\begin{align*}
+v_{i+1} &=  v_{i} - \frac{\tau}{F(\rho)}\bigg(v_{i} - \frac{G(\rho)}{F(\rho)} \nabla \phi\bigg)\\
+&=  v_{i} - \frac{\tau}{F(\rho)}(v_{i} - v_g)\\
+&= \bigg(1 - \frac{\tau}{F(\rho)} \bigg) v_{i} + \frac{\tau}{F(\rho)}v_g
+\end{align*}
+\\
+\\
+Our mixing scheme is:
+\begin{align*}
+v_{i+1} = (1-\lambda) v_{i} + \lambda v_g.
+\end{align*}
+This is equivalent to Burger's scheme if $\lambda =  \frac{\tau}{F(\rho)}$. 
+In particular, in our choice of gradient equations (in either source or flow control) we have:
+\begin{align*}
+\lambda = \frac{\tau}{\beta}.
+\end{align*}
+This is since our gradient equations are:
+\begin{align*}
+v &= - \frac{1}{\beta} q\\
+v &= - \frac{1}{\beta} \rho \nabla q
+\end{align*}
+
+
+
+
+
+
+
+\end{document}
