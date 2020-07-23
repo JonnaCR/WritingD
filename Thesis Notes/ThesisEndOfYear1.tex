@@ -176,28 +176,29 @@ The resulting equation is:
 \subsection{Optimality Conditions for the Overdamped Equations}
 The optimality conditions for the optimal control problems involving the overdamped equations \eqref{eqn:ADeqn1} are stated here for completion. The details of their derivation can be found in either the year one report or the paper (++ need to find how to cite++).
 There are two optimal control problems considered; one which applies the control through the flow field, as above, and another, where the control is an added source term in the PDE. The latter case is less physical, however, it is often a simpler problem to study because the control is applied linearly, while the flow control problem considers a non-linear control. For each problem, no-flux and Dirichlet boundary conditions are considered. Note that, for ease of notation, we set $\tilde t = t$.
-The flow control optimal control problem is:
-\begin{align*}
+The flow control problem is:
+\begin{align}
+\label{eqn:ADFlowOCP}
 &\min_{\Sta,\mathbf{w} } \mathcal J(\Sta,\mathbf{w} ) =\ \ \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
-& \text{subject to:}:\\
-&\frac{\partial \Sta}{\partial t} = \nabla \cdot (\Sta\Con) - \nabla \cdot (\Sta \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) \\
-& \quad \ +\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr' \qquad \qquad \qquad \qquad \text{in} \quad \Sigma
-\end{align*}
+& \text{subject to:}: \notag\\
+&\frac{\partial \Sta}{\partial t} = \nabla \cdot (\Sta\Con) - \nabla \cdot (\Sta \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho)\notag \\
+& \quad \ +\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr' \qquad \qquad \qquad \qquad \text{in} \quad \Sigma\notag
+\end{align}
 The adjoint and gradient equations are:
 \begin{align*}
 \frac{\partial \Adjb}{\partial t} =& - \nabla^2\Adjb - \mathbf{w} \cdot \nabla \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \hat \rho \\
-&+\kappa \int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
+&+\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Sta \nabla \Adjb,
 \end{align*}
 where $\Adjb$ is the adjoint variable and $\frac{\partial \Adjb}{\partial n} = 0$ on $\partial \Omega$ corresponds to a no-flux boundary condition, while $\Adjb = 0$ on $\partial \Omega$ corresponds to a Dirichlet boundary condition.
 Rewriting the time variable in the adjoint equation as $\tau = T-t$ gives:
 \begin{align*}
 \frac{\partial \Adjb}{\partial \tau} =& \nabla^2\Adjb +\mathbf{w} \cdot \nabla \Adjb - \nabla V_{ext} \cdot \nabla \Adjb + \Sta - \hat \rho \\
-&-\kappa \int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
+&-\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Sta \nabla \Adjb,
 \end{align*}
 
-The source control optimal control problem is:
+The source control problem is:
 \begin{align*}
 &\min_{\Sta,{w} } \mathcal J(\Sta,{w}) = \ \ \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||{w}||_{L_2(\Sigma)}^2\\
 & \text{subject to:}:\\
@@ -208,7 +209,7 @@ The source control optimal control problem is:
 The adjoint and gradient equations are:
 \begin{align*}
 \frac{\partial \Adjb}{\partial t} =& - \nabla^2 \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \hat \rho \\
-&+\kappa \int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
+&+\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Adjb,
 \end{align*}
 Boundary conditions and time reversal for the adjoint equation are analogous to the flow control problem.
@@ -219,22 +220,12 @@ Boundary conditions and time reversal for the adjoint equation are analogous to 
 \section{Numerical Methods}
 In general it is necessary to change the time variable in the adjoint equation, as demonstrated in (++ ++ ), for numerical stability. This is necessary because the forward and adjoint equations contain Laplacians of opposite time. Running the adjoint equation with a negative Laplacian leads to a blow up of the solution at the first time step. The reversal of time, using $\tau = T-t$, remedies this issue, however, this causes a non-local coupling in time between the two PDEs.
 The following algorithms provide methods of treating this non-local coupling.
-\subsection{Picard Multiple Shooting}
-The multiple shooting algorithm, introduced in the first year report, has been extended by employing a Picard mixing scheme as optimization method to replace \texttt{fsolve}. In the following, this is briefly outlined.
-The multiple shooting method consists of discretizing the time interval and solving the optimality system on each interval individually. This is done because of the non-local time coupling of the forward and adjoint equations. It requires the input of an initial guess at each time for each of the variables. The aim of the optimization solver is then to minimize the distance between the initial guesses and numerical solutions of the variables at each of the time points. \\
-The Picard mixing scheme is a fixed point type algorithm. At each iteration $i$ it takes a set of guesses at the discretized time points, denoted by $Y_i$. The matrix $Y$ contains the discretized values for the variables $\rho$ and $q$, at each time and space point.
-Then the system of PDEs on the discretized intervals is computed and a new set of variable values at the time points is created, denoted by $Y_{out}$. Then, the mixing scheme provides a new guess for the iteration $i+1$ by:
-\begin{align*}
-Y_{i+1} = (1 - \lambda)Y_i + \lambda Y_{out},
-\end{align*}
-where $\lambda$ is the mixing rate. It typically takes values between $0.1$ and $0.01$, depending on the complexity of the system to solve. Choosing a relatively small value of $\lambda$ stabilizes the algorithm (+ ref this?+). 
-The algorithm terminates when the system of PDEs is solved self-consistently, i.e. when the distance between $Y_i$ and $Y_{out}$ is small, as measured in a chosen norm. Different norms are discussed in Section ++. (Will we do that?)
-This algorithm is working very well for examples involving the overdamped equations. However, in the following an even simpler algorithm is presented, which does not require the solution of the optimality system on small time intervals and is therefore even quicker. However, since we will apply the numerical optimization method to increasingly difficult optimal control problems, the multiple shooting algorithm may provide more numerical stability for numerically harder problems and is therefore a relevant tool to consider in the future. Changing the optimization solver in the implementation is straightforward and requires only changing a flag in the input file.
 
-\subsection{Fixed Point Algorithm}
+
+\subsection{Fixed Point Algorithm}\label{sec:Method_SolverFP}
 - Kalise and Burger papers, sweeping algorithms (and our adaptation - or adaptation in next section)\\
 
-In this section we describe the fixed point algorithm, which includes a similar idea to the multiple shooting code, by employing a mixing scheme to update the guess at each iteration. While the multiple shooting algorithm updates through the variables $\rho$ and $q$, the fixed point algorithm updates through the control variable. This algorithm is explained in more detail.
+In this section we describe the fixed point algorithm, which is an efficient and stable optimization method for the optimal control problems considered above. 
 We denote the discretized versions of the variables $\rho$, $\adj$ and $\vec{w}$ with $P$, $Q$ and $W$, respectively. Each of these matrices is of the form $A = [\boldsymbol{a_0}, \boldsymbol{a_1}, ... ,\boldsymbol{a_n}]$, where the vectors $\boldsymbol{a_k}$ represent the solutions at the discretized times $k \in 0,1,....,n$, where $n$ is the number of time points. In particular, the first column of $P$, denoted by $\boldsymbol{\rho_0}$, corresponds to the initial condition $\rho(r,0)$. If the spatial domain is one-dimensional, $P$, $Q$ and $W$ are of size $N \times (n + 1)$, where $N$ is the number of spatial points. In the two-dimensional case, $P$ and $Q$ are of size $(N_1N_2) \times (n + 1)$, where $N_1$ is the number of spatial points in the direction of $x_1$ and $N_2$ the points along the $x_2$ axis. Generally, $N_1 = N_2$. The discretized control $W$ for linear control problems is also $(N_1N_2) \times (n + 1)$ dimensional, while it is $(2N_1N_2) \times (n + 1)$ dimensional for nonlinear control problems. This is due to the fact that the control is represented by a vector field, when applied nonlinearly.
 \\
 \\
@@ -256,23 +247,28 @@ The optimization algorithm is initialized with a guess for the control, $W^{(0)}
 	The guess for the control is updated from $W^{(i)} $ to $W^{(i+1)} $ and steps 1-5 are repeated until the method converges. 
 \end{enumerate}
 \vspace{0.3cm}
-The update scheme in step 5, with mixing rate $\lambda$, is known to stabilise fixed point methods, ++Ben to add references++. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is equivalent to the updating scheme presented in~\cite{Burger1}. 
+The update scheme in step 5, with mixing rate $\lambda$, is known to stabilise fixed point methods, ++Ben to add references++. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is similar to the updating scheme presented in~\cite{Burger1}. 
 Note that, while the solutions $P^{(i)}$ and $Q^{(i)}$ change in each iteration, the initial condition $\boldsymbol{\rho_0}$ and final time condition $\boldsymbol{\adj_n}$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $W^{(i)}$.
+\subsection{Picard Multiple Shooting}
 
-++ Add something about errors -- mention to see below? ++
-
-- showing why running ODE solver piecewise is more accurate than on the whole time line\\
-- Chebyshev time points vs equispaced time grid for spectral accuracy\\
+The multiple shooting algorithm, introduced in the first year report, has been extended by employing a Picard mixing scheme as optimization method to replace \texttt{fsolve}. In the following, this is briefly outlined.
+The idea of the updating scheme is similar to the one presented for the fixed point algorithm. However, while the multiple shooting algorithm updates through the variables $\rho$ and $q$, the fixed point algorithm updates through the control variable.
+The multiple shooting method consists of discretizing the time interval and solving the optimality system on each interval individually. This is done because of the non-local time coupling of the forward and adjoint equations. It requires the input of an initial guess at each time for each of the variables. The aim of the optimization solver is then to minimize the distance between the initial guesses and numerical solutions of the variables at each of the time points. \\
+The Picard mixing scheme is a fixed point type algorithm. At each iteration $i$ it takes a set of guesses at the discretized time points, denoted by $Y_i$. The matrix $Y = [P,Q]$ contains the discretized values for the variables $\rho$ and $q$, denoted by $P$ and $Q$, analogously to the previous section.  
+The system of PDEs on the discretized intervals is computed and a new set of variable values at the time points is created, denoted by $Y_{out}$. Then, the mixing scheme provides a new guess for the iteration $i+1$ by:
+\begin{align*}
+Y_{i+1} = (1 - \lambda)Y_i + \lambda Y_{out},
+\end{align*}
+where $\lambda$ is the mixing rate. It typically takes values between $0.1$ and $0.01$, depending on the complexity of the system to solve. Choosing a relatively small value of $\lambda$ stabilizes the algorithm (+ ref this?+). 
+The algorithm terminates when the system of PDEs is solved self-consistently, i.e. when the distance between $Y_i$ and $Y_{out}$ is small, as measured in a chosen norm. The most frequently applied norm is discussed in Section \ref{sec:ErrorMeasure}.
+This algorithm is working very well for examples involving the overdamped equations. However, the fixed point algorithm provides an even simpler method, which does not require the solution of the optimality system on small time intervals and is therefore even quicker. Since we will apply the numerical optimization method to increasingly difficult optimal control problems in the future, the multiple shooting algorithm may provide more numerical stability for numerically harder problems and is therefore a relevant tool to consider in the future. Changing the optimization solver in the implementation is straightforward and requires only changing a flag in the input file.
 \\
+A challenge with this solver is that it needs to be provided with good initial guesses for the variables $\rho$ and $\adj$ at the discretized time points. The guess for $\rho$ can be obtained by solving the associated forward problem and using the result as a first guess. However, a good guess for $\adj$ is trickier to achieve. One way of doing so is by using the gradient equation, which relates $\rho$, $\adj$ and $w$, the control. Since the input for the forward control is known, one can use this information, together with the initial guess for $\rho$ to construct an initial guess for $\adj$. 
+One challenge however arises when considering the flow control problem involving the overdamped equations. The gradient equation is $\mathbf{w} = - \frac{1}{\beta} \rho\nabla \adj$. In order to derive the value of $\adj$ from this equation, we need to divide by $\rho$, making use of the assumption that $\rho$ is strictly positive, and integrate over the whole space. The issue here is that integration introduces an indeterminable constant. Furthermore, if Dirichlet boundary conditions are applied, the strict positivity of $\rho$ is in question.\\
+Alternatively, one step of the fixed point method could be performed initially, to obtain an initial guess for $\adj$. 
 
-- fixed point method: explain where it came from, adding mixing rate and why and that burger and ours are the same (derivation?)\\
-- explain general functionality of the algorithm, the different input options, how the optimization algorithm works, what can be changed (e.g. norms, solvers, etc), what up to date is the fastest method, what is the most robust, etc. (here maybe the PDECO input PDF is helpful?)
 
-
-\subsection{Inbuilt Matlab functions}
-\subsubsection{The ODE solver}
-- discuss different ODE solvers and which one is best for this and why
-\subsubsection{The inbuilt optimization solver}
+\subsection{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt{fsolve}}
 - here maybe some of the 'fsolveResearch' stuff?\\
 - discuss how fsolve works (the review done on it etc) and what alternative is there in the literature\\
 
@@ -280,17 +276,12 @@ Note that, while the solutions $P^{(i)}$ and $Q^{(i)}$ change in each iteration,
 - Multiple shooting\\
 - Fixed Point\\
 - find a way to separate but join the following subsections for the two solvers\\
-\subsection{Error measures}
-- L2Linfinity Relative\\
-- Pointwise Relative\\
-- Absolute L1\\
-- other?\\
-- argue why relative is better, why one error measure is better than others etc
-\subsubsection{L2Linfinity Relative Error}
-++ Copied from paper, needs context ++
-All errors in Section \ref{sec:Method_Validation} and Section \ref{sec:Expts} are calculated between a variable of interest, $y$, and $y_R$, the reference value that $y$ is compared to. When measuring convergence of the fixed point scheme, described in Section \ref{sec:Method_Solver}, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, as done in Appendix \ref{app:TestProblems}, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
+\subsection{Error Measure}\label{sec:ErrorMeasure}
+While other norms such as an $L_1$ norm or a pointwise error measure have been considered, the main measure employed in this work is the following.
+
+All errors in Sections +++ are calculated between a variable of interest, $y$, and $y_R$, the reference value that $y$ is compared to. When measuring convergence of the fixed point scheme, described in Section \ref{sec:Method_SolverFP}, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
 \begin{align*}
-\mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) + 10^{-10}||_{L^2(\Omega)}},
+\mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) ||_{L^2(\Omega)}+ 10^{-10}},
 \end{align*}
 where the small additional term on the denominator prevents division by zero.
 Furthermore, the absolute $L^2$ error is:
@@ -303,45 +294,27 @@ Then, an $L^\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$
 \end{align*}
 The minimum between absolute and relative spatial error is taken to avoid choosing an erogenously large relative error, caused by division of one small term by another.
 
-As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems considered in this paper. A comparison is given in Appendix \ref{app:fsolveComparison}. Numerical results for specific test problems with exact solutions are supplied in Appendix \ref{app:TestProblems}. Further tests to validate the method are presented in Appendix \ref{app:TestProblemsPerturbed}.
 
 
 
-\subsection{The relationship between diffusion and advection}
-- investigate the size of the two terms \\
-- when do different problems break because of advection dominance\\
-- how does the interaction term come into this\\
-- break something that works and fix something that doesn't, show breaking point and whether the relationship is abrupt or linear or what else\\
--check time interpolation for fixed x, does it get worse with larger solutions?
-- Show example where it breaks eg 2D example with too steep desired state (advection dominance/ too steep gradients)\\
-- investigate going from coarse grid to fine grid to push accuracy of solutions. see if it's to do with advection or ODE solver limitations.\\
-\\
-\\
-Mention here:\\
-Exact Solutions:\\
-- mention that $w \sim \frac{1}{\beta}$ doesn't work well - should be on $p$ or both $\rho$ and $p$ instead \\
-- compare different choices of exact solutions, i.e. linear, polynomial, exponential time; polynomial and trigonometric space \\
-- show the performance of the polynomial vs. exponential for interpolation (this may have to go to 'tests on other parts of the code') \\
 \subsection{Validation against \texttt{fsolve}}
-- compare results of the same problem for fsolve, picard and fixed point method\\
-- compare the different solvers. Compare how they measure convergence and which may do better or how they differ in general.\\
-\\
-\\
+As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems considered. 
 \input{Comparisonwithfsolve.tex}
 
 \subsection{Perturbing $w$}
-- discuss why the perturbation has to be smooth (in general and wrt the initial condition, give examples, error plots) AND check if that's still true given the knowledge on advection dominance and size of the problem\\
-- perturbing in time \\
-- perturbing in space \\
-- perturbing in time and space \\
-- symmetric/ asymmetric, different strengths\\
-- relationship between this and the advection dominance\\
-- show interpolation error in perturbed $w$\\
-- perturb $\rho$ and show interpolation error there too\\
-\\
-\\
 \input{Perturbingw.tex}
-\subsection{Note on investigating changing $n$ and $N$, tolerances, $\lambda$}
+\subsection{A note on the relationship of diffusion and advection}
+During the investigation of different perturbed exact problems and other test problems, it could be observed that the weakness of the optimization method lies in solving advection dominant problems. 
+This became apparent when considering different analytic exact solutions to the overdamped flow control problem \eqref{eqn:ADFlowOCP}. Depending on the magnitude of the control in each problem, the algorithm could either converge or not. Scaling the size of the control down, it was possible to achieve convergence for problems that were previously too difficult for the optimization solver. Another way of achieving convergence is to introduce a diffusion coefficient into the problem. A large advection term can then be offset with a large diffusion coefficient and the optimization solver is able to converge.
+The issue of advection dominance is especially prevalent when applying no-flux boundary conditions. This is because in order to match the boundary conditions in an advection dominated problem, the gradients of the particle distributions become steep at the boundary. Since steep gradients are difficult to treat numerically, this is an exacerbation of the problem at hand.
+It is important to point out that this issue is encountered with any optimization and forward solvers and is not unique to our choice of methods. 
+
+\subsection{A note on other observations regarding the overdamped OCP}
+During the work on the overdamped equations it was found that one limiting factor in the convergence of the method is interpolation errors. The error made during interpolation is of order $10^{-8} - 10^{-9}$. Therefore, the ODE solver cannot be more accurate than that and consequently the optimization error has to be adapted to this finding as well.
+Furthermore, the optimization tolerance has to be chosen in such a way that it takes into account the accumulation of error during the ODE solves and with each iteration of the optimization algorithm. This results in the optimization tolerance to be at least three orders larger than the ODE solver tolerance, which is bounded by the interpolation error. We found that in general choosing the ODE solver tolerance to be $10^{-8}$ and the optimization tolerance to be $10^{-4}$ we get reliable convergence for most test problems.
+
+
+
 - for both FW and optimization problem investigate how the error changes with the number of points\\
 - investigate effect of beta and of tolerance settings\\
 
@@ -372,7 +345,20 @@ Tests on other parts of the code:
 Investigating interpolation errors\\
 - investigate the effect of interpolation error in interplay with tolerances, and number of points, and other factors.\\
 - can be in link with perturbing $w$ too maybe?
-
+- investigate the size of the two terms \\
+- when do different problems break because of advection dominance\\
+- how does the interaction term come into this\\
+- break something that works and fix something that doesn't, show breaking point and whether the relationship is abrupt or linear or what else\\
+-check time interpolation for fixed x, does it get worse with larger solutions?
+- Show example where it breaks eg 2D example with too steep desired state (advection dominance/ too steep gradients)\\
+- investigate going from coarse grid to fine grid to push accuracy of solutions. see if it's to do with advection or ODE solver limitations.\\
+\\
+\\
+Mention here:\\
+Exact Solutions:\\
+- mention that $w \sim \frac{1}{\beta}$ doesn't work well - should be on $p$ or both $\rho$ and $p$ instead \\
+- compare different choices of exact solutions, i.e. linear, polynomial, exponential time; polynomial and trigonometric space \\
+- show the performance of the polynomial vs. exponential for interpolation (this may have to go to 'tests on other parts of the code') \\
 \section{Examples}
 - Neumann Flow\\
 - Mass conservation, $\rho$ size $1$ for probability distribution\\

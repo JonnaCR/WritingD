@@ -11,31 +11,28 @@
 \BOOKMARK [2][-]{subsection.3.3}{Optimality Conditions for the Overdamped Equations}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.4}{Subdomain and Boundary Observation with Non-Constant Flux}{section.3}% 12
 \BOOKMARK [1][-]{section.4}{Numerical Methods}{}% 13
-\BOOKMARK [2][-]{subsection.4.1}{Picard Multiple Shooting}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.2}{Fixed Point Algorithm}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.3}{Inbuilt Matlab functions}{section.4}% 16
-\BOOKMARK [3][-]{subsubsection.4.3.1}{The ODE solver}{subsection.4.3}% 17
-\BOOKMARK [3][-]{subsubsection.4.3.2}{The inbuilt optimization solver}{subsection.4.3}% 18
-\BOOKMARK [1][-]{section.5}{Investigating Functionality of the Optimization Algorithms}{}% 19
-\BOOKMARK [2][-]{subsection.5.1}{Error measures}{section.5}% 20
-\BOOKMARK [3][-]{subsubsection.5.1.1}{L2Linfinity Relative Error}{subsection.5.1}% 21
-\BOOKMARK [2][-]{subsection.5.2}{The relationship between diffusion and advection}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.3}{Validation against fsolve}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.4}{Perturbing w}{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.5}{Note on investigating changing n and N, tolerances, }{section.5}% 25
-\BOOKMARK [1][-]{section.6}{Examples}{}% 26
-\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 27
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 28
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 29
-\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 30
-\BOOKMARK [3][-]{subsubsection.6.1.4}{Neumann boundary conditions, Symmetric Example 1}{subsection.6.1}% 31
-\BOOKMARK [3][-]{subsubsection.6.1.5}{Neumann boundary conditions, Symmetric Example 2}{subsection.6.1}% 32
-\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 33
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 34
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 35
-\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 36
-\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 37
-\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 38
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 39
-\BOOKMARK [1][-]{appendix.A}{Other thoughts - things to incorporate above}{}% 40
-\BOOKMARK [1][-]{appendix.B}{Useful Resources to go back to}{}% 41
+\BOOKMARK [2][-]{subsection.4.1}{Fixed Point Algorithm}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Picard Multiple Shooting}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.3}{MATLAB's Inbuilt Optimization Solver fsolve}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Investigating Functionality of the Optimization Algorithms}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Error Measure}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Validation against fsolve}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.3}{Perturbing w}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.4}{A note on the relationship of diffusion and advection}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.5}{A note on other observations regarding the overdamped OCP}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{Examples}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 27
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Neumann boundary conditions, Symmetric Example 1}{subsection.6.1}% 28
+\BOOKMARK [3][-]{subsubsection.6.1.5}{Neumann boundary conditions, Symmetric Example 2}{subsection.6.1}% 29
+\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 30
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 31
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 33
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 34
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 35
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 36
+\BOOKMARK [1][-]{appendix.A}{Other thoughts - things to incorporate above}{}% 37
+\BOOKMARK [1][-]{appendix.B}{Useful Resources to go back to}{}% 38

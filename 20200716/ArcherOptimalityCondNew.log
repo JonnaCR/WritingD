@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  21 JUL 2020 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  23 JUL 2020 15:52
 entering extended mode
 **./ArcherOptimalityCondNew.tex
 (ArcherOptimalityCondNew.tex
@@ -553,52 +553,45 @@ LaTeX Info: Redefining \nameref on input line 54.
 
 \c@lstlisting=\count148
 (OptimalityConditionsArcherNew.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+LaTeX Warning: Reference `eqn:INeqns1' on page  undefined on input line 3.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (36.48271pt too wide) detected at line 14
-[]
- []
-
-
-Overfull \hbox (10.79741pt too wide) detected at line 45
-[]
- []
-
-[1
+) [1
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX wa
 rning (ext4): destination with the same identifier (name{page.}) has been alrea
 dy used, duplicate ignored
 <to be read again> 
                    \relax 
-l.83 \end{align*}
+l.79 \end{align*}
                   [2]pdfTeX warning (ext4): destination with the same identifie
 r (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.116 \end{align*}
-                   [3]
-Overfull \hbox (4.24721pt too wide) detected at line 135
-[]
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+l.119 \end{align*}
+                   [3]pdfTeX warning (ext4): destination with the same identifi
+er (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.156 \end{align*}
+l.152 \end{align*}
                    [4]
-Overfull \hbox (21.2844pt too wide) detected at line 183
+Overfull \hbox (21.2844pt too wide) detected at line 161
+[]
+ []
+
+
+Overfull \hbox (21.2844pt too wide) detected at line 169
 []
  []
 
@@ -606,19 +599,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.195 \end{align*}
+l.189 \end{align*}
                    [5]pdfTeX warning (ext4): destination with the same identifi
 er (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 \end{align*}
+l.230 \end{align*}
                    [6]
-Underfull \hbox (badness 10000) in paragraph at lines 260--264
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--272
+Underfull \hbox (badness 10000) in paragraph at lines 241--246
 
  []
 
@@ -626,9 +619,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.274 \end{align*}
+l.266 \end{align*}
                    [7]
-Underfull \hbox (badness 10000) in paragraph at lines 292--297
+Underfull \hbox (badness 10000) in paragraph at lines 266--271
 
  []
 
@@ -651,16 +644,20 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `ArcherOptimalityCondNew.out' has not changed
 .
 (rerunfilecheck)             Checksum: FB07F729426D562B68C8EB84945A85C4;365.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
  10333 strings out of 492946
- 156024 string characters out of 3124935
+ 156025 string characters out of 3124935
  269589 words of memory out of 3000000
- 14107 multiletter control sequences out of 15000+200000
+ 14108 multiletter control sequences out of 15000+200000
  9217 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,388b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,429b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKT
@@ -675,9 +672,9 @@ ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/
 AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/
 Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb>
-Output written on ArcherOptimalityCondNew.pdf (8 pages, 146936 bytes).
+Output written on ArcherOptimalityCondNew.pdf (8 pages, 144745 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
