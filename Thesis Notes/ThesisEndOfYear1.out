@@ -1,5 +1,5 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Literature Review on PDE-Constrained Optimization for these PDEs}{}% 2
+\BOOKMARK [1][-]{section.2}{Literature Review on Mean Field Optimal Control}{}% 2
 \BOOKMARK [1][-]{section.3}{Discussion of Relevant Equations and their Optimality Conditions}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{The Studied Equations}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{Optimality Conditions for the Inertial Eqations}{section.3}% 5
@@ -18,21 +18,22 @@
 \BOOKMARK [2][-]{subsection.5.1}{Error Measure}{section.5}% 18
 \BOOKMARK [2][-]{subsection.5.2}{Validation against fsolve}{section.5}% 19
 \BOOKMARK [2][-]{subsection.5.3}{Perturbing w}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.4}{A note on the relationship of diffusion and advection}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.5}{A note on other observations regarding the overdamped OCP}{section.5}% 22
-\BOOKMARK [1][-]{section.6}{Examples}{}% 23
-\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 24
-\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 25
-\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 26
-\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 27
-\BOOKMARK [3][-]{subsubsection.6.1.4}{Neumann boundary conditions, Symmetric Example 1}{subsection.6.1}% 28
-\BOOKMARK [3][-]{subsubsection.6.1.5}{Neumann boundary conditions, Symmetric Example 2}{subsection.6.1}% 29
-\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 30
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 31
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 32
-\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 33
-\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 34
-\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 35
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 36
-\BOOKMARK [1][-]{appendix.A}{Other thoughts - things to incorporate above}{}% 37
-\BOOKMARK [1][-]{appendix.B}{Useful Resources to go back to}{}% 38
+\BOOKMARK [2][-]{subsection.5.4}{Additional Observations}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Examples}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{Nonlinear control problems with an additional nonlocal integral term in 1D}{section.6}% 23
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Neumann boundary conditions, Example 1}{subsection.6.1}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Neumann boundary conditions, Example 2}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Dirichlet boundary conditions, Example 3}{subsection.6.1}% 26
+\BOOKMARK [2][-]{subsection.6.2}{Linear control problems with an additional nonlocal integral term}{section.6}% 27
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Dirichlet boundary conditions, Example 4}{subsection.6.2}% 28
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Neumann boundary conditions, Example 5}{subsection.6.2}% 29
+\BOOKMARK [2][-]{subsection.6.3}{Nonlinear control problems with an additional nonlocal integral term in 2D}{section.6}% 30
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Neumann boundary conditions, Example 1}{subsection.6.3}% 31
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Neumann boundary conditions, Example 2}{subsection.6.3}% 32
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 33
+\BOOKMARK [1][-]{appendix.A}{Activities Besides the PhD Project}{}% 34
+\BOOKMARK [2][-]{subsection.A.1}{Teaching}{appendix.A}% 35
+\BOOKMARK [2][-]{subsection.A.2}{Classes and Autumn School}{appendix.A}% 36
+\BOOKMARK [2][-]{subsection.A.3}{Generic Skills}{appendix.A}% 37
+\BOOKMARK [2][-]{subsection.A.4}{Citizenship}{appendix.A}% 38
+\BOOKMARK [2][-]{subsection.A.5}{Outlook}{appendix.A}% 39
