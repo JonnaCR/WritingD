@@ -1,5 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 %\usepackage{proj1}
+\usepackage{edmaths}
 \usepackage{natbib}
 \usepackage{fancyhdr}  
 \usepackage{subcaption}
@@ -14,6 +15,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{numprint}
+\usepackage{multirow}
 \usepackage{mathtools}
 \usepackage{commath}
 \usepackage{bbm}
@@ -51,7 +53,7 @@
 
 
 \title{Report, PhD Year 2}
-\author{Jonna C. Roden\\ \\Supervision by Dr Ben Goddard and Dr John Pearson\\ \\ \vspace{0.5cm} MIGSAA}
+\author{Jonna C. Roden\\ \\Supervision by Dr Ben Goddard and Dr John Pearson}
 \date{\today}
 
 
@@ -81,52 +83,37 @@
 %		
 %	\end{abstract}
 %	
-	\newpage
+%	\newpage
 %	\section*{Acknowledgements}
 %	+Acknowledge People Here+
 %	\newpage
-	\pagenumbering{Roman} 
-	\tableofcontents
-	%\newpage
-	%\listoffigures
-	%\listoftables
-	\newpage
-	\pagenumbering{arabic} % Switch to normal numbers
-	%\pagestyle{fancy}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%	\pagenumbering{Roman} 
+%	\tableofcontents
+%	%\newpage
+%	%\listoffigures
+%	%\listoftables
+%	\newpage
+%	\pagenumbering{arabic} % Switch to normal numbers
+%	%\pagestyle{fancy}
+%
 \section{Introduction}
-In this report, an overview is given on the work that has been carried out during the past year. First, a literature review on related work in mean field optimal control is provided. Then, different equations are discussed, which model particle dynamics and serve as PDE constraints in the considered optimal control problems. In particular, the we consider PDEs which include inertial effects and their high friction limit, the so called overdamped equations. We then derive optimality conditions for PDE-constrained optimizaion problems involving both of these cases. Most of the work on the numerical method has been done using the overdamped limit as PDE constraint. 
-The main focus of this year's work was the implementation of a fast and accurate optimization solver for different PDE-constrained optimization problems. Building on the extended project report, different optimization methods are briefly presented and compared. The fastest solver is then validated and applied to various test problems.
-Finally, an outlook is given on future work. In the appendix it is detailed which other activities outside the PhD project have been completed and an overview on future participation in various activities is provided.
+In this report, an overview is given on the work that has been carried out during the past year. First, a literature review on related work in mean field optimal control is provided. Then, different equations are discussed, which model particle dynamics and serve as PDE constraints in the considered optimal control problems. In particular, the we consider PDEs which include inertial effects and their high friction limit, the so-called overdamped equations. We then derive optimality conditions for PDE-constrained optimizaion problems involving both of these PDE models. Most of the work on the numerical method so far has been done using the overdamped model as PDE constraint, since this is an easier problem to solve numerically and therefore is useful in the developmental stage of the computational algorithm. Some initial examples involving the inertial model have been tested, but will be presented in a future report. 
+The main focus of this year's work has been the implementation of a fast and accurate optimization solver for different PDE-constrained optimization problems. Building on the extended project report, different optimization methods are briefly presented and compared. The fastest solver is then validated and applied to various test problems.
+Finally, an outlook is given on future work, involving the inertial model and problems on more complex domains. The appendix details which other activities outside the PhD project have been completed and an overview of expected future participation in various activities is provided.
 
 
 \section{Literature Review on Mean Field Optimal Control}
 \input{MeanFieldOptimalControl.tex}
-\section{Discussion of Relevant Equations and their Optimality Conditions}
-\subsection{The Studied Equations}
-This section is concerned with discussing different equations that have been studied in the past year and the derivation of the optimality conditions of optimal control problems with constrains involving these equations. The discussion of the forward equations and their connections is heavily based on \cite{Archer1}.
+\section{Relevant Equations and their Optimality Conditions}
+This section is concerned with discussing different equations that have been studied in the past year and the derivation of the optimality conditions for optimal control problems with constrains involving these equations. The discussion of the different PDE models and their connections is heavily based on \cite{Archer1}.
 
-The most general equations considered, describing particle dynamics on a continuum level, are the so-called inertial equations. These are derived in \cite{Archer1}, by A.J.Archer, from the corresponding microscopic dynamics. The derivation includes taking momentum moments and making two modelling assumptions. The first assumption is that the contributions of particle interactions in the dynamic equations can be approximated by the interactions in equilibrium. The second assumption is a 'local-equilibrium' assumption, assuming that locally the velocity is normally distributed. This assumption is violated when steep velocity gradients arise, which will be discussed below.
+\subsection{The Equations}
+The most general equations considered, describing particle dynamics on a continuum level, are the so-called inertial equations. These are derived in \cite{Archer1}, by A.J.Archer, from the corresponding microscopic dynamics. The derivation includes taking momentum moments and making two modelling assumptions. The first assumption is that the contributions of particle interactions in the dynamic equations can be approximated by the interactions in equilibrium. The second assumption is a `local-equilibrium' assumption, assuming that locally the velocity is normally distributed. This assumption is violated when steep velocity gradients arise, which will be discussed below.
 
 The inertial equations are most generally formulated as:
 \begin{align*}
 	&\frac{\partial \Stav}{\partial t} + \Stav \cdot \nabla \Stav + \gamma \Stav = - \frac{1}{m} \nabla \frac{\delta \mathcal{F}[\Sta]}{\delta \Sta}\\
-	&\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav) =0
+	&\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav) =0.
 \end{align*}
 This system of equations describes the evolution of a velocity field $\Stav$ and of the one-body particle density $\Sta$, which depends on the velocity field.
 The velocity in the system is influenced by inertial effects, with friction coefficient $\gamma$, and by different forces, expressed in terms of the free energy $\mathcal{F}$ of the system.
@@ -141,16 +128,16 @@ Taking the appropriate derivatives gives:
 where $\nabla V_2$ is the force describing the particle interactions. However, in the derivation of corresponding optimality conditions, we instead consider a general interaction kernel $\mathbf{K}(r,r')$.
 \\
 Further to this general model, we introduce three more terms for modelling purposes. Two vector fields, $\mathbf{w}$ and $\Con$, are included in the velocity equation, which act as background flow fields in the problem. If these are conservative, they can be incorporated in the definition of $\nabla V_{ext}$. The term $\mathbf{w}$ will act as the flow control in the optimal control problem.
-The final term that is added is a smoothing term for the velocity. This is to avoid steep velocity gradients, which are numerically challenging and violate the modelling assumptions outlined in \cite{Archer1}. Since steep velocity gradients are more prevalent in inertial systems, which have a small friction coefficient $\gamma$, the introduction of this additional term is standard practice, see \cite{Archer1} (+1 more?).
+The final term that is added is a smoothing term for the velocity. This is to avoid steep velocity gradients, which are numerically challenging and violate the modelling assumptions outlined in \cite{Archer1}. Since steep velocity gradients are more prevalent in inertial systems, which have a small friction coefficient $\gamma$, the introduction of this additional term is standard practice, see \cite{Archer1}.
 Including these terms leads to the model equations considered in this report:
 \begin{align}
 \label{eqn:INeqns1}
 \frac{\partial \Stav}{\partial t} &+ (\Stav \cdot \nabla)\Stav + \gamma \Stav=\eta \nabla^2 \Stav  -\frac{1}{m}\Con +\frac{1}{m}\mathbf{w} - \frac{1}{m}\nabla \frac{\delta \mathcal{F}[\Sta]}{\delta \Sta}\\
 \frac{\partial \Sta}{\partial t} &+ \nabla \cdot (\Sta \Stav)=0 \notag
 \end{align}
-The high friction limit of the inertial equations can be taken to derive the so-called overdamped eqation, see \cite{Archer1}. This is a numerically easier problem, which only involves the variable $\rho$, and not $\Stav$ and is therefore a good starting point when developing a new numerical algorithm for their optimal control. 
-The overdamped eqaution is derived by assuming that for large $\gamma$ the material derivative of $\Sta$, $\frac{D \Sta}{D t} \coloneqq  \frac{\partial \Stav}{\partial t} + (\Stav \cdot \nabla)\Stav$ is zero.
-Then Equations (\ref{eqn:INeqns1}) reduce to:
+The high friction limit of the inertial equations can be taken to derive the so-called overdamped eqation, see \cite{Archer1}. This is a numerically easier problem, which only involves the variable $\rho$, and not $\Stav$, and is therefore a good starting point when developing a new numerical algorithm for their optimal control. 
+The overdamped eqaution is derived by assuming that for large $\gamma$ the material derivative of $\Stav$, $\frac{D \Stav}{D t} \coloneqq  \frac{\partial \Stav}{\partial t} + (\Stav \cdot \nabla)\Stav$ is zero.
+Then System (\ref{eqn:INeqns1}) reduces to:
  \begin{align*}
 &\gamma \Stav=\eta \nabla^2 \Stav  -\frac{1}{m}\Con +\frac{1}{m}\mathbf{w} - \frac{1}{m}\nabla \frac{\delta \mathcal{F}[\Sta]}{\delta \Sta}\\
  &\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav)=0 \notag.
@@ -164,54 +151,55 @@ Then, $\Stav$ can be substituted in the evolution equation for $\rho$, and the s
 \frac{\partial \Sta}{\partial t} &= \frac{1}{m \gamma}\nabla \cdot (\Sta\Con) -\frac{1}{m \gamma} \nabla \cdot (\Sta \mathbf{w})  + \frac{1}{m \gamma}\nabla \cdot (\rho\nabla V_{ext}) + \frac{1}{m \gamma}\nabla \cdot (\nabla \rho) \\
 &+\frac{1}{m \gamma}\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr'\notag.
 \end{align*}
-The overdamped equation that is considered in this report, is found by rescaling time: $t = \tilde t \gamma m$. This causes the constants to cancel, and implies that comparison between (\ref{eqn:INeqns1}) and (\ref{eqn:ADeqn1}) need to be made on the two different time scales.
+The overdamped equation that is considered in this report, is found by rescaling time: $t = \tilde t \gamma m$. This causes the constants to cancel, and implies that comparisons between (\ref{eqn:INeqns1}) and (\ref{eqn:ADeqn1}) need to be made on the two different time scales.
 The resulting equation is:
-\begin{align*}
+\begin{align}
 \label{eqn:ADeqn1}
 \frac{\partial \Sta}{\partial \tilde t} &= \nabla \cdot (\Sta\Con) - \nabla \cdot (\Sta \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) \\
-&+\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr'.
-\end{align*}
+&+\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr'. \notag
+\end{align}
 \subsection{Optimality Conditions for the Inertial Eqations}
 
 
 \input{OptimalityConditionsArcherNew.tex}
 
 \subsection{Optimality Conditions for the Overdamped Equations}
-The optimality conditions for the optimal control problems involving the overdamped equations \eqref{eqn:ADeqn1} are stated here for completion. The details of their derivation can be found in either the year one report or the paper (++ need to find how to cite++).
-There are two optimal control problems considered; one which applies the control through the flow field, as above, and another, where the control is an added source term in the PDE. The latter case is less physical, however, it is often a simpler problem to study because the control is applied linearly, while the flow control problem considers a non-linear control. For each problem, no-flux and Dirichlet boundary conditions are considered. Note that, for ease of notation, we set $\tilde t = t$.
+The optimality conditions for the optimal control problems involving the overdamped equations \eqref{eqn:ADeqn1} are stated here for completion. The details of their derivation can be found in either the year one report or in the paper.
+Two optimal control problems are considered; one which applies the control through the flow field, as above, and another, where the control is an added source term in the PDE. The latter case is less physically relevant in applications, however, it is often a simpler problem to study because the control is applied linearly, while the flow control problem considers a non-linear control. For each problem, no-flux and Dirichlet boundary conditions are considered. Note that, for ease of notation, we set $\tilde t = t$.
 The flow control problem is:
 \begin{align}
 \label{eqn:ADFlowOCP}
-&\min_{\Sta,\mathbf{w} } \mathcal J(\Sta,\mathbf{w} ) =\ \ \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
+&\min_{\Sta,\mathbf{w} } \mathcal J(\Sta,\mathbf{w} ) =\ \ \frac{1}{2}||\Sta - \widehat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
 & \text{subject to:}: \notag\\
 &\frac{\partial \Sta}{\partial t} = \nabla \cdot (\Sta\Con) - \nabla \cdot (\Sta \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho)\notag \\
 & \quad \ +\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr' \qquad \qquad \qquad \qquad \text{in} \quad \Sigma\notag
 \end{align}
 The adjoint and gradient equations are:
 \begin{align*}
-\frac{\partial \Adjb}{\partial t} =& - \nabla^2\Adjb - \mathbf{w} \cdot \nabla \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \hat \rho \\
+\frac{\partial \Adjb}{\partial t} =& - \nabla^2\Adjb - \mathbf{w} \cdot \nabla \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \widehat \rho \\
 &+\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Sta \nabla \Adjb,
 \end{align*}
 where $\Adjb$ is the adjoint variable and $\frac{\partial \Adjb}{\partial n} = 0$ on $\partial \Omega$ corresponds to a no-flux boundary condition, while $\Adjb = 0$ on $\partial \Omega$ corresponds to a Dirichlet boundary condition.
 Rewriting the time variable in the adjoint equation as $\tau = T-t$ gives:
 \begin{align*}
-\frac{\partial \Adjb}{\partial \tau} =& \nabla^2\Adjb +\mathbf{w} \cdot \nabla \Adjb - \nabla V_{ext} \cdot \nabla \Adjb + \Sta - \hat \rho \\
+\frac{\partial \Adjb}{\partial \tau} =& \nabla^2\Adjb +\mathbf{w} \cdot \nabla \Adjb - \nabla V_{ext} \cdot \nabla \Adjb + \Sta - \widehat \rho \\
 &-\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Sta \nabla \Adjb,
 \end{align*}
 
 The source control problem is:
-\begin{align*}
-&\min_{\Sta,{w} } \mathcal J(\Sta,{w}) = \ \ \frac{1}{2}||\Sta - \hat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||{w}||_{L_2(\Sigma)}^2\\
-& \text{subject to:}:\\
-&\frac{\partial \Sta}{\partial  t} = \nabla \cdot (\Sta\Con) + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) + w \\
-& \quad \ +\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr' \qquad \qquad \qquad \qquad \text{in} \quad \Sigma
-\end{align*}
+\begin{align}
+\label{eqn:AdvDiffLinear}
+&\min_{\Sta,{w} } \mathcal J(\Sta,{w}) = \ \ \frac{1}{2}||\Sta - \widehat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||{w}||_{L_2(\Sigma)}^2\\
+& \text{subject to:}: \notag \\
+&\frac{\partial \Sta}{\partial  t} = \nabla \cdot (\Sta\Con) + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) + w \notag \\
+& \quad \ +\nabla \cdot \int_\Omega \Sta(r)\Sta(r') \nabla V_2(|r-r'|)dr' \qquad \qquad \qquad \qquad \text{in} \quad \Sigma \notag
+\end{align}
 
 The adjoint and gradient equations are:
 \begin{align*}
-\frac{\partial \Adjb}{\partial t} =& - \nabla^2 \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \hat \rho \\
+\frac{\partial \Adjb}{\partial t} =& - \nabla^2 \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \Sta + \widehat \rho \\
 &+\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
 \mathbf{w} =& - \frac{1}{\beta} \Adjb,
 \end{align*}
@@ -220,14 +208,14 @@ Boundary conditions and time reversal for the adjoint equation are analogous to 
 \subsection{Subdomain and Boundary Observation with Non-Constant Flux}
 \input{NonconstantFluxSubdomainObservation.tex}
 \input{NonconstantFluxBoundaryObservation.tex}
-\section{Numerical Methods}
-In general it is necessary to change the time variable in the adjoint equation, as demonstrated in (++ ++ ), for numerical stability. This is necessary because the forward and adjoint equations contain Laplacians of opposite time. Running the adjoint equation with a negative Laplacian leads to a blow up of the solution at the first time step. The reversal of time, using $\tau = T-t$, remedies this issue, however, this causes a non-local coupling in time between the two PDEs.
+\section{Numerical Methods} \label{sec:NumericalMethods}
+In general it is necessary to change the time variable in the adjoint equation, as demonstrated in Section \ref{sec:INImplementation}, for numerical stability. This is necessary because the forward and adjoint equations contain Laplacians of opposite sign. Running the adjoint equation with a negative Laplacian leads to a blow up of the solution at the first time step. The reversal of time, using $\tau = T-t$, remedies this issue, however, this causes a non-local coupling in time between the two PDEs.
 The following algorithms provide methods of treating this non-local coupling.
 
 
 \subsection{Fixed Point Algorithm}\label{sec:Method_SolverFP}
 In this section we describe the fixed point algorithm, which is an efficient and stable optimization method for the optimal control problems considered above. 
-We denote the discretized versions of the variables $\rho$, $\adj$ and $\vec{w}$ with $P$, $Q$ and $W$, respectively. Each of these matrices is of the form $A = [\boldsymbol{a_0}, \boldsymbol{a_1}, ... ,\boldsymbol{a_n}]$, where the vectors $\boldsymbol{a_k}$ represent the solutions at the discretized times $k \in 0,1,....,n$, where $n$ is the number of time points. In particular, the first column of $P$, denoted by $\boldsymbol{\rho_0}$, corresponds to the initial condition $\rho(r,0)$. If the spatial domain is one-dimensional, $P$, $Q$ and $W$ are of size $N \times (n + 1)$, where $N$ is the number of spatial points. In the two-dimensional case, $P$ and $Q$ are of size $(N_1N_2) \times (n + 1)$, where $N_1$ is the number of spatial points in the direction of $x_1$ and $N_2$ the points along the $x_2$ axis. Generally, $N_1 = N_2$. The discretized control $W$ for linear control problems is also $(N_1N_2) \times (n + 1)$ dimensional, while it is $(2N_1N_2) \times (n + 1)$ dimensional for nonlinear control problems. This is due to the fact that the control is represented by a vector field, when applied nonlinearly.
+We denote the discretized versions of the variables $\rho$, $\adj$ and $\mathbf{w}$ with $P$, $Q$ and $W$, respectively. Each of these matrices is of the form $A = [\boldsymbol{a_0}, \boldsymbol{a_1}, ... ,\boldsymbol{a_n}]$, where the vectors $\boldsymbol{a_k}$ represent the solutions at the discretized times $k \in 0,1,....,n$, where $n$ is the number of time points. In particular, the first column of $P$, denoted by $\boldsymbol{\rho_0}$, corresponds to the initial condition $\rho(r,0)$. If the spatial domain is one-dimensional, $P$, $Q$ and $W$ are of size $N \times (n + 1)$, where $N$ is the number of spatial points. In the two-dimensional case, $P$ and $Q$ are of size $(N_1N_2) \times (n + 1)$, where $N_1$ is the number of spatial points in the direction of $x_1$ and $N_2$ the points along the $x_2$ axis. Generally, $N_1 = N_2$. The discretized control $W$ for linear control problems is also $(N_1N_2) \times (n + 1)$ dimensional, while it is $(2N_1N_2) \times (n + 1)$ dimensional for nonlinear control problems. This is due to the fact that the control is represented by a vector field, when applied nonlinearly.
 \\
 \\
 The optimization algorithm is initialized with a guess for the control, $W^{(0)}$. Then, in each iteration, denoted by $i$, the following steps are computed:
@@ -248,33 +236,33 @@ The optimization algorithm is initialized with a guess for the control, $W^{(0)}
 	The guess for the control is updated from $W^{(i)} $ to $W^{(i+1)} $ and steps 1-5 are repeated until the method converges. 
 \end{enumerate}
 \vspace{0.3cm}
-The update scheme in step 5, with mixing rate $\lambda$, is known to stabilise fixed point methods, ++Ben to add references++. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is similar to the updating scheme presented in~\cite{Burger1}. 
+The update scheme in step 5, with mixing rate $\lambda$, is known to stabilise fixed point methods, see \cite{Roth1}. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is similar to the updating scheme presented in~\cite{Burger1}. 
 Note that, while the solutions $P^{(i)}$ and $Q^{(i)}$ change in each iteration, the initial condition $\boldsymbol{\rho_0}$ and final time condition $\boldsymbol{\adj_n}$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $W^{(i)}$.
 \subsection{Picard Multiple Shooting}
 
 The multiple shooting algorithm, introduced in the first year report, has been extended by employing a Picard mixing scheme as optimization method to replace the {\scshape MATLAB} inbuilt solver \texttt{fsolve}. In the following, this is briefly outlined.
-The idea of the updating scheme is similar to the one presented for the fixed point algorithm. However, while the multiple shooting algorithm updates through the variables $\rho$ and $q$, the fixed point algorithm updates through the control variable.
-The multiple shooting method consists of discretizing the time interval and solving the optimality system on each interval individually. This is done because of the non-local time coupling of the forward and adjoint equations. It requires the input of an initial guess at each time for each of the variables. The aim of the optimization solver is then to minimize the distance between the initial guesses and numerical solutions of the variables at each of the time points. \\
+The idea of the updating scheme is similar to the one presented for the fixed point algorithm. However, while the fixed point algorithm updates through the control variable, the fixed point algorithm updates via the variables $\rho$ and $q$.
+The multiple shooting method consists of discretizing the time interval and solving the optimality system on each interval individually. This is done because of the non-local time coupling of the forward and adjoint equations. It requires the input of an initial guess at each discretized time point for each of the variables. The aim of the optimization solver is then to minimize the distance between the initial guesses and numerical solutions of the variables at each of the time points. \\
 The Picard mixing scheme is a fixed point type algorithm. At each iteration $i$ it takes a set of guesses at the discretized time points, denoted by $Y_i$. The matrix $Y = [P,Q]$ contains the discretized values for the variables $\rho$ and $q$, denoted by $P$ and $Q$, analogously to the previous section.  
-The system of PDEs on the discretized intervals is computed and a new set of variable values at the time points is created, denoted by $Y_{out}$. Then, the mixing scheme provides a new guess for the iteration $i+1$ by:
+The system of PDEs is solved on each of the discretized intervals and a new set of variable values at the time points is created, denoted by $Y_{out}$. Then, the mixing scheme provides a new guess for the iteration $i+1$:
 \begin{align*}
 Y_{i+1} = (1 - \lambda)Y_i + \lambda Y_{out},
 \end{align*}
-where $\lambda$ is the mixing rate. It typically takes values between $0.1$ and $0.01$, depending on the complexity of the system to solve. Choosing a relatively small value of $\lambda$ stabilizes the algorithm (+ ref this?+). 
+where $\lambda$ is the mixing rate. It typically takes values between $0.1$ and $0.01$, depending on the complexity of the system to solve. Choosing a relatively small value of $\lambda$ stabilizes the algorithm. 
 The algorithm terminates when the system of PDEs is solved self-consistently, i.e. when the distance between $Y_i$ and $Y_{out}$ is small, as measured in a chosen norm. The most frequently applied norm is discussed in Section \ref{sec:ErrorMeasure}.
-This algorithm is working very well for examples involving the overdamped equations. However, the fixed point algorithm provides an even simpler method, which does not require the solution of the optimality system on small time intervals and is therefore even quicker. Since we will apply the numerical optimization method to increasingly difficult optimal control problems in the future, the multiple shooting algorithm may provide more numerical stability for numerically harder problems and is therefore a relevant tool to consider in the future. Changing the optimization solver in the implementation is straightforward and requires only changing a flag in the input file.
+This algorithm is working very well for examples involving the overdamped equations. However, the fixed point algorithm provides an even simpler method, which does not require the solution of the optimality system on small time intervals and is therefore even quicker. Since we will apply the numerical optimization method to increasingly difficult optimal control problems in the future, the multiple shooting algorithm may provide more numerical stability for numerically harder problems and is therefore a relevant tool to consider in the future. Changing the optimization solver in the implementation is straightforward and only requires changing a flag in the input file.
 \\
-A challenge with this solver is that it needs to be provided with good initial guesses for the variables $\rho$ and $\adj$ at the discretized time points. The guess for $\rho$ can be obtained by solving the associated forward problem and using the result as a first guess. However, a good guess for $\adj$ is trickier to achieve. One way of doing so is by using the gradient equation, which relates $\rho$, $\adj$ and $w$, the control. Since the input for the forward control is known, one can use this information, together with the initial guess for $\rho$ to construct an initial guess for $\adj$. 
+A challenge with this solver is that it needs to be provided with good initial guesses for the variables $\rho$ and $\adj$ at the discretized time points. The guess for $\rho$ can be obtained by solving the associated forward problem and using the result as a first guess. However, a good guess for $\adj$ is trickier to achieve. One way of doing so is by using the gradient equation, which relates $\rho$, $\adj$ and $w$, the control. Since the input for the forward control is known, one can use this information, together with the initial guess for $\rho$, to construct an initial guess for $\adj$. 
 One challenge however arises when considering the flow control problem involving the overdamped equations. The gradient equation is $\mathbf{w} = - \frac{1}{\beta} \rho\nabla \adj$. In order to derive the value of $\adj$ from this equation, we need to divide by $\rho$, making use of the assumption that $\rho$ is strictly positive, and integrate over the whole space. The issue here is that integration introduces an indeterminable constant. Furthermore, if Dirichlet boundary conditions are applied, the strict positivity of $\rho$ is in question.\\
-Alternatively, one step of the fixed point method could be performed initially, to obtain an initial guess for $\adj$. 
+An alternative method of retrieving an initial guess for $\adj$ is to perform one step of the fixed point method.
 
 
-\subsection{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt{fsolve}}
-Another option of solving the optimality system is using the inbuilt {\scshape MATLAB} solver \texttt{fsolve} in combination with the multiple shooting method briefly described in the previous section. The optimization solver tries to minimize the error in the variables $\rho$ and $\adj$ at the discretized time points. 
+\subsection{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt{fsolve}} \label{sec:fsolvedescription}
+Another option of solving the optimality system is using the inbuilt {\scshape MATLAB} solver \texttt{fsolve}, in combination with the multiple shooting method briefly described in the previous section. The optimization solver tries to minimize the error in the variables $\rho$ and $\adj$ at the discretized time points. 
 \\
 In general, for the set of non-linear functions, $F(x)$, that are supposed to be solved, \texttt{fsolve} tries to find an input vector $x$, such that we minimize sum of squares $\sum_i f_i(x)^2$, where $f_i$ are the components of $F$. 
-While \texttt{fsolve} has three different algorithm options, the default is the trust region dogleg algorithm, a variant of Powell's dogleg algorithm (++ ref++).   
-The general idea of trust-region algorithms is to consider a so-called trust-region $N$, in which the function $F$ is approximated by a simpler function. Then, a search direction $s$ is defined and it is decided whether $F(x+s) < F(x)$. If that is the case, the position $x$ is updated to the position $x+s$. Otherwise, we remain at the position $x$ and the trust region $N$ is made smaller.
+While \texttt{fsolve} has three different algorithm options, the default algorithm, used in solving our problems, is the trust region dogleg algorithm, a variant of Powell's dogleg algorithm, see \cite{Powell1}.   
+The general idea of trust-region algorithms is to consider a so-called trust-region $N$, in which the function $F$ is approximated by a simpler function. Then, a search direction $s$ is defined and it is checked whether $F(x+s) < F(x)$. If that is the case, the position $x$ is updated to the position $x+s$. Otherwise, we remain at the position $x$ and the trust region $N$ is made smaller. Convergence is achieved when $F(x)$ and $F(x+s)$ are close.
 The main questions are (i) how to approximate the function in the trust region, and (ii) how to determine the search direction $s$ reliably.\\
 In the case of the dogleg algorithm, the choice for (i) is to minimize:
 \begin{align}
@@ -284,19 +272,19 @@ In the case of the dogleg algorithm, the choice for (i) is to minimize:
 \end{align}
 where $J$ is the Jacobian.
 In order to minimize $m$, we choose, answering (ii), the appropriate search direction $s$. In the dogleg method this is done by combining a Gauss-Newton step $s_{GN}$ with a Cauchy step $s_C$.
-If $J(x_k)$ is singular, $s = s_C$. Otherwise, $s$ is chosen as a linear combination of these two steps as:
+If $J(x_k)$ is singular, $s = s_C$. Otherwise, $s$ is chosen as a linear combination of these two steps:
 \begin{align*}
 s = s_C + \lambda(s_{GN} - s_C),
 \end{align*}
 where $\lambda \in [0,1]$ is the largest value such that $||s|| \leq \Delta$. The positive scalar $\Delta$ is the trust region dimension, and adjusted at each iteration. The algorithm converges when $F(x)$ and $F(x+s)$ are close. 
-While this method is more stable than a Newton method, and the initial guess for the algorithm does not have to be as good, and it is cheaper to compute, it is also prone to converging to local minima, since we do not consider the whole domain.
-(++ ref with matlab pages ++)
-\section{Investigating Functionality of the Optimization Algorithms}
+This method is more stable than a Newton method, and therefore the initial guess for $x$ does not have to be as good. Furthermore, it is cheaper to compute. However, it is also more prone to converging to local minima, since we do not consider the whole domain.
+This section is based on \cite{fsolve1} and \cite{Powell1}.
+\section{Investigating Functionality of the Optimization Algorithms} \label{sec:Validation}
 
 \subsection{Error Measure}\label{sec:ErrorMeasure}
-While other norms such as an $L_1$ norm or a pointwise error measure have been considered, the main measure employed in this work is the following.
+While other norms such as an $L_1$ norm or a pointwise error measure have been considered, the main measure employed in this work is described in the following.
 
-All errors in Sections +++ are calculated between a variable of interest, $y$, and $y_R$, the reference value that $y$ is compared to. When measuring convergence of the fixed point scheme, described in Section \ref{sec:Method_SolverFP}, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
+All errors in Sections \ref{sec:Validation} and \ref{sec:Examples} are calculated between a variable of interest, $y$, and $y_R$, the reference value that $y$ is compared to. When measuring convergence of the fixed point scheme, described in Section \ref{sec:Method_SolverFP}, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
 \begin{align*}
 \mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) ||_{L^2(\Omega)}+ 10^{-10}},
 \end{align*}
@@ -314,8 +302,8 @@ The minimum between absolute and relative spatial error is taken to avoid choosi
 
 
 
-\subsection{Validation against \texttt{fsolve}}
-As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see~\cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems considered. 
+\subsection{Validation Against \texttt{fsolve}}
+As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see Section \ref{sec:fsolvedescription} and \cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems considered. 
 \input{Comparisonwithfsolve.tex}
 
 \subsection{Perturbing $w$}
@@ -323,25 +311,25 @@ As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{f
 \subsection{Additional Observations}
 In the following, a few further observations are stated, that were made when applying the optimization solver to problems involving the overdamped equations. Demonstrations of these points are omitted due to time constraints and will be provided in future work.
 During the investigation of different perturbed exact problems and other test problems, it could be observed that the weakness of the optimization method lies in solving advection dominant problems. 
-This became apparent when considering different analytic exact solutions to the overdamped flow control problem \eqref{eqn:ADFlowOCP}. Depending on the magnitude of the control in each problem, the algorithm could either converge or not. Scaling the size of the control down, it was possible to achieve convergence for problems that were previously too difficult for the optimization solver. Another way of achieving convergence is to introduce a diffusion coefficient into the problem. A large advection term can then be offset with a large diffusion coefficient and the optimization solver is able to converge.
-The issue of advection dominance is especially prevalent when applying no-flux boundary conditions. This is because in order to match the boundary conditions in an advection dominated problem, the gradients of the particle distributions become steep at the boundary. Since steep gradients are difficult to treat numerically, this is an exacerbation of the problem at hand.
+This became apparent when considering different analytic exact solutions to the overdamped flow control problem \eqref{eqn:ADFlowOCP}. Depending on the magnitude of the control in each problem, the algorithm could either converge, for small controls, or not, for large control values. Scaling the size of the control down, by scaling the exact solutions accordingly, it is possible to achieve convergence for problems that were previously too difficult to solve for the optimization solver. Another way of achieving convergence is to introduce a diffusion coefficient into the problem. A large advection term can then be offset with a large diffusion coefficient and the optimization solver is able to converge.
+The issue of advection dominance is especially prevalent when applying no-flux boundary conditions. This is because in order to match the boundary conditions in an advection dominated problem, the gradients of the particle distribution becomes steep at the boundary. Since steep gradients are difficult to treat numerically, this is an exacerbation of the problem at hand.
 It is important to point out that this issue is encountered with any optimization and forward solvers and is not unique to our choice of methods. 
 \\
 \\
-During the work on the overdamped equations it was found that one limiting factor in the convergence of the method is interpolation errors. The error made during interpolation is of order $10^{-8} - 10^{-9}$. Therefore, the ODE solver cannot be more accurate than that and consequently the optimization error has to be adapted to this finding as well.
-Furthermore, the optimization tolerance has to be chosen in such a way that it takes into account the accumulation of error during the ODE solves and with each iteration of the optimization algorithm. This results in the optimization tolerance to be at least three orders larger than the ODE solver tolerance, which is bounded by the interpolation error. We found that in general choosing the ODE solver tolerance to be $10^{-8}$ and the optimization tolerance to be $10^{-4}$ we get reliable convergence for most test problems.
+During the work on the overdamped equations it was found that one limiting factor in the convergence of the method is interpolation errors. The error made during interpolation is of order $10^{-8}$ to $10^{-9}$. Therefore, the ODE solver cannot be more accurate than that and consequently the optimization error has to be adapted to this finding as well.
+Furthermore, the optimization tolerance has to be chosen in such a way that it takes into account the accumulation of error during each ODE solve and with each iteration of the optimization algorithm. This results in the optimization tolerance having to be at least three orders larger than the ODE solver tolerance, which is bounded by the interpolation error. We found that, in general, choosing the ODE solver tolerance to be $10^{-8}$ and the optimization tolerance to be $10^{-4}$, we get reliable convergence for most test problems.
 \\
-Another thing to take into consideration is that the problem becomes numerically harder with decreasing value of $\beta$. In general, small $\beta$ may need more points to be solved to the same accuracy as larger values of $\beta$, or may not reach the same accuracy at all. (++ See examples ++).
+Another thing to take into consideration is that the problem becomes numerically harder with decreasing values of $\beta$. In general, small $\beta$ may need more points to be solved to the same accuracy as larger values of $\beta$, or may not reach the same accuracy at all. 
 
 
-\section{Examples}
+\section{Numerical Experiments} \label{sec:Examples}
 
 \input{NumericalExperiments.tex}
 
 \section{Conclusion}
-During the past year a fast and accurate optimization solver has been developed, which reliably solves various optimal control problems. In the course of the next year, this will be applied to different problems. For example, inertial effects will be included in the optimal control problem. Furthermore, the numerical method is extended to be applied to different domains. At the present time, only rectangular domains are considered. However, in the following year, the optimal control problems will be solved on more complex domains, which are composed of quadrilateral and circular shapes. 
+During the past year, a fast and accurate optimization solver has been developed, which reliably solves various optimal control problems. In the course of the next year, this will be applied to different problems. For example, inertial effects will be included in the optimal control problem. Furthermore, the numerical method is extended to be applied to different domains. At the present time, only rectangular domains are considered. However, in the following year, the optimal control problems will be solved on more complex domains, which are composed of quadrilateral and circular shapes. 
 Other possible extensions to be considered are models including multiple species and different control types other than flow and source control.
-The main aim is to enable the application of the model and numerical method to industrial applications.
+The main aim is to enable the application of the model and the numerical method to industrial applications.
 
 
 \pagebreak	
@@ -359,16 +347,16 @@ Furthermore, I participated in the markfests for 'Introduction to Linear Algebra
 \subsection{Classes and Autumn School}
 In the first semester of this year, I have attended the MSc course on Stochastic Analysis, a mini-course on Industrial Mathematics and an Autumn School on Optimal Control and Optimization with PDEs. In the second semester I have taken the advanced MIGSAA course on Numerical Analysis of Partial Differential Equations. In total I have been awarded 45 credits.
 \subsection{Generic Skills}
-I have completed seven generic skills activities this year, as stated in the logbook. I have been a co-organiser of the MIGSAA Annual Colloquium in September 2019. I have taken two semesters of Spanish classes via the University's short courses. Furthermore, I have been a Mentor for the MAC-MIGs students. I have organised the PG Colloquium for the past two semesters, and, collaboratively with Heriot-Watt, organised an online PhD seminar during the summer, the Maxwell PhD Seminar.
+I have completed seven generic skills activities this year, as stated in the logbook. I have been a co-organiser of the MIGSAA Annual Colloquium in September 2019. I have taken two semesters of Spanish classes via the University's short courses. Furthermore, I have been a mentor for the MAC-MIGs students. I have organised the PG Colloquium for the past two semesters, and, collaboratively with Heriot-Watt, organised an online PhD seminar during the summer, the Maxwell PhD Seminar.
 Lastly, I got two generic skills credits for the tutoring and marking activities mentioned in the teaching section above.
 \subsection{Citizenship}
 I have attended most ACM seminars this year, some analysis and optimization seminars in UoE and some mathematical biology meetings in HW. I have also attended most of the sessions of the MAC-MIGs Modelling course. I have, as organiser, attended all but one PG Colloquium sessions, as well as all Maxwell PhD Seminar sessions.
-I have given a talk at the SIAM-IMA Student Chapter PhD Colloquium, presented a poster at the Annual MIGSAA Colloquium, and presented my work at a 'This is what we do' session to the MAC-MIGs students. I was supposed to give a talk about my work at the BAMC in Glasgow in April, which has been postponed to 2021 due to the current situation. I have given a talk at the LMS Scottish Numerical Methods Network workshop on Multiscale Methods in June. In terms of outreach work, I have held a 10 minute talk about PhD life to Y4 and Y5 undergraduate UoE students and I co-facilitated a lunch meeting, organised by the Piscopia Initiative, aimed at female undergraduate students in order to enhance postgraduate applications from female students. While this type of event was organised for different Schottish universities, the one I attended has been at the University of Glasgow.
+I have given a talk at the SIAM-IMA Student Chapter PhD Colloquium, presented a poster at the Annual MIGSAA Colloquium, and presented my work at a 'This is what we do' session to the MAC-MIGs students. I was supposed to give a talk about my work at the BAMC in Glasgow in April, which has been postponed to 2021, due to the current situation. I have given a talk at the LMS Scottish Numerical Methods Network workshop on Multiscale Methods in June. In terms of outreach work, I have held a 10 minute talk about PhD life to Y4 and Y5 undergraduate UoE students and I co-facilitated a lunch meeting, organised by the Piscopia Initiative, aimed at female undergraduate students in order to enhance postgraduate applications from female students. While this type of event was organised for different Schottish universities, the one I attended has been at the University of Glasgow.
 Finally, as the organiser of the PG Colloquium I have also been an active part in the UoE PG Committee, such as by helping to organise the departmental christmas party. Currently we are preparing strategies on how to welcome the new PhD cohort in Edinburgh, as well as working on offering different social activities for the existing PhD community to decrease impact of Covid-19 measures on the social life of all PhD students.
 
 \subsection{Outlook}
 Outside my research project I am planning to get involved in the following activities during the next year.
-I will take at least one more class for credits. I may attend a second class for credits or attendance only, depending on my other commitments. In terms of knowledge enhancement, I would like to focus on catching up on PDE Theory/Analysis, as well as on expanding my coding skills, by learning Python or a similar language. ++ maybe more optimization techniques too -- goes with career stuff\\
+I will take at least one more class for credits. I may attend a second class for credits or attendance only, depending on my other commitments. In terms of knowledge enhancement, I would like to focus on catching up on PDE Theory/Analysis, optimization techniques, as well as on expanding my coding skills, by learning Python or a similar language.\\
 I hope to increase my involvement in conferences and workshops, sharing my work by giving talks, presenting posters and networking with different people. I will continue to attend seminars and workshops on different topics. I am hoping that, additionally, I will take part in an academic/ industry focussed study group.\\
 I want to invest some of my additional time in career planning and skills development. This can mean taking workshops, coding classes or by seeking out networking opportunities.\\ 	
 I am now a member of the SIAM-IMA Student Chapter Committee in Edinburgh and we are planning to host a series of events with different focus, such as outreach, industry, social events and PhD research talks. 

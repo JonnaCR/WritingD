@@ -2,23 +2,22 @@
 Almost analogously, we can consider a problem with boundary observation instead of subdomain observation.
 The problem of interest is then:
 \begin{align*}
-&\min_{\Sta, w} \quad \frac{1}{2}|| \Sta -\hat \Sta||^2_{L_2(\partial \Sigma_R)} + \frac{\beta}{2}||w||^2_{L_2(\Sigma)}\\
+&\min_{\Sta, w} \quad \frac{1}{2}|| \Sta -\widehat \Sta||^2_{L_2(\partial \Omega_R \times (0,T))} + \frac{\beta}{2}||w||^2_{L_2(\Sigma)}\\
 \text{subject to:}\\
 &\partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}) +\nabla \cdot (\rho \nabla V_{ext}) + \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' + w \quad  \quad\text{in} \quad \Sigma,\notag\\
 & \rho = \rho_0 \quad \text{at} \quad t=0 \notag\\
 & - \mathbf{j} \cdot \nor = \mathbbm{1}_{\partial \Omega_L}( C_{L1}  + C_{L2}\Sta) +\mathbbm{1}_{\partial \Omega_R} ( C_{R1}  + C_{R2}\Sta) +\mathbbm{1}_{\partial \Omega_I} 0, \quad  \quad\text{on} \quad \partial \Omega, 
 \end{align*}
-(+++ check $\partial \Sigma$ vs $\partial \Omega$ in cost functional +++)
 where $C_{L1}, C_{L2}, C_{R1}$, $C_{R2}$ are constants and $\mathbbm{1}$ is the indicator function of the set (the parts of the boundary) of interest.
 Furthermore, $\mathbf{j}$ satisfies:
 \begin{align*}
 \mathbf{j}=\nabla \rho - (\rho \mathbf{w}) +(\rho \nabla V_{ext}) +  \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr'.
 \end{align*}
-Moreover, let $\hat \Sta$ be defined such that:
+Moreover, let $\widehat \Sta$ be defined such that:
 \begin{align*}
-\hat \Sta = \mathbbm{1}_{\partial \Omega_{R1}} \tilde \Sta  +\mathbbm{1}_{\partial \Omega_{R2}} 0.
+\widehat \Sta = \mathbbm{1}_{\partial \Omega_{R1}} \tilde \Sta  +\mathbbm{1}_{\partial \Omega_{R2}} 0.
 \end{align*}
-This means, while we observe $\hat \rho$ on the whole boundary, the desired state here asks for mass to be observed on the boundary $\partial \Omega_{R1}$.
+This means, while we observe $\widehat \rho$ on the whole boundary, the desired state here asks for mass to be observed on the boundary $\partial \Omega_{R1}$.
 The resulting adjoint equation is:
 \begin{align*}
 - \partial_t  \Adjb  - \nabla \Adjb \cdot \mathbf{w} - \nabla^2 \Adjb \notag 

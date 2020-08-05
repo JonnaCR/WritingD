@@ -6,7 +6,5 @@ I was expecting a `,' or a `}'---line 28 of file GeneralBib.bib
  :     volume={13},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Burger1"
-Warning--I didn't find a database entry for "Powell1"
 Warning--empty journal in albi2014kinetic
 (There was 1 error message)

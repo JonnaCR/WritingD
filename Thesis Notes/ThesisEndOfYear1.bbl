@@ -133,10 +133,33 @@ Giacomo Albi, Michael Herty, and Lorenzo Pareschi.
   opinion consensus.
 \newblock 2014.
 
+\bibitem{Burger1}
+M.~Burger, M.~Di~Francesco, P.~A. Markowich, and M.-T. Wolfram.
+\newblock Mean field games with nonlinear mobilities in pedestrian dynamics.
+\newblock {\em Discrete Cont. Dyn.-B}, 19(5):1311--1333, 2014.
+
 \bibitem{Archer1}
 A.~J. Archer.
 \newblock Dynamical density functional theory for molecular and colloidal
   fluids: A microscopic approach to fluid mechanics.
 \newblock {\em The Journal of Chemical Physics}, 130, 2009.
+
+\bibitem{Roth1}
+Roland Roth.
+\newblock Fundamental measure theory for hard-sphere mixtures: a review.
+\newblock {\em ournal of Physics: Condensed Matter}, 22(6), 2010.
+
+\bibitem{Powell1}
+M.~J.~D. Powell.
+\newblock A {F}ortran subroutine for solving systems of nonlinear algebraic
+  equations.
+\newblock In P.~Rabinowitz, editor, {\em Numerical Methods for Nonlinear
+  Algebraic Equations}, chapter~7. Gordon and Breach, 1970.
+
+\bibitem{fsolve1}
+{\scshape MATLAB}.
+\newblock Equation solving algorithms.
+\newblock
+  \url{https://uk.mathworks.com/help/optim/ug/equation-solving-algorithms.html#bqa_so0}.
 
 \end{thebibliography}
