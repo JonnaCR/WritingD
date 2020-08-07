@@ -1,6 +1,6 @@
 
 \subsubsection{PDE-Constrained Optimization Problem}
-In the following we consider an optimal control problem, with PDE-constraint described by \eqref{eqn:INeqns1}. 
+In the following, we consider an optimal control problem, with PDE-constraint described by \eqref{eqn:INeqns1}. 
 The domain is $\Sigma=\Omega \times [0,T]$. As described in the previous section, there are two state variables, the particle density $\Sta$ and the velocity $\Stav$. The control is applied through a background flow term $\mathbf{w}$ and the desired state is denoted by $\widehat \rho$. 
 \begin{align*}
 &\min_{\Sta,\Stav,\mathbf{w} } \mathcal J(\Sta,\Stav) \coloneqq \quad \frac{1}{2}||\Sta - \widehat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
@@ -22,46 +22,50 @@ The Lagrangian for the above problem is:
 & + \int_0^T \int_\Omega (\frac{\partial \Sta}{\partial t} + \nabla \cdot (\Sta \Stav)) \Adjb dr dt\\ 
 & +\int_0^T \int_{\partial\Omega} \Sta \Stav \cdot \mathbf{n} \Adjc dr dt,
 \end{align*}
-where $\Adja$, $\Adjb$ and $\Adjc$ are Lagrange multipliers associated with the PDE for $\Stav$, the PDE for $\Sta$ and the boundary condition, respectively.
+where $\Adja$, $\Adjb$ and $\Adjc$ are the Lagrange multipliers associated with the PDE for $\Stav$, the PDE for $\Sta$ and the boundary condition, respectively.
 
 
 \subsubsection{Adjoint Equation 1}
 
-The derivative of $\mathcal{L}$ with respect to $\Sta$ in some direction $h$ is taken where ${h} \in C_0^\infty(\Sigma) $.
-First, the derivative of $f(\rho) = \nabla \ln \rho $ needs to be treated separately. 
+The derivative of $\mathcal{L}$ with respect to $\Sta$ in some direction $h$ is taken, where ${h} \in C_0^\infty(\Sigma) $.
+First, the derivative of $F(\rho) = \nabla \ln \rho $ is treated separately. The Fr\'echet derivative, as stated in the extended project report, is the following, where $U$ and $V$ are Banach spaces.
+\theoremstyle{definition}
+\begin{definition}\cite{DeLosReyesOptimization}
+	If $F$ is G\^{a}teaux differentiable at $u \in U$, and satisfies in addition that
+	\begin{align*}
+	\lim_{\norm{h}_U \to 0} \frac{\norm{F(u+h)-F(u) -F'(u)h}_V}{\norm{h}_U}=0,
+	\end{align*}
+	then $F'(u)$ is called the Fr\'echet derivative of $F$ at $u$ and $F$ is called \emph{Fr\'echet differentiable}.
+\end{definition}
 Consider:
 \begin{align*}
-f(\rho + h) - f(\rho) &= \nabla \ln(\rho +h) - \nabla \ln(\rho)  = \nabla \ln \left(\frac{\rho + h}{\rho}\right) \\
-&= \nabla \ln\left(1 + \frac{h}{\rho}\right) = \nabla \left(\frac{h}{\rho} - \frac{1}{2}\left(\frac{h}{\rho}\right)^2 + ...\right).
+F(\rho + h) - F(\rho) &= \nabla \ln(\rho +h) - \nabla \ln(\rho)  = \nabla \ln \left(\frac{\rho + h}{\rho}\right) \\
+&= \nabla \ln\left(1 + \frac{h}{\rho}\right) = \nabla \left(\frac{h}{\rho} - \frac{1}{2}\left(\frac{h}{\rho}\right)^2 + \frac{1}{3}\left(\frac{h}{\rho}\right)^3 - ...\right).
 \end{align*}
-{\color{blue} We consider the Fr\'echet derivative $Df(h) = \frac{\delta f}{\delta \rho}h$. We find that $\frac{\delta f}{\delta \rho} = \nabla \frac{1}{\rho}$ and so the Fr\'echet derivative becomes $Df(h) = \left(\nabla \frac{1}{\rho}\right)h$. [+++ need to fix the above +++] }\\
-Then we get:
+Since $F'(u)$ is a linear operator, which is applied to $h$, the first term in the above expansion satisfies Definition 3.1, so that $F'(u)h = \nabla \left(\frac{h}{\rho} \right)$. 
+Substituting this, and taking the derivatives of the remaining terms, we get:
 \begin{align*}
 &\mathcal{L}_\Sta(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc)h = \int_0^T \int_\Omega  (\Sta - \widehat \Sta)h drdt \\
 &+ \int_0^T \int_\Omega \bigg( \frac{1}{m}\nabla \bigg(\frac{h}{\rho}\bigg)\cdot \Adja \bigg)  dr dt + \int_0^T \int_\Omega \bigg(\int_\Omega h(r') \mathbf{K}(r,r') dr'\bigg) \cdot \Adja dr dt\\
-& + \int_0^T \int_\Omega \bigg(\Adjb\frac{\partial h}{\partial t} + \Adjb\nabla \cdot (h \Stav)\bigg)  dr dt +\int_0^T \int_{\partial\Omega} \Adjc h\Stav \cdot \mathbf{n}  dr dt,
+& + \int_0^T \int_\Omega \bigg(\Adjb\frac{\partial h}{\partial t} + \Adjb\nabla \cdot (h \Stav)\bigg)  dr dt +\int_0^T \int_{\partial\Omega} \Adjc h\Stav \cdot \mathbf{n}  dr dt.
 \end{align*}
-where the product rule is used to take the derivative of the interaction term.
-Looking at different integral terms individually:
+We consider the different integral terms individually and use integration by parts to rewrite them:
 \begin{align*}
 I_1 = \int_0^T \int_\Omega \bigg( \frac{1}{m}\nabla \bigg(\frac{h}{\rho}\bigg)\cdot \Adja \bigg)  dr dt  = \int_0^T \int_{\partial \Omega} \frac{1}{m} \frac{h}{\rho} \Adja \cdot \mathbf{n} dr dt - \int_0^T \int_\Omega \frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja h dr dt 
 \end{align*}
 \begin{align*}
 I_2 = \int_0^T \int_\Omega \Adjb\frac{\partial h}{\partial t} dr dt = \int_\Omega h(T) \Adjb(T) dr dt - \int_0^T \int_\Omega  \frac{\partial \Adjb}{\partial t}h dr dt
 \end{align*}
-Note that ${h}(r,0)=0$, (in order to satisfy the condition for all admissible ${h}$) and so the initial condition vanishes from the above expression.
+Note that ${h}(r,0)=0$, in order to satisfy the condition for all admissible ${h}$, and so the initial condition vanishes from the expression for $I_2$.
 \begin{align*}
 I_3= \int_0^T \int_\Omega \Adjb\nabla \cdot (h \Stav) dr dt = \int_0^T \int_{\partial \Omega} \Adjb \Stav \cdot \mathbf{n} h dr dt - \int_0^T \int_\Omega \nabla \Adjb \cdot \Stav h dr dt.
 \end{align*}
 Furthermore, we have:
 \begin{align*}
-I_{4}&= \int_0^T \int_\Omega \bigg(\int_\Omega  h(r') \mathbf{K}(r,r')dr'\bigg) \cdot \Adja(r) drdt=\int_0^T \int_\Omega \int_\Omega h(r') \mathbf{K}(r,r') \cdot \Adja(r) drdr'dt,
+I_{4}&= \int_0^T \int_\Omega \bigg(\int_\Omega  h(r') \mathbf{K}(r,r')dr'\bigg) \cdot \Adja(r) drdt=\int_0^T \int_\Omega  h(r')\bigg(\int_\Omega  \mathbf{K}(r,r')\cdot \Adja(r) dr \bigg)dr'dt,
 \end{align*}
-swapping the order of integration. Then:
-\begin{align*}
-I_{4}&= \int_0^T \int_\Omega  h(r')\bigg(\int_\Omega  \mathbf{K}(r,r')\cdot \Adja(r) dr \bigg)dr'dt,
-\end{align*}
-and relabelling $r \to r'$ and $r' \to r$ gives:
+by swapping the order of integration. 
+Relabelling $r \to r'$ and $r' \to r$, since the particles are assumed to be indistinguishable, gives:
 \begin{align*}
 I_{4}&= \int_0^T \int_\Omega  h(r)\bigg(\int_\Omega  \mathbf{K}(r',r) \cdot \Adja(r') dr' \bigg)drdt.
 \end{align*}
@@ -75,28 +79,28 @@ Replacing $I_1, I_2, I_3$ and $I_4$ in the derivative gives:
 &+ \int_0^T \int_\Omega \bigg( (\Sta - \widehat \Sta) - \frac{\partial \Adjb}{\partial t} -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr'  \bigg)hdr dt\\
 &+\int_0^T \int_{\partial \Omega} \bigg( \frac{1}{m} \frac{1}{\rho} \Adja \cdot \mathbf{n} + \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n}\bigg)h  dr dt
 \end{align*}
-Setting $\mathcal{L}_\Sta(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc)h=0$, and restricting the admissible set of choices of $h$ to:
+We now set $\mathcal{L}_\Sta(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc)h=0$, and restrict the admissible set of choices of $h$ to:
 \begin{align*}
 h&=0 \quad \text{on} \quad \partial \Omega\\
 h(T)&=0.
 \end{align*}
-Then the derivative becomes:
+The result is:
 \begin{align*}
  &\int_0^T \int_\Omega \bigg((\Sta - \widehat \Sta) - \frac{\partial \Adjb}{\partial t} -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja  -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr'  \bigg)hdr dt =0.
 \end{align*}
 Since this has to hold for all $h \in C_0^\infty(\Sigma)$ and $C_0^\infty(\Sigma)$ is dense in $L_2(\Sigma)$, the first adjoint equation is derived as:
 \begin{align}
-&(\Sta - \widehat \Sta) - \frac{\partial \Adjb}{\partial t} - \nabla \Adjb \cdot \Stav -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja   -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr'  \qquad \text{in} \quad \Sigma \notag
+&(\Sta - \widehat \Sta) - \frac{\partial \Adjb}{\partial t} - \nabla \Adjb \cdot \Stav -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja   -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' = 0  \qquad \text{in} \quad \Sigma \notag
 \end{align}
 Then, relaxing the conditions on $h$, such that $h(T) \neq 0$ is a permissible choice, gives:
 \begin{align*}
 \int_\Omega h(T) \Adjb(T) dr dt=0,
 \end{align*}
-and by the same density argument as above, this gives the final time condition for $\Adjb$:
+and by the same density argument as above, this results in the final time condition for $\Adjb$:
 \begin{align*}
 \Adjb(T) = {0} .
 \end{align*}
-Finally, allowing $h \neq 0$ on $\partial\Omega$ result in:
+Finally, allowing $h \neq 0$ on $\partial\Omega$, we find:
 \begin{align*}
 \int_0^T \int_{\partial \Omega} \bigg( \frac{1}{m} \frac{1}{\rho} \Adja \cdot \mathbf{n}  + \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n}\bigg)h  dr dt=0,
 \end{align*}
@@ -104,16 +108,17 @@ and again by a density argument:
 \begin{align*}
 \frac{1}{m} \frac{1}{\rho} \Adja \cdot \mathbf{n}  +  \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n} = 0.
 \end{align*}
-However, since $\Stav \cdot \mathbf{n} =0$ on $ \partial\Omega$,  we get:
+However, since $\Stav \cdot \mathbf{n} =0$ on $ \partial\Omega$,  this reduces to:
 \begin{align*}
 \Adja \cdot \mathbf{n}  = 0.
 \end{align*}
 Therefore, the first adjoint equation of this problem is:
-\begin{align*}
+\begin{align}
+\label{eqn:INAdj1}
 &  \frac{\partial \Adjb}{\partial t}  = (\Sta - \widehat \Sta)- \nabla \Adjb \cdot \Stav -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr'  \qquad \text{in} \quad \Sigma \\
-&\Adja \cdot \mathbf{n}  = 0 \quad \text{on} \quad \partial \Omega\\
- &\Adjb(T) = {0} .
-\end{align*}
+&\Adja \cdot \mathbf{n}  = 0 \qquad \qquad\qquad \qquad\qquad \qquad\qquad \qquad\qquad \qquad\qquad\quad \text{on} \quad \partial \Omega \notag \\
+ &\Adjb(T) = {0} . \notag
+\end{align}
 
 
 \subsubsection{Adjoint Equation 2}
@@ -159,25 +164,26 @@ Replacing the rewritten integrals gives:
 &+\int_0^T \int_\Omega 
 \bigg( - \frac{\eta}{m} \nabla^2 \Adja -   \frac{\partial \Adja}{\partial t} + \gamma\Adja-\Sta\nabla \Adjb +(\nabla \Stav)^\top\Adja 
 - (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja   \bigg)\cdot  \mathbf{h} drdt\\
-& +\int_0^T \int_{\partial\Omega} (\Stav \cdot \mathbf{n})(\Adja \cdot \mathbf{h}) +(\Sta  \Adjc + \Adjb \Sta)  (\mathbf{n}\cdot \mathbf{h}) dr dt + \int_0^T \int_{\partial \Omega}  \bigg( \frac{\eta}{m}  (\nabla \Adja)^\top \mathbf{h}  - \frac{\eta}{m}(\nabla \mathbf{h})^\top \Adja \bigg) \cdot \mathbf{n} dr dt\\
+& +\int_0^T \int_{\partial\Omega} (\Stav \cdot \mathbf{n})(\Adja \cdot \mathbf{h}) +(\Sta  \Adjc + \Adjb \Sta)  (\mathbf{n}\cdot \mathbf{h}) dr dt \\
+&+ \int_0^T \int_{\partial \Omega}  \bigg( \frac{\eta}{m}  (\nabla \Adja)^\top \mathbf{h}  - \frac{\eta}{m}(\nabla \mathbf{h})^\top \Adja \bigg) \cdot \mathbf{n} dr dt.
 \end{align*}
 Then, setting $\mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}=\mathbf{0}$ and placing the restrictions on $\mathbf{h}$, as before:
 \begin{align*}
-\mathbf{h}&=\mathbf{0}, \ \ \nabla \mathbf{h} = 0 \quad \text{on} \quad \partial \Omega\\
-\mathbf{h}(T)&=\mathbf{0},
+&\mathbf{h}=\mathbf{0}, \ \ \nabla \mathbf{h} = 0 \quad \text{on} \quad \partial \Omega\\
+&\mathbf{h}(T)=\mathbf{0},
 \end{align*}
 gives:
 \begin{align*}
 &\int_0^T \int_\Omega 
 \bigg( - \frac{\eta}{m} \nabla^2 \Adja -   \frac{\partial \Adja}{\partial t} + \gamma\Adja-\Sta\nabla \Adjb +(\nabla \Stav)^\top\Adja 
-- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja    \bigg)\cdot  \mathbf{h} drdt = 0
+- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja    \bigg)\cdot  \mathbf{h} drdt = 0.
 \end{align*}
 Employing the density argument that $C_0^\infty(\Sigma)$ is dense in $L_2(\Sigma)$, which has to hold for all $\mathbf{h}\in C_0^\infty(\Sigma)$, results in:
 \begin{align*}
    \frac{\partial \Adja}{\partial t} =  - \frac{\eta}{m} \nabla^2 \Adja  + \gamma\Adja-\Sta\nabla \Adjb +(\nabla \Stav)^\top\Adja 
 - (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja     \ \qquad\qquad \text{in} \quad \Sigma.
 \end{align*}
-Then, relaxing the conditions on $\mathbf{h}$, so that $\mathbf{h}(T) \neq \mathbf{0} $ is permissible, gives
+Then, relaxing the conditions on $\mathbf{h}$, so that $\mathbf{h}(T) \neq \mathbf{0} $ is permissible, gives:
 \begin{align*}
  \int_\Omega m \Sta(T) \Adja(T) \cdot \mathbf{h}(T) dr dt=0,
 \end{align*}
@@ -185,7 +191,7 @@ and so, since $\Sta \neq 0$, this results in the final time condition for $\Adja
 \begin{align}
 \Adja(T)=\mathbf{0}.
 \end{align}
-Finally, relaxing the conditions on the boundary terms to choose $\mathbf{h}=\mathbf{0}$ and $\nabla \mathbf{h}  \neq 0$ on $\partial \Omega$ gives:
+Finally, choosing $\mathbf{h}=\mathbf{0}$ and $\nabla \mathbf{h}  \neq 0$ on $\partial \Omega$ results in:
 \begin{align*}
 \int_0^T \int_{\partial \Omega} - \frac{\eta}{m} (\nabla \mathbf{h})^\top \Adja \cdot \mathbf{n} dr dt = 0,
 \end{align*}
@@ -201,70 +207,57 @@ Then relaxing the final condition, such that $\mathbf{h} \neq 0$ on $\partial \O
 \end{align*}
 By the same density argument as above, this results in:
 \begin{align*}
-&(\Stav \cdot \mathbf{n})\Adja  +(\Sta  \Adjc + \Adjb \Sta)\mathbf{n}+\frac{\eta}{m}  (\nabla \Adja)^\top \mathbf{n} =\mathbf{0}
+&(\Stav \cdot \mathbf{n})\Adja  +(\Sta  \Adjc + \Adjb \Sta)\mathbf{n}+\frac{\eta}{m}  (\nabla \Adja)^\top \mathbf{n} =\mathbf{0}.
 \end{align*}
 And since $\Stav \cdot \mathbf{n} = \mathbf{0}$ on $\partial \Omega$, we have the following relationship between the Lagrange multipliers:
 \begin{align*}
-\bigg(\Sta  \Adjc + \Adjb \Sta+\frac{\eta}{m}  (\nabla \Adja)^\top \bigg) \mathbf{n} =\mathbf{0}
+\bigg(\Sta  \Adjc + \Adjb \Sta+\frac{\eta}{m}  (\nabla \Adja)^\top \bigg) \mathbf{n} =\mathbf{0}.
 \end{align*}
-+++ Now not sure if any more simplification possible...+ Also. I am not sure if the condition is $\mathbf{h} = \mathbf{0}$ on $\partial \Omega$, or if it should be $\mathbf{h} \cdot \mathbf{n}= \mathbf{0}$+++
 The second adjoint equation of the above problem is:
-\begin{align*}
+\begin{align}
+\label{eqn:INAdj2}
 &\frac{\partial \Adja}{\partial t} =  - \frac{\eta}{m} \nabla^2 \Adja  + \gamma\Adja-\Sta\nabla \Adjb +(\nabla \Stav)^\top\Adja 
 - (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja     \ \qquad\qquad \text{in} \quad \Sigma\\
-&\Adja \cdot \mathbf{n} = 0 \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \quad \text{on} \quad \partial \Omega \\
-&\Adja(T)=\mathbf{0}
-\end{align*}
+&\Adja \cdot \mathbf{n} = 0 \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad\qquad \qquad\quad \text{on} \quad \partial \Omega \notag \\
+&\Adja(T)=\mathbf{0} \notag
+\end{align}
 \subsubsection{The Gradient Equation}
-Taking the derivative of the Lagrangian with respect to $\Con$, in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
+Taking the derivative of the Lagrangian with respect to $\mathbf{w}$, in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
 \begin{align*}
 \mathcal{L}_{\mathbf{w}}(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \mathbf{w} \cdot \mathbf{h} dr dt - \int_0^T \int_\Omega \frac{1}{m} \Adja \cdot \mathbf{h} dr dt \\
 = \int_0^T \int_\Omega ( \beta \mathbf{w} - \frac{1}{m}\Adja) \cdot \mathbf{h} dr dt.
 \end{align*}
 Employing the same density argument for the permissible $\mathbf{h}$ gives the gradient equation of the problem:
 \begin{align*}
- \mathbf{w} = \frac{1}{\beta m} \Adja \quad \text{in} \quad \Sigma \quad \text{and on} \quad \partial\Omega.
+ \mathbf{w} = \frac{1}{\beta m} \Adja.
 \end{align*}
 
 \subsubsection{Rewriting the Equations for Implementation} \label{sec:INImplementation}
-We employ the transformation $\rho = e^s$, so that $s = \ln \rho$. This is in order to ensure that $\rho$ remains positive, which is a natural condition for the particle density to satisfy. For now, neglect interaction term.
-\\
-\\
+We employ the transformation $\rho = e^s$, so that $s = \ln \rho$. This is in order to ensure that $\rho$ remains positive, which is a natural condition for the particle density to satisfy. 
 The forward equations become:
-\begin{align}
-& \frac{\partial \Stav}{\partial t}= -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con +\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav \label{eqn:INreducedv1}\\
-&\quad \quad  -\int_\Omega e^{s(r')} \mathbf{K}(r,r')dr'\\
- &\frac{\partial s}{\partial t} = - \Stav \cdot \nabla s - \nabla \cdot \Stav \label{eqn:INreducedrho1} .
-\end{align}
-Here, we only divided the first equation by $m \Sta$ and used the fact that $\nabla \Sta = \Sta \nabla \ln \Sta$.\\
-\\
-The first adjoint equation does not change much. It was: 
 \begin{align*}
-&  \frac{\partial \Adjb}{\partial t}  = (\Sta - \widehat \Sta)- \nabla \Adjb \cdot \Stav -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' 
+& \frac{\partial \Stav}{\partial t}= -  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V_{ext} -\frac{1}{m}\Con +\frac{1}{m} \mathbf{w} - \frac{1}{m} \nabla s - \gamma \Stav +  \frac{\eta}{m} \nabla^2 \Stav\\ %\label{eqn:INreducedv1}\\
+&\quad \quad  -\int_\Omega e^{s(r')} \mathbf{K}(r,r')dr' \notag\\
+ &\frac{\partial s}{\partial t} = - \Stav \cdot \nabla s - \nabla \cdot \Stav. %\label{eqn:INreducedrho1} .
 \end{align*}
-and becomes:
+The first adjoint equation \eqref{eqn:INAdj1} does not change much and becomes:
 \begin{align*}
-&  \frac{\partial \Adjb}{\partial t}  = (\Sta - \widehat \Sta)- \nabla \Adjb \cdot \Stav-\frac{1}{m} e^{-s}\nabla \cdot \Adja-  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' 
+&  \frac{\partial \Adjb}{\partial t}  = (e^s - \widehat \Sta)- \nabla \Adjb \cdot \Stav-\frac{1}{m} e^{-s}\nabla \cdot \Adja-  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' .
 \end{align*}
 \\
-The second adjoint equation was:
-\begin{align*}
-&\frac{\partial \Adja}{\partial t} =  - \frac{\eta}{m} \nabla^2 \Adja  + \gamma\Adja-\Sta\nabla \Adjb +(\nabla \Stav)^\top\Adja 
-- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja   
-\end{align*}
-And therefore the new adjoint equation is:
+The second adjoint equation \eqref{eqn:INAdj2} becomes:
 \begin{align*}
 &\frac{\partial \Adja}{\partial t} =  - \frac{\eta}{m} \nabla^2 \Adja  + \gamma\Adja-e^s\nabla \Adjb +(\nabla \Stav)^\top\Adja 
-- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja   
+- (\Stav \cdot \nabla)\Adja -  (\nabla \cdot \Stav)\Adja   .
 \end{align*}
 
 Finally, in both adjoints, time is reversed due to the negative Laplacian term and the final time conditions, using $\tau = T-t$. See Section \ref{sec:NumericalMethods} for a more detailed explanation of this necessity.
 The first adjoint equation becomes:
 \begin{align*}
-\frac{\partial \Adjb}{\partial \tau}  = - (e^s - \widehat \Sta)+ \nabla \Adjb \cdot \Stav +\frac{1}{m} e^{-s}\nabla \cdot \Adja  +  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' 
+\frac{\partial \Adjb}{\partial \tau}  = - (e^s - \widehat \Sta)+ \nabla \Adjb \cdot \Stav +\frac{1}{m} e^{-s}\nabla \cdot \Adja  +  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr' .
 \end{align*}
 The second adjoint equation gives:
 \begin{align*}
-&\frac{\partial \Adja}{\partial \tau} =   \frac{\eta}{m} \nabla^2 \Adja  - \gamma\Adja-e^s\nabla \Adjb -(\nabla \Stav)^\top\Adja 
-+ (\Stav \cdot \nabla)\Adja +  (\nabla \cdot \Stav)\Adja  
+&\frac{\partial \Adja}{\partial \tau} =   \frac{\eta}{m} \nabla^2 \Adja  - \gamma\Adja + e^s\nabla \Adjb -(\nabla \Stav)^\top\Adja 
++ (\Stav \cdot \nabla)\Adja +  (\nabla \cdot \Stav)\Adja  .
 \end{align*}
