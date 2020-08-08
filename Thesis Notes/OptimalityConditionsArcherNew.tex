@@ -1,7 +1,7 @@
 
 \subsubsection{PDE-Constrained Optimization Problem}
 In the following, we consider an optimal control problem, with PDE-constraint described by \eqref{eqn:INeqns1}. 
-The domain is $\Sigma=\Omega \times [0,T]$. As described in the previous section, there are two state variables, the particle density $\Sta$ and the velocity $\Stav$. The control is applied through a background flow term $\mathbf{w}$ and the desired state is denoted by $\widehat \rho$. 
+The domain is $\Sigma=\Omega \times [0,T]$. As described in the previous section, there are two state variables, the particle density $\Sta$ and the velocity $\Stav$. The control is applied through a background flow term $\mathbf{w}$ and the desired state is denoted by $\widehat \rho$. The optimal control problem is:
 \begin{align*}
 &\min_{\Sta,\Stav,\mathbf{w} } \mathcal J(\Sta,\Stav) \coloneqq \quad \frac{1}{2}||\Sta - \widehat \Sta||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
 &\text{subject to:}\\
@@ -77,7 +77,7 @@ Replacing $I_1, I_2, I_3$ and $I_4$ in the derivative gives:
 \begin{align*}
 &\mathcal{L}_\Sta(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc)h = \int_\Omega h(T) \Adjb(T) dr dt  \\
 &+ \int_0^T \int_\Omega \bigg( (\Sta - \widehat \Sta) - \frac{\partial \Adjb}{\partial t} -\frac{1}{m} \frac{1}{\rho}\nabla \cdot \Adja -  \int_\Omega  \Adja(r') \cdot\mathbf{K}(r,r')   dr'  \bigg)hdr dt\\
-&+\int_0^T \int_{\partial \Omega} \bigg( \frac{1}{m} \frac{1}{\rho} \Adja \cdot \mathbf{n} + \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n}\bigg)h  dr dt
+&+\int_0^T \int_{\partial \Omega} \bigg( \frac{1}{m} \frac{1}{\rho} \Adja \cdot \mathbf{n} + \Adjb \Stav \cdot \mathbf{n}   +\Adjc \Stav \cdot \mathbf{n}\bigg)h  dr dt.
 \end{align*}
 We now set $\mathcal{L}_\Sta(\Sta,\Stav,\Con,\Adja,\Adjb,\Adjc)h=0$, and restrict the admissible set of choices of $h$ to:
 \begin{align*}
@@ -133,8 +133,7 @@ Taking the derivative of the above Lagrangian with respect to $\Stav$ in the dir
 Some of the terms are considered separately, as in the previous calculations:
 
 \begin{align*}
-I_5 &= \int_0^T \int_\Omega  \frac{\partial \mathbf{h} }{\partial t} \cdot \Adja dr dt \\
-&= \int_\Omega \Adja(T) \cdot \mathbf{h}(T) dr dt  - \int_0^T \int_\Omega \frac{\partial \Adja}{\partial t} \cdot \mathbf{h} dr dt.
+I_5 &= \int_0^T \int_\Omega  \frac{\partial \mathbf{h} }{\partial t} \cdot \Adja dr dt = \int_\Omega \Adja(T) \cdot \mathbf{h}(T) dr dt  - \int_0^T \int_\Omega \frac{\partial \Adja}{\partial t} \cdot \mathbf{h} dr dt.
 \end{align*}
 Note that $\mathbf{h}(0)=\mathbf{0}$, in order to satisfy the conditions on $\mathbf{h}$, as before.
 \begin{align*}
@@ -167,7 +166,7 @@ Replacing the rewritten integrals gives:
 & +\int_0^T \int_{\partial\Omega} (\Stav \cdot \mathbf{n})(\Adja \cdot \mathbf{h}) +(\Sta  \Adjc + \Adjb \Sta)  (\mathbf{n}\cdot \mathbf{h}) dr dt \\
 &+ \int_0^T \int_{\partial \Omega}  \bigg( \frac{\eta}{m}  (\nabla \Adja)^\top \mathbf{h}  - \frac{\eta}{m}(\nabla \mathbf{h})^\top \Adja \bigg) \cdot \mathbf{n} dr dt.
 \end{align*}
-Then, setting $\mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}=\mathbf{0}$ and placing the restrictions on $\mathbf{h}$, as before:
+Then, setting $\mathcal{L}_\Stav(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}={0}$ and placing the restrictions on $\mathbf{h}$, as before:
 \begin{align*}
 &\mathbf{h}=\mathbf{0}, \ \ \nabla \mathbf{h} = 0 \quad \text{on} \quad \partial \Omega\\
 &\mathbf{h}(T)=\mathbf{0},
@@ -224,10 +223,10 @@ The second adjoint equation of the above problem is:
 \subsubsection{The Gradient Equation}
 Taking the derivative of the Lagrangian with respect to $\mathbf{w}$, in the direction $\mathbf{h} \in C_0^\infty(\Sigma)$, gives:
 \begin{align*}
-\mathcal{L}_{\mathbf{w}}(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \mathbf{w} \cdot \mathbf{h} dr dt - \int_0^T \int_\Omega \frac{1}{m} \Adja \cdot \mathbf{h} dr dt \\
+\mathcal{L}_{\mathbf{w}}(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h}= \int_0^T \int_\Omega \beta \mathbf{w} \cdot \mathbf{h} dr dt - \int_0^T \int_\Omega \frac{1}{m} \Adja \cdot \mathbf{h} dr dt 
 = \int_0^T \int_\Omega ( \beta \mathbf{w} - \frac{1}{m}\Adja) \cdot \mathbf{h} dr dt.
 \end{align*}
-Employing the same density argument for the permissible $\mathbf{h}$ gives the gradient equation of the problem:
+Considering $\mathcal{L}_{\mathbf{w}}(\Sta,\Stav,\mathbf{w},\Adja,\Adjb,\Adjc) \mathbf{h} =0$ and employing the same density argument for permissible choices of $\mathbf{h}$ as above gives the gradient equation of the problem:
 \begin{align*}
  \mathbf{w} = \frac{1}{\beta m} \Adja.
 \end{align*}

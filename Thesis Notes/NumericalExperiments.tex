@@ -1,40 +1,40 @@
 
-In order to solve the optimal control problems \eqref{eqn:ADFlowOCP} and \eqref{eqn:AdvDiffLinear}, some inputs must be provided. The desired state $\widehat \rho$, the PDE source term $f$, and the external potential $V_{ext}$ must be given. Furthermore, an initial condition for $\rho$, the final time condition for $\adj$ and an initial guess for the control $\vec{w}$ have to be be specified. 
+In order to solve the optimal control problems \eqref{eqn:ADFlowOCP} and \eqref{eqn:AdvDiffLinear}, some inputs must be provided. The desired state $\widehat \rho$, the PDE source term $f$, and the external potential $V_{ext}$ must be given. Furthermore, an initial condition for $\rho$, the final time condition for $\adj$ and an initial guess for the control $\mathbf{w}$ have to be be specified. 
 The interaction kernel is of the form:
 \begin{align*}
 \mathbf{K} = \nabla V_2, \qquad V_2 = e^{-x^2}.
 \end{align*}
 Three interaction strengths are considered in this section. Firstly, each problem is solved without an interaction term present ($\kappa = 0$). Then, the considered problem is solved with an order one attractive interaction term ($\kappa = -1$) and an order one repulsive interaction term ($\kappa = 1$), respectively. Initially, the control $\mathbf{w}$ is set to zero. It is then investigated how the control changes from this baseline, influenced by the different interaction strengths. 
-Initially the forward PDE is solved, using the initial configuration $\mathbf{w}=0$ and the cost functional $J$ is evaluated at this initial state and denoted by $\mathcal{J}_{uc}$. Note that no optimization methods are used to derive this value. We then expect that applying the optimization method lowers the value of the cost functional, which we aim to minimize. 
+Initially the forward PDE is solved, using the initial configuration $\mathbf{w}=\mathbf 0$ and the cost functional $\mathcal J$ is evaluated at this initial state and denoted by $\mathcal{J}_{uc}$. Note that no optimization methods are used to derive this value. We then expect that applying the optimization method lowers the value of the cost functional, which we aim to minimize. 
 In particular, the value of the optimal cost functional, denoted by $\mathcal{J}_c$, is lower the more control is allowed to enter the system though the optimization process. 
 This depends on the value of the regularization parameter $\beta$ and it is expected that the control will increase with decreasing $\beta$, since the cost functionals in problems \eqref{eqn:ADFlowOCP} and \eqref{eqn:AdvDiffLinear} allow for a larger control with smaller $\beta$. 
 
 In the following examples, the domain considered is $\Omega \times [0,T] = [-1,1] \times [0,1]$. The number of spatial points is $N=30$ in one-dimensional examples, $N_1 = N_2 = 30$ in two-dimensional examples, and the number of time points is $n=20$, unless stated otherwise. The tolerances in the ODE solver are set to $10^{-8}$ and the tolerance for the convergence of the optimization algorithm is $10^{-4}$. The mixing parameter $\lambda$ is $0.01$, unless stated otherwise.
 \subsection{Non-linear Control Problems with an Additional Non-local Integral Term in 1D} \label{sec:Examples1d}
-Examples of solving Problem \eqref{eqn:ADFlowOCP}, with 'no-flux type'/Neumann boundary conditions and Dirichlet boundary conditions are given in this section. 
+Examples of solving Problem \eqref{eqn:ADFlowOCP}, with Neumann boundary conditions and Dirichlet boundary conditions are given in this section. 
  
 \subsubsection{Neumann Boundary Conditions, Example 1}	 
 The chosen inputs for this example are:
 \begin{align*}
-&\widehat \rho = \frac{1}{2}(1-t) + t\bigg(\frac{1}{2}\sin(\pi (y - 2)/2) + \frac{1}{2}\bigg),\\
+&\widehat \rho = \frac{1}{2}(1-t) + t\bigg(\frac{1}{2}\sin(\pi (x - 2)/2) + \frac{1}{2}\bigg),\\
 &\rho_{0} = \frac{1}{2}, \ \
 \adj_{T} = 0, \ \
 \mathbf{w} = \mathbf{0}, \ \ 
 f =0,\ \
 V_{ext} =0.
 \end{align*}	
-The value of the cost functional for the initial configuration ($\mathcal{J}_{uc}$), where $\mathbf{w} =\mathbf{0}$, is compared with the optimized case ($\mathcal{J}_c$) for different values of $\beta$ and for each of the interaction strengths in Table \ref{TabS5:Prob1}. It can be observed that in all cases $\mathcal{J}_{uc}$ is lower or equal value to $\mathcal{J}_c$. The lowest values of $\mathcal{J}_{c}$ will be observed for the smallest $\beta$ value considered. At large values of $\beta$, applying control is heavily penalised and the optimal control approaches zero, which coincides with the uncontrolled case. Furthermore, this is reflected in the number of iterations, which is small when $\beta$ is large, and vice versa. This is explained by the fact that if applying control is penalized heavily, then $\mathbf{w} = \mathbf 0$ is a better initial guess, and less iterations are needed to find the optimal solution, than when $\beta$ is small and more control is allowed.
+The value of the cost functional for the initial configuration ($\mathcal{J}_{uc}$), where $\mathbf{w} =\mathbf{0}$, is compared with the optimized case ($\mathcal{J}_c$) in Table \ref{TabS5:Prob1}, for different values of $\beta$ and for each of the interaction strengths. It can be observed that in all cases $\mathcal{J}_{uc}$ is lower or equal to $\mathcal{J}_c$. The lowest values of $\mathcal{J}_{c}$ will be observed for the smallest $\beta$ value considered. At large values of $\beta$, applying control is heavily penalised and the optimal control approaches zero, which coincides with the uncontrolled case. Furthermore, this is reflected in the number of iterations, which is small when $\beta$ is large, and vice versa. This is explained by the fact that if applying control is penalized heavily, then $\mathbf{w} = \mathbf 0$ is a better initial guess, and less iterations are needed to find the optimal solution, than when $\beta$ is small and more control is allowed.
 
  The desired state $\widehat \rho$, and the uncontrolled state $\rho$ for $\kappa =1$ and $\kappa = -1$ are shown in Figure \ref{Ex12DN1}. These two variables are independent of $\beta$. However, $\rho$ changes considerably with the choice of interaction strength $\kappa$, accumulating mass in the centre of the domain for attractive interactions and at the boundary for repulsive interactions. The optimal states $\rho$ for $\kappa = 1,0,-1$ and corresponding optimal controls, with $\beta = 10^{-3}$, are shown in Figure \ref{Ex12DN2}. 
 It can be observed that in the case of $\beta = 10^{-3}$, the optimal state $\rho$ is very similar to $\widehat \rho$, regardless of the choice of interaction. However, the corresponding control plot reveals that the control has to be applied differently in each case to account for the interaction effects. In general, the control is largely applied on the right half of the spatial domain, to carry mass to the left, where the desired state dictates it to be, as can be seen when $\kappa = 0$. However, when the particle interaction is repulsive, the control is moving some of the particle mass away from the boundary at $x=-1$ to correct for the repulsive particles accumulating there without control present, as illustrated in Figure \ref{Ex12DN1}. In the attractive case, the control corrects by carrying some mass to the boundary at $x=1$, since the uncontrolled particle density is clustered in the middle of the domain in this case, compare to Figure \ref{Ex12DN1}.
 \begin{figure}[h]
-	\includegraphics[scale=0.05]{Figure1.png}
-	\caption{Example 1, desired state $\widehat \rho$ and uncontrolled state $\rho$ at $\kappa =1$ and $\kappa =-1$}
+	\includegraphics[scale=0.062]{Figure1.png}
+	\caption{Example 1, desired state $\widehat \rho$, uncontrolled state $\rho$ at interaction strengths $\kappa =1$ and $\kappa =-1$.}
 	\label{Ex12DN1}
 \end{figure}
 \begin{figure}[h]
-	\includegraphics[scale=0.05]{Figure2.png}
-	\caption{Example 1, optimal state $\rho$ and the corresponding optimal control $\mathbf{w}$ for $\kappa = 1,0,-1$, $\beta = 10^{-3}$.}
+	\includegraphics[scale=0.058]{Figure2.png}
+	\caption{Example 1, optimal state $\rho$, corresponding optimal control $\mathbf{w}$ for interaction strengths $\kappa = 1,0,-1$, where $\beta = 10^{-3}$.}
 	\label{Ex12DN2}
 \end{figure}
 
@@ -44,8 +44,8 @@ It can be observed that in the case of $\beta = 10^{-3}$, the optimal state $\rh
 \subsubsection{Neumann Boundary Conditions, Example 2} 
 The chosen inputs for Example 2 are:
 \begin{align*}
-&\widehat \rho = \bigg(\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi y) + \frac{1}{2}\bigg),\\
-&\rho_{0} = \frac{1}{2}\cos(\pi y) + \frac{1}{2},\ \
+&\widehat \rho = \bigg(\frac{1}{2}\cos(\pi x) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi x) + \frac{1}{2}\bigg),\\
+&\rho_{0} = \frac{1}{2}\cos(\pi x) + \frac{1}{2},\ \
 \adj_{T} = 0,\ \
 \mathbf{w} = \mathbf{0},\ \
 f =0,\ \
@@ -53,8 +53,8 @@ V_{ext} =0.
 \end{align*}
 In Table \ref{TabS5:Prob2} the results for Example 2 are displayed. These are comparable with the results for Example 1, in the effect of $\beta$ and the number of iterations. In all three configurations of the interaction term, the control is focussed on transporting the mass from the middle of the domain onto two piles centred at $x=-0.5$ and $x=0.5$. In Figure \ref{Ex22DN1}, the desired state $\widehat \rho$, the optimal state $\rho$ and the optimal control $\mathbf{w}$ are displayed for $\beta = 10^{-3}$ and $\kappa = 1$, and compared to Example 3 below. Here, the number of points is chosen to be $N=40$ and $n=30$ (instead of $N=30$ and $n=20$), due to the steep gradients of the desired state.
 \begin{figure}[h]
-	\includegraphics[scale=0.05]{Figure3.png}
-	\caption{Example 2/ Example 3, desired state $\widehat \rho$, optimal state $\rho$ and corresponding optimal control $\mathbf{w}$, $\beta = 10^{-3}$, $\kappa= 1$.}
+	\includegraphics[scale=0.058]{Figure3.png}
+	\caption{Example 2/ Example 3, desired state $\widehat \rho$, optimal state $\rho$ and corresponding optimal control $\mathbf{w}$, for $\beta = 10^{-3}$, $\kappa= 1$.}
 	\label{Ex22DN1}
 \end{figure}
 
@@ -64,14 +64,14 @@ In Table \ref{TabS5:Prob2} the results for Example 2 are displayed. These are co
 \subsubsection{Dirichlet Boundary Conditions, Example 3} 
 The inputs for this example are:
 \begin{align*}
-&\widehat \rho = \bigg(\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi y) + \frac{1}{2}\bigg),\\
-&\rho_{0} = \frac{1}{2}\cos(\pi y) + \frac{1}{2},\ \
+&\widehat \rho = \bigg(\frac{1}{2}\cos(\pi x) + \frac{1}{2}\bigg)(1-t) + t\bigg(-\frac{1}{2}\cos(2 \pi x) + \frac{1}{2}\bigg),\\
+&\rho_{0} = \frac{1}{2}\cos(\pi x) + \frac{1}{2},\ \
 \adj_{T} = 0,\ \
 \mathbf{w} = \mathbf{0},\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
-Table \ref{TabS5:Prob3} presents the results for this example, for a range of $\beta$ values and different interaction strengths. The observations are in line with those in Example 1 and 2. In particular, $ \widehat \rho$ and $\rho_0$ coincide with those of the problem with Neumann boundary conditions in Example 2. A comparison between the two examples is illustrated in Figure \ref{Ex22DN1}. Both the optimal state $\rho$ and the optimal control are qualitatively different when considering Dirichlet boundary conditions over Neumann conditions. The numerical result for this example was achieved with $N=40$ and $n = 30$, rather than with $N=30$ and $n=20$. This indicates that the Dirichlet boundary conditions are harder to apply in this problem, due to the steep shape of the desired state. This steepness is somewhat less impactful in Example 2, where the desired state is not closely matched by the optimal state at the boundaries. In Example 3, while the optimal state matches the desired state perfectly at the boundary, the peaks of the desired state are matched less closely. In Figure \ref{Ex22DN1}, this can be confirmed by considering the control plots. The optimal control for Example 3 is larger than for Example 2, specifically between the boundaries of the domain and the peaks of the desired state, indicating difficulties in this region.
+Table \ref{TabS5:Prob3} presents the results for this example, for a range of $\beta$ values and different interaction strengths. The observations are in line with those in Example 1 and 2. In particular, $ \widehat \rho$ and $\rho_0$ coincide with those of the problem with Neumann boundary conditions in Example 2. A comparison between the two examples is illustrated in Figure \ref{Ex22DN1}. Both the optimal state $\rho$ and the optimal control are qualitatively different when considering Dirichlet boundary conditions over Neumann conditions. The numerical result for this example was achieved with $N=40$ and $n = 30$, rather than with $N=30$ and $n=20$. The Dirichlet boundary conditions seem even harder to apply in this problem, due to the steep shape of the desired state. This steepness is somewhat less impactful in Example 2, where the desired state is not closely matched by the optimal state at the boundaries. In Example 3, while the optimal state matches the desired state perfectly at the boundary, the peaks of the desired state are matched less closely. In Figure \ref{Ex22DN1}, this can be confirmed by considering the control plots. The optimal control for Example 3 is larger than for Example 2, specifically between the boundaries of the domain and the peaks of the desired state, indicating difficulties in this region.
 \input{InteractingProb3.tex} %\label{TabS5:Prob3}
 
 
@@ -100,18 +100,18 @@ Table \ref{TabS5:Prob3} presents the results for this example, for a range of $\
 
 
 \subsection{Linear Control Problems with an Additional Non-local Integral Term in 1D}
-In this section, examples of solving Problem \eqref{eqn:AdvDiffLinear} with both 'no-flux type' boundary conditions and Dirichlet boundary conditions.
+In this section, examples of solving Problem \eqref{eqn:AdvDiffLinear} with both 'no-flux type' boundary conditions and Dirichlet boundary conditions are discussed.
 \subsubsection{Dirichlet Boundary Conditions, Example 4}
 The inputs for this example are:
 \begin{align*}
-&\widehat \rho = (1 - t)\bigg(\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg)  + t\bigg(-\frac{1}{2}\cos(\pi y) + \frac{1}{2}\bigg),\\
-&\rho_{0} = \frac{1}{2}\cos(\pi y) + \frac{1}{2},\ \
+&\widehat \rho = (1 - t)\bigg(\frac{1}{2}\cos(\pi x) + \frac{1}{2}\bigg)  + t\bigg(-\frac{1}{2}\cos(\pi x) + \frac{1}{2}\bigg),\\
+&\rho_{0} = \frac{1}{2}\cos(\pi x) + \frac{1}{2},\ \
 \adj_{T} = 0,\ \
 {w} = 0,\ \
 f =0, \ \
 V_{ext} =\frac{1}{2}\left((x + 0.3)^2 - 0.2\right)\left((x-0.4)^2 - 0.3\right).
 \end{align*}
-In Table \ref{TabS5:Prob4} the results for Example 4 for a range of parameter values can be found. The results are qualitatively similar to the previous examples, but the control is applied linearly in this example. Note that here $\lambda = 0.005$, since $V_{{ext}}$ causes the numerical computations to be more challenging.
+In Table \ref{TabS5:Prob4}, the results for Example 4 for a range of parameter values can be found. The results are qualitatively similar to the previous examples, but the control is applied linearly in this example. Note that here $\lambda = 0.005$, since $V_{{ext}}$ causes the numerical computations to be more challenging.
 \input{InteractingProb4.tex} %\label{TabS5:Prob4}
 
 
@@ -120,7 +120,7 @@ In Table \ref{TabS5:Prob4} the results for Example 4 for a range of parameter va
 \subsubsection{Neumann Boundary Conditions, Example 5}
 The inputs for this example are:
 \begin{align*}
-&\widehat \rho = \frac{1}{2}(1-t) + t\frac{1}{2}(-\cos(\pi y) + 1),\\
+&\widehat \rho = \frac{1}{2}(1-t) + t\frac{1}{2}(-\cos(\pi x) + 1),\\
 &\rho_{0} = \frac{1}{2},\ \
 \adj_{T} = 0,\ \
 {w} = 0,\ \
@@ -144,18 +144,18 @@ q_{T} = 0,\ \
 f =0,\ \
 V_{ext} =0.
 \end{align*}
-This example is the two dimensional version of Example 1 in Section \ref{sec:Examples1d}. The results for this example are displayed in Table \ref{TabS5:Prob12D}. In Figures \ref{rhoHat2dEx2} it can be observed that as in Example 1 in Section \ref{sec:Examples1d}, the uncontrolled state forms a cluster in the centre of the domain, due to the attractive interactions. Figure \ref{rhoOpt2dEx2} shows the optimal state and control for different time points, for $\beta = 10^{-3}$ and $\kappa = -1$. Here, the control through a vector field illustrates why nonlinear control is called 'flow control'. 
+This example is the two dimensional version of Example 1 in Section \ref{sec:Examples1d}. The results for this example are displayed in Table \ref{TabS5:Prob12D}. In Figures \ref{rhoHat2dEx2} it can be observed that as in Example 1 in Section \ref{sec:Examples1d}, the uncontrolled state forms a cluster in the centre of the domain, due to the attractive interactions. Figure \ref{rhoOpt2dEx2} shows the optimal state and control for different time points, for $\beta = 10^{-3}$ and $\kappa = -1$. Here, the control through a vector field illustrates why non-linear control is called 'flow control'. 
 
 \input{Interacting2DProb1.tex} % \label{TabS5:Prob12D}
 
 \begin{figure}[h]
 	\includegraphics[scale=0.05]{Figure12D.png}
-	\caption{2D Example 1, uncontrolled $\rho$ and $\widehat \rho$, $\beta = 10^{-3}$, $\kappa = -1$.}
+	\caption{2D Example 1, uncontrolled $\rho$, desired state $\widehat \rho$, with $\beta = 10^{-3}$, $\kappa = -1$.}
 	\label{rhoHat2dEx2}
 \end{figure}
 \begin{figure}[h]
-	\includegraphics[scale=0.06]{Figure22D.png}
-	\caption{2D Example 1, controlled $\rho$ and optimal control $\vec{w}$, $\beta = 10^{-3}$, $\kappa = -1$.}
+	\includegraphics[scale=0.062]{Figure22D.png}
+	\caption{2D Example 1, controlled $\rho$, optimal control $\mathbf{w}$, with $\beta = 10^{-3}$, $\kappa = -1$.}
 	\label{rhoOpt2dEx2}
 \end{figure}
 
@@ -163,7 +163,7 @@ This example is the two dimensional version of Example 1 in Section \ref{sec:Exa
 \subsubsection{Neumann Boundary Conditions, Example 2}	
 Here, we have:
 \begin{align*}
-&\widehat \rho = \frac{1}{4}(1-t) + t\frac{1}{0.9921}e^{-3((y_1+0.2)^2 + (y_2+0.2)^2))},\\
+&\widehat \rho = \frac{1}{4}(1-t) + t\frac{1}{0.9921}e^{-3((x_1+0.2)^2 + (x_2+0.2)^2))},\\
 &\rho_0 = \frac{1}{4},\ \
 q_{T} = 0,\ \
 \mathbf{w} = \mathbf{0},\ \
@@ -177,12 +177,12 @@ The numerical results for this example are displayed in Table \ref{TabS5:Prob22D
 
 \begin{figure}[h]
 	\includegraphics[scale=0.05]{Figure32D.png}
-	\caption{2D Example 2: Uncontrolled $\rho$ and desired state $\widehat \rho$,  with $\beta = 10^{-3}$ and $\kappa = -1$. }
+	\caption{2D Example 2: Uncontrolled $\rho$, desired state $\widehat \rho$,  with $\beta = 10^{-3}$ and $\kappa = -1$. }
 	\label{rhoHat2dEx4}
 \end{figure}
 \begin{figure}[h]
-	\includegraphics[scale=0.06]{Figure42D.png}
-	\caption{2D Example 2: Optimal state $\rho$ and optimal control $\vec{w}$, with $\beta = 10^{-3}$ and $\kappa = -1$. A contour plot of the external potential $V^{\text{ext}}$ is superimposed on the control plots for reference.} 
+	\includegraphics[scale=0.062]{Figure42D.png}
+	\caption{2D Example 2: Optimal state $\rho$, optimal control $\mathbf{w}$, with $\beta = 10^{-3}$ and $\kappa = -1$. A contour plot of the external potential $V_{ext}$ is superimposed on the control plots for reference.} 
 	\label{rhoOpt2dEx4}
 \end{figure}
 
