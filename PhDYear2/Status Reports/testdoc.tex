@@ -1,0 +1,258 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\adj}{q}
+%\newcommand{\Con}{u}
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{{p}_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+
+
+
+\pagenumbering{gobble}
+\begin{document}
+testdocument for random tests
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{} & Fixed Point & \texttt{fsolve} & Difference   \\
+		\hline
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0011}$ & $\numprint{0.0011}$ &   \\
+		& \texttt{Iter} (\texttt{funcEval}) & $\numprint{670}$ ($\numprint{670}$)  & $\numprint{38}$ ($\numprint{31959}$)  &   \\
+		$\kappa =-1$ & Time taken (s) & $\numprint{2.4939e+2}$ & $\numprint{9.1546e+3}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{1.1348e-3}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{7.2742e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{7.6725e-2}$  \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0020}$ & $\numprint{0.0020}$ &   \\
+		& \texttt{Iter} (\texttt{funcEval}) & $\numprint{654}$ ($\numprint{654}$)  & $\numprint{38}$ ($\numprint{34239}$)  &   \\
+		$\kappa =1$ & Time taken (s) & $\numprint{3.3794e+2}$ & $\numprint{1.0167e+4}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{3.0610e-4}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{4.8701e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{8.9056e-3}$  \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of the outputs of the fixed point method, with those obtained using \texttt{fsolve}.}
+	\label{TabA3:Prob1}
+\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{} & Fixed Point & \texttt{fsolve} & Difference   \\
+		\hline
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0011}$ & $\numprint{0.0011}$ &   \\
+		& \texttt{Iter} & $\numprint{670}$ & $\numprint{38}$ ($\numprint{31959}$ )  &   \\
+		$\kappa =-1$ & Time taken (s) & $\numprint{2.4939e+2}$ & $\numprint{9.1546e+3}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{0.0011}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{0.0001}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{0.0767}$  \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0020}$ & $\numprint{0.0020}$ &   \\
+		& \texttt{Iter} & $\numprint{654}$ & $\numprint{38}$ ($\numprint{34239}$ )  &   \\
+		$\kappa =1$ & Time taken (s) & $\numprint{3.3794e+2}$ & $\numprint{1.0167e+4}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{0.0003}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{0.0000}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{0.0089}$  \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of the outputs of the fixed point method, with those obtained using \texttt{fsolve}.}
+	\label{TabA3:Prob1}
+\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{} & Fixed Point & \texttt{fsolve} & Difference   \\
+		\hline
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0011}$ & $\numprint{0.0011}$ &   \\
+		& \texttt{Iter} & $\numprint{670}$ & $\numprint{38}$ ($\numprint{31959}$ )  &   \\
+		$\kappa =-1$ & Time taken (s) & $\numprint{2.4939e+2}$ & $\numprint{9.1546e+3}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{1.1348e-3}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{7.2742e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{7.6725e-2}$  \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ &   \\
+		& $\mathcal{J}_{c}$ & $\numprint{0.0020}$ & $\numprint{0.0020}$ &   \\
+		& \texttt{Iter} & $\numprint{654}$ & $\numprint{38}$ ($\numprint{34239}$ )  &   \\
+		$\kappa =1$ & Time taken (s) & $\numprint{3.3794e+2}$ & $\numprint{1.0167e+4}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{3.0610e-4}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{4.8701e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}}$ & & & $\numprint{8.9056e-3}$  \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of the outputs of the fixed point method, with those obtained using \texttt{fsolve}.}
+	\label{TabA3:Prob1}
+\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{}& $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+		\hline
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ & $\numprint{0.0438}$ \\
+		$\kappa= \numprint{-1}$  & $\mathcal{J}_c$ & $\numprint{0.0011}$ & $\numprint{0.0267}$ & $\numprint{0.0435}$ & $\numprint{0.0438}$ \\
+		& \texttt{Iter} & $\numprint{670}$ & $\numprint{650}$ & $\numprint{449}$ & $\numprint{1}$ \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0417}$ & $\numprint{0.0417}$ & $\numprint{0.0417}$ & $\numprint{0.0417}$ \\
+		$\kappa= \numprint{0}$  & $\mathcal{J}_c$ & $\numprint{0.0014}$ & $\numprint{0.0283}$ & $\numprint{0.0415}$ & $\numprint{0.0417}$ \\
+		& \texttt{Iter} & $\numprint{665}$ & $\numprint{656}$ & $\numprint{434}$ & $\numprint{1}$ \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ & $\numprint{0.0434}$ \\
+		$\kappa= \numprint{1}$  & $\mathcal{J}_c$ & $\numprint{0.0020}$ & $\numprint{0.0322}$ & $\numprint{0.0432}$ & $\numprint{0.0434}$ \\
+		& \texttt{Iter} & $\numprint{654}$ & $\numprint{682}$ & $\numprint{422}$ & $\numprint{1}$ \\
+		\hline
+	\end{tabular}
+	\caption{Example 1: Cost $\mathcal{J}_{uc}$ of applying no control (i.e., $\vec{w} = \vec{0}$), optimal control cost $\mathcal{J}_{c}$, and number of iterations (PDE solves) \emph{\texttt{Iter}} required, for a range of values of the interaction strength $\kappa$ and regularization parameter $\beta$.}
+	\label{TabS5:Prob1}
+\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{}& $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+		\hline
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.04375}$ & $\numprint{0.04375}$ & $\numprint{0.04375}$ & $\numprint{0.04375}$ \\
+		$\kappa= \numprint{-1}$  & $\mathcal{J}_c$ & $\numprint{0.001086}$ & $\numprint{0.02668}$ & $\numprint{0.04348}$ & $\numprint{0.04375}$ \\
+		& \texttt{Iter} & $\numprint{670}$ & $\numprint{650}$ & $\numprint{449}$ & $\numprint{1}$ \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.04167}$ & $\numprint{0.04167}$ & $\numprint{0.04167}$ & $\numprint{0.04167}$ \\
+		$\kappa= \numprint{0}$  & $\mathcal{J}_c$ & $\numprint{0.001447}$ & $\numprint{0.02827}$ & $\numprint{0.04147}$ & $\numprint{0.04167}$ \\
+		& \texttt{Iter} & $\numprint{665}$ & $\numprint{656}$ & $\numprint{434}$ & $\numprint{1}$ \\
+		\hline
+		& $\mathcal{J}_{uc}$ & $\numprint{0.04336}$ & $\numprint{0.04336}$ & $\numprint{0.04336}$ & $\numprint{0.04336}$ \\
+		$\kappa= \numprint{1}$  & $\mathcal{J}_c$ & $\numprint{0.00203}$ & $\numprint{0.03223}$ & $\numprint{0.04321}$ & $\numprint{0.04337}$ \\
+		& \texttt{Iter} & $\numprint{654}$ & $\numprint{682}$ & $\numprint{422}$ & $\numprint{1}$ \\
+		\hline
+	\end{tabular}
+	\caption{Example 1: Cost $\mathcal{J}_{uc}$ of applying no control (i.e., $\vec{w} = \vec{0}$), optimal control cost $\mathcal{J}_{c}$, and number of iterations (PDE solves) \emph{\texttt{Iter}} required, for a range of values of the interaction strength $\kappa$ and regularization parameter $\beta$.}
+	\label{TabS5:Prob1}
+\end{table}
+	\begin{table}
+		\begin{tabular}{ | c | c || c | c | c | c ||}
+			\hline
+			\multicolumn{2}{|c||}{} & $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+			\hline
+			\hline
+			& $\mathcal{E}_\rho$ & $\numprint{3.8317e-8}$ & $\numprint{1.9069e-8}$ & $\numprint{1.3796e-8}$ & $\numprint{1.3553e-8}$ \\
+			$N = $$\numprint{20}$, $n = $$\numprint{10}$  & $\mathcal{E}_\adj$ & $\numprint{2.5380e-8}$ & $\numprint{2.3672e-8}$ & $\numprint{4.6464e-8}$ & $\numprint{4.3990e-8}$ \\
+			& $\mathcal{E}_{\vec{w}}$ & $\numprint{4.1191e-6}$ & $\numprint{1.3377e-7}$ & $\numprint{4.1771e-8}$ & $\numprint{3.9213e-8}$ \\
+			\hline
+			& $\mathcal{E}_\rho$ & $\numprint{3.9206e-8}$ & $\numprint{1.9023e-8}$ & $\numprint{1.4019e-8}$ & $\numprint{1.3863e-8}$ \\
+			$N = $$\numprint{30}$, $n = $$\numprint{20}$  & $\mathcal{E}_\adj$ & $\numprint{3.9337e-8}$ & $\numprint{1.9436e-8}$ & $\numprint{1.3355e-8}$ & $\numprint{2.3327e-8}$ \\
+			& $\mathcal{E}_{\vec{w}}$ & $\numprint{6.4641e-6}$ & $\numprint{1.7823e-7}$ & $\numprint{2.0256e-8}$ & $\numprint{1.9866e-8}$ \\
+			\hline
+			& $\mathcal{E}_\rho$ & $\numprint{3.8069e-8}$ & $\numprint{1.9085e-8}$ & $\numprint{1.4844e-8}$ & $\numprint{1.4700e-8}$ \\
+			$N = $$\numprint{40}$, $n = $$\numprint{30}$  & $\mathcal{E}_\adj$ & $\numprint{3.6398e-8}$ & $\numprint{1.9813e-8}$ & $\numprint{1.5275e-8}$ & $\numprint{2.8452e-8}$ \\
+			& $\mathcal{E}_{\vec{w}}$ & $\numprint{5.9510e-6}$ & $\numprint{2.1531e-7}$ & $\numprint{2.3139e-8}$ & $\numprint{2.5820e-8}$ \\
+			\hline
+		\end{tabular}
+		\caption{Test Problem 1: Error measures for state $\rho$, adjoint $\adj$, and control $\vec{w}$, for a range of $N$, $n$, and $\beta$.}
+		\label{TabA1:Prob1}
+	\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{} & Fixed Point & \texttt{fsolve} & Difference   \\
+		\hline
+		\hline
+		& $\mathcal{J}_{FW}$ & $\numprint{4.3751e-2}$ & $\numprint{4.3751e-2}$ &   \\
+		& $\mathcal{J}_{Opt}$ & $\numprint{1.0856e-3}$ & $\numprint{1.0857e-3}$ &   \\
+		& \texttt{Iter} & $\numprint{670}$ & $\numprint{38}$ &   \\
+		$\kappa =-1$ & Time taken (s) & $\numprint{2.4939e+2}$ & $\numprint{9.1546e+3}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{1.1348e-3}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{7.2742e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}} $& & & $\numprint{7.6725e-2}$  \\
+		\hline
+		& $\mathcal{J}_{FW}$ & $\numprint{4.3365e-2}$ & $\numprint{4.3365e-2}$ &   \\
+		& $\mathcal{J}_{Opt}$ & $\numprint{2.0299e-3}$ & $\numprint{2.0300e-3}$ &   \\
+		& \texttt{Iter} & $\numprint{654}$ & $\numprint{38}$ &   \\
+		$\kappa =1$ & Time taken (s) & $\numprint{3.3794e+2}$ & $\numprint{1.0167e+4}$ &   \\
+		& $\mathcal{E}_{\rho_{Diff}}$ & & &$\numprint{3.0610e-4}$  \\
+		& $\mathcal{E}_{\adj_{Diff}}$ & & &$\numprint{4.8701e-5}$  \\
+		& $\mathcal{E}_{\vec{w}_{Diff}} $& & & $\numprint{8.9056e-3}$  \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of the outputs of the fixed point method, with those obtained using \texttt{fsolve}.}
+	\label{TabA3:Prob1}
+	\end{table}
+\begin{table}
+	\begin{tabular}{ | c | c || c | c | c | c ||}
+		\hline
+		\multicolumn{2}{|c||}{} & $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+		\hline
+		\hline
+		\multirow{4}{*}{$0.1 \tilde g(t)$} & $\mathcal{E}_{\vec{w}_{uc}}$ & $\numprint{1.0000e-1}$ & $\numprint{1.0000e-1}$ & $\numprint{1.0000e-1}$ & $\numprint{1.0000e-1}$ \\
+		& $\mathcal{E}_{\vec{w}_c}$ & $\numprint{5.3770e-5}$ & $\numprint{5.2340e-5}$ & $\numprint{5.2201e-5}$ & $\numprint{5.2203e-5}$ \\
+		& $\mathcal{E}_{\rho}$ & $\numprint{1.1396e-5}$ & $\numprint{7.8597e-5}$ & $\numprint{7.8595e-5}$ & $\numprint{7.8597e-5}$ \\
+		& $\mathcal{E}_{\adj}$ & $\numprint{2.7854e-5}$ & $\numprint{2.7836e-4}$ & $\numprint{5.7043e-4}$ & $\numprint{5.7045e-4}$ \\
+		\hline
+		\multirow{4}{*}{$0.5 \tilde g(t)$} & $\mathcal{E}_{\vec{w}_{uc}}$ & $\numprint{5.0000e-1}$ & $\numprint{5.0000e-1}$ & $\numprint{5.0000e-1}$ & $\numprint{5.0000e-1}$ \\
+		& $\mathcal{E}_{\vec{w}_c}$ & $\numprint{2.1970e-4}$ & $\numprint{2.1747e-4}$ & $\numprint{2.1735e-4}$ & $\numprint{2.1735e-4}$ \\
+		& $\mathcal{E}_{\rho}$ & $\numprint{2.4256e-5}$ & $\numprint{2.2878e-4}$ & $\numprint{2.2878e-4}$ & $\numprint{2.2879e-4}$ \\
+		& $\mathcal{E}_{\adj}$ & $\numprint{3.3247e-5}$ & $\numprint{3.3227e-4}$ & $\numprint{6.8088e-4}$ & $\numprint{6.8090e-4}$ \\
+		\hline
+		\multirow{4}{*}{$0.1 \tilde h(x)$} & $\mathcal{E}_{\vec{w}_{uc}}$ & $\numprint{8.5568e-2}$ & $\numprint{8.5568e-2}$ & $\numprint{8.5568e-2}$ & $\numprint{8.5568e-2}$ \\
+		& $\mathcal{E}_{\vec{w}_c}$ & $\numprint{5.3700e-5}$ & $\numprint{5.2250e-5}$ & $\numprint{5.2100e-5}$ & $\numprint{5.2103e-5}$ \\
+		& $\mathcal{E}_{\rho}$ & $\numprint{1.1704e-5}$ & $\numprint{7.7973e-5}$ & $\numprint{7.7969e-5}$ & $\numprint{7.7968e-5}$ \\
+		& $\mathcal{E}_{\adj}$ & $\numprint{2.6426e-5}$ & $\numprint{2.6387e-4}$ & $\numprint{5.6982e-4}$ & $\numprint{5.6984e-4}$ \\
+		\hline
+		\multirow{4}{*}{$0.5 \tilde h(x)$} & $\mathcal{E}_{\vec{w}_{uc}}$ & $\numprint{4.2784e-1}$ & $\numprint{4.2784e-1}$ & $\numprint{4.2784e-1}$ & $\numprint{4.2784e-1}$ \\
+		& $\mathcal{E}_{\vec{w}_c}$ & $\numprint{2.1203e-4}$ & $\numprint{2.0982e-4}$ & $\numprint{2.0967e-4}$ & $\numprint{2.0968e-4}$ \\
+		& $\mathcal{E}_{\rho}$ & $\numprint{2.2565e-5}$ & $\numprint{2.1275e-4}$ & $\numprint{2.1274e-4}$ & $\numprint{2.1275e-4}$ \\
+		& $\mathcal{E}_{\adj}$ & $\numprint{3.0225e-5}$ & $\numprint{3.0219e-4}$ & $\numprint{6.1920e-4}$ & $\numprint{6.1923e-4}$ \\
+		\hline
+	\end{tabular}
+	\caption{Test Problem 2: Error measures for $\vec{w}_{uc}$, $\vec{w}_{c}$, $\rho$, and $\adj$, for four perturbation strategies for $\vec{w}$, and a range of $\beta$.}
+	\label{TabA2:Prob1}
+\end{table}
+\end{document}

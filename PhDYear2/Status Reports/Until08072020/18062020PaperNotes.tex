@@ -1,0 +1,92 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+\lstset{language=Matlab,%
+	%basicstyle=\color{red},
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    basicstyle=\footnotesize\ttfamily,
+}
+\section*{Notes on Paper Draft}
+- I only changed things in: Section 2.4, 4.3, 4.4, 5 and Appendices A,B,C. (and a very small bit in Section 2.3)\\
+- Notation: Should it be $J_{uc}$, ${J_c}$ (for controlled/uncontrolled) or $J_I$, $J_O$ (for initial and optimal) (Section 4.4. and 5). This depends on how we explain the forward cost functional I think.\\
+- The same goes for $\vec{w}$/ $\mathcal{E}_{\vec{w}_c}$ in Appendix B\\
+- Check titles of my sections - there may be nicer names\\
+- I have not written any captions for tables yet\\
+- Notation: Optimal solution triplet $(\rho,\vec{w},q)$ or $(P,W,Q)$ with overbar or not? (e.g. 4.4 or Appendix A)\\
+- Number formats in tables: e.g. in section 5 format is $1 \times 10^{-2}$, however it may be better to choose the format $0.01$.\\
+- Obviously, some tables need fomatting to fit the margins.\\
+- Check section 2.4 carefully for match with references. (i.e. that the contents of the section actually reflect what is in the papers and there are no errors in what I claim to be true)\\
+- In 'ImagesOld2' are the old versions of the plots - more time points plotted, so brighter colours.
+
+\section*{Notes on Code}
+\subsection*{Paper}
+- the folder 'testsforpaper' (in PDECO) contains all table and plotting code for the paper. \\
+- relevant files to open (all others should be 'subfiles' of these):\\
+   - TablesSection5PDECO (Tables for section 5)\\
+   - TablesAppendixAPDECO (Tables for Appendix A)\\
+   - TablesAppendixBPDECO (Tables for Appendix B)\\
+   - TablesAppendixCPDECO (Tables for Appendix C)\\
+   
+   - PlotsSection5PDECO1D (1D Plots)\\
+   - PlotsSection5PDECO2D (2D Plots)\\
+\subsection*{Other}
+- in each PDECO1D and PDECO2D are files with tests, (exact solutions, perturbed exact solutions and interacting problems)\\
+- most (all?) of them have some reference solution at the top \\
+- there is a PDF with all input variables in the PDECO folder and I have now tried to comment the code a bit more as well.\\
+- I have made some changes in the code; while I have tested some examples and started running some of the paper results to check there are no error messages, I can obviously not rerun all the data right now (especially 2D). So, while I don't expect it, if there's a new bug when you're looking at things, let me know and I fix it!  
+   
+   
+\end{document}

@@ -1,0 +1,100 @@
+
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[warning,debug,nosepfour,autolanguage]{numprint}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\Con}{u}
+
+\pagenumbering{gobble}
+\begin{document}
+\section{Questions, etc}
+- V2 Gaussian\\
+- Exponential Accuracy\\
+- FEM and FDM\\
+- Modelling particle of differnt sizes/ anisotrophic/...\\
+\\
+- weird thing in save2png\\
+- error when trying save2pdf
+
+\section{Comparing the fixed point algorithm with \texttt{fsolve}}
+\label{app:fsolveComparison}
+
+In order to compute the computational time taken of the fixed point algorithm and the inbuilt Matlab function \texttt{fsolve}, Example 1 in Section ++ is considered. Note that the comparison is slightly impacted by the fact that convergence is measured differently in these two numerical methods. However, a general comparison can be made on the efficiency of the two approaches.
+We choose $n=20$, $N=30$, the ODE solver tolerance is set to be $10^{-8}$ and the optimality tolerance is $10^{-4}$ and $\beta = 10^{-3}$. 
+As can be seen in Table \ref{TabApp3}, the running time of the fixed point algorithm is considerably faster than for \texttt{fsolve}, while the resulting cost functionals remain the same. This can be confirmed by comparing the number of function evaluations computed with each method. The differences in $\rho$ and $q$ are broadly in line with the optimality tolerance set, however the control differs more (why?). (+ Note: fsolve says:'Equations solved, inaccuracies possible' - it never actually reached the optimality tolerance ++)
+\begin{table}[h]
+	\begin{tabular}{ ||c|| c | c | c | c |c | c | c | c ||}
+		\hline
+		& $\gamma$ & Time taken (s) & F.Evals & $J_{FW}$ & $J_{Opt}$ & $\rho_{Diff}$ & $q_{Diff}$ & $\vec{w}_{Diff}$\\
+		\hline
+		Fixed Point & & $106.4930$ & $667$ & $0.0438$ & $0.0011$ & & & \\
+		\texttt{fsolve} & $-1$ & $6.3670 \times 10^4$ & $35384$ & $0.0438$ & $0.0011$ & & & \\
+		Difference &  & fix &  &  &  & $3.3515 \times 10^{-4}$ & $1.0922\times 10^{-5}$ & $0.0076$\\
+		\hline
+		Fixed Point & & $101.4840$ & $656$ & $0.0434$ & $0.0020$ & & & \\
+		\texttt{fsolve} & $1$ & $3.3481 \times 10^4 $ & $31957$ & $0.0434$ & $0.0020$ & & & \\
+		Difference &  &  &  &  &  & $6.7721 \times 10^{-4}$ & $3.8226 \times 10^{-5}$ & $0.0204$\\
+		\hline        
+	\end{tabular}
+	\caption{Update this table eventually.}
+	\label{TabApp3}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{ ||c|| c | c |c | c ||}
+		\hline
+		gamma & beta & Iters  & JFW & JOpt \\
+		\hline
+		$\numprint{0}$ & $\numprint{1e-3}$ & $\numprint{671}$ & $\numprint{4.1667e-2}$ & $\numprint{1.4467e-3}$ \\
+		$\numprint{0}$ & $\numprint{1e-1}$ & $\numprint{656}$ & $\numprint{4.1667e-2}$ & $\numprint{2.8272e-2}$ \\
+		$\numprint{-1}$ & $\numprint{1e-3}$ & $\numprint{667}$ & $\numprint{4.3751e-2}$ & $\numprint{1.0897e-3}$ \\
+		$\numprint{-1}$ & $\numprint{1e-1}$ & $\numprint{649}$ & $\numprint{4.3751e-2}$ & $\numprint{2.7033e-2}$ \\
+		$\numprint{0}$ & $\numprint{1e-3}$ & $\numprint{726}$ & $\numprint{6.6902e-2}$ & $\numprint{1.0919e-2}$ \\
+		$\numprint{0}$ & $\numprint{1e-1}$ & $\numprint{770}$ & $\numprint{6.6902e-2}$ & $\numprint{6.0339e-2}$ \\
+		$\numprint{-1}$ & $\numprint{1e-3}$ & $\numprint{724}$ & $\numprint{5.3559e-2}$ & $\numprint{9.6531e-3}$ \\
+		$\numprint{-1}$ & $\numprint{1e-1}$ & $\numprint{769}$ & $\numprint{5.3559e-2}$ & $\numprint{4.9268e-2}$ \\
+		\hline
+	\end{tabular}
+\caption{Test for print to matlab - ignore.}
+\label{Tabv}
+\end{table}
+
+
+\end{document}

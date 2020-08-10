@@ -1,0 +1,139 @@
+
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage[warning,debug,nosepfour,autolanguage]{numprint}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{Exact Solutions for the Full Problem \\with Force Control and with Flow Control}
+\date{}
+%\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\adj}{q}
+%\newcommand{\Con}{u}
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}_\Sigma}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{p_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+\pagenumbering{gobble}
+\begin{document}
+Following the meeting on 09/07/2020	
+\section{Question 1 (John):}
+Considering the OCP discussed yesterday, where we add a term into the cost functional (where $\Con$ is an imposed, fixed flow, $\mathbf{w}$ is the control flow):
+	\begin{align}
+	&\min_{\Sta,\Stav,\mathbf{w}} \quad \frac{1}{2}|| \Sta - \hat \Sta ||_{L_2(\Sigma)}^2 + \frac{\eta}{2}||\nabla \Stav||_{L_2(\Sigma)}^2 +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
+	&\text{subject to:} \notag\\
+	& m \Sta \frac{\partial \Stav}{\partial t} = \bigg(- m \Sta (\Stav \cdot \nabla)\Stav - \Sta \nabla V^{ext} - \Sta \Con - \Sta \mathbf{w} - \nabla \Sta - m \gamma \Sta \Stav\bigg) \ \ \ \qquad \ \ \quad\text{in} \quad \Sigma \notag\\
+	&\frac{\partial \Sta}{\partial t} = - \nabla \cdot (\Sta \Stav) \notag\\
+	 \notag\\
+	&\Sta \Stav \cdot \mathbf{n} =0	\qquad\text{on } \partial \Omega \notag
+	\end{align}
+	Considering the relevant part of the Lagrangian:
+	\begin{align*}
+	\mathcal{L}(\Sta,\Stav, \Adjb, \Adja, \mathbf{w}) = ... + \frac{\eta}{2}\int_0^T \int_{\Omega} \bigg( \nabla \Stav \bigg)^2 dr dt + ...
+	\end{align*}
+	In 1D this is:
+	\begin{align*}
+	\mathcal{L}(\Sta,v, \Adjb, p, w) = ... + \frac{\eta}{2}\int_0^T \int_{\Omega} \bigg(\frac{\partial v}{\partial x} \bigg)^2 dx dt + ... = ... + \int_0^T \int_{\Omega} \bigg(\frac{\partial v}{\partial x} \bigg)\bigg(\frac{\partial v}{\partial x} \bigg) dx dt + ...
+	\end{align*}
+	Then, taking the derivative and using the product rule:
+	\begin{align*}
+	\mathcal{L}_v(\Sta,v, \Adjb, p, w)h = ... +\frac{\eta}{2} \int_0^T \int_{\Omega} \bigg(\frac{\partial h}{\partial x} \bigg)\bigg(\frac{\partial v}{\partial x} \bigg) + \bigg(\frac{\partial v}{\partial x} \bigg)\bigg(\frac{\partial h}{\partial x} \bigg) dx dt + ...
+	\end{align*}
+	Integrating by parts gives:
+	\begin{align*}
+	\mathcal{L}_v(\Sta,v, \Adjb, p, w)h &= ... +\frac{\eta}{2} \bigg[ 
+	 \int_0^T \int_{\partial\Omega}  h\bigg(\frac{\partial v}{\partial n} \bigg) + \bigg(\frac{\partial v}{\partial n} \bigg)h dx dt	 
+	- \int_0^T \int_{\Omega} h\bigg(\frac{\partial^2 v}{\partial x^2} \bigg) + \bigg(\frac{\partial^2 v}{\partial x^2} \bigg)h dx dt  \bigg]+ ...\\
+	&= ... +\eta \bigg[ 
+	\int_0^T \int_{\partial\Omega} \bigg(\frac{\partial v}{\partial n} \bigg)h dx dt	 
+	- \int_0^T \int_{\Omega} \bigg(\frac{\partial^2 v}{\partial x^2} \bigg)h dx dt  \bigg]+ ...
+	\end{align*}
+	So going through the derivation, we would get a boundary term $\frac{\partial v}{\partial x}$ and a term $\frac{\partial^2 v}{\partial x^2} $ in the second adjoint equation.
+	In particular, from the boundary terms we get that the relationship between the adjoints $p$, $\Adjc$ and $q$ is:
+	\begin{align*}
+	& m v p +  \Adjc + \Adjb + \eta\frac{\partial v}{\partial n} =0
+	\end{align*}
+	And from the interior terms we get that the second adjoint equation is:
+	\begin{align}
+	 m\Sta \frac{\partial p}{\partial t}  &= -\eta \frac{\partial^2 v}{\partial x^2}    - m \frac{\partial \Sta}{\partial t} p  
+	-\Sta\nabla \Adjb +m \Sta \frac{\partial v}{\partial x} p +m \gamma \Sta p \\
+	&-m \Sta \bigg(v \frac{\partial}{\partial x}\bigg)p - m \Sta \frac{\partial v}{\partial x}p  - m (v  \frac{\partial \rho}{\partial x})p\ \qquad\qquad \qquad\text{in} \quad \Sigma \notag \\
+	&p(T)=0. \notag
+	\end{align}
+	So we get the negative Laplacian for $v$. But in the meeting we said it will be $\Stav - \nabla \Stav$, i.e. $v - \frac{\partial^2 v}{\partial x^2}$. I do not get an additional term for $v$, so I either misunderstood something in the meeting or something in my derivation is wrong.
+	(side note: the other equations are not listed because they're not affected by this change of the cost functional. They can be seen in the document I sent two weeks ago 'ThesisEndOfYear1', under Archer Optimality Conditions.)
+	
+\section{Question 2 (Ben):}
+Considering this version of the problem instead
+(where $\Con$ is an imposed flow, $\mathbf{w}$ is the control flow and there is the smoothing term $\eta \nabla^2 \Stav$ for $\Stav$ in the PDE):
+\begin{align}
+&\min_{\Sta,\Stav,\mathbf{w}} \quad \frac{1}{2}|| \Sta - \hat \Sta ||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
+&\text{subject to:} \notag\\
+& m \Sta \frac{\partial \Stav}{\partial t} = \bigg(- m \Sta (\Stav \cdot \nabla)\Stav - \Sta \nabla V^{ext} - \Sta \Con - \Sta \mathbf{w} - \nabla \Sta - m \gamma \Sta \Stav + \eta \nabla^2 \Stav \bigg) \ \ \ \qquad \ \ \quad\text{in} \quad \Sigma \notag\\
+&\frac{\partial \Sta}{\partial t} = - \nabla \cdot (\Sta \Stav) \notag\\
+\notag \\
+&\Sta \Stav \cdot \mathbf{n} =0	\qquad\text{on } \partial \Omega \notag
+\end{align}
+We discussed yesterday that we can rewrite the PDE system in terms of $\rho = e^s$. However, in this case we get:
+\begin{align*}
+&\min_{\Sta,\Stav,\mathbf{w}} \quad \frac{1}{2}|| \Sta - \hat \Sta ||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
+&\text{subject to:} \notag\\
+&\frac{\partial \Stav}{\partial t} = \bigg(-  (\Stav \cdot \nabla)\Stav - \frac{1}{m} \nabla V^{ext} - \frac{1}{m} \Con - \frac{1}{m} \mathbf{w} - \frac{1}{m } s-  \gamma \Stav + \frac{1}{m}e^{-s}\eta \nabla^2 \Stav \bigg) \ \ \ \qquad \ \ \quad\text{in} \quad \Sigma \notag \\
+&\frac{\partial \Sta}{\partial t} = - \nabla \cdot (\Sta \Stav) \notag \\
+\notag \\
+& \Stav \cdot \mathbf{n} =0	\qquad\text{on } \partial \Omega \notag
+\end{align*} 
+So then we have $e^{-s}$ in the problem and that's not really the point of the transformation, right? Equation (39) in the Archer paper doesn't multiply $\eta \nabla^2 \Stav$ by $\rho$ so I think doing that would change the meaning of the term?
+\\
+\\
+The same question actually applies to the adjoint equation for the setup in question 1 (see Equation 2). In Setup 1 (Equation 1), the adjoint equation becomes a problem because of the extra Laplacian term from the cost functional. Since this term in Equation 2 doesn't have a $\rho$ term, we can't readily make the transformation there.\\
+In Setup 2 (Equation 3) the adjoint equation isn't a problem for rewriting $\rho = e^s$, but the forward equation is.
+Long story short: Does it make sense in either Setup (Equation 1 or Equation 3), to apply this transformation and keep the negative exponential $e^{-s}$ in the equation, or is it better to just leave the variable as $\rho$?
+
+\section{Question 2.5}
+I think I forgot to double check this yesterday (or I forgot that I did...): In the adjoint equations (e.g. Equation 2 above) I have $\frac{\partial \rho}{\partial t}$ terms. Is it correct to take the first differentiation matrix from the 'time line' TDC?
+I have implemented it this way:\\
+\\
+Difft = this.TDC.ComputeDifferentiationMatrix();\\
+Dt = Difft.Dy;\\
+Dtrho = Dt*rho;\\
+\\
+and then interpolate as normal onto the correct time in the ODE solver.
+
+\end{document}
