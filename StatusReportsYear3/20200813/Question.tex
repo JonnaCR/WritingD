@@ -1,0 +1,88 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\newcommand{\Sta}{\rho}
+\newcommand{\Adj}{p}
+\newcommand{\adj}{q}
+%\newcommand{\Con}{u}
+\newcommand{\Sta}{\rho}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{{p}_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\nor}{\mathbf{n}}
+
+
+
+
+\pagenumbering{gobble}
+\begin{document}
+	\section*{Question: Implementation of the Forward Interaction Term}
+	We want to implement (ignoring for now that we take the divergence of the whole thing later, because we only compute 'rhoflux' at first):
+	\begin{align*}
+	&\int_\Omega \rho(r) \rho(r') \nabla_r V_2 (|r - r'|) dr'\\
+	=&\rho(r) \int_\Omega \rho(r') \nabla_r  V_2 (|r - r'|) dr'
+	\end{align*}
+	If the convolution is computed using $\nabla_r V_2 (|r - r'|) $ (instead of $V_2 (|r - r'|)$ ), then we compute:
+	\begin{align*}
+	rho.*(Conv*rho).
+	\end{align*}
+	However, if we want to compute the convolution with $V_2 (|r - r'|)$, then we need to consider:
+	\begin{align*}
+	&\int_\Omega \rho(r) \rho(r') \nabla_r V_2 (|r - r'|) dr'\\
+	=&\rho(r) \nabla_r \int_\Omega  V_2 (|r - r'|)\rho(r')  dr'
+	\end{align*}
+	In my logic right now, this needs to be (ignoring how the dimensions of the gradient etc fit -- I think we'd need to stack two copies of rho to make it work):
+	\begin{align*}
+	rho.*(Grad*(Conv*rho)).
+	\end{align*}
+	However, in the 2D code, this is
+	\begin{align*}
+	Grad*(rho.*(Conv*rho)).
+	\end{align*}
+	But to me this implies that we actually solve:
+	\begin{align*}
+	\nabla_r \rho(r)  \int_\Omega V_2 (|r - r'|) \rho(r')  dr',
+	\end{align*}
+	so that the gradient is also applied to $\rho(r)$. And that would be wrong, right? 
+	I think in the adjoint PDE I am happy with the way it is applied. But I am not sure about the forward problem.
+	
+	
+\end{document}
