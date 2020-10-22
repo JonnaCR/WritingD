@@ -75,13 +75,14 @@
 	\begin{align*}
 	&\rho_0 = \frac{1}{2.5321}\exp(-\sin(\pi y))\\
 	&\w = \mathbf{0}\\
-	&\mathbf{F} = 0.5\sin(\pi y)\\
+	&\mathbf{f} = 0.5\sin(\pi y)\\
 	&\widehat \rho = \frac{1}{2.5321}\exp(-\sin(\pi y))\\
 	&V_{ext} =  \sin(\pi y).
 	\end{align*}
-	If $\mathbf{F}$ was zero, this would be a steady state, since $\rho = a e^{-V_{ext}}$, which is confirmed when running the problem with those configurations. The algorithm converges within one iteration in this case.\\
-	The problem is therefore asking, how do we get to the steady state by applying $\w$, when we have a non-zero $\mathbf F$. We expect $\w$ to work against $\mathbf{F}$.
+	If the imposed flow $\mathbf{f}$ was zero, this would be a steady state, since $\rho_0 = a e^{-V_{ext}}$, which is confirmed when running the problem with those configurations. The algorithm converges within one iteration in this case.\\
+	The problem is therefore asking, how do we get to the steady state by applying $\w$, when we have a non-zero $\mathbf f$. We expect $\w$ to work against $\mathbf{f}$.
 	We choose $n = 20$ and $N = 30$, tolerances $10^{-8}/10^{-4}$ and $\beta = 10^{-3}$. 
+	
 	First, we set $\gamma = 1$, $\eta = 0.1$ and $\kappa = 0$. We get that $J_{FW} = 0.0030$ and $J_{Opt} = 5.8783 \times 10^{-5}$, see Figure \ref{F1}.
 	\begin{figure}[h]
 		\centering
@@ -89,7 +90,7 @@
 		\caption{Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$} 
 		\label{F1}
 	\end{figure}
-    Then we choose $\kappa = 1$, which gives $J_{FW} = 0.0017$ and $J_{Opt} = 4.2062 \times 10^{-5}$. In Figure \ref{F1a} it can be seen that this is results in differences in the dynamic. 
+    Then we choose $\kappa = 1$, which gives $J_{FW} = 0.0017$ and $J_{Opt} = 4.2062 \times 10^{-5}$. In Figure \ref{F1a} it can be seen that this results in differences in the dynamic. 
     For $\kappa = -1$, we get $J_{FW} = 0.0070$, $J_{Opt} = 1.5997 \times 10^{-4}$, which can be seen in Figure \ref{F1b}. While the dynamics for repulsive particles ($\kappa = 1$) are very different from the non-interacting case, the similarities between non-interacting and attractive case are quite large.
 \begin{figure}[h]
 	\centering

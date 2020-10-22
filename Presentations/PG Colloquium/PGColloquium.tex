@@ -28,7 +28,7 @@
 \title[]{PDE-Constrained Optimization for Multiscale Particle Dynamics}
 \author[Jonna Roden]{Jonna Roden}
 \institute[UoE]{Joint work with Ben Goddard and John Pearson}
-\date{12th June 2020}
+\date{2nd October 2020}
 
 \begin{frame}
 \titlepage
@@ -51,7 +51,7 @@
 	
 	\begin{columns}
 		\column{0.7 \linewidth}	
-		What do these pictures have in common?\\
+	\textbf{What do these pictures have in common?}\\
 		
 		\begin{columns}	
 			\column{0.5 \linewidth}
@@ -82,18 +82,10 @@
 		
 	\end{columns}
 \end{frame}
-\begin{frame}
-	\frametitle{Part 1: What is Multiscale Particle Dynamics?}
-	
-	\begin{figure}
-		\includegraphics[width=10cm]{Particles1.jpg}
-	\end{figure}
-	
-\end{frame}
 
 \begin{frame}
 	\frametitle{Part 1: What is Multiscale Particle Dynamics?}
-	
+	\textbf{They all look like this ...}
 	\begin{figure}
 		\includegraphics[width=10cm]{Particles2.png}
 	\end{figure}
@@ -105,7 +97,7 @@
 	\frametitle{Part 1: What is Multiscale Particle Dynamics?}
 	\begin{columns}
 		\column{0.75 \linewidth}
-		\textbf{Modelling on multiple scales:}
+		\textbf{Why 'multiscale'?}
 		\vspace{0.4cm}
 		\begin{itemize}
 			\item ODEs for $N$ particles AND $n$ water molecules, $n \gg N$\\ \textcolor{red}{(impossible computations)}
@@ -144,7 +136,31 @@
 		\end{figure}
 	\end{columns}
 \end{frame}
-
+\begin{frame}
+	\frametitle{Part 1: Modelling}
+	\begin{columns}
+		\column{0.8 \linewidth}
+		\textbf{Diffusion and advection} \\
+		$	\rho: \text{ particle density at } (\vec{x},t)$, 
+		$\quad \Sigma = (0,T) \times \Omega$
+		\begin{align*}
+		\\
+		\partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \vec{w}) \qquad\text{in    } \Sigma\phantom{ + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \\
+		\\
+		\text{BC }& \text{and IC:}\\
+		\frac{\partial \rho}{\partial n}& - \rho \vec{w} \cdot \vec{n}  = 0\ \qquad \qquad\text{on   } \partial \Sigma \phantom{+ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'}    \\
+		\rho(0&,\vec{x}) = \rho_0(\vec{x}) 
+		\end{align*}
+		\column{0.2 \linewidth}
+		\vspace{-1cm}
+		\begin{figure}
+			\includegraphics[width=3cm]{bloodcells.jpg}\\
+			\includegraphics[width=3cm]{bacteria.png}\\
+			\includegraphics[width=3cm]{Microfilter.png}\\
+			\includegraphics[width=3cm]{beer.png}
+		\end{figure}
+	\end{columns}
+\end{frame}
 \begin{frame}
 	\frametitle{Part 1: Modelling}
 	\begin{columns}
@@ -374,7 +390,7 @@ Our approach:
 
 
 \begin{frame}
-	\frametitle{Part 4: 2D Results}
+	\frametitle{Part 4: 2D Results on a Box}
     Attractive Particles: $\gamma = -1$.\\
 	Overall Cost: $J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $J_{\vec{w}=0} = 0.0130$.
 
@@ -385,7 +401,7 @@ Our approach:
 \end{frame}
 
 \begin{frame}
-	\frametitle{Part 4: 2D Results}
+	\frametitle{Part 4: 2D Results on a Box}
 	\vspace{0.3cm}
 	Overall Cost: $J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $J_{\vec{w}=0} = 0.0130$, $J_{opt} = 7.2994 \times 10^{-4}$.
 	\begin{figure}
@@ -393,8 +409,22 @@ Our approach:
 	\end{figure}
 \end{frame}
 
-
-
+\begin{frame}
+	\frametitle{Part 4: 2D Results on a fancier shape}
+	\vspace{0.3cm}
+The desired state $\widehat \rho$:
+	\begin{figure}
+		\includegraphics[width=14cm]{FW2n1.png}
+	\end{figure}
+\end{frame}
+\begin{frame}
+	\frametitle{Part 4: 2D Results on a fancier shape}
+	\vspace{0.3cm}
+	Overall Cost: $J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $J_{\vec{w}=0} = 0.4111$, $J_{opt} = 0.0807$.
+	\begin{figure}
+		\includegraphics[width=14cm]{Opt2n1.png}
+	\end{figure}
+\end{frame}
 \begin{frame}
 	\frametitle{Summary}
 Up to now:
@@ -469,51 +499,5 @@ Up next:
 		WEST Logo. Digital Image. \newblock{\em WEST Brewery} \url{www.westbeer.com}
 	\end{thebibliography}	
 \end{frame}
-\begin{frame}
-	\frametitle{Part 4: 1D Results}
-	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
-	\begin{figure}
-		\includegraphics[width=15cm]{Figure4.png}
-	\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Part 4: 1D Results}
-	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
-	\begin{figure}
-		\includegraphics[width=15cm]{Figure1.png}
-	\end{figure}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Part 4: 1D Results}
-	Repulsive particles: $\gamma = 1$, Attractive particles: $\gamma = -1$, No interaction: $\gamma =0$.
-	\begin{figure}
-		\includegraphics[width=14cm]{Figure2.png}
-	\end{figure}
-\end{frame}
 
 \end{document}
-\begin{frame}
-	\frametitle{Part 1: Modelling}
-	\begin{columns}
-		\column{0.8 \linewidth}
-		\textbf{Diffusion and Advection}\\
-		$	\rho: \text{ particle density at } (\vec{x},t)$\\
-		\begin{align*}
-		\partial_t \rho &= \nabla^2 \rho - \nabla \cdot (\rho \vec{w}) \qquad\text{in    } \Sigma \phantom{+\textcolor{red}{ \nabla \cdot \int_\Omega \rho(x) \rho(x') \nabla V_2(|x-x'|)dx'} }\\
-		\\
-		\text{BC }& \text{and IC:}\\
-		\frac{\partial \rho}{\partial n}& - \rho \vec{w} \cdot \vec{n} = 0 \qquad \qquad\text{on   } \partial \Sigma \phantom{ +\textcolor{red}{ \int_\Omega \rho(x) \rho(x')  \frac{ \partial  V_2}{\partial n}(|x-x'|)dx'} } \quad\ \    \\
-		\rho(0&,\vec{x}) = \rho_0(\vec{x})  
-		\end{align*}
-		\column{0.2 \linewidth}
-		\vspace{-1cm}
-		\begin{figure}
-			\includegraphics[width=3cm]{bloodcells.jpg}\\
-			\includegraphics[width=3cm]{bacteria.png}\\
-			\includegraphics[width=3cm]{Microfilter.png}\\
-			\includegraphics[width=3cm]{beer.png}
-		\end{figure}
-	\end{columns}
-\end{frame}
