@@ -156,25 +156,30 @@
 	We consider the derivative of the Lagrangian with respect to $\w$. However, we will need to consider the Frech\'et derivative of terms involving $F(\w)$ first.
 	From the definition from the Frech\'et derivative, we know that we have to consider the first order term of the Taylor expansion, so that we have:
 	\begin{align*}
-	F(\w + \h) - F(\w) = \nabla F(\w)\cdot \h.
+	F(\w + \h) - F(\w) =  F'(\w)\cdot \h = h_1 \frac{\partial}{\partial w_1} F(\w)  + h_2\frac{\partial}{\partial w_2} F(\w) . 
 	\end{align*}
-	However, this doesn't seem quite right. Consider from year end review: $F(\rho) = \nabla \ln (\rho)$. The resulting Frech\'et derivative was $\nabla(\frac{h}{\rho})$, which doesn't match with the above definition. 
-	
+    This is only valid if $F$ is a function of $\w$. If $F$ is a function of the position $r$, we would need to work with the definition of the Frech\'et derivative. 
+    Assuming that the above holds we can do some further calculations:
+	\begin{align*}
+	\mathcal{L}_{\w}(\ra,\rb, \w, \adja, \adjb) \h  &= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h - D_a \nabla \cdot (\ra F_a'(\w)\cdot \h)  \adja - D_b \nabla \cdot (\rb F_b'(\w) \cdot \h) \adjb \bigg)dr dt \\
+	&+ \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a'(\w)\cdot \h  + D_b \rb \adjbB F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
+	&= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h + D_a \nabla  \adja \cdot (\ra F_a'(\w)\cdot \h) 
+	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)\cdot \h) \bigg)dr dt \\
+	&- \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a'(\w)\cdot \h  + D_b \rb \adjbB F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
+	&+\int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adja F_a'(\w)\cdot \h  + D_b \rb \adjb F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
+	&= \int_0^T \int_\Omega \bigg( \beta \cdot \w \h + D_a \nabla  \adja \cdot (\ra F_a'(\w)\cdot \h) 
+	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)\cdot \h) \bigg)dr dt,
+	\end{align*}
+	since $\adja = \adjaB$ and $\adjb = \adjbB$ from the adjoint derivation.\\
+	Since this holds for all permissible $\h$, we get:
+	\begin{align*}
+	\w  = - \frac{1}{\beta} \bigg( D_a \nabla  \adja \cdot (\ra F_a'(\w)) 
+	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)) \bigg).
+	\end{align*} 
+	This we can only solve if we know about $F_a$ and $F_b$ (I guess technically I can't even write $F(\h)$, maybe only if I assume $F$ to be linear?). Assume $F_a(x) = c_a x$ and $F_b(x) = c_b x$, we get:
+	\begin{align*}
+	\w  = \frac{1}{\beta}\bigg( D_a c_a  \ra  \nabla \adja + D_b c_b \rb \nabla \adjb \bigg).
+	\end{align*}
 
 	
 \end{document}
-\begin{align*}
-\mathcal{L}_{\w}(\ra,\rb, \w, \adja, \adjb) \h  &= \int_0^T \int_\Omega \bigg( \beta \w \h - D_a \nabla (\ra F_a(\h)) \adja - D_b \nabla (\rb F_b(\h)) \adjb \bigg)dr dt \\
-&+ \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a(\w)  + D_b \rb \adjbB F_b(\w)     \bigg) \cdot \n dr dt\\
-&= \int_0^T \int_\Omega \bigg( \beta \w \h + D_a \nabla  \adja \cdot (\ra F_a(\h)) 
-+ D_b \nabla \adjb \cdot (\rb F_b(\h)) \bigg)dr dt \\
-&- \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a(\w)  + D_b \rb \adjbB F_b(\w)     \bigg) \cdot \n dr dt\\
-&+ \int_0^T \int_{\partial \Omega} \bigg(D_a  \adja \ra F_a(\h) \cdot \n + D_b \adjb \rb F_b(\h) \cdot \n \bigg) dr dt.\\
-&= \int_0^T \int_\Omega \bigg( \beta \w \h + D_a \nabla  \adja \cdot (\ra F_a(\h)) 
-+ D_b \nabla \adjb \cdot (\rb F_b(\h)) \bigg)dr dt,
-\end{align*}
-since $\adja = \adjaB$ and $\adjb = \adjbB$ from the adjoint derivation.\\
-This we can only solve if we know about $F_a$ and $F_b$ (I guess technically I can't even write $F(\h)$, maybe only if I assume $F$ to be linear?). Assume $F_a(x) = c_a x$ and $F_b(x) = c_b x$, we get:
-\begin{align*}
-\w  = \frac{1}{\beta}\bigg( D_a c_a  \ra  \nabla \adja + D_b c_b \rb \nabla \adjb \bigg).
-\end{align*}
