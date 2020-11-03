@@ -1,0 +1,118 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\newcommand{\Sta}{\rho}
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+%\newcommand{\Con}{u}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{{p}_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+
+
+\pagenumbering{gobble}
+\begin{document}
+	
+	We have:
+	\begin{align*}
+	F[\rho] &= \frac{1}{\beta} \int \rho (\ln \Lambda^2 \rho) - 2 \rho - \rho \ln(1 - \eta) + \frac{\rho}{1 - \eta} dr\\
+	\eta &= a \rho = \frac{\pi \sigma^2}{4} \rho
+	\end{align*}
+	Taking the functional derivative of $F$ gives:
+	\begin{align*}
+	\frac{\delta F[\rho]}{\delta \rho} &= \frac{1}{\beta} \bigg(1 + \ln \rho + \Lambda^2 -2 - \ln(1-\eta) + a \frac{\rho}{1 - \eta} + \frac{1}{1 - \eta} + a \frac{\rho}{(1 - \eta)^2}  \bigg)\\
+	&= \frac{1}{\beta} \bigg(1 + \ln \rho + \Lambda^2 -2 - \ln(1-\eta) + \frac{1}{(\eta - 1)^2} - \frac{1}{\eta - 1}  - 1\bigg)\\
+	&= \frac{1}{\beta} \bigg( \ln \rho + \Lambda^2 - 2 - \ln(1-\eta) - \frac{\eta - 2}{(\eta - 1)^2}  \bigg),
+	\end{align*}
+	using partial fractions.
+	\begin{align*}
+	\nabla \frac{\delta F[\rho]}{\delta \rho} &= \frac{1}{\beta} \bigg( \nabla\ln \rho + \nabla(\Lambda^2 - 2) - \nabla\ln(1-\eta) - \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+	& = \frac{1}{\beta} \bigg( \frac{\nabla \rho}{\rho} - \frac{\nabla( 1- \eta)}{1 - \eta} - \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+	& = \frac{1}{\beta} \bigg( \frac{\nabla \rho}{\rho} + \frac{\nabla \eta}{1 - \eta} - \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)
+	\end{align*}
+	Then multiplying by $\rho$ gives:
+	\begin{align*}
+	\rho \nabla \frac{\delta F[\rho]}{\delta \rho} &= \frac{1}{\beta} \bigg( \nabla \rho +   \frac{\rho \nabla \eta}{1 - \eta} - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+	&= \frac{1}{\beta} \bigg( \nabla \rho +   \frac{\eta\nabla \rho}{1 - \eta} - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+	&= \frac{1}{\beta} \bigg( \nabla \rho + \frac{\nabla \rho}{1 - \eta} - \nabla \rho - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+	&= \frac{1}{\beta} \bigg(  \frac{\nabla \rho}{1 - \eta}  - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)
+	\end{align*}
+	Finally we take the divergence:
+	\begin{align*}
+    \nabla \cdot \bigg(\rho \nabla \frac{\delta F[\rho]}{\delta \rho}\bigg) &= \frac{1}{\beta} \bigg( \nabla  \cdot \left(  \frac{\nabla \rho}{1 - \eta} \right) - \nabla  \cdot \left(\rho \nabla\frac{\eta - 2}{(\eta - 1)^2} \right) \bigg)\\
+    &= \frac{1}{\beta} \bigg( \frac{\nabla^2 \rho}{1 - \eta} +  \nabla \rho \cdot \nabla \frac{1}{1 - \eta} - \nabla \rho \cdot \nabla \frac{\eta - 2}{(\eta - 1)^2} - \rho \nabla^2\frac{\eta - 2}{(\eta - 1)^2} \bigg)\\
+    &= \frac{1}{\beta} \bigg( \frac{\nabla^2 \rho}{1 - \eta} +  \nabla \rho \cdot \nabla \frac{(3- 2 \eta)}{(1 - \eta)^2}  - \rho \nabla^2\frac{\eta - 2}{(\eta - 1)^2} \bigg)
+	\end{align*}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}

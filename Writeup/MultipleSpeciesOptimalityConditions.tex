@@ -153,32 +153,52 @@
 	And we also get $\adjb(T) = 0$.
 	
 	\section{Gradient Equation}
-	We consider the derivative of the Lagrangian with respect to $\w$. However, we will need to consider the Frech\'et derivative of terms involving $F(\w)$ first.
-	From the definition from the Frech\'et derivative, we know that we have to consider the first order term of the Taylor expansion, so that we have:
+	We consider the derivative of the Lagrangian with respect to $\w$. However, we will need to consider the Frech\'et derivative of terms involving $F(\w)$ first. If $F$ is a function of $\w$ only and not of the position variable $r$, we can do the following. Otherwise, we will have to work with the definition of the Frech\'et derivative and derive the gradient equation like that.
+	We consider the first order term of the Taylor expansion, so that we have:
 	\begin{align*}
-	F(\w + \h) - F(\w) =  F'(\w)\cdot \h = h_1 \frac{\partial}{\partial w_1} F(\w)  + h_2\frac{\partial}{\partial w_2} F(\w) . 
+	F(\w + \h) - F(\w) =  \left(\nabla_{\w} F(\w)^T\right) \h 
 	\end{align*}
-    This is only valid if $F$ is a function of $\w$. If $F$ is a function of the position $r$, we would need to work with the definition of the Frech\'et derivative. 
-    Assuming that the above holds we can do some further calculations:
+
+    Then:
 	\begin{align*}
-	\mathcal{L}_{\w}(\ra,\rb, \w, \adja, \adjb) \h  &= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h - D_a \nabla \cdot (\ra F_a'(\w)\cdot \h)  \adja - D_b \nabla \cdot (\rb F_b'(\w) \cdot \h) \adjb \bigg)dr dt \\
-	&+ \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a'(\w)\cdot \h  + D_b \rb \adjbB F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
-	&= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h + D_a \nabla  \adja \cdot (\ra F_a'(\w)\cdot \h) 
-	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)\cdot \h) \bigg)dr dt \\
-	&- \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adjaB F_a'(\w)\cdot \h  + D_b \rb \adjbB F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
-	&+\int_0^T \int_{\partial \Omega} \bigg( D_a \ra \adja F_a'(\w)\cdot \h  + D_b \rb \adjb F_b'(\w)\cdot \h     \bigg) \cdot \n dr dt\\
-	&= \int_0^T \int_\Omega \bigg( \beta \cdot \w \h + D_a \nabla  \adja \cdot (\ra F_a'(\w)\cdot \h) 
-	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)\cdot \h) \bigg)dr dt,
+	\mathcal{L}_{\w}(\ra,\rb, \w, \adja, \adjb) \h  &= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h - D_a \nabla \cdot (\ra \left(\nabla_{\w} F_a(\w)^T\right) \h)  \adja - D_b \nabla \cdot (\rb \left(\nabla_{\w} F_b(\w)^T \right)\h) \adjb \bigg)dr dt \\
+	&+ \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \left(\nabla_{\w} F_a(\w)^T\right) \h \adjaB   + D_b \rb \left(\nabla_{\w} F_b(\w)^T\right) \h\adjbB     \bigg) \cdot \n dr dt\\
+	&= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h + D_a \ra \left(\left(\nabla_{\w} F_a(\w)^T\right) \h \right)\cdot\nabla  \adja \\
+	&+ D_b \rb \left(\left(\nabla_{\w} F_b(\w)^T\right) \h \right)\cdot \nabla \adjb  \bigg)dr dt \\
+	&- \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \left(\nabla_{\w} F_a(\w)^T\right) \h \adja   + D_b \rb \left(\nabla_{\w} F_b(\w)^T\right) \h\adjb     \bigg) \cdot \n dr dt\\
+	&+ \int_0^T \int_{\partial \Omega} \bigg( D_a \ra \left(\nabla_{\w} F_a(\w)^T\right) \h \adjaB   + D_b \rb \left(\nabla_{\w} F_b(\w)^T\right) \h\adjbB     \bigg) \cdot \n dr dt\\
+	&=\int_0^T \int_\Omega \bigg( \beta \w \cdot \h + D_a \ra \left(\left(\nabla_{\w} F_a(\w)^T\right) \h \right)\cdot\nabla  \adja \\
+	&+ D_b \rb \left(\left(\nabla_{\w} F_b(\w)^T\right) \h \right)\cdot \nabla \adjb  \bigg)dr dt,
 	\end{align*}
 	since $\adja = \adjaB$ and $\adjb = \adjbB$ from the adjoint derivation.\\
-	Since this holds for all permissible $\h$, we get:
+	Now we use the relation $((\nabla \mathbf a)^T)\mathbf b) \cdot \mathbf c= (( \mathbf c \cdot \nabla) \mathbf a ) \cdot \mathbf b$ (from year end review) to find that:
 	\begin{align*}
-	\w  = - \frac{1}{\beta} \bigg( D_a \nabla  \adja \cdot (\ra F_a'(\w)) 
-	+ D_b \nabla \adjb \cdot (\rb F_b'(\w)) \bigg).
+	\mathcal{L}_{\w}(\ra,\rb, \w, \adja, \adjb) \h  &= \int_0^T \int_\Omega \bigg( \beta \w \cdot \h + D_a \ra \left( \left(\nabla_r \adja \cdot \nabla_{\w} \right) F_a(\w) \right) \cdot \h         \\
+	&+ D_b \rb \left( \left(\nabla_r \adjb \cdot \nabla_{\w} \right) F_b(\w) \right) \cdot \h       \bigg)dr dt,
+	\end{align*}
+	Setting this to zero and since this holds for all permissible $\h$, we get:
+	\begin{align*}
+	\beta \w  + D_a \ra \left( \left(\nabla_r \adja \cdot \nabla_{\w} \right) F_a(\w) \right) 
+	+ D_b \rb \left( \left(\nabla_r \adjb \cdot \nabla_{\w} \right) F_b(\w) \right) = 0.
 	\end{align*} 
-	This we can only solve if we know about $F_a$ and $F_b$ (I guess technically I can't even write $F(\h)$, maybe only if I assume $F$ to be linear?). Assume $F_a(x) = c_a x$ and $F_b(x) = c_b x$, we get:
+	Using that $\nabla \cdot (\mathbf{b a}^T) = \mathbf a (\nabla \cdot \mathbf b) + (\mathbf b \cdot \nabla) \mathbf a$, and observing that $\nabla_{\w} \cdot (\nabla_r q) = 0$, we get:
 	\begin{align*}
-	\w  = \frac{1}{\beta}\bigg( D_a c_a  \ra  \nabla \adja + D_b c_b \rb \nabla \adjb \bigg).
+	\beta \w  + D_a \ra \nabla_{\w} \cdot \left(\nabla \adja F_a(\w)^T \right) 
+	+ D_b \rb \nabla_{\w} \cdot \left(\nabla \adjb F_b(\w)^T \right) = 0.
+	\end{align*} 
+	Since $\nabla_r q$ does not depend on $\w$ we can rearrange this to get:
+	\begin{align*}
+	\beta \w  + D_a \ra \left(\nabla_\w F_a(\w)\right)^T \nabla \adja  
+	+ D_b \rb \left(\nabla_\w F_b(\w)\right)^T \nabla \adjb = 0.
+	\end{align*}
+	And finally we have:
+	\begin{align*}
+	\w = - \frac{1}{\beta} \left( D_a \ra \left(\nabla_\w F_a(\w)\right)^T \nabla \adja  
+	+ D_b \rb \left(\nabla_\w F_b(\w)\right)^T \nabla \adjb \right).
+	\end{align*}
+    As an example, take $F_a(\w) = c_a \w$ and $F_b(\w) = c_b \w$. We get:
+	\begin{align*}
+	\w  = - \frac{1}{\beta}\bigg( D_a  \ra c_a \mathbf 1 \nabla \adja + D_b \rb c_b \mathbf 1 \nabla \adjb \bigg).
 	\end{align*}
 
 	

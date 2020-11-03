@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  26 OCT 2020 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 NOV 2020 10:38
 entering extended mode
 **./MultipleSpeciesOptimalityConditions.tex
 (MultipleSpeciesOptimalityConditions.tex
@@ -605,8 +605,13 @@ ier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.141 	\end{align*}
-                    [3]pdfTeX warning (ext4): destination with the same identif
-ier (name{page.}) has been already used, duplicate ignored
+                    [3]
+Overfull \hbox (59.90517pt too wide) detected at line 172
+[]
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.172 	\end{align*}
@@ -615,21 +620,21 @@ l.172 	\end{align*}
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.185 \end{document}
+l.205 \end{document}
                      [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
  (MultipleSpeciesOptimalityConditions.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
 Package rerunfilecheck Info: File `MultipleSpeciesOptimalityConditions.out' has
  not changed.
 (rerunfilecheck)             Checksum: FDE0E15596D53A525282FB0A42F010D4;143.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
  10387 strings out of 492946
@@ -638,7 +643,7 @@ Here is how much of TeX's memory you used:
  14162 multiletter control sequences out of 15000+200000
  9822 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,353b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,434b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -654,7 +659,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local
 Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb>
-Output written on MultipleSpeciesOptimalityConditions.pdf (5 pages, 137511 byte
+Output written on MultipleSpeciesOptimalityConditions.pdf (5 pages, 139437 byte
 s).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
