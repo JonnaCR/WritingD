@@ -179,7 +179,7 @@ We consider the part of the Lagrangian that is relevant:
 Taking the derivatives with respect to $\rho$ gives:
 \begin{align*}
 \mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega \bigg( (\nabla^2 \rho) ( a h ) + (\nabla^2 h )(1 + a \rho) - 8a^2 h \left(\nabla \rho\right)^2   + \nabla h \cdot \left( 8a \nabla \rho - 16 a^2 \rho \nabla \rho  \right) \\
-&+a \rho \nabla ^2 h - 2a^2 \rho \nabla^2(\rho h) + ah \nabla^2 \rho - a^2 h \nabla^2 \rho^2 \bigg) q dr dt
+&+ 3a \rho \nabla ^2 h - 4a^2 \rho \nabla^2(\rho h) + 3ah \nabla^2 \rho - 2a^2 h \nabla^2 \rho^2 \bigg) q dr dt
 \end{align*}
 Integrate by parts the term involving $\nabla^2 (\rho h)$:
 \begin{align*}
@@ -193,11 +193,11 @@ Integrate by parts the term involving $\nabla^2 (\rho h)$:
 \end{align*}
 Then we have the terms involving $\nabla^2 h$:
 \begin{align*}
-\int_0^T \int_\Omega  (\nabla^2 h) (q + 2 a q \rho )  dr dt &= \int_0^T \int_{\partial \Omega}(\nabla h) (q + 2 a q \rho ) \cdot \n dr dt - \int_0^T \int_\Omega (\nabla h) \cdot \nabla (q + 2 a q \rho )dr dt\\
-&= \int_0^T \int_{\partial \Omega} \left((\nabla h) (q + 2 a q \rho ) -  h \nabla q -2 ah \nabla (q \rho ) \right) \cdot \n  dr dt \\
-&+ \int_0^T \int_\Omega  h\nabla^2 q + 2 a h \nabla^2(q \rho ) dr dt\\
-&= \int_0^T \int_{\partial \Omega} \left((\nabla h) (q + 2 a q \rho ) -  h \nabla q -2 ah \nabla (q \rho ) \right) \cdot \n  dr dt \\
-&+ \int_0^T \int_\Omega  h\nabla^2 q + 2 a h q \nabla^2 \rho + 2 a h  \rho \nabla^2 q + 2 a h \nabla \rho \cdot \nabla q dr dt
+\int_0^T \int_\Omega  (\nabla^2 h) (q + 4 a q \rho )  dr dt &= \int_0^T \int_{\partial \Omega}(\nabla h) (q + 4 a q \rho ) \cdot \n dr dt - \int_0^T \int_\Omega (\nabla h) \cdot \nabla (q + 4 a q \rho )dr dt\\
+&= \int_0^T \int_{\partial \Omega} \left((\nabla h) (q + 4 a q \rho ) -  h \nabla q -4 ah \nabla (q \rho ) \right) \cdot \n  dr dt \\
+&+ \int_0^T \int_\Omega  h\nabla^2 q + 4 a h \nabla^2(q \rho ) dr dt\\
+&= \int_0^T \int_{\partial \Omega} \left((\nabla h) (q + 4 a q \rho ) -  h \nabla q - 4 ah \nabla (q \rho ) \right) \cdot \n  dr dt \\
+&+ \int_0^T \int_\Omega  h\nabla^2 q + 4 a h q \nabla^2 \rho + 4 a h  \rho \nabla^2 q + 4 a h \nabla \rho \cdot \nabla q dr dt
 \end{align*}
 Finally, the terms involving $\nabla h$:
 \begin{align*}
@@ -211,37 +211,157 @@ Finally, the terms involving $\nabla h$:
 \end{align*}
 Combining all of these gives:
 \begin{align*}
-\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega \bigg( (\nabla^2 \rho) ( aq h ) + h\nabla^2 q + 2 a h q \nabla^2 \rho + 2 a h  \rho \nabla^2 q + 2 a h \nabla \rho \cdot \nabla q
- - 8a^2 hq \left(\nabla \rho\right)^2   \\
-&- h \bigg( 8a \nabla q \cdot \nabla \rho + 8aq \nabla^2 \rho  
-- 16 a^2 q (\nabla \rho)^2 - 16 a^2 \rho \nabla \rho \cdot \nabla q - 16 a^2 q \rho \nabla^2 \rho \bigg)\\
-& - 2a^2 \rho h \nabla^2 (q\rho)  + qah \nabla^2 \rho - qa^2 h \nabla^2 \rho^2 \bigg)  dr dt
+\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega \bigg(q (\nabla^2 \rho) ( a h )  -q 8a^2 h \left(\nabla \rho\right)^2   \\
+&+  8a h\nabla q \cdot \nabla \rho + 8aq h\nabla^2 \rho - 16 a^2 q h(\nabla \rho)^2 - 16h a^2 \rho \nabla \rho \cdot \nabla q - 16 ha^2 q \rho \nabla^2 \rho \\
+& - 4a^2 \rho h q\nabla^2(\rho ) - 8a^2 \rho h \nabla q \cdot \nabla \rho  - 4a^2 h \rho^2 \nabla^2 q  + 3ah q\nabla^2 \rho - 2a^2qh \nabla^2 \rho^2\\
+&h\nabla^2 q + 4 a h q \nabla^2 \rho + 4 a h  \rho \nabla^2 q + 4 a h \nabla \rho \cdot \nabla q \bigg)  dr dt
 \end{align*}
 Rearranging and cancelling results in:
 
 \begin{align*}
-\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega q \bigg(a \nabla^2 \rho + 2 a   \nabla^2 \rho - 8a^2  \left(\nabla \rho\right)^2  - 8a \nabla^2 \rho\\
-& + 16 a^2  (\nabla \rho)^2 + 16a^2 \rho \nabla^2 \rho + a \nabla^2 \rho - a^2  \nabla^2 \rho^2  - 2a^2 \rho  \nabla^2 \rho \bigg)\\
-&+ \nabla q \cdot \bigg( 2 a  \nabla \rho -  8a  \nabla \rho  + 16 a^2 \rho \nabla \rho  - 4a^2 \rho  \nabla \rho \bigg)\\
-&+ \nabla^2 q \bigg(1 + 2 a   \rho   - 2a^2 \rho^2        \bigg) dr dt
+\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega h q \bigg( a\nabla^2 \rho -8a^2  \left(\nabla \rho\right)^2 + 8a\nabla^2 \rho - 16 a^2 (\nabla \rho)^2 \\
+&- 16 a^2  \rho \nabla^2 \rho - 4a^2 \rho \nabla^2(\rho ) +3a\nabla^2 \rho - 2a^2 \nabla^2 \rho^2 + 4 a \nabla^2 \rho
+ \bigg)\\
+&+ h \nabla q \cdot \bigg( 8a \nabla \rho - 16 a^2 \rho \nabla \rho- 8a^2 \rho  \nabla \rho + 4 a  \nabla \rho \bigg)\\
+&+ h \nabla^2 q \bigg( 1  - 4a^2  \rho^2  + 4 a   \rho  \bigg) dr dt
 \end{align*}
+
+
+
 \begin{align*}
-\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega q \bigg( 6a^2  \left(\nabla \rho\right)^2  - 4a \nabla^2 \rho + 13a^2 \rho \nabla^2 \rho \bigg)\\
-&+ \nabla q \cdot \bigg( -  6a  \nabla \rho  + 12 a^2 \rho \nabla \rho  \bigg)+ \nabla^2 q \bigg(1 + 2 a   \rho   - 2a^2 \rho^2        \bigg) dr dt
+\mathcal{L}_\rho(\rho, \w, q) h &= -\frac{1}{\beta}  \int_0^T \int_\Omega h q \bigg(16 a\nabla^2 \rho -28a^2  \left(\nabla \rho\right)^2   - 24 a^2  \rho \nabla^2 \rho  
+\bigg)\\
+&+ h \nabla q \cdot \bigg( 12a \nabla \rho - 24 a^2 \rho \nabla \rho  \bigg) + h \nabla^2 q \bigg( 1  - 4a^2  \rho^2  + 4 a   \rho  \bigg) dr dt
 \end{align*}
 
 
+Adding the other terms to it we get the adjoint equation:
+\begin{align*}
+\frac{\partial q}{\partial t} =& -\frac{1}{\beta} q \bigg(16 a\nabla^2 \rho -28a^2  \left(\nabla \rho\right)^2   - 24 a^2  \rho \nabla^2 \rho  
+\bigg)\\
+&-\frac{1}{\beta} \nabla q \cdot \bigg( 12a \nabla \rho - 24 a^2 \rho \nabla \rho  \bigg) -\frac{1}{\beta}  \nabla^2 q \bigg( 1  - 4a^2  \rho^2  + 4 a   \rho  \bigg) \\
+& + \nabla V_{ext} \cdot \nabla q - \w \cdot \nabla q - \rho + \widehat \rho + \int_\Omega ( \nabla_r q(r) - \nabla_{r'} q(r')) \rho(r') \K(r,r') dr'
+\end{align*}
 
 
+\subsection{Boundary Terms}
+We had the flux term:
+\begin{align*}
+-\rho \nabla \frac{\delta F[\rho]}{\delta \rho} &= -\frac{1}{\beta} \bigg( \nabla \rho +   \frac{\rho \nabla \eta}{1 - \eta} - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+&=- \frac{1}{\beta} \bigg( \nabla \rho +   \frac{\eta\nabla \rho}{1 - \eta} - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+&= -\frac{1}{\beta} \bigg( \nabla \rho + \frac{\nabla \rho}{1 - \eta} - \nabla \rho - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\\
+&= -\frac{1}{\beta} \bigg(  \frac{\nabla \rho}{1 - \eta}  - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)
+\end{align*}
 
+Taking Frech\'et derivatives gives:
+\begin{align*}
+F_4(\rho+h) - F(\rho) &= \nabla(\rho+h) (1 + a\rho + ah) - \nabla \rho (1 + a \rho)\\
+&=(\nabla \rho)(ah) + \nabla h (1 + a \rho)\\
+&= ah \nabla \rho + \nabla h + a \rho \nabla h, 
+\end{align*}
+and
+\begin{align*}
+F_5(\rho+ h)- F_5(\rho) &= (\rho + h) \nabla \left((a \rho + a h - 2) ( 1 + 2a \rho + 2 a h)\right) - \rho \nabla \left((a \rho - 2)(1 + 2a \rho)\right)\\&= 
+\rho \nabla (a \rho + 2a^2 \rho + 2 a^2 \rho h + ah + 2a^2\rho h + 2 a^2 h^2 -2 -4a \rho - 4ah)\\
+&- \rho \nabla( a\rho + 2a^2 \rho^2 -2 -4a\rho)\\
+&+h \nabla (a \rho + 2a^2 \rho + 2 a^2 \rho h + ah + 2a^2\rho h + 2 a^2 h^2 -2 -4a \rho - 4ah)\\
+&= \rho \nabla \left(4a^2 \rho h -3ah \right)\\
+&+h \nabla \left( 2a^2 \rho -2 -3a \rho\right)\\
+&= 4a^2 \rho^2 \nabla h + 4a^2 h \rho \nabla \rho - 3a \rho \nabla h + 2a^2 h \nabla \rho - 3a h \nabla \rho
+\end{align*}
 
+Then the contribution to the Lagrangian is:
+\begin{align*}
+\mathcal{L}(\rho, \w, q) = \int_0^T \int_{\partial \Omega} -\frac{1}{\beta} \bigg(  \frac{\nabla \rho}{1 - \eta}  - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg)\cdot \n dr dt.
+\end{align*}
+Then the contribution to the derivative with respect to $\rho$ is:
+\begin{align*}
+\mathcal{L}_{\rho,1} (\rho, \w, q)h &= \frac{1}{\beta} \int_0^T \int_{\partial \Omega} \bigg(ah \nabla \rho + \nabla h + a \rho \nabla h \\
+& -4a^2 \rho^2 \nabla h - 4a^2 h \rho \nabla \rho + 3a \rho \nabla h - 2a^2 h \nabla \rho + 3a h \nabla \rho \bigg) q_{\partial \Omega} \cdot \n  dr dt\\
+&= \frac{1}{\beta} \int_0^T \int_{\partial \Omega} \bigg( \nabla h( 1 + a\rho - 4a^2 \rho^2 + 3a \rho) +h(4a \nabla \rho -4a^2 \rho \nabla \rho -2a^2 \nabla \rho )\bigg) q_{\partial \Omega} \cdot \n dr dt
+\end{align*}
+Now, collecting the boundary terms from integrating by parts in the main body we get:
+\begin{align*}
+\mathcal{L}_{\rho,2} (\rho, \w, q)h&=- \frac{1}{\beta}\int_0^T \int_{\partial \Omega} \bigg((-4a^2 q\rho^2 \nabla h - \rho^2 h \nabla q )\\
+&+(\nabla h (q+ 4aq\rho) -h \nabla q - 4ah \nabla (q \rho))\\
+&+h(8aq \nabla \rho - 16a^2 q \rho \nabla \rho) \bigg) \cdot \n dr \\
+&= - \frac{1}{\beta}\int_0^T \int_{\partial \Omega} \bigg(\nabla h (- 4a^2 q \rho^2 +q + 4aq\rho)\\
+&+ h(- \rho^2 \nabla q - \nabla q -4a\rho\nabla q  + 4a q\nabla \rho - 16a^2 q \rho \nabla \rho) \bigg) \cdot \n dr dt
+\end{align*}
+Combining the two gives:
+\begin{align*}
+\mathcal{L}_{\rho} (\rho, \w, q)h &= \frac{1}{\beta} \int_0^T \int_{\partial \Omega} \nabla h \bigg(  q_{\partial \Omega} + aq_{\partial \Omega}\rho - 4a^2q_{\partial \Omega} \rho^2 + 3a q_{\partial \Omega}\rho + 4a^2 q \rho^2 -q - 4aq\rho \bigg) \cdot \n\\
+&+ h \bigg(  4a q_{\partial \Omega}\nabla \rho -4a^2 q_{\partial \Omega}\rho \nabla \rho -2a^2q_{\partial \Omega} \nabla \rho             
++\rho^2 \nabla q + \nabla q +4a\rho\nabla q  - 4a q\nabla \rho + 16a^2 q \rho \nabla \rho\bigg) \cdot \n dr dt
+\end{align*}
 
+Considering $h =0$ and $\nabla h \neq 0$ on $\partial \Omega$ we get that:
+\begin{align*}
+\bigg(  q_{\partial \Omega} + aq_{\partial \Omega}\rho - 4a^2q_{\partial \Omega} \rho^2 + 3a q_{\partial \Omega}\rho + 4a^2 q \rho^2 -q - 4aq\rho \bigg) \cdot \n = 0
+\end{align*}
+Equating this for powers of $\rho$ (allowed?) we conclude that $q_{\partial \Omega} = q$. Then if $h \neq 0$ we get:
+\begin{align*}
+\bigg( -2a^2q \nabla \rho             
++\rho^2 \nabla q + \nabla q +4a\rho\nabla q   + 12a^2 q \rho \nabla \rho\bigg) \cdot \n =0
+\end{align*}
+Since this doesn't cancel, there may be a mistake in the calculations.
 
+\subsection{Implementation}
+While there is probably a mistake in the above, I implemented this as flow control problem. I set the target to be the forward problem with a certain $V_{ext}$ and the initial configuration has a bit of a weaker $V_{ext}$, so that we would need some more help from the flow term to get to the first one. However, the difference is $a0 = 0.1$, $a1 =0.099$, so that it's hard to see what the difference actually is, see Figures \ref{F01}, \ref{F02} and \ref{F03}. It may be better to actually do $V_{ext}$ control?
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{FW1.png}
+	\caption{Sedimentation Forward Problem, $a = 0.099$} 
+	\label{F01}
+\end{figure} 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{Opt1.png}
+	\caption{Sedimentation Optimal $\rho$, target $a =0.1$} 
+	\label{F03}
+\end{figure} 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{C1.png}
+	\caption{Sedimentation Control} 
+	\label{F02}
+\end{figure} 
 
+\section{Constriction Example Equation}
+We have the equation
+\begin{align*}
+\frac{\partial \rho}{\partial t} = \nabla^2 \rho + \nabla( \rho \nabla V_{ext}).
+\end{align*}
+We then make the substitution $\rho = e^{h - V_{ext}}$.
+Then 
+\begin{align*}
+\frac{\partial \rho}{\partial t} &= \frac{\partial}{\partial t} e^{h - V_{ext}} = e^{h - V_{ext}}\frac{\partial h}{\partial t}\\
+\nabla \rho &= \nabla e^{h - V_{ext}} = e^{h - V_{ext}} \nabla(h - V_{ext})\\
+\nabla^2 \rho &= \nabla \bigg(e^{h - V_{ext}}\nabla(h - V_{ext}) \bigg) \\
+&= e^{h - V_{ext}} \bigg(\nabla^2 h - \nabla^2 V_{ext} \bigg) + e^{h - V_{ext}} \bigg( (\nabla h)^2 - 2 \nabla h \cdot \nabla V_{ext} + (\nabla V_{ext})^2 \bigg)\\
+\nabla\bigg(\rho \nabla V_{ext}\bigg) &= \nabla( e^{h - V_{ext}} \nabla V_{ext}) = e^{h - V_{ext}} \nabla^2 V_{ext} + e^{h - V_{ext}} \bigg(\nabla h \cdot \nabla V_{ext} - (\nabla V_{ext})^2  \bigg)
+\end{align*}
+Then we get:
+\begin{align*}
+\frac{\partial h}{\partial t} &= \nabla^2 h - \nabla^2 V_{ext} + (\nabla h)^2 - 2 \nabla h \cdot \nabla V_{ext} + (\nabla V_{ext})^2 +\nabla^2 V_{ext} + \nabla h \cdot \nabla V_{ext} - (\nabla V_{ext})^2\\
+&= \nabla^2 h + (\nabla h)^2 - \nabla h \cdot \nabla V_{ext} 
+\end{align*}
 
+Problem: This crashes in the implementation, so either it's the wrong equation or the implementation is wrong.
 
+\section{Periodic Box}
+I am not sure yet what this is doing (the scaling of the box and the periodicity). Gravity is acting from left to right, top and bottom are periodic. Can we change that? See Figure \ref{F1}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{P1.png}
+	\caption{Periodic Box 1} 
+	\label{F1}
+\end{figure} 
 
-
+\section{CV}
+Questions:\\
+Cover letter: How much detail of what I am doing/ how technical? What else should I include about myself?\\
+CV: Should I include the preprint? Is the order of sections correct? What level of Matlab skills do I have?
 \end{document}
 

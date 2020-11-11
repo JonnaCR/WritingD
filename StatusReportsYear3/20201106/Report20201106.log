@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 NOV 2020 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  6 NOV 2020 09:56
 entering extended mode
 **./Report20201106.tex
 (Report20201106.tex
@@ -609,8 +609,23 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.193 \end{align*}
-                   [3]
-Overfull \hbox (23.59535pt too wide) detected at line 219
+                   [3]pdfTeX warning (ext4): destination with the same identifi
+er (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.218 \end{align*}
+                   [4]pdfTeX warning (ext4): destination with the same identifi
+er (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.261 \end{align*}
+                   [5]
+Overfull \hbox (16.07544pt too wide) detected at line 282
+[]
+ []
+
+
+Overfull \hbox (61.0482pt too wide) detected at line 296
 []
  []
 
@@ -618,35 +633,87 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.219 \end{align*}
-                   [4]
+l.296 \end{align*}
+                   [6]
+<Images/FW1.png, id=73, 2168.1pt x 1227.83719pt>
+File: Images/FW1.png Graphic file (type png)
+<use Images/FW1.png>
+Package pdftex.def Info: Images/FW1.png  used on input line 313.
+(pdftex.def)             Requested size: 433.61232pt x 245.56308pt.
 
-Package caption Warning: Unused \captionsetup[sub] on input line 24.
-See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Opt1.png, id=74, 2168.1pt x 1227.83719pt>
+File: Images/Opt1.png Graphic file (type png)
+<use Images/Opt1.png>
+Package pdftex.def Info: Images/Opt1.png  used on input line 320.
+(pdftex.def)             Requested size: 433.61232pt x 245.56308pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/C1.png, id=75, 2168.1pt x 1227.83719pt>
+File: Images/C1.png Graphic file (type png)
+<use Images/C1.png>
+Package pdftex.def Info: Images/C1.png  used on input line 326.
+(pdftex.def)             Requested size: 433.61232pt x 245.56308pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.246 \end{document}
-                     [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
+l.352 
+       [7]
+<Images/P1.png, id=85, 1445.4pt x 685.8122pt>
+File: Images/P1.png Graphic file (type png)
+<use Images/P1.png>
+Package pdftex.def Info: Images/P1.png  used on input line 357.
+(pdftex.def)             Requested size: 361.34912pt x 171.45262pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package caption Warning: Unused \captionsetup[sub] on input line 24.
+See the caption package documentation for explanation.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.366 \end{document}
+                     [8 <./Images/FW1.png (PNG copy)>]pdfTeX warning (ext4): de
+stination with the same identifier (name{page.}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.366 \end{document}
+                     [9 <./Images/Opt1.png (PNG copy)> <./Images/C1.png (PNG co
+py)>]pdfTeX warning (ext4): destination with the same identifier (name{page.}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.366 \end{document}
+                     [10 <./Images/P1.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
  (Report20201106.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 366.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
 Package rerunfilecheck Info: File `Report20201106.out' has not changed.
-(rerunfilecheck)             Checksum: 46C0F3314D96B74DC56476A1BD3862F5;266.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 246.
+(rerunfilecheck)             Checksum: 00236E94B9C6AE73DE31841185864FE9;545.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 366.
  ) 
 Here is how much of TeX's memory you used:
- 10390 strings out of 492946
- 156797 string characters out of 3124935
+ 10433 strings out of 492946
+ 157390 string characters out of 3124935
  274059 words of memory out of 3000000
- 14165 multiletter control sequences out of 15000+200000
+ 14193 multiletter control sequences out of 15000+200000
  10427 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,43p,475b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,13n,43p,554b,335s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -654,13 +721,17 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s1452504/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s145
 2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
 b><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report20201106.pdf (5 pages, 115178 bytes).
+nts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb>
+Output written on Report20201106.pdf (10 pages, 2010934 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 6 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
