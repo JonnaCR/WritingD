@@ -1,0 +1,248 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\newcommand{\Sta}{\rho}
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+%\newcommand{\Con}{u}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{{p}_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+
+
+\pagenumbering{gobble}
+\begin{document}
+	
+\section{Optimality conditions for the sedimentation equations}
+We consider the terms of the PDE and the boundary conditions separately here.
+\subsection{Terms that go into the PDE}
+The relevant part of the PDE is:
+\begin{align*}
+	\nabla \cdot \bigg(\rho \nabla \frac{\delta F[\rho]}{\delta \rho}\bigg)
+	&= \frac{1}{\beta} \bigg( \frac{\nabla^2 \rho}{1 - \eta} +  \nabla \rho \cdot \nabla \frac{(3- 2 \eta)}{(1 - \eta)^2}  - \rho \nabla^2\frac{\eta - 2}{(\eta - 1)^2} \bigg),
+\end{align*}
+where $\eta = a \rho$ and $a = \pi \sigma^2 /4$.
+Consider:
+\begin{align*}
+	F_1(\rho) &= \nabla^2 \rho \frac{1}{1- a\rho}\\
+	F_2(\rho) &= \nabla \rho \cdot \nabla \left(\frac{3-2a\rho}{(1-a\rho)^2}\right)\\
+	F_3(\rho) &= \rho \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)
+\end{align*}
+Then
+\begin{align*}
+	F_1(\rho + h) - F_1(\rho) &= \nabla (\rho +h) \frac{1}{1- a(\rho +h)} - \nabla \rho \frac{1}{1- a\rho}
+\end{align*}
+Using the expansion: 
+\begin{align*}
+	\frac{1}{c - x} = \frac{1}{c} + \frac{1}{c^2}x + O(x^2),
+\end{align*}
+where $c = 1- a \rho$, we get:
+\begin{align*}
+	F_1(\rho + h) - F_1(\rho) &= \nabla^2 (\rho +h) \left(\frac{1}{1- a\rho} + \frac{a}{(1- a\rho)^2}h \right)- \nabla^2 \rho \frac{1}{1- a\rho}\\
+	&= \nabla^2 h \left(\frac{1}{1- a\rho} \right) + \nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}h\right)
+\end{align*}
+For $F_2$ we consider the expansion:
+\begin{align*}
+	\frac{1}{(c-x)^2} = \frac{1}{c^2} + \frac{2}{c^3}x + O(x^2),
+\end{align*}
+and get:
+\begin{align*}
+	F_2(\rho+h) - F_2(\rho) &= \nabla (\rho +h) \cdot \nabla \left(\frac{3-2a(\rho +h)}{(1-a(\rho+h))^2}\right) -\nabla \rho \cdot \nabla \left(\frac{3-2a\rho}{(1-a\rho)^2}\right) \\
+	&= \nabla (\rho +h) \cdot \nabla \left(\frac{3-2a(\rho +h)}{(1-a\rho)^2} + \frac{3-2a(\rho +h)}{(1-a\rho)^3} 2ah \right) -\nabla \rho \cdot \nabla \left(\frac{3-2a\rho}{(1-a\rho)^2}\right)\\
+	&=\nabla h \cdot \nabla \left(\frac{3-2a\rho}{(1-a\rho)^2} \right) + \nabla \rho \cdot \nabla \left(h\left(\frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\right)\\
+	& = \nabla h \cdot \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + \left(\nabla h \cdot \nabla \rho \right) \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right) \\
+	&+ h \nabla \rho \cdot \nabla \left(\frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)
+\end{align*}
+
+Finally, we have:
+\begin{align*}
+	F_3(\rho+h) - F_3(\rho) &= (\rho +h) \nabla^2 \left(\frac{a(\rho +h) -2}{(a(\rho +h) -1)^2}\right) -\rho \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	&=  (\rho +h) \nabla^2 \left(\frac{a(\rho +h) -2}{(1-a\rho)^2} + \frac{a(\rho +h) -2}{(1-a\rho)^3}2ah \right) -\rho \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	&= h \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right) + \rho \nabla^2  \left(h\left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\right)\\
+	&= h \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right) + \rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\nabla^2 h \\
+	&+ 2 \rho \nabla \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right) \cdot \nabla h + \rho h \nabla^2  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\\
+\end{align*}
+
+Combining these in the Lagrangian gives:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T \int_\Omega q \nabla^2 h \left(\frac{1}{1- a\rho} \right) + q\nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}h\right)\\
+	&+ q\nabla h \cdot \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q\left(\nabla h \cdot \nabla \rho \right) \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right) \\
+	&+ qh \nabla \rho \cdot \nabla \left(\frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\\
+	&- qh \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right) - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\nabla^2 h \\
+	&- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \cdot \nabla h - q\rho h \nabla^2  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right).
+\end{align*}
+Rearranging gives:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T \int_\Omega h \bigg(q\nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}\right)  + q \nabla \rho \cdot \nabla \left(\frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right) - q \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	&- q\rho  \nabla^2  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\bigg)\\
+	&+ \nabla h \cdot \bigg( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \bigg)\\
+	&+ \nabla^2 h \bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg)
+\end{align*}
+Integration by parts gives:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T \int_\Omega h \bigg(q\nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}\right)  + q \nabla \rho \cdot \nabla \left(\frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3} \right) - q \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	&- q\rho  \nabla^2  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\bigg)\\
+	&-  h \nabla \bigg( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \bigg)\\
+	&+  h \nabla^2\bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg)
+\end{align*}
+So we have:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T\int_\Omega h \bigg[  q\nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}\right)  + q \nabla \rho \cdot \nabla \left(\frac{-2a }{(1-a\rho)^2}+ \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right) - q \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	&- q\rho  \nabla^2  \left(\frac{a }{(1-a\rho)^2} \right) - q\rho  \nabla^2  \left(\frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\\
+	& -\nabla \cdot \left( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) \right) - \nabla \cdot \left( q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} \right)\right)  - \nabla \cdot \left( q \nabla \rho  \left(\frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\right)  \\
+	& + \nabla \cdot\left( q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} \right) \right) + \nabla \cdot\left( q\rho \nabla \left( \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \right)\\
+	&+   \nabla^2 \left(q \left(\frac{1}{1- a\rho} \right) \right) - \nabla^2 \left(q\rho  \left(\frac{a }{(1-a\rho)^2}\right)\right) - \nabla^2 \left(q\rho \left(\frac{2a^2\rho -4a}{(1-a\rho)^3} \right)\right)\bigg] dr dt 
+\end{align*}
+And combining fractions gives:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T\int_\Omega h \bigg[  q\nabla^2 \rho \left(\frac{a}{(1- a\rho)^2}\right)  + q \nabla \rho \cdot \nabla \left(\frac{2a(a \rho -2)}{(1-a\rho)^3} \right) - q \nabla^2 \left(\frac{a\rho -2}{(a\rho -1)^2}\right)\\
+	& - q\rho  \nabla^2  \left(\frac{a(3  - a \rho)}{(1-a\rho)^3} \right) -\nabla \cdot \left( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) \right)  - \nabla \cdot \left( q \nabla \rho  \left(\frac{2a(a \rho -2)}{(1-a\rho)^3}  \right)\right)  \\
+	&  + \nabla \cdot\left( q\rho \nabla \left( \frac{-2a(a \rho- 3)}{(1-a\rho)^3} \right) \right)+   \nabla^2 \left(q \left(\frac{1}{1- a\rho} \right) \right) - \nabla^2 \left(q\rho \left(\frac{-a(a \rho -3)}{(1-a\rho)^3} \right)\right)\bigg] dr dt 
+\end{align*}
+According to Mathematica this is:
+\begin{align*}
+	\mathcal{L}_\rho(\rho,\w,q)h &= -\frac{1}{\beta}\int_0^T\int_\Omega h \bigg[ 
+	\frac{1}{(a \rho -1)^3}\bigg(4 a \nabla \rho \cdot \nabla q + 
+	2 a (-1 + a \rho) q \nabla^2 \rho + (-1 + 5 a \rho - 2 a^2 \rho^2) \nabla^2 q\bigg)
+	\bigg] dr dt
+\end{align*}
+And rewriting this is:
+\begin{align*}
+\mathcal{L}_\rho(\rho,\w,q)h & = -\frac{1}{\beta}\int_0^T\int_\Omega h \bigg[ 
+\frac{4 a \nabla \rho \cdot \nabla q}{(a \rho -1)^3}  +   \frac{2 a  q \nabla^2 \rho}{(a \rho -1)^2}  +   \frac{(-1 + 5 a \rho - 2 a^2 \rho^2) \nabla^2 q}{(a \rho -1)^3}
+\bigg] dr dt
+\end{align*}
+\subsection{Boundary Terms}
+We have the equation:
+\begin{align*}
+	- \mathbf{j} \cdot \n = -\rho \nabla \frac{\delta F[\rho]}{\delta \rho} \cdot \n &= -\frac{1}{\beta} \bigg(  \frac{\nabla \rho}{1 - \eta}  - \rho \nabla\frac{\eta - 2}{(\eta - 1)^2}  \bigg) \cdot \n
+\end{align*}
+Then:
+\begin{align*}
+	F_4(\rho) &= \frac{\nabla \rho}{1 - a \rho}\\
+	F_5(\rho) &= \rho \nabla\frac{a \rho - 2}{(a \rho - 1)^2}  
+\end{align*}
+Then for $F_4$ we have:
+\begin{align*}
+	F_4(\rho+h) - F_4(\rho) &=\nabla (\rho + h) \frac{1}{1 - a (\rho + h)} - \nabla \rho \frac{1}{1 - a \rho}\\
+	&= \nabla(\rho + h) \left(\frac{1}{1 - a\rho} + \frac{a}{(1 -a \rho)^2}h \right)\\
+	&= \nabla h \left(\frac{1}{1 - a\rho}\right) + \nabla \rho \left( \frac{a}{(1 -a \rho)^2}h \right)
+\end{align*}
+For $F_5$ we get:
+\begin{align*}
+	F_5(\rho + h) - F_5(\rho) &= (\rho + h) \nabla\frac{a (\rho +h) - 2}{(a (\rho +h) - 1)^2}  - \rho \nabla\frac{a \rho - 2}{(a \rho - 1)^2} \\
+	&=(\rho + h) \nabla \left( \frac{a (\rho +h) - 2}{(1- a \rho)^2} + \frac{a (\rho +h) - 2}{(1- a \rho)^3} 2ah\right) - \rho \nabla\frac{a \rho - 2}{(a \rho - 1)^2} \\
+	&= h \nabla \left(\frac{a \rho  - 2}{(1- a \rho)^2}\right) + \rho \nabla \left( h\left( \frac{a}{(1- a \rho)^2} + \frac{2a^2\rho - 4a}{(1- a \rho)^3} \right)\right)\\
+	&= h \nabla \left(\frac{a \rho  - 2}{(1- a \rho)^2}\right) + h \rho \nabla \left( \frac{a}{(1- a \rho)^2} + \frac{2a^2\rho - 4a}{(1- a \rho)^3} \right) + \nabla h \left( \rho \frac{a}{(1- a \rho)^2} + \rho\frac{2a^2\rho - 4a}{(1- a \rho)^3} \right)
+\end{align*}
+
+Then the boundary terms for the Lagrangian are:
+\begin{align*}
+	\mathcal{L}_{\rho,1}(\rho,\w, q) h &= - \frac{1}{\beta}\int_0^T \int_{\partial \Omega} \bigg(- q_{\partial \Omega}\nabla h \left(\frac{1}{1 - a\rho}\right) - q_{\partial \Omega}\nabla \rho \left( \frac{a}{(1 -a \rho)^2}h \right)+ q_{\partial \Omega}h \nabla \left(\frac{a \rho  - 2}{(1- a \rho)^2}\right) \\
+	&+ h q_{\partial \Omega}\rho \nabla \left( \frac{a}{(1- a \rho)^2} + \frac{2a^2\rho - 4a}{(1- a \rho)^3} \right) + q_{\partial \Omega}\nabla h \left( \rho \frac{a}{(1- a \rho)^2} + \rho\frac{2a^2\rho - 4a}{(1- a \rho)^3} \right) \bigg) \cdot \n dr dt
+\end{align*}
+
+From the integration by parts of the terms within the domain (in the previous section) we get:
+\begin{align*}
+	\mathcal{L}_{\rho,2}(\rho, \w,q)h &= - \frac{1}{\beta}\int_0^T \int_{\partial \Omega} \bigg(h \bigg( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\\
+	&- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \bigg)\\
+	& + \nabla h \bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg) \\
+	&- h \nabla \bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg) \bigg)\cdot \n dr dt
+\end{align*}
+
+
+Combining all of these give all boundary terms for the Lagrangian:
+\begin{align*}
+	\mathcal{L}_\rho (\rho,\w,q)h &= - \frac{1}{\beta}\int_0^T \int_{\partial \Omega} \bigg( h \bigg(-  q_{\partial \Omega}\nabla \rho \left( \frac{a}{(1 -a \rho)^2} \right)+ q_{\partial \Omega} \nabla \left(\frac{a \rho  - 2}{(1- a \rho)^2}\right) \\
+	&+  q_{\partial \Omega}\rho \nabla \left( \frac{a}{(1- a \rho)^2} + \frac{2a^2\rho - 4a}{(1- a \rho)^3} \right)
+	+ \bigg( q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\\
+	&- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) \bigg) -  \nabla \bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg)	\bigg)\\
+	& +\nabla h \bigg(- q_{\partial \Omega} \left(\frac{1}{1 - a\rho}\right) + q_{\partial \Omega}\left( \rho \frac{a}{(1- a \rho)^2} + \rho\frac{2a^2\rho - 4a}{(1- a \rho)^3} \right) +q \left(\frac{1}{1- a\rho} \right) \\
+	& - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right)  \bigg) \bigg) \cdot \n dr dt
+\end{align*}
+Comparing terms in $\nabla h$:
+\begin{align*}
+	&\bigg[-q_{\partial \Omega} \left(\frac{1}{1 - a\rho}\right) + q_{\partial \Omega}\left( \rho \frac{a}{(1- a \rho)^2} + \rho\frac{2a^2\rho - 4a}{(1- a \rho)^3} \right) \\
+	&+q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right) \bigg] \cdot \n = 0.
+\end{align*}
+This holds when $q_{\partial \Omega} = q$.
+Then for $h \neq 0$ we get:
+\begin{align*}
+	&\bigg[-q\nabla \rho \left( \frac{a}{(1 -a \rho)^2} \right)+q \nabla \left(\frac{a \rho  - 2}{(1- a \rho)^2}\right) \\
+	&+q\rho \nabla \left( \frac{a}{(1- a \rho)^2} + \frac{2a^2\rho - 4a}{(1- a \rho)^3} \right)
+	+  q  \nabla \left( \frac{3-2a\rho}{(1-a\rho)^2} \right) + q \nabla \rho  \left( \frac{-2a }{(1-a\rho)^2} + \frac{6a-4a^2  \rho}{(1-a\rho)^3}  \right)\\
+	&- q\rho \nabla \left(\frac{2a }{(1-a\rho)^2} + \frac{4a^2\rho -8a}{(1-a\rho)^3} \right) -  \nabla \bigg(q \left(\frac{1}{1- a\rho} \right)  - q\rho  \left(\frac{a }{(1-a\rho)^2} + \frac{2a^2\rho -4a}{(1-a\rho)^3} \right) \bigg)\bigg] \cdot \n = 0
+\end{align*}
+According to Mathematica this is:
+\begin{align*}
+	\frac{(1 + a \rho) \nabla q}{(a \rho -1)^3}\cdot \n = 0
+\end{align*}
+Since $a \rho >0$ by definition, this is:
+\begin{align*}
+	\frac{\partial q}{\partial n} = 0.
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
