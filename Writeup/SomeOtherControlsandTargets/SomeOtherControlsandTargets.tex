@@ -1,0 +1,195 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%\newcommand{\Sta}{\rho}
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+%\newcommand{\Con}{u}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\Stav}{\mathbf{v}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\Adjc}{{p}_{\partial \Sigma}}
+\newcommand{\Con}{\mathbf{f}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+
+
+\pagenumbering{gobble}
+\begin{document}
+	\section*{Deriving Optimality Conditions that slightly differ from the usual ones}
+	We consider time independent flow control, control through the external potential and a target that is only considered at the final time rather than over the whole time horizon.
+	\section{Time independent flow control}
+	We have the following OCP:
+	\begin{align*}
+		&J = \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_\Omega \w(r)^2 dr\\
+		&\text{subject to:}\\
+		&\frac{\partial \rho}{\partial t} = \nabla^2 \rho - \nabla \cdot (\rho \w(r))
+	\end{align*}
+	Then the Lagrangian is:
+	\begin{align*}
+		\mathcal{L}(\rho,\w, q) &=  \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_\Omega \w(r)^2 dr \\
+		&- \int_0^T \int_\Omega q\frac{\partial \rho}{\partial t} - q\nabla^2 \rho + q\nabla \cdot (\rho \w) dr dt.
+	\end{align*}
+	And after integrating by parts (neglecting the BCs because they are unchanged from before):
+	\begin{align*}
+		\mathcal{L}(\rho,\w, q) &=  \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_\Omega \w(r)^2 dr \\
+		&- \int_0^T \int_\Omega q\frac{\partial \rho}{\partial t} - q\nabla^2 \rho -  \rho \w \cdot \nabla q dr dt.
+	\end{align*}
+	Taking derivatives with respect to $\w$ gives:
+	\begin{align*}
+		\mathcal{L}_\w(\rho,\w, q)h &= \int_\Omega \beta \w(r) \cdot \h(r) dt + \int_0^T \int_\Omega \rho \h(r) \cdot \nabla q dr dt.
+	\end{align*}
+	Since $\w$ does not depend on $t$, neither does $\h$ and so this can be taken out of the time integral:
+	\begin{align*}
+		\mathcal{L}_\w(\rho,\w, q)h &= \int_\Omega \bigg( \beta \w(r) \cdot \h(r)  + \h(r) \cdot \int_0^T \rho  \nabla q dt \bigg) dr.
+	\end{align*}
+	Then we get:
+	\begin{align*}
+		\beta \w(r)  +  \int_0^T \rho  \nabla q dt = 0
+	\end{align*}
+	And finally:
+	\begin{align*}
+		\w(r) = - \frac{1}{\beta} \int_0^T \rho  \nabla q dt
+	\end{align*}
+	
+	\section{$V_{ext}$ control}
+	We have the following OCP:
+	\begin{align*}
+		&J = \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_0^T\int_\Omega V_{ext}^2 dr\\
+		&\text{subject to:}\\
+		&\frac{\partial \rho}{\partial t} = \nabla^2 \rho + \nabla \cdot (\rho \nabla V_{ext})
+	\end{align*}
+	The Lagrangian is:
+	\begin{align*}
+		\mathcal{L}(\rho, V_{ext}, q) &= \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_0^T\int_\Omega V_{ext}^2 dr\\
+		&- \int_0^T \int_\Omega q\frac{\partial \rho}{\partial t} - q\nabla^2 \rho - q\nabla \cdot (\rho \nabla V_{ext}) dr dt.
+	\end{align*}
+	We need to integrate by parts twice to get the term in $V_{ext}$ into the necessary form:
+	\begin{align*}
+		\int_0^T \int_\Omega q \nabla \cdot (\rho \nabla V_{ext}) dr dt &= \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n dr dt - \int_0^T \int_\Omega \rho \nabla V_{ext} \cdot \nabla q dr dt \\
+		& = \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n  - \rho V_{ext} \nabla q \cdot \n dr dt + \int_0^T \int_\Omega V_{ext} \nabla \cdot (\rho \nabla q) dr dt
+	\end{align*}
+	We will also have 
+	\begin{align*}
+		\int_0^T \int_\Omega q\nabla^2 \rho = \int_0^T \int_{\partial \Omega} q \nabla \rho \cdot \n- \rho \nabla q \cdot \n dr dt + \int_0^T \int_\Omega \rho \nabla^2 q dr dt
+	\end{align*}
+	\subsection{Boundary Conditions}
+	And the boundary conditions:
+	\begin{align*}
+		\int_0^T \int_{\partial \Omega} q_{\partial \Omega}\nabla \rho \cdot \n + q_{\partial \Omega}\rho \nabla V_{ext} \cdot \n dr dt
+	\end{align*}
+	Combining these:
+	\begin{align*}
+		&\int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n  - \rho V_{ext} \nabla q \cdot \n + q \nabla \rho \cdot \n - \rho \nabla q \cdot \n + q_{\partial \Omega}\nabla \rho \cdot \n + q_{\partial \Omega}\rho \nabla V_{ext} \cdot \n dr dt
+	\end{align*}
+	During the derivation of the adjoint equation we have:
+
+	\begin{align*}
+		\int_0^T \int_{\partial \Omega} \n \cdot h \bigg(q  \nabla V_{ext} -  V_{ext} \nabla q -\nabla q + q_{\partial \Omega} \nabla V_{ext} \bigg) +
+		\nabla h \cdot \n \bigg(q  + q_{\partial \Omega}  \bigg)dr dt
+	\end{align*}
+	Then from the $\nabla h$ terms we get $q_{\partial \Omega} = - q$ and so:
+	\begin{align*}
+		(q  \nabla V_{ext} -  V_{ext} \nabla q -\nabla q - q \nabla V_{ext}  ) \cdot \n = 0
+	\end{align*}
+	And therefore the new adjoint boundary condition is:
+	\begin{align*}
+		(1 + V_{ext})\frac{\partial q}{\partial n} = 0.
+	\end{align*}
+
+	\subsection{Gradient Equation}
+	We take the derivative of the Lagrangian with respect to $V_{ext}$:
+	\begin{align*}
+		\mathcal{L}_{V_{ext}} (\rho, V_{ext},q)h &= \int_0^T \int_\Omega \beta V_{ext} h + \nabla \cdot (\rho \nabla q) h dr dt 
+	\end{align*}
+	Then we have:
+	\begin{align*}
+		\beta V_{ext}  + \nabla \cdot (\rho \nabla q)  = 0
+	\end{align*}
+	And finally 
+	\begin{align*}
+		V_{ext} = - \frac{1}{\beta} \nabla \cdot (\rho \nabla q).
+	\end{align*}
+	
+	
+	\section{Target at final time}
+	We consider the following OCP, where $\widehat \rho$ does not depend on time; we are only interested in the target at the final time $T$. The problem reads:
+	\begin{align*}
+		&J = \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		&\text{subject to:}\\
+		&\frac{\partial \rho}{\partial t} = \nabla^2 \rho - \nabla \cdot (\rho \w)
+	\end{align*}
+	Then the Lagrangian is:
+	\begin{align*}
+		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		&- \int_0^T \int_\Omega q\frac{\partial \rho}{\partial t} - q\nabla^2 \rho + q\nabla \cdot (\rho \w) dr dt.
+	\end{align*}
+	From integrating by parts we get:
+	\begin{align*}
+	\int_0^T \int_\Omega	-q\frac{\partial \rho}{\partial t} dr dt= - \int_\Omega q(T) \rho(T) - q(0) \rho(0) dr +  \int_0^T \int_\Omega	\rho \frac{\partial q}{\partial t} dr dt
+	\end{align*}
+		\begin{align*}
+		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		&- \int_\Omega q(T) \rho(T) - q(0) \rho(0) dr + \int_0^T \int_\Omega \rho \frac{\partial q}{\partial t}   + q\nabla^2 \rho - q\nabla \cdot (\rho \w) dr dt.
+	\end{align*}
+	Taking the derivative with respect to $\rho $ gives:
+	\begin{align*}
+		\mathcal{L}_\rho(\rho,\w, q)h &= \int_\Omega  (\rho(T) - \widehat \rho) h(T) dr - \int_\Omega q(T) h(T) dr\\
+		&+ \int_0^T \int_\Omega h \frac{\partial q}{\partial t}   + q\nabla^2 h - q\nabla \cdot (h \w) dr dt.
+	\end{align*}
+	Considering the terms for $h(T)$, we get:
+	\begin{align*}
+		(\rho(T) - \widehat \rho) - q(T) = 0,
+	\end{align*}
+	and so 
+	\begin{align*}
+	q(T) = \rho(T) - \widehat \rho.
+	\end{align*}
+	The adjoint PDE remains unchanged, except for the fact that $ \rho - \widehat \rho$ does not enter the PDE anymore.
+
+
+
+
+\end{document}

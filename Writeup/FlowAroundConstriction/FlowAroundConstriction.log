@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  30 NOV 2020 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  10 DEC 2020 11:11
 entering extended mode
 **./FlowAroundConstriction.tex
 (FlowAroundConstriction.tex
@@ -566,37 +566,191 @@ LaTeX Info: Redefining \nameref on input line 60.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count149
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
+d"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
+d"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<Images/Con1.png, id=18, 1445.4pt x 685.8122pt>
+File: Images/Con1.png Graphic file (type png)
+<use Images/Con1.png>
+Package pdftex.def Info: Images/Con1.png  used on input line 95.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 95--96
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Con2.png, id=19, 1445.4pt x 685.8122pt>
+File: Images/Con2.png Graphic file (type png)
+<use Images/Con2.png>
+Package pdftex.def Info: Images/Con2.png  used on input line 102.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 102--103
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Con3.png, id=20, 1445.4pt x 685.8122pt>
+File: Images/Con3.png Graphic file (type png)
+<use Images/Con3.png>
+Package pdftex.def Info: Images/Con3.png  used on input line 108.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 108--109
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Images/Con3.png Graphic file (type png)
+<use Images/Con3.png>
+Package pdftex.def Info: Images/Con3.png  used on input line 115.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 115--116
+ [][] 
+ []
+
+[1
+
+{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConFa1.png, id=42, 1445.4pt x 685.8122pt>
+File: Images/ConFa1.png Graphic file (type png)
+<use Images/ConFa1.png>
+Package pdftex.def Info: Images/ConFa1.png  used on input line 125.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 125--126
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConFa2.png, id=43, 1445.4pt x 685.8122pt>
+File: Images/ConFa2.png Graphic file (type png)
+<use Images/ConFa2.png>
+Package pdftex.def Info: Images/ConFa2.png  used on input line 132.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 132--133
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConFa3.png, id=44, 1445.4pt x 685.8122pt>
+File: Images/ConFa3.png Graphic file (type png)
+<use Images/ConFa3.png>
+Package pdftex.def Info: Images/ConFa3.png  used on input line 139.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConFa4.png, id=45, 1445.4pt x 685.8122pt>
+File: Images/ConFa4.png Graphic file (type png)
+<use Images/ConFa4.png>
+Package pdftex.def Info: Images/ConFa4.png  used on input line 145.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 145--146
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
-[1
-
-{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 \end{document}
+                     [2 <./Images/Con1.png (PNG copy)>]pdfTeX warning (ext4): d
+estination with the same identifier (name{page.}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.153 \end{document}
+                     [3 <./Images/Con2.png (PNG copy)> <./Images/Con3.png (PNG 
+copy)>]pdfTeX warning (ext4): destination with the same identifier (name{page.}
+) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 \end{document}
+                     [4 <./Images/ConFa1.png (PNG copy)>]pdfTeX warning (ext4):
+ destination with the same identifier (name{page.}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.153 \end{document}
+                     [5 <./Images/ConFa2.png (PNG copy)> <./Images/ConFa3.png (
+PNG copy)>]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 \end{document}
+                     [6 <./Images/ConFa4.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
 
 (FlowAroundConstriction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `FlowAroundConstriction.out' has not changed.
 
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
+(rerunfilecheck)             Checksum: 6C729E2FDAC299D3CA57E75DEDA9BA19;143.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
  ) 
 Here is how much of TeX's memory you used:
- 10332 strings out of 492946
- 156028 string characters out of 3124935
- 259059 words of memory out of 3000000
- 14131 multiletter control sequences out of 15000+200000
- 4545 words of font info for 17 fonts, out of 3000000 for 9000
+ 10437 strings out of 492946
+ 157690 string characters out of 3124935
+ 267059 words of memory out of 3000000
+ 14198 multiletter control sequences out of 15000+200000
+ 8893 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,5n,43p,340b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,43p,396b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb>
-Output written on FlowAroundConstriction.pdf (1 page, 11264 bytes).
+nts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/s145
+2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on FlowAroundConstriction.pdf (6 pages, 943785 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 60 words of extra memory for PDF output out of 10000 (max. 10000000)
 

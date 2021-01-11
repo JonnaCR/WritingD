@@ -108,8 +108,8 @@
 	\end{align*}
 	We need to integrate by parts twice to get the term in $V_{ext}$ into the necessary form:
 	\begin{align*}
-		\int_0^T \int_\Omega \nabla \cdot (\rho \nabla V_{ext}) dr dt &= \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n dr dt - \int_0^T \int_\Omega \rho \nabla V_{ext} \cdot \nabla q dr dt \\
-		& = \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n  - \rho V_{ext} \nabla q \cdot \n dr dt + \int_0^T \int_\Omega V_{ext} \nabla (\rho \nabla q) dr dt
+		\int_0^T \int_\Omega q \nabla \cdot (\rho \nabla V_{ext}) dr dt &= \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n dr dt - \int_0^T \int_\Omega \rho \nabla V_{ext} \cdot \nabla q dr dt \\
+		& = \int_0^T \int_{\partial \Omega} q \rho \nabla V_{ext} \cdot \n  - \rho V_{ext} \nabla q \cdot \n dr dt + \int_0^T \int_\Omega V_{ext} \nabla \cdot (\rho \nabla q) dr dt
 	\end{align*}
 	We will also have 
 	\begin{align*}
@@ -142,30 +142,30 @@ Can we divide by $1 + V_{ext}$, is $V_{ext} > 0$.
 	\subsection{Gradient Equation}
 	We take the derivative of the Lagrangian with respect to $V_{ext}$:
 	\begin{align*}
-		\mathcal{L}_{V_{ext}} (\rho, V_{ext},q)h &= \int_0^T \int_\Omega \beta V_{ext} h + \nabla(\rho \nabla q) h dr dt \\
+		\mathcal{L}_{V_{ext}} (\rho, V_{ext},q)h &= \int_0^T \int_\Omega \beta V_{ext} h + \nabla \cdot (\rho \nabla q) h dr dt \\
 		&+\int_0^T \int_{\partial \Omega} (q \rho \nabla h - \rho h \nabla q - q \rho \nabla h) \cdot \n dr dt
 	\end{align*}
 	The boundary conditions just give (as before) $\frac{\partial q}{\partial n} = 0$ since $\rho >0$. (+++ We don't do this, do we? But it would support my hypothesis that $1 + V_{ext}) >0$ +++)
 	Then from the terms within the domain we have:
 	\begin{align*}
-		\beta V_{ext}  + \nabla(\rho \nabla q)  = 0
+		\beta V_{ext}  + \nabla \cdot (\rho \nabla q)  = 0
 	\end{align*}
 	And finally 
 	\begin{align*}
-		V_{ext} = - \frac{1}{\beta} \nabla(\rho \nabla q).
+		V_{ext} = - \frac{1}{\beta} \nabla \cdot (\rho \nabla q).
 	\end{align*}
 	
 	
 	\section{Target at final time}
 	
 		\begin{align*}
-		&J = \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho(T))^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		&J = \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
 		&\text{subject to:}\\
 		&\frac{\partial \rho}{\partial t} = \nabla^2 \rho - \nabla \cdot (\rho \w)
 	\end{align*}
 	Then the Lagrangian is:
 	\begin{align*}
-		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho(T))^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
 		&- \int_0^T \int_\Omega q\frac{\partial \rho}{\partial t} - q\nabla^2 \rho + q\nabla \cdot (\rho \w) dr dt.
 	\end{align*}
 	From integrating by parts we get:
@@ -173,23 +173,23 @@ Can we divide by $1 + V_{ext}$, is $V_{ext} > 0$.
 	\int_0^T \int_\Omega	-q\frac{\partial \rho}{\partial t} dr dt= - \int_\Omega q(T) \rho(T) - q(0) \rho(0) dr +  \int_0^T \int_\Omega	\rho \frac{\partial q}{\partial t} dr dt
 	\end{align*}
 		\begin{align*}
-		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho(T))^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
+		\mathcal{L}(\rho,\w, q) &= \frac{1}{2} \int_\Omega (\rho(T) - \widehat \rho)^2 dr  + \frac{\beta}{2} \int_0^T\int_\Omega \w^2 dr\\
 		&- \int_\Omega q(T) \rho(T) - q(0) \rho(0) dr + \int_0^T \int_\Omega \rho \frac{\partial q}{\partial t}   + q\nabla^2 \rho - q\nabla \cdot (\rho \w) dr dt.
 	\end{align*}
 	Taking the derivative with respect to $\rho $ gives:
 	\begin{align*}
-		\mathcal{L}_\rho(\rho,\w, q)h &= \int_\Omega  (\rho(T) - \widehat \rho(T)) h(T) dr - \int_\Omega q(T) h(T) dr\\
+		\mathcal{L}_\rho(\rho,\w, q)h &= \int_\Omega  (\rho(T) - \widehat \rho) h(T) dr - \int_\Omega q(T) h(T) dr\\
 		&+ \int_0^T \int_\Omega h \frac{\partial q}{\partial t}   + q\nabla^2 h - q\nabla \cdot (h \w) dr dt.
 	\end{align*}
 	Considering the terms for $h(T)$ gives:
 	\begin{align*}
-		(\rho(T) - \widehat \rho(T)) - q(T) = 0,
+		(\rho(T) - \widehat \rho) - q(T) = 0,
 	\end{align*}
 	and so 
 	\begin{align*}
-	q(T) = (\rho(T) - \widehat \rho(T))
+	q(T) = \rho(T) - \widehat \rho
 	\end{align*}
-	The adjoint PDE remains unchanged.
+	The adjoint PDE remains unchanged, except for the fact that $ \rho - \widehat \rho$ does not enter the PDE anymore.
 
 	\section{Sedimentation}
 	I ran the two different configurations with N = 100. I computed the mass in both cases and plotted the outcome. We can see that mass is still not constant but it is better than with $ N = 70$. 

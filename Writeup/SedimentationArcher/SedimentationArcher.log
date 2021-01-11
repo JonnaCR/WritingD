@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  30 NOV 2020 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  10 DEC 2020 10:41
 entering extended mode
 **./SedimentationArcher.tex
 (SedimentationArcher.tex
@@ -458,8 +458,7 @@ Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 32.
 \c@definition=\count141
-
-No file SedimentationArcher.aux.
+ (SedimentationArcher.aux)
 \openout1 = `SedimentationArcher.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -527,6 +526,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 60.
 LaTeX Info: Redefining \pageref on input line 60.
 LaTeX Info: Redefining \nameref on input line 60.
+ (SedimentationArcher.out) (SedimentationArcher.out)
 \@outlinefile=\write3
 \openout3 = `SedimentationArcher.out'.
 
@@ -566,43 +566,260 @@ LaTeX Info: Redefining \nameref on input line 60.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count149
+LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
+d"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
+d"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<Images/Ex8F1.png, id=25, 1445.4pt x 685.8122pt>
+File: Images/Ex8F1.png Graphic file (type png)
+<use Images/Ex8F1.png>
+Package pdftex.def Info: Images/Ex8F1.png  used on input line 100.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 100--101
+ [][] 
+ []
+
+[1
+
+{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<Images/Ex8F2.png, id=44, 2168.1pt x 1227.83719pt>
+File: Images/Ex8F2.png Graphic file (type png)
+<use Images/Ex8F2.png>
+Package pdftex.def Info: Images/Ex8F2.png  used on input line 110.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 110--111
+ [][] 
+ []
+
+<Images/Ex8F3.png, id=46, 2168.1pt x 1227.83719pt>
+File: Images/Ex8F3.png Graphic file (type png)
+<use Images/Ex8F3.png>
+Package pdftex.def Info: Images/Ex8F3.png  used on input line 117.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 117--118
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Ex8F1b.png, id=47, 1445.4pt x 685.8122pt>
+File: Images/Ex8F1b.png Graphic file (type png)
+<use Images/Ex8F1b.png>
+Package pdftex.def Info: Images/Ex8F1b.png  used on input line 125.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 125--126
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Ex8NonSym.png, id=49, 1445.4pt x 685.8122pt>
+File: Images/Ex8NonSym.png Graphic file (type png)
+<use Images/Ex8NonSym.png>
+Package pdftex.def Info: Images/Ex8NonSym.png  used on input line 134.
+(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
+
+Overfull \hbox (125.18187pt too wide) in paragraph at lines 134--135
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Ex10F1.png, id=51, 2168.1pt x 1227.83719pt>
+File: Images/Ex10F1.png Graphic file (type png)
+<use Images/Ex10F1.png>
+Package pdftex.def Info: Images/Ex10F1.png  used on input line 142.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 142--143
+ [][] 
+ []
+
+<Images/Ex10F2.png, id=53, 2168.1pt x 1227.83719pt>
+File: Images/Ex10F2.png Graphic file (type png)
+<use Images/Ex10F2.png>
+Package pdftex.def Info: Images/Ex10F2.png  used on input line 149.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 149--150
+ [][] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153 	
+        [2 <./Images/Ex8F1.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 	
+        [3 <./Images/Ex8F2.png (PNG copy)>]
+<Images/Plotrhobar0072.png, id=71, 2168.1pt x 1227.83719pt>
+File: Images/Plotrhobar0072.png Graphic file (type png)
+<use Images/Plotrhobar0072.png>
+Package pdftex.def Info: Images/Plotrhobar0072.png  used on input line 162.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 162--163
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhobar0072Zoom57to62.png, id=72, 2168.1pt x 1227.83719pt>
+File: Images/rhobar0072Zoom57to62.png Graphic file (type png)
+<use Images/rhobar0072Zoom57to62.png>
+Package pdftex.def Info: Images/rhobar0072Zoom57to62.png  used on input line 16
+8.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 168--169
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Plotrhobar02.png, id=73, 2168.1pt x 1227.83719pt>
+File: Images/Plotrhobar02.png Graphic file (type png)
+<use Images/Plotrhobar02.png>
+Package pdftex.def Info: Images/Plotrhobar02.png  used on input line 175.
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 175--176
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhobar02Zoom60to66.png, id=74, 2168.1pt x 1227.83719pt>
+File: Images/rhobar02Zoom60to66.png Graphic file (type png)
+<use Images/rhobar02Zoom60to66.png>
+Package pdftex.def Info: Images/rhobar02Zoom60to66.png  used on input line 181.
+
+(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
+
+Overfull \hbox (89.05579pt too wide) in paragraph at lines 181--182
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
-[1
-
-{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [4 <./Images/Ex8F3.png (PNG copy)>]pdfTeX warning (ext4): 
+destination with the same identifier (name{page.}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [5 <./Images/Ex8F1b.png (PNG copy)> <./Images/Ex8NonSym.pn
+g (PNG copy)>]pdfTeX warning (ext4): destination with the same identifier (name
+{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [6 <./Images/Ex10F1.png (PNG copy)>]pdfTeX warning (ext4):
+ destination with the same identifier (name{page.}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [7 <./Images/Ex10F2.png (PNG copy)>]pdfTeX warning (ext4):
+ destination with the same identifier (name{page.}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [8 <./Images/Plotrhobar0072.png (PNG copy)>]pdfTeX warning
+ (ext4): destination with the same identifier (name{page.}) has been already us
+ed, duplicate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [9 <./Images/rhobar0072Zoom57to62.png (PNG copy)>]pdfTeX w
+arning (ext4): destination with the same identifier (name{page.}) has been alre
+ady used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [10 <./Images/Plotrhobar02.png (PNG copy)>]pdfTeX warning 
+(ext4): destination with the same identifier (name{page.}) has been already use
+d, duplicate ignored
+<to be read again> 
+                   \relax 
+l.187 \end{document}
+                     [11 <./Images/rhobar02Zoom60to66.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
 
 (SedimentationArcher.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
-
-
-Package rerunfilecheck Warning: File `SedimentationArcher.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `SedimentationArcher.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+Package rerunfilecheck Info: File `SedimentationArcher.out' has not changed.
+(rerunfilecheck)             Checksum: FA0C7A7F3CC07982E17068DC4E01A1CE;363.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 10326 strings out of 492946
- 155677 string characters out of 3124935
- 259059 words of memory out of 3000000
- 14131 multiletter control sequences out of 15000+200000
- 4545 words of font info for 17 fonts, out of 3000000 for 9000
+ 10471 strings out of 492946
+ 158411 string characters out of 3124935
+ 267059 words of memory out of 3000000
+ 14222 multiletter control sequences out of 15000+200000
+ 9498 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,5n,43p,337b,323s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,43p,867b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb>
-Output written on SedimentationArcher.pdf (1 page, 10620 bytes).
+nts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/s145
+2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on SedimentationArcher.pdf (11 pages, 5254257 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

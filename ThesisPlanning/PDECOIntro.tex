@@ -1,0 +1,502 @@
+The aim of this project is to work towards using the particle model derived in the previous section to describe an industrial process and optimize this process with minimal cost involved.
+It is of interest to achieve a particle distribution $\hat{\rho}$ in some time over some domain $\Omega$.  
+In the context of PDE-constrained optimization, the aim is to minimize the distance between a state variable $\rho$ and a desired state $\hat\rho$, in some norm, while also minimizing the cost involved in reaching the desired state. This minimization is constrained by the underlying physics of the particle system. The PDE describing the particle dynamics is called the state equation.
+\newline
+Achieving the desired state $\hat\rho$ as close as possible can be of interest either for all times, as in this report, or only at some times, such as the final time $T$. In order to achieve $\hat \rho$, the particle distribution $\rho$ can be controlled through a so-called control variable, denoted by $u$. The control can be applied in various ways, which is dependent on the application. Since the background flow influences the particle distribution $\rho$, $\hat\rho$ can try to be reached by changing the flow field. Then the flow field is the control $u$. Alternatively, $u$ could represent the temperature or the geometry of the boundaries of the bath. Moreover, $u$ could be a parameter in the body force or in the particle interaction term, influencing the particle distribution through the forces involved. Note that $u$ cannot always influence the system enough to reach the desired state $\hat \rho$. This highly depends on the choice of $\hat \rho$, the physics of the problem and on the choice of the parameter $\beta$, which is discussed below.
+Since controlling $\rho$ requires energy, $u$ can be thought of as the cost involved in reaching $\hat\rho$. 
+\\ 
+The weight of the control is determined by the so-called regularization parameter, $\beta$. If $\beta$ is small, the desired state will be reached, however, at a high cost. If $\beta$ is large, the control will be minimized, but the desired state might not be reached. The choice of $\beta$ depends on the application involved. It is generally of interest to find a range of $\beta$ values, for which the solution to the optimization problem is robust. 
+The PDE-constrained optimization problem of interest in this report is of the form:
+\begin{align} \label{sysPDEconOpti1}
+&\min_{\rho,\mathbf{w}} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L^2}^2 + \frac{\beta}{2} \norm{\mathbf{w}}_{L^2}^2,\\
+\notag\\
+&\textbf{subject to:}\notag\\ 
+&\partial_t \rho =\nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}) + \nabla \cdot (\rho \nabla V_{ext}) \quad \text{in} \quad \Omega,\notag\\
+\notag\\
+&\dfrac{\partial \rho}{\partial {n}} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial {n}}  =0 \quad \text{on} \quad \partial \Omega,\notag \\
+& \rho = \rho_0 \quad \text{at} \quad t=0,  \notag
+\end{align}
+where the state equation is a simplified version of (\ref{sysParticleModel1}), which neglects the particle interaction term.
+Note that the norms are the $L^2$ norms with respect to $\Omega$ and time. Other norms could be used, depending on the type of application. In the following it is assumed, as described in \cite{TroeltzschFredi2010OCoP}, that $\rho \in H^1$ and $\mathbf{w} \in L^2$.
+In order to solve this optimization problem, continuous optimality conditions can be derived, which can then be discretized and solved numerically. This is known as the optimize-then-discretize approach.
+Another approach, discretize-then-optimize, would be to first discretize (\ref{sysPDEconOpti1}) and then derive the discrete optimality conditions that need to be solved.
+A good introduction to PDE-constrained optimization, can be found in \cite{PearsonThesis} and a more detailed introduction to numerical PDE-constrained optimization is provided in \cite{DeLosReyesOptimization}. Both of these texts provided the basis for the above discussion.
+
+\subsection{Deriving First-Order Optimality Conditions}
+Employing the  optimize-then-discretize approach, the continuous first order optimality conditions are derived using a Lagrangian approach. These are necessary optimality conditions, however, the sufficient second-order optimality conditions would be needed to ensure that the stationary points found via the first-order optimality conditions are indeed the minima of the problem. Sufficient optimality conditions are not part of this report but can be found, along the underlying theory of the approach employed in this section, in \cite{DeLosReyesOptimization} and \cite{TroeltzschFredi2010OCoP}. The derivation of the first-order optimality system follows closely the presentation in \cite{TroeltzschFredi2010OCoP}.  
+The PDE-constrained optimization problem (\ref{sysPDEconOpti1}) in Lagrangian form is:
+\begin{align*}
+\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) &= \frac{1}{2} \norm{\rho- \hat{\rho}}_{L^2(\Omega,t)}^2+ \frac{\beta}{2} \norm{\mathbf{w}}_{L^2(\Omega,t)}^2 \\
+&+  \int_0^T \int_\Omega\bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) \bigg) p_\Omega dr dt  \\ 
+&+ \int_0^T \int_{\partial \Omega}  \bigg(\dfrac{\partial \rho}{\partial {n}} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial {n}}\bigg) p_{\partial \Omega} dr dt , 
+\end{align*}
+where $p_\Omega$ and $p_{\partial \Omega}$ are the Lagrange multipliers of the problem, relating to the interior and the boundary of $\Omega$, respectively. The Lagrange multiplier $p_\Omega \in L^2$ is called the adjoint variable in the resulting system of equations.
+Writing the $L^2$ norms explicitly gives:
+\begin{align} \label{sysLagrangian1}
+\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) &= \frac{1}{2}\int_0^T\int_\Omega  (\rho- \hat{\rho})^2 dr dt  + \frac{\beta}{2} \int_0^T \int_\Omega \mathbf{w}^2 dr dt  \\
+&+ \int_0^T \int_\Omega \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) \bigg) p_\Omega dr dt \notag \\ 
+&+\int_0^T  \int_{\partial \Omega}  \bigg(\dfrac{\partial \rho}{\partial {n}} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial {n}}\bigg) p_{\partial \Omega} dr dt  \notag.
+\end{align}
+It is beneficial to rewrite the part of (\ref{sysLagrangian1}) that comes from the state equation, in order to simplify further computations.
+The term of interest is:
+\begin{align*}
+ &\int_0^T \int_\Omega \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) \bigg) p_\Omega dr dt \\
+ &=   \int_0^T \int_\Omega   p_\Omega \partial_t \rho dr dt -\int_0^T  \int_\Omega  p_\Omega \nabla^2 \rho dr dt  + \int_0^T \int_\Omega \nabla \cdot (\rho \mathbf{w}) p_\Omega dr dt -\int_0^T \int_\Omega \nabla \cdot (\rho \nabla V_{ext})p_\Omega dr dt \\
+ &:= I_1 + I_2 + I_3 + I_4. 
+\end{align*}
+Each of the defined integrals is considered in turn.
+The first integral contains the time derivative of $\rho$. Integration by parts is applied to get:
+\begin{align*}
+I_1&=\int_0^T \int_\Omega  p_\Omega \partial_t \rho dr dt  = \bigg[ \int_\Omega \rho p_\Omega dr \bigg]_0^T - \int_0^T \int_\Omega \rho\partial_t  p_\Omega dr dt\\
+&= \int_\Omega (\rho(T) p_\Omega(T) -\rho_0 p_\Omega(0))dr  - \int_0^T \int_\Omega \rho\partial_t  p_\Omega dr dt .
+\end{align*}
+In order to rewrite the second integral, integration by parts is applied twice as follows:
+\begin{align*}
+I_2&=  \int_0^T \int_\Omega p_\Omega \nabla^2 \rho dr dt  
+=\int_0^T \int_{\partial \Omega}  p_\Omega \frac{\partial \rho}{\partial {n}} dr dt  -\int_0^T \int_\Omega  \nabla \rho \cdot \nabla p_\Omega dr dt \\
+&=\int_0^T \int_{\partial \Omega}  p_\Omega \frac{\partial \rho}{\partial n} dr dt - \int_0^T \int_{\partial \Omega}  \rho \frac{\partial p_\Omega }{\partial {n}} dr dt   +\int_0^T \int_\Omega \rho \nabla^2 p_\Omega dr dt .
+\end{align*} 
+The third integral is rewritten using similar arguments:
+\begin{align*}
+I_3 = \int_0^T \int_\Omega \nabla \cdot (\rho w) p_\Omega dr dt = \int_0^T  \int_{\partial \Omega}  p_\Omega \rho w \cdot n dr dt  - \int_0^T \int_\Omega \rho \nabla p_\Omega \cdot w dr dt.
+\end{align*}
+The final integral is rewritten as follows:
+\begin{align*}
+I_4 &=\int_0^T \int_\Omega \nabla \cdot (\rho \nabla V_{ext})p_\Omega dr dt=\int_0^T \int_\Omega \nabla \cdot (\rho \nabla V_{ext}p_\Omega) dr dt  - \int_0^T \int_\Omega  \rho \nabla p_\Omega\cdot \nabla V_{ext} dr dt\\
+&= \int_0^T \int_{\partial\Omega}  \rho p_\Omega \frac{\partial V_{ext}}{\partial n} dr dt - \int_0^T \int_\Omega  \rho \nabla p_\Omega\cdot \nabla V_{ext} dr dt,
+\end{align*}
+where the Divergence Theorem is used to derive the final result.
+Substituting the four rewritten integrals back into (\ref{sysLagrangian1}) results in:
+\begin{align*}
+\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) &= \frac{1}{2}\int_0^T \int_\Omega  (\rho- \hat{\rho})^2 dr dt+ \frac{\beta}{2}\int_0^T \int_\Omega  \mathbf{w}^2 dr dt   
++ \int_\Omega (\rho(T) p_\Omega(T) -\rho_0 p_\Omega(0))dr \\ \notag 
+&- \int_0^T\int_\Omega \rho\partial_t  p_\Omega dr dt - \int_0^T \int_{\partial \Omega}  p_\Omega \frac{\partial \rho}{\partial n} dr dt + \int_0^T \int_{\partial \Omega}  \rho \frac{\partial p_\Omega }{\partial n} dr dt  - \int_0^T \int_\Omega \rho \nabla^2 p_\Omega dr dt  \notag \\
+&+ \int_0^T \int_{\partial \Omega} p_\Omega \rho \mathbf{w} \cdot \mathbf{n} dr dt  - \int_0^T \int_\Omega  \rho \nabla p_\Omega \cdot \mathbf{w} dr dt \notag 
+- \int_0^T \int_{\partial\Omega}  \rho p_\Omega \frac{\partial V_{ext}}{\partial n} dr dt   \notag \\
+& +\int_0^T \int_\Omega  \rho \nabla p_\Omega\cdot \nabla V_{ext} dr dt  + \int_0^T \int_{\partial \Omega}  \bigg(\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n}\bigg) p_{\partial \Omega} dr  dt\notag.
+\end{align*}
+Sorting the terms by whether they are interior or boundary terms and grouping them gives: 
+\begin{align} \label{sysLagrangian2}
+&\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) =\int_\Omega (\rho(T) p_\Omega(T) -\rho_0 p_\Omega(0))dr \\
+&+ \int_0^T \int_\Omega \bigg( \frac{1}{2}(\rho- \hat{\rho})^2  + \frac{\beta}{2} \mathbf{w}^2 - \rho\partial_t  p_\Omega  - \rho \nabla p_\Omega \cdot \mathbf{w}   \notag 
+- \rho \nabla^2 p_\Omega +  \rho \nabla p_\Omega\cdot \nabla V_{ext} \bigg)dr dt  \\
+& + \int_0^T \int_{\partial \Omega}  \bigg( \rho \frac{\partial p_\Omega }{\partial n}  -  \rho p_\Omega \frac{\partial V_{ext}}{\partial n} 
+- p_\Omega \frac{\partial \rho}{\partial n} 
++ p_\Omega \rho \mathbf{w} \cdot \mathbf{n} \notag 
++ p_{\partial \Omega} \dfrac{\partial \rho}{\partial n} - \rho p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} + \rho p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n}  \bigg) dr dt  \notag.
+\end{align}
+
+In order to derive the first-order optimality conditions for the optimization problem, the Fr\'echet derivatives of $\mathcal{L}$ with respect to all variables $\rho, w, p_\Omega, p_{\partial \Omega}$ have to be taken. The system of equations that results from setting these first derivatives to zero are called first-order optimality conditions. The resulting equations are called the adjoint equation, the gradient equation and the forward problem. The latter is equivalent to the state equation.
+
+\subsubsection{Fr\'echet Differentiation}
+In the derivation of the optimality conditions, Fr\'echet derivatives of the Lagrangian have to be taken. In order to do so, the notions of derivatives needed in this context are introduced in this section.
+
+The following definitions are taken from \cite{DeLosReyesOptimization} and \cite{FrechetProductrule1}.
+Throughout this section, let $U,V$ and $Z$ be real Banach spaces.
+\theoremstyle{definition}
+\begin{definition}\cite{DeLosReyesOptimization}
+If, for given elements $ u,h \in U$, the limit
+\begin{align*}
+\delta F(u)(h) := \lim_{t\to 0^+} \frac{1}{t} \bigg( F(u+th) - F(u) \bigg)
+\end{align*}
+exists, then $\delta F(u)(h)$ is called the \emph{directional derivative} of $F$ at $u$ in direction $h$. If this limit exists for all $h \in U$, then $F$ is called directionally differentiable at $u$.
+\end{definition}
+\theoremstyle{definition}
+\begin{definition}\cite{DeLosReyesOptimization}
+	If, for some $ u \in U$ and all $h \in U$ the limit
+	\begin{align*}
+	\delta F(u)(h) := \lim_{t\to 0} \frac{1}{t} \bigg( F(u+th) - F(u) \bigg)
+	\end{align*}
+	exists and $\delta F(u)(h)$ is a continuous mapping from $U$ to $V$, then $\delta F(u)$ is denoted by $F'(u)$ and is called the G\^{a}teaux derivative of $F$ at $u$, and $F$ is called \emph{G\^{a}teaux differentiable} at $u$.
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}\cite{DeLosReyesOptimization}
+If $F$ is G\^{a}teaux differentiable at $u \in U$, and satisfies in addition that
+\begin{align*}
+\lim_{\norm{h}_U \to 0} \frac{\norm{F(u+h)-F(u) -F'(u)h}_V}{\norm{h}_U}=0,
+\end{align*}
+then $F'(u)$ is called the Fr\'echet derivative of $F$ at $u$ and $F$ is called \emph{Fr\'echet differentiable}.
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}\cite{DeLosReyesOptimization} \emph{Chain Rule}\\
+Let $F:U\to V$ and $G:V \to Z$ be Fr\'echet differentiable at $u$ and $F(u)$, respectively. Then
+\begin{align*}
+E(u)=G(F(u))
+\end{align*}
+is also Fr\'echet differentiable and its derivative is given by:
+\begin{align*}
+E'(u)=G'(F(u))F'(u).
+\end{align*} 
+\end{definition}
+
+\theoremstyle{definition}
+\begin{definition}\cite{FrechetProductrule1} \emph{Product Rule}\\
+Let $U$ and $V$ be Banach spaces, let $\mathcal{U}$ be an open subset of $U$, and let $F: \mathcal{U} \to \mathbf{R}$ and $G: \mathcal{U} \to V$ be functions. If both $F$ and $G$ are differentiable at $u \in \mathcal{U}$, then $FG$ is differentiable at $u$ and 
+\begin{align*}
+(FG)'(u) = F(u)G'(u)+G(u)F'(u).
+\end{align*}
+\end{definition}
+
+\subsubsection{Deriving the Adjoint Equation} \label{secOptimalityAdjoint1}
+The adjoint equation is found by calculating the Fr\'echet derivative of the Lagrangian (\ref{sysLagrangian2}) with respect to the state variable and setting it equal to zero.
+The derivative with respect to $\rho$ is:
+\begin{align*}
+&\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h =\int_\Omega h(T) p_\Omega(T) dr\\
+&+ \int_0^T\int_\Omega  \bigg( (\rho- \hat{\rho})h   - h\partial_t  p_\Omega  - h\nabla p_\Omega \cdot  \mathbf{w} - h \nabla^2 p_\Omega \notag 
+ +  h \nabla p_\Omega\cdot \nabla V_{ext} \bigg)dr dt  \\
+& + \int_0^T  \int_{\partial \Omega}  \bigg(h \frac{\partial p_\Omega }{\partial n}  -  h p_\Omega \frac{\partial V_{ext}}{\partial n} 
+- p_\Omega \frac{\partial h}{\partial n} 
++ p_\Omega h \mathbf{w} \cdot \mathbf{n} \notag 
++ p_{\partial \Omega} \dfrac{\partial h}{\partial n} - h p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} + h p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n}  \bigg) dr dt  \notag\\
+&=\int_\Omega h(T) p_\Omega(T) dr + \int_0^T\int_\Omega  \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
+ +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt \\
+& + \int_0^T\int_{\partial \Omega}   \bigg(
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega  \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} \bigg)h
++ \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} \bigg) dr dt \notag,
+\end{align*}
+where $h \in L^2$ belongs to the same space as $\rho$ and can be thought of as the direction of differentiation.
+The initial condition for $\rho$, $\rho_0$, vanishes from the derivative of $\mathcal{L}$, because $h$ satisfies $h(r,0)=0$. As discussed in \cite{TroeltzschFredi2010OCoP}, this is because the variational inequality $\mathcal{L}_\rho(\tilde \rho, \mathbf{\tilde w},p_\Omega, p_{\partial\Omega})(\rho -\tilde\rho)\geq 0$ has to be satisfied for all admissible $\rho$, in order for $\tilde \rho$ and $\mathbf{\tilde w}$ to be the minimum of the problem.
+If $h:=\rho-\tilde \rho$, then $h(r,0)=0$ and furthermore, $-h$ is also an admissible choice of function. Therefore, the variational inequality becomes the equality $\mathcal{L}_\rho(\tilde \rho,\mathbf{\tilde w},p_\Omega, p_{\partial\Omega})h= 0$, for $h$ sufficiently smooth, with $h(r,0)=0$. 
+
+Setting $\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h =0$, in order to find the adjoint equation, gives:
+\begin{align} \label{eqnLagrRhoDeriv}
+&\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h =\int_\Omega h(T) p_\Omega(T) dr\\
+&+ \int_0^T \int_\Omega \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
+  +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt  \notag \\
+& +  \int_0^T\int_{\partial \Omega}  \bigg(
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega  \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} \bigg)h \notag+ \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} \bigg) dr dt =0. \notag
+\end{align}
+The first step is to restrict the choice of $h$ as much as possible. That is choosing $h \in C_0^\infty(\Omega)$, such that: 
+\begin{align}\label{condHChoice1}
+h(T)&=0 \quad \text{in} \quad \Omega, \\
+h&=0 \quad \text{on} \quad \partial \Omega, \notag \\
+\frac{\partial h}{\partial n}&=0 \quad \text{on} \quad \partial \Omega, \notag
+\end{align}
+as discussed in \cite{TroeltzschFredi2010OCoP}.
+With this choice of $h$, (\ref{eqnLagrRhoDeriv}) reduces to:
+\begin{align}\label{eqnOptiAdjRho1}
+\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h 
+ &= \int_0^T \int_\Omega  \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega 
+ +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt  \notag \\
+&=0.
+\end{align}
+Since this equation has to hold for all $h$ satisfying (\ref{condHChoice1}) and, as discussed in \cite{TroeltzschFredi2010OCoP}, $C_0^\infty(\Omega)$ is dense in $L^2(\Omega)$, it can be concluded that:
+\begin{align*}
+(\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega 
+  +  \nabla p_\Omega\cdot \nabla V_{ext} =0.
+\end{align*}
+The adjoint equation is then
+\begin{align*}
+ - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega 
++  \nabla p_\Omega\cdot \nabla V_{ext} =-(\rho- \hat{\rho}) . 
+\end{align*}
+Now it is of interest to relax the conditions on $h$, to derive the results at the boundary $\partial \Omega$ and at the final time $T$.
+First, the case where $h(T) \neq 0$ is considered, so that $h \in C^1(\Omega)$. The remaining conditions are:
+\begin{align}\label{condHChoice2}
+h&=0 \quad \text{on} \quad \partial \Omega, \\
+\frac{\partial h}{\partial n}&=0 \quad \text{on} \quad \partial \Omega. \notag 
+\end{align} 
+Therefore, (\ref{eqnLagrRhoDeriv}) reduces to:
+\begin{align} 
+\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h &=\int_\Omega h(T) p_\Omega(T) dr \notag\\ 
+&+\int_0^T \int_\Omega  \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
+  +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt  =0. \notag 
+\end{align}
+However, since $ \displaystyle \int_0^T \int_\Omega  \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt =0$ by (\ref{eqnOptiAdjRho1}), the equation reduces to:
+\begin{align}\label{eqnOptiAdjRho2}
+\int_\Omega h(T) p_\Omega(T) dr=0,
+\end{align}
+for all $h(T) \in \Omega$, and so:
+\begin{align}\label{eqnOptiAdjRhoFTC}
+p_\Omega(r,T)= 0 \quad \text{in} \quad \Omega,
+\end{align}
+by the same density argument of the spaces involved, see \cite{TroeltzschFredi2010OCoP}.
+In order to further ease the requirements on $h$, $\frac{\partial h}{\partial n} \neq 0 $ on $\partial \Omega$ is permitted and the only remaining restriction on $h \in C^1(\Omega)$ is:
+\begin{align*}
+h=0 \quad \text{on} \quad \partial \Omega.
+\end{align*}
+Then (\ref{eqnLagrRhoDeriv}) reduces to:
+\begin{align*}
+\mathcal{L}_\rho (\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) h &=\int_\Omega h(T) p_\Omega(T) dr\\
+&+ \int_0^T \int_\Omega  \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
+  +  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt  \\
+& +  \int_0^T \int_{\partial \Omega} \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} dr  dt   =0. \notag
+\end{align*}
+Since the first two terms vanish by (\ref{eqnOptiAdjRho1}) and (\ref{eqnOptiAdjRho2}), this reduces to:
+\begin{align}\label{eqnOptiAdjRho3}
+\int_0^T \int_{\partial \Omega}   \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} dr  dt  =0.
+\end{align}
+This holds for all permissible choices of $h$ and the set of these $h$ is dense in $L^2(\Omega)$. Therefore, as before, this concludes that:
+\begin{align}\label{eqnPOmPPartOmEqual}
+p_{\partial \Omega}= p_\Omega.
+\end{align} 
+This provides a relationship between the two Lagrange multipliers and therefore only $p_\Omega$ remains in the final adjoint equation as the so-called adjoint variable.
+Finally, all restrictions on $h$ are lifted and $h \neq 0 $ on $ \partial \Omega$ is a permitted choice. Since all other terms in (\ref{eqnLagrRhoDeriv}) vanish by  (\ref{eqnOptiAdjRho1}), (\ref{eqnOptiAdjRho2}) and (\ref{eqnOptiAdjRho3}), it reduces to:
+\begin{align*}
+\int_0^T  \int_{\partial \Omega}  \bigg(
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} \bigg)h dr dt =0.
+\end{align*}
+This has to hold for all $h$ and by the same density argument as before:
+\begin{align*}
+\frac{\partial p_\Omega }{\partial n} + p_\Omega  \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} =0.
+\end{align*}
+Now, using (\ref{eqnPOmPPartOmEqual}), this is:
+\begin{align*}
+\frac{\partial p_\Omega }{\partial n} + p_\Omega  \textbf{w}\cdot \mathbf{n} - p_{ \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{ \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} =0,
+\end{align*}
+and the boundary condition for the adjoint equation reduces to:
+\begin{align}\label{eqnOptiAdjRhoBC1}
+\frac{\partial p_\Omega }{\partial n} =0.
+\end{align}
+Finally, the adjoint equation, including boundary and final time conditions, satisfies:
+\begin{align} \label{sysAdjointEquation}
+ - \partial_t  p  - \nabla p \cdot \mathbf{w}  - \nabla^2 p 
++  \nabla p \cdot \nabla V_{ext} &=-(\rho- \hat{\rho})  \quad \text{in} \quad \ \Omega,\\
+p(T) &= 0 \quad \quad\quad \quad \ \text{in} \quad \ \Omega, \notag\\
+\frac{\partial p }{\partial n} &=0 \quad  \ \quad\quad\quad \text{on} \quad \partial\Omega, \notag
+\end{align}
+where $p :=p_\Omega$ for notational convenience.
+
+\subsubsection{The First-Order Optimality System} \label{secOptimalityGradient1} \label{secOptimalityStateEqnDerivation1}
+The gradient equation is derived by taking the Fr\'echet derivative of (\ref{sysLagrangian2}) with respect to $\mathbf{w}$ and setting it equal to zero. The derivative satisfies:
+\begin{align*}
+\mathcal{L}_{\mathbf{w}}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) \mathbf{h} &= \int_0^T \int_\Omega  \bigg( \beta \mathbf{w} \cdot \mathbf{h} - \rho \nabla p_\Omega \cdot \mathbf{h} \bigg) dr dt   
+ + \int_0^T \int_{\partial \Omega}  \bigg( p_\Omega \rho \mathbf{h} \cdot \mathbf{n} -  p_{\partial \Omega}\rho \mathbf{h} \cdot \mathbf{n}  \bigg) dr dt  \\ &=0 \notag.
+\end{align*}
+Using (\ref{eqnPOmPPartOmEqual}), the boundary terms cancel and the equation reduces to:
+\begin{align*}
+\int_0^T \int_\Omega \bigg( \beta \mathbf{w}  - \rho \nabla p_\Omega  \bigg)\cdot \mathbf{h} dr dt =0.
+\end{align*}
+Since this has to hold for all choices of $\mathbf{h} \in L^2(\Omega)$, this gives the gradient equation:
+\begin{align}\label{eqnGradientEquation}
+ \beta \mathbf{w} - \rho \nabla p_\Omega =0 \quad \text{in} \quad \Omega.
+\end{align}
+
+The state equation is derived by taking the Fr\'echet derivative of (\ref{sysLagrangian1}) with respect to $p_\Omega$, and setting the result equal to zero. Note that this result makes use of (\ref{eqnPOmPPartOmEqual}). The derivative is:
+\begin{align*}
+\mathcal{L}_{p_\Omega}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega})h 
+&=\int_0^T  \int_\Omega \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) \bigg) h dr dt \notag \\ 
+&+ \int_0^T \int_{\partial \Omega}  \bigg(\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w}\cdot\mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n}\bigg)h dr dt =0 \notag.
+\end{align*}
+By the same argument as in the previous section, the forward equation, including the boundary conditions, is recovered:
+\begin{align}\label{sysForwardEquation} 
+\partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) &=0 \quad \text{in} \quad \Omega,\\ 
+\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n} &=0 \quad \text{on} \quad \partial \Omega \notag . 
+\end{align}
+
+The system of the three equations that describe the first-order optimality conditions for the PDE-constrained optimization problem (\ref{sysPDEconOpti1}) consists of the adjoint and gradient equations as well as the forward problem:
+\begin{align}\label{sysFirstOderOptimality1}
+\textbf{Adjoint Equation}  \\
+ - \partial_t  p  - \nabla p \cdot \mathbf{w}  - \nabla^2 p 
++  \nabla p \cdot \nabla V_{ext} &=-(\rho- \hat{\rho})  \quad \ \  \text{in} \quad \Omega, \notag \\
+p(r,T) &= 0, \notag\\
+\frac{\partial p }{\partial n} &=0 \quad \quad \quad \quad\quad \text{on} \quad \partial\Omega, \notag\\
+\textbf{Gradient Equation} \notag \\
+ \beta \mathbf{w}  - \rho \nabla p_\Omega &=0 \quad  \quad \quad \quad \quad \text{in} \quad \Omega, \notag \\
+\textbf{Forward Problem} \notag \\
+\partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) &=0 \quad \quad \quad \quad \quad\text{in} \quad \Omega, \notag \\ 
+\rho(r,0)&=\rho_0(r), \notag \\
+\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n} &=0 \quad \quad \quad \quad \quad \text{on} \quad \partial \Omega. \notag
+\end{align}
+\subsection{Adding a Non-Local Term}\label{secOptimalitySysNonLocal1}	
+The PDE-constrained optimization problem can be extended by adding the non-local particle interaction term into the PDE constraint, as given by (\ref{eqnMeanFieldApprox1}).
+The PDE-constrained optimization problem becomes:
+\begin{align}\label{sysPDEconstroptiAndNonlocal1}
+&\min_{\rho,\mathbf{w}} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L^2}^2 + \frac{\beta}{2} \norm{\mathbf{w}}_{L^2}^2,\\
+\notag\\
+&\textbf{subject to:}\notag\\ 
+&\partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}) + \nabla \cdot (\rho \nabla V_{ext}) + \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' \quad \text{in} \quad \Omega,\notag\\
+\notag\\
+&\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{u} + \rho \dfrac{\partial V_{ext}}{\partial n} +\int_\Omega \rho(r) \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'  =0 \quad\quad \quad \quad \quad \quad \quad \text{on} \quad \partial \Omega,\notag \\
+& \rho = \rho_0 \quad \text{at} \quad t=0.  \notag
+\end{align}
+The Lagrangian of this problem follows directly from (\ref{sysLagrangian1}) in Section \ref{secOptimalityAdjoint1}. The difference is the additional term from the non-local term in the PDE:
+\begin{align}\label{sysLagrangianNonLocal1} 
+&\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) = \frac{1}{2}\int_0^T\int_\Omega  (\rho- \hat{\rho})^2 dr dt  + \frac{\beta}{2} \int_0^T \int_\Omega \mathbf{w}^2 dr dt \\
+&+ \int_0^T \int_\Omega \bigg( \partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext}) \notag - \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr'\bigg) p_\Omega dr dt \notag \\ 
+&+\int_0^T  \int_{\partial \Omega}  \bigg(\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n}+\int_\Omega \rho(r) \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'\bigg) p_{\partial \Omega} dr dt  \notag.
+\end{align}
+The non-local term over $\Omega$ is denoted by $I_1$ and rewritten as follows:
+\begin{align*}
+I_1&=\int_0^T \int_\Omega p_\Omega \nabla \cdot \bigg(\int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|)  dr'\bigg)  dr dt\\
+&= \int_0^T \int_\Omega  p_\Omega \nabla \cdot \bigg( \rho(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr'\bigg)  dr dt\\
+&= \int_0^T \int_{\partial \Omega}  p_\Omega  \rho(r) \int_\Omega \rho(r') \frac{ \partial V_2(|r-r'|)}{\partial n} dr' dr dt\\
+&-\int_0^T \int_\Omega \nabla  p_\Omega \bigg( \rho(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr'\bigg)  dr dt,
+\end{align*}
+by applying integration by parts.
+The non-local term, originating from the boundary condition, is denoted by $I_2$ and rewritten as:
+\begin{align*}
+I_2&=\int_0^T\int_{\partial \Omega} p_{\partial \Omega}\int_\Omega \rho(r) \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'dr dt\\
+&=\int_0^T \int_{\partial \Omega} p_{\partial \Omega} \rho(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'dr dt.
+\end{align*}
+The integrals $I_1$ and $I_2$ are rearranged and split up into integrals over $\Omega$ and over $\partial \Omega$. They are defined as follows:
+\begin{align*}
+I_\Omega=\int_0^T \int_\Omega \nabla  p_\Omega \bigg( \rho(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr'\bigg)  dr dt,
+\end{align*}
+and
+\begin{align*}
+I_{\partial \Omega}=\int_0^T \int_{\partial \Omega} ( p_{\partial \Omega} - p_\Omega) \rho(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'dr dt.
+\end{align*}
+
+The full Lagrangian is then similar to (\ref{sysLagrangian2}) in Section \ref{secOptimalityAdjoint1}:
+\begin{align}\label{sysLagrangianPlusNonLocal}
+&\mathcal{L}(\rho,\mathbf{w}, p_\Omega, p_{\partial \Omega}) =\int_\Omega \bigg(\rho(T) p_\Omega(T)-\rho_0 p_\Omega(0) \bigg) dr\\
+&+ \int_0^T \int_\Omega \bigg( \frac{1}{2}(\rho- \hat{\rho})^2  + \frac{\beta}{2} \mathbf{w}^2 - \rho\partial_t  p_\Omega  - \rho \nabla p_\Omega \cdot \mathbf{w}   \notag 
+- \rho \nabla^2 p_\Omega +  \rho \nabla p_\Omega\cdot \nabla V_{ext} \bigg)dr dt  \\
+&+\int_0^T \int_\Omega \nabla  p_\Omega \bigg( \rho(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr'\bigg)  dr dt \notag \\
+&+\int_0^T \int_{\partial \Omega} ( p_{\partial \Omega} - p_\Omega) \rho(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'dr dt \notag \\
+& + \int_0^T \int_{\partial \Omega}  \bigg( \rho \frac{\partial p_\Omega }{\partial n}  -  \rho p_\Omega \frac{\partial V_{ext}}{\partial n} 
+- p_\Omega \frac{\partial \rho}{\partial n} 
++ p_\Omega \rho \mathbf{w} \cdot \mathbf{n}  \notag 
++ p_{\partial \Omega} \dfrac{\partial \rho}{\partial n} - \rho p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} + \rho p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n}  \bigg) dr dt  \notag.
+\end{align}
+Equivalently to the procedure in Section \ref{secOptimalityAdjoint1}, the Fr\'echet derivatives of the Lagrangian with respect to all variables have to be taken and set to zero.
+The derivatives of the non-local terms $I_\Omega$ and $I_{\partial \Omega}$ are taken separately and are then substituted into the result for the derivatives from the previous sections.
+
+
+\subsubsection{Deriving the Adjoint Equation}
+The Fr\'echet derivative of $I_\Omega$ with respect to $\rho$ in direction $h$ is:
+\begin{align*}
+({I_\Omega})_\rho(\rho,p_\Omega)h &= \int_0^T \int_\Omega \nabla  p_\Omega \bigg( h(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr' + \rho(r) \int_\Omega h(r') \nabla V_2(|r-r'|) dr' \bigg)  dr dt,
+\end{align*}
+using the product rule for Fr\'echet differentiation.
+For the term involving $h(r')$, the order of integration can be changed, as follows:
+\begin{align*}
+({I_\Omega})_\rho(\rho,p_\Omega)h &= \int_0^T \int_\Omega \nabla  p_\Omega  h(r) \int_\Omega \rho(r') \nabla V_2(|r-r'|) dr' dr dt \\
+&+\int_0^T \int_\Omega h(r')  \int_\Omega \nabla  p_\Omega \rho(r) \nabla V_2(|r-r'|) dr dr' dt.
+\end{align*} 
+The variable names $r$ and $r'$ in the second integral are swapped for readability. This is possible since $r$ and $r'$ are dummy variables and $V_2$ is symmetric. Then $({I_\Omega})_\rho(\rho,p_\Omega)h$ can be rewritten as:
+\begin{align*}
+({I_\Omega})_\rho(\rho,p_\Omega)h &= \int_0^T \int_\Omega  h(r) \int_\Omega (\nabla  p_\Omega(r)+\nabla  p_\Omega(r')) \rho(r') \nabla V_2(|r-r'|) dr' dr dt .
+\end{align*} 
+The Fr\'echet derivative for $I_{\partial \Omega}$ with respect to $\rho$ is:
+\begin{align*}
+({I_{\partial \Omega}})_\rho(\rho,p_{\partial \Omega})h&=\int_0^T \int_{\partial \Omega} ( p_{\partial \Omega} - p_\Omega) \bigg( h(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'\\
+&+ \rho(r)  \int_\Omega h(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr' \bigg)dr dt,
+\end{align*}
+where again the product rule for Fr\'echet differentiation is applied. Furthermore, as for $I_\Omega$, the order of integration is changed for the second term and the labelling of $r$ and $r'$ are swapped for convenience:
+\begin{align*}
+({I_{\partial \Omega}})_\rho(\rho,p_{\partial \Omega})h&=\int_0^T \int_{\partial \Omega} ( p_{\partial \Omega}(r) - p_\Omega(r)) h(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr' dr dt \\
+&+ \int_0^T \int_\Omega h(r)\int_{\partial \Omega} ( p_{\partial \Omega}(r') - p_\Omega(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' dr dt.
+\end{align*}
+The derivatives for $I_{\Omega}$ and $I_{\partial \Omega}$ are combined with the derivatives for the other terms, as derived in (\ref{eqnLagrRhoDeriv}), to give the full derivative of the Lagrangian defined in (\ref{sysLagrangianPlusNonLocal}). This is set equal to zero, as before, to derive the adjoint equation. The derivative is:
+\begin{align*}
+&\mathcal{L}_\rho (\rho,\mathbf{w},p_\Omega,p_{\partial \Omega})h=
+\int_\Omega h(T) p_\Omega(T) dr\\
+&+ \int_0^T \int_\Omega \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
++  \nabla p_\Omega\cdot \nabla V_{ext} \bigg)h dr dt  \notag \\
+& +  \int_0^T\int_{\partial \Omega}  \bigg(
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n}  +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} \bigg)h \notag
++ \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} \bigg) dr dt \\
+&+ \int_0^T \int_\Omega  h(r) \int_\Omega (\nabla  p_\Omega(r)+\nabla  p_\Omega(r')) \rho(r') \nabla V_2(|r-r'|) dr' dr dt \\
+&+\int_0^T \int_{\partial \Omega} ( p_{\partial \Omega} - p_\Omega) h(r)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr' dr dt \\
+&+ \int_0^T \int_\Omega h(r)\int_{\partial \Omega} ( p_{\partial \Omega}(r') - p_\Omega(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' dr dt
+=0,
+\end{align*}
+where again $\rho_0$ vanishes, due to the fact that $h(r,0)=0$, as discussed above and in \cite{TroeltzschFredi2010OCoP}.
+The first three integral terms result from (\ref{eqnLagrRhoDeriv}), the next one from differentiating $I_\Omega$ and the last two from differentiating $I_{\partial \Omega}$.
+Sorting the terms based on whether they are integral or boundary terms gives:
+\begin{align*}
+&\mathcal{L}_\rho (\rho,\mathbf{w},p_\Omega,p_{\partial \Omega})h=
+\int_\Omega h(T) p_\Omega(T) dr\\
+&+ \int_0^T \int_\Omega \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
++  \nabla p_\Omega\cdot \nabla V_{ext}  \notag \\
+&+ \int_\Omega (\nabla  p_\Omega(r)+\nabla  p_\Omega(r')) \rho(r') \nabla V_2(|r-r'|) dr'+ \int_{\partial \Omega} ( p_{\partial \Omega}(r') - p_\Omega(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' \bigg) h dr dt \\
+&+  \int_0^T\int_{\partial \Omega}  \bigg(
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega  \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega}\mathbf{w} \cdot \mathbf{n}  +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n} + ( p_{\partial \Omega} - p_\Omega)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'\bigg)h \notag\\
+&+ \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n} \bigg) dr dt =0.
+\end{align*}
+As before, $h \in C_0^\infty(\Omega)$ is restricted to satisfy:
+\begin{align*}
+h(T)&=0 \quad \text{in} \quad \Omega, \\
+h&=0 \quad \text{on} \quad \partial \Omega, \notag \\
+\frac{\partial h}{\partial n}&=0 \quad \text{on} \quad \partial \Omega, \notag
+\end{align*}
+compare to (\ref{condHChoice1}).
+Then
+\begin{align*}
+&\int_0^T \int_\Omega \bigg( (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w} - \nabla^2 p_\Omega \notag 
++  \nabla p_\Omega\cdot \nabla V_{ext}  \notag \\
+&+ \int_\Omega (\nabla  p_\Omega(r)+\nabla  p_\Omega(r')) \rho(r') \nabla V_2(|r-r'|) dr'\\
+&+ \int_{\partial \Omega} ( p_{\partial \Omega}(r') - p_\Omega(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' \bigg) h dr dt =0,
+\end{align*}
+which implies that:
+\begin{align}\label{eqnAdjointNonlocal1}
+& (\rho- \hat{\rho})   - \partial_t  p_\Omega  - \nabla p_\Omega \cdot \mathbf{w}  - \nabla^2 p_\Omega \notag 
++  \nabla p_\Omega\cdot \nabla V_{ext}  \notag \\
+&+ \int_\Omega (\nabla  p_\Omega(r)+\nabla  p_\Omega(r')) \rho(r') \nabla V_2(|r-r'|) dr'\\
+&+ \int_{\partial \Omega} ( p_{\partial \Omega}(r') - p_\Omega(r')) \rho(r')   \frac{\partial V_2(|r-r'|)}{\partial n} dr' =0 \notag.
+\end{align}
+This is the adjoint equation with a non-local term. However, if the restriction on $h$ is relaxed, such that $\frac{\partial h}{\partial n} \neq 0$ on $\partial \Omega$, then, additionally to the adjoint equation:
+\begin{align*}
+\int_0^T\int_{\partial \Omega} \bigg( p_{\partial \Omega}- p_\Omega \bigg) \frac{\partial h}{\partial n}  dr dt=0.
+\end{align*}
+This results in 
+\begin{align}\label{eqnPOmPPartOmEqualNonLoc}
+ p_{\partial \Omega}- p_\Omega=0,
+\end{align}
+which can be compared to (\ref{eqnPOmPPartOmEqual}) in the Section \ref{secOptimalityAdjoint1}. Using this relationship in the adjoint equation and setting $p:=p_\Omega =p_{\partial\Omega}$, (\ref{eqnAdjointNonlocal1}) reduces to:
+\begin{align}
+& (\rho- \hat{\rho})   - \partial_t  p  - \nabla p \cdot \mathbf{w}  - \nabla^2 p \notag 
++  \nabla p \cdot \nabla V_{ext}  \notag \\
+&+ \int_\Omega (\nabla  p(r)+\nabla  p(r')) \rho(r') \nabla V_2(|r-r'|) dr' =0.
+\end{align}
+The next step is to relax the condition on $h$ so that $h(T) \neq 0$, which recovers the final time condition on $p$:
+\begin{align*}
+p(r,T)=0,
+\end{align*}
+which can be compared with (\ref{eqnOptiAdjRhoFTC}).
+Finally, the last restriction on $h$, $h=0$ on $\partial \Omega$, can be removed, which results in:
+\begin{align*}
+ &\int_0^T\int_{\partial \Omega} 
+\bigg(\frac{\partial p_\Omega }{\partial n} + p_\Omega  \mathbf{w} \cdot \mathbf{n} - p_{\partial \Omega} \mathbf{w} \cdot \mathbf{n} +  p_{\partial \Omega} \dfrac{\partial V_{ext}}{\partial n} - p_\Omega \frac{\partial V_{ext}}{\partial n}\\
+& + ( p_{\partial \Omega} - p_\Omega)  \int_\Omega \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr'\bigg)h drdt=0,
+\end{align*}
+and applying relation (\ref{eqnPOmPPartOmEqualNonLoc}) results in:
+\begin{align*}
+\int_0^T\int_{\partial \Omega} \frac{\partial p }{\partial n}h drdt=0.
+\end{align*}
+Since this holds for all admissible $h$, the boundary condition for the adjoint equation is:
+\begin{align*}
+\frac{\partial p }{\partial n}=0, \quad \text{on} \quad \partial \Omega.
+\end{align*}
+This is equivalent to the boundary condition in Section \ref{secOptimalityAdjoint1}, compare to (\ref{eqnOptiAdjRhoBC1}).
+The full adjoint equation for the PDE-constrained optimization problem (\ref{sysPDEconstroptiAndNonlocal1}), applying (\ref{eqnPOmPPartOmEqualNonLoc}) such that $p:=p_{\partial\Omega}=p_\Omega$, is:
+\begin{align*}
+ (\rho- \hat{\rho})   - \partial_t  p  - \nabla p \cdot \mathbf{w}  - \nabla^2 p \notag 
++  \nabla p \cdot \nabla V_{ext} \\
++ \int_\Omega (\nabla  p(r)+\nabla  p(r')) \rho(r') \nabla V_2(|r-r'|) dr' &=0,  \quad \text{in} \quad  \Omega,\\
+\frac{\partial p }{\partial n}&=0, \quad \text{on} \quad \partial \Omega,\\
+p(r,T)&=0.
+\end{align*}
+
+\subsubsection{The First Order Optimality System}
+Taking the Fr\'echet derivative of the Lagrangian (\ref{sysLagrangianPlusNonLocal}) with respect to $\mathbf{w}$ is equivalent to the procedure in Section \ref{secOptimalityGradient1}, since the non-local terms in the Lagrangian do not involve any terms that include $\mathbf{w}$. 
+Moreover, by using the same argument as in Section \ref{secOptimalityGradient1}, the state equation is recovered. 
+The first-order optimality conditions for (\ref{sysPDEconstroptiAndNonlocal1}) are:
+\begin{align}\label{sysFirstOderOptimalityNonLocal1}
+\textbf{Adjoint Equation} \notag \\
+ (\rho- \hat{\rho})   - \partial_t  p - \nabla p \cdot  \mathbf{w} - \nabla^2 p
++  \nabla p \cdot \nabla V_{ext}&\\ 
++ \int_\Omega (\nabla  p(r)+\nabla  p(r')) \rho(r') \nabla V_2(|r-r'|) dr' &=0,  \quad \text{in} \quad  \Omega, \notag\\
+\frac{\partial p }{\partial n}&=0, \quad \text{on} \quad \partial \Omega, \notag\\
+p(r,T)&=0,\notag \\
+\textbf{Gradient Equation} \notag \\
+\beta \mathbf{w}  - \rho \nabla p &=0 \quad \ \ \text{in} \quad \Omega, \notag \\
+\textbf{Forward Problem} \notag \\
+\partial_t \rho - \nabla^2 \rho + \nabla \cdot (\rho \mathbf{w}) - \nabla \cdot (\rho \nabla V_{ext})& \notag\\
+- \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr&=0, \quad \text{in} \quad \Omega,\notag\\
+\dfrac{\partial \rho}{\partial n} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial n}+\int_\Omega \rho(r) \rho(r') \frac{\partial V_2(|r-r'|)}{\partial n} dr' &=0,\quad \text{on} \quad  \partial \Omega, \notag\\
+\rho(r,0)&=0 \notag.
+\end{align}
+
+
+
+
+
+
+
+
+

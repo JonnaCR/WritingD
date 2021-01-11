@@ -1,0 +1,47 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Multiscale Particle Dynamics}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Deriving Model Equations}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{The Diffusion Equation}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Adding Pairwise Interactions}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Approximating the Two-Body Density}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{The Mean Field Approximation}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{The Adiabatic Approximation}{subsection.2.2}% 8
+\BOOKMARK [1][-]{section.3}{PDE-Constrained Optimization}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Deriving First-Order Optimality Conditions}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Fr\351chet Differentiation}{subsection.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Deriving the Adjoint Equation}{subsection.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.3.1.3}{The First-Order Optimality System}{subsection.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Adding a Non-Local Term}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Deriving the Adjoint Equation}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.2}{The First Order Optimality System}{subsection.3.2}% 16
+\BOOKMARK [1][-]{section.4}{Numerical Methods}{}% 17
+\BOOKMARK [2][-]{subsection.4.1}{Pseudospectral Methods}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Comparison with FEM and FDM}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Exact Solutions}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Multiple Shooting Method}{section.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.1}{One-Dimensional Diffusion}{subsection.4.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.4.2}{One-Dimensional Diffusion with a Non-Local Term}{subsection.4.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Two-Dimensional Problems}{subsection.4.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Two-Dimensional Problems with a Non-Local Term}{subsection.4.4}% 25
+\BOOKMARK [1][-]{section.5}{Literature Review on Mean Field Optimal Control}{}% 26
+\BOOKMARK [1][-]{section.6}{Relevant Equations and their Optimality Conditions}{}% 27
+\BOOKMARK [2][-]{subsection.6.1}{The Equations}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Optimality Conditions for the Inertial Eqations}{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.2.1}{PDE-Constrained Optimization Problem}{subsection.6.2}% 30
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Adjoint Equation 1}{subsection.6.2}% 31
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Adjoint Equation 2}{subsection.6.2}% 32
+\BOOKMARK [3][-]{subsubsection.6.2.4}{The Gradient Equation}{subsection.6.2}% 33
+\BOOKMARK [3][-]{subsubsection.6.2.5}{Rewriting the Equations for Implementation}{subsection.6.2}% 34
+\BOOKMARK [2][-]{subsection.6.3}{Optimality Conditions for the Overdamped Equations}{section.6}% 35
+\BOOKMARK [2][-]{subsection.6.4}{Subdomain and Boundary Observation with Non-Constant Flux}{section.6}% 36
+\BOOKMARK [1][-]{section.7}{Numerical Methods}{}% 37
+\BOOKMARK [2][-]{subsection.7.1}{Fixed Point Algorithm}{section.7}% 38
+\BOOKMARK [2][-]{subsection.7.2}{Picard Multiple Shooting}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.3}{MATLAB's Inbuilt Optimization Solver fsolve}{section.7}% 40
+\BOOKMARK [1][-]{section.8}{Validation of the Optimization Algorithm}{}% 41
+\BOOKMARK [2][-]{subsection.8.1}{Error Measure}{section.8}% 42
+\BOOKMARK [2][-]{subsection.8.2}{Validation Against fsolve}{section.8}% 43
+\BOOKMARK [2][-]{subsection.8.3}{Perturbing w}{section.8}% 44
+\BOOKMARK [2][-]{subsection.8.4}{Additional Observations}{section.8}% 45
+\BOOKMARK [1][-]{section.9}{Numerical Experiments}{}% 46
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 47

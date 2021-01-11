@@ -1,0 +1,250 @@
+
+The aim of this section is to model the dynamics of particles, which are suspended in a bath. The particles evolve in time and in some domain $\Omega$ in space. Instead of modelling the movement of a particular particle, a space coordinate $r \in \Omega$ is fixed. The probability of a particle being at the position $r$ at time $t$ is modelled as a  distribution $\rho(r,t)$, the one-body particle density.
+The model equations are:
+\begin{align}\label{sysParticleModel1}
+\partial_t \rho(r,t) &= \nabla \cdot \bigg(\big(\nabla  + \nabla V_{ext} + \int_\Omega \rho(r') \nabla V_2(|r-r'|)dr' - \mathbf{w} \big) \rho(r,t) \bigg),\\
+&:=\nabla \cdot \mathbf{j},\notag \\
+\notag  \\
+\mathbf{j} \cdot \mathbf{n}&=0 \quad  \ \text{on   } \quad  \partial \Omega, \notag  \\
+\rho(0) &=\rho_0 \quad \text{at} \quad t=t_0, \notag 
+\end{align}
+where $\mathbf{j}=\big(\nabla  + \nabla V_{ext} + \int_\Omega \rho(r') \nabla V_2(|r-r'|)dr' - \mathbf{w} \big) \rho(r,t) $ and $\mathbf{n}$ denotes the outward normal to $\partial \Omega$, compare to \cite{RexLoewen1}.
+ The equation describes the particle dynamics, including a time derivative, a diffusion term, and an external potential $V_{ext}$, whose negative gradient is a body force such as gravity. Furthermore, there is a term describing the background flow field of the bath, $\mathbf{w}$, and a particle interaction term.\\
+ This particle interaction term describes the interactions of two particles at the position $r$ and some other position $r' \in \Omega$, where $r' \neq r$. The forces between the particles at $r$ and  $r'$ are represented by $-\nabla V_2(|r-r'|)$. This is multiplied by the particle density at $r'$, $\rho(r')$, and the particle density at $r$, $\rho(r)$. Since each position $r' \in \Omega$ needs to be considered, the resulting expression is integrated over all $r'$.\\
+The particle interaction in (\ref{sysParticleModel1}) is restricted to two-body interactions and can be extended to three- or more body interaction terms, which makes the model equations more accurate and complex. The inclusion of higher-order terms is dependent on the application. Furthermore, the forces between the particles included here only describe interactions such as attraction and repulsion. The model neglects hydrodynamic interactions, which are the effects of the particles moving in the bath. This movement causes a change in the flow field, which in turn influences the surrounding particles. This is a non-local phenomenon, which is more complex to model, however, significant to include in various applications. 
+
+\subsection{Deriving Model Equations}
+The model equation (\ref{sysParticleModel1}) can be derived from the full $N$-body particle distribution. This has been done by M. Rex and H. Loewen \cite{RexLoewen1}, whose derivation is followed in this section.	
+On the microscopic level, a probability distribution $P(r^N,t)$ of the total number $N$ particles in the bath at time $t$ is considered, where $r^N= (r_1, r_2,...,r_N)$, and $r_i \in \mathbf{R}^3$, $i=1,2,...,N$. 
+The dynamics of the probability distribution $P(r^N,t)$ can be described by the Smoluchowski equation, as presented in \cite{RexLoewen1}:
+\begin{align} \label{eqnPpde}
+\partial_t P(r^N,t)= \sum_{i,j}^N \nabla_i \cdot \bigg( D_{i,j}(r^N) \bigg( \nabla_j + \frac{\nabla_j U(r^N,t)}{k_BT} - \mathbf{w}(r_i) \bigg) P(r^N,t) \bigg),
+\end{align}
+where $\nabla_i$ refers to the operation with respect to the coordinate $r_i$. The term $D_{i,j}(r^N)$ is the diffusion tensor, which describes the hydrodynamic interactions of the particles at $r_i$ and $r_j$, $U(r^N,t)$ is a potential, which could include an external potential and particle interactions, $T$ is the temperature, and $k_B$ is the Boltzmann constant. A background flow is defined by $\mathbf{w} \in \mathbf{R}^3$, describing the flow of the bath fluid.
+ Note that this version of the equation is more general than the representation in the paper, due to the extra term $\mathbf{w}$. The aim is to derive a three dimensional approximation $\rho^{(1)}(r_1,t)$ to (\ref{eqnPpde}). The following $n$-body densities are defined as in \cite{RexLoewen1}:
+\begin{align*}
+\rho^{(1)}(r_1,t) &= N \int_\Omega dr_2.... dr_N P(r^N,t):= \rho(r,t),\\
+\vdots\\
+\rho^{(n)}(r_n,t) &= \frac{N!}{(N-i)!} \int_\Omega dr_{n+1}.... dr_N P(r^N,t),
+\end{align*} 
+where $\Omega=\mathbf{R}^{3N}$.
+The $n$-body densities are derived by integrating the full $N$ particle probability distribution over $r_{n+1},...r_N$, and multiplying it by a prefactor. This definition is chosen to suit the computations, which are detailed below.
+In order to derive a three-dimensional approximation in terms of the one-body density $\rho(r,t)$, initially a simplification of (\ref{eqnPpde}) is considered and then extended in later sections to derive the approximation for the full system. 
+
+\subsubsection{The Diffusion Equation}
+Considering $D_{i,j}=\delta_{i,j}$, $U=0$ and $\mathbf{w}=0$ in (\ref{eqnPpde}), the diffusion equation is recovered:
+\begin{align*} 
+\partial_t P(r^N,t) &= \sum_{i}^N \nabla_i \cdot \bigg(\nabla_i   P(r^N,t) \bigg)= \sum_{i}^N \Delta_i P(r^N,t)\\
+&= \Delta_{r^N} P(r^N,t),
+\end{align*}
+where $\sum_{i}^N \Delta_i := \Delta_{r^N}$.
+
+In order to derive the one-body density $\rho(r,t)$ for the diffusion equation, the equation is multiplied by $N$ and integrated over all other positions $r_2,...,r_N$:
+\begin{align*} 
+\int_\Omega N \partial_t P(r^N,t)dr_2...dr_N &= \int_\Omega N \sum_{i}^N \nabla_i \cdot \bigg(\nabla_i   P(r^N,t) \bigg)dr_2...dr_N.
+\end{align*}
+The integration is only dependent on space, not on time, so that the time derivative can be taken out of the integral. Furthermore, the sum on the right-hand side of the equation, as well as the integration, is finite. Therefore, Fubini's Theorem can be used to take the sum out of the integral. The equation is then:
+\begin{align*} 
+N \partial_t \int_\Omega P(r^N,t)dr_2...dr_N &=N \sum_{i}^N \int_\Omega  \nabla_i \cdot \bigg(\nabla_i   P(r^N,t) \bigg)dr_2...dr_N.
+\end{align*}
+The Divergence Theorem can be applied to $i=2,...,N$, while for $i=1$ the integral remains unchanged, since the integration is independent of $r_1$. The equation is now:
+\begin{align*} 
+N \partial_t \int_\Omega P(r^N,t)dr_2...dr_N &=N \sum_{i=2}^N \int_{\partial \Omega} \frac{\partial P(r^N,t)}{\partial n} dr_2...dr_N + N\int_\Omega \nabla_1 \cdot \bigg(\nabla_1   P(r^N,t) \bigg)dr_2...dr_N,\\
+\end{align*}
+where $n$ is the outward normal. 
+Now, the boundary condition for $P(r^N,t)$ can be employed. Since $P$ is a probability distribution over a finite number of positions $r_i$, on an infinite domain $\Omega= \mathbf{R}^{3N}$, the natural boundary condition is that $P$ and its derivatives vanish on the boundary $\partial \Omega$, i.e. at infinity.
+Furthermore, considering the fact that $\nabla_1$ is constant with respect to the integration variables, it can be taken out of the integral and the following result is found, where the definition $\rho(r,t)= N \int_\Omega P(r^N,t)dr_2...dr_N$ is used:
+\begin{align*} 
+\partial_t \rho(r,t) &= \nabla_1 \cdot \bigg(\nabla_1 N \int_\Omega  P(r^N,t) \bigg)dr_2...dr_N,\\
+&=  \nabla_1 \cdot(\nabla_1  \rho(r,t) ).
+\end{align*}
+This is a one-body diffusion equation in $\mathbf{R}^3$, which is an approximation to the diffusion equation of the full $N$ particle probability distribution $P(r^N,t)$. In a last step, the subscript of $\nabla_1$ can be dropped, since the only position considered in this equation is $r_1$. The final equation is
+\begin{align} \label{eqnPMDiffTerm}
+\partial_t \rho(r,t) &=  \nabla \cdot(\nabla \rho(r,t) ).
+\end{align}
+
+
+\subsubsection{Adding Pairwise Interactions}
+After deriving the one-body equation for the diffusion term, a more complex version of (\ref{eqnPpde}) can be considered. Let $D_{i,i}= \delta_{i,j}$, as before, but define $U$ as: 
+\begin{align*}
+U= \sum_{m=1}^N V_{ext}(r_m,t) + \frac{1}{2} \sum_{m \neq n}^N V_2(|r_m - r_n|),
+\end{align*}
+where $V_{ext}$ is an external potential and $V_2$ is the potential due to forces between two particles.
+The PDE considered is again a simplified version of (\ref{eqnPpde}) and has the form:
+\begin{align} \label{eqnPpde2}
+ \partial_t P(r^N,t)= \sum_{i}^N \nabla_i \cdot \bigg(\bigg( \nabla_i + \nabla_i \bigg( \sum_{m=1}^N V_{ext}(r_m,t) + \frac{1}{2} \sum_{m \neq n}^N V_2(|r_m - r_n|)\bigg)  \bigg) P(r^N,t) \bigg),
+ \end{align}
+where $k_B T=1$ for simplicity.
+The diffusion term in the equation can be treated equivalently to the procedure in the previous section.
+The two new terms are treated similarly. The equation is multiplied by $N$ and integrated over $r_2...r_N$.
+This gives:
+\begin{align*} 
+&N\int_\Omega \partial_t P(r^N,t) dr_2...dr_N\\
+=& N\int_\Omega \sum_{i}^N \nabla_i \cdot \bigg(\bigg( \nabla_i + \nabla_i \bigg( \sum_{m=1}^N V_{ext}(r_m,t) + \frac{1}{2} \sum_{m \neq n}^N V_2(|r_m - r_n|)\bigg)  \bigg) P(r^N,t) \bigg) dr_2...dr_N,\\
+=& N\int_\Omega \sum_{i}^N \nabla_i \cdot \nabla_i P(r^N,t)dr_2...dr_N + N\int_\Omega \sum_{i}^N \nabla_i \cdot \bigg( P(r^N,t) \nabla_i \sum_{m=1}^N V_{ext}(r_m,t) \bigg) dr_2...dr_N\\ +& N\int_\Omega \sum_{i}^N \nabla_i \cdot \bigg( P(r^N,t)\nabla_i \frac{1}{2} \sum_{m \neq n}^N V_2(|r_m - r_n|) \bigg) dr_2...dr_N\\
+:=& I_1 + I_2 +I_3.
+\end{align*}
+The left-hand side satisfies $N\int_\Omega \partial_t P(r^N,t) dr_2...dr_N= \partial_t \rho(r,t)$ from the previous section.
+The integral $I_1$, by (\ref{eqnPMDiffTerm}), satisfies:
+\begin{align} \label{eqnPInt1}
+I_1=  N\int_\Omega \sum_{i}^N \nabla_i \cdot \nabla_i P(r^N,t)dr_2...dr_N = \Delta \rho(r,t).
+\end{align}
+Next, the integral $I_2$ is considered:
+\begin{align*}
+I_2&=N\int_\Omega \sum_{i}^N \nabla_i \cdot \bigg( P(r^N,t) \nabla_i \sum_{m=1}^N V_{ext}(r_m,t) \bigg) dr_2...dr_N. 
+\end{align*}
+By the same argument as in the previous section, the integration and summation can be swapped. Furthermore, $\nabla_i \sum_{m=1}^N V_{ext}(r_m,t) =\nabla_i V_{ext}(r_i,t)$, since all other terms in the sum are zero, when $\nabla_i$ is applied to a term independent of $r_i$. The resulting equation is:
+\begin{align*}
+I_2&=N\sum_{i}^N\int_\Omega  \nabla_i \cdot \bigg( P(r^N,t) \nabla_i V_{ext}(r_i,t) \bigg) dr_2...dr_N. 
+\end{align*}
+As before, the Divergence Theorem can be used for all variables $r_2,...r_N$, while the equation for $r_1$ remains unchanged. This gives:
+\begin{align*}
+I_2&=N\sum_{i=2 }^N\int_{ \partial \Omega}  P(r^N,t) \frac{\partial V_{ext}(r_i,t)}{\partial {n}}  dr_2...dr_N + N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t) \nabla_1 V_{ext}(r_i,t) \bigg) dr_2...dr_N, 
+\end{align*}
+where ${n}$ is again the outward normal.
+Then, applying the boundary conditions for $P(r^N,t)$, as discussed above, and realising that $\nabla_1 V_{ext}(r_i,t)=\nabla_1 V_{ext}(r_1,t)$, since this expression is zero for all $r_i \neq r_1$, the following equations is derived:
+\begin{align*}
+I_2&= N \int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t) \nabla_1 V_{ext}(r_1,t) \bigg) dr_2...dr_N. 
+\end{align*}
+Since $r_1$ is constant with respect to the integration variables, all terms only depending on $r_1$ can be taken out of the integral to give:
+\begin{align*}
+I_2&= N \nabla_1 \cdot \bigg(\nabla_1 V_{ext}(r_1,t)\int_\Omega  P(r^N,t) dr_2...dr_N\bigg)\\
+&=   \nabla_1 \cdot \bigg( (\nabla_1 V_{ext}(r_1,t)) \rho(r,t)\bigg).
+\end{align*}
+Then, dropping the subscripts, $I_2$ is:
+\begin{align}\label{eqnPInt2}
+I_2= \nabla \cdot \bigg( \rho(r,t)\nabla V_{ext}(r_1,t) \bigg).
+\end{align}
+
+The final term in the PDE that has to be considered is $I_3$:
+\begin{align*}
+I_3 = N\int_\Omega \sum_{i}^N \nabla_i \cdot \bigg( P(r^N,t)\nabla_i \frac{1}{2} \sum_{m \neq n}^N V_2(|r_m - r_n|) \bigg) dr_2...dr_N.
+\end{align*}
+As for $I_1$ and $I_2$, the integration and summation operations can be swapped, and the Divergence Theorem can be applied to $r_2,...r_N$ to give:
+\begin{align*}
+I_3 =& \frac{1}{2}N \sum_{i}^N \int_\Omega  \nabla_i \cdot \bigg( P(r^N,t) \nabla_i \sum_{m \neq n}^N V_2(|r_m - r_n|) \bigg) dr_2...dr_N\\
+=&\frac{1}{2}N\int_{\partial \Omega} \sum_{i=2}^N  \bigg( P(r^N,t) \sum_{m \neq n}^N \frac{ \partial V_2(|r_m - r_n|)}{\partial n} \bigg) dr_2...dr_N\\
+ +& \frac{1}{2}N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 \sum_{m \neq n}^N  V_2(|r_m - r_n|) \bigg) dr_2...dr_N.
+\end{align*}
+The boundary conditions for $P$ are applied to set the first term to zero. \\
+The term $\nabla_1 \sum_{m \neq n}^N  V_2(|r_m - r_n|)$ has to be examined in more detail. Since the gradient is applied with respect to $r_1$, one of the $r_m,r_n$ in the double sum has to be $r_1$, since all other terms will be zero when the gradient is applied.
+Therefore:
+\begin{align*}
+\nabla_1 \sum_{m \neq n}^N  V_2(|r_m - r_n|)=\nabla_1 \sum_{n=2}^N  V_2(|r_1 - r_n|) + \nabla_1 \sum_{m=2}^N  V_2(|r_m - r_1|).
+\end{align*}
+ Since $m$ and $n$ are dummy variables and  $|r_m - r_n|=|r_n - r_m|$ is symmetric, the previous equation reduces to:
+ \begin{align*}
+ \nabla_1 \sum_{m \neq n}^N  V_2(|r_m - r_n|)=2 \nabla_1 \sum_{n=2}^N  V_2(|r_1 - r_n|) .
+ \end{align*} 
+Then $I_3$ becomes:
+\begin{align*}
+I_3 
+=& N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 \sum_{n=2}^N  V_2(|r_1 - r_n|) \bigg) dr_2...dr_N.
+\end{align*}
+Writing out the sum in $N$ explicitly gives:
+\begin{align*}
+I_3 
+=& N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 V_2(|r_1 - r_2|) \bigg) dr_2...dr_N\\
++& N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 V_2(|r_1 - r_3|) \bigg) dr_2...dr_N\\
+\vdots \\
++& N\int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 V_2(|r_1 - r_N|) \bigg) dr_2...dr_N.
+\end{align*}
+Since the particles are indistinguishable, a permutation argument can be employed and the indices $r_i$ in the terms $V_2(|r_1 - r_i|)$ can be relabelled, such that $r_i=r_2$, $i=3,...,n$, for each term in the sum. Since the integration is symmetric, the integration order can be permuted arbitrarily and hence does not have to be adapted. This results in $N-1$ identical equations, and so $I_3$ is:
+\begin{align*}
+ I_3 
+ =& N(N-1) \int_\Omega  \nabla_1 \cdot \bigg( P(r^N,t)\nabla_1 V_2(|r_1 - r_2|) \bigg) dr_2...dr_N.
+\end{align*}
+Considering now the definition of the $n$-body particle distributions, $I_3$ can be written in terms of the two-body distribution $\rho^{(2)}(r_1,r_2,t)= N(N-1) \int_\Omega dr_3...dr_N P(r^N,t)$. Terms that only depend on $r_1$ can be taken out of the integral. Then $I_3$ is:
+\begin{align*}
+I_3 
+=& N(N-1)  \nabla_1 \cdot \bigg( \bigg(\nabla_1 \int_\Omega  V_2(|r_1 - r_2|) \bigg) P(r^N,t) \bigg) dr_2...dr_N.
+\end{align*}
+Since $V_2$ only depends on $r_2$ and the order of integration is arbitrary, the integral can be rewritten as follows:
+\begin{align*}
+I_3 
+=&  \nabla_1 \cdot \bigg( \nabla_1 \int_\Omega  V_2(|r_1 - r_2|) \bigg(N(N-1) \int_\Omega  P(r^N,t)  dr_3...dr_N \bigg) dr_2 \bigg)\\
+=&  \nabla_1 \cdot \bigg( \nabla_1 \int_\Omega  V_2(|r_1 - r_2|) \rho^{(2)}(r_1,r_2,t) dr_2 \bigg).
+\end{align*}
+Dropping the indices on $\nabla_1$, the equation is:
+\begin{align} \label{eqnPInt3}
+I_3 
+=&  \nabla\cdot \bigg( \nabla \int_\Omega  V_2(|r - r_2|) \rho^{(2)}(r,r_2,t) dr_2 \bigg).
+\end{align}
+The full three dimensional approximation of (\ref{eqnPpde2}) is found by combining (\ref{eqnPInt1}), (\ref{eqnPInt2}) and (\ref{eqnPInt3}), to give:
+\begin{align*}
+\partial_t \rho(r,t) &=
+ \nabla\cdot \bigg(\nabla \rho(r,t)
++ \rho(r,t)\nabla V_{ext}(r_1,t) 
++ \int_\Omega \nabla  V_2(|r - r_2|) \rho^{(2)}(r,r_2,t) dr_2 \bigg).
+\end{align*}
+This equation is not closed, since it depends on $\rho^{(2)}(r,r_2,t)$. 
+There are different approaches to closing the equation, and two of them are discussed below.
+
+Note that the derivation for $\mathbf{w}$ term follows the same steps as above and is therefore omitted.
+\subsection{Approximating the Two-Body Density}
+There are different ways to approximate the two-body density $\rho^{(2)}$. In this section, two of these are presented; the Mean Field Approximation and Density Functional Theory.
+\subsubsection{The Mean Field Approximation}
+In order to use a mean field approach, a modelling assumption has to be made. It is assumed that the particles in the bath are only weakly interacting and the resulting approximation is that of independence. It is assumed that the two-body density of particles $r_1$ and $r_2$ is approximately the product of the individual one-body densities of $r_1$ and $r_2$, that is:
+\begin{align*}
+\rho^{(2)}(r,r_2,t)\approx \rho(r_1,t)\rho(r_2,t),
+\end{align*}
+as in \cite{RexLoewen1}.
+The resulting closed PDE is:
+\begin{align}\label{eqnMeanFieldApprox1}
+\partial_t \rho(r,t) &=
+\nabla\cdot \bigg( \bigg(\nabla 
++ \nabla V_{ext}(r_1,t) 
++\int_\Omega  \nabla  V_2(|r - r_2|) \rho(r_2,t) dr_2 \bigg) \rho(r,t) \bigg).
+\end{align}
+In the context of the mean field approximation, the integral term can be interpreted as the sum of forces between a particle at a position $r$ and all other particles in $\Omega$.
+However, the independence approximation is often not practical in modelling industrial phenomena and so an alternative approach needs to be considered, which includes the effects of the two-body density.
+\subsubsection{The Adiabatic Approximation}
+Another approach for approximating $\rho^{(2)}$ is using Density Functional Theory (DFT). DFT shows that at equilibrium, when $\partial_t \rho=0$, there exists a free energy functional $\mathcal{F}$, such that:
+\begin{align*}
+&\nabla \rho(r,t)
++ \rho(r,t)\nabla V_{ext}(r_1,t) 
++ \int_\Omega \nabla  V_2(|r - r_2|) \rho^{(2)}(r,r_2,t) dr_2 \\
+ &= \rho(r,t) \nabla \frac{\delta \mathcal{F[\rho]}}{\delta \rho},
+\end{align*}
+where $\frac{\delta}{\delta \rho}$ is the functional derivative with respect to $\rho$.
+While in most cases $\mathcal{F}$ is not known explicitly, it is known that at equilibrium $\nabla \frac{\delta \mathcal{F[\rho]}}{\delta \rho}=0$, and therefore it can be assumed that the PDE can be rewritten as:
+\begin{align}\label{eqnAdiaAprox1}
+\partial_t \rho(r,t) = \nabla \cdot \bigg( \rho(r,t) \nabla \frac{\delta \mathcal{F[\rho]}}{\delta \rho} \bigg), 
+\end{align}
+as discussed in \cite{GoddardPseudospectralCode1}.
+This is called the Adiabatic Approximation, and $\mathcal{F}$ contains all of the information about particle correlations, if it is known.
+For non-interacting particles, the explicit form for $\mathcal{F}[\rho]$ is known to be:
+\begin{align}\label{eqnFhardrod}
+\mathcal{F}[\rho] = \int \rho(\log(\rho)-1) dr,
+\end{align}
+see \cite{Tarazona2008}.
+
+To show that $\mathcal{F}[\rho]$ satisfies the adiabatic approximation (\ref{eqnAdiaAprox1}), the functional derivative can be computed and substituted into (\ref{eqnAdiaAprox1}). 
+Since $\mathcal{F}$ is of the form $\mathcal{F}[\rho] = \int f(r,\rho(r), \nabla \rho(r))dr$, where $f(r,\rho(r), \nabla \rho(r))= \rho(\log(\rho)-1)$, a function $\phi$ of compact support can be defined, as discussed in \cite{CalculusofVariations1}, such that:
+\begin{align*}
+\int \frac{\delta \mathcal{F}[\rho]}{\delta \rho} \phi(r) dr &= \bigg[ \frac{d}{d \epsilon} \int f(r,\rho(r) + \epsilon \phi, \nabla \rho(r) + \epsilon \nabla \phi) dr \bigg]_{\epsilon=0}\\
+&= \int \bigg( \frac{\partial f}{ \partial \rho} - \bigg( \nabla \cdot \frac{\partial f}{\partial \nabla \rho} \bigg) \bigg) \phi(r) dr.
+\end{align*}
+Since this holds for all functions $\phi \in C_0^\infty (\Omega)$, the following holds:
+\begin{align*}
+\frac{\delta \mathcal{F}[\rho]}{\delta \rho} =\bigg( \frac{\partial f}{ \partial \rho} - \bigg( \nabla \cdot \frac{\partial f}{\partial \nabla \rho} \bigg) \bigg).
+\end{align*}
+Applying this result to (\ref{eqnFhardrod}) results in:
+\begin{align*}
+\frac{\delta \mathcal{F}[\rho]}{\delta \rho} &= \frac{\delta}{\delta \rho} \bigg(\int \rho(\log(\rho)-1) dr \bigg)\\
+&=  \frac{\partial}{ \partial \rho}(\rho(\log(\rho)-1)) - \nabla \cdot \bigg(\frac{\partial}{\partial \nabla \rho} (\rho(\log(\rho)-1) \bigg)\\
+&=  \frac{\partial}{ \partial \rho}(\rho(\log(\rho)-1))\\
+&= \log \rho. 
+\end{align*}
+Applying the gradient to this result gives:
+\begin{align*}
+\nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho} = \nabla \log \rho = \frac{\nabla \rho}{\rho}.
+\end{align*}
+Substituting this into (\ref{eqnAdiaAprox1}) results in:
+\begin{align*}
+\partial_t \rho(r,t) &= \nabla \cdot \bigg( \rho(r,t) \nabla \frac{\delta \mathcal{F[\rho]}}{\delta \rho} \bigg)\\
+&= \nabla \cdot \bigg( \rho(r,t)  \frac{\nabla \rho(r,t) }{\rho(r,t)}  \bigg)\\
+&= \nabla \cdot \nabla \rho(r,t) \\
+&= \Delta \rho(r,t).
+\end{align*}
+This shows that the particular choice of $\mathcal{F}$, defined by (\ref{eqnFhardrod}), recovers the diffusion equation when substituted into (\ref{eqnAdiaAprox1}). This is to be expected, since $\mathcal{F}$ represents non-interacting particles.

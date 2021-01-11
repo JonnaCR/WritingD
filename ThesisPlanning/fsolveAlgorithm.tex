@@ -1,0 +1,21 @@
+Another option of solving the optimality system is using the inbuilt {\scshape MATLAB} solver \texttt{fsolve}, in combination with the multiple shooting method, briefly described in the previous section. The optimization solver tries to minimize the error in the variables $\rho$ and $\adj$ at the discretized time points. 
+\\
+In general, for the set of non-linear equations, $F(x) =0$, that are supposed to be solved, \texttt{fsolve} tries to find an input vector $x$, such that we minimize the sum of squares $\sum_i f_i(x)^2$, where $f_i$ are the components of $F$. 
+While \texttt{fsolve} has three different algorithm options, the default algorithm, used in solving our optimality systems, is the trust region dogleg algorithm, a variant of Powell's dogleg algorithm, see \cite{Powell1}.   
+The general idea of trust-region algorithms is to consider a so-called trust-region $N$, in which the function $F$ is approximated by a simpler function. Then, a search direction $s$ is defined and it is checked whether $F(x+s) < F(x)$. If that is the case, the position $x$ is updated to the position $x+s$. Otherwise, we remain at the position $x$ and the trust region $N$ is made smaller. Convergence is achieved when $F(x)$ and $F(x+s)$ are close.
+The main questions are (i) how to approximate the function in the trust region, and (ii) how to determine the search direction $s$ reliably.\\
+In the case of the dogleg algorithm, the choice for (i) is to minimize the linear approximation:
+\begin{align}
+\label{eqn:trustregionsubprob1}
+\min_s m(s) &= \frac{1}{2}|| F(x_k) + J(x_k)s||_2^2 \\
+&= \frac{1}{2}F(x_k)^T F(x_k) + s^T J(x_k)^T F(x_k) + \frac{1}{2}s^T J(x_k)^TJ(x_k)s, \notag
+\end{align}
+where $J$ is the Jacobian.
+In order to minimize $m$, we choose, answering (ii), the appropriate search direction $s$. In the dogleg method this is done by combining a Gauss-Newton step $s_{GN}$ with a Cauchy step $s_C$.
+If $J(x_k)$ is singular, $s = s_C$. Otherwise, $s$ is chosen as a linear combination of these two steps:
+\begin{align*}
+s = s_C + \lambda(s_{GN} - s_C),
+\end{align*}
+where $\lambda \in [0,1]$ is the largest value such that $||s|| \leq \Delta$. The positive scalar $\Delta$ is the trust region dimension, and is adjusted at each iteration. The algorithm converges when $F(x)$ and $F(x+s)$ are close, as measured by a certain norm. 
+This method is more stable than a Newton method, and therefore the initial guess for $x$ does not have to be as good. Furthermore, it is cheaper to compute. However, it is also more prone to converging to local minima, since we do not consider the whole domain on which the problem is posed.
+This section is based on \cite{Powell1} and \cite{fsolve1}.

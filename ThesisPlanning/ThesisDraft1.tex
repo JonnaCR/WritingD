@@ -1,0 +1,219 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+\newcommand{\adjB}{q_{\partial \Omega}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\adj}{q}
+\newcommand{\Adjc}{{q}_{\partial \Omega}}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\ve}{\mathbf{v}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\hr}{\widehat \rho}
+
+\pagenumbering{gobble}
+\begin{document}
+\section*{Thesis Draft}	
+	
+	
+\section*{Year 1}	
+\section{Introduction}
+PDE-constrained optimization and multiscale particle dynamics are both fields of growing interest to academia and industry. Applying methods of PDE-constrained optimization to industrial processes is a highly relevant topic, for example in the oil and gas industry \cite{Brandman2018}, the beer industry \cite{RamirezW.F.2007Obf} and the wine industry \cite{MergerJuri2017Ocoa}. 
+There are two industrial partners affiliated with this project. WEST brewery is interested in optimizing the yeast sedimentation in the beer brewing process. The company ufraction8 works on cell separation and nano filtration devices, which separate particles based on their sizes. They are interested in optimizing this process.
+\\
+\\
+Many processes, including these two examples, can be described as interacting particle systems, using Density Functional Theory (DFT). Further examples include processes in biology and nanotechnology \cite{FrinkDFT}, as well as in chemical engineering \cite{WuJianzhong2006Dftf}.
+Therefore, developing a numerical framework for PDE-constrained optimization problems, where the PDE constraint describes particle dynamics, is highly relevant. This task is challenging, because the PDEs involved are non-local, nonlinear integro-PDEs. This makes the application of standard methods, such as finite element methods, hard. Pseudospectral methods can be used to tackle the numerical challenges, such as non-local boundary conditions and dense matrices in the discretized problem.
+In this report, steps towards developing this numerical method are taken by deriving a method for one- and two-dimensional test problems, which can be extended to the full problem, including the PDE describing the particle dynamics.
+\\
+\\
+The report is structured as follows. In the next section, the PDE for the particle dynamics is derived from the Smoluchowski equation. In the third section, the PDE-constrained optimization framework is set up and first-order optimality conditions are derived for two different test problems, one diffusion type problem and one problem including an integral particle interaction term.
+In the fourth section, some exact solutions and the numerical methods are introduced, such as pseudospectral methods and the multiple shooting method.
+In the fifth section, some numerical experiments are presented for both introduced test problems in one and two dimensions.
+In the final section, some conclusions are drawn and opportunities for future work are pointed out.
+\section{Multiscale Particle Dynamics}
+
+\input{MultiscaleParticleDynamicsIntro.tex}	
+
+\section{PDE-Constrained Optimization} 
+
+\input{PDECOIntro.tex}
+
+
+\section{Numerical Methods}	
+
+In order to solve the PDE-constrained optimization problem (\ref{sysPDEconstroptiAndNonlocal1}), it is necessary to solve the first-order optimality conditions (\ref{sysFirstOderOptimalityNonLocal1}). Therefore, methods of time and space discretization, as well as a method for solving the system of PDEs are needed. One challenge specific to this problem is the final time condition in the adjoint equation, which means that it is a boundary value problem in time as well as in space. 	
+The numerical methods that are needed to solve (\ref{sysFirstOderOptimalityNonLocal1}) are introduced in this section.
+A lot of research has been done on numerical methods for solving linear PDE-constrained optimization problems, as demonstrated in \cite{DeLosReyesOptimization}, \cite{CarraroDirectIndirectMultipleShooting} and \cite{TroeltzschFredi2010OCoP}.
+New approaches to solving the optimality system (\ref{sysPDEconstroptiAndNonlocal1}) are needed because of the non-linear, non-local nature of the particle interaction term in the PDE-constraint. Standard methods are no longer sufficient to solve this type of problem, as discussed in this section.
+
+\subsection{Pseudospectral Methods} \label{secPSMTheory1}
+
+\input{PseudoSpectralIntro.tex}
+
+\subsection{Comparison with FEM and FDM} \label{secCompareFEMFDMPDM}
+
+\input{ComparisonwithFDMandFEM.tex}
+
+\subsection{Exact Solutions} \label{secExactSolsDiffusion1}
+
+\input{ExactSolutions1.tex}
+
+\subsection{Multiple Shooting Method}	
+
+\input{MultipleShootingIntro.tex}
+
+
+
+	
+\section*{Year 2}
+	
+\section{Literature Review on Mean Field Optimal Control}
+\input{MeanFieldOCPReview.tex}
+
+\section{Relevant Equations and their Optimality Conditions}
+This section is concerned with discussing the different equations that have been studied in the past year and the derivation of the optimality conditions for optimal control problems with constrains involving these equations. The discussion of the different PDE models and the connections between them is heavily based on \cite{Archer1}.
+
+\subsection{The Equations}
+
+\input{ArcherDerivation1.tex}
+
+
+\subsection{Optimality Conditions for the Inertial Eqations} \label{sec:INOptimalityConditions}
+
+\input{ArcherOptimalityConditionsIN1.tex}
+
+	
+\subsection{Optimality Conditions for the Overdamped Equations}	
+	
+\input{OverdampedOptimalityConditions1.tex}	
+
+\subsection{Subdomain and Boundary Observation with Non-Constant Flux}
+
+The first problem of interest is of the form:
+
+\input{NonconstantFluxSubdomainObservation.tex}
+\input{NonconstantFluxBoundaryObservation.tex}	
+	
+	
+\section{Numerical Methods} \label{sec:NumericalMethods}	
+	
+	In this section, the numerical methods used in the computational implementation are discussed. Methods which have been covered in the year one report are omitted.
+	In general it is necessary to change the time variable in the adjoint equation, as demonstrated in Section \ref{sec:INImplementation}, for numerical stability. This is necessary because the forward and adjoint equations contain Laplacians of opposite sign. Running the adjoint equation with a negative Laplacian leads to a blow up of the solution at the first time step. The reversal of time, using $\tau = T-t$, remedies this issue, however, this causes a non-local coupling in time between the two PDEs.
+	The following algorithms provide methods of treating this non-local coupling.
+	
+	\subsection{Fixed Point Algorithm}\label{sec:Method_SolverFP}
+	
+	\input{FixedPointAlgorithm.tex}
+	
+	\subsection{Picard Multiple Shooting}
+	
+	\input{PicardAlgorithm.tex}
+	
+	\subsection{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt{fsolve}} \label{sec:fsolvedescription}
+	
+	\input{fsolveAlgorithm.tex}
+	
+	\section{Validation of the Optimization Algorithm} \label{sec:Validation}
+	In this section, the measure of accuracy, used in the numerical experiments, is discussed, some validation methods and results are presented and further comments are made on general observations regarding the functionality of the numerical algorithm.
+	
+	\subsection{Error Measure}\label{sec:ErrorMeasure}
+	
+	\input{ErrorMeasure.tex}
+	
+	\subsection{Validation Against \texttt{fsolve}}
+	As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see Section \ref{sec:fsolvedescription} and \cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems we set out to solve. 
+	\input{Comparisonwithfsolve.tex}
+	
+	
+	\subsection{Perturbing $w$}
+	\input{Perturbingw.tex}
+	
+	\subsection{Additional Observations}
+	In the following, a few further observations are stated that were made when applying the optimization solver to problems involving the overdamped model. Demonstrations of these points are omitted, due to time constraints, and will be provided in future work.
+	During the investigation of different perturbed exact problems and other test problems, it could be observed that the weakness of the optimization method lies in solving advection dominant problems. 
+	This became apparent when considering different analytic exact solutions to the overdamped flow control problem \eqref{eqn:ADFlowOCP}. Depending on the magnitude of the control in each problem, the algorithm could either converge, for small controls, or not, for large control values. Scaling the size of the control down, by scaling the exact solutions accordingly, it is possible to achieve convergence for problems that were previously too difficult to solve for the optimization solver. Another way of achieving convergence is to introduce a diffusion coefficient into the problem. A large advection term can then be offset with a large diffusion coefficient and the optimization solver is able to converge.
+	The issue of advection dominance is especially prevalent when applying no-flux boundary conditions. This is because in order to match the boundary conditions in an advection dominated problem, the gradients of the particle distribution become steep at the boundary. Since steep gradients are difficult to treat numerically, this is an exacerbation of the problem at hand.
+	It is important to point out that these issues are encountered with any optimization and forward solver and is not unique to our choice of methods. 
+	\\
+	\\
+	During the work on the overdamped equations it was found that one limiting factor in the convergence of the method is interpolation errors. The error made during interpolation is of order $10^{-8}$ to $10^{-9}$. The ODE solver cannot be more accurate than that, since variables are interpolated in time during each ODE solve, and consequently the optimization tolerance has to be adapted to this finding as well.
+	Furthermore, the optimization tolerance has to be chosen in such a way that it takes into account the accumulation of error during each ODE solve and with each iteration of the optimization algorithm. This results in the optimization tolerance having to be at least three orders larger than the ODE solver tolerance, which is bounded by the interpolation error. We found that, in general, choosing the ODE solver tolerance to be $10^{-8}$ and the optimization tolerance to be $10^{-4}$, we get reliable convergence for most test problems.
+	\\
+	Another aspect to take into consideration is that the problem becomes numerically harder with decreasing values of $\beta$. In general, small $\beta$ may need more points to be solved to the same accuracy as larger values of $\beta$, or may not reach the same accuracy at all.  Finally, it is worth investigating how interpolation, forward solution and optimization are affected by exponential changes in time of the quantity of interest, as opposed to it showing polynomial behaviour. It is expected that quantities which change exponentially in time are harder to compute numerically, and this therefore could have an effect on the accuracy of the method. This is particularly relevant given that many test problems with exact solutions were considered with $\rho$ and $\adj$ changing exponentially in time.
+	
+	
+	\section{Numerical Experiments} \label{sec:Examples}
+	% add later... question is whether these wouldn't have to be rerun anyway.
+	%\input{NumericalExperiments.tex}
+	
+	
+	\section{Conclusion}
+	During the past year, a fast and accurate optimization solver has been developed, which reliably solves various optimal control problems. In the course of the next year, this will be applied to different model problems, such as models with inertial effects. Furthermore, the numerical method is extended to be applied to different domains. At the present time, only rectangular domains are considered. However, in the following year, the optimal control problems will be solved on more complex domains, which are composed of quadrilateral and circular shapes. 
+	Other possibilities to be considered are models including multiple species and different control types other than flow and source control.
+	The main aim is to extend the model and the numerical method to industrial applications.
+	
+
+\section*{Year 3}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\pagebreak	
+	\bibliography{GeneralBib}
+	\bibliographystyle{unsrt}
+	
+	
+\end{document}

@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: ThesisDraft1.aux
+The style file: unsrt.bst
+Database file #1: GeneralBib.bib
+I was expecting a `,' or a `}'---line 28 of file GeneralBib.bib
+ :     
+ :     volume={13},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 422 of file GeneralBib.bib
+ : @book{DeLosReyesOptimization
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--empty publisher in CarraroDirectIndirectMultipleShooting
+Warning--empty journal in albi2014kinetic
+(There were 2 error messages)
