@@ -1,0 +1,47 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Literature Review on Mean Field Optimal Control}{1}{section.2}% 
+\contentsline {section}{\numberline {3}Multiscale Particle Dynamics}{3}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Deriving Model Equations}{4}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}The Diffusion Equation}{5}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Adding Pairwise Interactions}{6}{subsubsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.2}Approximating the Two-Body Density}{10}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}The Mean Field Approximation}{10}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}The Adiabatic Approximation}{10}{subsubsection.3.2.2}% 
+\contentsline {section}{\numberline {4}PDE-Constrained Optimization}{12}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Deriving First-Order Optimality Conditions}{13}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Fr\'echet Differentiation}{15}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Deriving the Adjoint Equation}{16}{subsubsection.4.1.2}% 
+\contentsline {subsubsection}{\numberline {4.1.3}The First-Order Optimality System}{19}{subsubsection.4.1.3}% 
+\contentsline {subsection}{\numberline {4.2}Adding a Non-Local Term}{20}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Deriving the Adjoint Equation}{22}{subsubsection.4.2.1}% 
+\contentsline {subsubsection}{\numberline {4.2.2}The First Order Optimality System}{25}{subsubsection.4.2.2}% 
+\contentsline {section}{\numberline {5}Relevant Equations and their Optimality Conditions}{25}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}The Equations}{26}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Optimality Conditions for the Inertial Eqations}{27}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}PDE-Constrained Optimization Problem}{27}{subsubsection.5.2.1}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Adjoint Equation 1}{28}{subsubsection.5.2.2}% 
+\contentsline {subsubsection}{\numberline {5.2.3}Adjoint Equation 2}{31}{subsubsection.5.2.3}% 
+\contentsline {subsubsection}{\numberline {5.2.4}The Gradient Equation}{33}{subsubsection.5.2.4}% 
+\contentsline {subsubsection}{\numberline {5.2.5}Rewriting the Equations for Implementation}{33}{subsubsection.5.2.5}% 
+\contentsline {subsection}{\numberline {5.3}Optimality Conditions for the Overdamped Equations}{34}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Subdomain and Boundary Observation with Non-Constant Flux}{35}{subsection.5.4}% 
+\contentsline {section}{\numberline {6}Numerical Methods}{37}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Pseudospectral Methods}{38}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Comparison with FEM and FDM}{41}{subsection.6.2}% 
+\contentsline {subsection}{\numberline {6.3}Exact Solutions}{42}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6.4}Multiple Shooting Method}{45}{subsection.6.4}% 
+\contentsline {subsubsection}{\numberline {6.4.1}One-Dimensional Diffusion}{45}{subsubsection.6.4.1}% 
+\contentsline {subsubsection}{\numberline {6.4.2}One-Dimensional Diffusion with a Non-Local Term}{48}{subsubsection.6.4.2}% 
+\contentsline {subsubsection}{\numberline {6.4.3}Two-Dimensional Problems}{51}{subsubsection.6.4.3}% 
+\contentsline {subsubsection}{\numberline {6.4.4}Two-Dimensional Problems with a Non-Local Term}{51}{subsubsection.6.4.4}% 
+\contentsline {section}{\numberline {7}Numerical Methods Part 2}{53}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Fixed Point Algorithm}{53}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Picard Multiple Shooting}{54}{subsection.7.2}% 
+\contentsline {subsection}{\numberline {7.3}{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt {fsolve}}{55}{subsection.7.3}% 
+\contentsline {section}{\numberline {8}Validation of the Optimization Algorithm}{56}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Error Measure}{57}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}Validation Against \texttt {fsolve}}{57}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.3}Perturbing $w$}{58}{subsection.8.3}% 
+\contentsline {subsection}{\numberline {8.4}Additional Observations}{59}{subsection.8.4}% 
+\contentsline {section}{\numberline {9}Numerical Experiments}{62}{section.9}% 
+\contentsline {section}{\numberline {10}Conclusion}{62}{section.10}% 

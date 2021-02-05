@@ -56,12 +56,35 @@
 \newcommand{\K}{\mathbf{K}}
 \newcommand{\hr}{\widehat \rho}
 
+
+
+\title{{\huge PDE-Constrained Optimization \\for Multiscale Particle Dynamics} \\ with Industrial Applications}
+\author{Jonna C. Roden\\ \\Supervision by Dr Ben Goddard and Dr John Pearson\\ \vspace{0.5cm} Maxwell Institute Graduate School for Analysis and its Applications}
+\date{\today}
+
+
 \pagenumbering{gobble}
 \begin{document}
+	\maketitle
+\begin{abstract}
++ Later +
+	
+\end{abstract}
+
+\newpage
+%\section*{Acknowledgements}
+%+ Later +
+%\newpage
+\pagenumbering{Roman} 
+\tableofcontents
+%\newpage
+%\listoffigures
+%\listoftables
+\newpage
+\pagenumbering{arabic} 
+
 \section*{Thesis Draft}	
 	
-	
-\section*{Year 1}	
 \section{Introduction}
 PDE-constrained optimization and multiscale particle dynamics are both fields of growing interest to academia and industry. Applying methods of PDE-constrained optimization to industrial processes is a highly relevant topic, for example in the oil and gas industry \cite{Brandman2018}, the beer industry \cite{RamirezW.F.2007Obf} and the wine industry \cite{MergerJuri2017Ocoa}. 
 There are two industrial partners affiliated with this project. WEST brewery is interested in optimizing the yeast sedimentation in the beer brewing process. The company ufraction8 works on cell separation and nano filtration devices, which separate particles based on their sizes. They are interested in optimizing this process.
@@ -76,6 +99,12 @@ The report is structured as follows. In the next section, the PDE for the partic
 In the fourth section, some exact solutions and the numerical methods are introduced, such as pseudospectral methods and the multiple shooting method.
 In the fifth section, some numerical experiments are presented for both introduced test problems in one and two dimensions.
 In the final section, some conclusions are drawn and opportunities for future work are pointed out.
+
+
+\section{Literature Review on Mean Field Optimal Control}
+\input{MeanFieldOCPReview.tex}
+
+
 \section{Multiscale Particle Dynamics}
 
 \input{MultiscaleParticleDynamicsIntro.tex}	
@@ -84,6 +113,29 @@ In the final section, some conclusions are drawn and opportunities for future wo
 
 \input{PDECOIntro.tex}
 
+\section{Relevant Equations and their Optimality Conditions}
+This section is concerned with discussing the different equations that have been studied in the past year and the derivation of the optimality conditions for optimal control problems with constrains involving these equations. The discussion of the different PDE models and the connections between them is heavily based on \cite{Archer1}.
+
+\subsection{The Equations}
+
+\input{ArcherDerivation1.tex}
+
+
+\subsection{Optimality Conditions for the Inertial Eqations} \label{sec:INOptimalityConditions}
+
+\input{ArcherOptimalityConditionsIN1.tex}
+
+
+\subsection{Optimality Conditions for the Overdamped Equations}	
+
+\input{OverdampedOptimalityConditions1.tex}	
+
+\subsection{Subdomain and Boundary Observation with Non-Constant Flux}
+
+The first problem of interest is of the form:
+
+\input{NonconstantFluxSubdomainObservation.tex}
+\input{NonconstantFluxBoundaryObservation.tex}	
 
 \section{Numerical Methods}	
 
@@ -108,40 +160,8 @@ New approaches to solving the optimality system (\ref{sysPDEconstroptiAndNonloca
 
 \input{MultipleShootingIntro.tex}
 
-
-
 	
-\section*{Year 2}
-	
-\section{Literature Review on Mean Field Optimal Control}
-\input{MeanFieldOCPReview.tex}
-
-\section{Relevant Equations and their Optimality Conditions}
-This section is concerned with discussing the different equations that have been studied in the past year and the derivation of the optimality conditions for optimal control problems with constrains involving these equations. The discussion of the different PDE models and the connections between them is heavily based on \cite{Archer1}.
-
-\subsection{The Equations}
-
-\input{ArcherDerivation1.tex}
-
-
-\subsection{Optimality Conditions for the Inertial Eqations} \label{sec:INOptimalityConditions}
-
-\input{ArcherOptimalityConditionsIN1.tex}
-
-	
-\subsection{Optimality Conditions for the Overdamped Equations}	
-	
-\input{OverdampedOptimalityConditions1.tex}	
-
-\subsection{Subdomain and Boundary Observation with Non-Constant Flux}
-
-The first problem of interest is of the form:
-
-\input{NonconstantFluxSubdomainObservation.tex}
-\input{NonconstantFluxBoundaryObservation.tex}	
-	
-	
-\section{Numerical Methods} \label{sec:NumericalMethods}	
+\section{Numerical Methods Part 2} \label{sec:NumericalMethods}	
 	
 	In this section, the numerical methods used in the computational implementation are discussed. Methods which have been covered in the year one report are omitted.
 	In general it is necessary to change the time variable in the adjoint equation, as demonstrated in Section \ref{sec:INImplementation}, for numerical stability. This is necessary because the forward and adjoint equations contain Laplacians of opposite sign. Running the adjoint equation with a negative Laplacian leads to a blow up of the solution at the first time step. The reversal of time, using $\tau = T-t$, remedies this issue, however, this causes a non-local coupling in time between the two PDEs.
