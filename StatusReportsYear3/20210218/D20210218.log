@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  18 FEB 2021 18:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  18 FEB 2021 15:43
 entering extended mode
-**./DerivationofPeriodicBCsforOCPs.tex
-(DerivationofPeriodicBCsforOCPs.tex
+**./D20210218.tex
+(D20210218.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cl
@@ -458,23 +458,23 @@ Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 32.
 \c@definition=\count141
- (DerivationofPeriodicBCsforOCPs.aux)
-\openout1 = `DerivationofPeriodicBCsforOCPs.aux'.
+ (D20210218.aux)
+\openout1 = `D20210218.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -511,7 +511,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring ON on input line 66.
+Package hyperref Info: Link coloring ON on input line 67.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\namere
 f.sty"
@@ -523,13 +523,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count148
 )
-LaTeX Info: Redefining \ref on input line 66.
-LaTeX Info: Redefining \pageref on input line 66.
-LaTeX Info: Redefining \nameref on input line 66.
- (DerivationofPeriodicBCsforOCPs.out)
-(DerivationofPeriodicBCsforOCPs.out)
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
+ (D20210218.out) (D20210218.out)
 \@outlinefile=\write3
-\openout3 = `DerivationofPeriodicBCsforOCPs.out'.
+\openout3 = `D20210218.out'.
 
 
 *geometry* driver: auto-detecting
@@ -567,69 +566,156 @@ LaTeX Info: Redefining \nameref on input line 66.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count149
-LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (73.2714pt too wide) detected at line 87
-[]
+<Images/rho1.png, id=16, 1445.4pt x 685.8122pt>
+File: Images/rho1.png Graphic file (type png)
+<use Images/rho1.png>
+Package pdftex.def Info: Images/rho1.png  used on input line 77.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+<Images/control1.png, id=17, 1445.4pt x 685.8122pt>
+File: Images/control1.png Graphic file (type png)
+<use Images/control1.png>
+Package pdftex.def Info: Images/control1.png  used on input line 78.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 77--79
+ [][] 
  []
 
 
-Overfull \hbox (26.63034pt too wide) detected at line 98
-[]
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 77--79
+ [] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/demo2.png, id=21, 1445.4pt x 685.8122pt>
+File: Images/demo2.png Graphic file (type png)
+<use Images/demo2.png>
+Package pdftex.def Info: Images/demo2.png  used on input line 90.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+<Images/demo1.png, id=22, 1445.4pt x 685.8122pt>
+File: Images/demo1.png Graphic file (type png)
+<use Images/demo1.png>
+Package pdftex.def Info: Images/demo1.png  used on input line 91.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 90--92
+ [][] 
+ []
+
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 90--92
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/demo3.png, id=23, 1445.4pt x 685.8122pt>
+File: Images/demo3.png Graphic file (type png)
+<use Images/demo3.png>
+Package pdftex.def Info: Images/demo3.png  used on input line 97.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+<Images/demo4.png, id=24, 1445.4pt x 685.8122pt>
+File: Images/demo4.png Graphic file (type png)
+<use Images/demo4.png>
+Package pdftex.def Info: Images/demo4.png  used on input line 98.
+(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 97--99
+ [][] 
+ []
+
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 97--99
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/demo5.png, id=25, 632.3625pt x 474.27188pt>
+File: Images/demo5.png Graphic file (type png)
+<use Images/demo5.png>
+Package pdftex.def Info: Images/demo5.png  used on input line 104.
+(pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
+<Images/demo6.png, id=26, 632.3625pt x 474.27188pt>
+File: Images/demo6.png Graphic file (type png)
+<use Images/demo6.png>
+Package pdftex.def Info: Images/demo6.png  used on input line 105.
+(pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/error.png, id=28, 415.5525pt x 306.14375pt>
+File: Images/error.png Graphic file (type png)
+<use Images/error.png>
+Package pdftex.def Info: Images/error.png  used on input line 117.
+(pdftex.def)             Requested size: 290.88477pt x 214.29915pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] [3] [4]
-Overfull \hbox (45.22362pt too wide) detected at line 239
-[]
- []
-
-[5]
-Overfull \hbox (2.07845pt too wide) detected at line 258
+Overfull \hbox (2.91537pt too wide) detected at line 142
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--292
+Overfull \hbox (53.74031pt too wide) detected at line 152
+[]
+ []
+
+[2]
+Overfull \hbox (2.07845pt too wide) detected at line 189
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--199
 
  []
 
-[6]
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 304.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 304.
- (DerivationofPeriodicBCsforOCPs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 304.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 304.
-Package rerunfilecheck Info: File `DerivationofPeriodicBCsforOCPs.out' has not 
-changed.
-(rerunfilecheck)             Checksum: A93620766264C7246A9D0B597D42489D;254.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 304.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
+[3] [4 <./Images/rho1.png (PNG copy)> <./Images/control1.png (PNG copy)>]
+[5 <./Images/demo2.png (PNG copy)> <./Images/demo1.png (PNG copy)>] [6 <./Image
+s/demo3.png (PNG copy)> <./Images/demo4.png (PNG copy)>] [7 <./Images/demo5.png
+ (PNG copy)> <./Images/demo6.png (PNG copy)> <./Images/error.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
+
+(D20210218.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
+Package rerunfilecheck Info: File `D20210218.out' has not changed.
+(rerunfilecheck)             Checksum: 1D979882B10CA9A216B8E8640D156A3B;207.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
  ) 
 Here is how much of TeX's memory you used:
- 10394 strings out of 492946
- 157015 string characters out of 3124935
+ 10455 strings out of 492946
+ 157714 string characters out of 3124935
  272059 words of memory out of 3000000
- 14163 multiletter control sequences out of 15000+200000
+ 14207 multiletter control sequences out of 15000+200000
  9822 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,348b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,43p,426b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -642,9 +728,9 @@ e1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s145250
 4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on DerivationofPeriodicBCsforOCPs.pdf (7 pages, 130679 bytes).
+Output written on D20210218.pdf (7 pages, 1258328 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 70 words of extra memory for PDF output out of 10000 (max. 10000000)
 

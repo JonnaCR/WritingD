@@ -76,7 +76,18 @@
 		\caption{$\hr$ and optimal $\rho$ with corresponding $\w$.} 
 		\label{F1}
 	\end{figure}
-
+   
+   I then tried to compute the sedimentation equations on the same geometry with a time independent control. The target was found by imposing gravity, while the initial guess for the problem was done without gravity. The result is a little unclear, because both $J_{FW}$ and $J_{Opt}$ are of order $10^{-6}$ and therefore too small to reliably compare. I am also unsure whether there is an artefact in the plots due to the number of points. However, in comparison to the example above, this one did have interactions included - so might just be that. I computed the problem with $N = 30$ for each shape and $n = 30$.
+   Figure \ref{F2} shows the result.
+   \begin{figure}[h]
+   	\centering
+   	\includegraphics[scale=0.35]{FW1.png}
+   	\includegraphics[scale=0.35]{Opt1.png}
+   	\includegraphics[scale=0.5]{Cont1.png}
+   	\includegraphics[scale=0.5]{FWZoom.png}
+   	\caption{$\hr$ and optimal $\rho$ with corresponding $\w$, one $\w$ for illustration.} 
+   	\label{F2}
+   \end{figure}
 
 	
 \section{Periodic Boundary Conditions}
@@ -137,8 +148,94 @@ Then considering the terms where $h \neq 0$, again separately for $a$ and $b$ we
 		q(a) = q(b) \quad \frac{\partial q(b)}{\partial x}  = \frac{\partial q(a)}{\partial x},
 	\end{align*}
 	as expected.
+		\section{Periodic Boundary Conditions in a General Domain}
+	
+	We consider the advection diffusion equation with periodic boundary conditions and a corresponding OCP:
+	\begin{align*}
+		&\min \frac{1}{2}|| \rho - \hr||^2 + \frac{\beta}{2}||\w||^2\\
+		&\text{subject to:}\\
+		&\frac{\partial \rho}{\partial t} = \frac{\partial^2 \rho}{\partial x^2} - \frac{\partial \rho \w}{\partial x}\\
+		& \rho|_{\partial \Omega_l} = \rho|_{\partial \Omega_r}\\
+		& \rho|_{\partial \Omega_t} = \rho|_{\partial \Omega_b}\\
+		& \frac{\partial \rho}{\partial x} - \rho \w |_{\partial \Omega_l}= \frac{\partial \rho}{\partial x}  - \rho \w |_{\partial \Omega_r}\\
+		& \frac{\partial \rho}{\partial x} - \rho \w |_{\partial \Omega_t}= \frac{\partial \rho}{\partial x}  - \rho \w |_{\partial \Omega_b},
+	\end{align*}
+	such that $\partial\Omega_l \cup \partial\Omega_r \cup \partial\Omega_t \cup \partial\Omega_b = \partial \Omega$ and the abbreviations corresponding to left, right, top and bottom respectively.
+	The relevant part of the Lagrangian is then:
+	\begin{align*}
+		\mathcal{L} &= ... -\int_0^T \int_\Omega \left(\frac{\partial \rho}{\partial t} - \frac{\partial^2 \rho}{\partial x^2} + \frac{\partial \rho \w}{\partial x}\right)q dr dt \\
+		&- \int_0^T \int_{\partial \Omega_l} \left(- \rho q_1 - \nabla \rho q_2 \cdot \n  + \rho \w q_2 \cdot \n \right) dr  + \int_{\partial \Omega_r} \left(\rho q_1 + \nabla \rho q_2 \cdot \n - \rho \w q_2\cdot \n  \right)  dr  \\
+		& + \int_{\partial \Omega_t} \left(- \rho q_3 - \nabla \rho q_4 \cdot \n  + \rho \w q_4 \cdot \n  \right)  dr  + \int_{\partial \Omega_b} \left(\rho q_3 + \nabla \rho q_4 \cdot \n  - \rho \w q_4  \cdot \n \right) drdt.
+	\end{align*}
+	Taking partial derivatives, the relevant part of the Lagrangian is:
+	\begin{align*}
+		\mathcal{L} &= ... - \int_0^T \int_{\partial \Omega} \left( q \nabla \rho - \rho\nabla q - \rho \w q \right) \cdot \n  dr dt\\
+		&- \int_0^T \int_{\partial \Omega_l} \left(- \rho q_1 - \nabla \rho q_2\cdot \n + \rho \w q_2\cdot \n \right)   dr  + \int_{\partial \Omega_r} \left(\rho q_1 + \nabla \rho q_2 \cdot \n- \rho \w q_2\cdot \n \right)   dr  \\
+		& + \int_{\partial \Omega_t} \left(- \rho q_3 - \nabla \rho q_4 \cdot \n + \rho \w q_4 \cdot \n\right) dr  + \int_{\partial \Omega_b} \left(\rho q_3 + \nabla \rho q_4 \cdot \n - \rho \w q_4 \cdot \n \right) drdt.
+	\end{align*}
+	Taking the derivative with respect to $\rho$ gives:
+	\begin{align*}
+		\mathcal{L} &= ... - \int_0^T \int_{\partial \Omega} q \frac{\partial h}{\partial n} - h\frac{\partial q}{\partial n} - \rho \w q  \cdot \n  dr dt\\
+		&- \int_0^T \int_{\partial \Omega_l} \left(- h q_1  - \frac{\partial h }{\partial n} q_2 + h \w q_2  \cdot \n \right) dr  + \int_{\partial \Omega_r} \left(h q_1 + \frac{\partial h }{\partial n}q_2 - h \w q_2 \cdot \n  \right) dr  \\
+		& + \int_{\partial \Omega_t} \left(- h q_3 - \frac{\partial h }{\partial n} q_4 + h \w q_4 \cdot \n  \right) dr  + \int_{\partial \Omega_b} \left(h q_3 + \frac{\partial h}{\partial n}q_4 - h \w q_4 \cdot \n  \right) drdt.
+	\end{align*}
+	Writing all terms explicitly:
+	\begin{align*}
+		\mathcal{L} &= ... - \int_0^T \int_{\partial \Omega_l} \left( q \frac{\partial h}{\partial n} - h\frac{\partial q}{\partial n} - h \w q \cdot \n- h q_1 - \frac{\partial h }{\partial n} q_2 + h \w q_2 \cdot \n \right) dr\\
+		&  + \int_{\partial \Omega_r} \left(- q \frac{\partial h}{\partial n} + h\frac{\partial q}{\partial n} + h \w q  \cdot \n + h q_1 + \frac{\partial h }{\partial n}q_2 - h \w q_2 \cdot \n \right) dr  \\
+		& + \int_{\partial \Omega_t} \left(q \frac{\partial h}{\partial n} - h\frac{\partial q}{\partial n} - h \w q  \cdot \n- h q_3 - \frac{\partial h }{\partial n} q_4 + h \w q_4 \cdot \n \right) dr\\
+		&  + \int_{\partial \Omega_b} \left(-q \frac{\partial h}{\partial n} + h\frac{\partial q}{\partial n} + h \w q  \cdot \n + h q_3 + \frac{\partial h}{\partial n}q_4 - h \w q_4  \cdot \n\right) drdt.
+	\end{align*}
+	When writing out the terms explicitly we pay attention to the fact that $n|_{\partial \Omega_l} = - n|_{\partial \Omega_r}$ and $n|_{\partial \Omega_t} = - n|_{\partial \Omega_b}$.
+	Then considering the terms that satisfy $\frac{\partial h}{\partial x}$ on each boundary separately, we get:
+	\begin{align*}
+		&\int_0^T \int_{\partial \Omega_l} q \frac{\partial h}{\partial x}- \frac{\partial h }{\partial x} q_2 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_r} -q \frac{\partial h}{\partial x}+ \frac{\partial h }{\partial x}q_2 dr dt= 0 \\
+		&\int_0^T \int_{\partial \Omega_t} q \frac{\partial h}{\partial x}- \frac{\partial h }{\partial x} q_4 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_b} -q \frac{\partial h}{\partial x}+ \frac{\partial h}{\partial x}q_4 dr dt= 0. \\
+	\end{align*}
+	Therefore we have 
+	\begin{align*}
+		&q = q_2 |_{\partial \Omega_l} \quad q =  q_2 |_{\partial \Omega_r}\\
+		&q = q_4 |_{\partial \Omega_t} \quad q =  q_4 |_{\partial \Omega_b},
+	\end{align*}
+	and so:
+	\begin{align*}
+		q |_{\partial \Omega_l} = q |_{\partial \Omega_r} \quad q |_{\partial \Omega_t} = q|_{\partial \Omega_b},
+	\end{align*}
+	as expected.
+	Now, considering $h \neq 0$ on each separate boundary gives:
+	\begin{align*}
+		&\int_0^T \int_{\partial \Omega_l} - h \frac{\partial q}{\partial n}  - h q \w \cdot \n - h q_1 + h q_2 \w \cdot \n dr dt = 0\\
+		&\int_0^T \int_{\partial \Omega_r}  h \frac{\partial q}{\partial n}  + h q \w \cdot \n + h q_1 - h q_2 \w \cdot \n dr dt = 0 \\
+		&\int_0^T \int_{\partial \Omega_t}- h \frac{\partial q}{\partial n}  - h q \w \cdot \n - h q_3 + h q_4 \w \cdot \n dr dt = 0 \\
+		&\int_0^T \int_{\partial \Omega_b} h \frac{\partial q}{\partial n}  + h q \w \cdot \n + h q_3 - h q_4 \w \cdot \n dr dt = 0 .
+	\end{align*}
+	Using the relationships of $q$, $q_2$ and $q_4$ from above, the terms involving $\w$ cancel and we get:
+	\begin{align*}
+		&\int_0^T \int_{\partial \Omega_l} - h \frac{\partial q}{\partial n}   - h q_1 dr dt = 0 \qquad \int_0^T \int_{\partial \Omega_r}  h \frac{\partial q}{\partial n}  + h q_1 dr dt = 0 \\
+		&\int_0^T \int_{\partial \Omega_t}- h \frac{\partial q}{\partial n}   - h q_3 dr dt = 0 \qquad
+		\int_0^T \int_{\partial \Omega_b} h \frac{\partial q}{\partial n}   + h q_3  dr dt = 0 .
+	\end{align*}
+	This results in the four relationships:
+	\begin{align*}
+		\frac{\partial q}{\partial n} = - q_1 |_{\partial \Omega_l}, \quad \frac{\partial q}{\partial n} = - q_1 |_{\partial \Omega_r}, \quad
+		\frac{\partial q}{\partial n} = - q_3 |_{\partial \Omega_t}, \quad
+		\frac{\partial q}{\partial n} = - q_3 |_{\partial \Omega_b},
+	\end{align*}
+	And therefore, we get:
+	\begin{align*}
+		&\frac{\partial q}{\partial n}|_{\partial \Omega_l} = \frac{\partial q}{\partial n}|_{\partial \Omega_r}, \qquad \frac{\partial q}{\partial n}|_{\partial \Omega_t} = \frac{\partial q}{\partial n}|_{\partial \Omega_b},
+	\end{align*}
+	as required.
 	
 	
+	\section{Questions}
+	How do we get the results for the uniform limit?
+	We have:
+	\begin{align*}
+		&n_1 = \int \rho \delta( |\mathbf{r - r'}| - R)d r = 4 \pi R^2 \rho \\
+		&\mathbf{n_1} = \int \rho \frac{\mathbf {r}}{r} \delta( |\mathbf{r - r'}| - R)d r = 0.
+	\end{align*}
+	Do I have to explain averaging from 3D to 2D FMT? Or even 3D FMT?
 	
 	
 \end{document}

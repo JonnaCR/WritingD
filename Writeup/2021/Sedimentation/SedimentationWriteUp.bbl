@@ -1,0 +1,60 @@
+\begin{thebibliography}{10}
+
+\bibitem{ArcherSed1}
+Andrew~J. Archer and Alexandr Malijevský.
+\newblock On the interplay between sedimentation and phase separation phenomena
+  in two-dimensional colloidal fluids.
+\newblock {\em Molecular Physics}, 109(7-10):1087--1099, 2011.
+
+\bibitem{RosenfeldFMT}
+Yaakov Rosenfeld.
+\newblock Free-energy model for the inhomogeneous hard-sphere fluid mixture and
+  density-functional theory of freezing.
+\newblock {\em Phys. Rev. Lett.}, 63:980--983, Aug 1989.
+
+\bibitem{Roth_2010FMTReview}
+Roland Roth.
+\newblock Fundamental measure theory for hard-sphere mixtures: a review.
+\newblock {\em Journal of Physics: Condensed Matter}, 22(6):063102, jan 2010.
+
+\bibitem{Percus1976}
+J.K. Percus.
+\newblock Equilibrium state of a classical fluid of hard rods in an external
+  field.
+\newblock {\em Journal of Statistical Physics}, 15:505--511, 1976.
+
+\bibitem{Rosenfeld2DInterp}
+Yaakov Rosenfeld.
+\newblock Free-energy model for the inhomogeneous hard-sphere fluid in d
+  dimensions: Structure factors for the hard-disk (d=2) mixtures in simple
+  explicit form.
+\newblock {\em Phys. Rev. A}, 42:5978--5989, Nov 1990.
+
+\bibitem{Reiss1959}
+H.~Reiss, H.~L. Frisch, and J.~L. Lebowitz.
+\newblock Statistical mechanics of rigid spheres.
+\newblock {\em The Journal of Chemical Physics}, 31(2):369--380, 1959.
+
+\bibitem{Reiss1960}
+Howard Reiss, H.~L. Frisch, E.~Helfand, and J.~L. Lebowitz.
+\newblock Aspects of the statistical thermodynamics of real fluids.
+\newblock {\em The Journal of Chemical Physics}, 32(1):119--124, 1960.
+
+\bibitem{Helfand1961}
+E.~Helfand, H.~L. Frisch, and J.~L. Lebowitz.
+\newblock Theory of the two‐ and one‐dimensional rigid sphere fluids.
+\newblock {\em The Journal of Chemical Physics}, 34(3):1037--1042, 1961.
+
+\bibitem{RosenfeldSPT}
+Yaakov Rosenfeld.
+\newblock Scaled field particle theory of the structure and the thermodynamics
+  of isotropic hard particle fluids.
+\newblock {\em The Journal of Chemical Physics}, 89(7):4272--4287, 1988.
+
+\bibitem{PercusYevick1}
+Jerome~K. Percus and George~J. Yevick.
+\newblock Analysis of classical statistical mechanics by means of collective
+  coordinates.
+\newblock {\em Phys. Rev.}, 110:1--13, Apr 1958.
+
+\end{thebibliography}

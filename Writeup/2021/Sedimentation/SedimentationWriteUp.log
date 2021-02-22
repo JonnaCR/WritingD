@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  9 FEB 2021 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  19 FEB 2021 12:22
 entering extended mode
 **./SedimentationWriteUp.tex
 (SedimentationWriteUp.tex
@@ -580,339 +580,69 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 120--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--131
-
- []
-
 [2] [3] [4] [5]
-Overfull \hbox (63.55605pt too wide) detected at line 246
+Overfull \hbox (63.55605pt too wide) detected at line 247
 []
  []
 
 
-Overfull \hbox (63.55605pt too wide) detected at line 253
+Overfull \hbox (63.55605pt too wide) detected at line 254
 []
  []
 
 
-Overfull \hbox (61.2748pt too wide) detected at line 261
+Overfull \hbox (61.2748pt too wide) detected at line 262
 []
  []
 
 [6]
-Overfull \hbox (12.3746pt too wide) detected at line 267
+Overfull \hbox (15.41628pt too wide) detected at line 268
 []
  []
 
 
-Overfull \hbox (57.15598pt too wide) detected at line 274
+Overfull \hbox (60.19765pt too wide) detected at line 275
 []
  []
 
 [7]
-Overfull \hbox (55.10101pt too wide) detected at line 310
+Overfull \hbox (59.96765pt too wide) detected at line 312
 []
  []
 
 
-Overfull \hbox (22.8831pt too wide) detected at line 316
+Overfull \hbox (22.8831pt too wide) detected at line 318
 []
  []
 
-
-Overfull \hbox (36.55768pt too wide) detected at line 335
+[8]
+Overfull \hbox (36.55768pt too wide) detected at line 337
 []
  []
 
-[8] [9]
-<Images/Ex8F1.png, id=126, 1445.4pt x 685.8122pt>
-File: Images/Ex8F1.png Graphic file (type png)
-<use Images/Ex8F1.png>
-Package pdftex.def Info: Images/Ex8F1.png  used on input line 400.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 400--401
- [][] 
- []
-
-[10]
-<Images/Ex8F2.png, id=132, 2168.1pt x 1227.83719pt>
-File: Images/Ex8F2.png Graphic file (type png)
-<use Images/Ex8F2.png>
-Package pdftex.def Info: Images/Ex8F2.png  used on input line 410.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 410--411
- [][] 
- []
-
-<Images/Ex8F3.png, id=134, 2168.1pt x 1227.83719pt>
-File: Images/Ex8F3.png Graphic file (type png)
-<use Images/Ex8F3.png>
-Package pdftex.def Info: Images/Ex8F3.png  used on input line 417.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 417--418
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/Ex8F1b.png, id=135, 1445.4pt x 685.8122pt>
-File: Images/Ex8F1b.png Graphic file (type png)
-<use Images/Ex8F1b.png>
-Package pdftex.def Info: Images/Ex8F1b.png  used on input line 425.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 425--426
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/Ex8NonSym.png, id=137, 1445.4pt x 685.8122pt>
-File: Images/Ex8NonSym.png Graphic file (type png)
-<use Images/Ex8NonSym.png>
-Package pdftex.def Info: Images/Ex8NonSym.png  used on input line 434.
-(pdftex.def)             Requested size: 578.14977pt x 274.32002pt.
-
-Overfull \hbox (125.18187pt too wide) in paragraph at lines 434--435
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/Ex10F1.png, id=139, 2168.1pt x 1227.83719pt>
-File: Images/Ex10F1.png Graphic file (type png)
-<use Images/Ex10F1.png>
-Package pdftex.def Info: Images/Ex10F1.png  used on input line 442.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 442--443
- [][] 
- []
-
-<Images/Ex10F2.png, id=141, 2168.1pt x 1227.83719pt>
-File: Images/Ex10F2.png Graphic file (type png)
-<use Images/Ex10F2.png>
-Package pdftex.def Info: Images/Ex10F2.png  used on input line 449.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 449--450
- [][] 
- []
-
-[11 <./Images/Ex8F1.png (PNG copy)>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12 <./Images/Ex8F2.png (PNG copy)>]
-<Images/Plotrhobar0072.png, id=163, 2168.1pt x 1227.83719pt>
-File: Images/Plotrhobar0072.png Graphic file (type png)
-<use Images/Plotrhobar0072.png>
-Package pdftex.def Info: Images/Plotrhobar0072.png  used on input line 462.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 462--463
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/rhobar0072Zoom57to62.png, id=164, 2168.1pt x 1227.83719pt>
-File: Images/rhobar0072Zoom57to62.png Graphic file (type png)
-<use Images/rhobar0072Zoom57to62.png>
-Package pdftex.def Info: Images/rhobar0072Zoom57to62.png  used on input line 46
-8.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 468--469
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/Plotrhobar02.png, id=165, 2168.1pt x 1227.83719pt>
-File: Images/Plotrhobar02.png Graphic file (type png)
-<use Images/Plotrhobar02.png>
-Package pdftex.def Info: Images/Plotrhobar02.png  used on input line 475.
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 475--476
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/rhobar02Zoom60to66.png, id=166, 2168.1pt x 1227.83719pt>
-File: Images/rhobar02Zoom60to66.png Graphic file (type png)
-<use Images/rhobar02Zoom60to66.png>
-Package pdftex.def Info: Images/rhobar02Zoom60to66.png  used on input line 481.
-
-(pdftex.def)             Requested size: 542.02368pt x 306.95854pt.
-
-Overfull \hbox (89.05579pt too wide) in paragraph at lines 481--482
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/F11.png, id=170, 1445.4pt x 685.8122pt>
-File: Images/F11.png Graphic file (type png)
-<use Images/F11.png>
-Package pdftex.def Info: Images/F11.png  used on input line 501.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 501--502
- [][] 
- []
-
-<Images/F21.png, id=171, 1445.4pt x 685.8122pt>
-File: Images/F21.png Graphic file (type png)
-<use Images/F21.png>
-Package pdftex.def Info: Images/F21.png  used on input line 507.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 507--508
- [][] 
- []
-
-<Images/F31.png, id=172, 1445.4pt x 685.8122pt>
-File: Images/F31.png Graphic file (type png)
-<use Images/F31.png>
-Package pdftex.def Info: Images/F31.png  used on input line 513.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 513--514
- [][] 
- []
-
-[13 <./Images/Ex8F3.png (PNG copy)>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/C1.png, id=183, 1445.4pt x 685.8122pt>
-File: Images/C1.png Graphic file (type png)
-<use Images/C1.png>
-Package pdftex.def Info: Images/C1.png  used on input line 532.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 532--533
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/C2.png, id=184, 1445.4pt x 685.8122pt>
-File: Images/C2.png Graphic file (type png)
-<use Images/C2.png>
-Package pdftex.def Info: Images/C2.png  used on input line 538.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 538--539
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/C3.png, id=185, 1445.4pt x 685.8122pt>
-File: Images/C3.png Graphic file (type png)
-<use Images/C3.png>
-Package pdftex.def Info: Images/C3.png  used on input line 544.
-(pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 544--545
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14 <./Images/Ex8F1b.png (PNG copy)>]
-<Images/V1.png, id=199, 632.3625pt x 474.27188pt>
-File: Images/V1.png Graphic file (type png)
-<use Images/V1.png>
-Package pdftex.def Info: Images/V1.png  used on input line 555.
-(pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
-<Images/W1.png, id=200, 632.3625pt x 474.27188pt>
-File: Images/W1.png Graphic file (type png)
-<use Images/W1.png>
-Package pdftex.def Info: Images/W1.png  used on input line 556.
-(pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--568
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--568
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--568
-
- []
-
+[9] [10] [11] (SedimentationWriteUp.bbl)
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 579.
-[15 <./Images/Ex8NonSym.png (PNG copy)>] [16 <./Images/Ex10F1.png (PNG copy)>]
-[17 <./Images/Ex10F2.png (PNG copy)>] [18 <./Images/Plotrhobar0072.png (PNG cop
-y)>] [19 <./Images/rhobar0072Zoom57to62.png (PNG copy)>] [20 <./Images/Plotrhob
-ar02.png (PNG copy)>] [21 <./Images/rhobar02Zoom60to66.png (PNG copy)> <./Image
-s/F11.png (PNG copy)>] [22 <./Images/F21.png (PNG copy)> <./Images/F31.png (PNG
- copy)>] [23 <./Images/C1.png (PNG copy)> <./Images/C2.png (PNG copy)>]
-[24 <./Images/C3.png (PNG copy)> <./Images/V1.png (PNG copy)> <./Images/W1.png 
-(PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 579.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 582.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 582.
  (SedimentationWriteUp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 579.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 579.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 582.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 582.
 Package rerunfilecheck Info: File `SedimentationWriteUp.out' has not changed.
-(rerunfilecheck)             Checksum: C699702C7DCF959AF2A10F25682C732E;1312.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 579.
+(rerunfilecheck)             Checksum: D0183D4A603E5DAF8BFBB6E5ADDED472;1672.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 582.
  ) 
 Here is how much of TeX's memory you used:
- 10579 strings out of 492946
- 159808 string characters out of 3124935
- 276059 words of memory out of 3000000
- 14277 multiletter control sequences out of 15000+200000
- 10427 words of font info for 39 fonts, out of 3000000 for 9000
+ 10489 strings out of 492946
+ 158497 string characters out of 3124935
+ 275059 words of memory out of 3000000
+ 14217 multiletter control sequences out of 15000+200000
+ 10773 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,867b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,850b,343s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -928,10 +658,11 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local
 Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmsy6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on SedimentationWriteUp.pdf (24 pages, 6685026 bytes).
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on SedimentationWriteUp.pdf (12 pages, 224305 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

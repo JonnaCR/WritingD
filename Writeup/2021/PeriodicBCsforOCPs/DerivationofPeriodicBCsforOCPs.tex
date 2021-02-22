@@ -55,7 +55,7 @@
 \newcommand{\h}{\mathbf{h}}
 \newcommand{\K}{\mathbf{K}}
 \newcommand{\hr}{\widehat \rho}
-
+\newcommand{\jf}{\mathbf j}
 %	\begin{figure}[h]
 %		\centering
 %		\includegraphics[scale=0.35]{F1.png}
@@ -131,16 +131,16 @@ Then considering the terms where $h \neq 0$, again separately for $a$ and $b$ we
 	\begin{align*}
 		&\min \frac{1}{2}|| \rho - \hr||^2 + \frac{\beta}{2}||\w||^2\\
 		&\text{subject to:}\\
-		&\frac{\partial \rho}{\partial t} = \frac{\partial^2 \rho}{\partial x^2} - \frac{\partial \rho \w}{\partial x}\\
+		&\frac{\partial \rho}{\partial t} = \nabla^2 \rho - \nabla \cdot (\rho \w)\\
 		& \rho|_{\partial \Omega_l} = \rho|_{\partial \Omega_r}\\
 		& \rho|_{\partial \Omega_t} = \rho|_{\partial \Omega_b}\\
-		& \frac{\partial \rho}{\partial x} - \rho \w |_{\partial \Omega_l}= \frac{\partial \rho}{\partial x}  - \rho \w |_{\partial \Omega_r}\\
-		& \frac{\partial \rho}{\partial x} - \rho \w |_{\partial \Omega_t}= \frac{\partial \rho}{\partial x}  - \rho \w |_{\partial \Omega_b},
+		&\nabla \rho \cdot \n - \rho \w \cdot \n|_{\partial \Omega_l}= \nabla \rho \cdot \n  - \rho \w \cdot \n |_{\partial \Omega_r}\\
+		& \nabla \rho \cdot \n - \rho \w  \cdot \n|_{\partial \Omega_t}= \nabla \rho \cdot \n  - \rho \w \cdot \n|_{\partial \Omega_b},
 	\end{align*}
 	such that $\partial\Omega_l \cup \partial\Omega_r \cup \partial\Omega_t \cup \partial\Omega_b = \partial \Omega$ and the abbreviations corresponding to left, right, top and bottom respectively.
 	The relevant part of the Lagrangian is then:
 	\begin{align*}
-		\mathcal{L} &= ... -\int_0^T \int_\Omega \left(\frac{\partial \rho}{\partial t} - \frac{\partial^2 \rho}{\partial x^2} + \frac{\partial \rho \w}{\partial x}\right)q dr dt \\
+		\mathcal{L} &= ... -\int_0^T \int_\Omega \left(\frac{\partial \rho}{\partial t} - \nabla^2 \rho + \nabla \cdot (\rho \w) \right)q dr dt \\
 		&- \int_0^T \int_{\partial \Omega_l} \left(- \rho q_1 - \nabla \rho q_2 \cdot \n  + \rho \w q_2 \cdot \n \right) dr  + \int_{\partial \Omega_r} \left(\rho q_1 + \nabla \rho q_2 \cdot \n - \rho \w q_2\cdot \n  \right)  dr  \\
 		& + \int_{\partial \Omega_t} \left(- \rho q_3 - \nabla \rho q_4 \cdot \n  + \rho \w q_4 \cdot \n  \right)  dr  + \int_{\partial \Omega_b} \left(\rho q_3 + \nabla \rho q_4 \cdot \n  - \rho \w q_4  \cdot \n \right) drdt.
 	\end{align*}
@@ -164,10 +164,10 @@ Then considering the terms where $h \neq 0$, again separately for $a$ and $b$ we
 		&  + \int_{\partial \Omega_b} \left(-q \frac{\partial h}{\partial n} + h\frac{\partial q}{\partial n} + h \w q  \cdot \n + h q_3 + \frac{\partial h}{\partial n}q_4 - h \w q_4  \cdot \n\right) drdt.
 	\end{align*}
 	When writing out the terms explicitly we pay attention to the fact that $n|_{\partial \Omega_l} = - n|_{\partial \Omega_r}$ and $n|_{\partial \Omega_t} = - n|_{\partial \Omega_b}$.
-	Then considering the terms that satisfy $\frac{\partial h}{\partial x}$ on each boundary separately, we get:
+	Then considering the terms that satisfy $\frac{\partial h}{\partial n}$ on each boundary separately, we get:
 	\begin{align*}
-		&\int_0^T \int_{\partial \Omega_l} q \frac{\partial h}{\partial x}- \frac{\partial h }{\partial x} q_2 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_r} -q \frac{\partial h}{\partial x}+ \frac{\partial h }{\partial x}q_2 dr dt= 0 \\
-		&\int_0^T \int_{\partial \Omega_t} q \frac{\partial h}{\partial x}- \frac{\partial h }{\partial x} q_4 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_b} -q \frac{\partial h}{\partial x}+ \frac{\partial h}{\partial x}q_4 dr dt= 0. \\
+		&\int_0^T \int_{\partial \Omega_l} q \frac{\partial h}{\partial n}- \frac{\partial h }{\partial n} q_2 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_r} -q \frac{\partial h}{\partial n}+ \frac{\partial h }{\partial n}q_2 dr dt= 0 \\
+		&\int_0^T \int_{\partial \Omega_t} q \frac{\partial h}{\partial n}- \frac{\partial h }{\partial n} q_4 dr dt= 0 \qquad \int_0^T \int_{\partial \Omega_b} -q \frac{\partial h}{\partial n}+ \frac{\partial h}{\partial n}q_4 dr dt= 0. \\
 	\end{align*}
 	Therefore we have 
 	\begin{align*}
@@ -201,6 +201,104 @@ Then considering the terms where $h \neq 0$, again separately for $a$ and $b$ we
 	And therefore, we get:
 	\begin{align*}
 		&\frac{\partial q}{\partial n}|_{\partial \Omega_l} = \frac{\partial q}{\partial n}|_{\partial \Omega_r}, \qquad \frac{\partial q}{\partial n}|_{\partial \Omega_t} = \frac{\partial q}{\partial n}|_{\partial \Omega_b},
+	\end{align*}
+	as required.
+	
+	
+	%%%%%%
+		
+	\section{Periodic Boundary Conditions for a General Flux}
+	
+	We consider the advection diffusion equation with periodic boundary conditions and a corresponding OCP:
+	\begin{align*}
+		&\min \frac{1}{2}|| \rho - \hr||^2 + \frac{\beta}{2}||\w||^2\\
+		&\text{subject to:}\\
+		&\frac{\partial \rho}{\partial t} = \nabla \cdot \left(\nabla \rho - \rho \w\right) = -\nabla \cdot \jf\\
+		& \rho|_{\partial \Omega_l} = \rho|_{\partial \Omega_r}\\
+		& \rho|_{\partial \Omega_t} = \rho|_{\partial \Omega_b}\\
+		& - \jf \cdot \n |_{\partial \Omega_l}= - \jf \cdot \n|_{\partial \Omega_r}
+	\end{align*}
+	such that $\partial\Omega_l \cup \partial\Omega_r = \partial \Omega$ and the abbreviations corresponding to left and right respectively. Top and bottom boundaries are omitted, since, as shown in the previous section, they follow analogously and are independent of the results on the left and right boundary.
+	The relevant part of the Lagrangian is then:
+	\begin{align*}
+		\mathcal{L} &= ... -\int_0^T \int_\Omega \left(\frac{\partial \rho}{\partial t} + \nabla \cdot \jf\right)q dr dt - \int_0^T \int_{\partial \Omega_l} \left(- \rho q_1 - \jf \cdot \n q_2 \right) dr  + \int_{\partial \Omega_r} \left(\rho q_1 +  \jf \cdot \n q_2  \right)  dr .
+	\end{align*}
+	Integrating by parts, and omitting terms in $\Omega$, gives:
+	\begin{align*}
+		\mathcal{L} &= ... - \int_0^T \int_{\partial \Omega} q \jf  \cdot \n + \mathbf{k}(\rho, q) \cdot \n  dr dt - \int_0^T \int_{\partial \Omega_l} \left(- \rho q_1 - \jf \cdot \n q_2 \right)   dr  + \int_{\partial \Omega_r} \left(\rho q_1 + \jf \cdot \n q_2 \right)   dr, 
+	\end{align*}
+	where $\mathbf{k}$ are any terms arising from integrating by parts a second time.
+	We now need to take the Frech\'et derivative of $\jf$ with respect to $\rho$. This cannot be done in general, because $\jf$ does not only depend on $\rho$ but also on $\mathbf r$. In each case we need to calculate:
+	\begin{align*}
+		\jf'(h) := \jf (\rho + h) - \jf (\rho).
+	\end{align*}
+	Similarly, we need to take the derivative of $\mathbf k$ and denote it by $\mathbf{k}'$.
+	Denoting this Frech\'et derivative by $\jf'(h)$ we can write out further terms as follows:
+	\begin{align*}
+		\mathcal{L}_\rho &= ... - \int_0^T \int_{\partial \Omega} q \jf'(h)   \cdot \n + \mathbf{k}' \cdot \n dr dt - \int_0^T \int_{\partial \Omega_l} \left(- h q_1 - \jf'(h)  \cdot \n q_2 \right)   dr  + \int_{\partial \Omega_r} \left(h q_1 + \jf'(h)  \cdot \n q_2 \right)   dr dt. 
+	\end{align*}
+	When writing out the terms explicitly we pay attention to the fact that $\n|_{\partial \Omega_l} = - \n|_{\partial \Omega_r}$ and $\n|_{\partial \Omega_t} = - \n|_{\partial \Omega_b}$.
+	\begin{align*}
+		\mathcal{L}_\rho &= ... - \int_0^T \int_{\partial \Omega_l} \left(- h q_1 + q \jf'(h)   \cdot \n  + \mathbf{k}' \cdot \n- \jf'(h)  \cdot \n q_2 \right)   dr  \\
+		&+ \int_{\partial \Omega_r} \left(h q_1 - q \jf'(h)   \cdot \n - \mathbf{k}' \cdot \n+ \jf'(h)  \cdot \n q_2 \right)   dr dt .
+	\end{align*}
+	In order to proceed further, we need to split up $\jf'(h)$ into two parts as follows:
+	\begin{align*}
+		\jf'(h) = \jf'_1(h) + h \jf'_2,
+	\end{align*}
+	so that $\jf'_1$ is applied to $h$, since it depends on $\mathbf{r}$ as well (e.g. the Frech\'et derivative of $\nabla \rho$) and $\jf'_2$ is applied to another function and multiplied by $h$ (e.g. h $\frac{\partial }{\partial n}$ applied to $q$). We do the same for $\mathbf k'$.
+	We then have:
+	\begin{align*}
+		\mathcal{L}_\rho &= ... - \int_0^T \int_{\partial \Omega_l} \left(- h q_1 + q \jf_1'(h)   \cdot \n + \mathbf{k}_1' \cdot \n - \jf_1'(h)  \cdot \n q_2  + h \jf'_2 q \cdot \n + h \mathbf{k}_2' \cdot \n-  h \jf'_2 q_2 \cdot \n \right)   dr  \\
+		&+ \int_{\partial \Omega_r} \left( h q_1 - q \jf_1'(h)   \cdot \n -\mathbf{k}_1' \cdot \n+ \jf_1'(h)  \cdot \n q_2 - h\mathbf{k}_2' \cdot \n - h \jf'_2 q \cdot \n +  h \jf'_2 q_2 \cdot \n \right)   dr dt.
+	\end{align*}
+	Considering $\jf'_1 \neq 0$, we get:
+	\begin{align*}
+		\int_0^T \int_{\partial \Omega_l} \left( q \jf_1'(h)   \cdot \n  + \mathbf{k}_1' \cdot \n - \jf_1'(h)  \cdot \n q_2  \right)   dr  + \int_{\partial \Omega_r} \left(-q \jf_1'(h)   \cdot \n - \mathbf{k}_1' \cdot \n + \jf_1'(h)  \cdot \n q_2  \right)   dr dt = 0 .
+	\end{align*}
+	Note that if $\mathbf{k}_1' = 0$, we can conclude that $q = q_2$ on both boundaries.
+	Since $q_2|_{\partial \Omega_l} = q_2|_{\partial \Omega_r}$, we have that:
+	\begin{align*}
+		\int_0^T \int_{\partial \Omega_l}  q \jf_1'(h)   \cdot \n  +\mathbf{k}_1' \cdot \n   dr dt = \int_0^T \int_{\partial \Omega_r} q \jf_1'(h)   \cdot \n  +  \mathbf{k}_1' \cdot \n  dr dt .
+	\end{align*}
+	Writing this in terms of the integrand only can be done for each specific case of $\jf_1'$ and $\mathbf{k}_1'$. 
+	 Now considering all terms such that $h \neq 0$ on each boundary separately, we get:
+	 \begin{align*}
+	 	&\int_0^T \int_{\partial \Omega_l} \left(- h q_1  + h \jf'_2 q \cdot \n + h\mathbf{k}_2' \cdot \n-  h \jf'_2 q_2 \cdot \n \right)   dr  dt =0 \\
+	 	&\int_0^T \int_{\partial \Omega_r} \left( h q_1  - h \jf'_2 q \cdot \n - h\mathbf{k}_2' \cdot \n + h \jf'_2 q_2 \cdot \n \right)   dr  dt =0 ,
+	 \end{align*}
+ 	and so, as in the previous sections, we have:
+ 	\begin{align*}
+ 		q_1 &=   \jf'_2 q \cdot \n + h\mathbf{k}_2' \cdot \n - \jf'_2 q_2 \cdot \n |_{\partial \Omega_l} \\
+		q_1 &=  \jf'_2 q \cdot \n + h\mathbf{k}_2' \cdot \n -\jf'_2 q_2 \cdot \n |_{\partial \Omega_r}, 
+ 	\end{align*}
+	which gives:
+	\begin{align*}
+		  \jf'_2 q \cdot \n +  \mathbf{k}_2' \cdot \n - \jf'_2 q_2 \cdot \n |_{\partial \Omega_l} =  \jf'_2 q \cdot \n + \mathbf{k}_2' \cdot \n - \jf'_2 q_2 \cdot \n |_{\partial \Omega_r}.
+	\end{align*}
+	If $\mathbf{k}_1' = 0$ and so $q = q_2$ as discussed above, the two terms involving $\jf_2'$ cancel and we get
+	\begin{align*}
+	 \mathbf{k}_2' \cdot \n  |_{\partial \Omega_l} =   \mathbf{k}_2' \cdot \n  |_{\partial \Omega_r}.
+	\end{align*}
+	Otherwise, since $q_2|_{\partial \Omega_l} = q_2|_{\partial \Omega_r}$, we can at least conclude that:
+	\begin{align*}
+		\jf'_2 q \cdot \n + \mathbf{k}_2' \cdot \n  |_{\partial \Omega_l} =  \jf'_2 q \cdot \n + \mathbf{k}_2' \cdot \n  |_{\partial \Omega_r}.
+	\end{align*}
++++ Is this true? Would imply that $ \jf_2'$ is equal too. But that must be true if $\jf \cdot \n$ is equal +++
+	\\
+	\\
+	An example: Let $\jf = \nabla \rho - \rho \w$ as above. Then we have that $\jf_1'(h) = \nabla h$ and $\jf_2' = \w $. From integration by parts we will get that $\mathbf k = - \rho \nabla q$, so $\mathbf k_1' = 0$ and $\mathbf k_2' = -  \nabla q$.
+	We therefore get that:
+	\begin{align*}
+		& \nabla q \cdot \n |_{\partial \Omega_l} = \nabla q \cdot \n |_{\partial \Omega_r},
+	\end{align*}
+	and
+	\begin{align*}
+		\int_0^T \int_{\partial \Omega_l}  q \nabla h   \cdot \n    dr dt = \int_0^T \int_{\partial \Omega_r} q \nabla h  \cdot \n    dr dt,
+	\end{align*}
+	and so 
+	\begin{align*}
+		q |_{\partial \Omega_l} = q|_{\partial \Omega_r},
 	\end{align*}
 	as required.
 \end{document}
