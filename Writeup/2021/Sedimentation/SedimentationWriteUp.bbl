@@ -28,7 +28,7 @@ Yaakov Rosenfeld.
 \newblock Free-energy model for the inhomogeneous hard-sphere fluid in d
   dimensions: Structure factors for the hard-disk (d=2) mixtures in simple
   explicit form.
-\newblock {\em Phys. Rev. A}, 42:5978--5989, Nov 1990.
+\newblock {\em Phys. Rev. A}, 42:5978--5989, 1990.
 
 \bibitem{Reiss1959}
 H.~Reiss, H.~L. Frisch, and J.~L. Lebowitz.
@@ -45,16 +45,94 @@ E.~Helfand, H.~L. Frisch, and J.~L. Lebowitz.
 \newblock Theory of the two‐ and one‐dimensional rigid sphere fluids.
 \newblock {\em The Journal of Chemical Physics}, 34(3):1037--1042, 1961.
 
+\bibitem{PercusYevick1}
+Jerome~K. Percus and George~J. Yevick.
+\newblock Analysis of classical statistical mechanics by means of collective
+  coordinates.
+\newblock {\em Phys. Rev.}, 110:1--13, Apr 1958.
+
 \bibitem{RosenfeldSPT}
 Yaakov Rosenfeld.
 \newblock Scaled field particle theory of the structure and the thermodynamics
   of isotropic hard particle fluids.
 \newblock {\em The Journal of Chemical Physics}, 89(7):4272--4287, 1988.
 
-\bibitem{PercusYevick1}
-Jerome~K. Percus and George~J. Yevick.
-\newblock Analysis of classical statistical mechanics by means of collective
-  coordinates.
-\newblock {\em Phys. Rev.}, 110:1--13, Apr 1958.
+\bibitem{DFTWinkelmann2001}
+J~Winkelmann.
+\newblock The liquid-vapour interface of pure fluids and mixtures: application
+  of computer simulation and density functional theory.
+\newblock {\em Journal of Physics: Condensed Matter}, 13(21):4739--4768, may
+  2001.
+
+\bibitem{DFTRoth1}
+Alice~L. Thorneywork, Simon~K. Schnyder, Dirk G. A.~L. Aarts, Jürgen Horbach,
+  Roland Roth, and Roel P.~A. Dullens.
+\newblock Structure factors in a two-dimensional binary colloidal hard sphere
+  system.
+\newblock {\em Molecular Physics}, 116(21-22):3245--3257, 2018.
+
+\bibitem{DFTRoth2}
+Roland Roth.
+\newblock Fluid of discs with competing interactions.
+\newblock {\em Molecular Physics}, 109(23-24):2897--2905, 2011.
+
+\bibitem{DFTGonzalez1997}
+A~Gonz{\'{a}}lez, J~A White, and R~Evans.
+\newblock Density functional theory for hard-sphere fluids: a generating
+  function approach.
+\newblock {\em Journal of Physics: Condensed Matter}, 9(11):2375--2398, 1997.
+
+\bibitem{DFTCuesta2008}
+Yuri Mart\'{\i}nez-Rat\'on, Jos\'e~A. Capit\'an, and Jos\'e~A. Cuesta.
+\newblock Fundamental-measure density functional for mixtures of parallel hard
+  cylinders.
+\newblock {\em Phys. Rev. E}, 77:051205, May 2008.
+
+\bibitem{DFTLoewen2002}
+Matthias Schmidt, Hartmut~L wen, Joseph~M Brader, and Robert Evans.
+\newblock Density functional theory for a model colloid~polymer mixture: bulk
+  fluid phases.
+\newblock {\em Journal of Physics: Condensed Matter}, 14(40):9353--9382, sep
+  2002.
+
+\bibitem{GrafLoewen1999}
+Hartmut Graf and Hartmut L\"owen.
+\newblock Phase diagram of tobacco mosaic virus solutions.
+\newblock {\em Phys. Rev. E}, 59:1932--1942, Feb 1999.
+
+\bibitem{DuBois2002}
+Sylviane DuBois and Aurélien Perera.
+\newblock Entropy driven demixing in fluids of rigidly ordered particles.
+\newblock {\em The Journal of Chemical Physics}, 116(14):6354--6367, 2002.
+
+\bibitem{Chamoux1998}
+Antoine Chamoux and Aurelien Perera.
+\newblock Direct correlation functions in two-dimensional anisotropic fluids.
+\newblock {\em Phys. Rev. E}, 58:1933--1947, Aug 1998.
+
+\bibitem{Chamoux1996}
+A.~Chamoux and A.~Perera.
+\newblock Approximations for the direct correlation function in multicomponent
+  molecular fluids.
+\newblock {\em The Journal of Chemical Physics}, 104(4):1493--1505, 1996.
+
+\bibitem{ArcherSed2008}
+Andrew~J. Archer.
+\newblock Two-dimensional fluid with competing interactions exhibiting
+  microphase separation: Theory for bulk and interfacial properties.
+\newblock {\em Phys. Rev. E}, 78:031402, 2008.
+
+\bibitem{ArcherSed2011}
+O.~Zvyagolskaya, A.~J. Archer, and C.~Bechinger.
+\newblock Criticality and phase separation in a two-dimensional binary
+  colloidal fluid induced by the solvent critical behavior.
+\newblock {\em {EPL} (Europhysics Letters)}, 96(2):28005, 2011.
+
+\bibitem{ArcherSed2013}
+Alexandr Malijevský and Andrew~J. Archer.
+\newblock Sedimentation of a two-dimensional colloidal mixture exhibiting
+  liquid-liquid and gas-liquid phase separation: A dynamical density functional
+  theory study.
+\newblock {\em The Journal of Chemical Physics}, 139(14):144901, 2013.
 
 \end{thebibliography}

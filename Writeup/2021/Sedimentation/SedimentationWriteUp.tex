@@ -134,11 +134,11 @@ Substituting this in the 2D version of $\Phi$ gives:
 \end{align*}
 where $\mathbf{n_2} = \mathbf 0$ in the uniform limit, since the corresponding equation in \eqref{eqn:WeightedDensities} is an integral over an odd function.
 Noting that $R = \sigma/2$ and $\eta = \pi \sigma^2 \rho /4$, we get that:
-\begin{align*}
+\begin{align} \label{eqn:SPTFunctional2D}
 	\Phi = - \rho \ln (1- \eta) + \frac{\rho \eta}{1 - \eta} = \rho \left(\ln(1-\eta) + \frac{1}{1- \eta} -1 \right).
-\end{align*} 
-This expression for the free energy for the bulk fluid is the same as derived by scaled particle theory \cite{Reiss1959}, \cite{Reiss1960}, \cite{Helfand1961}, which also coincides with the Percus-Yevic compressibility equation \cite{PercusYevick1}, as detailed in \cite{RosenfeldSPT}.
-
+\end{align} 
+This expression for the free energy for the bulk fluid is the same as derived by scaled particle theory (SPT) \cite{Reiss1959}, \cite{Reiss1960}, \cite{Helfand1961}, which also coincides with the Percus-Yevic compressibility equation \cite{PercusYevick1}, as detailed in \cite{RosenfeldSPT}.
+While the SPT approximation \eqref{eqn:SPTFunctional2D} and its three-dimensional equivalent are used in classical DFT, see \cite{DFTWinkelmann2001}, \cite{DFTRoth1}, \cite{DFTRoth2}, \cite{DFTGonzalez1997}, \cite{DFTCuesta2008}, \cite{DFTLoewen2002}, and other statistical mechanics approaches, see \cite{GrafLoewen1999}, \cite{DuBois2002}, \cite{Chamoux1998}, \cite{Chamoux1996}, in dynamical DFT it is not commonly applied and only the work of Archer et al. \cite{ArcherSed1}, \cite{ArcherSed2008}, \cite{ArcherSed2011}, \cite{ArcherSed2013}, is known to us in this context.
 
 \subsection{Deriving the equation of motion}
 Since we are interested in the equation of motion, we need to calculate $ \nabla \cdot \left(\rho \nabla \frac{\delta F_{HDA}[\rho]}{\delta \rho} \right)$. We combine $F_{HDA}$ and $F_{ID}$ here so that we have:
@@ -361,7 +361,7 @@ Furthermore, the gradient equation remains unchanged by this equation, since $F_
 \begin{align*}
 	\w = - \frac{1}{\beta}\rho \nabla q.
 \end{align*}
-\subsection{Time-Independent Control}
+\subsection{Time-Independent Control} \label{sec:TimeIndependentControl}
 While the gradient equation is unchanged by the sedimentation equation, as compared to an advection diffusion equation, it is changed when we consider a time independent control.
 We choose the problem:
 \begin{align*}
@@ -391,185 +391,197 @@ and finally:
 \section{Numerical Results}
 In this section, the results in \cite{ArcherSed1} are replicated. Then optimal control problems of the form \eqref{eq:OCP1} are solved.
 
-\subsection{Replicating examples from the paper in a box with noflux BCs}
+
+
+\subsection{Replicating examples from the paper in a periodic box}
 The domain in \cite{ArcherSed1} is a box with lengths $L_y = 43.5 \sigma$, and $L_x = 60 \sigma$. 
 The strength of the external potential is given by $\beta c = 0.1$ and the strength of the interaction term $\kappa$ is given by $\beta \kappa = - 3.5$, where $\beta = \frac{1}{k_BT}$. 
 Furthermore, we have the average density of the system $\bar \rho \sigma^2$, calculated using $(1/L_y)\int_0^L \rho \sigma^2 dy$.
 The initial condition for $\rho$ is found by considering $\bar \rho$ and adding a uniform random number to each location in the range $\pm \bar \rho/ 20$. The cases $\sigma \bar \rho = 0.072$ and $\sigma \bar \rho = 0.2$ are considered in \cite{ArcherSed1}.
-%Note that in this section we haven't applied the rescaling with $\sigma^2$ from Equation \eqref{Eq1} and so we cannot compare the time scale here with the one from the paper when considering $\sigma \neq 1$.
-%\subsubsection{Example Figure 8}
-%
-%For simplicity, set $\beta = 1$ everywhere. Then set $\sigma = 1$, which gives for the example in Figure 8 that $\bar \rho = 0.072$. However, the domain is rescaled, such that $L_y = 21$, $L_x = 30$ but $\bar \rho = 0.072$. We further have $\kappa = - 3.5$, $a = 0.1$
-%The number of points are $n = 30$, $N = 40$ and we run this up to time $T = 30$. If we were to instead increase the strength of $V_{ext}$, we would see the sediment flatten out more at the bottom. The result, which takes $12$ seconds to run, can be seen in Figure \ref{F1}. 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{Ex8F1.png}
-%	\caption{Figure 8 Example, $\bar \rho = 0.072$, $\sigma = 1$, $12$ different times} 
-%	\label{F1}
-%\end{figure} 
-%
-%
-%
-%Next, we decrease $\sigma$ to get closer to the scaling from the paper. We set $\sigma = 0.8$. Inspecting the result, it is clear that it needs more points, so we run it with $N = 50$ instead. This increases running time from $30$ seconds to $2$ min. In Figure \ref{F2} we can see that a third cluster is building. 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Ex8F2.png}
-%	\caption{Figure 8 Example, $\bar \rho = 0.072$, $\sigma = 0.8$, $12$ different times} 
-%	\label{F2}
-%\end{figure} 
-%If we decrease $\sigma$ to $0.6$ we again need more points. We try $N = 60$, which takes $14$ min, but the result is still numerically unstable. This can be seen in Figure \ref{F3}.This configuration is closest to the actual model setup because we have half of the domain that Archer has, so we need to half $\sigma$.
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Ex8F3.png}
-%	\caption{Figure 8 Example, $\bar \rho = 0.072$, $\sigma = 0.5$, $12$ different times} 
-%	\label{F3}
-%\end{figure} 
-%
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{Ex8F1b.png}
-%	\caption{Figure 8 Example, $\bar \rho = 0.036$, $\sigma = 1$, $12$ different times} 
-%	\label{F1b}
-%\end{figure}
-%If I instead decrease $\bar \rho$  to $0.036$, the sediment is more spread out at the bottom.
-%
-%I then change the initial condition to be non-symmetric: $\bar \rho = 0.072 (1 + \cos(\pi / 30 y_1)\cos(\pi / 30 y_2))$. This has the effect that the final distribution is asymmetric as well, see Figure \ref{Fx}. This is done with $N = 40$, which is again not quite enough for numerical stability, but it takes $1$ min $20$ seconds to solve.
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.4]{Ex8NonSym.png}
-%	\caption{Figure 8 Example, $\bar \rho = 0.072$, $\sigma = 1$, $12$ different times, asymmetric initial condition} 
-%	\label{Fx}
-%\end{figure}
-%\subsubsection{Example Figure 10}
-%In this example everything stays the same except that more density is in the system, $\bar \rho \sigma^2 = 0.2$. We start with $\sigma = 1$ and $\bar \rho = 0.2$, which needs more points for numerical stability. We try $N = 50$. This is still not quite enough but better and takes $8$ minutes to solve, see Figure \ref{F4}. We can see the sort of behaviour that is visible in the paper, that the different clusters merge. I think if we let time run longer it'd merge into one.
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Ex10F1.png}
-%	\caption{Figure 10 Example, $\bar \rho = 0.2$, $\sigma = 1$, $12$ different times} 
-%	\label{F4}
-%\end{figure} 
-%Again, since we have half of the original domain, we set $\sigma = 0.6$. We use $60$ points but that is not enough again as can be seen in Figure \ref{F4a}.
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Ex10F2.png}
-%	\caption{Figure 10 Example, $\bar \rho = 0.2$, $\sigma = 0.6$, $12$ different times} 
-%	\label{F4a}
-%\end{figure} 
+\\
+\\
+Since the original simulations are done in a periodic box, we implement the problem in the periodic box as well. We expect near identical results to the paper, given that the setup is identical.
+We choose a periodic box that has no flux boundary conditions on the top and bottom of the box, while being periodic on the sides. 
+We scale time as done in Equation \eqref{Eq1}, so that the time scales are comparable. In order to get qualitatively good results, we choose $n =100$ and $N = 100$. This takes approximately five hours to solve. In Figure \ref{F5} the results for the configurations corresponding to Figure 8 in Archer's paper can be seen ($ \bar \rho = 0.072$, choosing $\sigma = 1$, and running up to $T = 300$). In Figures \ref{F7} we see the results that correspond to the configurations in Figure 10 in Archer's paper ($ \bar \rho = 0.2$, choosing $\sigma = 1$, running time up to $T = 300$). While the results for Archer's first result look very close to the original, the second set of results is a little different. This may have to do with slightly different initial conditions or numerical solutions.
 
-\subsection{Replicating examples from the paper in a periodic box}
-%Since the original simulations are done in a periodic box, we implement the problem in the periodic box as well. We expect near identical results to the paper, given that the setup is now identical.
-%We choose a periodic box that has no flux boundary conditions on the top and bottom of the box, while being periodic on the sides. 
-%We scale time as done in Equation \eqref{Eq1}, so that the time scales are comparable. In order to get qualitatively good results, we choose $n =100$ and $N = 100$. This takes approximately five hours to solve. In Figures \ref{F5} and \ref{F6} the results for the configurations corresponding to Figure 8 in Archer's paper can be seen ($ \bar \rho = 0.072$, choosing $\sigma = 1$, and running up to $T = 300$). In Figures \ref{F7} and \ref{F8} we see the results that correspond to the configurations in Figure 10 in Archer's paper ($ \bar \rho = 0.2$, choosing $\sigma = 1$, running time up to $T = 300$). While the results for Archer's first result look very close to the original, the second set of results is a little different. This may have to do with slightly different initial conditions or numerical solutions.
-%
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Plotrhobar0072.png}
-%	\caption{Figure 8 in paper, result at each time} 
-%	\label{F5}
-%\end{figure}
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{rhobar0072Zoom57to62.png}
-%	\caption{Figure 8 in paper, result at times 57 - 62 out of 100} 
-%	\label{F6}
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{Plotrhobar02.png}
-%	\caption{Figure 10 in paper, result at each time} 
-%	\label{F7}
-%\end{figure}
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.25]{rhobar02Zoom60to66.png}
-%	\caption{Figure 8 in paper, result at times 60 - 66 out of 100} 
-%	\label{F8}
-%\end{figure}
-%
-%
-%
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{Plotrhobar0072.png}
+	\caption{Figure 8 in paper, periodic domain} 
+	\label{F5}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{Plotrhobar02.png}
+	\caption{Figure 10 in paper, periodic domain} 
+	\label{F7}
+\end{figure}
+
+
+
+\subsection{Replicating examples from the paper in a box with noflux BCs}
+As above, we choose $N = n = 100$, which takes over 24 hours to run. We run up to time $T = 300$, set $\sigma = 1$ and consider the case $\bar \rho = 0.072$ and $ \bar \rho = 0.2$. Note: the dimensions are switched around, which needs to be fixed with the next rerun. We can see the results for both choices of $\bar \rho$ in Figures \ref{F5b} and \ref{F7b}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{FW0072.png}
+	\caption{Figure 8 in paper, no flux BCs, ++ fix wrong dimensions ++} 
+	\label{F5b}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{FW02.png}
+	\caption{Figure 10 in paper, no flux BCs, ++ fix wrong dimensions ++} 
+	\label{F7b}
+\end{figure}
 
 \subsection{Optimization Problems}
 \subsubsection{Optimization in a Box}
-%We have $N = 40$ and $n = 30$. We choose the ODE tolerance to be $10^{-7}$ and the optimization tolerance is $10^{-3}$.
-%I fixed the problems with the implementation of the sedimentation optimization code. First, I tested whether setting $\hr = \rho_{FW}$ would converge within one iteration. This happened. 
-%Then I set up a test problem which sets $\hr$ to be the forward solution for $V_{ext} = ay$, where $a = 0.1$, as in Archer's paper. Then I set up the optimization forward problem to be such that $a = 0.01$ and $\w = \mathbf 0$. We expect the control to act downward, since the strength of gravity $a$ is decreased.
-%We also expect that the cost $\mathcal J$ is decreasing from the baseline $J_{FW}$ when optimizing.
-%For $\beta = 10^{-3}$ and $\beta = 10^{-1}$ this works well.
-%When $\beta = 10^{-3}$ we get $J_{FW} = 0.4955$ and $J_{Opt} = 0.0556 $. 
-%The results can be seen in Figures \ref{Fa1}, \ref{Fa2} and \ref{Fa3}.
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{F11.png}
-%	\caption{Forward $\rho$ for $a = 0.01$} 
-%	\label{Fa1}
-%\end{figure}	
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{F21.png}
-%	\caption{Optimal $\rho$ for $a = 0.01$} 
-%	\label{Fa2}
-%\end{figure}
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{F31.png}
-%	\caption{Optimal Control for $a = 0.01$} 
-%	\label{Fa3}
-%\end{figure}
-%
-%
+We have $N = 40$ and $n = 30$. We choose the ODE tolerance to be $10^{-7}$ and the optimization tolerance is $10^{-3}$. We choose $\bar \rho = 0.036$.
+We set up a test problem which sets $\hr$ to be the forward solution for the problem with $V_{ext} = cy$, where $c = 0.1$, as in Archer's paper. The optimization forward problem is such that $c = 0.01$ and $\w = \mathbf 0$. We expect the control to act downward, since the strength of gravity $c$ is decreased.
+We also expect that the cost $\mathcal J$ is decreasing from the baseline $J_{FW}$ when optimizing.
+For $\beta = 10^{-3}$ and $\beta = 10^{-1}$ this works well.
+When $\beta = 10^{-3}$ we get $J_{FW} = 0.4955$ and $J_{Opt} = 0.0556 $. 
+The results can be seen in Figures \ref{Fa1}, \ref{Fa2} and \ref{Fa3}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{F11.png}
+	\caption{Forward $\rho$ for $c = 0.01$} 
+	\label{Fa1}
+\end{figure}	
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{F21.png}
+	\caption{Optimal $\rho$ for $c = 0.01$} 
+	\label{Fa2}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{F31.png}
+	\caption{Optimal Control for $c = 0.01$} 
+	\label{Fa3}
+\end{figure}
+
+
 
 \subsubsection{Optimization in a Box - Time-Independent Control}
-%This result can be used for other forward problems as well, since only the terms involving the control are affected here. Therefore, we apply the result to the sedimentation equations.
-%We have $N = 40$ and $n = 30$ for each shape. We choose the ODE tolerance to be $10^{-7}$ and the optimization tolerance is $10^{-3}$.
-%I set up a test problem which sets $\hr$ to be the forward solution for $V_{ext} = ay$, where $a = 0.1$, as in Archer's paper. Then I set up the optimization forward problem to be such that $a = 0.01$ and $\w = \mathbf 0$. We expect the control to act downward, since the strength of gravity $a$ is decreased.
-%We also expect that the cost $\mathcal J$ is decreasing from the baseline $J_{FW}$ when optimizing.
-%The gradient equation is:
-%\begin{align*}
-%	\w = - \frac{1}{\beta}\int_0^T \rho \nabla q dt.
-%\end{align*}
-%This means, we get a $\w$ which is averaged over the time horizon and therefore time independent. This seems to work well. $J_{FW} = 0.4855$ and $J_{Opt} = 0.0733$. The results can be seen in Figures \ref{F6a}, \ref{F7a} and \ref{F8a}.
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{C1.png}
-%	\caption{Time-independent; Forward $\rho$ for $a = 0.01$} 
-%	\label{F6a}
-%\end{figure}	
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{C2.png}
-%	\caption{Time-independent; Optimal $\rho$ for $a = 0.01$} 
-%	\label{F7a}
-%\end{figure}
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{C3.png}
-%	\caption{Time-independent; Optimal Control for $a = 0.01$} 
-%	\label{F8a}
-%\end{figure}
-%
-%We wanted to see whether the time independent flow control is similar to the $\nabla V_{ext}$ of the target.
-%The target state was influenced by $V_{ext} = 0.1 y_2$. The forward state for the OCP was influenced by $V_{ext} = 0.01 y_2$. 
-%Figure \ref{F1a} shows the control and $\nabla V_{ext}$ of the target. We can see that one of these is positive, while the other one is negative. This is due to the opposite signs of $\w$ and $\nabla V_{ext}$ in the PDE.
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{V1.png}
-%	\includegraphics[scale=0.35]{W1.png}
-%	\caption{$\nabla V_{ext}$ of target and optimal control $\w$.} 
-%	\label{F1a}
-%\end{figure}
+We consider the identical problem but now require the control to be time independent. This affects the gradient equation as discussed in Section \ref{sec:TimeIndependentControl}.
+Therefore, we expect a $\w$ which is averaged over the time horizon and therefore time independent. The result is $J_{FW} = 0.4855$ and $J_{Opt} = 0.0733$ and can be seen in Figures \ref{F6a}, \ref{F7a} and \ref{F8a}. We observe that, as expected, $J_{opt}$ is larger than for the previous example where $\w$ was allowed to vary over time.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{C1.png}
+	\caption{Time-independent; Forward $\rho$ for $a = 0.01$} 
+	\label{F6a}
+\end{figure}	
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{C2.png}
+	\caption{Time-independent; Optimal $\rho$ for $a = 0.01$} 
+	\label{F7a}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{C3.png}
+	\caption{Time-independent; Optimal Control for $a = 0.01$} 
+	\label{F8a}
+\end{figure}
+
+We wanted to see whether the time independent flow control is similar to the $\nabla V_{ext}$ of the target.
+The target state was influenced by $V_{ext} = 0.1 y_2$. The forward state for the OCP was influenced by $V_{ext} = 0.01 y_2$. 
+Figure \ref{F1a} shows the control and $\nabla V_{ext}$ of the target. We can see that one of these is positive, while the other one is negative. This is due to the opposite signs of $\w$ and $\nabla V_{ext}$ in the PDE.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{V1.png}
+	\includegraphics[scale=0.35]{W1.png}
+	\caption{$\nabla V_{ext}$ of target and optimal control $\w$.} 
+	\label{F1a}
+\end{figure}
 
 \subsubsection{Optimization in a Periodic Box}
+
 \subsubsection{Optimization in a Periodic Box - Time-Independent Control}
 
 \subsubsection{Optimization in a Multishape}
+The first example is a simple mulitshape with two quadrilaterals. We choose $n = 30$ and $N = 20$ and run up to time $T = 30$, the parameter choices are as in the section on optimization in a box. We choose $\lambda = 0.01$ as usual. We get $J_{FW} = 0.0713$ and $J_{Opt} = 0.0059$. The results are displayed in Figures \ref{FM0} and \ref{FM0a}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiOpt1a.png}
+	\caption{Multishape Example 1: Optimal $\rho$} 
+	\label{FM0}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiCont1a.png}
+	\caption{Multishape Example 1: Optimal control} 
+	\label{FM0a}
+\end{figure}
+\\
+\\
+The second example is an optimization problem in a larger multishape. The setup remains the same as before, but now computed on a multishape which is comprised of four shapes, out of which three are quadrilaterals and one is a wedge. We get $J_{FW} = 0.0766$ and $J_{Opt} = 0.0116$. The results can be seen in Figures \ref{FM1a} and \ref{FM2a}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiOpt2.png}
+	\caption{Multishape Example 2: Optimal $\rho$} 
+	\label{FM1a}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiCont2.png}
+	\caption{Multishape Example 2: Optimal control} 
+	\label{FM2a}
+\end{figure}
+\\
+\\
+For a third example, we choose a multishape with an imposed background flow and gravity as a target, see Figure \ref{FM3}. The optimal control problem has the same strength of gravity $c = 0.1$ imposed, but no flow. We expect the control to act similar to the flow profile imposed to produce $\hr$. We choose $T = 10$ this time.
+We get $J_{FW} = 0.0484$ and $J_{Opt} = 0.0258$ and the results are displayed in Figures \ref{FM3a} and \ref{FM3b}. Furthermore, we compare the strength of $\w$ of the target and the optimal control. The absolute $L_2$/ $L_\infty$ norms are compared, and we get $||\w_{\hr}|| = 68$ and $||\w_{Opt}|| = 50.8965$.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiwFW.png}
+	\caption{Multishape Example 3:Flow profile determining $\hr$} 
+	\label{FM3}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiOpt3.png}
+	\caption{Multishape Example 3: Optimal $\rho$} 
+	\label{FM3a}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiCont3.png}
+	\caption{Multishape Example 3: Optimal control} 
+	\label{FM3b}
+\end{figure}
 \subsubsection{Optimization in a Multishape - Time-Independent Control}
+We use the first multishape example from the previous section with two quadrilaterals with the same setup and parameter choice. Here, since this is a more difficult problem, we choose $\lambda = 0.001$, which takes considerably more iterations than problems with larger $\lambda$.
+We get $J_{FW} = 0.0713$ and $J_{Opt} = 0.0081$ and the result can be seen in Figures \ref{FM1} and \ref{FM2}. If we compare with the time dependent case, as expected for the time independent control, the optimal cost is higher.
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiOpt1.png}
+	\caption{Multishape Example 1 (time independent control): Optimal $\rho$} 
+	\label{FM1}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{MultiCont1.png}
+	\caption{Multishape Example 1 (time independent control): Optimal control} 
+	\label{FM2}
+\end{figure}
+
+
+
+
+
+
+
+
+
 
 
 \pagebreak	
