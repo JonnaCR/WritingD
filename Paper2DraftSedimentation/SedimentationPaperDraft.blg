@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: SedimentationPaperDraft.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: GeneralBib.bib
+I was expecting a `,' or a `}'---line 335 of file GeneralBib.bib
+ :     
+ :     volume={13},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 23 entries,
+            2118 wiz_defined-function locations,
+            673 strings with 8133 characters,
+and the built_in function-call counts, 7822 in all, are:
+= -- 777
+> -- 337
+< -- 0
++ -- 134
+- -- 110
+* -- 626
+:= -- 1325
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 124
+chr.to.int$ -- 0
+cite$ -- 23
+duplicate$ -- 252
+empty$ -- 622
+format.name$ -- 110
+if$ -- 1597
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 118
+num.names$ -- 46
+pop$ -- 78
+preamble$ -- 1
+purify$ -- 101
+quote$ -- 0
+skip$ -- 168
+stack$ -- 0
+substring$ -- 664
+swap$ -- 23
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 92
+warning$ -- 0
+while$ -- 76
+width$ -- 25
+write$ -- 255
+(There was 1 error message)

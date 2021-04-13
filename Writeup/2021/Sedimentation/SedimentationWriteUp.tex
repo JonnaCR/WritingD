@@ -81,7 +81,7 @@ The free energy functional considered in \cite{ArcherSed1} is:
 \begin{align*}
 	F[\rho] &= \frac{1}{\beta} \int \rho (\ln \Lambda^2 \rho - 1) + f_{HDA} dr + \frac{1}{2}\int \int \rho(r) \rho(r') V_2(|r - r'|) dr dr' + \int \rho V_{ext} dr,
 \end{align*}
-where $f_{dh}$ the approximate free energy density describing the volume exclusion through hard disks. The external potential is defined as:
+where $f_{HDA}$ the approximate free energy density describing the volume exclusion through hard disks. The external potential is defined as:
 \begin{align*}
 	V_{ext} &= c y, \quad \text{for } \quad 0 < y < L,
 \end{align*}
@@ -135,7 +135,7 @@ Substituting this in the 2D version of $\Phi$ gives:
 where $\mathbf{n_2} = \mathbf 0$ in the uniform limit, since the corresponding equation in \eqref{eqn:WeightedDensities} is an integral over an odd function.
 Noting that $R = \sigma/2$ and $\eta = \pi \sigma^2 \rho /4$, we get that:
 \begin{align} \label{eqn:SPTFunctional2D}
-	\Phi = - \rho \ln (1- \eta) + \frac{\rho \eta}{1 - \eta} = \rho \left(\ln(1-\eta) + \frac{1}{1- \eta} -1 \right).
+	\Phi = - \rho \ln (1- \eta) + \frac{\rho \eta}{1 - \eta} = \rho \left(-\ln(1-\eta) + \frac{1}{1- \eta} -1 \right).
 \end{align} 
 This expression for the free energy for the bulk fluid is the same as derived by scaled particle theory (SPT) \cite{Reiss1959}, \cite{Reiss1960}, \cite{Helfand1961}, which also coincides with the Percus-Yevic compressibility equation \cite{PercusYevick1}, as detailed in \cite{RosenfeldSPT}.
 While the SPT approximation \eqref{eqn:SPTFunctional2D} and its three-dimensional equivalent are used in classical DFT, see \cite{DFTWinkelmann2001}, \cite{DFTRoth1}, \cite{DFTRoth2}, \cite{DFTGonzalez1997}, \cite{DFTCuesta2008}, \cite{DFTLoewen2002}, and other statistical mechanics approaches, see \cite{GrafLoewen1999}, \cite{DuBois2002}, \cite{Chamoux1998}, \cite{Chamoux1996}, in dynamical DFT it is not commonly applied and only the work of Archer et al. \cite{ArcherSed1}, \cite{ArcherSed2008}, \cite{ArcherSed2011}, \cite{ArcherSed2013}, is known to us in this context.

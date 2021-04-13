@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{GoddardPseudospectralCode1}
+Andreas Nold, Benjamin~D. Goddard, Peter Yatsyshin, Nikos Savva, and Serafim
+  Kalliadasis.
+\newblock Pseudospectral methods for density functional theory in bounded and
+  unbounded domains.
+\newblock {\em CoRR}, abs/1701.06182, 2017.
+
+\bibitem{SEMPatera84}
+Anthony~T Patera.
+\newblock A spectral element method for fluid dynamics: Laminar flow in a
+  channel expansion.
+\newblock {\em Journal of Computational Physics}, 54(3):468--488, 1984.
+
+\bibitem{SEMLagrange98}
+Dimitri Komatitsch and Jean-Pierre Vilotte.
+\newblock The spectral element method: an efficient tool to simulate the
+  seismic response of 2d and 3d geological structures.
+\newblock {\em Bulletin of the Seismological Society of America}, 88:368--392,
+  04 1998.
+
+\bibitem{Hutomo_2019}
+G~D Hutomo, J~Kusuma, A~Ribal, A~G Mahie, and N~Aris.
+\newblock Numerical solution of 2-d advection-diffusion equation with variable
+  coefficient using du-fort frankel method.
+\newblock {\em Journal of Physics: Conference Series}, 1180:012009, feb 2019.
+
+\end{thebibliography}
