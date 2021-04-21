@@ -1,549 +1,531 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.29)  13 APR 2021 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  19 APR 2021 10:16
 entering extended mode
 **./MultiShapeNotes.tex
 (MultiShapeNotes.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03>
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+LaTeX2e <2018-12-01>
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cl
+s"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size11.clo
+"
+File: size11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@section=\count180
-\c@subsection=\count181
-\c@subsubsection=\count182
-\c@paragraph=\count183
-\c@subparagraph=\count184
-\c@figure=\count185
-\c@table=\count186
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\natbib.s
+ty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip49
-\bibsep=\skip50
+\bibhang=\skip43
+\bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count187
+\c@NAT@ctr=\count88
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.st
-y
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyh
+dr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip45
+\f@nch@O@elh=\skip46
+\f@nch@O@erh=\skip47
+\f@nch@O@olh=\skip48
+\f@nch@O@orh=\skip49
+\f@nch@O@elf=\skip50
+\f@nch@O@erf=\skip51
+\f@nch@O@olf=\skip52
+\f@nch@O@orf=\skip53
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
-ty
-Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcapt
+ion.sty"
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption
+.sty"
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption
+3.sty"
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval
+.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks14
 )
-\captionmargin=\dimen139
-\captionmargin@=\dimen140
-\captionwidth=\dimen141
-\caption@tempdima=\dimen142
-\caption@indent=\dimen143
-\caption@parindent=\dimen144
-\caption@hangindent=\dimen145
-Package caption Info: Standard document class detected.
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
 )
-\c@caption@flags=\count188
-\c@continuedfloat=\count189
+\c@caption@flags=\count89
+\c@ContinuedFloat=\count90
 )
-\c@subfigure=\count190
-\c@subtable=\count191
+\c@subfigure=\count91
+\c@subtable=\count92
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
-y
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphi
+cx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
-y
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphi
+cs.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.s
+ty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
-s.cfg
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gr
+aphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
-def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pd
+ftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
+\Gin@req@height=\dimen110
+\Gin@req@width=\dimen111
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/numprint\numprint.st
-y
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/numprint\numpri
+nt.sty"
 Package: numprint 2012/08/20 v1.39 Print numbers (HH)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\array.st
-y
-Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen148
-\ar@mcellbox=\box47
-\extrarowheight=\dimen149
-\NC@list=\toks16
-\extratabsurround=\skip60
-\backup@length=\skip61
-\ar@cellbox=\box48
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
+"
+Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
+\col@sep=\dimen112
+\ar@mcellbox=\box27
+\extrarowheight=\dimen113
+\NC@list=\toks15
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box28
 )
-\c@nprt@mantissa@digitsbefore=\count192
-\c@nprt@mantissa@digitsafter=\count193
-\c@nprt@exponent@digitsbefore=\count194
-\c@nprt@exponent@digitsafter=\count195
-\nprt@digitwidth=\skip62
-\nprt@sepwidth=\skip63
-\nprt@decimalwidth=\skip64
-\nprt@blockwidth=\skip65
-\nprt@digittoks=\toks17
-\nprt@pretoks=\toks18
-\nprt@posttoks=\toks19
-\nprt@thisdigit=\count196
-\nprt@curpos=\count197
-\nprt@rndpos=\count198
-\c@nprt@digitsfirstblock=\count199
-\c@nprt@blockcnt=\count266
-\c@nprt@cntprint=\count267
+\c@nprt@mantissa@digitsbefore=\count93
+\c@nprt@mantissa@digitsafter=\count94
+\c@nprt@exponent@digitsbefore=\count95
+\c@nprt@exponent@digitsafter=\count96
+\nprt@digitwidth=\skip56
+\nprt@sepwidth=\skip57
+\nprt@decimalwidth=\skip58
+\nprt@blockwidth=\skip59
+\nprt@digittoks=\toks16
+\nprt@pretoks=\toks17
+\nprt@posttoks=\toks18
+\nprt@thisdigit=\count97
+\nprt@curpos=\count98
+\nprt@rndpos=\count99
+\c@nprt@digitsfirstblock=\count100
+\c@nprt@blockcnt=\count101
+\c@nprt@cntprint=\count102
  No configuration file `numprint.cfg' found.)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
-y
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip66
-\multirow@cntb=\count268
-\multirow@dima=\skip67
-\bigstrutjot=\dimen150
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multir
+ow.sty"
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count103
+\multirow@dima=\skip61
+\bigstrutjot=\dimen114
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
-y
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperr
+ef.sty"
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
-y
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
-mds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobs
+ub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
-r.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobs
+ub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
+Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkey
-s.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
-inekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
-e.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxet
+ex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\auxhoo
+k.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxma
-cro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvopti
+ons.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
-sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
-)
-\@linkdim=\dimen151
-\Hy@linkcounter=\count269
-\Hy@pagecounter=\count270
+\@linkdim=\dimen115
+\Hy@linkcounter=\count104
+\Hy@pagecounter=\count105
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc
+.def"
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-la
-ngpatches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
-nguages
-)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
-y
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.
-sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count271
+\Hy@SavedSpaceFactor=\count106
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\hyperr
+ef.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4192.
-Package hyperref Info: Link nesting OFF on input line 4197.
-Package hyperref Info: Hyper index ON on input line 4200.
-Package hyperref Info: Plain pages OFF on input line 4207.
-Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count272
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count107
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip16
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen152
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
-alc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
-))
-\Fld@menulength=\count273
-\Field@Width=\dimen153
-\Fld@charsize=\dimen154
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
-y
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
-ge
-with kernel methods
-)
-\Hy@abspage=\count274
-\c@Item=\count275
-\c@Hfootnote=\count276
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen116
+\Fld@menulength=\count108
+\Field@Width=\dimen117
+\Fld@charsize=\dimen118
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count109
+\c@Item=\count110
+\c@Hfootnote=\count111
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdfte
+x.def"
+File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+\Fld@listcount=\count112
+\c@bookmark@seq@number=\count113
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
-ty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
-e
-with kernel methods
-)
-\Fld@listcount=\count277
-\c@bookmark@seq@number=\count278
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
-filecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
-uecounter.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
-)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunf
+ilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+82.
 )
-\Hy@SectionHShift=\skip68
+\Hy@SectionHShift=\skip62
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip69
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath
+.sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip63
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext
+.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.
+sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen155
-)) (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
-y
+\@emptytoks=\toks19
+\ex@=\dimen119
+))
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.
+sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen156
-) (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+\pmbraise@=\dimen120
+)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.
+sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count279
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count280
-\leftroot@=\count281
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count282
-\DOTSCASE@=\count283
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box49
-\strutbox@=\box50
-\big@size=\dimen157
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count284
-\c@MaxMatrixCols=\count285
-\dotsspace@=\muskip17
-\c@parentequation=\count286
-\dspbrk@lvl=\count287
-\tag@help=\toks21
-\row@=\count288
-\column@=\count289
-\maxfields@=\count290
-\andhelp@=\toks22
-\eqnshift@=\dimen158
-\alignsep@=\dimen159
-\tagshift@=\dimen160
-\tagwidth@=\dimen161
-\totwidth@=\dimen162
-\lineht@=\dimen163
-\@envbody=\toks23
-\multlinegap=\skip70
-\multlinetaggap=\skip71
-\mathdisplay@stack=\toks24
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+\inf@bad=\count114
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count115
+\leftroot@=\count116
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count117
+\DOTSCASE@=\count118
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen121
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count119
+\c@MaxMatrixCols=\count120
+\dotsspace@=\muskip11
+\c@parentequation=\count121
+\dspbrk@lvl=\count122
+\tag@help=\toks20
+\row@=\count123
+\column@=\count124
+\maxfields@=\count125
+\andhelp@=\toks21
+\eqnshift@=\dimen122
+\alignsep@=\dimen123
+\tagshift@=\dimen124
+\tagwidth@=\dimen125
+\totwidth@=\dimen126
+\lineht@=\dimen127
+\@envbody=\toks22
+\multlinegap=\skip64
+\multlinetaggap=\skip65
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
-y
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfon
+ts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssym
+b.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-) (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
-\thm@preskip=\skip72
-\thm@postskip=\skip73
-\thm@headsep=\skip74
-\dth@everypar=\toks30
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.
-sty
-Package: mathtools 2021/03/18 v1.25 mathematical typesetting tools
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.s
+ty"
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip66
+\thm@postskip=\skip67
+\thm@headsep=\skip68
+\dth@everypar=\toks29
+)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\matht
+ools.sty"
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count291
-\calc@Bcount=\count292
-\calc@Adimen=\dimen164
-\calc@Bdimen=\dimen165
-\calc@Askip=\skip75
-\calc@Bskip=\skip76
+\calc@Acount=\count126
+\calc@Bcount=\count127
+\calc@Adimen=\dimen128
+\calc@Bdimen=\dimen129
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count293
-\calc@Cskip=\skip77
+\calc@Ccount=\count128
+\calc@Cskip=\skip71
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.st
-y
-Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mhset
+up.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count294
-\l_MT_multwidth_dim=\dimen166
-\origjot=\skip78
-\l_MT_shortvdotswithinadjustabove_dim=\dimen167
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen168
-\l_MT_above_intertext_sep=\dimen169
-\l_MT_below_intertext_sep=\dimen170
-\l_MT_above_shortintertext_sep=\dimen171
-\l_MT_below_shortintertext_sep=\dimen172
-\xmathstrut@box=\box51
-\xmathstrut@dim=\dimen173
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count129
+\l_MT_multwidth_dim=\dimen130
+\origjot=\skip72
+\l_MT_shortvdotswithinadjustabove_dim=\dimen131
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen132
+\l_MT_above_intertext_sep=\dimen133
+\l_MT_below_intertext_sep=\dimen134
+\l_MT_above_shortintertext_sep=\dimen135
+\l_MT_below_shortintertext_sep=\dimen136
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/commath\commath.sty
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/commath\commath
+.sty"
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty
+"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-))
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/bbm\bbm.sty
+)) ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbm\bbm.sty"
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
-y
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count295
-\Gm@cntv=\count296
-\c@Gm@tempcnt=\count297
-\Gm@bindingoffset=\dimen174
-\Gm@wd@mp=\dimen175
-\Gm@odd@mp=\dimen176
-\Gm@even@mp=\dimen177
-\Gm@layoutwidth=\dimen178
-\Gm@layoutheight=\dimen179
-\Gm@layouthoffset=\dimen180
-\Gm@layoutvoffset=\dimen181
-\Gm@dimlist=\toks31
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geomet
+ry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
+\Gm@cnth=\count130
+\Gm@cntv=\count131
+\c@Gm@tempcnt=\count132
+\Gm@bindingoffset=\dimen137
+\Gm@wd@mp=\dimen138
+\Gm@odd@mp=\dimen139
+\Gm@even@mp=\dimen140
+\Gm@layoutwidth=\dimen141
+\Gm@layoutheight=\dimen142
+\Gm@layouthoffset=\dimen143
+\Gm@layoutvoffset=\dimen144
+\Gm@dimlist=\toks30
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
-g))
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
-y
-\lst@mode=\count298
-\lst@gtempboxa=\box52
-\lst@token=\toks32
-\lst@length=\count299
-\lst@currlwidth=\dimen182
-\lst@column=\count300
-\lst@pos=\count301
-\lst@lostspace=\dimen183
-\lst@width=\dimen184
-\lst@newlines=\count302
-\lst@lineno=\count303
-\lst@maxwidth=\dimen185
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geomet
+ry.cfg"))
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listin
+gs.sty"
+\lst@mode=\count133
+\lst@gtempboxa=\box31
+\lst@token=\toks31
+\lst@length=\count134
+\lst@currlwidth=\dimen145
+\lst@column=\count135
+\lst@pos=\count136
+\lst@lostspace=\dimen146
+\lst@width=\dimen147
+\lst@newlines=\count137
+\lst@lineno=\count138
+\lst@maxwidth=\dimen148
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count304
-\lst@skipnumbers=\count305
-\lst@framebox=\box53
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmis
+c.sty"
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count139
+\lst@skipnumbers=\count140
+\lst@framebox=\box32
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cf
-g
-File: listings.cfg 2020/03/24 1.8d listings configuration
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listin
+gs.cfg"
+File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.
+sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
-fg
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\co
+lor.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 32.
-\c@definition=\count306
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
-pdftex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
-\l__pdf_internal_box=\box54
-) (MultiShapeNotes.aux)
+\c@definition=\count141
+ (MultiShapeNotes.aux)
 \openout1 = `MultiShapeNotes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
-.mkii
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf
+.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
-\scratchdimen=\dimen186
-\scratchbox=\box55
-\nofMPsegments=\count309
-\nofMParguments=\count310
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count311
-\MPscratchDim=\dimen187
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count142
+\scratchdimen=\dimen149
+\scratchbox=\box33
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen150
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks33
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
-f-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstop
+df-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext
+.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
 )
-Package hyperref Info: Link coloring ON on input line 67.
+\AtBeginShipoutBox=\box34
+Package hyperref Info: Link coloring ON on input line 72.
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\namere
+f.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
-y
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gett
+itlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
-titlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+\c@section@level=\count148
 )
-\c@section@level=\count314
-)
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 72.
+LaTeX Info: Redefining \pageref on input line 72.
+LaTeX Info: Redefining \nameref on input line 72.
  (MultiShapeNotes.out) (MultiShapeNotes.out)
 \@outlinefile=\write3
 \openout3 = `MultiShapeNotes.out'.
@@ -583,262 +565,268 @@ LaTeX Info: Redefining \nameref on input line 67.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count315
-LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+\c@lstlisting=\count149
+<Images/BoxSections.png, id=27, 1445.4pt x 704.6325pt>
+File: Images/BoxSections.png Graphic file (type png)
+<use Images/BoxSections.png>
+Package pdftex.def Info: Images/BoxSections.png  used on input line 80.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 80--81
+ [][] 
+ []
+
+<Images/quad.png, id=28, 526.96875pt x 395.22656pt>
+File: Images/quad.png Graphic file (type png)
+<use Images/quad.png>
+Package pdftex.def Info: Images/quad.png  used on input line 86.
+(pdftex.def)             Requested size: 184.44182pt x 138.33136pt.
+<Images/WedgeSections.png, id=29, 1445.4pt x 704.6325pt>
+File: Images/WedgeSections.png Graphic file (type png)
+<use Images/WedgeSections.png>
+Package pdftex.def Info: Images/WedgeSections.png  used on input line 92.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 92--93
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
+d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
-
-(C:\Users\Anwender\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
+d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (67.28337pt too wide) in paragraph at lines 93--107
+) [1
+
+{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Images
+/BoxSections.png (PNG copy)> <./Images/quad.png (PNG copy)>] [2 <./Images/Wedge
+Sections.png (PNG copy)>] (TabGrad.tex
+Overfull \hbox (45.38293pt too wide) in paragraph at lines 3--16
+ [][] 
+ []
+
+) (TabDiv.tex
+Overfull \hbox (45.38293pt too wide) in paragraph at lines 3--16
+ [][] 
+ []
+
+) (TabLap.tex
+Overfull \hbox (41.13287pt too wide) in paragraph at lines 3--16
+ [][] 
+ []
+
+) (TabInterp.tex
+Overfull \hbox (42.98294pt too wide) in paragraph at lines 3--16
+ [][] 
+ []
+
+) (TabConv.tex
+Overfull \hbox (45.38293pt too wide) in paragraph at lines 3--15
+ [][] 
+ []
+
+) (TabInt.tex
+Overfull \hbox (45.38293pt too wide) in paragraph at lines 3--15
+ [][] 
+ []
+
+) [3] [4]
+Overfull \hbox (50.28302pt too wide) in paragraph at lines 142--158
+[][] 
+ []
+
+<Images/boxEx.png, id=85, 1445.4pt x 704.6325pt>
+File: Images/boxEx.png Graphic file (type png)
+<use Images/boxEx.png>
+Package pdftex.def Info: Images/boxEx.png  used on input line 164.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 164--165
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/wedgeEx.png, id=89, 1445.4pt x 704.6325pt>
+File: Images/wedgeEx.png Graphic file (type png)
+<use Images/wedgeEx.png>
+Package pdftex.def Info: Images/wedgeEx.png  used on input line 175.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 175--176
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/example1.png, id=91, 1445.4pt x 704.6325pt>
+File: Images/example1.png Graphic file (type png)
+<use Images/example1.png>
+Package pdftex.def Info: Images/example1.png  used on input line 202.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 202--203
+ [][] 
+ []
+
+[5]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/example2.png, id=104, 1445.4pt x 704.6325pt>
+File: Images/example2.png Graphic file (type png)
+<use Images/example2.png>
+Package pdftex.def Info: Images/example2.png  used on input line 210.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 210--211
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./Images/boxEx.png (PNG copy)>]
+Overfull \hbox (67.28326pt too wide) in paragraph at lines 229--246
 [][]
  []
 
 
-Overfull \hbox (67.28337pt too wide) in paragraph at lines 111--125
+LaTeX Warning: Reference `FNorm' on page 7 undefined on input line 253.
+
+[7 <./Images/wedgeEx.png (PNG copy)>]
+<Images/boxExNoFlux.png, id=124, 1445.4pt x 704.6325pt>
+File: Images/boxExNoFlux.png Graphic file (type png)
+<use Images/boxExNoFlux.png>
+Package pdftex.def Info: Images/boxExNoFlux.png  used on input line 257.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 257--258
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (50.28302pt too wide) in paragraph at lines 263--279
 [][]
  []
 
 
-Overfull \hbox (67.28337pt too wide) in paragraph at lines 128--142
+Overfull \hbox (45.11148pt too wide) in paragraph at lines 283--295
 [][]
  []
 
-
-Overfull \hbox (67.28337pt too wide) in paragraph at lines 148--161
-[][]
- []
-
-[1{C:/Users/Anwender/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
-
-] [2]
-Overfull \hbox (63.03331pt too wide) in paragraph at lines 170--183
-[][]
- []
-
-
-Overfull \hbox (149.06383pt too wide) in paragraph at lines 203--206
-\OT1/cmr/m/n/10.95 (MS[]TestJonnaADExactDisectBoxes and MS[]TestJonnaADExactDis
-ectBoxesPart2 and MS[]TestJonnaADExactDisectWedges)
- []
-
-
-LaTeX Warning: Reference `Tab1:ErrorsExBox' on page 3 undefined on input line 2
-11.
-
-
-Overfull \hbox (50.28313pt too wide) in paragraph at lines 214--231
-[][]
- []
-
-<Images//BoxSections.png, id=58, 1445.4pt x 704.6325pt>
-File: Images//BoxSections.png Graphic file (type png)
-<use Images//BoxSections.png>
-Package pdftex.def Info: Images//BoxSections.png  used on input line 234.
+[8 <./Images/example1.png (PNG copy)>] [9]
+<Images/FWBox.png, id=137, 1445.4pt x 704.6325pt>
+File: Images/FWBox.png Graphic file (type png)
+<use Images/FWBox.png>
+Package pdftex.def Info: Images/FWBox.png  used on input line 325.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 234--235
- [][] 
- []
-
-<Images//boxEx.png, id=59, 1445.4pt x 704.6325pt>
-File: Images//boxEx.png Graphic file (type png)
-<use Images//boxEx.png>
-Package pdftex.def Info: Images//boxEx.png  used on input line 240.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 240--241
- [][] 
- []
-
-<Images//quad.png, id=60, 526.96875pt x 395.22656pt>
-File: Images//quad.png Graphic file (type png)
-<use Images//quad.png>
-Package pdftex.def Info: Images//quad.png  used on input line 246.
-(pdftex.def)             Requested size: 184.44182pt x 138.33136pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images//WedgeSections.png, id=64, 1445.4pt x 704.6325pt>
-File: Images//WedgeSections.png Graphic file (type png)
-<use Images//WedgeSections.png>
-Package pdftex.def Info: Images//WedgeSections.png  used on input line 254.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 254--255
- [][] 
- []
-
-[3]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images//wedgeEx.png, id=76, 1445.4pt x 704.6325pt>
-File: Images//wedgeEx.png Graphic file (type png)
-<use Images//wedgeEx.png>
-Package pdftex.def Info: Images//wedgeEx.png  used on input line 261.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 261--262
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 325--326
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images//example1.png, id=78, 1445.4pt x 704.6325pt>
-File: Images//example1.png Graphic file (type png)
-<use Images//example1.png>
-Package pdftex.def Info: Images//example1.png  used on input line 288.
+[10 <./Images/example2.png (PNG copy)>]
+<Images/FWWedge.png, id=147, 1445.4pt x 704.6325pt>
+File: Images/FWWedge.png Graphic file (type png)
+<use Images/FWWedge.png>
+Package pdftex.def Info: Images/FWWedge.png  used on input line 356.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 288--289
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 356--357
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images//example2.png, id=80, 1445.4pt x 704.6325pt>
-File: Images//example2.png Graphic file (type png)
-<use Images//example2.png>
-Package pdftex.def Info: Images//example2.png  used on input line 296.
+<Images/ex1.png, id=149, 1445.4pt x 704.6325pt>
+File: Images/ex1.png Graphic file (type png)
+<use Images/ex1.png>
+Package pdftex.def Info: Images/ex1.png  used on input line 372.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 296--297
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 372--373
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4]
-Overfull \hbox (67.28337pt too wide) in paragraph at lines 315--332
-[][]
- []
-
-[5 <./Images//BoxSections.png (PNG copy)>]
-<Images//boxExNoFlux.png, id=99, 1445.4pt x 704.6325pt>
-File: Images//boxExNoFlux.png Graphic file (type png)
-<use Images//boxExNoFlux.png>
-Package pdftex.def Info: Images//boxExNoFlux.png  used on input line 342.
+[11 <./Images/boxExNoFlux.png (PNG copy)>]
+<Images/ex2.png, id=158, 1445.4pt x 704.6325pt>
+File: Images/ex2.png Graphic file (type png)
+<use Images/ex2.png>
+Package pdftex.def Info: Images/ex2.png  used on input line 385.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 342--343
- [][] 
- []
-
-
-Overfull \hbox (50.28313pt too wide) in paragraph at lines 348--364
-[][]
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images//FWBox.png, id=103, 1445.4pt x 704.6325pt>
-File: Images//FWBox.png Graphic file (type png)
-<use Images//FWBox.png>
-Package pdftex.def Info: Images//FWBox.png  used on input line 396.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 396--397
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 385--386
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./Images//boxEx.png (PNG copy)>]
-<Images//FWWedge.png, id=114, 1445.4pt x 704.6325pt>
-File: Images//FWWedge.png Graphic file (type png)
-<use Images//FWWedge.png>
-Package pdftex.def Info: Images//FWWedge.png  used on input line 427.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 427--428
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images//ex1.png, id=116, 1445.4pt x 704.6325pt>
-File: Images//ex1.png Graphic file (type png)
-<use Images//ex1.png>
-Package pdftex.def Info: Images//ex1.png  used on input line 443.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 443--444
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./Images//quad.png (PNG copy)>]
-<Images//ex2.png, id=127, 1445.4pt x 704.6325pt>
-File: Images//ex2.png Graphic file (type png)
-<use Images//ex2.png>
-Package pdftex.def Info: Images//ex2.png  used on input line 456.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 456--457
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./Images//WedgeSections.png (PNG copy)>] (MultiShapeNotes.bbl)
+[12 <./Images/FWBox.png (PNG copy)>] (MultiShapeNotes.bbl)
 
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-[9 <./Images//wedgeEx.png (PNG copy)>] [10 <./Images//example1.png (PNG copy)> 
-<./Images//example2.png (PNG copy)>] [11 <./Images//boxExNoFlux.png (PNG copy)>
- <./Images//FWBox.png (PNG copy)>] [12 <./Images//FWWedge.png (PNG copy)> <./Im
-ages//ex1.png (PNG copy)>] [13 <./Images//ex2.png (PNG copy)>]
-(MultiShapeNotes.aux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
+[13 <./Images/FWWedge.png (PNG copy)>] [14 <./Images/ex1.png (PNG copy)> <./Ima
+ges/ex2.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
+ (MultiShapeNotes.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
+Package rerunfilecheck Info: File `MultiShapeNotes.out' has not changed.
+(rerunfilecheck)             Checksum: B0DECC7D878DF3DD234D585C3C3A6C07;479.
+
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `MultiShapeNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 08A85AF4967C490F365FC57AA33F9239;1513.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 13799 strings out of 479334
- 209329 string characters out of 2855659
- 540084 words of memory out of 3000000
- 31009 multiletter control sequences out of 15000+200000
- 410563 words of font info for 53 fonts, out of 3000000 for 9000
+ 10570 strings out of 492946
+ 159778 string characters out of 3124935
+ 298143 words of memory out of 3000000
+ 14264 multiletter control sequences out of 15000+200000
+ 10773 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,88p,893b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Anwender/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb><C:/Users/Anwender/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/Anwender/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Anwender/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Anwender/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Anwender
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/Anwender/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><C:/Users/Anwender/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb><C:/Users/Anwender/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb>
-Output written on MultiShapeNotes.pdf (13 pages, 2128919 bytes).
+ 42i,12n,56p,1142b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s14
+52504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s145250
+4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on MultiShapeNotes.pdf (14 pages, 2142770 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

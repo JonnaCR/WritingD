@@ -1,8 +1,4 @@
-This is BibTeX, Version 0.99d
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: ShapeNotes.aux
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-Reallocating 'name_of_file' (item size: 1) to 6 items.
+This is BibTeX, Version 0.99dThe top-level auxiliary file: ShapeNotes.aux
 The style file: unsrt.bst
 Database file #1: GeneralBib.bib
 I was expecting a `,' or a `}'---line 16 of file GeneralBib.bib
@@ -15,45 +11,4 @@ I was expecting a `,' or a `}'---line 371 of file GeneralBib.bib
  :     volume={13},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 7 entries,
-            1791 wiz_defined-function locations,
-            496 strings with 4642 characters,
-and the built_in function-call counts, 1391 in all, are:
-= -- 120
-> -- 53
-< -- 0
-+ -- 21
-- -- 14
-* -- 84
-:= -- 233
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 5
-chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 64
-empty$ -- 146
-format.name$ -- 14
-if$ -- 311
-int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 9
-newline$ -- 38
-num.names$ -- 7
-pop$ -- 19
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 23
-stack$ -- 0
-substring$ -- 84
-swap$ -- 7
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 11
-width$ -- 8
-write$ -- 77
 (There were 2 error messages)
