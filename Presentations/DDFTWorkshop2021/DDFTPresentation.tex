@@ -65,13 +65,13 @@
 	\framesubtitle{A simple model}
 		\begin{align*}
 		&\min_{\rho,f} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{f}_{L_2(\Sigma)}^2\\
-		\\
+		\\ 
 		&\text{subject to:}
 		\\
-		& \partial_t \rho = \nabla^2 \rho + f \ \qquad \text{  in    } \Sigma \phantom{ \nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}'} }\\
+		& \partial_t \rho = \nabla^2 \rho + f \ \qquad \text{  in    }\ \ \Sigma := (0,T) \times \Omega  \phantom{ \nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}'} }\\
 		\\
 		&\text{BC } \text{and IC:}\\
-		&\frac{\partial \rho}{\partial n}  = 0 \quad \ \ \qquad \qquad \text{on   } \partial \Sigma   \\
+		&\frac{\partial \rho}{\partial n}  = 0 \quad \ \ \qquad \qquad \text{on   } \partial \Sigma := (0,T) \times \partial \Omega  \\
 		&\rho(0,\vec{x}) = \rho_0(\vec{x})
 		\end{align*}
 
@@ -84,7 +84,7 @@
 	\begin{align*}
 		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{f}_{L_2(\Sigma)}^2- \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt - \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt\\
 	\end{align*}
-	Compute the directional derivatives:
+	Compute directional derivatives and set equal to zero:
 	\begin{align*}
 		\mathcal{L}_q (\rho^*, f^*,q) h&= 0, \quad
 		\mathcal{L}_\rho (\rho^*, f^*,q) h= 0, \quad
@@ -95,11 +95,13 @@
 \begin{frame}
 	\frametitle{PDE-Constrained Optimization}
 	\framesubtitle{Deriving (first-order) optimality conditions}
-	Computing  $\mathcal{L}_\rho (\rho^*, f^*,q)h$:
+	Define the Lagrangian $\mathcal{L}$:
 	\begin{align*}
 		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt \\
-		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt\\
-		\\
+		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt
+	\end{align*}
+	Computing  $\mathcal{L}_\rho (\rho^*, f^*,q)h$:
+	\begin{align*}
 		\mathcal{L}_\rho (\rho^*, f^*,q)h = & \int_\Omega \left(q(T) h(T) - q(0) h(0)\right)d \vec x  - \int_\Sigma \left(h(-\rho + \widehat \rho)  - h \partial_t q - h\nabla^2 q  \right) d\vec{x} dt \\
 		&-\int_{\partial \Sigma} q \frac{\partial h}{\partial n}  - q \frac{\partial h}{\partial n} + h \frac{\partial q}{\partial n} d\vec{x} dt \\
 	\end{align*}
@@ -122,12 +124,14 @@ Adjoint equation:
 \begin{frame}
 	\frametitle{PDE-Constrained Optimization}
 	\framesubtitle{Deriving (first-order) optimality conditions}
-	Computing  $\mathcal{L}_f (\rho^*, f^*,q)h = 0$:
+	Define the Lagrangian $\mathcal{L}$:
 	\begin{align*}
 		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt \\
-		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt\\
-		\\
-		\mathcal{L}_f (\rho^*, f^*,q)h = & \int_\Sigma h \left(\beta f + q \right) d\vec{x} dt = 0
+		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt
+	\end{align*}
+	Computing  $\mathcal{L}_f (\rho^*, f^*,q)h = 0$:
+	\begin{align*}
+		\mathcal{L}_f (\rho^*, f^*,q)h = & \int_\Sigma h \left(\beta f + q \right) d\vec{x} dt = 0\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
 	\end{align*}
 	Gradient equation:
 	\begin{align*}

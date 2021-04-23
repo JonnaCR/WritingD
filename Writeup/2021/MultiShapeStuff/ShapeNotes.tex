@@ -1,76 +1,76 @@
-\documentclass[11pt, a4paper]{article}
-%\usepackage{proj1}
-\usepackage{natbib}
-\usepackage{fancyhdr}  
-\usepackage{subcaption}
-\usepackage{caption}
-\usepackage{graphicx}
-\usepackage{numprint}
-\usepackage{multirow}
-\linespread{1.25} 
-\setlength{\parindent}{0cm}
-\graphicspath{{Images/}}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{commath}
-\usepackage{bbm}
-\usepackage[ruled,vlined]{algorithm2e}
+%\documentclass[11pt, a4paper]{article}
+%%\usepackage{proj1}
+%\usepackage{natbib}
+%\usepackage{fancyhdr}  
+%\usepackage{subcaption}
+%\usepackage{caption}
+%\usepackage{graphicx}
+%\usepackage{numprint}
+%\usepackage{multirow}
+%\linespread{1.25} 
+%\setlength{\parindent}{0cm}
+%\graphicspath{{Images/}}
+%\usepackage{hyperref}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
+%\usepackage{mathtools}
+%\usepackage{commath}
+%\usepackage{bbm}
+%\usepackage[ruled,vlined]{algorithm2e}
+%
+%%\usepackage[sc,osf]{mathpazo}
+%\usepackage{subcaption}
+%\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+%
+%\usepackage{listings}
+%\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+%\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+%\definecolor{mylilas}{RGB}{170,55,241}
+%
+%
+%\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+%\usepackage{color}
+%\urlstyle{same}
+%
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[section]
+%
+%\newcommand{\adja}{q_a}
+%\newcommand{\adjb}{q_b}
+%\newcommand{\adjaB}{q_{a,\partial \Omega}}
+%\newcommand{\adjbB}{q_{b,\partial \Omega}}
+%\newcommand{\adjB}{q_{\partial \Omega}}
+%\newcommand{\Adja}{\mathbf{p}}
+%\newcommand{\Adjb}{q}
+%\newcommand{\adj}{q}
+%\newcommand{\Adjc}{{q}_{\partial \Omega}}
+%\newcommand{\ra}{\rho_a}
+%\newcommand{\rb}{\rho_b}
+%\newcommand{\w}{\mathbf{w}}
+%\newcommand{\f}{\mathbf{f}}
+%\newcommand{\ve}{\mathbf{v}}
+%\newcommand{\n}{\mathbf{n}}
+%\newcommand{\h}{\mathbf{h}}
+%\newcommand{\K}{\mathbf{K}}
+%\newcommand{\hr}{\widehat \rho}
+%\newcommand{\jf}{\mathbf j}
+%
+%\DeclareMathOperator{\sgn}{sgn}
+%\DeclareMathOperator{\Grad}{Grad}
+%\DeclareMathOperator{\Div}{Div}
+%\DeclareMathOperator{\Lap}{Lap}
+%%	\begin{figure}[h]
+%%		\centering
+%%		\includegraphics[scale=0.35]{F1.png}
+%%		\caption{Forward $\rho$ for $a = 0.01$} 
+%%		\label{F1}
+%%	\end{figure}
+%
+%\begin{document}
 
-%\usepackage[sc,osf]{mathpazo}
-\usepackage{subcaption}
-\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
-
-\usepackage{listings}
-\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
-\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
-\definecolor{mylilas}{RGB}{170,55,241}
-
-
-\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
-\usepackage{color}
-\urlstyle{same}
-
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-
-\newcommand{\adja}{q_a}
-\newcommand{\adjb}{q_b}
-\newcommand{\adjaB}{q_{a,\partial \Omega}}
-\newcommand{\adjbB}{q_{b,\partial \Omega}}
-\newcommand{\adjB}{q_{\partial \Omega}}
-\newcommand{\Adja}{\mathbf{p}}
-\newcommand{\Adjb}{q}
-\newcommand{\adj}{q}
-\newcommand{\Adjc}{{q}_{\partial \Omega}}
-\newcommand{\ra}{\rho_a}
-\newcommand{\rb}{\rho_b}
-\newcommand{\w}{\mathbf{w}}
-\newcommand{\f}{\mathbf{f}}
-\newcommand{\ve}{\mathbf{v}}
-\newcommand{\n}{\mathbf{n}}
-\newcommand{\h}{\mathbf{h}}
-\newcommand{\K}{\mathbf{K}}
-\newcommand{\hr}{\widehat \rho}
-\newcommand{\jf}{\mathbf j}
-
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\Grad}{Grad}
-\DeclareMathOperator{\Div}{Div}
-\DeclareMathOperator{\Lap}{Lap}
-%	\begin{figure}[h]
-%		\centering
-%		\includegraphics[scale=0.35]{F1.png}
-%		\caption{Forward $\rho$ for $a = 0.01$} 
-%		\label{F1}
-%	\end{figure}
-
-\begin{document}
-	\tableofcontents
 \section{2DChebClass implementation for different shapes}	
 \subsection{The interval (1D)}
 In order to construct a line in the 2DChebClass library, three inputs have to be given; the endpoints of the interval and the number of discretization points $N+1$.
@@ -397,12 +397,12 @@ We combine $n_1$ and $n_2$, apply the standard transformation from polar to Cart
 \begin{algorithm}[H]
 	\SetAlgoLined
 	Given two angles $\theta_1$ and $\theta_2$ at the corner of the wedge, we normalise to get a resulting angle $\theta_c$.
-	Set $\phi = \theta_2 - \theta_1$
+	Set $\phi = \theta_2 - \theta_1$\\
 	\uIf{$\abs{\phi}\leq \pi$}{
 		$\theta_c = \theta_1 + \phi/2$
 	}\uElseIf{$\pi<\phi \text{ and } \phi<(3/2)\pi$}{
 $\theta_c = \theta_1 + (2\pi-\phi)/2$}
-\uElse{$\theta_c = = \theta_1-(2\pi-\phi)/2$	}	
+\Else{$\theta_c = = \theta_1-(2\pi-\phi)/2$	}	
 Set $ \theta_c = \theta_c \mod 2 \pi$.
 	\caption{Determining angles of normals}
 	\label{alg:WedgeNormalCart}
@@ -577,23 +577,27 @@ Once this information is given, the vectors of computational points $\mathbf x_1
 \begin{algorithm}[H]	\label{alg:msPts}
 	\SetAlgoLined
 	\For{ishape in multishape}{
-		Get computational points $\mathbf x_1^i$, $\mathbf x_2^i$ and physical points $\mathbf y_1^i$, $\mathbf y_2^i$\;
-		Add points to vector containing multishape points 
-		\begin{align*}
-		\mathbf x_1^M = [\mathbf x_1^M; \mathbf x_1^i], \quad
-		\mathbf x_2^M = [\mathbf x_2^M; \mathbf x_2^i], \quad
-		\mathbf y_1^M = [\mathbf y_1^M; \mathbf y_1^i], \quad
-		\mathbf y_2^M = [\mathbf y_2^M; \mathbf y_2^i].
-		\end{align*}
+		\begin{itemize}
+			\item Get computational points $\mathbf x_1^i$, $\mathbf x_2^i$ and physical points $\mathbf y_1^i$, $\mathbf y_2^i$.
+			\item Add points to vector containing multishape points:
+			\begin{align*}
+				\mathbf x_1^M = [\mathbf x_1^M; \mathbf x_1^i], \quad
+				\mathbf x_2^M = [\mathbf x_2^M; \mathbf x_2^i], \quad
+				\mathbf y_1^M = [\mathbf y_1^M; \mathbf y_1^i], \quad
+				\mathbf y_2^M = [\mathbf y_2^M; \mathbf y_2^i].
+			\end{align*} 
+		\end{itemize}			
 	}
 \For{ishape in multishape}{
-	\eIf{shape $i$ is wedge}{
-		Convert polar $\mathbf y_1^i$, $\mathbf y_2^i$ to cartesian $\mathbf y_{1, \text{Cart}}^i$, $\mathbf y_{2, \text{Cart}}^i$\;
-		Replace in $\mathbf y_1^M$, $\mathbf y_2^M$
+	\If{ishape is polar}{
+		\begin{itemize}
+		\item Convert polar $\mathbf y_1^i$, $\mathbf y_2^i$ to cartesian $\mathbf y_{1, \text{Cart}}^i$, $\mathbf y_{2, \text{Cart}}^i$.
+		\item Replace in $\mathbf y_1^M$, $\mathbf y_2^M$:
 		\begin{align*}
 			\mathbf y_1^M(\text{ishape}) = \mathbf y_{1, \text{Cart}}^i, \quad \mathbf y	_2^M(\text{ishape}) = \mathbf y_{2, \text{Cart}}^i.
 		\end{align*}
-	}{continue;}
+	\end{itemize}
+	}
 }
 \caption{Multishape points}
 \end{algorithm}
@@ -611,21 +615,21 @@ Having found the intersections between the shapes, the boundary of the multishap
 				\For{jface in jshape}{
 					\uIf{$Pts_{\text{iface}} == Pts_{\text{jface}}$}{
 						\begin{align*}
-							\text{Intersections(ishape,jshape).Pts} &= \text{Pts}_{\text{iface}}\\
-							\text{Intersections(ishape,jshape).Face} &= \text{iface}\\
-							\text{Intersections(ishape,jshape).Corners} &= \text{Corners}_{\text{iface}}\\
-							\text{Intersections(ishape,jshape).Flip} &= \text{False}
+							&\text{Intersections(ishape,jshape).Pts} = \text{Pts}_{\text{iface}}\\
+							&\text{Intersections(ishape,jshape).Face} = \text{iface}\\
+							&\text{Intersections(ishape,jshape).Corners} = \text{Corners}_{\text{iface}}\\
+							&\text{Intersections(ishape,jshape).Flip} = \text{False}
 						\end{align*}
 					}
-					\uElseIf{iface $==$ flip(jface)} 
+					\ElseIf{iface $==$ flip(jface)} 
 					{
-							\begin{align*}
-								\text{Intersections(ishape,jshape).Pts} &= \text{Pts}_{\text{iface}}\\
-							\text{Intersections(ishape,jshape).Face} &= \text{iface}\\
-							\text{Intersections(ishape,jshape).Corners} &= \text{Corners}_{\text{iface}}\\
-							\text{Intersections(ishape,jshape).Flip} &= \text{True}
+						\begin{align*}
+							&\text{Intersections(ishape,jshape).Pts} = \text{Pts}_{\text{iface}}\\
+							&\text{Intersections(ishape,jshape).Face} = \text{iface}\\
+							&\text{Intersections(ishape,jshape).Corners} = \text{Corners}_{\text{iface}}\\
+							&\text{Intersections(ishape,jshape).Flip} = \text{True}
 						\end{align*}
-					}\Else{continue;}
+					}
 	}}}	}	
 	\caption{Determining intersections between shapes in a multishape}
 	\label{alg:msIntersections}
@@ -636,13 +640,13 @@ Having found the intersections between the shapes, the boundary of the multishap
 	\For{ishape in multishape}{
 			\For{iface in ishape}{
 				\For{jface in ishape}{
-					\uIf{Intersections(ishape, jshape).Face = iface}{
+					\If{Intersections(ishape, jshape).Face = iface}{
 						Set IntersectionTest(iface) = True\;
-					}\Else{continue;}
+					}
 				}
-			\uIf{IntersectionTest(iface) = False}{
+			\If{IntersectionTest(iface) = False}{
 				Set Boundary(iface) = True\;
-			}\Else{continue;}	
+			}
 	}	}	
 	\caption{Determining the boundary of a multishape}
 	\label{alg:msBoundary}
@@ -653,41 +657,40 @@ Constructing the normal vector for the multishape is quite complex and explained
 \begin{algorithm}[H]
 	\SetAlgoLined
 	\For{ishape in multishape}{
-		Get normal vector inormal for ishape\;
-		Set normalVec(ishape) = inormal\;
-		\uIf{ishape is wedge}{
-			Get Cartesian normal vector inormalCart for ishape\;
-			Set normalCart(ishape) = inormalCart\;
+		\begin{itemize}
+			\item Get normal vector inormal for ishape.
+			\item Set normalVec(ishape) = inormal.
+		\end{itemize}
+		\uIf{ishape is polar}{
+			\begin{itemize}
+				\item 	Get Cartesian normal vector inormalCart for ishape.
+				\item	Set normalCart(ishape) = inormalCart.
+			\end{itemize}
 		}\Else{
-			normalCart(ishape) = inormal\;
+			\begin{itemize}
+				\item Set	normalCart(ishape) = inormal.
+			\end{itemize}
 		}
-	Delete entries that do not lie on the boundary of the multishape:\\
-	normalVec($\sim$boundary) = [\ ], 	normalCart($\sim$boundary) = [\ ]\;
+	\begin{itemize}
+		\item Delete entries that do not lie on the boundary of the multishape.
+	\end{itemize}
 	}
 	
-	Fixing normals at corners. Find entries in normalCart that share  same points (up to a tolerance). Store points as dup(1) and dup(2) in duplicates. \\
+	Fixing normals at corners. Find entries in normalCart that share same points (up to a tolerance). Store points in duplicates. \\
 		\For{dup in duplicates}{
 			\uIf{override is True}{
-			Normal vector $n$ at corner is specified by the user.
+			Normal vector $n$ at dup is specified by the user.
 		}
 		\Else{
-			Two normals are $n_1=$ normalCart(dup(1)) and $n_2 =$ normalCart(dup(2)). Set
-			\begin{align*}
-				n = \frac{n_1 + n_2}{\sqrt{n_1^2 + n_2^2}}.
-			\end{align*}
+			Average and normalize normals in normalCart(dup) to get $n$.
 		}
 		}
-	Set normalCart(dup(1))$ = n $ and normalCart(dup(2))$=n$ . \\
+	Set normalCart(dup)$ = n $. \\
 	 \For{ishape in multishape}{
-	 	\uIf{ishape is wedge}{
-	 		Split normals from normalCart(ishape) into two components, $v_1$ and $v_2$. Get $\theta$ from ishape. Set 
-	 		\begin{align*}
-	 		v_r &= \cos(\theta)v_1 + \sin(\theta)v_2,\\
-	 		v_\theta &= - \sin(\theta)v_1 + \cos(\theta)v_2.		
-	 		\end{align*}
-	 		Set $\text{normal(ishape)} = (v_r, v_\theta)$.		
+	 	\uIf{ishape is polar}{
+	 		Convert normals from normalCart(ishape) to polar coordinates and assign to normal(ishape).	
 	 	}\Else{Set
-	 	normal(ishape) = normalCart(ishape)\;
+	 	normal(ishape) = normalCart(ishape).
  	}
 	 }
 		
@@ -702,14 +705,16 @@ The interpolation matrix for the multishape is constructed by computing the indi
 \begin{algorithm}[H]
 	\SetAlgoLined
 	\For{ishape in multishape}{
-		Get
-		 $\text{Interp}_{\text{ishape}}$,  $\Grad_{\text{ishape}}$,  $\Div_{\text{ishape}}$, $\Lap_{\text{ishape}}$, $\text{Int}_{\text{ishape}}$\;
-		 Set \\
-		 Interp $=$ blkdiag(Interp, $\text{Interp}_{\text{ishape}}$)\;
-		 $\Grad =$ blkdiag(Interp, $\Grad_{\text{ishape}}$)\;
-		 $\Div =$ blkdiag(Interp, $\Div_{\text{ishape}}$)\;
-		 $\Lap =$ blkdiag(Interp, $\Lap_{\text{ishape}}$)\;
-		 Int $=$ (Int, $\text{Int}_{\text{ishape}}$)\;	 
+		\begin{itemize}
+			\item Get
+			$\text{Interp}_{\text{ishape}}$,  $\Grad_{\text{ishape}}$,  $\Div_{\text{ishape}}$, $\Lap_{\text{ishape}}$, $\text{Int}_{\text{ishape}}$.
+			\item Set \\
+			Interp $=$ blkdiag(Interp, $\text{Interp}_{\text{ishape}}$),\\
+			$\Grad =$ blkdiag(Interp, $\Grad_{\text{ishape}}$),\\
+			$\Div =$ blkdiag(Interp, $\Div_{\text{ishape}}$),\\
+			$\Lap =$ blkdiag(Interp, $\Lap_{\text{ishape}}$),\\
+			Int $=$ (Int, $\text{Int}_{\text{ishape}}$).	
+		\end{itemize}
 		}	
 	\caption{Constructing the interpolation matrix, gradient, divergence and Laplacian as well as the integration vector}
 	\label{alg:msinterp}
@@ -722,29 +727,34 @@ Given a set of points $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$ that we want to inte
 	\For{ishape in multishape}{
 		Get $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$ to interpolate onto\;
 		\For{ishape in multishape}{
-		Get computational points $x_1$, $x_2$ for ishape\;
-		Get $x_{1,\text{min}} = \min(x_1) - 10^{-10}$, $x_{1,\text{max}} = \max(x_1) + 10^{-10}$, $x_{2,\text{min}} = \min(x_2) - 10^{-10}$, $x_{2,\text{max}} = \max(x_2) + 10^{-10}$	\;
-		\If{ishape is wedge}
-		{Get polar version of $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$:
-		\begin{align*}
-			\theta &= \mathbf{y}_1^I - \text{Origin} \mod 2\pi\\
-			r &= \mathbf{y}_2^I - \text{Origin}
-		\end{align*}
+			\begin{itemize}
+				\item Get computational points $x_1$, $x_2$ for ishape.
+				\item Get $x_{1,\text{min}} = \min(x_1) - 10^{-10}$, $x_{1,\text{max}} = \max(x_1) + 10^{-10}$, $x_{2,\text{min}} = \min(x_2) - 10^{-10}$, $x_{2,\text{max}} = \max(x_2) + 10^{-10}$.
+			\end{itemize}
+		\If{ishape is polar}
+		{Get polar version of $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$.
 		}
-		Transform $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$ to $\mathbf{x}_1^I$ and $\mathbf{x}_2^I$ in computational space, using the linear mapping associated to the shape\;
-		Define iMask = ($x_1>=x_{1,min}$) \& ($x_1<=x_{1,max}$) \& ($x_2>=x_{2,min}$) \& ($x_2<=x_{2,max}$) \& ~doneMask\;
-		Create new vectors that only contain the points of the shape:\\  $\mathbf{x}_1^I$(iMask), $\mathbf{x}_2^I$(iMask)\;
+		\begin{itemize}
+			\item Transform $\mathbf{y}_1^I$ and $\mathbf{y}_2^I$ to $\mathbf{x}_1^I$ and $\mathbf{x}_2^I$ in computational space, using the linear mapping associated to the shape.
+			\item Define iMask = ($x_1>=x_{1,min}$) \& ($x_1<=x_{1,max}$) \& ($x_2>=x_{2,min}$) \& ($x_2<=x_{2,max}$) \& ~doneMask.
+			\item Create new vectors that only contain the points of the shape:\\  $\mathbf{x}_1^I$(iMask), $\mathbf{x}_2^I$(iMask).
+		\end{itemize}		
 		\For{i in length($\mathbf{x}_1^I$(ishape))}{
-		Compute interpolation matrix pointwise for $x_1(i) \in \mathbf{x}_1^I$(ishape), $x_2(i) \in \mathbf{x}_1^I$(ishape)\;
-		Interp$_{\text{ishape}}$ = [ Interp$_{\text{ishape}}$, InterpolationMatrix($x_1(i), x_2(i)$)]
+			\begin{itemize}
+				\item Compute interpolation matrix pointwise for $x_1(i) \in \mathbf{x}_1^I$(ishape), $x_2(i) \in \mathbf{x}_1^I$(ishape).
+				\item Set Interp$_{\text{ishape}}$ = [ Interp$_{\text{ishape}}$, InterpolationMatrix($x_1(i), x_2(i)$)].
+			\end{itemize}	
 	}
-	Stack interpolation matrices in a blockdiagonal\;
-	 Interp $=$ blkdiag(Interp, $\text{Interp}_{\text{ishape}}$)\;
-	 Set doneMask(iMask) = True\;
+		\begin{itemize}
+			\item Stack interpolation matrices in a blockdiagonal:\\
+			Interp $=$ blkdiag(Interp, $\text{Interp}_{\text{ishape}}$).
+			\item Set doneMask(iMask) = True.
+		\end{itemize}
 	}
-	Delete contributions from outside multishape:\\
-	Set Interp(~doneMask) = []\;
-	Set $\mathbf{y}_1^I$ = $\mathbf{y}_1^I$(doneMask), $\mathbf{y}_2^I$ = $\mathbf{y}_2^I$(doneMask)\;
+	\begin{itemize}
+		\item Set Interp(~doneMask) = [].
+		\item Set $\mathbf{y}_1^I$ = $\mathbf{y}_1^I$(doneMask), $\mathbf{y}_2^I$ = $\mathbf{y}_2^I$(doneMask).
+	\end{itemize}
 	}	
 	\caption{Constructing the interpolation matrix for interpolating onto points in physical space}
 	\label{alg:msinterpPhys}
@@ -760,19 +770,22 @@ The application of the boundary conditions and solution of the PDE follows the m
 \\
 	\begin{algorithm}[H]
 		\SetAlgoLined
-		Get discretized PDE $\text{dfdt}$\;
-		Get boundary condition equation BCeq and intersection boundary condition Intereq\;
-		Set the mass matrix M = diag(ones)\;
-		Set M(boundary) = 0,  M(intersection) = 0\;
-		Set $\text{dfdt}$(boundary) = BCeq\;
-		Set $\text{dfdt}$(intersection)= Intereq\;
-		Compute M $\text{dfdt}$ using \texttt{ode15s}\;
+		\begin{itemize}
+			\item Get discretized PDE $\text{dfdt}$.
+			\item Get boundary condition equation BCeq and intersection boundary condition Intereq.
+			\item Set the mass matrix M = diag(ones).
+			\item Set M(boundary) = 0,  M(intersection) = 0.
+			\item Set $\text{dfdt}$(boundary) = BCeq.
+			\item Set $\text{dfdt}$(intersection)= Intereq.
+			\item Compute M $\text{dfdt}$ using \texttt{ode15s}.
+		\end{itemize}
+		
 		\caption{Applying boundary and intersection conditions, solving the PDE.}
 		\label{alg:msBCapplication}
 	\end{algorithm}
 	
-	\pagebreak	
-	\bibliography{GeneralBib}
-	\bibliographystyle{unsrt}
+%	\pagebreak	
+%	\bibliography{GeneralBib}
+%	\bibliographystyle{unsrt}
 	
-\end{document}
+%\end{document}
