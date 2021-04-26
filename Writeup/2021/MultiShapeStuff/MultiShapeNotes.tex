@@ -3,7 +3,7 @@
 (Note: all the things from this section are in PDECO/MultiShapeTesting in Matlab. The following files are particularly relevant:
 PlottingNormalComparison, TablesExactSolutions, TableForwardExamples, TablesDiffIntetc and MultiShapeAssorted. The other files are called inside these wrappers. Plotting is currently commented out but burried in there somewhere...)
 
-\subsection{Testing Differentiation, Interpolation, Convolution and Integration}
+\subsection{Testing Differentiation, Interpolation, Convolution and Integration} \label{sec:ValidationDiffIntetc}
 TablesDiffIntetc() in Matlab
 	\begin{figure}[h]
 	\centering
@@ -242,11 +242,11 @@ The result, which is computed on a multishape made up of four quadrilaterals int
 	\label{F9}
 \end{figure}
 
-In Table \ref{Tab:Example12} the solution to these two examples is evaluated with $N = 50$ and compared to the solution evaluated with $N = 10$, $N = 20$ and $N = 30$, using the same error measure as before.
+In Table \ref{Tab:Example12} the solution to these two examples is evaluated with $N = 30$ and compared to the solution evaluated with $N = 10$, $N = 15$ and $N = 20$, using the same error measure as before. We can see that the solution converges with the number of points. It is especially noticeable for Example 1, that $N = 10$ does not give a reliable solution at all, while $N = 15$ provides a solution that is reasonably close to the one with $N = 30$. The reason that Example 1 is much more sensitive to the number of points than Example 2 could be that it contains polar shapes. As discussed in Section \ref{sec:ValidationDiffIntetc}, for accurate interpolation of the wedge, the angular direction needs more points than the radial direction, and in particular was not very accurate with $N = 10$ in the angular direction.
 
 
 
 
-%\input{TabFWProbBox.tex}
-%\input{TabFWProbWedge.tex}
-%\input{Example12.tex}
+\input{TabFWProbBox.tex}
+\input{TabFWProbWedge.tex}
+\input{Example12.tex}
