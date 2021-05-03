@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  26 APR 2021 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  30 APR 2021 10:39
 entering extended mode
 **./D20210429.tex
 (D20210429.tex
@@ -621,64 +621,147 @@ LaTeX Info: Redefining \nameref on input line 73.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count154
-LaTeX Font Info:    Try loading font information for U+msa on input line 81.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 81.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Images/Vext.png, id=19, 1445.4pt x 704.6325pt>
+Underfull \hbox (badness 10000) in paragraph at lines 76--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--107
+
+ []
+
+[1
+
+{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<Images/Simplerhok.png, id=52, 1445.4pt x 704.6325pt>
+File: Images/Simplerhok.png Graphic file (type png)
+<use Images/Simplerhok.png>
+Package pdftex.def Info: Images/Simplerhok.png  used on input line 113.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 113--114
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/SimpleConk.png, id=55, 1445.4pt x 704.6325pt>
+File: Images/SimpleConk.png Graphic file (type png)
+<use Images/SimpleConk.png>
+Package pdftex.def Info: Images/SimpleConk.png  used on input line 119.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 119--120
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Simplerhokn.png, id=58, 1445.4pt x 704.6325pt>
+File: Images/Simplerhokn.png Graphic file (type png)
+<use Images/Simplerhokn.png>
+Package pdftex.def Info: Images/Simplerhokn.png  used on input line 126.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 126--127
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/SimpleConkn.png, id=61, 1445.4pt x 704.6325pt>
+File: Images/SimpleConkn.png Graphic file (type png)
+<use Images/SimpleConkn.png>
+Package pdftex.def Info: Images/SimpleConkn.png  used on input line 132.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 132--133
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/Vext.png, id=75, 1445.4pt x 704.6325pt>
 File: Images/Vext.png Graphic file (type png)
 <use Images/Vext.png>
-Package pdftex.def Info: Images/Vext.png  used on input line 91.
+Package pdftex.def Info: Images/Vext.png  used on input line 156.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 91--92
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 156--157
  [][] 
  []
 
-<Images/rhok0V.png, id=20, 1445.4pt x 704.6325pt>
+<Images/rhok0V.png, id=78, 1445.4pt x 704.6325pt>
 File: Images/rhok0V.png Graphic file (type png)
 <use Images/rhok0V.png>
-Package pdftex.def Info: Images/rhok0V.png  used on input line 97.
+Package pdftex.def Info: Images/rhok0V.png  used on input line 162.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 97--98
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 162--163
  [][] 
  []
 
-<Images/rhok05.png, id=21, 1445.4pt x 704.6325pt>
+<Images/rhok05.png, id=81, 1445.4pt x 704.6325pt>
 File: Images/rhok05.png Graphic file (type png)
 <use Images/rhok05.png>
-Package pdftex.def Info: Images/rhok05.png  used on input line 103.
+Package pdftex.def Info: Images/rhok05.png  used on input line 168.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 103--104
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
-<Images/rhokn05.png, id=24, 1445.4pt x 704.6325pt>
+<Images/rhokn05.png, id=86, 1445.4pt x 704.6325pt>
 File: Images/rhokn05.png Graphic file (type png)
 <use Images/rhokn05.png>
-Package pdftex.def Info: Images/rhokn05.png  used on input line 109.
+Package pdftex.def Info: Images/rhokn05.png  used on input line 174.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 109--110
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 174--175
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--113
+Underfull \hbox (badness 10000) in paragraph at lines 145--178
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 145--178
+
+ []
+
+[2]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
@@ -687,29 +770,451 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/rhok05V.png, id=27, 1445.4pt x 704.6325pt>
+<Images/rhok05V.png, id=105, 1445.4pt x 704.6325pt>
 File: Images/rhok05V.png Graphic file (type png)
 <use Images/rhok05V.png>
-Package pdftex.def Info: Images/rhok05V.png  used on input line 118.
+Package pdftex.def Info: Images/rhok05V.png  used on input line 183.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 118--119
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 183--184
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/rhokn05V.png, id=30, 1445.4pt x 704.6325pt>
+<Images/rhokn05V.png, id=110, 1445.4pt x 704.6325pt>
 File: Images/rhokn05V.png Graphic file (type png)
 <use Images/rhokn05V.png>
-Package pdftex.def Info: Images/rhokn05V.png  used on input line 124.
+Package pdftex.def Info: Images/rhokn05V.png  used on input line 189.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 124--125
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 189--190
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptk0V.png, id=118, 1445.4pt x 704.6325pt>
+File: Images/rhoOptk0V.png Graphic file (type png)
+<use Images/rhoOptk0V.png>
+Package pdftex.def Info: Images/rhoOptk0V.png  used on input line 198.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 198--199
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptk0V.png, id=123, 1445.4pt x 704.6325pt>
+File: Images/ConOptk0V.png Graphic file (type png)
+<use Images/ConOptk0V.png>
+Package pdftex.def Info: Images/ConOptk0V.png  used on input line 204.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 204--205
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptkV.png, id=132, 1445.4pt x 704.6325pt>
+File: Images/rhoOptkV.png Graphic file (type png)
+<use Images/rhoOptkV.png>
+Package pdftex.def Info: Images/rhoOptkV.png  used on input line 213.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 213--214
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptkV.png, id=137, 1445.4pt x 704.6325pt>
+File: Images/ConOptkV.png Graphic file (type png)
+<use Images/ConOptkV.png>
+Package pdftex.def Info: Images/ConOptkV.png  used on input line 219.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 219--220
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./Images/Simplerhok.png (PNG copy)>]
+<Images/rhoOptknV.png, id=155, 1445.4pt x 704.6325pt>
+File: Images/rhoOptknV.png Graphic file (type png)
+<use Images/rhoOptknV.png>
+Package pdftex.def Info: Images/rhoOptknV.png  used on input line 229.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 229--230
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptknV.png, id=160, 1445.4pt x 704.6325pt>
+File: Images/ConOptknV.png Graphic file (type png)
+<use Images/ConOptknV.png>
+Package pdftex.def Info: Images/ConOptknV.png  used on input line 235.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 235--236
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--247
+
+ []
+
+[4 <./Images/SimpleConk.png (PNG copy)>]
+<Images/rhoHatPeri1.png, id=176, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri1.png Graphic file (type png)
+<use Images/rhoHatPeri1.png>
+Package pdftex.def Info: Images/rhoHatPeri1.png  used on input line 256.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 256--257
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptPeri1.png, id=181, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri1.png Graphic file (type png)
+<use Images/rhoOptPeri1.png>
+Package pdftex.def Info: Images/rhoOptPeri1.png  used on input line 262.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 262--263
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri1.png, id=184, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri1.png Graphic file (type png)
+<use Images/ConOptPeri1.png>
+Package pdftex.def Info: Images/ConOptPeri1.png  used on input line 269.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 269--270
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoHatPeri2.png, id=193, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri2.png Graphic file (type png)
+<use Images/rhoHatPeri2.png>
+Package pdftex.def Info: Images/rhoHatPeri2.png  used on input line 278.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 278--279
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptPeri2.png, id=198, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri2.png Graphic file (type png)
+<use Images/rhoOptPeri2.png>
+Package pdftex.def Info: Images/rhoOptPeri2.png  used on input line 284.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 284--285
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri2.png, id=201, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri2.png Graphic file (type png)
+<use Images/ConOptPeri2.png>
+Package pdftex.def Info: Images/ConOptPeri2.png  used on input line 291.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 291--292
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoHatPeri3.png, id=211, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri3.png Graphic file (type png)
+<use Images/rhoHatPeri3.png>
+Package pdftex.def Info: Images/rhoHatPeri3.png  used on input line 305.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 305--306
+ [][] 
+ []
+
+<Images/rhoOptPeri3.png, id=218, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri3.png Graphic file (type png)
+<use Images/rhoOptPeri3.png>
+Package pdftex.def Info: Images/rhoOptPeri3.png  used on input line 311.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 311--312
+ [][] 
+ []
+
+[5 <./Images/Simplerhokn.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri3.png, id=232, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri3.png Graphic file (type png)
+<use Images/ConOptPeri3.png>
+Package pdftex.def Info: Images/ConOptPeri3.png  used on input line 318.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 318--319
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptPeri3a.png, id=237, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri3a.png Graphic file (type png)
+<use Images/rhoOptPeri3a.png>
+Package pdftex.def Info: Images/rhoOptPeri3a.png  used on input line 325.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 325--326
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri3a.png, id=240, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri3a.png Graphic file (type png)
+<use Images/ConOptPeri3a.png>
+Package pdftex.def Info: Images/ConOptPeri3a.png  used on input line 332.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 332--333
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 339.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 339.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 339.
+
+[6 <./Images/SimpleConkn.png (PNG copy)>]
+<Images/rhoHatPeri5.png, id=268, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri5.png Graphic file (type png)
+<use Images/rhoHatPeri5.png>
+Package pdftex.def Info: Images/rhoHatPeri5.png  used on input line 350.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 350--351
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/GradVext5.png, id=273, 1445.4pt x 704.6325pt>
+File: Images/GradVext5.png Graphic file (type png)
+<use Images/GradVext5.png>
+Package pdftex.def Info: Images/GradVext5.png  used on input line 356.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 356--357
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptPeri5.png, id=280, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri5.png Graphic file (type png)
+<use Images/rhoOptPeri5.png>
+Package pdftex.def Info: Images/rhoOptPeri5.png  used on input line 362.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 362--363
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri5.png, id=283, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri5.png Graphic file (type png)
+<use Images/ConOptPeri5.png>
+Package pdftex.def Info: Images/ConOptPeri5.png  used on input line 369.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 369--370
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoHatPeri6.png, id=288, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri6.png Graphic file (type png)
+<use Images/rhoHatPeri6.png>
+Package pdftex.def Info: Images/rhoHatPeri6.png  used on input line 378.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 378--379
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/GradVext6.png, id=293, 1445.4pt x 704.6325pt>
+File: Images/GradVext6.png Graphic file (type png)
+<use Images/GradVext6.png>
+Package pdftex.def Info: Images/GradVext6.png  used on input line 384.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 384--385
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoOptPeri6.png, id=300, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri6.png Graphic file (type png)
+<use Images/rhoOptPeri6.png>
+Package pdftex.def Info: Images/rhoOptPeri6.png  used on input line 390.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 390--391
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri6.png, id=303, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri6.png Graphic file (type png)
+<use Images/ConOptPeri6.png>
+Package pdftex.def Info: Images/ConOptPeri6.png  used on input line 397.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 397--398
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoHatPeri7.png, id=311, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri7.png Graphic file (type png)
+<use Images/rhoHatPeri7.png>
+Package pdftex.def Info: Images/rhoHatPeri7.png  used on input line 411.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 411--412
+ [][] 
+ []
+
+<Images/rhoOptPeri7.png, id=316, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri7.png Graphic file (type png)
+<use Images/rhoOptPeri7.png>
+Package pdftex.def Info: Images/rhoOptPeri7.png  used on input line 417.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 417--418
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri7.png, id=319, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri7.png Graphic file (type png)
+<use Images/ConOptPeri7.png>
+Package pdftex.def Info: Images/ConOptPeri7.png  used on input line 424.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 424--425
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/rhoHatPeri8.png, id=327, 1445.4pt x 704.6325pt>
+File: Images/rhoHatPeri8.png Graphic file (type png)
+<use Images/rhoHatPeri8.png>
+Package pdftex.def Info: Images/rhoHatPeri8.png  used on input line 434.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 434--435
+ [][] 
+ []
+
+<Images/rhoOptPeri8.png, id=332, 1445.4pt x 704.6325pt>
+File: Images/rhoOptPeri8.png Graphic file (type png)
+<use Images/rhoOptPeri8.png>
+Package pdftex.def Info: Images/rhoOptPeri8.png  used on input line 440.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 440--441
+ [][] 
+ []
+
+[7 <./Images/Vext.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ConOptPeri8.png, id=349, 1445.4pt x 704.6325pt>
+File: Images/ConOptPeri8.png Graphic file (type png)
+<use Images/ConOptPeri8.png>
+Package pdftex.def Info: Images/ConOptPeri8.png  used on input line 447.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 447--448
  [][] 
  []
 
@@ -720,43 +1225,60 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Package caption Warning: Unused \captionsetup[sub] on input line 25.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
-[1
-
-{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2 <./Images/Vext.png (PNG copy)> <./Images/rhok0V.png (PNG copy)>] [3 <./Image
-s/rhok05.png (PNG copy)> <./Images/rhokn05.png (PNG copy)>] [4 <./Images/rhok05
-V.png (PNG copy)> <./Images/rhokn05V.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
+[8 <./Images/rhok0V.png (PNG copy)>] [9 <./Images/rhok05.png (PNG copy)> <./Ima
+ges/rhokn05.png (PNG copy)>] [10 <./Images/rhok05V.png (PNG copy)> <./Images/rh
+okn05V.png (PNG copy)>] [11 <./Images/rhoOptk0V.png (PNG copy)> <./Images/ConOp
+tk0V.png (PNG copy)>] [12 <./Images/rhoOptkV.png (PNG copy)> <./Images/ConOptkV
+.png (PNG copy)>] [13 <./Images/rhoOptknV.png (PNG copy)> <./Images/ConOptknV.p
+ng (PNG copy)>] [14 <./Images/rhoHatPeri1.png (PNG copy)> <./Images/rhoOptPeri1
+.png (PNG copy)>] [15 <./Images/ConOptPeri1.png (PNG copy)> <./Images/rhoHatPer
+i2.png (PNG copy)>] [16 <./Images/rhoOptPeri2.png (PNG copy)> <./Images/ConOptP
+eri2.png (PNG copy)>] [17 <./Images/rhoHatPeri3.png (PNG copy)> <./Images/rhoOp
+tPeri3.png (PNG copy)>] [18 <./Images/ConOptPeri3.png (PNG copy)> <./Images/rho
+OptPeri3a.png (PNG copy)>] [19 <./Images/ConOptPeri3a.png (PNG copy)> <./Images
+/rhoHatPeri5.png (PNG copy)>] [20 <./Images/GradVext5.png (PNG copy)> <./Images
+/rhoOptPeri5.png (PNG copy)>] [21 <./Images/ConOptPeri5.png (PNG copy)> <./Imag
+es/rhoHatPeri6.png (PNG copy)>] [22 <./Images/GradVext6.png (PNG copy)> <./Imag
+es/rhoOptPeri6.png (PNG copy)>] [23 <./Images/ConOptPeri6.png (PNG copy)> <./Im
+ages/rhoHatPeri7.png (PNG copy)>] [24 <./Images/rhoOptPeri7.png (PNG copy)> <./
+Images/ConOptPeri7.png (PNG copy)>] [25 <./Images/rhoHatPeri8.png (PNG copy)> <
+./Images/rhoOptPeri8.png (PNG copy)>] [26 <./Images/ConOptPeri8.png (PNG copy)>
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
  (D20210429.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
 Package rerunfilecheck Info: File `D20210429.out' has not changed.
-(rerunfilecheck)             Checksum: 16DCCDC3EEC10601A455468568EC9D17;62.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+(rerunfilecheck)             Checksum: E7E403662C8CE9D116A8627C5AB76EEA;582.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 451.
  ) 
 Here is how much of TeX's memory you used:
- 11380 strings out of 492946
- 172996 string characters out of 3124935
- 292954 words of memory out of 3000000
- 15128 multiletter control sequences out of 15000+200000
- 9822 words of font info for 37 fonts, out of 3000000 for 9000
+ 11676 strings out of 492946
+ 178484 string characters out of 3124935
+ 322497 words of memory out of 3000000
+ 15323 multiletter control sequences out of 15000+200000
+ 11674 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,43p,761b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,9n,43p,761b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s14
-52504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s1452504/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s145
+2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
 b><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on D20210429.pdf (4 pages, 1085291 bytes).
+nts/cm/cmmi12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s14525
+04/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb>
+Output written on D20210429.pdf (26 pages, 5637336 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 493 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 

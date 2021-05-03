@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  22 APR 2021 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  3 MAY 2021 14:41
 entering extended mode
 **./DDFTPresentation.tex
 (DDFTPresentation.tex
@@ -846,10 +846,9 @@ Package caption Info: Hyperref support is turned off
 \c@subtable=\count167
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/numprint\numpri
-nt032.sty"
-Package: numprint032 2003/09/18 v0.32 Print numbers
- Package `numprint032', Version 0.32 of 2003/09/18.
-Compatiblity version of numprint for versions prior 1.00
+nt.sty"
+Package: numprint 2012/08/20 v1.39 Print numbers (HH)
+
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty
 "
 Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
@@ -861,18 +860,24 @@ Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
 \backup@length=\skip62
 \ar@cellbox=\box55
 )
-\c@nprt@countblocksbefore=\count168
-\c@nprt@digitsfirstblock=\count169
-\c@nprt@digitsafterdecimal=\count170
-\c@nprt@digitsbeforedecimal=\count171
+\c@nprt@mantissa@digitsbefore=\count168
+\c@nprt@mantissa@digitsafter=\count169
+\c@nprt@exponent@digitsbefore=\count170
+\c@nprt@exponent@digitsafter=\count171
 \nprt@digitwidth=\skip63
 \nprt@sepwidth=\skip64
-\c@nprt@digitcount=\count172
-\c@nprt@sepcount=\count173
-\nprt@blockwidth=\skip65
-\c@nprt@position=\count174
-\c@nprt@thisdigit=\count175
-)
+\nprt@decimalwidth=\skip65
+\nprt@blockwidth=\skip66
+\nprt@digittoks=\toks46
+\nprt@pretoks=\toks47
+\nprt@posttoks=\toks48
+\nprt@thisdigit=\count172
+\nprt@curpos=\count173
+\nprt@rndpos=\count174
+\c@nprt@digitsfirstblock=\count175
+\c@nprt@blockcnt=\count176
+\c@nprt@cntprint=\count177
+ No configuration file `numprint.cfg' found.)
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/media9\media9.s
 ty"
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.
@@ -882,107 +887,107 @@ Package: expl3 2019-03-05 L3 programming layer (loader)
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3-
 code.tex"
 Package: expl3 2019-03-05 L3 programming layer (code)
-\c_max_int=\count176
-\l_tmpa_int=\count177
-\l_tmpb_int=\count178
-\g_tmpa_int=\count179
-\g_tmpb_int=\count180
-\g__kernel_prg_map_int=\count181
-\c_log_iow=\count182
-\l_iow_line_count_int=\count183
-\l__iow_line_target_int=\count184
-\l__iow_one_indent_int=\count185
-\l__iow_indent_int=\count186
+\c_max_int=\count178
+\l_tmpa_int=\count179
+\l_tmpb_int=\count180
+\g_tmpa_int=\count181
+\g_tmpb_int=\count182
+\g__kernel_prg_map_int=\count183
+\c_log_iow=\count184
+\l_iow_line_count_int=\count185
+\l__iow_line_target_int=\count186
+\l__iow_one_indent_int=\count187
+\l__iow_indent_int=\count188
 \c_zero_dim=\dimen265
 \c_max_dim=\dimen266
 \l_tmpa_dim=\dimen267
 \l_tmpb_dim=\dimen268
 \g_tmpa_dim=\dimen269
 \g_tmpb_dim=\dimen270
-\c_zero_skip=\skip66
-\c_max_skip=\skip67
-\l_tmpa_skip=\skip68
-\l_tmpb_skip=\skip69
-\g_tmpa_skip=\skip70
-\g_tmpb_skip=\skip71
+\c_zero_skip=\skip67
+\c_max_skip=\skip68
+\l_tmpa_skip=\skip69
+\l_tmpb_skip=\skip70
+\g_tmpa_skip=\skip71
+\g_tmpb_skip=\skip72
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count187
-\l__intarray_loop_int=\count188
+\l_keys_choice_int=\count189
+\l__intarray_loop_int=\count190
 \c__intarray_sp_dim=\dimen271
-\g__intarray_font_int=\count189
-\c__fp_leading_shift_int=\count190
-\c__fp_middle_shift_int=\count191
-\c__fp_trailing_shift_int=\count192
-\c__fp_big_leading_shift_int=\count193
-\c__fp_big_middle_shift_int=\count194
-\c__fp_big_trailing_shift_int=\count195
-\c__fp_Bigg_leading_shift_int=\count196
-\c__fp_Bigg_middle_shift_int=\count197
-\c__fp_Bigg_trailing_shift_int=\count198
-\c__kernel_randint_max_int=\count199
-\g__fp_array_int=\count266
-\l__fp_array_loop_int=\count267
-\l__sort_length_int=\count268
-\l__sort_min_int=\count269
-\l__sort_top_int=\count270
-\l__sort_max_int=\count271
-\l__sort_true_max_int=\count272
-\l__sort_block_int=\count273
-\l__sort_begin_int=\count274
-\l__sort_end_int=\count275
-\l__sort_A_int=\count276
-\l__sort_B_int=\count277
-\l__sort_C_int=\count278
-\l__tl_analysis_normal_int=\count279
-\l__tl_analysis_index_int=\count280
-\l__tl_analysis_nesting_int=\count281
-\l__tl_analysis_type_int=\count282
-\l__regex_internal_a_int=\count283
-\l__regex_internal_b_int=\count284
-\l__regex_internal_c_int=\count285
-\l__regex_balance_int=\count286
-\l__regex_group_level_int=\count287
-\l__regex_mode_int=\count288
-\c__regex_cs_in_class_mode_int=\count289
-\c__regex_cs_mode_int=\count290
-\l__regex_catcodes_int=\count291
-\l__regex_default_catcodes_int=\count292
-\c__regex_catcode_D_int=\count293
-\c__regex_catcode_S_int=\count294
-\c__regex_catcode_L_int=\count295
-\c__regex_catcode_O_int=\count296
-\c__regex_catcode_A_int=\count297
-\c__regex_all_catcodes_int=\count298
-\l__regex_show_lines_int=\count299
-\l__regex_min_state_int=\count300
-\l__regex_max_state_int=\count301
-\l__regex_left_state_int=\count302
-\l__regex_right_state_int=\count303
-\l__regex_capturing_group_int=\count304
-\l__regex_min_pos_int=\count305
-\l__regex_max_pos_int=\count306
-\l__regex_curr_pos_int=\count307
-\l__regex_start_pos_int=\count308
-\l__regex_success_pos_int=\count309
-\l__regex_curr_char_int=\count310
-\l__regex_curr_catcode_int=\count311
-\l__regex_last_char_int=\count312
-\l__regex_case_changed_char_int=\count313
-\l__regex_curr_state_int=\count314
-\l__regex_step_int=\count315
-\l__regex_min_active_int=\count316
-\l__regex_max_active_int=\count317
-\l__regex_replacement_csnames_int=\count318
-\l__regex_match_count_int=\count319
-\l__regex_min_submatch_int=\count320
-\l__regex_submatch_int=\count321
-\l__regex_zeroth_submatch_int=\count322
-\g__regex_trace_regex_int=\count323
+\g__intarray_font_int=\count191
+\c__fp_leading_shift_int=\count192
+\c__fp_middle_shift_int=\count193
+\c__fp_trailing_shift_int=\count194
+\c__fp_big_leading_shift_int=\count195
+\c__fp_big_middle_shift_int=\count196
+\c__fp_big_trailing_shift_int=\count197
+\c__fp_Bigg_leading_shift_int=\count198
+\c__fp_Bigg_middle_shift_int=\count199
+\c__fp_Bigg_trailing_shift_int=\count266
+\c__kernel_randint_max_int=\count267
+\g__fp_array_int=\count268
+\l__fp_array_loop_int=\count269
+\l__sort_length_int=\count270
+\l__sort_min_int=\count271
+\l__sort_top_int=\count272
+\l__sort_max_int=\count273
+\l__sort_true_max_int=\count274
+\l__sort_block_int=\count275
+\l__sort_begin_int=\count276
+\l__sort_end_int=\count277
+\l__sort_A_int=\count278
+\l__sort_B_int=\count279
+\l__sort_C_int=\count280
+\l__tl_analysis_normal_int=\count281
+\l__tl_analysis_index_int=\count282
+\l__tl_analysis_nesting_int=\count283
+\l__tl_analysis_type_int=\count284
+\l__regex_internal_a_int=\count285
+\l__regex_internal_b_int=\count286
+\l__regex_internal_c_int=\count287
+\l__regex_balance_int=\count288
+\l__regex_group_level_int=\count289
+\l__regex_mode_int=\count290
+\c__regex_cs_in_class_mode_int=\count291
+\c__regex_cs_mode_int=\count292
+\l__regex_catcodes_int=\count293
+\l__regex_default_catcodes_int=\count294
+\c__regex_catcode_D_int=\count295
+\c__regex_catcode_S_int=\count296
+\c__regex_catcode_L_int=\count297
+\c__regex_catcode_O_int=\count298
+\c__regex_catcode_A_int=\count299
+\c__regex_all_catcodes_int=\count300
+\l__regex_show_lines_int=\count301
+\l__regex_min_state_int=\count302
+\l__regex_max_state_int=\count303
+\l__regex_left_state_int=\count304
+\l__regex_right_state_int=\count305
+\l__regex_capturing_group_int=\count306
+\l__regex_min_pos_int=\count307
+\l__regex_max_pos_int=\count308
+\l__regex_curr_pos_int=\count309
+\l__regex_start_pos_int=\count310
+\l__regex_success_pos_int=\count311
+\l__regex_curr_char_int=\count312
+\l__regex_curr_catcode_int=\count313
+\l__regex_last_char_int=\count314
+\l__regex_case_changed_char_int=\count315
+\l__regex_curr_state_int=\count316
+\l__regex_step_int=\count317
+\l__regex_min_active_int=\count318
+\l__regex_max_active_int=\count319
+\l__regex_replacement_csnames_int=\count320
+\l__regex_match_count_int=\count321
+\l__regex_min_submatch_int=\count322
+\l__regex_submatch_int=\count323
+\l__regex_zeroth_submatch_int=\count324
+\g__regex_trace_regex_int=\count325
 \c_empty_box=\box56
 \l_tmpa_box=\box57
 \l_tmpb_box=\box58
@@ -1027,14 +1032,14 @@ Package: expl3 2019-03-05 L3 programming layer (code)
 \l__coffin_display_x_dim=\dimen295
 \l__coffin_display_y_dim=\dimen296
 \g__file_internal_ior=\read2
-\l__seq_internal_a_int=\count324
-\l__seq_internal_b_int=\count325
-\c__deprecation_minus_one=\count326
+\l__seq_internal_a_int=\count326
+\l__seq_internal_b_int=\count327
+\c__deprecation_minus_one=\count328
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\l3pdfm
 ode.def"
 File: l3pdfmode.def 2019-03-05 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count327
+\l__driver_color_stack_int=\count329
 ))
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/l3ke
 ys2e\l3keys2e.sty"
@@ -1043,55 +1048,65 @@ Package: l3keys2e 2019-03-05 LaTeX2e option processing using LaTeX3 keys
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xpar
 se\xparse.sty"
 Package: xparse 2019-03-05 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count328
-\g__xparse_grabber_int=\count329
-\l__xparse_m_args_int=\count330
-\l__xparse_v_nesting_int=\count331
+\l__xparse_current_arg_int=\count330
+\g__xparse_grabber_int=\count331
+\l__xparse_m_args_int=\count332
+\l__xparse_v_nesting_int=\count333
 )
 Package: media9 2019/05/02 v0.97 acrobat-9/X compatible media
-\g_mix_pkgresizeflag_int=\count332
+\g_mix_pkgresizeflag_int=\count334
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/media9\pdfbase.
 sty"
 Package: pdfbase 2019/05/02 v0.28 driver independent access to low-level PDF fe
 atures
-\g_pbs_page_int=\count333
-\g_pbs_oc_int=\count334
+\g_pbs_page_int=\count335
+\g_pbs_oc_int=\count336
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ocgx2\ocgbase.s
 ty"
 Package: ocgbase 2018/06/07 v0.14 support package for ocgx2.sty
-\g_ocgbase_nd_int=\count335
+\g_ocgbase_nd_int=\count337
 )
 \l_mix_poster_box=\box74
 \g_mix_wd_dim=\dimen297
 \g_mix_ht_dim=\dimen298
 \g_mix_dp_dim=\dimen299
-\g_mix_rmcnt_int=\count336
-\l_mix_viewcnt_int=\count337
-\g@mix@page@int=\count338
-\g_mix_resizeflag_int=\count339
-\l_mix_lineno_int=\count340
+\g_mix_rmcnt_int=\count338
+\l_mix_viewcnt_int=\count339
+\g@mix@page@int=\count340
+\g_mix_resizeflag_int=\count341
+\l_mix_lineno_int=\count342
 \l_mix_pbtn_box=\box75
 \mix@btn@dim=\dimen300
-\g_mix_mbtncnt_int=\count341
+\g_mix_mbtncnt_int=\count343
+)
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/dashrule\dashru
+le.sty"
+Package: dashrule 2013/03/28 v1.3 Dashed rules
+
+("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifmtarg\ifmtarg
+.sty"
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)
+\c@hdr@segments=\count344
 ) (DDFTPresentation.aux)
 \openout1 = `DDFTPresentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1131,17 +1146,17 @@ LaTeX Font Info:    ... okay on input line 28.
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf
 .mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
+\scratchcounter=\count345
 \scratchdimen=\dimen301
 \scratchbox=\box76
-\nofMPsegments=\count343
-\nofMParguments=\count344
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count345
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count348
 \MPscratchDim=\dimen302
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
-\everyMPtoPDFconversion=\toks47
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks50
 )
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstop
 df-base.sty"
@@ -1159,7 +1174,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 29.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\namere
 f.sty"
@@ -1169,67 +1184,67 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 itlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count348
+\c@section@level=\count351
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
  (DDFTPresentation.out) (DDFTPresentation.out)
 \@outlinefile=\write5
 \openout5 = `DDFTPresentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 28.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 29.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 29.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 28.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 28.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 29.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 28.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 28.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 29.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 28.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 28.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 28.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 29.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 28.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 28.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 29.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 28.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 29.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 28.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 28.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 28.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 28.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 28.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 29.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 28.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 28.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 29.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
-8.
+9.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-28.
+29.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 28.
+ut line 29.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\tran
 slator-basic-dictionary-English.dict"
@@ -1260,25 +1275,25 @@ Package caption Info: End \AtBeginDocument code.
  (DDFTPresentation.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 31.
+(hyperref)                setting the option has no effect on input line 32.
 
 [1
 
 {C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 52.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 52.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 51.
+line 52.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sansmathaccent\
 ot1mathkerncmss.fd"
@@ -1290,65 +1305,90 @@ thkerncmss.
 <./Pictures/beer.png, id=34, 387.4475pt x 220.825pt>
 File: ./Pictures/beer.png Graphic file (type png)
 <use ./Pictures/beer.png>
-Package pdftex.def Info: ./Pictures/beer.png  used on input line 60.
+Package pdftex.def Info: ./Pictures/beer.png  used on input line 62.
 (pdftex.def)             Requested size: 142.26378pt x 81.08397pt.
 <./Pictures/Microfilter.png, id=36, 415.05063pt x 222.33063pt>
 File: ./Pictures/Microfilter.png Graphic file (type png)
 <use ./Pictures/Microfilter.png>
-Package pdftex.def Info: ./Pictures/Microfilter.png  used on input line 60.
+Package pdftex.def Info: ./Pictures/Microfilter.png  used on input line 62.
 (pdftex.def)             Requested size: 199.16928pt x 106.68694pt.
 <./Pictures/Future.png, id=37, 876.27374pt x 249.3315pt>
 File: ./Pictures/Future.png Graphic file (type png)
 <use ./Pictures/Future.png>
-Package pdftex.def Info: ./Pictures/Future.png  used on input line 60.
+Package pdftex.def Info: ./Pictures/Future.png  used on input line 62.
 (pdftex.def)             Requested size: 341.43306pt x 97.15138pt.
  [3
 
  <./Pictures/beer.png> <./Pictures/Microfilter.png> <./Pictures/Future.png>]
-Overfull \hbox (3.48108pt too wide) detected at line 78
+Overfull \hbox (3.48108pt too wide) detected at line 80
 []
  []
 
 [4
 
 ]
-Overfull \hbox (0.17809pt too wide) detected at line 93
+Overfull \hbox (3.21976pt too wide) detected at line 95
 []
  []
 
 [5
 
 ]
-Overfull \hbox (5.97581pt too wide) detected at line 108
+Overfull \hbox (1.02217pt too wide) detected at line 110
 []
  []
 
 [6
 
 ]
-Overfull \hbox (19.27962pt too wide) detected at line 122
+Overfull \hbox (5.97581pt too wide) detected at line 125
 []
  []
 
 [7
 
-] [8
+]
+Overfull \hbox (22.32129pt too wide) detected at line 139
+[]
+ []
+
+[8
 
 ] [9
 
 ] [10
 
-] [11
+]
+Overfull \hbox (13.4235pt too wide) detected at line 187
+[]
+ []
 
-] [12
+[11
 
-] [13
+]
+Overfull \hbox (3.56432pt too wide) detected at line 203
+[]
+ []
+
+[12
+
+]
+Overfull \hbox (9.05502pt too wide) detected at line 219
+[]
+ []
+
+[13
 
 ] [14
 
 ] [15
 
-] [16
+]
+Overfull \hbox (2.10997pt too wide) detected at line 263
+[]
+ []
+
+[16
 
 ] [17
 
@@ -1356,75 +1396,117 @@ Overfull \hbox (19.27962pt too wide) detected at line 122
 
 ] [19
 
+] [20
+
 ]
-<./Pictures/Res1Ex2.png, id=156, 1440.88312pt x 474.27188pt>
-File: ./Pictures/Res1Ex2.png Graphic file (type png)
-<use ./Pictures/Res1Ex2.png>
-Package pdftex.def Info: ./Pictures/Res1Ex2.png  used on input line 327.
-(pdftex.def)             Requested size: 426.79134pt x 140.47345pt.
+<./Pictures/Figure32Db.png, id=162, 844.95676pt x 255.354pt>
+File: ./Pictures/Figure32Db.png Graphic file (type png)
+<use ./Pictures/Figure32Db.png>
+Package pdftex.def Info: ./Pictures/Figure32Db.png  used on input line 344.
+(pdftex.def)             Requested size: 412.56496pt x 124.68036pt.
 
-Overfull \hbox (28.45274pt too wide) in paragraph at lines 327--327
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 344--344
  [] 
- []
-
-[20
-
- <./Pictures/Res1Ex2.png (PNG copy)>]
-<./Pictures/Res2Ex2.png, id=163, 1445.4pt x 685.8122pt>
-File: ./Pictures/Res2Ex2.png Graphic file (type png)
-<use ./Pictures/Res2Ex2.png>
-Package pdftex.def Info: ./Pictures/Res2Ex2.png  used on input line 336.
-(pdftex.def)             Requested size: 398.33858pt x 189.00183pt.
-
-Overfull \vbox (4.17395pt too high) detected at line 336
  []
 
 [21
 
- <./Pictures/Res2Ex2.png (PNG copy)>]
-File: ./Pictures/Future.png Graphic file (type png)
-<use ./Pictures/Future.png>
-Package pdftex.def Info: ./Pictures/Future.png  used on input line 346.
-(pdftex.def)             Requested size: 426.79134pt x 121.43922pt.
+ <./Pictures/Figure32Db.png>]
+<./Pictures/Figure42D.png, id=170, 6680.96pt x 3796.1825pt>
+File: ./Pictures/Figure42D.png Graphic file (type png)
+<use ./Pictures/Figure42D.png>
+Package pdftex.def Info: ./Pictures/Figure42D.png  used on input line 353.
+(pdftex.def)             Requested size: 341.43306pt x 193.99084pt.
 
-Overfull \hbox (28.45274pt too wide) in paragraph at lines 346--346
- [] 
+Overfull \vbox (9.16296pt too high) detected at line 353
  []
 
 [22
 
+ <./Pictures/Figure42D.png (PNG copy)>]
+Overfull \hbox (66.3836pt too wide) detected at line 370
+[]
+ []
+
+
+Overfull \vbox (4.92102pt too high) detected at line 370
+ []
+
+[23
+
 ]
-<./Pictures/ufraction8.png, id=176, 653.44125pt x 257.46187pt>
-File: ./Pictures/ufraction8.png Graphic file (type png)
-<use ./Pictures/ufraction8.png>
-Package pdftex.def Info: ./Pictures/ufraction8.png  used on input line 365.
-(pdftex.def)             Requested size: 142.26378pt x 56.05249pt.
-File: ./Pictures/Microfilter.png Graphic file (type png)
-<use ./Pictures/Microfilter.png>
-Package pdftex.def Info: ./Pictures/Microfilter.png  used on input line 365.
-(pdftex.def)             Requested size: 142.26378pt x 76.20544pt.
-<./Pictures/west.png, id=177, 589.20125pt x 589.20125pt>
+<./Pictures/ExRes2a2.png, id=183, 872.66025pt x 348.1005pt>
+File: ./Pictures/ExRes2a2.png Graphic file (type png)
+<use ./Pictures/ExRes2a2.png>
+Package pdftex.def Info: ./Pictures/ExRes2a2.png  used on input line 379.
+(pdftex.def)             Requested size: 398.33858pt x 158.89587pt.
+ [24
+
+ <./Pictures/ExRes2a2.png>]
+<./Pictures/ExRes2b2.png, id=191, 869.649pt x 373.99725pt>
+File: ./Pictures/ExRes2b2.png Graphic file (type png)
+<use ./Pictures/ExRes2b2.png>
+Package pdftex.def Info: ./Pictures/ExRes2b2.png  used on input line 388.
+(pdftex.def)             Requested size: 398.33858pt x 171.31035pt.
+ [25
+
+ <./Pictures/ExRes2b2.png>]
+<./Pictures/Current.png, id=200, 343.88475pt x 792.561pt>
+File: ./Pictures/Current.png Graphic file (type png)
+<use ./Pictures/Current.png>
+Package pdftex.def Info: ./Pictures/Current.png  used on input line 428.
+(pdftex.def)             Requested size: 91.04872pt x 209.83417pt.
+
+Overfull \hbox (11.38223pt too wide) in paragraph at lines 428--428
+ [] 
+ []
+
+<./Pictures/west.png, id=201, 589.20125pt x 589.20125pt>
 File: ./Pictures/west.png Graphic file (type png)
 <use ./Pictures/west.png>
-Package pdftex.def Info: ./Pictures/west.png  used on input line 365.
-(pdftex.def)             Requested size: 85.35826pt x 85.35556pt.
+Package pdftex.def Info: ./Pictures/west.png  used on input line 428.
+(pdftex.def)             Requested size: 76.82234pt x 76.81462pt.
 File: ./Pictures/beer.png Graphic file (type png)
 <use ./Pictures/beer.png>
-Package pdftex.def Info: ./Pictures/beer.png  used on input line 365.
-(pdftex.def)             Requested size: 99.58464pt x 56.75607pt.
- [23
+Package pdftex.def Info: ./Pictures/beer.png  used on input line 428.
+(pdftex.def)             Requested size: 85.35826pt x 48.64903pt.
 
- <./Pictures/ufraction8.png> <./Pictures/west.png>] [24
+Overfull \hbox (5.69177pt too wide) in paragraph at lines 428--428
+ [][] 
+ []
 
-]
+<./Pictures/ufraction8.png, id=202, 653.44125pt x 257.46187pt>
+File: ./Pictures/ufraction8.png Graphic file (type png)
+<use ./Pictures/ufraction8.png>
+Package pdftex.def Info: ./Pictures/ufraction8.png  used on input line 428.
+(pdftex.def)             Requested size: 85.35826pt x 33.62836pt.
+
+Overfull \hbox (5.69177pt too wide) in paragraph at lines 428--428
+ [][] 
+ []
+
+File: ./Pictures/Microfilter.png Graphic file (type png)
+<use ./Pictures/Microfilter.png>
+Package pdftex.def Info: ./Pictures/Microfilter.png  used on input line 428.
+(pdftex.def)             Requested size: 85.35826pt x 45.72394pt.
+
+Overfull \hbox (5.69177pt too wide) in paragraph at lines 428--428
+ [][] 
+ []
+
+[26
+
+ <./Pictures/Current.png> <./Pictures/west.png> <./Pictures/ufraction8.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 388.
+(hyperref)                removing `\translate ' on input line 430.
 
-[25
+[27
 
  <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/beameric
-onarticle.pdf>] [26
+onarticle.pdf>] [28
+
+] [29
 
 ]
 \tf@nav=\write6
@@ -1436,22 +1518,22 @@ onarticle.pdf>] [26
 \tf@snm=\write8
 \openout8 = `DDFTPresentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
  (DDFTPresentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 496.
 Package rerunfilecheck Info: File `DDFTPresentation.out' has not changed.
 (rerunfilecheck)             Checksum: A7F4D589709A975A14292322A595ED53;42.
  ) 
 Here is how much of TeX's memory you used:
- 29834 strings out of 492946
- 585319 string characters out of 3124935
- 635699 words of memory out of 3000000
- 33197 multiletter control sequences out of 15000+200000
- 540212 words of font info for 52 fonts, out of 3000000 for 9000
+ 30075 strings out of 492946
+ 589848 string characters out of 3124935
+ 646121 words of memory out of 3000000
+ 33420 multiletter control sequences out of 15000+200000
+ 544006 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,70p,801b,545s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,70p,801b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -1471,9 +1553,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s1452504/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/s14
 52504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb>
-Output written on DDFTPresentation.pdf (26 pages, 1049107 bytes).
+Output written on DDFTPresentation.pdf (29 pages, 3157177 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 90 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,8 +19,9 @@
 \usepackage{commath}
 \usepackage{multimedia}
 \usepackage{subcaption}
-\usepackage{numprint032}
+\usepackage[autolanguage,nosepfour]{numprint}
 \usepackage{media9}
+\usepackage{dashrule}
 \addmediapath{Animations/}
 \newcommand{\Sta}{y}
 \newcommand{\Adj}{p}
@@ -32,7 +33,7 @@
 \institute[UoE]{University of Edinburgh/MIGSAA\\ 
 	\vspace{0.2cm}
 	Joint work with Ben Goddard and John Pearson}
-\date{\today}
+\date{06/05/2021}
 
 \begin{frame}
 \titlepage
@@ -51,6 +52,7 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Motivation}
 		\begin{figure}
 			\includegraphics[width=5cm]{beer.png}
 			\includegraphics[width=7cm]{Microfilter.png}
@@ -82,7 +84,7 @@
 		\framesubtitle{Deriving (first-order) optimality conditions}
 	Define the Lagrangian $\mathcal{L}$:
 	\begin{align*}
-		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{f}_{L_2(\Sigma)}^2- \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt - \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt\\
+		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{f}_{L_2(\Sigma)}^2- \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt - \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt.\\
 	\end{align*}
 	Compute directional derivatives and set equal to zero:
 	\begin{align*}
@@ -91,19 +93,34 @@
 		\mathcal{L}_f (\rho^*, f^*,q) h= 0.
 	\end{align*}
 \end{frame}
+\begin{frame}
+	\frametitle{PDE-Constrained Optimization}
+	\framesubtitle{Deriving (first-order) optimality conditions}
+	Define the Lagrangian $\mathcal{L}$:
+	\begin{align*}
+		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt \qquad \qquad\\
+		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt.
+	\end{align*}
+	Computing  $\mathcal{L}_q (\rho^*, f^*,q)h = 0$ results in the forward problem:
+	\begin{align*}
+		\partial_t \rho &= \nabla^2 \rho + f \ \qquad \text{  in    }\ \ \Sigma \phantom{vhfoijoihewrbgjkngmcojrpf      hfhioewjgpfinioer nnf}\\
+		\frac{\partial \rho}{\partial n}  &= 0 \quad \ \ \qquad \qquad \text{on   } \partial \Sigma   \\
+		\rho(0,\vec{x}) &= \rho_0(\vec{x})
+	\end{align*}
+\end{frame}
 
 \begin{frame}
 	\frametitle{PDE-Constrained Optimization}
 	\framesubtitle{Deriving (first-order) optimality conditions}
 	Define the Lagrangian $\mathcal{L}$:
 	\begin{align*}
-		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt \\
-		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt
+		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \textcolor{magenta}{ \left(\rho- \widehat{\rho}\right)^2} d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \textcolor{PineGreen}{\partial_t \rho} - \textcolor{CornflowerBlue}{ \nabla^2 \rho}  - f \bigg) d\vec{x} dt \qquad \qquad\\
+		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt.
 	\end{align*}
 	Computing  $\mathcal{L}_\rho (\rho^*, f^*,q)h$:
 	\begin{align*}
-		\mathcal{L}_\rho (\rho^*, f^*,q)h = & \int_\Omega \left(q(T) h(T) - q(0) h(0)\right)d \vec x  - \int_\Sigma \left(h(-\rho + \widehat \rho)  - h \partial_t q - h\nabla^2 q  \right) d\vec{x} dt \\
-		&-\int_{\partial \Sigma} q \frac{\partial h}{\partial n}  - q \frac{\partial h}{\partial n} + h \frac{\partial q}{\partial n} d\vec{x} dt \\
+		\mathcal{L}_\rho (\rho^*, f^*,q)h = & \int_\Omega\left( \textcolor{PineGreen}{q(T) h(T) - q(0) h(0)}\right)d \vec x  - \int_\Sigma \left(\textcolor{magenta}{ h(-\rho + \widehat \rho)}  - \textcolor{PineGreen}{h \partial_t q} - \textcolor{CornflowerBlue}{ h\nabla^2 q}  \right) d\vec{x} dt \\
+		&-\int_{\partial \Sigma} \left( q \frac{\partial h}{\partial n}  \textcolor{CornflowerBlue}{- q \frac{\partial h}{\partial n} + h \frac{\partial q}{\partial n} } \right) d\vec{x} dt. \\
 	\end{align*}
 \end{frame}
 \begin{frame}
@@ -111,13 +128,13 @@
 	\framesubtitle{Deriving (first-order) optimality conditions}
 	Computing  $\mathcal{L}_\rho (\rho^*, f^*,q)h = 0$:
 	\begin{align*}
-		\mathcal{L}_\rho (\rho^*, f^*,q)h = & \int_\Omega q(T) h(T) d \vec x  - \int_\Sigma h \left(-\rho + \widehat \rho  - \partial_t q -  \nabla^2 q  \right) d\vec{x} dt - \int_{\partial \Sigma}  h \frac{\partial q}{\partial n} d\vec{x} dt = 0\\
+		\mathcal{L}_\rho (\rho^*, f^*,q)h = & \int_\Omega q(T) h(T) d \vec x  - \int_\Sigma h \left(-\rho + \widehat \rho  - \partial_t q -  \nabla^2 q  \right) d\vec{x} dt - \int_{\partial \Sigma}  h \frac{\partial q}{\partial n} d\vec{x} dt = 0.\\
 	\end{align*}
 Adjoint equation:
 \begin{align*}
 	  \partial_t q &=  -  \nabla^2 q -\rho + \widehat \rho  \ \quad \text{in} \quad \Sigma \qquad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\\
 	  \frac{\partial q}{\partial n} &= 0 \qquad\qquad\quad\quad \quad \text{on} \quad \partial \Sigma\\
-	  q(T) &=0
+	  q(T, \vec x) &= 0
 \end{align*}
 \end{frame}
 
@@ -126,16 +143,16 @@ Adjoint equation:
 	\framesubtitle{Deriving (first-order) optimality conditions}
 	Define the Lagrangian $\mathcal{L}$:
 	\begin{align*}
-		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma f^2 d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - f \bigg) d\vec{x} dt \\
-		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt
+		\mathcal{L}(\rho, f,q)=& \frac{1}{2}\int_\Sigma \left(\rho- \widehat{\rho}\right)^2 d \vec x dt + \frac{\beta}{2} \int_\Sigma \textcolor{PineGreen}{f^2} d \vec x dt - \int_\Sigma q \bigg( \partial_t \rho - \nabla^2 \rho  - \textcolor{magenta}{f} \bigg) d\vec{x} dt \\
+		&- \int_{\partial \Sigma} q \frac{\partial \rho}{\partial n}   d\vec{x} dt.
 	\end{align*}
 	Computing  $\mathcal{L}_f (\rho^*, f^*,q)h = 0$:
 	\begin{align*}
-		\mathcal{L}_f (\rho^*, f^*,q)h = & \int_\Sigma h \left(\beta f + q \right) d\vec{x} dt = 0\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		\mathcal{L}_f (\rho^*, f^*,q)h = & \int_\Sigma h \left(\textcolor{PineGreen}{\beta f} + \textcolor{magenta}{q} \right) d\vec{x} dt = 0.\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
 	\end{align*}
 	Gradient equation:
 	\begin{align*}
-		f = -\frac{1}{\beta}q \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+		f = -\frac{1}{\beta}q. \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
 	\end{align*}
 \end{frame}
 \begin{frame}
@@ -144,10 +161,12 @@ Adjoint equation:
 	
 	\begin{align*}
 		\partial_t \rho &= \nabla^2 \rho + \textcolor{blue}{f}  \\
-		\partial_t q &=  -  \nabla^2 q - \textcolor{ForestGreen}{\rho} + \widehat \rho \\
+		\partial_t q &=  -  \nabla^2 q - \textcolor{ForestGreen}{\rho} + \widehat \rho 
+		\phantom{ngodshornvnien fjpisj wfseij gvjepi vwe  bfkdienwpiemf feq}\\
 		\textcolor{blue}{f} &= - \frac{1}{\beta}\textcolor{red}{q}\\
 		\\
-		\rho(0,\vec{x})&=\rho_0(\vec{x}), \qquad q(T,\vec{x})= 0, \qquad \qquad \text{+BCs}
+		\frac{\partial \rho}{\partial n} &= 0, \qquad \rho(0,\vec{x})=\rho_0(\vec{x}),\\
+		\frac{\partial q}{\partial n} &= 0, \qquad q(T,\vec{x})= 0.
 	\end{align*}
 \end{frame}
 \begin{frame}
@@ -158,7 +177,7 @@ Adjoint equation:
 		\\
 		&\text{subject to:}
 		\\
-		& \partial_t \rho = \nabla^2 \rho + \textcolor{blue}{f} \qquad \text{ in    } \Sigma   \phantom{ \nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}'} }\\
+		& \partial_t \rho = \nabla^2 \rho + \textcolor{blue}{f} \qquad \text{ in    } \Sigma   \phantom{ \qquad \qquad \qquad \qquad\nabla \cdot (\rho \vec{w})+{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}'} }\\
 		\\
 		&\text{BC } \text{and IC:}\\
 		&\frac{\partial \rho}{\partial n}  = 0 \quad \ \ \qquad \qquad \text{on   } \partial \Sigma   \\
@@ -174,7 +193,7 @@ Adjoint equation:
 	\\
 	&\text{subject to:}
 	\\
-	&{ \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  \textcolor{blue}{\vec{w}})} \qquad { \text{in    } \Sigma \phantom{+\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} }\\
+	&{ \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  \textcolor{blue}{\vec{w}})} \qquad { \text{in    } \Sigma \phantom{+\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} }\qquad \qquad \qquad \qquad\\
 	\\
 	&{\text{BC } \text{and IC:}}\\
 	&{\frac{\partial \rho}{\partial n} - \rho  \textcolor{blue}{\vec{w}} \cdot \vec{n} = 0 \ \ \qquad \qquad \text{on   } \partial \Sigma  }\phantom{+ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} { \quad \  } \\
@@ -190,10 +209,26 @@ Adjoint equation:
 		\\
 		&\text{subject to:}
 		\\
-		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  \textcolor{blue}{\vec{w}})+ \textcolor{red}{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad { \text{in    } \Sigma}\\
+		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  \textcolor{blue}{\vec{w}}) + \textcolor{PineGreen}{\nabla \cdot \left(\rho \nabla V_{ext} \right)}  \qquad \ { \text{in    } \Sigma}\qquad \qquad \qquad\qquad \qquad \qquad\qquad \qquad \quad\\
 		\\
 		&{\text{BC } \text{and IC:}}\\
-		&\frac{\partial \rho}{\partial n} - \rho  \textcolor{blue}{\vec{w}} \cdot \vec{n} + \textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} {= 0 \quad \ \ \ \qquad \qquad \text{on   } \partial \Sigma  } \\
+		&\frac{\partial \rho}{\partial n} - \rho  \textcolor{blue}{\vec{w}} \cdot \vec{n}  + \textcolor{PineGreen}{\rho \frac{\partial V_{ext}}{\partial n}} {= 0 \quad \quad \qquad \qquad \quad \text{on   } \partial \Sigma  } \qquad \qquad \qquad \qquad \\
+		&{\rho(0,\vec{x}) = \rho_0(\vec{x})} 
+	\end{align*}
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Optimization for DDFT}
+	\framesubtitle{A (simple) DDFT model}
+	\begin{align*}
+		&\min_{\rho,\vec{w}} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{ \textcolor{blue}{\vec{w}}}_{L_2(\Sigma)}^2\\
+		\\
+		&\text{subject to:}
+		\\
+		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  \textcolor{blue}{\vec{w}}) + \nabla \cdot \left(\rho \nabla V_{ext} \right) + \textcolor{red}{\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad \ { \text{in    } \Sigma}\\
+		\\
+		&{\text{BC } \text{and IC:}}\\
+		&\frac{\partial \rho}{\partial n} - \rho  \textcolor{blue}{\vec{w}} \cdot \vec{n}  + \rho \frac{\partial V_{ext}}{\partial n} + \textcolor{red}{ \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} {= 0 \quad \ \ \ \quad \qquad \qquad \quad \text{on   } \partial \Sigma  } \\
 		&{\rho(0,\vec{x}) = \rho_0(\vec{x})} 
 	\end{align*}
 	
@@ -202,9 +237,9 @@ Adjoint equation:
 	\frametitle{Optimization for DDFT}
 	\framesubtitle{The (first-order) optimality system}
 	\begin{align*}
-	 \partial_t \rho =& \nabla^2 \rho - \nabla \cdot (\rho \textcolor{blue}{\vec{w}})
+	 \partial_t \rho =& \nabla^2 \rho - \nabla \cdot (\rho \textcolor{blue}{\vec{w}}) + \nabla \cdot \left(\rho \nabla V_{ext} \right)
 	+ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
-	\partial_t q =& -\nabla^2 q - \nabla q \cdot \textcolor{blue}{\vec{w}} - \textcolor{ForestGreen}{\rho} + \widehat \rho \\
+	\partial_t q =& -\nabla^2 q - \nabla q \cdot \textcolor{blue}{\vec{w}} + \nabla q \cdot \nabla V_{ext} - \textcolor{ForestGreen}{\rho} + \widehat \rho \\
 	&+ \int_\Omega \textcolor{ForestGreen}{\rho(\vec{x}\hspace{0.2em}')} \bigg(\nabla_{\vec{x}} q(\vec{x}) - \nabla_{\vec{x}\hspace{0.2em}'} q(\vec{x}\hspace{0.2em}')\bigg)\cdot  \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}' \\
     \textcolor{blue}{\vec{w}} \ =& - \frac{1}{\beta}\textcolor{ForestGreen}{\rho} \nabla  \textcolor{red}{q}\\
     \\
@@ -217,9 +252,9 @@ Adjoint equation:
      \textbf{Problem:} Negative diffusion term in $q$ causes numerical instability.\\
      \textbf{Solution:} Change of time variable for this PDE: $\textcolor{magenta}{\tau = T-t}$.
 	\begin{align*}
-	\partial_t \rho (t,\vec{x}) =& \nabla^2 \rho (t,\vec{x}) - \nabla \cdot (\rho(t,\vec{x}) \vec{w}(t,\vec{x}) )
-	+ \nabla \cdot \int_\Omega \rho(t,\vec{x}) \rho(t,\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
-	\partial_{\textcolor{magenta}{\tau}} q(\textcolor{magenta}{\tau},\vec{x})  =& \nabla^2 q(\textcolor{magenta}{\tau},\vec{x})  + \nabla q(\textcolor{magenta}{\tau},\vec{x})  \cdot \vec{w}(\textcolor{magenta}{\tau},\vec{x}) + \textcolor{ForestGreen}{\rho(}\textcolor{magenta}{\tau}\textcolor{ForestGreen}{, \vec{x})}  - \widehat \rho(\textcolor{magenta}{\tau},\vec{x}) \\
+	\partial_t \rho (t,\vec{x}) =& \nabla^2 \rho (t,\vec{x}) - \nabla \cdot (\rho(t,\vec{x}) \vec{w}(t,\vec{x}) ) + \nabla \cdot \left(\rho(t,\vec{x})  \nabla V_{ext}(t,\vec{x})  \right)\\
+	&+ \nabla \cdot \int_\Omega \rho(t,\vec{x}) \rho(t,\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'  \\
+	\partial_{\textcolor{magenta}{\tau}} q(\textcolor{magenta}{\tau},\vec{x})  =& \nabla^2 q(\textcolor{magenta}{\tau},\vec{x})  + \nabla q(\textcolor{magenta}{\tau},\vec{x})  \cdot \vec{w}(\textcolor{magenta}{\tau},\vec{x})  - \nabla q(\textcolor{magenta}{\tau},\vec{x}) \cdot \nabla V_{ext}(\textcolor{magenta}{\tau},\vec{x}) + \textcolor{ForestGreen}{\rho(}\textcolor{magenta}{\tau}\textcolor{ForestGreen}{, \vec{x})}  - \widehat \rho(\textcolor{magenta}{\tau},\vec{x}) \\
 	&- \int_\Omega \textcolor{ForestGreen}{\rho(}\textcolor{magenta}{\tau}\textcolor{ForestGreen}{, \vec{x}\hspace{0.2em}')} \bigg(\nabla_{\vec{x}} q(\textcolor{magenta}{\tau}, \vec{x} ) - \nabla_{\vec{x}\hspace{0.2em}'} q(\textcolor{magenta}{\tau},\vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}' \\
     \vec{w}(t,\vec{x}) \ =& - \frac{1}{\beta}\rho(t,\vec{x}) \nabla q(t,\vec{x}) \\
     \\
@@ -261,19 +296,18 @@ Adjoint equation:
 \begin{frame}
 	\frametitle{Numerical Methods}
 \framesubtitle{Fixed point algorithm}
-\vspace{0.4 cm}
+\vspace{0.2 cm}
 Initialize with guess $\textcolor{blue}{\vec{w}^{(0)}}$.
 	\begin{enumerate}
      \item 
-     Solve $\displaystyle \partial_t \rho  = \nabla^2 \rho  - \nabla \cdot (\rho \textcolor{blue}{\vec{w}^{(i)}} )
-     + \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'. 
-     $
+     Solve 
+     	$ \displaystyle\partial_t \rho  = \nabla^2 \rho  - \nabla \cdot (\rho \textcolor{blue}{\vec{w}^{(i)}} ) + \nabla \cdot \left( \rho \nabla V_{ext} \right)
+     	+ \nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'.$
 	 \item
-     Solve $\displaystyle \partial_{{\tau}} q  = \nabla^2 q  + \nabla q  \cdot \textcolor{blue}{\vec{w}^{(i)}}  + \textcolor{ForestGreen}{\rho^{(i)}}  - \widehat \rho
-     - \int_\Omega \textcolor{ForestGreen}{\rho^{(i)}(\vec{x}\hspace{0.2em}')} \bigg(\nabla q( \vec{x} ) - \nabla q( \vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'. 
-     $
-     \item Solve $\displaystyle \textcolor{blue}{\vec{w}^{(i)}_g} = - \frac{1}{\beta}\textcolor{ForestGreen}{{\rho}^{(i)}} \nabla \textcolor{red}{{q}^{(i)}}.$
-     \vspace{0.4 cm}
+     Solve 
+     	$\partial_{{\tau}} q  = \displaystyle \nabla^2 q  + \nabla q  \cdot \textcolor{blue}{\vec{w}^{(i)}} - \nabla q \cdot \nabla V_{ext} + \textcolor{ForestGreen}{\rho^{(i)}}  - \widehat \rho$\\
+     	$\displaystyle \qquad \qquad \qquad \quad \ - \int_\Omega \textcolor{ForestGreen}{\rho^{(i)}(\vec{x}\hspace{0.2em}')} \bigg(\nabla q( \vec{x} ) - \nabla q( \vec{x}\hspace{0.2em}')\bigg) \cdot \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'. $
+     \item Solve $\displaystyle \textcolor{blue}{\vec{w}^{(i)}_g} = - \frac{1}{\beta}\textcolor{ForestGreen}{{\rho}^{(i)}} \nabla \textcolor{red}{{q}^{(i)}}.$\\
      \item Measure the error: $ \mathcal{E} = ||\textcolor{blue}{\vec{w}^{(i)}} - \textcolor{blue}{\vec{w}^{(i)}_g}||$.
      \vspace{0.2 cm}
 	 \item Update control, with $\lambda \in [0,1]$:       $\quad \textcolor{blue}{\vec{w}^{(i+1)}} = (1-\lambda)\textcolor{blue}{\vec{w}^{(i)}} + \lambda \textcolor{blue}{\vec{w}^{(i)}_g}.$	 
@@ -282,7 +316,41 @@ Initialize with guess $\textcolor{blue}{\vec{w}^{(0)}}$.
 Iterate until $\mathcal{E} <TOL$.
 \end{frame}
 
+\begin{frame}
+	\frametitle{Optimization for DDFT}
+	\framesubtitle{Reminder: (Simple) DDFT model}
+	\begin{align*}
+		&\min_{\rho,\vec{w}} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{ {\vec{w}}}_{L_2(\Sigma)}^2\\
+		\\
+		&\text{subject to:}
+		\\
+		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  {\vec{w}}) + \nabla \cdot \left( \rho \nabla V_{ext} \right) + {\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad { \text{in    } \Sigma}\\
+		\\
+		&{\text{BC } \text{and IC:}}\\
+		&\frac{\partial \rho}{\partial n} - \rho  {\vec{w}} \cdot \vec{n} + \rho \frac{\partial V_{ext}}{\partial n} + { \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} {= 0 \quad \quad \qquad \qquad \qquad \text{on   } \partial \Sigma  } \\
+		&{\rho(0,\vec{x}) = \rho_0(\vec{x})} 
+	\end{align*}
+	
+\end{frame}
 
+\begin{frame}
+	\frametitle{Results - Example 1}
+	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w}= \vec 0} = 0.0400$.
+    \vspace{0.3 cm}
+	\begin{figure}
+		\includegraphics[width=14.5cm]{Figure32Db.png}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Results - Example 1}
+	\vspace{0.3cm}
+	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w} = \vec 0} = 0.0400$, $\mathcal J_{opt} = 0.0046$.
+	\begin{figure}
+		\includegraphics[width=12cm]{Figure42D.png}
+	\end{figure}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Optimization for DDFT}
@@ -292,80 +360,46 @@ Iterate until $\mathcal{E} <TOL$.
 		\\
 		&\text{subject to:}
 		\\
-		& \partial_t \rho = \nabla \cdot \left( \rho \nabla \frac{\delta \mathcal F [\rho]}{\delta \rho} - \rho  {\vec{w}}\right):= \nabla \cdot \vec j \qquad \ \ { \text{in    } \Sigma}\qquad\qquad\qquad\qquad\\
+		& \ \partial_t \rho = \nabla \cdot \left( \rho \nabla \frac{\delta \textcolor{RoyalBlue}{ \mathcal F [\rho]} }{\delta \rho} - \rho  {\vec{w}}\right):= - \nabla \cdot \vec j \qquad \ \ { \text{in    } \Sigma}\qquad\qquad\qquad\qquad\\
+		&\textcolor{RoyalBlue}{ \mathcal F [\rho]=  \mathcal F_{id}[\rho] + \mathcal F_{ext}[\rho] +  \mathcal F_{int}[\rho] + \int_\Omega \rho \left(-1 -\ln(1 - a\rho) + \frac{1}{1-a\rho}  \right)d \vec x} \\
 		\\
 		&{\text{BC } \text{and IC:}}\\
-		&\vec j \cdot \vec n = 0 \qquad \ \ \ \qquad \qquad\qquad\qquad\qquad\qquad \text{on   } \partial \Sigma   \qquad\qquad\qquad\qquad\\
+		&\vec j \cdot \vec n = 0 \quad \ \qquad \quad \qquad \qquad\qquad\qquad\qquad\qquad \text{on   } \partial \Sigma   \qquad\qquad\qquad\qquad\qquad \qquad \qquad\qquad \qquad \qquad\\
 		&{\rho(0,\vec{x}) = \rho_0(\vec{x})} 
 	\end{align*}
-	
 \end{frame}
 \begin{frame}
-	\frametitle{Optimization for DDFT}
-	\framesubtitle{Reminder: (Simple) DDFT model}
-	\begin{align*}
-		&\min_{\rho,\vec{w}} \quad \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{ {\vec{w}}}_{L_2(\Sigma)}^2\\
-		\\
-		&\text{subject to:}
-		\\
-		& \partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho  {\vec{w}})+ {\nabla \cdot \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}') \nabla V_2(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} \qquad { \text{in    } \Sigma}\\
-		\\
-		&{\text{BC } \text{and IC:}}\\
-		&\frac{\partial \rho}{\partial n} - \rho  {\vec{w}} \cdot \vec{n} + { \int_\Omega \rho(\vec{x}) \rho(\vec{x}\hspace{0.2em}')  \frac{ \partial  V_2}{\partial n}(|\vec{x}-\vec{x}\hspace{0.2em}'|)d\vec{x}\hspace{0.2em}'} {= 0 \quad \ \ \ \qquad \qquad \text{on   } \partial \Sigma  } \\
-		&{\rho(0,\vec{x}) = \rho_0(\vec{x})} 
-	\end{align*}
-	
-\end{frame}
-\begin{frame}
-	\frametitle{Results}
-	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w}= \vec 0} = 0.0130$.
-
+	\frametitle{Results - Example 2}
+	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w}= \vec 0} = 0.0484$.
+	\vspace{0.3 cm}
 	\begin{figure}
-		\includegraphics[width=15cm]{Res1Ex2.png}
+		\includegraphics[width=14cm]{ExRes2a2.png}
 	\end{figure}
 	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Results}
+	\frametitle{Results - Example 2}
 	\vspace{0.3cm}
-	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w} = \vec 0} = 0.0130$, $\mathcal J_{opt} = 7.2994 \times 10^{-4}$.
+	Overall Cost: $\mathcal J = \frac{1}{2}\norm{\rho- \widehat{\rho}}_{L_2(\Sigma)}^2 + \frac{\beta}{2} \norm{\vec{w}}_{L_2(\Sigma)}^2$, $\mathcal J_{\vec{w} = \vec 0} = 0.0484$, $\mathcal J_{opt} = 0.0258$.
 	\begin{figure}
-		\includegraphics[width=14cm]{Res2Ex2.png}
+		\includegraphics[width=14cm]{ExRes2b2.png}
 	\end{figure}
 \end{frame}
 
 
-
-
-\begin{frame}
-	\frametitle{Current work}
-	\begin{figure}
-		\includegraphics[width=15cm]{Future.png}
-	\end{figure}
-\end{frame}
-\begin{frame}
-	\frametitle{Next steps}
-	\textbf{Industrial partners of the PhD}
-	\begin{columns}
-		\column{0.5 \linewidth}
-		\begin{figure}
-			\includegraphics[width=5cm]{ufraction8.png}
-			\includegraphics[width=5cm]{Microfilter.png}
-			%\caption{Nanofiltration Device}
-		\end{figure}
-		
-		\column{0.5 \linewidth}
-		\begin{figure}
-			\includegraphics[width=3cm]{west.png}\\
-			\includegraphics[width=3.5cm]{beer.png}
-			%\caption{Yeast Sedimentation in Beer}
-		\end{figure}
-	\end{columns}
-\end{frame}
 
 \begin{frame}
 	\frametitle{Summary}
+	\begin{columns}
+		\column{0.2 \linewidth}
+		\vspace{-0.5cm}
+		\begin{figure}
+			\includegraphics[width=3.2cm]{Current.png}
+		\end{figure}
+		
+		
+	\column{0.6 \linewidth}
 	Up to now:
 	\begin{itemize}
 		\item Deriving PDE-constrained optimization models.
@@ -374,18 +408,31 @@ Iterate until $\mathcal{E} <TOL$.
 	Current:
 	\begin{itemize}
 		\item Complex domains.
-		\item Extended models (e.g. sedimentation, multiple species).
+		\item Extended PDE models.
 		\item Different boundary conditions.
 	\end{itemize}
 	Up next:
 	\begin{itemize}
-		\item Application of the method to other extended models.
-		\item Application of the numerical framework to industrial processes.
+		\item More extended models.
+		\item Application to industrial processes.
 	\end{itemize}
-	
+	\column{0.2 \linewidth}
+	\vspace{-0.6cm}
+	\begin{figure}
+		\includegraphics[width=2.7cm]{west.png}\\
+		\includegraphics[width=3cm]{beer.png}\\
+		\includegraphics[width=3cm]{ufraction8.png}\\
+		\includegraphics[width=3cm]{Microfilter.png}
+	\end{figure}
+	\end{columns}
 \end{frame}
 
 \appendix
+
+
+
+
+
 
 \begin{frame}
 \frametitle{References}    
@@ -411,21 +458,39 @@ Iterate until $\mathcal{E} <TOL$.
 \begin{frame}
 	\frametitle{References: Figures}   
 	\begin{thebibliography}{10}    
-		
 		\bibitem{F1}
-		Bacteria. Digital Image.\newblock {\em USCNews.} 12 February 2008, \url{https://news.usc.edu/135660/how-bacteria-adapt-to-hostile-environments/}
-
-		\bibitem{F2}
-		Red and White Bloodcells. Digital Image.\newblock {\em The Franklin Institute. } \url{https://www.fi.edu/heart/white-blood-cells}
-
-		\bibitem{F3}
 		ufraction8 Logo. Digital Image. \newblock{ \em www.ufraction8.}
 		\url{ufraction8.com}
 		
-		\bibitem{F4}
+		\bibitem{F2}
 		WEST Logo. Digital Image. \newblock{\em WEST Brewery} \url{www.westbeer.com}
 	\end{thebibliography}	
 \end{frame}
 
-
+\begin{frame}
+	\frametitle{Data for Example 1}
+	\begin{table}
+		\centering
+		\begin{tabular}{ | c | c || c | c | c | c ||}
+			\hline
+			\multicolumn{2}{|c||}{}& $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+			\hline
+			\hline
+			& $\mathcal J_{\vec{w} = \vec 0}$ & $\numprint{0.0400}$ & $\numprint{0.0400}$ & $\numprint{0.0400}$ & $\numprint{0.0400}$ \\
+			$\kappa= \numprint{-1}$  & $\mathcal{J}_{opt}$ & $\numprint{0.0046}$ & $\numprint{0.0370}$ & $\numprint{0.0400}$ & $\numprint{0.0400}$ \\
+			& \texttt{Iter} & $\numprint{717}$ & $\numprint{778}$ & $\numprint{347}$ & $\numprint{1}$ \\
+			\hline
+			& $\mathcal J_{\vec{w} = \vec 0}$ & $\numprint{0.0478}$ & $\numprint{0.0478}$ & $\numprint{0.0478}$ & $\numprint{0.0478}$ \\
+			$\kappa= \numprint{0}$  & $\mathcal{J}_{opt}$ & $\numprint{0.0064}$ & $\numprint{0.0450}$ & $\numprint{0.0478}$ & $\numprint{0.0478}$ \\
+			& \texttt{Iter} & $\numprint{718}$ & $\numprint{784}$ & $\numprint{343}$ & $\numprint{1}$ \\
+			\hline
+			& $\mathcal J_{\vec{w} = \vec 0}$ & $\numprint{0.0556}$ & $\numprint{0.0556}$ & $\numprint{0.0556}$ & $\numprint{0.0556}$ \\
+			$\kappa= \numprint{1}$  & $\mathcal{J}_{opt}$ & $\numprint{0.0085}$ & $\numprint{0.0530}$ & $\numprint{0.0556}$ & $\numprint{0.0556}$ \\
+			& \texttt{Iter} & $\numprint{720}$ & $\numprint{787}$ & $\numprint{339}$ & $\numprint{1}$ \\
+			\hline
+		\end{tabular}
+		\caption{Cost when $\vec{w}=\vec{0}$, optimal control cost, and iterations required, for a range of values for interaction strength $\kappa$ and regularization parameter $\beta$.}
+		\label{TabS5:Prob22D}
+	\end{table}
+\end{frame}
 \end{document}
