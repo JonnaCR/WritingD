@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  29 APR 2021 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  5 MAY 2021 10:57
 entering extended mode
 **./SedimentationWriteUp.tex
 (SedimentationWriteUp.tex
@@ -797,41 +797,47 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 532--533
 <Images/MultiwFW.png, id=247, 1445.4pt x 685.8122pt>
 File: Images/MultiwFW.png Graphic file (type png)
 <use Images/MultiwFW.png>
-Package pdftex.def Info: Images/MultiwFW.png  used on input line 542.
+Package pdftex.def Info: Images/MultiwFW.png  used on input line 543.
 (pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 542--543
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 543--544
  [][] 
  []
 
 <Images/MultiOpt3.png, id=248, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt3.png Graphic file (type png)
 <use Images/MultiOpt3.png>
-Package pdftex.def Info: Images/MultiOpt3.png  used on input line 548.
+Package pdftex.def Info: Images/MultiOpt3.png  used on input line 549.
 (pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 548--549
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 549--550
  [][] 
  []
 
 <Images/MultiCont3.png, id=249, 1445.4pt x 685.8122pt>
 File: Images/MultiCont3.png Graphic file (type png)
 <use Images/MultiCont3.png>
-Package pdftex.def Info: Images/MultiCont3.png  used on input line 554.
+Package pdftex.def Info: Images/MultiCont3.png  used on input line 555.
 (pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 554--555
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 555--556
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--558
+Underfull \hbox (badness 10000) in paragraph at lines 508--559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--558
+Underfull \hbox (badness 10000) in paragraph at lines 508--559
 
+ []
+
+
+Overfull \hbox (38.28159pt too wide) in paragraph at lines 508--559
+\OT1/cmr/m/n/10.95 +++++++++++ I think this is time in-de-pen-dent!! ++++++++++
+++++++++++++++++++
  []
 
 [12 <./Images/Plotrhobar0072.png (PNG copy)>]
@@ -860,10 +866,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Images/MultiOpt1.png, id=275, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt1.png Graphic file (type png)
 <use Images/MultiOpt1.png>
-Package pdftex.def Info: Images/MultiOpt1.png  used on input line 566.
+Package pdftex.def Info: Images/MultiOpt1.png  used on input line 567.
 (pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 566--567
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 567--568
  [][] 
  []
 
@@ -873,10 +879,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Images/MultiCont1.png, id=276, 1445.4pt x 685.8122pt>
 File: Images/MultiCont1.png Graphic file (type png)
 <use Images/MultiCont1.png>
-Package pdftex.def Info: Images/MultiCont1.png  used on input line 572.
+Package pdftex.def Info: Images/MultiCont1.png  used on input line 573.
 (pdftex.def)             Requested size: 505.89758pt x 240.03786pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 572--573
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 573--574
  [][] 
  []
 
@@ -890,7 +896,7 @@ PNG copy)>])
 Package caption Warning: Unused \captionsetup[sub] on input line 24.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 594.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
 [18 <./Images/F31.png (PNG copy)>] [19 <./Images/C1.png (PNG copy)> <./Images/C
 2.png (PNG copy)>] [20 <./Images/C3.png (PNG copy)> <./Images/V1.png (PNG copy)
 > <./Images/W1.png (PNG copy)>] [21 <./Images/MultiOpt1a.png (PNG copy)> <./Ima
@@ -898,14 +904,14 @@ ges/MultiCont1a.png (PNG copy)>] [22 <./Images/MultiOpt2.png (PNG copy)> <./Ima
 ges/MultiCont2.png (PNG copy)>] [23 <./Images/MultiwFW.png (PNG copy)> <./Image
 s/MultiOpt3.png (PNG copy)>] [24 <./Images/MultiCont3.png (PNG copy)> <./Images
 /MultiOpt1.png (PNG copy)>] [25 <./Images/MultiCont1.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 594.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
 
 (SedimentationWriteUp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 594.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 594.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
 Package rerunfilecheck Info: File `SedimentationWriteUp.out' has not changed.
 (rerunfilecheck)             Checksum: E4AC59698A0DDB02C6D8EBE4F5B86C05;1672.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 594.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
  10712 strings out of 492946
@@ -933,7 +939,7 @@ nts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 X 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/s1452504/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s145250
 4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on SedimentationWriteUp.pdf (25 pages, 3653183 bytes).
+Output written on SedimentationWriteUp.pdf (25 pages, 3653329 bytes).
 PDF statistics:
  401 PDF objects out of 1000 (max. 8388607)
  96 named destinations out of 1000 (max. 500000)
