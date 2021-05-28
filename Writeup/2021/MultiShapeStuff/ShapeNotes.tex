@@ -425,9 +425,15 @@ However, this will result in differentiation matrices with respect to the coordi
 	\Div &= \left(D_r + \frac{1}{r}, \frac{1}{r} D_\theta\right)^\top ,\\
 	\Lap  &= D_{rr} +\frac{1}{r}D_r +  \frac{1}{r^2} D_{\theta \theta}.
 \end{align*}
-At $ r = 0$, we need to treat these operators more carefully. We know that $\frac{1}{r} D_\theta = D_{r\theta}$, since $D_\theta =0$ at $r = 0$, and so $ \Grad = \left(D_r, D_{r\theta}\right)$. Similarly, at $r = 0$, we get that $\Div = \left(2D_r, D_{r\theta}\right)^\top$. Finally we have that $\Lap = 2 D_{rr} + \frac{1}{2} D_{\theta\theta}D_{rr}$ at the origin. (++ go back and think why ++)
+At $ r = 0$, we need to treat these operators more carefully. We know that $\frac{1}{r} D_\theta = D_{r\theta}$, since $D_\theta =0$ at $r = 0$, and so $ \Grad = \left(D_r, D_{r\theta}\right)$. Similarly, at $r = 0$, we get that $\Div = \left(2D_r, D_{r\theta}\right)^\top$. Finally we have that $\Lap = 2 D_{rr} + \frac{1}{2} D_{\theta\theta}D_{rr}$ at the origin.
+These identities are derived by using L'Hopital's rule. In order to do this, we need to make some assumptions on the function $f$ we apply these matrices to. In particular, we assume that all derivatives in $\theta$ are zero, to get a smooth solution as we approach $r =0$. We can then apply L'Hopital's rule to to conclude that we have, for $f$ satisfying this condition, that $\displaystyle \lim_{r \to 0}\frac{1}{r} \frac{\partial f}{\partial \theta} = \lim_{r \to 0} \frac{\partial^2 f}{\partial r \partial \theta}$, since both the top and bottom of the fraction go to zero as $r \to 0$.
 
-
+We furthermore assume that $f(0, \theta)=c$, where $c$ is an arbitrary constant, which again is an assumption which ensures that the solution is well defined at $r=0$, since otherwise the function would be multivalued, since $\theta$ is allowed to vary.
+We can then conclude the following
+\begin{align*}
+	\lim_{r \to 0}\frac{f(r)}{r} = \lim_{r \to 0} \frac{f(r) - f(0)}{r} = \lim_{r \to 0} \frac{f(r) - c}{r} = \lim_{r \to 0} \frac{\partial f(r)}{\partial r},
+\end{align*}
+where the last equality follows from L'Hopital's rule.
 \subsubsection{Integration and convolution}
 The integration vector is found in the same way as discussed in Section \ref{sec:2DQuadInt}. However, since this is an integral in polar coordinates, in a last step the integration vector has to be multiplied pointwise by $r$ to satisfy the polar integration formula $\int \int f(r, \theta) r dr d\theta$.
 \\

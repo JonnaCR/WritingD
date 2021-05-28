@@ -65,18 +65,20 @@
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Determining angles of normals\relax }}{12}{algocf.1}\protected@file@percent }
 \newlabel{alg:WedgeNormalCart}{{1}{12}{Boundaries and normals}{algocf.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.3}Interpolation and differentiation}{12}{subsubsection.1.3.3}\protected@file@percent }
-\citation{bibTrefethen}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.4}Integration and convolution}{13}{subsubsection.1.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4}The periodic box (2D)}{13}{subsection.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.1}Domains, boundaries, normals}{13}{subsubsection.1.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.2}Interpolation}{13}{subsubsection.1.4.2}\protected@file@percent }
 \citation{bibTrefethen}
+\citation{bibTrefethen}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.2}Interpolation}{14}{subsubsection.1.4.2}\protected@file@percent }
 \newlabel{eq:FourierInterp}{{9}{14}{Interpolation}{equation.1.9}{}}
 \newlabel{eq:PeriodicInterpolant}{{10}{14}{Interpolation}{equation.1.10}{}}
 \citation{bibTrefethen}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.3}Differentiation}{15}{subsubsection.1.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.4}Integration and convolution}{15}{subsubsection.1.4.4}\protected@file@percent }
 \citation{Boyd1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Solving the PDE}{16}{subsection.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Convergence Stuff}{16}{section.2}\protected@file@percent }
 \citation{bibTrefethen}
 \citation{Boyd1}
 \citation{GoddardPseudospectralCode1}
@@ -84,82 +86,80 @@
 \citation{SEMPatera84}
 \citation{SEMLagrange98}
 \citation{Boyd1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Solving the PDE}{16}{subsection.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Convergence Stuff}{16}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Implementation for multishape}{17}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Setting up the multishape}{17}{subsection.3.1}\protected@file@percent }
-\newlabel{alg:msPts}{{2}{18}{Setting up the multishape}{algocfline.2}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Multishape points\relax }}{18}{algocf.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Boundaries and intersections}{18}{subsection.3.2}\protected@file@percent }
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Determining intersections between shapes in a multishape\relax }}{19}{algocf.3}\protected@file@percent }
-\newlabel{alg:msIntersections}{{3}{19}{Boundaries and intersections}{algocf.3}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Determining the boundary of a multishape\relax }}{20}{algocf.4}\protected@file@percent }
-\newlabel{alg:msBoundary}{{4}{20}{Boundaries and intersections}{algocf.4}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Determining the outward normals of a multishape\relax }}{21}{algocf.5}\protected@file@percent }
-\newlabel{alg:msnormals}{{5}{21}{Boundaries and intersections}{algocf.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Interpolation, differentiation, integration and convolution}{22}{subsection.3.3}\protected@file@percent }
-\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces Constructing the interpolation matrix, gradient, divergence and Laplacian as well as the integration vector\relax }}{22}{algocf.6}\protected@file@percent }
-\newlabel{alg:msinterp}{{6}{22}{Interpolation, differentiation, integration and convolution}{algocf.6}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces Constructing the interpolation matrix for interpolating onto points in physical space\relax }}{23}{algocf.7}\protected@file@percent }
-\newlabel{alg:msinterpPhys}{{7}{23}{Interpolation, differentiation, integration and convolution}{algocf.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Boundary matching and solving the PDE}{24}{subsection.3.4}\protected@file@percent }
-\@writefile{loa}{\contentsline {algocf}{\numberline {8}{\ignorespaces Applying boundary and intersection conditions, solving the PDE.\relax }}{24}{algocf.8}\protected@file@percent }
-\newlabel{alg:msBCapplication}{{8}{24}{Boundary matching and solving the PDE}{algocf.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Validation Tests Multishape}{24}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Testing Differentiation, Interpolation, Convolution and Integration}{25}{subsection.4.1}\protected@file@percent }
-\newlabel{sec:ValidationDiffIntetc}{{4.1}{25}{Testing Differentiation, Interpolation, Convolution and Integration}{subsection.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Different discretizations of the box (a - g).\relax }}{25}{figure.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Setting up the multishape}{18}{subsection.3.1}\protected@file@percent }
+\newlabel{alg:msPts}{{2}{19}{Setting up the multishape}{algocfline.2}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Multishape points\relax }}{19}{algocf.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Boundaries and intersections}{19}{subsection.3.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Determining intersections between shapes in a multishape\relax }}{20}{algocf.3}\protected@file@percent }
+\newlabel{alg:msIntersections}{{3}{20}{Boundaries and intersections}{algocf.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Determining the boundary of a multishape\relax }}{21}{algocf.4}\protected@file@percent }
+\newlabel{alg:msBoundary}{{4}{21}{Boundaries and intersections}{algocf.4}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Determining the outward normals of a multishape\relax }}{22}{algocf.5}\protected@file@percent }
+\newlabel{alg:msnormals}{{5}{22}{Boundaries and intersections}{algocf.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Interpolation, differentiation, integration and convolution}{23}{subsection.3.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces Constructing the interpolation matrix, gradient, divergence and Laplacian as well as the integration vector\relax }}{23}{algocf.6}\protected@file@percent }
+\newlabel{alg:msinterp}{{6}{23}{Interpolation, differentiation, integration and convolution}{algocf.6}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces Constructing the interpolation matrix for interpolating onto points in physical space\relax }}{24}{algocf.7}\protected@file@percent }
+\newlabel{alg:msinterpPhys}{{7}{24}{Interpolation, differentiation, integration and convolution}{algocf.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Boundary matching and solving the PDE}{25}{subsection.3.4}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {8}{\ignorespaces Applying boundary and intersection conditions, solving the PDE.\relax }}{25}{algocf.8}\protected@file@percent }
+\newlabel{alg:msBCapplication}{{8}{25}{Boundary matching and solving the PDE}{algocf.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Validation Tests Multishape}{25}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Testing Differentiation, Interpolation, Convolution and Integration}{26}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:ValidationDiffIntetc}{{4.1}{26}{Testing Differentiation, Interpolation, Convolution and Integration}{subsection.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Different discretizations of the box (a - g).\relax }}{26}{figure.caption.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{F2}{{1}{25}{Different discretizations of the box (a - g).\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Quadrilateral domain (q).\relax }}{25}{figure.caption.3}\protected@file@percent }
-\newlabel{F3a}{{2}{25}{Quadrilateral domain (q).\relax }{figure.caption.3}{}}
-\newlabel{eq:exactsol1}{{11}{25}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.4.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Different discretizations of the wedge (h - k).\relax }}{26}{figure.caption.4}\protected@file@percent }
-\newlabel{F4}{{3}{26}{Different discretizations of the wedge (h - k).\relax }{figure.caption.4}{}}
-\newlabel{eq:ErrorMeasure1}{{12}{26}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.4.12}{}}
+\newlabel{F2}{{1}{26}{Different discretizations of the box (a - g).\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Quadrilateral domain (q).\relax }}{26}{figure.caption.3}\protected@file@percent }
+\newlabel{F3a}{{2}{26}{Quadrilateral domain (q).\relax }{figure.caption.3}{}}
+\newlabel{eq:exactsol1}{{11}{26}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.4.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Different discretizations of the wedge (h - k).\relax }}{27}{figure.caption.4}\protected@file@percent }
+\newlabel{F4}{{3}{27}{Different discretizations of the wedge (h - k).\relax }{figure.caption.4}{}}
+\newlabel{eq:ErrorMeasure1}{{12}{27}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.4.12}{}}
 \citation{Hutomo_2019}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Exact Tests}{27}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Exact Tests - Dirichlet Conditions}{27}{subsubsection.4.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Table $\Grad  $\relax }}{28}{table.caption.5}\protected@file@percent }
-\newlabel{Tab:Grad}{{1}{28}{Table $\Grad $\relax }{table.caption.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Table $\Div  $\relax }}{28}{table.caption.6}\protected@file@percent }
-\newlabel{Tab:div}{{2}{28}{Table $\Div $\relax }{table.caption.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Table $\Lap  $\relax }}{29}{table.caption.7}\protected@file@percent }
-\newlabel{Tab:Lap}{{3}{29}{Table $\Lap $\relax }{table.caption.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Table Interp\relax }}{29}{table.caption.8}\protected@file@percent }
-\newlabel{Tab:Interp}{{4}{29}{Table Interp\relax }{table.caption.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Table Interp Compare\relax }}{30}{table.caption.9}\protected@file@percent }
-\newlabel{Tab:InterpComp}{{5}{30}{Table Interp Compare\relax }{table.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Table Comparing interpolation errors on wedges, when $N_1 \not =N_2$.\relax }}{30}{table.caption.10}\protected@file@percent }
-\newlabel{Tab:InterpPol}{{6}{30}{Table Comparing interpolation errors on wedges, when $N_1 \neq N_2$.\relax }{table.caption.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Table Conv\relax }}{30}{table.caption.11}\protected@file@percent }
-\newlabel{Tab:Conv}{{7}{30}{Table Conv\relax }{table.caption.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Table Int\relax }}{31}{table.caption.12}\protected@file@percent }
-\newlabel{Tab:Int}{{8}{31}{Table Int\relax }{table.caption.12}{}}
-\newlabel{eq:DirichletExactSol}{{14}{31}{Exact Tests - Dirichlet Conditions}{equation.4.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Table Dirichlet Exact Solution 1\relax }}{32}{table.caption.17}\protected@file@percent }
-\newlabel{Tab:DirichletEx1}{{9}{32}{Table Dirichlet Exact Solution 1\relax }{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Table Dirichlet Exact Solution 1 on two multishapes\relax }}{32}{table.caption.18}\protected@file@percent }
-\newlabel{Tab:DirichletEx1MS}{{10}{32}{Table Dirichlet Exact Solution 1 on two multishapes\relax }{table.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Exact solution on the box.\relax }}{33}{figure.caption.13}\protected@file@percent }
-\newlabel{F3}{{4}{33}{Exact solution on the box.\relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Exact Tests - Dirichlet Conditions, Solution 2}{33}{subsubsection.4.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Exact Tests - No-Flux Conditions}{33}{subsubsection.4.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Exact solution on the wedge.\relax }}{34}{figure.caption.14}\protected@file@percent }
-\newlabel{F5}{{5}{34}{Exact solution on the wedge.\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Forward Problems on multishapes}{34}{subsection.4.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Table Dirichlet Exact Solution 2\relax }}{35}{table.caption.19}\protected@file@percent }
-\newlabel{Tab:DirichletEx2}{{11}{35}{Table Dirichlet Exact Solution 2\relax }{table.caption.19}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Table No-Flux Exact Solution\relax }}{35}{table.caption.22}\protected@file@percent }
-\newlabel{Tab:NoFluxEx}{{12}{35}{Table No-Flux Exact Solution\relax }{table.caption.22}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }}{35}{table.caption.23}\protected@file@percent }
-\newlabel{Tab:NoFluxCorr}{{13}{35}{Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }{table.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example 1 multishape\relax }}{36}{figure.caption.15}\protected@file@percent }
-\newlabel{F6}{{6}{36}{Example 1 multishape\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Example 2 multishape\relax }}{37}{figure.caption.16}\protected@file@percent }
-\newlabel{F7}{{7}{37}{Example 2 multishape\relax }{figure.caption.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Table Forward Problem on Box\relax }}{37}{table.caption.28}\protected@file@percent }
-\newlabel{Tab:FWProbBox}{{14}{37}{Table Forward Problem on Box\relax }{table.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Exact Tests}{28}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Exact Tests - Dirichlet Conditions}{28}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Table $\Grad  $\relax }}{29}{table.caption.5}\protected@file@percent }
+\newlabel{Tab:Grad}{{1}{29}{Table $\Grad $\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Table $\Div  $\relax }}{29}{table.caption.6}\protected@file@percent }
+\newlabel{Tab:div}{{2}{29}{Table $\Div $\relax }{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Table $\Lap  $\relax }}{30}{table.caption.7}\protected@file@percent }
+\newlabel{Tab:Lap}{{3}{30}{Table $\Lap $\relax }{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Table Interp\relax }}{30}{table.caption.8}\protected@file@percent }
+\newlabel{Tab:Interp}{{4}{30}{Table Interp\relax }{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Table Interp Compare\relax }}{31}{table.caption.9}\protected@file@percent }
+\newlabel{Tab:InterpComp}{{5}{31}{Table Interp Compare\relax }{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Table Comparing interpolation errors on wedges, when $N_1 \not =N_2$.\relax }}{31}{table.caption.10}\protected@file@percent }
+\newlabel{Tab:InterpPol}{{6}{31}{Table Comparing interpolation errors on wedges, when $N_1 \neq N_2$.\relax }{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Table Conv\relax }}{31}{table.caption.11}\protected@file@percent }
+\newlabel{Tab:Conv}{{7}{31}{Table Conv\relax }{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Table Int\relax }}{32}{table.caption.12}\protected@file@percent }
+\newlabel{Tab:Int}{{8}{32}{Table Int\relax }{table.caption.12}{}}
+\newlabel{eq:DirichletExactSol}{{14}{32}{Exact Tests - Dirichlet Conditions}{equation.4.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Table Dirichlet Exact Solution 1\relax }}{33}{table.caption.17}\protected@file@percent }
+\newlabel{Tab:DirichletEx1}{{9}{33}{Table Dirichlet Exact Solution 1\relax }{table.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Table Dirichlet Exact Solution 1 on two multishapes\relax }}{33}{table.caption.18}\protected@file@percent }
+\newlabel{Tab:DirichletEx1MS}{{10}{33}{Table Dirichlet Exact Solution 1 on two multishapes\relax }{table.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Exact solution on the box.\relax }}{34}{figure.caption.13}\protected@file@percent }
+\newlabel{F3}{{4}{34}{Exact solution on the box.\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Exact Tests - Dirichlet Conditions, Solution 2}{34}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Exact Tests - No-Flux Conditions}{34}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Exact solution on the wedge.\relax }}{35}{figure.caption.14}\protected@file@percent }
+\newlabel{F5}{{5}{35}{Exact solution on the wedge.\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Forward Problems on multishapes}{35}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Table Dirichlet Exact Solution 2\relax }}{36}{table.caption.19}\protected@file@percent }
+\newlabel{Tab:DirichletEx2}{{11}{36}{Table Dirichlet Exact Solution 2\relax }{table.caption.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Table No-Flux Exact Solution\relax }}{36}{table.caption.22}\protected@file@percent }
+\newlabel{Tab:NoFluxEx}{{12}{36}{Table No-Flux Exact Solution\relax }{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }}{36}{table.caption.23}\protected@file@percent }
+\newlabel{Tab:NoFluxCorr}{{13}{36}{Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }{table.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example 1 multishape\relax }}{37}{figure.caption.15}\protected@file@percent }
+\newlabel{F6}{{6}{37}{Example 1 multishape\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Example 2 multishape\relax }}{38}{figure.caption.16}\protected@file@percent }
+\newlabel{F7}{{7}{38}{Example 2 multishape\relax }{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Table Forward Problem on Box\relax }}{38}{table.caption.28}\protected@file@percent }
+\newlabel{Tab:FWProbBox}{{14}{38}{Table Forward Problem on Box\relax }{table.caption.28}{}}
 \bibdata{GeneralBib}
 \bibcite{bibTrefethen}{{1}{}{{}}{{}}}
 \bibcite{GoddardPseudospectralCode1}{{2}{}{{}}{{}}}
@@ -167,23 +167,23 @@
 \bibcite{bibTrefethenBerrut1}{{4}{}{{}}{{}}}
 \bibcite{ClenCurt1}{{5}{}{{}}{{}}}
 \bibcite{SEMPatera84}{{6}{}{{}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Exact solution on the box with no-flux boundary conditions.\relax }}{38}{figure.caption.20}\protected@file@percent }
-\newlabel{F3b}{{8}{38}{Exact solution on the box with no-flux boundary conditions.\relax }{figure.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Table Forward Problem on Wedge\relax }}{38}{table.caption.29}\protected@file@percent }
-\newlabel{Tab:FWProbWedge}{{15}{38}{Table Forward Problem on Wedge\relax }{table.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Exact solution on the box with no-flux boundary conditions.\relax }}{39}{figure.caption.20}\protected@file@percent }
+\newlabel{F3b}{{8}{39}{Exact solution on the box with no-flux boundary conditions.\relax }{figure.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Table Forward Problem on Wedge\relax }}{39}{table.caption.29}\protected@file@percent }
+\newlabel{Tab:FWProbWedge}{{15}{39}{Table Forward Problem on Wedge\relax }{table.caption.29}{}}
 \bibcite{SEMLagrange98}{{7}{}{{}}{{}}}
 \bibcite{Hutomo_2019}{{8}{}{{}}{{}}}
 \bibstyle{unsrt}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Original, non-sensible normals are compared to new, customized normals.\relax }}{39}{figure.caption.21}\protected@file@percent }
-\newlabel{FNorm}{{9}{39}{Original, non-sensible normals are compared to new, customized normals.\relax }{figure.caption.21}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Table Forward Examples 1 and 2\relax }}{39}{table.caption.30}\protected@file@percent }
-\newlabel{Tab:Example12}{{16}{39}{Table Forward Examples 1 and 2\relax }{table.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Forward Example on box discretizations\relax }}{40}{figure.caption.24}\protected@file@percent }
-\newlabel{FFW1}{{10}{40}{Forward Example on box discretizations\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Forward Example on wedge discretizations\relax }}{40}{figure.caption.25}\protected@file@percent }
-\newlabel{FFW2}{{11}{40}{Forward Example on wedge discretizations\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }}{41}{figure.caption.26}\protected@file@percent }
-\newlabel{F8}{{12}{41}{Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }}{41}{figure.caption.27}\protected@file@percent }
-\newlabel{F9}{{13}{41}{Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Original, non-sensible normals are compared to new, customized normals.\relax }}{40}{figure.caption.21}\protected@file@percent }
+\newlabel{FNorm}{{9}{40}{Original, non-sensible normals are compared to new, customized normals.\relax }{figure.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Table Forward Examples 1 and 2\relax }}{40}{table.caption.30}\protected@file@percent }
+\newlabel{Tab:Example12}{{16}{40}{Table Forward Examples 1 and 2\relax }{table.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Forward Example on box discretizations\relax }}{41}{figure.caption.24}\protected@file@percent }
+\newlabel{FFW1}{{10}{41}{Forward Example on box discretizations\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Forward Example on wedge discretizations\relax }}{41}{figure.caption.25}\protected@file@percent }
+\newlabel{FFW2}{{11}{41}{Forward Example on wedge discretizations\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }}{42}{figure.caption.26}\protected@file@percent }
+\newlabel{F8}{{12}{42}{Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }}{42}{figure.caption.27}\protected@file@percent }
+\newlabel{F9}{{13}{42}{Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.27}{}}
