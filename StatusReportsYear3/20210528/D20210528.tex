@@ -70,15 +70,10 @@
 %	\end{figure}
 
 \begin{document}
-	\section{Comparing to N-K}
-Dirichlet interacting problem with $N = 20$, $\kappa = 1$, gives a difference of $1.5917 \times 10^{-11}$. The timings are $190$ s (NK) and $800$ s (FP).
-Neumann interacting gives $4.1295 \times 10^{-12}$. Timings are $740$ s (NK), $490$ s (FP) Why is this timing so different?\\
-Neumann and Dirichlet AD exact problems are the same to $10^{-15}/ 10^{-16}$ and so is the Dirichlet AD $+ V_{ext}$ problem.\\
-For Paper Example 1 (2D) we get an error of $0.0014$ with $N = 30$ and $n = 20$. For $N = 20$, $n = 11$, the error is $0.0874$. Both errors increase when the relative instead of the absolute error is taken.\\
-For Paper Example 1(1D) we get an error of $0.0037$, for $n = 30$ and $N = 50$ (and same for smaller $n$/$N$). The relative error is large. For $\kappa = 0$, the error is $10^{-13}$. 
-
-
-\section{1D Problems}
+	Note: Covid extension and duration.\\
+	$\kappa$ bugs in code.
+\section{Comparing Fixed Point with Newton-Krylov}
+\subsection{1D Problems}
 The Dirichlet exact problem is solved with $N = 20$ and $n = 10$ in $3$ seconds. The error in $u$ and $v$ decreases down to the order of $10^{-15}$.
 The Neumann exact problem is solved with $N = 30$ and $n = 19$ in $15$ seconds. The error in $u$ and $v$ decreases down to the order of $10^{-5}$, which is very different from the Dirichlet problem. The same happens in the 2D case. The inner number of iterations goes up to $100$ in the later outer iterations. However, this does not happen if I choose $N = 20$ and $n = 10$ and the error even decreases down to $10^{-12}$. In general, the more points I use, the worse the error gets. This is also the case for the Dirichlet problem, but it remains reasonably accurate despite this, while the Neumann problem is only accurate to $10^{-2}$ or similar for high numbers of points. In particular, this happens when we increase $n$, increasing $N$ does not seem to be the issue.
 \\
@@ -93,25 +88,33 @@ For the paper example 1, we again choose $N = 50$ and $n = 30$. We get for $\kap
 For the third example, we have Dirichlet BCs and again choose $N = 50$ and $n = 30$. We get for $\kappa = 0$ the eroor is $1.8015 \times 10^{-7}$, for $\kappa = -1$ the error is $1.6645 \times 10^{-7}$ and for $\kappa  =1$ the error is $1.9485 \times 10^{-7}$.
 
 
-\section{2D Problems}
-
-
+\subsection{2D Problems}
+The exact 2D Dirichlet problem (with and without external potential), for $N = 20$ and $n = 10$, has an error of $10^{-15}$ for both $u$ and $v$ and is solved in $40$ and $60$ seconds respectively. The exact Neumann problem reduces the error in $u$ to $10^{-8}$ and in $v$ to $10^{-7}$. The inner iterations reach $100$ and it takes $170$ seconds.
+For the first paper problem, we have the following results. For $\kappa = -1$ the error is $0.0032$, for $\kappa = 0$, the error is $3.6813 \times 10^{-9}$ and for $\kappa = 1$ the error is $0.0014$.
+For the second paper problem, we have the following results. For $\kappa = -1$ the error is $0.0062$, for $\kappa = 0$, the error is $3.1640 \times 10^{-4}$ and for $\kappa = 1$ the error is $0.0017$.
+All of these problems take $300$ to $500$ seconds.
 \section{$H_1$ control and similar}
-In the book Perspectives in flow control and optimization, Chapter 2, by Gunzburger the author poses a problem with a control including a gradient, see Figure \ref{F1}. The derivation shows the resulting no-flux boundary condition for the control.
+Below is a summary of some of the papers I found on regularization terms involving the gradient or divergence of the control. There are some references that suggest that no-flux boundary conditions on the control have to be imposed when solving the gradient equation. However, a lot of papers just defined the control boundary conditions as part of their modelling choice. I am not sure if that's allowed? Only the first reference mentioned below provides any kind of derivation.
+\\
+\\
+In the book 'Perspectives in flow control and optimization', Chapter 2, by Gunzburger the author poses a problem with a control including a gradient, see Figure \ref{F1}. The derivation shows the resulting no-flux boundary condition for the control.
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.7]{Cost.png}
-		\includegraphics[scale=0.7]{Constraint.png}
-		\includegraphics[scale=0.7]{GradientEqn.png}
+		\includegraphics[scale=0.8]{Cost.png}
+		\includegraphics[scale=0.8]{Constraint.png}
+		\includegraphics[scale=0.8]{GradientEqn.png}
 		\caption{Gunzburger Book Result} 
 		\label{F1}
 	\end{figure}
 
 The paper 'Optimal Control of Obstacle Problems by H1-Obstacles' by Ito is concerned with $H_1$ regularization, but as far as I can tell, neglects all boundary conditions.
 In the paper 'Parallel Multiscale Gauss Newton Krylov Methods for Inverse Wave Propagation', the control is a gradient. They do apply no-flux boundary conditions, but state that they 'assume' them, rather than derive them.
-The paper 'Image Sequence Interpolation Based on Optical Flow, Segmentation, and Optimal Control' has a gradient regularizer, for which Dirichlet boundary conditions are assumed in the optimality system.
-
+The paper 'Image Sequence Interpolation Based on Optical Flow, Segmentation, and Optimal Control' has a gradient regularizer, for which Dirichlet boundary conditions are assumed in the optimality system.\\
+In the paper 'Optimal Control Formulation for Determining Optical Flow', Borzi, Ito and Kunisch propose a cost functional with regularization terms for the different derivatives of the control. They impose Dirichlet boundary conditions by restricting the admissible controls to satisfy this condition and observe that the time derivative being zero at the temporal boundaries is a natural boundary condition for the control if a term of the form $\int \Phi \left( \frac{\partial \vec w}{\partial t}\right)^2$ is in the cost functional.\\
+The above paper is refering to another paper for their model, called 'Image Sequence Interpolation Using Optimal Control'. However, there they don't have a gradient of the control $b$ in the cost functional but $\nabla \Delta b$. This results in $b = 0, \ \nabla_n b = 0$, and $\Delta b = 0$ on the boundary.
+\\
+In 'Control Problems for the Navier Stokes Equations' by Gunzburger et al, a $H_1$ control for the boundary is introduced, and no-flux boundary conditions are imposed. However, it is unclear whether it is an assumption or results from the derivation of the optimality conditions.
 
 
 The paper by Mang et al 'Constrained H1 Regularization Schemes for Diffeomorphic Image Registration' proposes a different way of enforcing a divergence free flow, see Figure \ref{F2}. They set periodic boundary conditions, which I cannot see to be derived in the process of getting the optimality system. They mention ill-posedness issues for $\nabla \cdot v = 0$, but I don't know what they would be/ if that applies to us.
@@ -121,6 +124,7 @@ The paper by Mang et al 'Constrained H1 Regularization Schemes for Diffeomorphic
 	\caption{Mang} 
 	\label{F2}
 \end{figure}
+The paper 'On Some Control Problems in Fluid Mechanics', a curl is introduced in the cost functional, however, it is the curl of the state variable, therefore entering the optimality system in the adjoint. We have Dirichlet boundary conditions, so it doesn't seem like the curl is entering the boundary conditions.
 %@book{GunzburgerMaxD2003Pifc,
 %	series = {Advances in design and control ; 5},
 %	publisher = {Society for Industrial and Applied Mathematics (SIAM, 3600 Market Street, Floor 6, Philadelphia, PA 19104)},
