@@ -32,108 +32,6 @@ Jianzhong Wu.
   to soft materials.
 \newblock {\em AIChE Journal}, 52(3):1169--1193, 2006.
 
-\bibitem{RexLoewen1}
-M~Rex and Hartmut Löwen.
-\newblock Dynamical density functional theory for colloidal dispersions
-  including hydrodynamic interactions.
-\newblock {\em The European Physical Journal. E, Soft Matter}, 28:139--46,
-  2008.
-
-\bibitem{GoddardPseudospectralCode1}
-Andreas Nold, Benjamin~D. Goddard, Peter Yatsyshin, Nikos Savva, and Serafim
-  Kalliadasis.
-\newblock Pseudospectral methods for density functional theory in bounded and
-  unbounded domains.
-\newblock {\em CoRR}, abs/1701.06182, 2017.
-
-\bibitem{Tarazona2008}
-P.~Tarazona, J.A. Cuesta, and Y.~Mart{\'i}nez-Rat{\'o}n.
-\newblock Density functional theories of hard particle systems.
-\newblock In {\'A}ngel Mulero, editor, {\em Theory and Simulation of
-  Hard-Sphere Fluids and Related Systems}, pages 247--341. Springer Berlin
-  Heidelberg, Berlin, Heidelberg, 2008.
-
-\bibitem{CalculusofVariations1}
-Arnold~M. Arthurs.
-\newblock {\em Calculus of Variations}.
-\newblock Routledge and Keagan Paul Ltd, 1975.
-
-\bibitem{TroeltzschFredi2010OCoP}
-Fredi Tröltzsch.
-\newblock {\em Optimal Control of Partial Differential Equations: Theory,
-  Methods and Applications}.
-\newblock Graduate Studies in Mathematics. American Mathematical Society,
-  Providence, 2010.
-
-\bibitem{PearsonThesis}
-John~W Pearson.
-\newblock {\em Fast Iterative Solvers for PDE-Constrained Optimization
-  Problems}.
-\newblock PhD thesis, University of Oxford, 2013.
-
-\bibitem{DeLosReyesOptimization}
-Juan De~los Reyes.
-\newblock {\em Numerical PDE-Constrained Optimization}.
-\newblock Springer, 2015.
-
-\bibitem{FrechetProductrule1}
-Enrique~A. Gonzalez-Velasco.
-\newblock The product rule for {F}r\'echet derivatives.
-\newblock {\em International Journal of Mathematical Education in Science and
-  Technology}, 17:79--83, 1986.
-
-\bibitem{CarraroDirectIndirectMultipleShooting}
-Thomas Carraro and Michael Geiger.
-\newblock Direct and indirect multiple shooting for parabolic optimal control
-  problems.
-\newblock In P.~Cinnella G.~Zavarise and M.~Campiti, editors, {\em Special
-  Issue: 86th Annual Meeting of the International Association of Applied
-  Mathematics and Mechanics (GAMM)}, pages 35--67. 01 2015.
-
-\bibitem{bibTrefethen}
-Lloyd~N. Trefethen.
-\newblock {\em Spectral Methods in Matlab}.
-\newblock SIAM, 2000.
-
-\bibitem{bibTrefethenBerrut1}
-Jean-Paul Berrut and Lloyd~N. Trefethen.
-\newblock Barycentric {L}agrange interpolation.
-\newblock {\em SIAM Review}, 46(3):501--517, 2004.
-
-\bibitem{Boyd1}
-John~P. Boyd.
-\newblock {\em Chebyshev and Fourier Spectral Methods}.
-\newblock Dover Publications, Inc, 2000.
-
-\bibitem{ClenCurt1}
-Charles~W. Clenshaw and A.~R. Curtis.
-\newblock A method for numerical integration on an automatic computer.
-\newblock {\em Numerische Mathematik}, 2(1):197--205, 1960.
-
-\bibitem{FEMIntegroPaper}
-Wanfang Shen.
-\newblock Full-discrete adaptive fem for quasi-parabolic integro-differential
-  pde-constrained optimal control problem.
-\newblock {\em Springer}, 2016.
-
-\bibitem{GuettelPearson1}
-Stefan Güttel and John~W. Pearson.
-\newblock A rational deferred correction approach to parabolic optimal control
-  problems.
-\newblock {\em IMA Journal of Numerical Analysis}, 38:1861--1892, 2018.
-
-\bibitem{bvp4cPaper1}
-Jacek Kierzenka and Lawrence~F. Shampine.
-\newblock A bvp solver based on residual control and the matlab pse.
-\newblock {\em ACM Transactions on Mathematical Software (TOMS)},
-  27(3):299--316, 2001.
-
-\bibitem{CarraroIndMultipleShooting}
-Thomas Carraro, Michael Geiger, and R~Rannacher.
-\newblock Indirect multiple shooting for nonlinear parabolic optimal control
-  problems with control constraints.
-\newblock {\em SIAM Journal on Scientific Computing}, 36, 01 2014.
-
 \bibitem{LASRY2006619}
 Jean-Michel Lasry and Pierre-Louis Lions.
 \newblock Jeux à champ moyen. i – le cas stationnaire.
@@ -272,11 +170,113 @@ M.~Burger, M.~Di~Francesco, P.~A. Markowich, and M.-T. Wolfram.
 \newblock Mean field games with nonlinear mobilities in pedestrian dynamics.
 \newblock {\em Discrete Cont. Dyn.-B}, 19(5):1311--1333, 2014.
 
+\bibitem{RexLoewen1}
+M~Rex and Hartmut Löwen.
+\newblock Dynamical density functional theory for colloidal dispersions
+  including hydrodynamic interactions.
+\newblock {\em The European Physical Journal. E, Soft Matter}, 28:139--46,
+  2008.
+
+\bibitem{GoddardPseudospectralCode1}
+Andreas Nold, Benjamin~D. Goddard, Peter Yatsyshin, Nikos Savva, and Serafim
+  Kalliadasis.
+\newblock Pseudospectral methods for density functional theory in bounded and
+  unbounded domains.
+\newblock {\em CoRR}, abs/1701.06182, 2017.
+
+\bibitem{Tarazona2008}
+P.~Tarazona, J.A. Cuesta, and Y.~Mart{\'i}nez-Rat{\'o}n.
+\newblock Density functional theories of hard particle systems.
+\newblock In {\'A}ngel Mulero, editor, {\em Theory and Simulation of
+  Hard-Sphere Fluids and Related Systems}, pages 247--341. Springer Berlin
+  Heidelberg, Berlin, Heidelberg, 2008.
+
+\bibitem{CalculusofVariations1}
+Arnold~M. Arthurs.
+\newblock {\em Calculus of Variations}.
+\newblock Routledge and Keagan Paul Ltd, 1975.
+
+\bibitem{TroeltzschFredi2010OCoP}
+Fredi Tröltzsch.
+\newblock {\em Optimal Control of Partial Differential Equations: Theory,
+  Methods and Applications}.
+\newblock Graduate Studies in Mathematics. American Mathematical Society,
+  Providence, 2010.
+
+\bibitem{PearsonThesis}
+John~W Pearson.
+\newblock {\em Fast Iterative Solvers for PDE-Constrained Optimization
+  Problems}.
+\newblock PhD thesis, University of Oxford, 2013.
+
+\bibitem{DeLosReyesOptimization}
+Juan De~los Reyes.
+\newblock {\em Numerical PDE-Constrained Optimization}.
+\newblock Springer, 2015.
+
+\bibitem{FrechetProductrule1}
+Enrique~A. Gonzalez-Velasco.
+\newblock The product rule for {F}r\'echet derivatives.
+\newblock {\em International Journal of Mathematical Education in Science and
+  Technology}, 17:79--83, 1986.
+
 \bibitem{Archer1}
 A.~J. Archer.
 \newblock Dynamical density functional theory for molecular and colloidal
   fluids: A microscopic approach to fluid mechanics.
 \newblock {\em The Journal of Chemical Physics}, 130, 2009.
+
+\bibitem{CarraroDirectIndirectMultipleShooting}
+Thomas Carraro and Michael Geiger.
+\newblock Direct and indirect multiple shooting for parabolic optimal control
+  problems.
+\newblock In P.~Cinnella G.~Zavarise and M.~Campiti, editors, {\em Special
+  Issue: 86th Annual Meeting of the International Association of Applied
+  Mathematics and Mechanics (GAMM)}, pages 35--67. 01 2015.
+
+\bibitem{bibTrefethen}
+Lloyd~N. Trefethen.
+\newblock {\em Spectral Methods in Matlab}.
+\newblock SIAM, 2000.
+
+\bibitem{bibTrefethenBerrut1}
+Jean-Paul Berrut and Lloyd~N. Trefethen.
+\newblock Barycentric {L}agrange interpolation.
+\newblock {\em SIAM Review}, 46(3):501--517, 2004.
+
+\bibitem{Boyd1}
+John~P. Boyd.
+\newblock {\em Chebyshev and Fourier Spectral Methods}.
+\newblock Dover Publications, Inc, 2000.
+
+\bibitem{ClenCurt1}
+Charles~W. Clenshaw and A.~R. Curtis.
+\newblock A method for numerical integration on an automatic computer.
+\newblock {\em Numerische Mathematik}, 2(1):197--205, 1960.
+
+\bibitem{FEMIntegroPaper}
+Wanfang Shen.
+\newblock Full-discrete adaptive fem for quasi-parabolic integro-differential
+  pde-constrained optimal control problem.
+\newblock {\em Springer}, 2016.
+
+\bibitem{GuettelPearson1}
+Stefan Güttel and John~W. Pearson.
+\newblock A rational deferred correction approach to parabolic optimal control
+  problems.
+\newblock {\em IMA Journal of Numerical Analysis}, 38:1861--1892, 2018.
+
+\bibitem{bvp4cPaper1}
+Jacek Kierzenka and Lawrence~F. Shampine.
+\newblock A bvp solver based on residual control and the matlab pse.
+\newblock {\em ACM Transactions on Mathematical Software (TOMS)},
+  27(3):299--316, 2001.
+
+\bibitem{CarraroIndMultipleShooting}
+Thomas Carraro, Michael Geiger, and R~Rannacher.
+\newblock Indirect multiple shooting for nonlinear parabolic optimal control
+  problems with control constraints.
+\newblock {\em SIAM Journal on Scientific Computing}, 36, 01 2014.
 
 \bibitem{Roth1}
 Roland Roth.
