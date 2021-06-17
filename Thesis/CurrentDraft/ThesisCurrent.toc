@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {section}{\numberline {2}DFT/ Statistical Mechanics Background}{1}{section.2}% 
+\contentsline {section}{\numberline {3}DDFT Background}{1}{section.3}% 
+\contentsline {section}{\numberline {4}PDE-Constrained Optimization}{1}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Optimality Conditions}{1}{subsection.4.1}% 
+\contentsline {section}{\numberline {5}Numerical Methods}{1}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Pseudospectral Methods and 2DChebClass}{1}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Optimization Methods}{2}{subsection.5.2}% 
+\contentsline {section}{\numberline {6}Validation of the Numerical Methods}{2}{section.6}% 
+\contentsline {section}{\numberline {7}Numerical Experiments}{2}{section.7}% 
+\contentsline {section}{\numberline {8}Sedimentation}{3}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Background DDFT}{3}{subsection.8.1}% 
+\contentsline {subsection}{\numberline {8.2}OCP}{3}{subsection.8.2}% 
+\contentsline {subsection}{\numberline {8.3}Numerical Examples}{3}{subsection.8.3}% 
+\contentsline {section}{\numberline {9}Inertial Equations}{3}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}Background DDFT}{3}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}OCP}{4}{subsection.9.2}% 
+\contentsline {subsection}{\numberline {9.3}Numerical Examples}{4}{subsection.9.3}% 
+\contentsline {section}{\numberline {10}Multiple Species}{4}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}Background DDFT}{4}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}OCP}{4}{subsection.10.2}% 
+\contentsline {subsection}{\numberline {10.3}Numerical Examples}{4}{subsection.10.3}% 
+\contentsline {section}{\numberline {11}Industry application 1: Sedimentation}{4}{section.11}% 
+\contentsline {section}{\numberline {12}Industry application 2: Inerital multiple species}{4}{section.12}% 

@@ -1,0 +1,224 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+\newcommand{\adjB}{q_{\partial \Omega}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\adj}{q}
+\newcommand{\Adjc}{{q}_{\partial \Omega}}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\ve}{\mathbf{v}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\hr}{\widehat \rho}
+
+
+
+\title{{\huge PDE-Constrained Optimization \\for Multiscale Particle Dynamics} \\ with Industrial Applications}
+\author{Jonna C. Roden\\ \\Supervision by Dr Ben Goddard and Dr John Pearson\\ \vspace{0.5cm} Maxwell Institute Graduate School for Analysis and its Applications}
+\date{\today}
+
+
+\pagenumbering{gobble}
+\begin{document}
+	\maketitle
+\begin{abstract}
++ Later +
+	
+\end{abstract}
+
+\newpage
+%\section*{Acknowledgements}
+%+ Later +
+%\newpage
+\pagenumbering{Roman} 
+\tableofcontents
+%\newpage
+%\listoffigures
+%\listoftables
+\newpage
+\pagenumbering{arabic} 
+
+	
+	
+	\section{Introduction}
+	
+	\section{DFT/ Statistical Mechanics Background}
+	
+	\section{DDFT Background}
+		\begin{itemize}
+			\item Some general background, link to DFT stuff
+			\item Derivation from particle equations
+			\item Highlight limitations of models
+			\item Focus on overdamped equations
+		\end{itemize}
+
+	\section{PDE-Constrained Optimization}
+		\begin{itemize}
+			\item General Intro to the class of problems and a general problem setup
+			\item Link to other areas?
+			\item Literature review of Mean-Field PDECO and link between the two fields.
+			\item Here may be a good point to go into the mean-field convergence stuf of the microscopic OCP to ours a little more.
+		\end{itemize}
+	
+	\subsection{Optimality Conditions}
+		\begin{itemize}
+			\item Maybe here or above: discuss how to solve OCPs in different ways.
+			\item Frechet stuff.
+			\item Optimality conditions for the overdamped equations with Dirichlet and no-flux BCs
+			\item Find a general notation to make future derivations 'additive'.
+		\end{itemize}
+
+	\section{Numerical Methods}
+	\subsection{Pseudospectral Methods and 2DChebClass}
+		\begin{itemize}
+			\item Pseudospectral Methods and Spectral Element Methods
+			\item How shapes work
+			\item How multishape works
+			\item Validation in appendix??
+			\item Convergence results for pseudospectral methods.
+			\item Comparison with FEM and FDM
+		\end{itemize}
+	\subsection{Optimization Methods}
+		\begin{itemize}
+			\item Fixed Point (+ Armijo Extension)
+			\item Newton-Krylov
+			\item Picard Multiple Shooting
+			\item fsolve Multiple Shooting 
+			\item fsolve algorithms in Matlab
+		\end{itemize}
+	
+	\section{Validation of the Numerical Methods}
+	\begin{itemize}
+		\item Error measures
+		\item Validation of 2DChebClass stuff
+		\item Exact Solutions in 1D/ 2D/ (3D?!)
+		\item Validation against fsolve (and comparison of the different solvers)
+		\item Perturbing w
+		\item Other things -- see notes
+	\end{itemize}
+
+	\section{Numerical Experiments}
+		\begin{itemize}
+			\item Only examples with overdamped equations
+			\item Maybe box and multishape?
+			\item Paper examples (and others?)
+		\end{itemize}
+
+    \section{Sedimentation}
+	\subsection{Background DDFT}
+		\begin{itemize}
+			\item Derivation of the extra term from SPT, explain FMT, etc. 
+			\item A little literature review
+			\item Comparison of simulations to Archer?
+		\end{itemize}
+	\subsection{OCP}
+		\begin{itemize}
+			\item State possible OCPs
+			\item Derive Optimality Conditions
+			\item Here add Periodic BCs and time-independent control
+			\item In the future maybe also the things on curl free control
+		\end{itemize}
+	\subsection{Numerical Examples}
+		\begin{itemize}
+			\item Sedimentation examples with clustering etc in box
+			\item Cool multishape sedimentation examples
+			\item Comparison with overdamped result possible
+			\item Constriction examples possible, too
+			\item Periodic vs no-flux investigation
+			\item Time-dependent vs time-independent control 
+		\end{itemize}
+
+	\section{Inertial Equations}
+	\subsection{Background DDFT}
+		\begin{itemize}
+			\item Derivation of the inertial equtions from microscopic dynamics
+			\item Limitations of the model, smoothing term for velocity
+			\item Link to overdamped equations
+			\item A little literature review on this type of model
+		\end{itemize}
+	
+	\subsection{OCP}
+		\begin{itemize}
+			\item Statement of OCPs 
+			\item Derivation of optimality conditions
+			\item Subdomain Observation, Boundary control, non-constant flux?
+		\end{itemize}
+	\subsection{Numerical Examples}
+		\begin{itemize}
+			\item 1D and 2D in box
+			\item Comparison with overdamped model
+			\item Some cool multishape examples?
+			\item If subdomain and boundary stuff in this section, then those examples here too.
+			\item Do we get in and outflow to work?
+		\end{itemize}
+
+	\section{Multiple Species}
+	\subsection{Background DDFT}
+	Quick literature review and illustrate coupling of equations.
+	\subsection{OCP}
+	\begin{itemize}
+		\item State OCP
+		\item Derive overdamped optimality conditions
+		\item Extend to inertial case (notation such that this is straightforward)
+	\end{itemize}
+	\subsection{Numerical Examples}
+	\begin{itemize}
+		\item Example of overdamped OCP
+		\item Example of inertial one -- comparison/agreement
+		\item Some cool mulitshape example with two species
+	\end{itemize}
+
+
+	\section{Industry application 1: Sedimentation}
+	\section{Industry application 2: Inerital multiple species}
+	\pagebreak	
+	\bibliography{GeneralBib}
+	\bibliographystyle{unsrt}
+	
+	
+\end{document}

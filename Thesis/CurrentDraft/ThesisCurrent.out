@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{DFT/ Statistical Mechanics Background}{}% 2
+\BOOKMARK [1][-]{section.3}{DDFT Background}{}% 3
+\BOOKMARK [1][-]{section.4}{PDE-Constrained Optimization}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Optimality Conditions}{section.4}% 5
+\BOOKMARK [1][-]{section.5}{Numerical Methods}{}% 6
+\BOOKMARK [2][-]{subsection.5.1}{Pseudospectral Methods and 2DChebClass}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.2}{Optimization Methods}{section.5}% 8
+\BOOKMARK [1][-]{section.6}{Validation of the Numerical Methods}{}% 9
+\BOOKMARK [1][-]{section.7}{Numerical Experiments}{}% 10
+\BOOKMARK [1][-]{section.8}{Sedimentation}{}% 11
+\BOOKMARK [2][-]{subsection.8.1}{Background DDFT}{section.8}% 12
+\BOOKMARK [2][-]{subsection.8.2}{OCP}{section.8}% 13
+\BOOKMARK [2][-]{subsection.8.3}{Numerical Examples}{section.8}% 14
+\BOOKMARK [1][-]{section.9}{Inertial Equations}{}% 15
+\BOOKMARK [2][-]{subsection.9.1}{Background DDFT}{section.9}% 16
+\BOOKMARK [2][-]{subsection.9.2}{OCP}{section.9}% 17
+\BOOKMARK [2][-]{subsection.9.3}{Numerical Examples}{section.9}% 18
+\BOOKMARK [1][-]{section.10}{Multiple Species}{}% 19
+\BOOKMARK [2][-]{subsection.10.1}{Background DDFT}{section.10}% 20
+\BOOKMARK [2][-]{subsection.10.2}{OCP}{section.10}% 21
+\BOOKMARK [2][-]{subsection.10.3}{Numerical Examples}{section.10}% 22
+\BOOKMARK [1][-]{section.11}{Industry application 1: Sedimentation}{}% 23
+\BOOKMARK [1][-]{section.12}{Industry application 2: Inerital multiple species}{}% 24
