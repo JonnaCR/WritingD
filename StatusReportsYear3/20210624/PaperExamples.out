@@ -1,4 +1,6 @@
 \BOOKMARK [1][-]{section.1}{Neumann Source Control}{}% 1
-\BOOKMARK [1][-]{section.2}{Neumann Flow Control}{}% 2
-\BOOKMARK [1][-]{section.3}{Dirichlet Flow Control without Vext}{}% 3
-\BOOKMARK [1][-]{section.4}{Dirichlet Flow Control with Vext}{}% 4
+\BOOKMARK [1][-]{section.2}{Dirichlet Source Control}{}% 2
+\BOOKMARK [1][-]{section.3}{Neumann Flow Control}{}% 3
+\BOOKMARK [1][-]{section.4}{Dirichlet Flow Control}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Dirichlet Flow Control without Vext}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Dirichlet Flow Control with Vext}{section.4}% 6

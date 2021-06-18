@@ -72,16 +72,19 @@
 
 \begin{document}
 	\section*{Paper Examples}
+	All the below examples are run with Newton-Krylov. They all converged within $10$ outer iterations. The baseline for the cost functional is the problem computed with $\beta = 10^3$.
+	I changed the colormap to fewer colors, so that the differences between the different $\kappa$ are visible in the initial times, while also scaling the colormap for the overall maximum of $\rho$ over all times and $\kappa$.
+	The controls are also scaled for all times and $\kappa$ (for flow control we use the largest value over all times and $\kappa$ as the scaling for the arrow).
 	\section{Neumann Source Control}
 	We choose 
 	\begin{align*}
-		\rho_0 &= 0.25\\
-		V_{ext} &= 1.5\sin(\pi x_2/5)\cos(\pi x_1/5 - \pi/5)\\
-		\hr &= 0.25(1 - t) + t(0.25\sin(\pi(x_1 - 2)/2)\sin(\pi(x_2 - 2)/2) + 0.25)
+		\rho_0 &= \frac{1}{4}\\
+		V_{ext} &= \frac{3}{2}\cos\left(\frac{\pi x_1}{5} - \frac{\pi}{5}\right)\sin\left(\frac{\pi x_2}{5}\right)\\
+		\hr &= \frac{1}{4}(1 - t) + t\left(\frac{1}{4}\sin\left(\frac{\pi \left(x_1 - 2\right)}{2}\right)\sin\left(\frac{\pi (x_2 - 2)}{2}\right) + \frac{1}{4}\right)
 	\end{align*}
 	We choose the domain $[-1,1]^2$ with a time horizon $(0,1)$ and $N = 20$, $n = 11$. 
 	For $\beta = 10^{-3}$, for $\kappa = -1$ we have $\mathcal J_c = 0.0018$, for $\kappa = 0$ (compared to $\mathcal J_{uc} = 0.0274$ from $\beta = 10^3$), $\mathcal J_c = 0.0017$ and for $\kappa = 1$, $\mathcal J_c = 0.0018$. Each of these computations takes around $200$ seconds for $10$ outer iterations. The results can be seen in Figures \ref{F1a}, \ref{F1b} and \ref{F1c} and the external potential acting on $\rho$ is displayed in Figure \ref{F1V}.\\
-	The cost for these results is not that far from the cost with $\beta = 3$. Therefore we run the same example with $\beta = 10^{-5}$. This gives for $\kappa = -1$, $\mathcal J_c = 8.0673 \times 10^{-4}$, for $\kappa = 0$, $\mathcal J_c = 8.1989 \times 10^{-4}$, and for $\kappa = 1$, $\mathcal J_c = 8.4241 \times 10^{-4}$. Notably, these calculations only take around $20$ seconds. The results are displayed in Figures \ref{F1a5}, \ref{F1b5} and \ref{F1c5}. The controls are larger, but the difference in dynamics is smaller for different interactions.
+	We run the same example with $\beta = 10^{-5}$. This gives for $\kappa = -1$, $\mathcal J_c = 8.0673 \times 10^{-4}$, for $\kappa = 0$, $\mathcal J_c = 8.1989 \times 10^{-4}$, and for $\kappa = 1$, $\mathcal J_c = 8.4241 \times 10^{-4}$. Notably, these calculations only take around $20$ seconds. The results are displayed in Figures \ref{F1a5}, \ref{F1b5} and \ref{F1c5}. The controls are larger, but the difference in dynamics is smaller for different interactions.
 	
 	\begin{figure}[h]
 		\centering
@@ -126,12 +129,12 @@
 		\caption{Neumann Source Control: Optimal $\rho$ and optimal control for $\kappa = 1$ and $\beta = 10^{-5}$.} 
 		\label{F1c5}
 	\end{figure}
-	\section*{Dirichlet Source Control}
+	\section{Dirichlet Source Control}
 	We choose 
 	\begin{align*}
-		\rho_0 &= 0.25\cos(\pi x_1/2)\cos(\pi x_2/2) + 0.25\\
-		V_{ext} &=  (1-t)(-\cos(\pi x_1/2)\sin(\pi x_2/2) + 1)\\
-		\hr &= 0.25\cos(\pi x_1/2)\cos(\pi x_2/2)(1 - t) - t(0.25\sin(\pi x_1)\sin(\pi x_2/2 - \pi/2) + 0.25)
+		\rho_0 &= \frac{1}{4}\cos\left(\frac{\pi x_1}{2}\right)\cos\left(\frac{\pi x_2}{2}\right) + \frac{1}{4}\\
+		V_{ext} &=  2(1-t)\left(-\cos\left(\frac{\pi x_1}{2}\right)\sin\left(\frac{\pi x_2}{2}\right) + 1\right)\\
+		\hr &= (1 - t)\left(\frac{1}{4}\cos\left(\frac{\pi x_1}{2}\right)\cos\left(\frac{\pi x_2}{2}\right) + \frac{1}{4}\right) - t\left(\frac{1}{4}\sin\left(\pi x_1\right)\sin\left(\frac{\pi x_2}{2} - \frac{\pi}{2}\right) + \frac{1}{4}\right)
 	\end{align*}
 	so that the problem has Dirichlet boundary conditions at $0.25$ ($\rho = 0.25$ on $\partial \Omega$).
 	We choose the domain $[-1,1]^2$ with a time horizon $(0,1)$ and $N = 20$, $n = 11$.
@@ -165,13 +168,13 @@
 	\section{Neumann Flow Control}
 	We choose 
 	\begin{align*}
-		\rho_0 &= 0.25\\
-		V_{ext} &= ((x_1 + 0.3)^2 - 1)((x_1-0.4)^2 - 0.5)
-		((x_2 + 0.3)^2 - 1)((x_2-0.4)^2 - 0.5)\\
-		\hr &= (1-t)0.25 + t(1/1.3791)\exp{(-2((x_1+0.2)^2 + (x_2+0.2)^2))}
+		\rho_0 &= \frac{1}{4}\\
+		V_{ext} &= \left(\left(x_1 + 0.3\right)^2 - 1\right)\left(\left(x_1-0.4\right)^2 - 0.5\right)
+		\left(\left(x_2 + 0.3\right)^2 - 1\right)\left(\left(x_2-0.4\right)^2 - 0.5\right)\\
+		\hr &= \frac{1}{4}(1-t) + t\frac{1}{1.3791}\exp{\left(-2\left(\left(x_1+0.2\right)^2 + \left(x_2+0.2\right)^2\right)\right)}
 	\end{align*}
 	We choose the domain $[-1,1]^2$ with a time horizon $(0,1)$. We have $N = 20$, $n = 11$. 
-	For $\beta = 10^{-3}$, $\kappa = 1$ we get $\mathcal J_c = 0.0059$ (compare to $\beta = 10^3$ with $\mathcal J_{uc} = 0.0336$), for $\kappa = 0$, $\mathcal J_c = 0.0043$, and for $\kappa = - 1$ we get $\mathcal J_c = 0.0030$, (compare to $\beta = 10^3$ with $\mathcal J_{uc} = 0.0214$). Each of the problems takes around $180$ seconds to solve. The results can be seen in Figures \ref{F3a}, \ref{F3b} and \ref{F3c} and the external potential associated with it is shown in Figure \ref{F3V}.
+	For $\beta = 10^{-3}$, $\kappa = 1$ we get $\mathcal J_c = 0.0059$ (compare to $\beta = 10^3$ with $\mathcal J_{uc} = 0.0336$), for $\kappa = 0$, $\mathcal J_c = 0.0043$, and for $\kappa = - 1$ we get $\mathcal J_c = 0.0030$, (compare to $\beta = 10^3$ with $\mathcal J_{uc} = 0.0214$). Each of the problems takes around $180$ seconds to solve. The results can be seen in Figures \ref{F3a}, \ref{F3b} and \ref{F3c} and the external potential associated with it is shown in Figure \ref{F3V}. Note that mass is conserved.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.35]{FcEx1Vext.png}
@@ -197,12 +200,13 @@
 		\label{F3c}
 	\end{figure}
 	
-	
-	\section{Dirichlet Flow Control without $V_{ext}$}
+	\section{Dirichlet Flow Control}
+	I computed the Dirichlet example once with and once without $V_{ext}$. I think we can just use the one that has $V_{ext}$ included.
+	\subsection{Dirichlet Flow Control without $V_{ext}$}
 	We choose 
 	\begin{align*}
-		\rho_0 &= (0.25\pi)^2\cos(\pi x_1/2)\cos(\pi x_2/2) + (0.25\pi)^2\\
-		\hr &= (1 - t)((0.25\pi)^2\cos(\pi x_1/2)\cos(\pi x_2/2) + (0.25\pi)^2) + t((0.25\pi)^2\cos(\pi x_1/2)\cos(3\pi x_2/2) + (0.25\pi)^2)
+		\rho_0 &= \left(\frac{\pi}{4}\right)^2\cos\left(\frac{\pi x_1}{2}\right)\cos\left(\frac{\pi x_2}{2}\right) + \left(\frac{\pi}{4}\right)^2\\
+		\hr &= (1 - t)\left(\left(\frac{\pi}{4}\right)^2\cos\left(\frac{\pi x_1}{2}\right)\cos\left(\frac{\pi x_2}{2}\right) + \left(\frac{\pi}{4}\right)^2\right) + t\left(\left(\frac{\pi}{4}\right)^2\cos\left(\frac{\pi x_1}{2}\right)\cos\left(\frac{3\pi x_2}{2}\right) + \left(\frac{\pi}{4}\right)^2\right)
 	\end{align*}
 	We choose the domain $[-1,1]^2$ with a time horizon $(0,1)$. We have $N = 20$, $n = 11$. 
 	For $\beta = 10^{-3}$, $\kappa = 1$ we get $\mathcal J_c = 0.0121$, for $\kappa = 0$, $\mathcal J_c = 0.0095$, and for $\kappa = - 1$ we get $\mathcal J_c = 0.0104$, (compare to $\beta = 10^3$ with $\mathcal J_{uc} = 0.5272$). Each of the problems takes around $50$ seconds to solve. The results can be seen in Figures \ref{F4a}, \ref{F4b} and \ref{F4c}.
@@ -233,10 +237,10 @@
 		\label{F4c}
 	\end{figure}
 	
-		\section{Dirichlet Flow Control with $V_{ext}$}
+	\subsection{Dirichlet Flow Control with $V_{ext}$}
 	We add the following external potential to the above problem, see Figure \ref{F5V} 
 	\begin{align*}
-		V_{ext} = 10\sin(\pi x_2/3 - \pi/2)\sin(\pi x_1/2)
+		V_{ext} = 10\sin\left(\frac{\pi x_1}{2}\right) \sin\left(\frac{\pi x_2}{3} - \frac{\pi}{2}\right)
 	\end{align*}
 	For $\beta = 10^{-3}$, $\kappa = 1$ we get $\mathcal J_c = 0.0130$, for $\kappa = 0$, $\mathcal J_c = 0.0106$, and for $\kappa = - 1$ we get $\mathcal J_c = 0.0113$. (Compare these to $\beta = 10^3$ with $\mathcal J_{uc} = 0.0898$) Each of the problems takes around $50$ seconds to solve. The results can be seen in Figures \ref{F5a}, \ref{F5b} and \ref{F5c}.
 	

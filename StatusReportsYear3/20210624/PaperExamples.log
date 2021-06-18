@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  17 JUN 2021 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  18 JUN 2021 12:17
 entering extended mode
 **./PaperExamples.tex
 (PaperExamples.tex
@@ -566,207 +566,210 @@ LaTeX Info: Redefining \nameref on input line 73.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count149
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
 
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.f
 d"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Images/SCEx1Vext.png, id=26, 1445.4pt x 704.6325pt>
+<Images/SCEx1Vext.png, id=34, 1445.4pt x 704.6325pt>
 File: Images/SCEx1Vext.png Graphic file (type png)
 <use Images/SCEx1Vext.png>
-Package pdftex.def Info: Images/SCEx1Vext.png  used on input line 88.
+Package pdftex.def Info: Images/SCEx1Vext.png  used on input line 91.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 88--89
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 91--92
  [][] 
  []
 
-<Images/SCEx1k0.png, id=27, 1445.4pt x 704.6325pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/SCEx1k0.png, id=35, 1445.4pt x 704.6325pt>
 File: Images/SCEx1k0.png Graphic file (type png)
 <use Images/SCEx1k0.png>
-Package pdftex.def Info: Images/SCEx1k0.png  used on input line 94.
+Package pdftex.def Info: Images/SCEx1k0.png  used on input line 97.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 94--95
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 97--98
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx1kn1.png, id=28, 1445.4pt x 704.6325pt>
+<Images/SCEx1kn1.png, id=36, 1445.4pt x 704.6325pt>
 File: Images/SCEx1kn1.png Graphic file (type png)
 <use Images/SCEx1kn1.png>
-Package pdftex.def Info: Images/SCEx1kn1.png  used on input line 100.
+Package pdftex.def Info: Images/SCEx1kn1.png  used on input line 103.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 100--101
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 103--104
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx1k1.png, id=29, 1445.4pt x 704.6325pt>
+<Images/SCEx1k1.png, id=37, 1445.4pt x 704.6325pt>
 File: Images/SCEx1k1.png Graphic file (type png)
 <use Images/SCEx1k1.png>
-Package pdftex.def Info: Images/SCEx1k1.png  used on input line 106.
+Package pdftex.def Info: Images/SCEx1k1.png  used on input line 109.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 106--107
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 109--110
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx1k0b5.png, id=30, 1445.4pt x 704.6325pt>
+<Images/SCEx1k0b5.png, id=38, 1445.4pt x 704.6325pt>
 File: Images/SCEx1k0b5.png Graphic file (type png)
 <use Images/SCEx1k0b5.png>
-Package pdftex.def Info: Images/SCEx1k0b5.png  used on input line 113.
+Package pdftex.def Info: Images/SCEx1k0b5.png  used on input line 116.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 113--114
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 116--117
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx1kn1b5.png, id=31, 1445.4pt x 704.6325pt>
+<Images/SCEx1kn1b5.png, id=39, 1445.4pt x 704.6325pt>
 File: Images/SCEx1kn1b5.png Graphic file (type png)
 <use Images/SCEx1kn1b5.png>
-Package pdftex.def Info: Images/SCEx1kn1b5.png  used on input line 119.
+Package pdftex.def Info: Images/SCEx1kn1b5.png  used on input line 122.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 119--120
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 122--123
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx1k1b5.png, id=32, 1445.4pt x 704.6325pt>
+<Images/SCEx1k1b5.png, id=40, 1445.4pt x 704.6325pt>
 File: Images/SCEx1k1b5.png Graphic file (type png)
 <use Images/SCEx1k1b5.png>
-Package pdftex.def Info: Images/SCEx1k1b5.png  used on input line 125.
+Package pdftex.def Info: Images/SCEx1k1b5.png  used on input line 128.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 125--126
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 128--129
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--142
+
+ []
 
 [1
 
-{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Images
-/SCEx1Vext.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 135--139
-
- []
-
-<Images/SCEx2Vext.png, id=58, 1445.4pt x 704.6325pt>
+{C:/Users/s1452504/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<Images/SCEx2Vext.png, id=66, 1445.4pt x 704.6325pt>
 File: Images/SCEx2Vext.png Graphic file (type png)
 <use Images/SCEx2Vext.png>
-Package pdftex.def Info: Images/SCEx2Vext.png  used on input line 142.
+Package pdftex.def Info: Images/SCEx2Vext.png  used on input line 145.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 142--143
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 145--146
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx2k0.png, id=59, 1445.4pt x 704.6325pt>
+<Images/SCEx2k0.png, id=67, 1445.4pt x 704.6325pt>
 File: Images/SCEx2k0.png Graphic file (type png)
 <use Images/SCEx2k0.png>
-Package pdftex.def Info: Images/SCEx2k0.png  used on input line 148.
+Package pdftex.def Info: Images/SCEx2k0.png  used on input line 151.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 148--149
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 151--152
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx2kn1.png, id=60, 1445.4pt x 704.6325pt>
+<Images/SCEx2kn1.png, id=68, 1445.4pt x 704.6325pt>
 File: Images/SCEx2kn1.png Graphic file (type png)
 <use Images/SCEx2kn1.png>
-Package pdftex.def Info: Images/SCEx2kn1.png  used on input line 154.
+Package pdftex.def Info: Images/SCEx2kn1.png  used on input line 157.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 154--155
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 157--158
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCEx2k1.png, id=61, 1445.4pt x 704.6325pt>
+<Images/SCEx2k1.png, id=69, 1445.4pt x 704.6325pt>
 File: Images/SCEx2k1.png Graphic file (type png)
 <use Images/SCEx2k1.png>
-Package pdftex.def Info: Images/SCEx2k1.png  used on input line 160.
+Package pdftex.def Info: Images/SCEx2k1.png  used on input line 163.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 160--161
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2 <./Images/SCEx1k0.png (PNG copy)>]
-<Images/FcEx1Vext.png, id=75, 1445.4pt x 704.6325pt>
+<Images/FcEx1Vext.png, id=74, 1445.4pt x 704.6325pt>
 File: Images/FcEx1Vext.png Graphic file (type png)
 <use Images/FcEx1Vext.png>
-Package pdftex.def Info: Images/FcEx1Vext.png  used on input line 177.
+Package pdftex.def Info: Images/FcEx1Vext.png  used on input line 180.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 177--178
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 180--181
  [][] 
  []
 
-<Images/FcEx1k0.png, id=76, 1445.4pt x 704.6325pt>
+<Images/FcEx1k0.png, id=75, 1445.4pt x 704.6325pt>
 File: Images/FcEx1k0.png Graphic file (type png)
 <use Images/FcEx1k0.png>
-Package pdftex.def Info: Images/FcEx1k0.png  used on input line 183.
+Package pdftex.def Info: Images/FcEx1k0.png  used on input line 186.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 183--184
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 186--187
  [][] 
  []
 
-<Images/FcEx1kn1.png, id=77, 1445.4pt x 704.6325pt>
+<Images/FcEx1kn1.png, id=76, 1445.4pt x 704.6325pt>
 File: Images/FcEx1kn1.png Graphic file (type png)
 <use Images/FcEx1kn1.png>
-Package pdftex.def Info: Images/FcEx1kn1.png  used on input line 189.
+Package pdftex.def Info: Images/FcEx1kn1.png  used on input line 192.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 189--190
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 192--193
  [][] 
  []
 
-<Images/FcEx1k1.png, id=78, 1445.4pt x 704.6325pt>
+<Images/FcEx1k1.png, id=77, 1445.4pt x 704.6325pt>
 File: Images/FcEx1k1.png Graphic file (type png)
 <use Images/FcEx1k1.png>
-Package pdftex.def Info: Images/FcEx1k1.png  used on input line 195.
+Package pdftex.def Info: Images/FcEx1k1.png  used on input line 198.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 195--196
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 198--199
  [][] 
  []
 
+[2 <./Images/SCEx1Vext.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -781,55 +784,54 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 201.
+(hyperref)                removing `math shift' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 201.
+(hyperref)                removing `subscript' on input line 205.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 201.
+(hyperref)                removing `math shift' on input line 205.
 
 
-Overfull \hbox (41.83917pt too wide) detected at line 206
+Overfull \hbox (28.79733pt too wide) detected at line 210
 []
  []
 
-[3 <./Images/SCEx1kn1.png (PNG copy)>]
-<Images/FcEx2k0.png, id=91, 1445.4pt x 704.6325pt>
+<Images/FcEx2k0.png, id=90, 1445.4pt x 704.6325pt>
 File: Images/FcEx2k0.png Graphic file (type png)
 <use Images/FcEx2k0.png>
-Package pdftex.def Info: Images/FcEx2k0.png  used on input line 219.
+Package pdftex.def Info: Images/FcEx2k0.png  used on input line 223.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 219--220
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 223--224
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FcEx2kn1.png, id=92, 1445.4pt x 704.6325pt>
+<Images/FcEx2kn1.png, id=91, 1445.4pt x 704.6325pt>
 File: Images/FcEx2kn1.png Graphic file (type png)
 <use Images/FcEx2kn1.png>
-Package pdftex.def Info: Images/FcEx2kn1.png  used on input line 225.
+Package pdftex.def Info: Images/FcEx2kn1.png  used on input line 229.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 225--226
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 229--230
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FcEx2k1.png, id=93, 1445.4pt x 704.6325pt>
+<Images/FcEx2k1.png, id=92, 1445.4pt x 704.6325pt>
 File: Images/FcEx2k1.png Graphic file (type png)
 <use Images/FcEx2k1.png>
-Package pdftex.def Info: Images/FcEx2k1.png  used on input line 231.
+Package pdftex.def Info: Images/FcEx2k1.png  used on input line 235.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 231--232
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 235--236
  [][] 
  []
 
@@ -838,62 +840,63 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 240.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 236.
+(hyperref)                removing `subscript' on input line 240.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 240.
 
-<Images/FcEx2Vextb.png, id=98, 1445.4pt x 704.6325pt>
+[3 <./Images/SCEx1k0.png (PNG copy)>]
+<Images/FcEx2Vextb.png, id=108, 1445.4pt x 704.6325pt>
 File: Images/FcEx2Vextb.png Graphic file (type png)
 <use Images/FcEx2Vextb.png>
-Package pdftex.def Info: Images/FcEx2Vextb.png  used on input line 246.
+Package pdftex.def Info: Images/FcEx2Vextb.png  used on input line 250.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 246--247
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 250--251
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FcEx2k0b.png, id=99, 1445.4pt x 704.6325pt>
+<Images/FcEx2k0b.png, id=109, 1445.4pt x 704.6325pt>
 File: Images/FcEx2k0b.png Graphic file (type png)
 <use Images/FcEx2k0b.png>
-Package pdftex.def Info: Images/FcEx2k0b.png  used on input line 252.
+Package pdftex.def Info: Images/FcEx2k0b.png  used on input line 256.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 252--253
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 256--257
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FcEx2kn1b.png, id=100, 1445.4pt x 704.6325pt>
+<Images/FcEx2kn1b.png, id=110, 1445.4pt x 704.6325pt>
 File: Images/FcEx2kn1b.png Graphic file (type png)
 <use Images/FcEx2kn1b.png>
-Package pdftex.def Info: Images/FcEx2kn1b.png  used on input line 258.
+Package pdftex.def Info: Images/FcEx2kn1b.png  used on input line 262.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 258--259
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 262--263
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FcEx2k1b.png, id=101, 1445.4pt x 704.6325pt>
+<Images/FcEx2k1b.png, id=111, 1445.4pt x 704.6325pt>
 File: Images/FcEx2k1b.png Graphic file (type png)
 <use Images/FcEx2k1b.png>
-Package pdftex.def Info: Images/FcEx2k1b.png  used on input line 264.
+Package pdftex.def Info: Images/FcEx2k1b.png  used on input line 268.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 264--265
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
@@ -904,33 +907,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Package caption Warning: Unused \captionsetup[sub] on input line 25.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
-[4 <./Images/SCEx1k1.png (PNG copy)>] [5 <./Images/SCEx1k0b5.png (PNG copy)> <.
-/Images/SCEx1kn1b5.png (PNG copy)>] [6 <./Images/SCEx1k1b5.png (PNG copy)> <./I
-mages/SCEx2Vext.png (PNG copy)>] [7 <./Images/SCEx2k0.png (PNG copy)> <./Images
-/SCEx2kn1.png (PNG copy)>] [8 <./Images/SCEx2k1.png (PNG copy)> <./Images/FcEx1
-Vext.png (PNG copy)>] [9 <./Images/FcEx1k0.png (PNG copy)> <./Images/FcEx1kn1.p
-ng (PNG copy)>] [10 <./Images/FcEx1k1.png (PNG copy)> <./Images/FcEx2k0.png (PN
-G copy)>] [11 <./Images/FcEx2kn1.png (PNG copy)> <./Images/FcEx2k1.png (PNG cop
-y)>] [12 <./Images/FcEx2Vextb.png (PNG copy)> <./Images/FcEx2k0b.png (PNG copy)
->] [13 <./Images/FcEx2kn1b.png (PNG copy)> <./Images/FcEx2k1b.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
-
-(PaperExamples.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
+[4 <./Images/SCEx1kn1.png (PNG copy)>] [5 <./Images/SCEx1k1.png (PNG copy)> <./
+Images/SCEx1k0b5.png (PNG copy)>] [6 <./Images/SCEx1kn1b5.png (PNG copy)> <./Im
+ages/SCEx1k1b5.png (PNG copy)>] [7 <./Images/SCEx2Vext.png (PNG copy)> <./Image
+s/SCEx2k0.png (PNG copy)>] [8 <./Images/SCEx2kn1.png (PNG copy)> <./Images/SCEx
+2k1.png (PNG copy)>] [9 <./Images/FcEx1Vext.png (PNG copy)> <./Images/FcEx1k0.p
+ng (PNG copy)>] [10 <./Images/FcEx1kn1.png (PNG copy)> <./Images/FcEx1k1.png (P
+NG copy)>] [11 <./Images/FcEx2k0.png (PNG copy)> <./Images/FcEx2kn1.png (PNG co
+py)>] [12 <./Images/FcEx2k1.png (PNG copy)> <./Images/FcEx2Vextb.png (PNG copy)
+>] [13 <./Images/FcEx2k0b.png (PNG copy)> <./Images/FcEx2kn1b.png (PNG copy)>]
+[14 <./Images/FcEx2k1b.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+ (PaperExamples.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
 Package rerunfilecheck Info: File `PaperExamples.out' has not changed.
-(rerunfilecheck)             Checksum: 50E1A339D725543A65B84EB23E6E883A;253.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
+(rerunfilecheck)             Checksum: A29FF2774516EECFB4B34F196BC49C6E;399.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
  ) 
 Here is how much of TeX's memory you used:
- 10574 strings out of 492946
- 159839 string characters out of 3124935
- 271114 words of memory out of 3000000
- 14291 multiletter control sequences out of 15000+200000
- 11194 words of font info for 44 fonts, out of 3000000 for 9000
+ 10575 strings out of 492946
+ 159854 string characters out of 3124935
+ 273117 words of memory out of 3000000
+ 14290 multiletter control sequences out of 15000+200000
+ 10745 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,43p,594b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,43p,561b,339s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
@@ -942,9 +945,9 @@ nts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on PaperExamples.pdf (13 pages, 2864581 bytes).
+Output written on PaperExamples.pdf (14 pages, 2870597 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
