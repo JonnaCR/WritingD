@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  23 JUN 2021 17:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  26 JUN 2021 12:06
 entering extended mode
 **./CVShort.tex
 (CVShort.tex
@@ -333,7 +333,7 @@ Package rerunfilecheck Info: File `CVShort.out' has not changed.
 Here is how much of TeX's memory you used:
  5145 strings out of 492946
  78091 string characters out of 3124935
- 175059 words of memory out of 3000000
+ 176059 words of memory out of 3000000
  9019 multiletter control sequences out of 15000+200000
  7807 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -345,7 +345,7 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1452504/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/s145
 2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pf
 b>
-Output written on CVShort.pdf (1 page, 85416 bytes).
+Output written on CVShort.pdf (1 page, 85468 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)
