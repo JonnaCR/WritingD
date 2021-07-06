@@ -1,0 +1,20 @@
+\begin{table}
+\centering
+\begin{tabular}{ | c | c || c | c | c | c | c ||}
+\hline
+\multicolumn{2}{|c||}{}& $\beta = 10^{-5}$ & $\beta = 10^{-3}$ & $\beta = 10^{-1}$ & $\beta = 10^{1}$ & $\beta = 10^{3}$  \\
+\hline
+\hline
+\multirow{2}{*}{$\kappa= \numprint{0}$}  & $\mathcal{J}_{uc}$ & $\numprint{0.0158}$ & $\numprint{0.0158}$ & $\numprint{0.0158}$ & $\numprint{0.0158}$ & $\numprint{0.0158}$\\
+ & $\mathcal{J}_c$ & $\numprint{0.0000}$ & $\numprint{0.0021}$ & $\numprint{0.0144}$ & $\numprint{0.0158}$ & $\numprint{0.0158}$\\
+\hline
+\multirow{2}{*}{$\kappa= \numprint{1}$}  & $\mathcal{J}_{uc}$ & $\numprint{0.0213}$ & $\numprint{0.0213}$ & $\numprint{0.0213}$ & $\numprint{0.0213}$ & $\numprint{0.0213}$\\
+ & $\mathcal{J}_c$ & $\numprint{0.0000}$ & $\numprint{0.0026}$ & $\numprint{0.0191}$ & $\numprint{0.0212}$ & $\numprint{0.0213}$\\
+\hline
+\multirow{2}{*}{$\kappa= \numprint{-1}$}  & $\mathcal{J}_{uc}$ & $\numprint{0.0138}$ & $\numprint{0.0138}$ & $\numprint{0.0138}$ & $\numprint{0.0138}$ & $\numprint{0.0138}$\\
+ & $\mathcal{J}_c$ & $\numprint{0.0000}$ & $\numprint{0.0018}$ & $\numprint{0.0128}$ & $\numprint{0.0138}$ & $\numprint{0.0138}$\\
+\hline
+\end{tabular}
+\caption{Source Control Dirichlet Problem: Cost $\mathcal{J}_{uc}$ of applying no control (i.e., $\vec{w} = \vec{0}$)and optimal control cost $\mathcal{J}_{c}$ for a range of values of the interaction strength $\kappa$ and regularization parameter $\beta$. The value of $\mathcal J_{c}$ is of order $10^{-5}$. Note that for $\beta = 10$, the cost functonals differ by $10-5$, while for $\beta = 10^3$ they differ by $10^{-8}$, $10^{-7}$ and $-10^{-8}$ +++ Check and discuss +++.}
+\label{TabSCD}
+\end{table}
