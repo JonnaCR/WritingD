@@ -1,0 +1,18 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: ALOP2021Presentation.aux
+The style file: biblatex.bst
+Database file #1: ALOP2021Presentation-blx.bib
+Database file #2: PresentationBib.bib
+I was expecting a `,' or a `}'---line 7 of file PresentationBib.bib
+ :  year = {2020}
+ :               .
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 14 of file PresentationBib.bib
+ :  year = {2021}
+ :               .
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 23 of file PresentationBib.bib
+ :   url = {https://datashare.is.ed.ac.uk/handle/10283/2647 (2DChebClass)}
+ :                                                                        .
+I'm skipping whatever remains of this entry
+Biblatex version: 3.16
+(There were 3 error messages)
