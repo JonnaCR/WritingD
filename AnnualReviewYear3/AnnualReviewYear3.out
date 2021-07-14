@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Inertial Equations Examples}{}% 2
+\BOOKMARK [1][-]{section.3}{Multiple Species \(tbc\) Optimality Conditions}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Adjoint 1}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Adjoint 2}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Gradient Equation}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Multishape Implementation}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Validation of the different operators}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Numerical Examples}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Flow around Constriction}{subsection.4.2}% 10
+\BOOKMARK [1][-]{section.5}{Derivation of Optimality Conditions with Periodic Boundary Conditions}{}% 11
+\BOOKMARK [1][-]{section.6}{Sedimentation}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Forward Problem}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.2}{The Hard Disk Approximation}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.3}{Deriving the equation of motion}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.4}{Derivation of Optimality Conditions}{section.6}% 16
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Calculating Frech\351t Derivatives}{subsection.6.4}% 17
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Adjoint Equation}{subsection.6.4}% 18
+\BOOKMARK [3][-]{subsubsection.6.4.3}{Frech\351t Derivatives for Boundary Terms}{subsection.6.4}% 19
+\BOOKMARK [3][-]{subsubsection.6.4.4}{Boundary Terms}{subsection.6.4}% 20
+\BOOKMARK [3][-]{subsubsection.6.4.5}{Derivation of Time-Independent Control}{subsection.6.4}% 21
+\BOOKMARK [2][-]{subsection.6.5}{Numerical Examples}{section.6}% 22
+\BOOKMARK [1][-]{section.7}{Newton-Krylov}{}% 23
+\BOOKMARK [1][-]{section.8}{Some other stuff}{}% 24
+\BOOKMARK [2][-]{subsection.8.1}{Sparse to Fine Grid Stuff}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{Final time target derivation}{section.8}% 26
+\BOOKMARK [2][-]{subsection.8.3}{Averaging 3D to 2D}{section.8}% 27

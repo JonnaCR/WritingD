@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  22 OCT 2020 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  14 JUL 2021 17:07
 entering extended mode
 **./MultiShapeExamples.tex
 (MultiShapeExamples.tex
@@ -777,7 +777,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
  ) 
 Here is how much of TeX's memory you used:
  10501 strings out of 492946
- 158653 string characters out of 3124935
+ 158683 string characters out of 3124935
  269059 words of memory out of 3000000
  14243 multiletter control sequences out of 15000+200000
  9822 words of font info for 37 fonts, out of 3000000 for 9000

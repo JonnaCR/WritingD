@@ -1,0 +1,14 @@
+In this section the advantages and disadvantages of pseudospectral methods over finite element methods (FEM) and finite difference methods (FDM) are discussed, compare to \cite{Boyd1}.
+The main difference between pseudospectral methods (PSM) and the other two methods is that PSM uses global basis functions on all Chebyshev points, while FEM uses local basis functions and FDM uses local, low order polynomials.
+\\
+Finite difference methods use overlapping sequences of polynomials to approximate the solution of the problem. They are easy to implement and less costly per degree of freedom. However, they are also less accurate than PSM.
+\\
+The basis functions used in FEM methods are generally of fixed, low degree and more accuracy is achieved through refinement of the elements; either in the whole domain or in regions where the problem is more difficult to solve.
+In comparison, the global basis function used in PSM are generally of higher degree than the ones in FEM. Furthermore, in order to refine the method, the degree of the polynomial can be increased.
+\\
+In general, FEM results in large sparse matrix systems, which in many cases can be solved by exploiting their structure. It is also easily applied to complex domains, due to the shape of the elements.
+However, the disadvantage of FEM is low accuracy of solutions, due to the low degree of the polynomial basis functions. Furthermore, the sparsity property of the matrix systems is compromised when the PDEs involve nonlocal terms. Therefore, PSM are advantageous in this type of problems, since small dense matrices are utilized. 
+ As discussed in \cite{FEMIntegroPaper}, an adaptive FEM method can be used to solve an integro-differential PDE-constrained optimal control problem. However, the accuracy achieved is mainly of order $O(10^{-2})$ and maximal $O(10^{-4})$, for a two dimensional problem with $N$ nodes, where $N$ is between $N=3549$ and $50421$. The time step is $dt=0.05$. Furthermore, Dirichlet boundary conditions are used, which avoids applying more realistic no-flux boundary conditions. These no-flux boundary conditions are difficult to apply in the FEM context, because they are nonlocal as well. Within the existing code framework \cite{GoddardPseudospectralCode1}, these boundary conditions are straightforward to apply.
+The disadvantages of PSM are that they are more computationally expensive and the domain is required to be smooth.
+However, as discussed in \cite{Boyd1}, if the accuracy of PSM with $N=10$ is to be achieved by FEM or FDM, a 10th order method has to be chosen with an error of $O(h^{10})$.
+All in all, PSM is the best method for solving PDE-contrained optimization problems involving integro-PDEs.

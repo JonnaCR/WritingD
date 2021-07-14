@@ -1,0 +1,17 @@
+While other norms such as an $L_1$ norm or a pointwise error measure have been considered, the main measure employed in this work is described in the following.
+
+All errors in Sections \ref{sec:Validation} and \ref{sec:Examples} are calculated between a variable of interest, $y$, and $y_R$, the reference value that $y$ is compared to. When measuring convergence of the fixed point scheme, described in Section \ref{sec:Method_SolverFP}, $y = W^{(i)}_g$ and $y_R = W^{(i)}_i$. Alternatively, when investigating a known test problem, $y$ is a numerical solution and $y_R$ is an exact solution. The error measure $\mathcal{E}$ is composed of an $L^2$ error in space and an $L^\infty$ error in time. The relative $L^2$ error in the spatial direction is:
+\begin{align*}
+\mathcal{E}_{Rel}(t) = \frac{|| y(x,t) - y_{R}(x,t)||_{L^2(\Omega)} }{||y_R(x,t) ||_{L^2(\Omega)}+ 10^{-10}},
+\end{align*}
+where the small additional term on the denominator prevents division by zero.
+Furthermore, the absolute $L^2$ error is:
+\begin{align*}
+\mathcal{E}_{Abs}(t) = || y(x,t) - y_R(x,t)||_{L^2(\Omega)}.
+\end{align*}
+Then, an $L^\infty$ error in time is taken of the minimum of $\mathcal{E}_{Rel}$ and $\mathcal{E}_{Abs}$, to obtain the error of interest:
+\begin{align*}
+\mathcal{E} = \max_{t \in [0,T]}\left[\min\left(\mathcal{E}_{Rel}(t), \mathcal{E}_{Abs}(t)\right)\right].
+\end{align*}
+The minimum between absolute and relative spatial error is taken to avoid choosing an erogenously large relative error, caused by division of one small term by another.
+

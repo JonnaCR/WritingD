@@ -1,0 +1,25 @@
+ \label{sec:TimeIndependentControl}
+While the gradient equation is unchanged by the sedimentation equation, as compared to an advection diffusion equation, it is changed when we consider a time independent control.
+We choose the problem:
+\begin{align*}
+	&J = \frac{1}{2}\int_0^T \int_\Omega (\rho - \widehat \rho)^2 dr dt + \frac{\beta}{2} \int_\Omega \w(r)^2 dr\\
+	&\text{subject to:}\\
+	&\frac{\partial \rho}{\partial t} = \beta \sigma^2 \bigg( \nabla \cdot (\rho \nabla V_{ext}) - \nabla (\rho \w) + \nabla \cdot \left(\rho \nabla \frac{\delta F_{N}[\rho]}{\delta \rho}\right) + \kappa \int_\Omega \rho(r) \rho(r') \K(r,r')dr\bigg),
+\end{align*}
+where $\K(r,r') = \nabla V_2$.
+Taking derivatives of the Lagrangian with respect to $\w$ gives:
+\begin{align}\label{eqn:LwGradientEqn}
+	\mathcal{L}_\w(\rho,\w, q)h &= \int_\Omega \beta \w(r) \cdot \h(r) dt + \int_0^T \int_\Omega \rho \h(r) \cdot \nabla q dr dt.
+\end{align}
+Since $\w$ does not depend on $t$, neither does $\h$ and so this can be taken out of the time integral:
+\begin{align*}
+	\mathcal{L}_\w(\rho,\w, q)h &= \int_\Omega \bigg( \beta \w(r) \cdot \h(r)  + \h(r) \cdot \int_0^T \rho  \nabla q dt \bigg) dr.
+\end{align*}
+Then we get:
+\begin{align*}
+	\beta \w(r)  +  \int_0^T \rho  \nabla q dt = 0,
+\end{align*}
+and finally:
+\begin{align*}
+	\w(r) = - \frac{1}{\beta} \int_0^T \rho  \nabla q dt.
+\end{align*}

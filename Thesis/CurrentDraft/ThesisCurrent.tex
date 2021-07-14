@@ -5,7 +5,7 @@
 \usepackage{subcaption}
 \usepackage{caption}
 \usepackage{graphicx}
-\usepackage{numprint}
+\usepackage[autolanguage,nosepfour]{numprint}
 \usepackage{multirow}
 \linespread{1.25} 
 \setlength{\parindent}{0cm}
@@ -18,6 +18,7 @@
 \usepackage{mathtools}
 \usepackage{commath}
 \usepackage{bbm}
+\usepackage[ruled,vlined]{algorithm2e}
 
 %\usepackage[sc,osf]{mathpazo}
 \usepackage{subcaption}
@@ -55,6 +56,12 @@
 \newcommand{\h}{\mathbf{h}}
 \newcommand{\K}{\mathbf{K}}
 \newcommand{\hr}{\widehat \rho}
+\newcommand{\jf}{\mathbf j}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Grad}{Grad}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Lap}{Lap}
 
 
 
@@ -86,44 +93,96 @@
 	
 	
 	\section{Introduction}
+	\subsection{Motivating Examples and Industry Applications}
 	
-	\section{DFT/ Statistical Mechanics Background}
 	
-	\section{DDFT Background}
+	
+	
+	
+	
+	\section{The Forward Problem/ Particle Dynamics Modelling}
+	
+	\subsection{DFT/ Statistical Mechanics Background}
+	
+	\subsection{DDFT Background}
 		\begin{itemize}
 			\item Some general background, link to DFT stuff
 			\item Derivation from particle equations
 			\item Highlight limitations of models
 			\item Focus on overdamped equations
 		\end{itemize}
-
+	\input{MultiscaleParticleDynamicsIntro.tex}	
+	
+	\subsection{Numerical Methods for the Forward Problem}
+	
+	++ Might go later? ++
+	\begin{itemize}
+		\item Pseudospectral Methods and Spectral Element Methods
+		\item How shapes work
+		\item How multishape works
+		\item Validation in appendix??
+		\item Convergence results for pseudospectral methods.
+		\item Comparison with FEM and FDM
+	\end{itemize}
+	\input{ShapeNotes}
+	\input{MultiShapeNotes}	
+    \input{ComparisonwithFDMandFEM.tex}
+    
+    
+    
+    
+    
 	\section{PDE-Constrained Optimization}
+	
+	\subsection{General PDECO Stuff}
 		\begin{itemize}
 			\item General Intro to the class of problems and a general problem setup
 			\item Link to other areas?
 			\item Literature review of Mean-Field PDECO and link between the two fields.
 			\item Here may be a good point to go into the mean-field convergence stuf of the microscopic OCP to ours a little more.
 		\end{itemize}
+	\input{PDECOIntro}
+	
+	\subsection{Literature Review Mean Field PDECO}
+	+++ Might go with the above? Or above delete nonlocal and add below? +++
+	\input{MeanFieldOCPReview.tex}
 	
 	\subsection{Optimality Conditions}
+	++++++ Need to align the two files below. Second is more recent. Has fix of the interaction derivation in it. Generally worth considering putting a more general notation in place ?? +++++
 		\begin{itemize}
 			\item Maybe here or above: discuss how to solve OCPs in different ways.
 			\item Frechet stuff.
 			\item Optimality conditions for the overdamped equations with Dirichlet and no-flux BCs
 			\item Find a general notation to make future derivations 'additive'.
 		\end{itemize}
-
-	\section{Numerical Methods}
-	\subsection{Pseudospectral Methods and 2DChebClass}
+	\input{PDECOOptimalityConditionsBasics}
+	\input{OverdampedOptimalityConditions1}
+	
+	\subsection{Deriving OCP with general Flow Term and Periodic Boundary Conditions}
+	\input{ChapterPeriodicBCOCP}
+	
+	\subsection{Subdomain and Boundary Observation with Non-Constant Flux}
+	
+	The first problem of interest is of the form:
+	
+	\input{NonconstantFluxSubdomainObservation.tex}
+	\input{NonconstantFluxBoundaryObservation.tex}	
+	
+	
+	
+	
+	
+	\section{Numerical Methods for PDECO}
+	
+	\subsection{Standard Approaches}
 		\begin{itemize}
-			\item Pseudospectral Methods and Spectral Element Methods
-			\item How shapes work
-			\item How multishape works
-			\item Validation in appendix??
-			\item Convergence results for pseudospectral methods.
-			\item Comparison with FEM and FDM
+			\item Newton -Krlov, GMRES explanation, ...
+			\item Fixed Point
+			\item Preconditioning
 		\end{itemize}
-	\subsection{Optimization Methods}
+	
+	\subsection{Optimization Methods we use}
+	Difference to above: above general review, here what we have been doing.
 		\begin{itemize}
 			\item Fixed Point (+ Armijo Extension)
 			\item Newton-Krylov
@@ -131,6 +190,21 @@
 			\item fsolve Multiple Shooting 
 			\item fsolve algorithms in Matlab
 		\end{itemize}
+	
+	\subsubsection{Newton-Krylov Algorithm}
+	\subsubsection{Fixed Point Algorithm}\label{sec:Method_SolverFP}	
+	\input{FixedPointAlgorithm.tex}
+	\subsubsection{Picard Multiple Shooting}
+	\input{PicardAlgorithm.tex}
+	\subsubsection{Multiple Shooting}
+	\input{MultipleShootingIntro.tex}
+	\subsubsection{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt{fsolve}} \label{sec:fsolvedescription}
+	\input{fsolveAlgorithm.tex}
+	
+	
+	
+	
+	
 	
 	\section{Validation of the Numerical Methods}
 	\begin{itemize}
@@ -142,20 +216,80 @@
 		\item Other things -- see notes
 	\end{itemize}
 
+	\subsection{Error Measure}\label{sec:ErrorMeasure}
+	\input{ErrorMeasure.tex}
+
+	\subsection{Validation with Exact Solutions}
+	++ add e.g. 3D exact solution and other useful ones ++
+	\input{ExactSolutions1.tex}
+	In this section, the measure of accuracy, used in the numerical experiments, is discussed, some validation methods and results are presented and further comments are made on general observations regarding the functionality of the numerical algorithm.
+
+
+	
+	\subsection{Validation Against \texttt{fsolve}}
+	As a benchmark, we compared the fixed point scheme to Matlab's inbuilt \texttt{fsolve} function. It uses the trust-region-dogleg algorithm, see Section \ref{sec:fsolvedescription} and \cite{Powell1}, to solve the optimality system of interest. While it is very robust, it is also much slower than the fixed point method, which works reliably for the types of problems we set out to solve. 
+	\input{Comparisonwithfsolve.tex}
+	
+	
+	\subsection{Perturbing $w$}
+	\input{Perturbingw.tex}
+	
+	\subsection{Additional Observations}
+	In the following, a few further observations are stated that were made when applying the optimization solver to problems involving the overdamped model. Demonstrations of these points are omitted, due to time constraints, and will be provided in future work.
+	During the investigation of different perturbed exact problems and other test problems, it could be observed that the weakness of the optimization method lies in solving advection dominant problems. 
+	This became apparent when considering different analytic exact solutions to the overdamped flow control problem \eqref{eqn:ADFlowOCP}. Depending on the magnitude of the control in each problem, the algorithm could either converge, for small controls, or not, for large control values. Scaling the size of the control down, by scaling the exact solutions accordingly, it is possible to achieve convergence for problems that were previously too difficult to solve for the optimization solver. Another way of achieving convergence is to introduce a diffusion coefficient into the problem. A large advection term can then be offset with a large diffusion coefficient and the optimization solver is able to converge.
+	The issue of advection dominance is especially prevalent when applying no-flux boundary conditions. This is because in order to match the boundary conditions in an advection dominated problem, the gradients of the particle distribution become steep at the boundary. Since steep gradients are difficult to treat numerically, this is an exacerbation of the problem at hand.
+	It is important to point out that these issues are encountered with any optimization and forward solver and is not unique to our choice of methods. 
+	\\
+	\\
+	During the work on the overdamped equations it was found that one limiting factor in the convergence of the method is interpolation errors. The error made during interpolation is of order $10^{-8}$ to $10^{-9}$. The ODE solver cannot be more accurate than that, since variables are interpolated in time during each ODE solve, and consequently the optimization tolerance has to be adapted to this finding as well.
+	Furthermore, the optimization tolerance has to be chosen in such a way that it takes into account the accumulation of error during each ODE solve and with each iteration of the optimization algorithm. This results in the optimization tolerance having to be at least three orders larger than the ODE solver tolerance, which is bounded by the interpolation error. We found that, in general, choosing the ODE solver tolerance to be $10^{-8}$ and the optimization tolerance to be $10^{-4}$, we get reliable convergence for most test problems.
+	\\
+	Another aspect to take into consideration is that the problem becomes numerically harder with decreasing values of $\beta$. In general, small $\beta$ may need more points to be solved to the same accuracy as larger values of $\beta$, or may not reach the same accuracy at all.  Finally, it is worth investigating how interpolation, forward solution and optimization are affected by exponential changes in time of the quantity of interest, as opposed to it showing polynomial behaviour. It is expected that quantities which change exponentially in time are harder to compute numerically, and this therefore could have an effect on the accuracy of the method. This is particularly relevant given that many test problems with exact solutions were considered with $\rho$ and $\adj$ changing exponentially in time.
+
+
+
+
+
+
+
+
 	\section{Numerical Experiments}
 		\begin{itemize}
 			\item Only examples with overdamped equations
 			\item Maybe box and multishape?
 			\item Paper examples (and others?)
 		\end{itemize}
+	
+	\subsection{Examples on a box in two and three dimensions}
+	\input{ChapterNumericalExamplesOverdamped}
+	\subsection{Examples on a multishape}
+	\input{ChapterNumericalExamplesOverdMultiShape}
+	
+	
+	
+	
+	
+	\section{Industrial Motivation Revisited}
+
+
+
+
+
+
+
+
 
     \section{Sedimentation}
+    
 	\subsection{Background DDFT}
 		\begin{itemize}
 			\item Derivation of the extra term from SPT, explain FMT, etc. 
 			\item A little literature review
 			\item Comparison of simulations to Archer?
 		\end{itemize}
+	\input{ChapterSedimentationForwardModel}
+	
 	\subsection{OCP}
 		\begin{itemize}
 			\item State possible OCPs
@@ -163,6 +297,11 @@
 			\item Here add Periodic BCs and time-independent control
 			\item In the future maybe also the things on curl free control
 		\end{itemize}
+	\input{ChapterSedimentationOptimalityConditions}
+	
+	\subsection{Time-Independent Control}
+	\input{ChapterSedimentationTimeIndependentControl}
+	
 	\subsection{Numerical Examples}
 		\begin{itemize}
 			\item Sedimentation examples with clustering etc in box
@@ -172,6 +311,14 @@
 			\item Periodic vs no-flux investigation
 			\item Time-dependent vs time-independent control 
 		\end{itemize}
+	\input{ChapterSEDExamplesFW}
+	\input{ChapterSEDExamplesOpt}
+	
+	
+	
+	
+	
+	
 
 	\section{Inertial Equations}
 	\subsection{Background DDFT}
@@ -181,6 +328,7 @@
 			\item Link to overdamped equations
 			\item A little literature review on this type of model
 		\end{itemize}
+	\input{ChapterInertialEquationsForwardProb}
 	
 	\subsection{OCP}
 		\begin{itemize}
@@ -188,6 +336,9 @@
 			\item Derivation of optimality conditions
 			\item Subdomain Observation, Boundary control, non-constant flux?
 		\end{itemize}
+	\label{sec:INOptimalityConditions}
+	\input{IntertialEquationsOCPDerivation.tex}
+	
 	\subsection{Numerical Examples}
 		\begin{itemize}
 			\item 1D and 2D in box
@@ -196,16 +347,23 @@
 			\item If subdomain and boundary stuff in this section, then those examples here too.
 			\item Do we get in and outflow to work?
 		\end{itemize}
+		\input{ChapterInertialNumericalEx1D}
+
+
 
 	\section{Multiple Species}
+	
 	\subsection{Background DDFT}
 	Quick literature review and illustrate coupling of equations.
+	
 	\subsection{OCP}
+	
 	\begin{itemize}
 		\item State OCP
 		\item Derive overdamped optimality conditions
 		\item Extend to inertial case (notation such that this is straightforward)
 	\end{itemize}
+	\input{ChapterMultipleSpecies}
 	\subsection{Numerical Examples}
 	\begin{itemize}
 		\item Example of overdamped OCP
@@ -215,7 +373,19 @@
 
 
 	\section{Industry application 1: Sedimentation}
-	\section{Industry application 2: Inerital multiple species}
+	\section{Industry application 2: Inertial multiple species}
+	
+	
+	
+	\section{Some stuff to put somewhere some time}
+	
+
+	
+	
+	\subsection{Averaging from 3D to 2D - unfinished}
+	\input{ChapterAvgAD3Dto2D}
+
+	
 	\pagebreak	
 	\bibliography{GeneralBib}
 	\bibliographystyle{unsrt}

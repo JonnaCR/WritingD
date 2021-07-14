@@ -1,3 +1,402 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{RexLoewen1}
+M~Rex and Hartmut Löwen.
+\newblock Dynamical density functional theory for colloidal dispersions
+  including hydrodynamic interactions.
+\newblock {\em The European Physical Journal. E, Soft Matter}, 28:139--46,
+  2008.
+
+\bibitem{GoddardPseudospectralCode1}
+Andreas Nold, Benjamin~D. Goddard, Peter Yatsyshin, Nikos Savva, and Serafim
+  Kalliadasis.
+\newblock Pseudospectral methods for density functional theory in bounded and
+  unbounded domains.
+\newblock {\em CoRR}, abs/1701.06182, 2017.
+
+\bibitem{Tarazona2008}
+P.~Tarazona, J.A. Cuesta, and Y.~Mart{\'i}nez-Rat{\'o}n.
+\newblock Density functional theories of hard particle systems.
+\newblock In {\'A}ngel Mulero, editor, {\em Theory and Simulation of
+  Hard-Sphere Fluids and Related Systems}, pages 247--341. Springer Berlin
+  Heidelberg, Berlin, Heidelberg, 2008.
+
+\bibitem{CalculusofVariations1}
+Arnold~M. Arthurs.
+\newblock {\em Calculus of Variations}.
+\newblock Routledge and Keagan Paul Ltd, 1975.
+
+\bibitem{bibTrefethen}
+Lloyd~N. Trefethen.
+\newblock {\em Spectral Methods in Matlab}.
+\newblock SIAM, 2000.
+
+\bibitem{Boyd1}
+John~P. Boyd.
+\newblock {\em Chebyshev and Fourier Spectral Methods}.
+\newblock Dover Publications, Inc, 2000.
+
+\bibitem{bibTrefethenBerrut1}
+Jean-Paul Berrut and Lloyd~N. Trefethen.
+\newblock Barycentric {L}agrange interpolation.
+\newblock {\em SIAM Review}, 46(3):501--517, 2004.
+
+\bibitem{ClenCurt1}
+Charles~W. Clenshaw and A.~R. Curtis.
+\newblock A method for numerical integration on an automatic computer.
+\newblock {\em Numerische Mathematik}, 2(1):197--205, 1960.
+
+\bibitem{FEMIntegroPaper}
+Wanfang Shen.
+\newblock Full-discrete adaptive fem for quasi-parabolic integro-differential
+  pde-constrained optimal control problem.
+\newblock {\em Springer}, 2016.
+
+\bibitem{TroeltzschFredi2010OCoP}
+Fredi Tröltzsch.
+\newblock {\em Optimal Control of Partial Differential Equations: Theory,
+  Methods and Applications}.
+\newblock Graduate Studies in Mathematics. American Mathematical Society,
+  Providence, 2010.
+
+\bibitem{PearsonThesis}
+John~W Pearson.
+\newblock {\em Fast Iterative Solvers for PDE-Constrained Optimization
+  Problems}.
+\newblock PhD thesis, University of Oxford, 2013.
+
+\bibitem{DeLosReyesOptimization}
+Juan De~los Reyes.
+\newblock {\em Numerical PDE-Constrained Optimization}.
+\newblock Springer, 2015.
+
+\bibitem{LASRY2006619}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Jeux à champ moyen. i – le cas stationnaire.
+\newblock {\em Comptes Rendus Mathematique}, 343(9):619 -- 625, 2006.
+
+\bibitem{LASRY2006679}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Jeux à champ moyen. ii – horizon fini et contrôle optimal.
+\newblock {\em Comptes Rendus Mathematique}, 343(10):679 -- 684, 2006.
+
+\bibitem{LASRY4}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Mean field games.
+\newblock {\em Cahiers de la Chaire Finance et D\'eveloppement Durable}, 2007.
+
+\bibitem{Lasry2007}
+Jean-Michel Lasry and Pierre-Louis Lions.
+\newblock Mean field games.
+\newblock {\em Japanese Journal of Mathematics}, 2(1):229--260, Mar 2007.
+
+\bibitem{Huang1}
+{Minyi Huang}, {Peter E. Caines}, and Roland~P. {Malham\'e}.
+\newblock Individual and mass behaviour in large population stochastic wireless
+  power control problems: centralized and {N}ash equilibrium solutions.
+\newblock In {\em 42nd IEEE International Conference on Decision and Control
+  (IEEE Cat. No.03CH37475)}, volume~1, pages 98--103, Dec 2003.
+
+\bibitem{CuckerSmale1}
+Felipe Cucker and Steve Smale.
+\newblock Emergent behavior in flocks.
+\newblock {\em Automatic Control, IEEE Transactions on}, 52:852 -- 862, 06
+  2007.
+
+\bibitem{CuckerSmale2}
+Felipe Cucker and Steve Smale.
+\newblock On the mathematics of emergence.
+\newblock {\em Japan J Math}, 2:197--227, 03 2007.
+
+\bibitem{Fornasier_2014}
+Massimo Fornasier and Francesco Solombrino.
+\newblock Mean-field optimal control.
+\newblock {\em ESAIM: Control, Optimisation and Calculus of Variations},
+  20(4):1123–1152, 2014.
+
+\bibitem{Fornasier_2014no2}
+Massimo Fornasier, Benedetto Piccoli, and Francesco Rossi.
+\newblock Mean-field sparse optimal control.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 372(2028):20130400, 2014.
+
+\bibitem{fornasier_lisini_orrieri_savare_2019}
+Massimo Fornasier, Stefano Lisini, Carlo Orrieri, and Guiseppe Savar\'e.
+\newblock Mean-field optimal control as gamma-limit of finite agent controls.
+\newblock {\em European Journal of Applied Mathematics}, 30(6):1153–1186,
+  2019.
+
+\bibitem{piccoli2014no1}
+Benedetto Piccoli, Francesco Rossi, and Emmanuel Tr\'elat.
+\newblock Control to flocking of the kinetic {C}ucker--{S}male model.
+\newblock {\em SIAM Journal on Mathematical Analysis}, 47(6):4685 -- 4719,
+  2014.
+
+\bibitem{Fornasier_20161no1}
+Massimo Fornasier.
+\newblock Learning and sparse control of multiagent systems.
+\newblock {\em Proc. 7thECM}, 2016.
+
+\bibitem{burger2019meanfield}
+Martin Burger, René Pinnau, Claudia Totzeck, and Oliver Tse.
+\newblock Mean-field optimal control and optimality conditions in the space of
+  probability measures (preprint?), 2019.
+
+\bibitem{burger2019instantaneous}
+Martin Burger, Rene Pinnau, Claudia Totzeck, Oliver Tse, and Andreas Roth.
+\newblock Instantaneous control of interacting particle systems in the
+  mean-field limit (preprint?), 2019.
+
+\bibitem{burger2016controlling}
+Martin Burger, René Pinnau, Andreas Roth, Claudia Totzeck, and Oliver Tse.
+\newblock Controlling a self-organizing system of individuals guided by a few
+  external agents -- particle description and mean-field limit (preprint?),
+  2016.
+
+\bibitem{ChengC.Z1976Tiot}
+C.Z Cheng and Georg Knorr.
+\newblock The integration of the {V}lasov equation in configuration space.
+\newblock {\em Journal of Computational Physics}, 22(3):330--351, 1976.
+
+\bibitem{albi2016selective}
+Giacomo Albi and Lorenzo Pareschi.
+\newblock Selective model-predictive control for flocking systems (preprint).
+\newblock {\em Communications in Industrial and Applied Mathematics}, 2016.
+
+\bibitem{albi2016mean}
+Giacomo Albi, Young-Pil Choi, Massimo Fornasier, and Dante Kalise.
+\newblock Mean field control hierarchy.
+\newblock {\em Applied Mathematics and Optimization}, 76(1):93 -- 135, 2016.
+
+\bibitem{carrillo2019mean}
+Jose~A. Carrillo, Edgard~A. Pimentel, and Vardan~K. Voskanyan.
+\newblock On a mean field optimal control problem (preprint?), 2019.
+
+\bibitem{Pinnau_2017}
+René Pinnau, Claudia Totzeck, Oliver Tse, and Stephan Martin.
+\newblock A consensus-based model for global optimization and its mean-field
+  limit.
+\newblock {\em Mathematical Models and Methods in Applied Sciences},
+  27(01):183–204, 2017.
+
+\bibitem{carrillo2018no1}
+Jos\'e Carrillo, Young-Pil Choi, Claudia Totzeck, and Oliver Tse.
+\newblock An analytical framework for consensus-based global optimization
+  method.
+\newblock {\em Mathematical Models and Methods in Applied Sciences},
+  28(6):1037--1066, 2018.
+
+\bibitem{gilbertstrang1}
+Gilbert Strang.
+\newblock On the construction and comparison of difference schemes.
+\newblock {\em SIAM Journal on Numerical Analysis}, 5(3):506--517, 1968.
+
+\bibitem{Albi_2014no1}
+Giacomo Albi, Lorenzo Pareschi, and Mattia Zanella.
+\newblock {B}oltzmann-type control of opinion consensus through leaders.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 372(2028):20140138, 2014.
+
+\bibitem{albi2014kinetic}
+Giacomo Albi, Michael Herty, and Lorenzo Pareschi.
+\newblock Kinetic description of optimal control problems and applications to
+  opinion consensus.
+\newblock 2014.
+
+\bibitem{Burger1}
+M.~Burger, M.~Di~Francesco, P.~A. Markowich, and M.-T. Wolfram.
+\newblock Mean field games with nonlinear mobilities in pedestrian dynamics.
+\newblock {\em Discrete Cont. Dyn.-B}, 19(5):1311--1333, 2014.
+
+\bibitem{FrechetProductrule1}
+Enrique~A. Gonzalez-Velasco.
+\newblock The product rule for {F}r\'echet derivatives.
+\newblock {\em International Journal of Mathematical Education in Science and
+  Technology}, 17:79--83, 1986.
+
+\bibitem{bvp4cPaper1}
+Jacek Kierzenka and Lawrence~F. Shampine.
+\newblock A bvp solver based on residual control and the matlab pse.
+\newblock {\em ACM Transactions on Mathematical Software (TOMS)},
+  27(3):299--316, 2001.
+
+\bibitem{CarraroIndMultipleShooting}
+Thomas Carraro, Michael Geiger, and R~Rannacher.
+\newblock Indirect multiple shooting for nonlinear parabolic optimal control
+  problems with control constraints.
+\newblock {\em SIAM Journal on Scientific Computing}, 36, 01 2014.
+
+\bibitem{CarraroDirectIndirectMultipleShooting}
+Thomas Carraro and Michael Geiger.
+\newblock Direct and indirect multiple shooting for parabolic optimal control
+  problems.
+\newblock In P.~Cinnella G.~Zavarise and M.~Campiti, editors, {\em Special
+  Issue: 86th Annual Meeting of the International Association of Applied
+  Mathematics and Mechanics (GAMM)}, pages 35--67. 01 2015.
+
+\bibitem{Roth1}
+Roland Roth.
+\newblock Fundamental measure theory for hard-sphere mixtures: a review.
+\newblock {\em ournal of Physics: Condensed Matter}, 22(6), 2010.
+
+\bibitem{Powell1}
+M.~J.~D. Powell.
+\newblock A {F}ortran subroutine for solving systems of nonlinear algebraic
+  equations.
+\newblock In P.~Rabinowitz, editor, {\em Numerical Methods for Nonlinear
+  Algebraic Equations}, chapter~7. Gordon and Breach, 1970.
+
+\bibitem{fsolve1}
+{\scshape MATLAB}.
+\newblock Equation solving algorithms.
+\newblock
+  \url{https://uk.mathworks.com/help/optim/ug/equation-solving-algorithms.html#bqa_so0}.
+
+\bibitem{GuettelPearson1}
+Stefan Güttel and John~W. Pearson.
+\newblock A rational deferred correction approach to parabolic optimal control
+  problems.
+\newblock {\em IMA Journal of Numerical Analysis}, 38:1861--1892, 2018.
+
+\bibitem{ArcherSed1}
+Andrew~J. Archer and Alexandr Malijevský.
+\newblock On the interplay between sedimentation and phase separation phenomena
+  in two-dimensional colloidal fluids.
+\newblock {\em Molecular Physics}, 109(7-10):1087--1099, 2011.
+
+\bibitem{RosenfeldFMT}
+Yaakov Rosenfeld.
+\newblock Free-energy model for the inhomogeneous hard-sphere fluid mixture and
+  density-functional theory of freezing.
+\newblock {\em Phys. Rev. Lett.}, 63:980--983, Aug 1989.
+
+\bibitem{Roth_2010FMTReview}
+Roland Roth.
+\newblock Fundamental measure theory for hard-sphere mixtures: a review.
+\newblock {\em Journal of Physics: Condensed Matter}, 22(6):063102, jan 2010.
+
+\bibitem{Percus1976}
+J.K. Percus.
+\newblock Equilibrium state of a classical fluid of hard rods in an external
+  field.
+\newblock {\em Journal of Statistical Physics}, 15:505--511, 1976.
+
+\bibitem{Rosenfeld2DInterp}
+Yaakov Rosenfeld.
+\newblock Free-energy model for the inhomogeneous hard-sphere fluid in d
+  dimensions: Structure factors for the hard-disk (d=2) mixtures in simple
+  explicit form.
+\newblock {\em Phys. Rev. A}, 42:5978--5989, 1990.
+
+\bibitem{Reiss1959}
+H.~Reiss, H.~L. Frisch, and J.~L. Lebowitz.
+\newblock Statistical mechanics of rigid spheres.
+\newblock {\em The Journal of Chemical Physics}, 31(2):369--380, 1959.
+
+\bibitem{Reiss1960}
+Howard Reiss, H.~L. Frisch, E.~Helfand, and J.~L. Lebowitz.
+\newblock Aspects of the statistical thermodynamics of real fluids.
+\newblock {\em The Journal of Chemical Physics}, 32(1):119--124, 1960.
+
+\bibitem{Helfand1961}
+E.~Helfand, H.~L. Frisch, and J.~L. Lebowitz.
+\newblock Theory of the two‐ and one‐dimensional rigid sphere fluids.
+\newblock {\em The Journal of Chemical Physics}, 34(3):1037--1042, 1961.
+
+\bibitem{PercusYevick1}
+Jerome~K. Percus and George~J. Yevick.
+\newblock Analysis of classical statistical mechanics by means of collective
+  coordinates.
+\newblock {\em Phys. Rev.}, 110:1--13, Apr 1958.
+
+\bibitem{RosenfeldSPT}
+Yaakov Rosenfeld.
+\newblock Scaled field particle theory of the structure and the thermodynamics
+  of isotropic hard particle fluids.
+\newblock {\em The Journal of Chemical Physics}, 89(7):4272--4287, 1988.
+
+\bibitem{DFTWinkelmann2001}
+J~Winkelmann.
+\newblock The liquid-vapour interface of pure fluids and mixtures: application
+  of computer simulation and density functional theory.
+\newblock {\em Journal of Physics: Condensed Matter}, 13(21):4739--4768, may
+  2001.
+
+\bibitem{DFTRoth1}
+Alice~L. Thorneywork, Simon~K. Schnyder, Dirk G. A.~L. Aarts, Jürgen Horbach,
+  Roland Roth, and Roel P.~A. Dullens.
+\newblock Structure factors in a two-dimensional binary colloidal hard sphere
+  system.
+\newblock {\em Molecular Physics}, 116(21-22):3245--3257, 2018.
+
+\bibitem{DFTRoth2}
+Roland Roth.
+\newblock Fluid of discs with competing interactions.
+\newblock {\em Molecular Physics}, 109(23-24):2897--2905, 2011.
+
+\bibitem{DFTGonzalez1997}
+A~Gonz{\'{a}}lez, J~A White, and R~Evans.
+\newblock Density functional theory for hard-sphere fluids: a generating
+  function approach.
+\newblock {\em Journal of Physics: Condensed Matter}, 9(11):2375--2398, 1997.
+
+\bibitem{DFTCuesta2008}
+Yuri Mart\'{\i}nez-Rat\'on, Jos\'e~A. Capit\'an, and Jos\'e~A. Cuesta.
+\newblock Fundamental-measure density functional for mixtures of parallel hard
+  cylinders.
+\newblock {\em Phys. Rev. E}, 77:051205, May 2008.
+
+\bibitem{DFTLoewen2002}
+Matthias Schmidt, Hartmut~L wen, Joseph~M Brader, and Robert Evans.
+\newblock Density functional theory for a model colloid~polymer mixture: bulk
+  fluid phases.
+\newblock {\em Journal of Physics: Condensed Matter}, 14(40):9353--9382, sep
+  2002.
+
+\bibitem{GrafLoewen1999}
+Hartmut Graf and Hartmut L\"owen.
+\newblock Phase diagram of tobacco mosaic virus solutions.
+\newblock {\em Phys. Rev. E}, 59:1932--1942, Feb 1999.
+
+\bibitem{DuBois2002}
+Sylviane DuBois and Aurélien Perera.
+\newblock Entropy driven demixing in fluids of rigidly ordered particles.
+\newblock {\em The Journal of Chemical Physics}, 116(14):6354--6367, 2002.
+
+\bibitem{Chamoux1998}
+Antoine Chamoux and Aurelien Perera.
+\newblock Direct correlation functions in two-dimensional anisotropic fluids.
+\newblock {\em Phys. Rev. E}, 58:1933--1947, Aug 1998.
+
+\bibitem{Chamoux1996}
+A.~Chamoux and A.~Perera.
+\newblock Approximations for the direct correlation function in multicomponent
+  molecular fluids.
+\newblock {\em The Journal of Chemical Physics}, 104(4):1493--1505, 1996.
+
+\bibitem{ArcherSed2008}
+Andrew~J. Archer.
+\newblock Two-dimensional fluid with competing interactions exhibiting
+  microphase separation: Theory for bulk and interfacial properties.
+\newblock {\em Phys. Rev. E}, 78:031402, 2008.
+
+\bibitem{ArcherSed2011}
+O.~Zvyagolskaya, A.~J. Archer, and C.~Bechinger.
+\newblock Criticality and phase separation in a two-dimensional binary
+  colloidal fluid induced by the solvent critical behavior.
+\newblock {\em {EPL} (Europhysics Letters)}, 96(2):28005, 2011.
+
+\bibitem{ArcherSed2013}
+Alexandr Malijevský and Andrew~J. Archer.
+\newblock Sedimentation of a two-dimensional colloidal mixture exhibiting
+  liquid-liquid and gas-liquid phase separation: A dynamical density functional
+  theory study.
+\newblock {\em The Journal of Chemical Physics}, 139(14):144901, 2013.
+
+\bibitem{Archer1}
+A.~J. Archer.
+\newblock Dynamical density functional theory for molecular and colloidal
+  fluids: A microscopic approach to fluid mechanics.
+\newblock {\em The Journal of Chemical Physics}, 130, 2009.
 
 \end{thebibliography}

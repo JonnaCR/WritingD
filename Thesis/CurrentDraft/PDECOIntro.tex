@@ -1,0 +1,23 @@
+The aim of this project is to work towards using the particle model derived in the previous section to describe an industrial process and optimize this process with minimal cost involved.
+It is of interest to achieve a particle distribution $\hat{\rho}$ in some time over some domain $\Omega$.  
+In the context of PDE-constrained optimization, the aim is to minimize the distance between a state variable $\rho$ and a desired state $\hat\rho$, in some norm, while also minimizing the cost involved in reaching the desired state. This minimization is constrained by the underlying physics of the particle system. The PDE describing the particle dynamics is called the state equation.
+\newline
+Achieving the desired state $\hat\rho$ as close as possible can be of interest either for all times, as in this report, or only at some times, such as the final time $T$. In order to achieve $\hat \rho$, the particle distribution $\rho$ can be controlled through a so-called control variable, denoted by $u$. The control can be applied in various ways, which is dependent on the application. Since the background flow influences the particle distribution $\rho$, $\hat\rho$ can try to be reached by changing the flow field. Then the flow field is the control $u$. Alternatively, $u$ could represent the temperature or the geometry of the boundaries of the bath. Moreover, $u$ could be a parameter in the body force or in the particle interaction term, influencing the particle distribution through the forces involved. Note that $u$ cannot always influence the system enough to reach the desired state $\hat \rho$. This highly depends on the choice of $\hat \rho$, the physics of the problem and on the choice of the parameter $\beta$, which is discussed below.
+Since controlling $\rho$ requires energy, $u$ can be thought of as the cost involved in reaching $\hat\rho$. 
+\\ 
+The weight of the control is determined by the so-called regularization parameter, $\beta$. If $\beta$ is small, the desired state will be reached, however, at a high cost. If $\beta$ is large, the control will be minimized, but the desired state might not be reached. The choice of $\beta$ depends on the application involved. It is generally of interest to find a range of $\beta$ values, for which the solution to the optimization problem is robust. 
+The PDE-constrained optimization problem of interest in this report is of the form:
+\begin{align} \label{sysPDEconOpti1}
+&\min_{\rho,\mathbf{w}} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L^2}^2 + \frac{\beta}{2} \norm{\mathbf{w}}_{L^2}^2,\\
+\notag\\
+&\textbf{subject to:}\notag\\ 
+&\partial_t \rho =\nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}) + \nabla \cdot (\rho \nabla V_{ext}) \quad \text{in} \quad \Omega,\notag\\
+\notag\\
+&\dfrac{\partial \rho}{\partial {n}} - \rho \mathbf{w} \cdot \mathbf{n} + \rho \dfrac{\partial V_{ext}}{\partial {n}}  =0 \quad \text{on} \quad \partial \Omega,\notag \\
+& \rho = \rho_0 \quad \text{at} \quad t=0,  \notag
+\end{align}
+where the state equation is a simplified version of (\ref{sysParticleModel1}), which neglects the particle interaction term.
+Note that the norms are the $L^2$ norms with respect to $\Omega$ and time. Other norms could be used, depending on the type of application. In the following it is assumed, as described in \cite{TroeltzschFredi2010OCoP}, that $\rho \in H^1$ and $\mathbf{w} \in L^2$.
+In order to solve this optimization problem, continuous optimality conditions can be derived, which can then be discretized and solved numerically. This is known as the optimize-then-discretize approach.
+Another approach, discretize-then-optimize, would be to first discretize (\ref{sysPDEconOpti1}) and then derive the discrete optimality conditions that need to be solved.
+A good introduction to PDE-constrained optimization, can be found in \cite{PearsonThesis} and a more detailed introduction to numerical PDE-constrained optimization is provided in \cite{DeLosReyesOptimization}. Both of these texts provided the basis for the above discussion.

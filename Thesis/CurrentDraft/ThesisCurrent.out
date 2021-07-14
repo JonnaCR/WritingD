@@ -1,24 +1,106 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{DFT/ Statistical Mechanics Background}{}% 2
-\BOOKMARK [1][-]{section.3}{DDFT Background}{}% 3
-\BOOKMARK [1][-]{section.4}{PDE-Constrained Optimization}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Optimality Conditions}{section.4}% 5
-\BOOKMARK [1][-]{section.5}{Numerical Methods}{}% 6
-\BOOKMARK [2][-]{subsection.5.1}{Pseudospectral Methods and 2DChebClass}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.2}{Optimization Methods}{section.5}% 8
-\BOOKMARK [1][-]{section.6}{Validation of the Numerical Methods}{}% 9
-\BOOKMARK [1][-]{section.7}{Numerical Experiments}{}% 10
-\BOOKMARK [1][-]{section.8}{Sedimentation}{}% 11
-\BOOKMARK [2][-]{subsection.8.1}{Background DDFT}{section.8}% 12
-\BOOKMARK [2][-]{subsection.8.2}{OCP}{section.8}% 13
-\BOOKMARK [2][-]{subsection.8.3}{Numerical Examples}{section.8}% 14
-\BOOKMARK [1][-]{section.9}{Inertial Equations}{}% 15
-\BOOKMARK [2][-]{subsection.9.1}{Background DDFT}{section.9}% 16
-\BOOKMARK [2][-]{subsection.9.2}{OCP}{section.9}% 17
-\BOOKMARK [2][-]{subsection.9.3}{Numerical Examples}{section.9}% 18
-\BOOKMARK [1][-]{section.10}{Multiple Species}{}% 19
-\BOOKMARK [2][-]{subsection.10.1}{Background DDFT}{section.10}% 20
-\BOOKMARK [2][-]{subsection.10.2}{OCP}{section.10}% 21
-\BOOKMARK [2][-]{subsection.10.3}{Numerical Examples}{section.10}% 22
-\BOOKMARK [1][-]{section.11}{Industry application 1: Sedimentation}{}% 23
-\BOOKMARK [1][-]{section.12}{Industry application 2: Inerital multiple species}{}% 24
+\BOOKMARK [2][-]{subsection.1.1}{Motivating Examples and Industry Applications}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{The Forward Problem/ Particle Dynamics Modelling}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{DFT/ Statistical Mechanics Background}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{DDFT Background}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Deriving Model Equations}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Approximating the Two-Body Density}{subsection.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Numerical Methods for the Forward Problem}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{2DChebClass implementation for different shapes}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.4.1}{The interval \(1D\)}{subsection.2.4}% 10
+\BOOKMARK [3][-]{subsubsection.2.4.2}{The quadrilateral \(2D\)}{subsection.2.4}% 11
+\BOOKMARK [3][-]{subsubsection.2.4.3}{The wedge \(2D\)}{subsection.2.4}% 12
+\BOOKMARK [3][-]{subsubsection.2.4.4}{The periodic box \(2D\)}{subsection.2.4}% 13
+\BOOKMARK [3][-]{subsubsection.2.4.5}{The three dimensional box}{subsection.2.4}% 14
+\BOOKMARK [3][-]{subsubsection.2.4.6}{Solving the PDE}{subsection.2.4}% 15
+\BOOKMARK [3][-]{subsubsection.2.4.7}{Convergence Stuff}{subsection.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.5}{Implementation for multishape}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Setting up the multishape}{subsection.2.5}% 18
+\BOOKMARK [3][-]{subsubsection.2.5.2}{Boundaries and intersections}{subsection.2.5}% 19
+\BOOKMARK [3][-]{subsubsection.2.5.3}{Interpolation, differentiation, integration and convolution}{subsection.2.5}% 20
+\BOOKMARK [3][-]{subsubsection.2.5.4}{Boundary matching and solving the PDE}{subsection.2.5}% 21
+\BOOKMARK [2][-]{subsection.2.6}{Validation Tests Multishape}{section.2}% 22
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Testing Differentiation, Interpolation, Convolution and Integration}{subsection.2.6}% 23
+\BOOKMARK [3][-]{subsubsection.2.6.2}{Exact Tests}{subsection.2.6}% 24
+\BOOKMARK [1][-]{section.3}{PDE-Constrained Optimization}{}% 25
+\BOOKMARK [2][-]{subsection.3.1}{General PDECO Stuff}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.2}{Literature Review Mean Field PDECO}{section.3}% 27
+\BOOKMARK [2][-]{subsection.3.3}{Optimality Conditions}{section.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Fr\351chet Differentiation}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Deriving the Adjoint Equation}{subsection.3.3}% 30
+\BOOKMARK [3][-]{subsubsection.3.3.3}{The First-Order Optimality System}{subsection.3.3}% 31
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Adding a Non-Local Term}{subsection.3.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.3.5}{Deriving the Adjoint Equation with the Non-Local Term}{subsection.3.3}% 33
+\BOOKMARK [3][-]{subsubsection.3.3.6}{The First Order Optimality System Including the Non-Local Term}{subsection.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.4}{Deriving OCP with general Flow Term and Periodic Boundary Conditions}{section.3}% 35
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Periodic Boundary Conditions 1D Advection-Diffusion}{subsection.3.4}% 36
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Periodic Boundary Conditions in a General Domain}{subsection.3.4}% 37
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Periodic Boundary Conditions for a General Flux}{subsection.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.5}{Subdomain and Boundary Observation with Non-Constant Flux}{section.3}% 39
+\BOOKMARK [1][-]{section.4}{Numerical Methods for PDECO}{}% 40
+\BOOKMARK [2][-]{subsection.4.1}{Standard Approaches}{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.2}{Optimization Methods we use}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Newton-Krylov Algorithm}{subsection.4.2}% 43
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Fixed Point Algorithm}{subsection.4.2}% 44
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Picard Multiple Shooting}{subsection.4.2}% 45
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Multiple Shooting}{subsection.4.2}% 46
+\BOOKMARK [3][-]{subsubsection.4.2.5}{MATLAB's Inbuilt Optimization Solver fsolve}{subsection.4.2}% 47
+\BOOKMARK [1][-]{section.5}{Validation of the Numerical Methods}{}% 48
+\BOOKMARK [2][-]{subsection.5.1}{Error Measure}{section.5}% 49
+\BOOKMARK [2][-]{subsection.5.2}{Validation with Exact Solutions}{section.5}% 50
+\BOOKMARK [2][-]{subsection.5.3}{Validation Against fsolve}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.4}{Perturbing w}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.5}{Additional Observations}{section.5}% 53
+\BOOKMARK [1][-]{section.6}{Numerical Experiments}{}% 54
+\BOOKMARK [2][-]{subsection.6.1}{Examples on a box in two and three dimensions}{section.6}% 55
+\BOOKMARK [2][-]{subsection.6.2}{Two-dimensional Examples}{section.6}% 56
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Linear \(source\) control problem with no-flux boundary conditions}{subsection.6.2}% 57
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Linear \(source\) control problem with Dirichlet boundary conditions}{subsection.6.2}% 58
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Non-linear \(flow\) control problem with no-flux boundary conditions}{subsection.6.2}% 59
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Non-linear \(flow\) control problem with Dirichlet boundary conditions}{subsection.6.2}% 60
+\BOOKMARK [2][-]{subsection.6.3}{Three-dimensional Example}{section.6}% 61
+\BOOKMARK [2][-]{subsection.6.4}{Examples on a multishape}{section.6}% 62
+\BOOKMARK [1][-]{section.7}{Industrial Motivation Revisited}{}% 63
+\BOOKMARK [1][-]{section.8}{Sedimentation}{}% 64
+\BOOKMARK [2][-]{subsection.8.1}{Background DDFT}{section.8}% 65
+\BOOKMARK [3][-]{subsubsection.8.1.1}{The Hard Disk Approximation}{subsection.8.1}% 66
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Deriving the equation of motion}{subsection.8.1}% 67
+\BOOKMARK [2][-]{subsection.8.2}{OCP}{section.8}% 68
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Calculating Frech\351t Derivatives}{subsection.8.2}% 69
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Adjoint Equation}{subsection.8.2}% 70
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Frech\351t Derivatives for Boundary Terms}{subsection.8.2}% 71
+\BOOKMARK [3][-]{subsubsection.8.2.4}{Boundary Terms}{subsection.8.2}% 72
+\BOOKMARK [2][-]{subsection.8.3}{Time-Independent Control}{section.8}% 73
+\BOOKMARK [2][-]{subsection.8.4}{Numerical Examples}{section.8}% 74
+\BOOKMARK [3][-]{subsubsection.8.4.1}{Replicating examples from the paper in a periodic box}{subsection.8.4}% 75
+\BOOKMARK [3][-]{subsubsection.8.4.2}{Replicating examples from the paper in a box with noflux BCs}{subsection.8.4}% 76
+\BOOKMARK [3][-]{subsubsection.8.4.3}{Optimization in a Box}{subsection.8.4}% 77
+\BOOKMARK [3][-]{subsubsection.8.4.4}{Optimization in a Box - Time-Independent Control}{subsection.8.4}% 78
+\BOOKMARK [3][-]{subsubsection.8.4.5}{Optimization in a Periodic Box}{subsection.8.4}% 79
+\BOOKMARK [3][-]{subsubsection.8.4.6}{Optimization in a Periodic Box - Time-Independent Control}{subsection.8.4}% 80
+\BOOKMARK [3][-]{subsubsection.8.4.7}{Optimization in a Multishape}{subsection.8.4}% 81
+\BOOKMARK [3][-]{subsubsection.8.4.8}{Optimization in a Multishape - Time-Independent Control}{subsection.8.4}% 82
+\BOOKMARK [1][-]{section.9}{Inertial Equations}{}% 83
+\BOOKMARK [2][-]{subsection.9.1}{Background DDFT}{section.9}% 84
+\BOOKMARK [2][-]{subsection.9.2}{OCP}{section.9}% 85
+\BOOKMARK [3][-]{subsubsection.9.2.1}{PDE-Constrained Optimization Problem}{subsection.9.2}% 86
+\BOOKMARK [3][-]{subsubsection.9.2.2}{Adjoint Equation 1}{subsection.9.2}% 87
+\BOOKMARK [3][-]{subsubsection.9.2.3}{Adjoint Equation 2}{subsection.9.2}% 88
+\BOOKMARK [3][-]{subsubsection.9.2.4}{The Gradient Equation}{subsection.9.2}% 89
+\BOOKMARK [3][-]{subsubsection.9.2.5}{Rewriting the Equations for Implementation}{subsection.9.2}% 90
+\BOOKMARK [2][-]{subsection.9.3}{Numerical Examples}{section.9}% 91
+\BOOKMARK [3][-]{subsubsection.9.3.1}{Example 1}{subsection.9.3}% 92
+\BOOKMARK [3][-]{subsubsection.9.3.2}{Example 2}{subsection.9.3}% 93
+\BOOKMARK [3][-]{subsubsection.9.3.3}{Example 3}{subsection.9.3}% 94
+\BOOKMARK [1][-]{section.10}{Multiple Species}{}% 95
+\BOOKMARK [2][-]{subsection.10.1}{Background DDFT}{section.10}% 96
+\BOOKMARK [2][-]{subsection.10.2}{OCP}{section.10}% 97
+\BOOKMARK [2][-]{subsection.10.3}{Adjoint 1}{section.10}% 98
+\BOOKMARK [2][-]{subsection.10.4}{Adjoint 2}{section.10}% 99
+\BOOKMARK [2][-]{subsection.10.5}{Gradient Equation}{section.10}% 100
+\BOOKMARK [2][-]{subsection.10.6}{Numerical Examples}{section.10}% 101
+\BOOKMARK [1][-]{section.11}{Industry application 1: Sedimentation}{}% 102
+\BOOKMARK [1][-]{section.12}{Industry application 2: Inertial multiple species}{}% 103
+\BOOKMARK [1][-]{section.13}{Some stuff to put somewhere some time}{}% 104
+\BOOKMARK [2][-]{subsection.13.1}{Averaging from 3D to 2D - unfinished}{section.13}% 105
+\BOOKMARK [3][-]{subsubsection.13.1.1}{Exact Solution}{subsection.13.1}% 106

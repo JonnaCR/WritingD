@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  22 OCT 2020 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  13 JUL 2021 10:32
 entering extended mode
 **./InertialEquations.tex
 (InertialEquations.tex
@@ -729,7 +729,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
  ) 
 Here is how much of TeX's memory you used:
  10465 strings out of 492946
- 158288 string characters out of 3124935
+ 158318 string characters out of 3124935
  270059 words of memory out of 3000000
  14217 multiletter control sequences out of 15000+200000
  9822 words of font info for 37 fonts, out of 3000000 for 9000

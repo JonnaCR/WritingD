@@ -1,24 +1,106 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
-\contentsline {section}{\numberline {2}DFT/ Statistical Mechanics Background}{1}{section.2}% 
-\contentsline {section}{\numberline {3}DDFT Background}{1}{section.3}% 
-\contentsline {section}{\numberline {4}PDE-Constrained Optimization}{1}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Optimality Conditions}{1}{subsection.4.1}% 
-\contentsline {section}{\numberline {5}Numerical Methods}{1}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Pseudospectral Methods and 2DChebClass}{1}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Optimization Methods}{2}{subsection.5.2}% 
-\contentsline {section}{\numberline {6}Validation of the Numerical Methods}{2}{section.6}% 
-\contentsline {section}{\numberline {7}Numerical Experiments}{2}{section.7}% 
-\contentsline {section}{\numberline {8}Sedimentation}{3}{section.8}% 
-\contentsline {subsection}{\numberline {8.1}Background DDFT}{3}{subsection.8.1}% 
-\contentsline {subsection}{\numberline {8.2}OCP}{3}{subsection.8.2}% 
-\contentsline {subsection}{\numberline {8.3}Numerical Examples}{3}{subsection.8.3}% 
-\contentsline {section}{\numberline {9}Inertial Equations}{3}{section.9}% 
-\contentsline {subsection}{\numberline {9.1}Background DDFT}{3}{subsection.9.1}% 
-\contentsline {subsection}{\numberline {9.2}OCP}{4}{subsection.9.2}% 
-\contentsline {subsection}{\numberline {9.3}Numerical Examples}{4}{subsection.9.3}% 
-\contentsline {section}{\numberline {10}Multiple Species}{4}{section.10}% 
-\contentsline {subsection}{\numberline {10.1}Background DDFT}{4}{subsection.10.1}% 
-\contentsline {subsection}{\numberline {10.2}OCP}{4}{subsection.10.2}% 
-\contentsline {subsection}{\numberline {10.3}Numerical Examples}{4}{subsection.10.3}% 
-\contentsline {section}{\numberline {11}Industry application 1: Sedimentation}{4}{section.11}% 
-\contentsline {section}{\numberline {12}Industry application 2: Inerital multiple species}{4}{section.12}% 
+\contentsline {subsection}{\numberline {1.1}Motivating Examples and Industry Applications}{1}{subsection.1.1}% 
+\contentsline {section}{\numberline {2}The Forward Problem/ Particle Dynamics Modelling}{1}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}DFT/ Statistical Mechanics Background}{1}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}DDFT Background}{1}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Deriving Model Equations}{2}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Approximating the Two-Body Density}{7}{subsubsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Numerical Methods for the Forward Problem}{9}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}2DChebClass implementation for different shapes}{9}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}The interval (1D)}{9}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}The quadrilateral (2D)}{13}{subsubsection.2.4.2}% 
+\contentsline {subsubsection}{\numberline {2.4.3}The wedge (2D)}{18}{subsubsection.2.4.3}% 
+\contentsline {subsubsection}{\numberline {2.4.4}The periodic box (2D)}{21}{subsubsection.2.4.4}% 
+\contentsline {subsubsection}{\numberline {2.4.5}The three dimensional box}{24}{subsubsection.2.4.5}% 
+\contentsline {subsubsection}{\numberline {2.4.6}Solving the PDE}{24}{subsubsection.2.4.6}% 
+\contentsline {subsubsection}{\numberline {2.4.7}Convergence Stuff}{24}{subsubsection.2.4.7}% 
+\contentsline {subsection}{\numberline {2.5}Implementation for multishape}{25}{subsection.2.5}% 
+\contentsline {subsubsection}{\numberline {2.5.1}Setting up the multishape}{25}{subsubsection.2.5.1}% 
+\contentsline {subsubsection}{\numberline {2.5.2}Boundaries and intersections}{26}{subsubsection.2.5.2}% 
+\contentsline {subsubsection}{\numberline {2.5.3}Interpolation, differentiation, integration and convolution}{30}{subsubsection.2.5.3}% 
+\contentsline {subsubsection}{\numberline {2.5.4}Boundary matching and solving the PDE}{32}{subsubsection.2.5.4}% 
+\contentsline {subsection}{\numberline {2.6}Validation Tests Multishape}{32}{subsection.2.6}% 
+\contentsline {subsubsection}{\numberline {2.6.1}Testing Differentiation, Interpolation, Convolution and Integration}{33}{subsubsection.2.6.1}% 
+\contentsline {subsubsection}{\numberline {2.6.2}Exact Tests}{35}{subsubsection.2.6.2}% 
+\contentsline {section}{\numberline {3}PDE-Constrained Optimization}{48}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}General PDECO Stuff}{48}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Literature Review Mean Field PDECO}{51}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Optimality Conditions}{53}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Fr\'echet Differentiation}{55}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Deriving the Adjoint Equation}{56}{subsubsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.3}The First-Order Optimality System}{59}{subsubsection.3.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.4}Adding a Non-Local Term}{60}{subsubsection.3.3.4}% 
+\contentsline {subsubsection}{\numberline {3.3.5}Deriving the Adjoint Equation with the Non-Local Term}{62}{subsubsection.3.3.5}% 
+\contentsline {subsubsection}{\numberline {3.3.6}The First Order Optimality System Including the Non-Local Term}{65}{subsubsection.3.3.6}% 
+\contentsline {subsection}{\numberline {3.4}Deriving OCP with general Flow Term and Periodic Boundary Conditions}{67}{subsection.3.4}% 
+\contentsline {subsubsection}{\numberline {3.4.1}Periodic Boundary Conditions 1D Advection-Diffusion}{67}{subsubsection.3.4.1}% 
+\contentsline {subsubsection}{\numberline {3.4.2}Periodic Boundary Conditions in a General Domain}{69}{subsubsection.3.4.2}% 
+\contentsline {subsubsection}{\numberline {3.4.3}Periodic Boundary Conditions for a General Flux}{71}{subsubsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.5}Subdomain and Boundary Observation with Non-Constant Flux}{74}{subsection.3.5}% 
+\contentsline {section}{\numberline {4}Numerical Methods for PDECO}{76}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Standard Approaches}{76}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Optimization Methods we use}{77}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Newton-Krylov Algorithm}{77}{subsubsection.4.2.1}% 
+\contentsline {subsubsection}{\numberline {4.2.2}Fixed Point Algorithm}{77}{subsubsection.4.2.2}% 
+\contentsline {subsubsection}{\numberline {4.2.3}Picard Multiple Shooting}{78}{subsubsection.4.2.3}% 
+\contentsline {subsubsection}{\numberline {4.2.4}Multiple Shooting}{79}{subsubsection.4.2.4}% 
+\contentsline {subsubsection}{\numberline {4.2.5}{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt {fsolve}}{87}{subsubsection.4.2.5}% 
+\contentsline {section}{\numberline {5}Validation of the Numerical Methods}{88}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Error Measure}{89}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Validation with Exact Solutions}{89}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Validation Against \texttt {fsolve}}{92}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Perturbing $w$}{93}{subsection.5.4}% 
+\contentsline {subsection}{\numberline {5.5}Additional Observations}{94}{subsection.5.5}% 
+\contentsline {section}{\numberline {6}Numerical Experiments}{96}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Examples on a box in two and three dimensions}{97}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}Two-dimensional Examples}{97}{subsection.6.2}% 
+\contentsline {subsubsection}{\numberline {6.2.1}Linear (source) control problem with no-flux boundary conditions}{97}{subsubsection.6.2.1}% 
+\contentsline {subsubsection}{\numberline {6.2.2}Linear (source) control problem with Dirichlet boundary conditions}{98}{subsubsection.6.2.2}% 
+\contentsline {subsubsection}{\numberline {6.2.3}Non-linear (flow) control problem with no-flux boundary conditions}{99}{subsubsection.6.2.3}% 
+\contentsline {subsubsection}{\numberline {6.2.4}Non-linear (flow) control problem with Dirichlet boundary conditions}{101}{subsubsection.6.2.4}% 
+\contentsline {subsection}{\numberline {6.3}Three-dimensional Example}{102}{subsection.6.3}% 
+\contentsline {subsection}{\numberline {6.4}Examples on a multishape}{103}{subsection.6.4}% 
+\contentsline {section}{\numberline {7}Industrial Motivation Revisited}{106}{section.7}% 
+\contentsline {section}{\numberline {8}Sedimentation}{106}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}Background DDFT}{106}{subsection.8.1}% 
+\contentsline {subsubsection}{\numberline {8.1.1}The Hard Disk Approximation}{108}{subsubsection.8.1.1}% 
+\contentsline {subsubsection}{\numberline {8.1.2}Deriving the equation of motion}{111}{subsubsection.8.1.2}% 
+\contentsline {subsection}{\numberline {8.2}OCP}{113}{subsection.8.2}% 
+\contentsline {subsubsection}{\numberline {8.2.1}Calculating Frech\'et Derivatives}{114}{subsubsection.8.2.1}% 
+\contentsline {subsubsection}{\numberline {8.2.2}Adjoint Equation}{117}{subsubsection.8.2.2}% 
+\contentsline {subsubsection}{\numberline {8.2.3}Frech\'et Derivatives for Boundary Terms}{122}{subsubsection.8.2.3}% 
+\contentsline {subsubsection}{\numberline {8.2.4}Boundary Terms}{123}{subsubsection.8.2.4}% 
+\contentsline {subsection}{\numberline {8.3}Time-Independent Control}{127}{subsection.8.3}% 
+\contentsline {subsection}{\numberline {8.4}Numerical Examples}{128}{subsection.8.4}% 
+\contentsline {subsubsection}{\numberline {8.4.1}Replicating examples from the paper in a periodic box}{128}{subsubsection.8.4.1}% 
+\contentsline {subsubsection}{\numberline {8.4.2}Replicating examples from the paper in a box with noflux BCs}{129}{subsubsection.8.4.2}% 
+\contentsline {subsubsection}{\numberline {8.4.3}Optimization in a Box}{129}{subsubsection.8.4.3}% 
+\contentsline {subsubsection}{\numberline {8.4.4}Optimization in a Box - Time-Independent Control}{130}{subsubsection.8.4.4}% 
+\contentsline {subsubsection}{\numberline {8.4.5}Optimization in a Periodic Box}{131}{subsubsection.8.4.5}% 
+\contentsline {subsubsection}{\numberline {8.4.6}Optimization in a Periodic Box - Time-Independent Control}{131}{subsubsection.8.4.6}% 
+\contentsline {subsubsection}{\numberline {8.4.7}Optimization in a Multishape}{131}{subsubsection.8.4.7}% 
+\contentsline {subsubsection}{\numberline {8.4.8}Optimization in a Multishape - Time-Independent Control}{132}{subsubsection.8.4.8}% 
+\contentsline {section}{\numberline {9}Inertial Equations}{132}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}Background DDFT}{132}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}OCP}{136}{subsection.9.2}% 
+\contentsline {subsubsection}{\numberline {9.2.1}PDE-Constrained Optimization Problem}{136}{subsubsection.9.2.1}% 
+\contentsline {subsubsection}{\numberline {9.2.2}Adjoint Equation 1}{138}{subsubsection.9.2.2}% 
+\contentsline {subsubsection}{\numberline {9.2.3}Adjoint Equation 2}{142}{subsubsection.9.2.3}% 
+\contentsline {subsubsection}{\numberline {9.2.4}The Gradient Equation}{146}{subsubsection.9.2.4}% 
+\contentsline {subsubsection}{\numberline {9.2.5}Rewriting the Equations for Implementation}{146}{subsubsection.9.2.5}% 
+\contentsline {subsection}{\numberline {9.3}Numerical Examples}{148}{subsection.9.3}% 
+\contentsline {subsubsection}{\numberline {9.3.1}Example 1}{148}{subsubsection.9.3.1}% 
+\contentsline {subsubsection}{\numberline {9.3.2}Example 2}{150}{subsubsection.9.3.2}% 
+\contentsline {subsubsection}{\numberline {9.3.3}Example 3}{151}{subsubsection.9.3.3}% 
+\contentsline {section}{\numberline {10}Multiple Species}{152}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}Background DDFT}{152}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}OCP}{152}{subsection.10.2}% 
+\contentsline {subsection}{\numberline {10.3}Adjoint 1}{155}{subsection.10.3}% 
+\contentsline {subsection}{\numberline {10.4}Adjoint 2}{157}{subsection.10.4}% 
+\contentsline {subsection}{\numberline {10.5}Gradient Equation}{158}{subsection.10.5}% 
+\contentsline {subsection}{\numberline {10.6}Numerical Examples}{160}{subsection.10.6}% 
+\contentsline {section}{\numberline {11}Industry application 1: Sedimentation}{161}{section.11}% 
+\contentsline {section}{\numberline {12}Industry application 2: Inertial multiple species}{161}{section.12}% 
+\contentsline {section}{\numberline {13}Some stuff to put somewhere some time}{161}{section.13}% 
+\contentsline {subsection}{\numberline {13.1}Averaging from 3D to 2D - unfinished}{161}{subsection.13.1}% 
+\contentsline {subsubsection}{\numberline {13.1.1}Exact Solution}{165}{subsubsection.13.1.1}% 

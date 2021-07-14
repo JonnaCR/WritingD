@@ -1,0 +1,24 @@
+In this section we describe the fixed point algorithm, which is an efficient and stable optimization method for the optimal control problems considered above. 
+We denote the discretized versions of the variables $\rho$, $\adj$ and $\mathbf{w}$ with $P$, $Q$ and $W$, respectively. Each of these matrices is of the form $A = [\boldsymbol{a_0}, \boldsymbol{a_1}, ... ,\boldsymbol{a_n}]$, where the vectors $\boldsymbol{a_k}$ represent the solutions at the discretized times $k \in 0,1,....,n$, where $n$ is the number of time points. In particular, the first column of $P$, denoted by $\boldsymbol{\rho_0}$, corresponds to the initial condition $\rho(r,0)$. If the spatial domain is one-dimensional, $P$, $Q$ and $W$ are of size $N \times (n + 1)$, where $N$ is the number of spatial points. In the two-dimensional case, $P$ and $Q$ are of size $(N_1N_2) \times (n + 1)$, where $N_1$ is the number of spatial points in the direction of $x_1$ and $N_2$ the points along the $x_2$ axis. Generally, $N_1 = N_2$. The discretized control $W$ for linear control problems is also $(N_1N_2) \times (n + 1)$ dimensional, while it is $(2N_1N_2) \times (n + 1)$ dimensional for nonlinear control problems. This is due to the fact that the control is represented by a vector field, when applied nonlinearly.
+\\
+\\
+The optimization algorithm is initialized with a guess for the control, $W^{(0)}$. Then, in each iteration, denoted by $i$, the following steps are computed:
+\vspace{0.1cm}
+\begin{enumerate}
+	\item Starting with a guess for the control $W^{(i)}$ as input variable, the corresponding state $P^{(i)}$ is found by solving the forward equation.
+	\item In a next step, the value of the adjoint, $Q^{(i)}$, is established by computing the adjoint equation, using $W^{(i)}$ and $P^{(i)}$ as inputs. Since $P^{(i)}$ contains the solution for all discretized times $k \in 0,1,...,n$, this circumvents issues resulting from the non-local coupling in time, resulting from reversing time in the adjoint equation. As illustrated in the same section, time is reversed in the adjoint equation, so that the result is a matrix $\tilde{Q}^{(i)} =  [\boldsymbol{\adj_n},\boldsymbol{\adj_{n-1}}, ..., \boldsymbol{\adj_1} ]$. The columns of $\tilde{Q}^{(i)}$ are permuted to obtain the solution  $Q^{(i)}$.
+	\item The gradient equation is solved, given the solutions $P^{(i)}$ and $Q^{(i)}$. This results in a new value for the control, $W^{(i)}_g$.
+	\item  The convergence of the optimization scheme is measured by computing the error between $W^{(i)}$ and $W^{(i)}_{g}$. The error measure, $\mathcal{E}$, is discussed in detail in Section \ref{sec:ErrorMeasure}. 
+	\begin{itemize}
+		\item  If this error is lower than a set tolerance, the optimality system is self-consistent. This implies that the solution triplet ($\bar{P},\bar{W},\bar{Q}$) solves the (discretized) optimality system, and is therefore an optimal solution to the PDE-constrained optimization problem of interest.
+		\item If the error is above the optimality tolerance, Step 5 is executed.
+	\end{itemize}
+	\item Finally, the update $W^{(i+1)}$ is a linear combination of the current guess $W^{(i)}$, and the value obtained in Step 3, $W^{(i)}_{g}$, employing a mixing rate $\lambda \in [0,1]$:
+	\begin{align*}
+	W^{(i+1)} = (1-\lambda)W^{(i)} + \lambda W^{(i)}_{g}.
+	\end{align*}
+	The guess for the control is updated from $W^{(i)} $ to $W^{(i+1)} $ and Steps 1-5 are repeated until the method converges. 
+\end{enumerate}
+\vspace{0.3cm}
+The update scheme in Step 5, with mixing rate $\lambda$, is known to stabilise fixed point methods, see \cite{Roth1}. Typical values of $\lambda$, which provide stable convergence, lie between $0.1$ and $0.001$. Throughout this paper, $\lambda =0.01$, unless stated otherwise. This mixing scheme is similar to the updating scheme presented in~\cite{Burger1}. 
+Note that, while the solutions $P^{(i)}$ and $Q^{(i)}$ change in each iteration, the initial condition $\boldsymbol{\rho_0}$ and final time condition $\boldsymbol{\adj_n}$ remain unchanged throughout the process. Therefore, the only variable inducing a change in the solution is $W^{(i)}$.

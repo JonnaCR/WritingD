@@ -1,0 +1,89 @@
+For some relatively simple PDE-constrained optimization problems it is possible to construct exact solutions to the first-order optimality system. This is an important aspect in the development of new numerical methods, since these problems can be used as test problems for the numerical method and the exact error can be measured. The considered test problem is a simplified version of (\ref{sysPDEconOpti1}), and therefore testing the numerical method on this problem is a step towards solving (\ref{sysPDEconOpti1}). In this section, the construction of an exact solution for the following problem is derived, where the PDE constraint is the forced heat equation on $\Omega =[-1,1]$:
+\begin{align}\label{sysOptimalHeating1}
+&\min_{\rho,u} \quad \frac{1}{2}\norm{\rho- \hat{\rho}}_{L_2}^2 + \frac{\beta}{2} \norm{u}_{L_2}^2,\\
+&\text{subject to:}\notag 
+\notag \\
+&\partial_t \rho - \Delta \rho - u=0,  \quad \text{in} \quad \Omega,\notag 
+\notag \\
+&\rho(r,0)=\rho_0(r),\notag 
+\notag \\
+& \rho(r,t)=0, \quad  \quad \quad \quad \ \text{on} \quad \partial \Omega. \notag 
+\end{align}
+Note that $u$ is now the control variable, comparable to $\mathbf{w}$ in (\ref{sysPDEconOpti1}).
+The first-order optimality system for this PDE-constrained optimization problem is:
+\begin{align} \label{sysPotimaltiyheatequn1}
+\textbf{Adjoint Equation} \notag \\
+\partial_t p + \Delta p -\rho +\hat{\rho} &=0 \ \ \ \quad \quad \quad \text{in} \quad \Omega,  \\
+p(r,T) &= 0 \notag\\
+p(r,t) &=0 \quad \quad\quad\quad \text{on} \quad \partial\Omega, \notag\\
+\textbf{Gradient Equation} \notag \\
+\beta u  - p  &=0 \quad \quad\quad\quad \ \text{in} \quad \Omega, \notag \\
+\textbf{Forward Problem} \notag \\
+\partial_t \rho - \Delta \rho - u &=0 \ \quad \quad\quad\quad \text{in} \quad \Omega, \notag \\ 
+\rho(r,0)&=\rho_0(r) \notag \\
+\rho(r,t) &=0 \quad \quad\quad\quad \ \text{on} \quad \partial \Omega \notag. 
+\end{align}
+This follows almost directly from taking the relevant terms from the optimality system (\ref{sysFirstOderOptimality1}).
+The solution to this system is derived in one and two dimensions, as well as for Dirichlet and Neumann boundary conditions.
+\newline
+\newline
+In order to construct a full solution to the optimality system, the following steps have to be taken. At first, an expression for $p$ has to be chosen, such that the boundary conditions for the adjoint equation, as well as the final-time condition, are satisfied.
+In a second step, this is substituted into the gradient equation to find $u$. The resulting expression can be used in the state equation to solve for $\rho$. Finally, once all three variables are defined, the adjoint equation can be used to solve for $\hat \rho$.
+A functional form for $p$, satisfying Dirichlet boundary conditions and the final time condition is:
+\begin{align*}
+p(r,t) = \bigg( e^T -e^t \bigg) \cos(\pi r /2).
+\end{align*}
+Substituting this into the gradient equation gives:
+\begin{align*}
+u(r,t) = \frac{1}{\beta}\bigg( e^T -e^t \bigg) \cos(\pi r /2).
+\end{align*}
+Substituting $u$ into the state equation results in a decoupled PDE for $\rho$ that can be solved:
+\begin{align}\label{eqnStateEqnDiff1DExact1}
+\partial_t \rho - \partial_{r} \rho=\frac{1}{\beta}\bigg( e^T -e^t \bigg) \cos(\pi r /2).
+\end{align}
+Assuming a solution of the form: 
+\begin{align*}
+\rho(r,t)= \bigg(a +be^t\bigg)\cos(\pi r /2),
+\end{align*}
+and substituting it into (\ref{eqnStateEqnDiff1DExact1}) gives:
+\begin{align*}
+be^t\cos(\pi r /2) + \frac{\pi^2}{4}\bigg(a +be^t\bigg)\cos(\pi r /2)=\frac{1}{\beta}\bigg( e^T -e^t \bigg) \cos(\pi r /2),
+\end{align*}
+which results in:
+\begin{align*}
+\bigg(b+\frac{\pi^2}{4}b + \frac{1}{\beta} \bigg)e^t + \frac{\pi^2}{4}a-\frac{1}{\beta} e^T  =0.
+\end{align*}
+Therefore, $\displaystyle b=-\frac{1}{(1+\frac{\pi^2}{4}) \beta}$ and $ \displaystyle a=\frac{4}{\beta \pi^2}e^T$, and so $\rho$ becomes:
+\begin{align*}
+\rho(r,t)= \bigg(\frac{4}{\beta \pi^2}e^T -\frac{1}{(1+\frac{\pi^2}{4}) \beta}e^t\bigg)\cos(\pi r /2).
+\end{align*}
+The expressions for $\rho$ and $p$ can be substituted into the adjoint equation, to solve for $\hat \rho$:
+\begin{align*}
+e^t \cos(\pi r/2) + \frac{\pi^2}{4}\bigg( e^T -e^t \bigg) \cos(\pi r /2) = \hat \rho - \bigg(\bigg(\frac{4}{\beta \pi^2}e^T -\frac{1}{(1+\frac{\pi^2}{4}) \beta}\bigg)\cos(\pi r /2) \bigg).
+\end{align*}
+This gives:
+\begin{align*}
+\hat \rho(r,t)=\bigg( \bigg( \frac{4}{\beta \pi^2}+ \frac{\pi^2}{4} \bigg) e^T + \bigg(1- \frac{\pi^2}{4}  -\frac{1}{(1+\frac{\pi^2}{4}) \beta} \bigg) e^t\bigg)  \cos(\pi r /2) .
+\end{align*}
+This solution can be used for Neumann boundary conditions as well, when considered on an interval $[-2,2]$. This is due to the fact that $\cos(\pi r/2)$ evaluated at $-2,2$ is equal to $-1$ and $1$ respectively, which is exactly at its stationary points. Therefore, the Neumann boundary conditions are satisfied at these points.
+Instead, the approach used in the numerical experiments below is to slightly change the calculations above to derive the following exact solutions for $\rho$, $p$ and $\hat \rho$ for solving (\ref{sysOptimalHeating1}) with Neumann boundary conditions:
+\begin{align*}
+p(r,t) &=\bigg( e^T -e^t \bigg) \cos(\pi r),\\
+\rho(r,t) &= \bigg( \frac{1}{\pi^2 \beta}e^T - \frac{1}{(1+\pi^2)\beta}e^t\bigg)\cos(\pi r),\\
+\hat \rho(r,t) &= \bigg( \bigg(\pi^2 + \frac{1}{\pi^2 \beta}\bigg)e^T + \bigg( 1- \pi^2 - \frac{1}{(1+\pi^2)\beta}\bigg)e^t \bigg) \cos(\pi r).
+\end{align*}
+Furthermore, these calculations can be done equivalently for two or more dimensional problems. 
+The exact solution to the two-dimensional problem (\ref{sysOptimalHeating1}) with Dirichlet boundary conditions is:
+\begin{align*}
+p(r,t) &= \bigg( e^T -e^t \bigg) \cos(\pi x /2)\cos(\pi y /2),\\
+\rho(r,t) &= \bigg(\frac{2}{\beta \pi^2}e^T -\frac{4}{(4+2\pi^2) \beta}e^t\bigg)\cos(\pi x /2)\cos(\pi y /2),\\
+\hat \rho (r,t) &=\bigg( \bigg( \frac{2}{\beta \pi^2}+ \frac{\pi^2}{2} \bigg) e^T + \bigg(1- \frac{\pi^2}{2}  -\frac{4}{(4+2\pi^2) \beta} \bigg) e^t\bigg)  \cos(\pi x /2)\cos(\pi y /2),
+\end{align*}
+where $r=(x,y)$.
+Finally, the exact solution to the two-dimensional problem (\ref{sysOptimalHeating1}) with Neumann boundary conditions is:
+\begin{align*}
+p(r,t)&= \bigg( e^T -e^t \bigg) \cos(\pi x )\cos(\pi y),\\
+\rho(r,t) &= \bigg(\frac{1}{2\beta \pi^2}e^T -\frac{1}{(1+2\pi^2) \beta}e^t\bigg)\cos(\pi x )\cos(\pi y ),\\
+\hat \rho (r,t) &=\bigg( \bigg( \frac{1}{\beta \pi^2}+ 2\pi^2 \bigg) e^T + \bigg(1- 2\pi^2  -\frac{1}{(1+2\pi^2) \beta} \bigg) e^t\bigg)  \cos(\pi x)\cos(\pi y).
+\end{align*}
+The exact solutions presented here for Dirichlet boundary conditions, for $d$ dimensions, can be found in \cite{GuettelPearson1}.

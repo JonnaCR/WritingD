@@ -1,0 +1,31 @@
+
+Almost analogously, we can consider a problem with boundary observation instead of subdomain observation.
+The problem of interest is then:
+\begin{align*}
+&\min_{\rho, w} \quad \frac{1}{2}|| \rho -\widehat \rho||^2_{L_2(\partial \Omega_R \times (0,T))} + \frac{\beta}{2}||w||^2_{L_2(\Sigma)}\\
+&\text{subject to:}\\
+&\partial_t \rho = \nabla^2 \rho - \nabla \cdot (\rho \mathbf{w}) +\nabla \cdot (\rho \nabla V_{ext}) + \nabla \cdot \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr' + w \quad  \quad\text{in} \quad \Sigma,\notag\\
+& \rho = \rho_0 \quad \text{at} \quad t=0 \notag\\
+& - \mathbf{j} \cdot \n = \mathbbm{1}_{\partial \Omega_L}( C_{L1}  + C_{L2}\rho) +\mathbbm{1}_{\partial \Omega_R} ( C_{R1}  + C_{R2}\rho) +\mathbbm{1}_{\partial \Omega_I} 0 \ \quad \qquad \qquad \qquad \quad \quad\text{on} \quad \partial \Omega, 
+\end{align*}
+where $C_{L1}, C_{L2}, C_{R1}$, $C_{R2}$ are constants and $\mathbbm{1}$ is the indicator function of the set (i.e. the parts of the boundary) of interest.
+Furthermore, $\mathbf{j}$ satisfies:
+\begin{align*}
+\mathbf{j}=\nabla \rho - (\rho \mathbf{w}) +(\rho \nabla V_{ext}) +  \int_\Omega \rho(r) \rho(r') \nabla V_2(|r-r'|) dr'.
+\end{align*}
+Moreover, let $\widehat \rho$ be defined such that:
+\begin{align*}
+\widehat \rho = \mathbbm{1}_{\partial \Omega_{R1}} \tilde \rho  +\mathbbm{1}_{\partial \Omega_{R2}} 0.
+\end{align*}
+This means, while we observe $\widehat \rho$ on the whole boundary, the desired state here asks for mass to be observed on the boundary $\partial \Omega_{R1}$.
+The resulting adjoint equation is:
+\begin{align*}
+- \partial_t  \Adjb  - \nabla \Adjb \cdot \mathbf{w} - \nabla^2 \Adjb \notag 
++  \nabla \Adjb \cdot \nabla V_{ext}  \notag 
++ \int_\Omega (\nabla  \Adjb(r)+\nabla  \Adjb(r')) \rho(r') \nabla V_2(|r-r'|) dr' &=0 \quad \text{in} \quad \Sigma, 
+\end{align*}
+with boundary condition:
+\begin{align*}
+\frac{\partial \Adjb }{\partial n}+ \mathbbm{1}_{\partial \Omega_{R1}}(\rho- \tilde{\rho} -C_{R2} \Adjb) + \mathbbm{1}_{\partial \Omega_{R2}} (\rho-C_{R2} \Adjb) - \mathbbm{1}_{\partial \Omega_L} C_{L2} \Adjb   &=0 \quad \text{on} \quad \partial \Omega.
+\end{align*}
+The gradient equation is the same as for the subdomain observation problem above.

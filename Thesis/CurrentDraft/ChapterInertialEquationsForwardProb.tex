@@ -1,0 +1,52 @@
+
+The most general equations considered, describing particle dynamics on a continuum level, are the so-called inertial equations. These are derived in \cite{Archer1}, by A. J. Archer, from the corresponding microscopic dynamics. The derivation, starting from a high dimensional PDE, includes taking momentum moments and making two modelling assumptions. The first assumption is that the contributions of particle interactions in the dynamic equations can be approximated by the interactions in the equilibrium state of the system. The second assumption is a `local-equilibrium' assumption, stating that locally the velocity is normally distributed. This assumption is violated when steep velocity gradients arise, which will be discussed below.
+
+The inertial equations are most generally formulated as:
+\begin{align*}
+	&\frac{\partial \ve}{\partial t} + \ve \cdot \nabla \ve + \gamma \ve = - \frac{1}{m} \nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho}\\
+	&\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \ve) =0.
+\end{align*}
+This system of equations describes the evolution of a velocity field $\ve$ and of the one-body particle density $\rho$, which depends on the velocity field.
+The velocity in the system is influenced by inertial effects, with friction coefficient $\gamma$, and by different forces, expressed in terms of the free energy $\mathcal{F}$ of the system.
+In the following we choose $\mathcal{F}$ to be defined as:
+\begin{align}
+	\label{eqn:freeenergy1}
+	\mathcal{F}[\rho]=\int_\Omega  \bigg( V_{ext}\rho + \rho (\log \rho -1) +  \frac{1}{2}\int_\Omega \rho(r) \rho(r')V_2(|r-r'|)dr' \bigg) dr.
+\end{align}
+Taking the appropriate derivatives gives:
+\begin{align*}
+	\nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho} = \nabla V_{ext} + \nabla \ln \rho + \int_\Omega \rho(r') \nabla V_2(|r-r'|)dr',
+\end{align*}
+where $V_{ext}$ is an external potential and $\nabla V_2$ is the force describing the particle interactions. However, in the derivation of corresponding optimality conditions, we instead consider a more general interaction kernel $\mathbf{K}(r,r')$.
+\\
+Further to this general model, we introduce three more terms for modelling purposes. Two vector fields, $\mathbf{w}$ and $\f$, are included in the velocity equation, which act as background flow fields in the problem. If these are conservative, they can be incorporated in the definition of $\nabla V_{ext}$. The term $\mathbf{w}$ will act as the flow control in the optimal control problem.
+The final term that is added is a smoothing term in the velocity equation. This is to avoid steep velocity gradients, which are numerically challenging and violate the modelling assumptions outlined in \cite{Archer1}. Since steep velocity gradients are more prevalent in inertial systems, which have a small friction coefficient $\gamma$, the introduction of this additional term is standard practice, see \cite{Archer1}.
+Including these terms leads to the model equations considered in this report:
+\begin{align}
+	\label{eqn:INeqns1}
+	\frac{\partial \ve}{\partial t} &+ (\ve \cdot \nabla)\ve + \gamma \ve = \eta \nabla^2 \ve  -\frac{1}{m}\f +\frac{1}{m}\mathbf{w} - \frac{1}{m}\nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho}\\
+	\frac{\partial \rho}{\partial t} &+ \nabla \cdot (\rho \ve)=0. \notag
+\end{align}
+The high friction limit of the inertial equations can be taken to derive the so-called overdamped equation, see \cite{Archer1}. This is a numerically easier problem, which only involves the variable $\rho$, and is therefore a good starting point when developing a new numerical algorithm for the optimal control of these models. 
+The overdamped equation is derived by assuming that for large $\gamma$ the material derivative of $\ve$, $\frac{D \ve}{D t} \coloneqq  \frac{\partial \ve}{\partial t} + (\ve \cdot \nabla)\ve $, is zero.
+System (\ref{eqn:INeqns1}) reduces to:
+\begin{align*}
+	&\gamma \ve = \eta \nabla^2 \ve  -\frac{1}{m}\f +\frac{1}{m}\mathbf{w} - \frac{1}{m}\nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho}\\
+	&\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \ve)=0 \notag.
+\end{align*}
+Then, $\ve$ can be substituted in the evolution equation for $\rho$, and the smoothing term for $\ve$ can be neglected, since the high friction limit is taken and hence the reason for its introduction vanishes. The overdamped equation is:
+\begin{align*}
+	&\frac{\partial \rho}{\partial t} -\frac{1}{m \gamma}\nabla \cdot (\rho \f) +\frac{1}{m \gamma} \nabla \cdot (\rho \mathbf{w}) - \frac{1}{m \gamma}\nabla \cdot \bigg(\rho\nabla \frac{\delta \mathcal{F}[\rho]}{\delta \rho}\bigg)=0 \notag.
+\end{align*}
+In particular, substituting the choice of free energy \eqref{eqn:freeenergy1}, and using that $\nabla \rho = \rho\nabla \ln \rho$, we get:
+\begin{align*}
+	\frac{\partial \rho}{\partial t} &= \frac{1}{m \gamma}\nabla \cdot (\rho \f) -\frac{1}{m \gamma} \nabla \cdot (\rho \mathbf{w})  + \frac{1}{m \gamma}\nabla \cdot (\rho\nabla V_{ext}) + \frac{1}{m \gamma}\nabla \cdot (\nabla \rho) \\
+	&+\frac{1}{m \gamma}\nabla \cdot \int_\Omega \rho(r)\rho(r') \nabla V_2(|r-r'|)dr'\notag.
+\end{align*}
+The overdamped equation that is considered in this report is found by rescaling time by $t = \tilde t \gamma m$. This causes the constants to cancel, and implies that comparisons between (\ref{eqn:INeqns1}) and (\ref{eqn:ADeqn1}) need to be made on these two different time scales.
+The resulting equation is:
+\begin{align}
+	\label{eqn:ADeqn1}
+	\frac{\partial \rho}{\partial \tilde t} &= \nabla \cdot (\rho \f) - \nabla \cdot (\rho \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) \\
+	&+\nabla \cdot \int_\Omega \rho(r)\rho(r') \nabla V_2(|r-r'|)dr'. \notag
+\end{align}

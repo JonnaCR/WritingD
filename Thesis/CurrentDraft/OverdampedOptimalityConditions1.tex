@@ -1,0 +1,31 @@
+The optimality conditions for the optimal control problems involving the overdamped equations \eqref{eqn:ADeqn1} are stated here for completion. The details of their derivation can be found in either the year one report or in our paper `PDE-Constrained Optimization Models and Pseudospectral Methods for Multiscale Particle Dynamics'.
+Two optimal control problems are considered; one which applies the control through the flow field, as in Section \ref{sec:INOptimalityConditions}, and another, where the control is an added source term in the PDE. The latter case is less physically relevant in applications, however, it is often a simpler problem to study, because the control is applied linearly, while the flow control problem a non-linear control is used. For each problem, no-flux and Dirichlet boundary conditions are considered. Note that, for ease of notation, we set $\tilde t = t$.
+The flow control problem is:
+\begin{align}
+\label{eqn:ADFlowOCP}
+&\min_{\rho,\mathbf{w} } \mathcal J(\rho,\mathbf{w} ) =\ \ \frac{1}{2}||\rho - \widehat \rho||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||\mathbf{w}||_{L_2(\Sigma)}^2\\
+& \text{subject to:}: \notag\\
+&\frac{\partial \rho}{\partial t} = \nabla \cdot (\rho\f) - \nabla \cdot (\rho \mathbf{w})  + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) +\nabla \cdot \int_\Omega \rho(r)\rho(r') \nabla V_2(|r-r'|)dr'. \notag
+\end{align}
+The adjoint and gradient equations are:
+\begin{align*}
+\frac{\partial \Adjb}{\partial t} =& - \nabla^2\Adjb - \mathbf{w} \cdot \nabla \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \rho + \widehat \rho+\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
+\mathbf{w} =& - \frac{1}{\beta} \rho \nabla \Adjb,
+\end{align*}
+where $\Adjb$ is the adjoint variable. The condition $\frac{\partial \Adjb}{\partial n} = 0$ on $\partial \Omega$ corresponds to a no-flux boundary condition, while $\Adjb = 0$ on $\partial \Omega$ corresponds to a Dirichlet boundary condition.
+
+The source control problem is:
+\begin{align}
+\label{eqn:AdvDiffLinear}
+&\min_{\rho,{w} } \mathcal J(\rho,{w}) = \ \ \frac{1}{2}||\rho - \widehat \rho||_{L_2(\Sigma)}^2  +\frac{\beta}{2}||{w}||_{L_2(\Sigma)}^2\\
+& \text{subject to:}: \notag \\
+&\frac{\partial \rho}{\partial  t} = \nabla \cdot (\rho\f) + \nabla \cdot (\rho\nabla V_{ext}) + \nabla \cdot (\nabla \rho) + w \notag +\nabla \cdot \int_\Omega \rho(r)\rho(r') \nabla V_2(|r-r'|)dr' \notag
+\end{align}
+
+The adjoint and gradient equations are:
+\begin{align*}
+\frac{\partial \Adjb}{\partial t} =& - \nabla^2 \Adjb + \nabla V_{ext} \cdot \nabla \Adjb - \rho + \widehat \rho +\int_\Omega (\nabla_r \Adjb(r) - \nabla_{r'} \Adjb(r') ) \rho(r') \mathbf{K}(r,r') dr'\\
+\mathbf{w} =& - \frac{1}{\beta} \Adjb.
+\end{align*}
+Boundary conditions for the adjoint equation are applied analogously to the flow control problem.
+

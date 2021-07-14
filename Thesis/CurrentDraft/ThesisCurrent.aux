@@ -16,29 +16,667 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand \oddpage@label [2]{}
+\citation{RexLoewen1}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}DFT/ Statistical Mechanics Background}{1}{section.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}DDFT Background}{1}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}PDE-Constrained Optimization}{1}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Optimality Conditions}{1}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Numerical Methods}{1}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Pseudospectral Methods and 2DChebClass}{1}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Optimization Methods}{2}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Validation of the Numerical Methods}{2}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Numerical Experiments}{2}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Sedimentation}{3}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Background DDFT}{3}{subsection.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}OCP}{3}{subsection.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Numerical Examples}{3}{subsection.8.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Inertial Equations}{3}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Background DDFT}{3}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}OCP}{4}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Numerical Examples}{4}{subsection.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Multiple Species}{4}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Background DDFT}{4}{subsection.10.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}OCP}{4}{subsection.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Numerical Examples}{4}{subsection.10.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11}Industry application 1: Sedimentation}{4}{section.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Industry application 2: Inerital multiple species}{4}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Motivating Examples and Industry Applications}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Forward Problem/ Particle Dynamics Modelling}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}DFT/ Statistical Mechanics Background}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}DDFT Background}{1}{subsection.2.2}\protected@file@percent }
+\newlabel{sysParticleModel1}{{1}{1}{DDFT Background}{equation.2.1}{}}
+\citation{RexLoewen1}
+\citation{RexLoewen1}
+\citation{RexLoewen1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Deriving Model Equations}{2}{subsubsection.2.2.1}\protected@file@percent }
+\newlabel{eqnPpde}{{2}{2}{Deriving Model Equations}{equation.2.2}{}}
+\newlabel{eqnPMDiffTerm}{{3}{3}{The Diffusion Equation}{equation.2.3}{}}
+\newlabel{eqnPpde2}{{4}{4}{Adding Pairwise Interactions}{equation.2.4}{}}
+\newlabel{eqnPInt1}{{5}{4}{Adding Pairwise Interactions}{equation.2.5}{}}
+\newlabel{eqnPInt2}{{6}{5}{Adding Pairwise Interactions}{equation.2.6}{}}
+\citation{RexLoewen1}
+\newlabel{eqnPInt3}{{7}{7}{Adding Pairwise Interactions}{equation.2.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Approximating the Two-Body Density}{7}{subsubsection.2.2.2}\protected@file@percent }
+\newlabel{eqnMeanFieldApprox1}{{8}{7}{The Mean Field Approximation}{equation.2.8}{}}
+\citation{GoddardPseudospectralCode1}
+\citation{Tarazona2008}
+\citation{CalculusofVariations1}
+\newlabel{eqnAdiaAprox1}{{9}{8}{The Adiabatic Approximation}{equation.2.9}{}}
+\newlabel{eqnFhardrod}{{10}{8}{The Adiabatic Approximation}{equation.2.10}{}}
+\citation{bibTrefethen}
+\citation{GoddardPseudospectralCode1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Numerical Methods for the Forward Problem}{9}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}2DChebClass implementation for different shapes}{9}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}The interval (1D)}{9}{subsubsection.2.4.1}\protected@file@percent }
+\newlabel{defChebyshevPoints}{{11}{9}{Discretization points, boundaries, normals}{equation.2.11}{}}
+\citation{Boyd1}
+\citation{bibTrefethenBerrut1}
+\citation{bibTrefethenBerrut1}
+\citation{GoddardPseudospectralCode1}
+\newlabel{eq:linearmap}{{12}{10}{Discretization points, boundaries, normals}{equation.2.12}{}}
+\newlabel{eq:invlinearmap}{{13}{10}{Discretization points, boundaries, normals}{equation.2.13}{}}
+\newlabel{sec:1DInterp}{{2.4.1}{10}{Interpolation}{section*.7}{}}
+\newlabel{eqnptov1}{{14}{10}{Interpolation}{equation.2.14}{}}
+\citation{bibTrefethen}
+\citation{bibTrefethen}
+\citation{GoddardPseudospectralCode1}
+\newlabel{sec:1DDiff}{{2.4.1}{11}{Differentiation}{section*.8}{}}
+\citation{ClenCurt1}
+\citation{GoddardPseudospectralCode1}
+\newlabel{eq:1DJacobian}{{15}{12}{Differentiation}{equation.2.15}{}}
+\newlabel{sec:1DInt}{{2.4.1}{12}{Integration}{section*.9}{}}
+\newlabel{eqnClenCurtQuad}{{16}{12}{Integration}{equation.2.16}{}}
+\newlabel{sec:1DConv}{{2.4.1}{12}{Convolution}{section*.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}The quadrilateral (2D)}{13}{subsubsection.2.4.2}\protected@file@percent }
+\newlabel{eq:KroneckerVec}{{17}{13}{Discretization points and domains}{equation.2.17}{}}
+\newlabel{eq:bilinear1}{{18}{13}{Discretization points and domains}{equation.2.18}{}}
+\newlabel{sec:2DQuadInterp}{{2.4.2}{15}{Interpolation}{section*.13}{}}
+\citation{bibTrefethen}
+\newlabel{sec:2DQuadInt}{{2.4.2}{17}{Integration}{section*.15}{}}
+\newlabel{sec:2DQuadConv}{{2.4.2}{18}{Convolution}{section*.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}The wedge (2D)}{18}{subsubsection.2.4.3}\protected@file@percent }
+\newlabel{sec:2DWedgePts}{{2.4.3}{18}{Discretization points and domains}{section*.17}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Determining angles of normals\relax }}{19}{algocf.1}\protected@file@percent }
+\newlabel{alg:WedgeNormalCart}{{1}{19}{Boundaries and normals}{algocf.1}{}}
+\citation{bibTrefethen}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.4}The periodic box (2D)}{21}{subsubsection.2.4.4}\protected@file@percent }
+\citation{bibTrefethen}
+\newlabel{eq:FourierInterp}{{19}{22}{Interpolation}{equation.2.19}{}}
+\newlabel{eq:PeriodicInterpolant}{{20}{22}{Interpolation}{equation.2.20}{}}
+\citation{bibTrefethen}
+\citation{Boyd1}
+\citation{bibTrefethen}
+\citation{Boyd1}
+\citation{GoddardPseudospectralCode1}
+\citation{Boyd1}
+\citation{SEMPatera84}
+\citation{SEMLagrange98}
+\citation{Boyd1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.5}The three dimensional box}{24}{subsubsection.2.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.6}Solving the PDE}{24}{subsubsection.2.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.7}Convergence Stuff}{24}{subsubsection.2.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Implementation for multishape}{25}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Setting up the multishape}{25}{subsubsection.2.5.1}\protected@file@percent }
+\newlabel{alg:msPts}{{2}{26}{Setting up the multishape}{algocfline.2}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Multishape points\relax }}{26}{algocf.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Boundaries and intersections}{26}{subsubsection.2.5.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Determining intersections between shapes in a multishape\relax }}{27}{algocf.3}\protected@file@percent }
+\newlabel{alg:msIntersections}{{3}{27}{Boundaries and intersections}{algocf.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Determining the boundary of a multishape\relax }}{28}{algocf.4}\protected@file@percent }
+\newlabel{alg:msBoundary}{{4}{28}{Boundaries and intersections}{algocf.4}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Determining the outward normals of a multishape\relax }}{29}{algocf.5}\protected@file@percent }
+\newlabel{alg:msnormals}{{5}{29}{Boundaries and intersections}{algocf.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.3}Interpolation, differentiation, integration and convolution}{30}{subsubsection.2.5.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces Constructing the interpolation matrix, gradient, divergence and Laplacian as well as the integration vector\relax }}{30}{algocf.6}\protected@file@percent }
+\newlabel{alg:msinterp}{{6}{30}{Interpolation, differentiation, integration and convolution}{algocf.6}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces Constructing the interpolation matrix for interpolating onto points in physical space\relax }}{31}{algocf.7}\protected@file@percent }
+\newlabel{alg:msinterpPhys}{{7}{31}{Interpolation, differentiation, integration and convolution}{algocf.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.4}Boundary matching and solving the PDE}{32}{subsubsection.2.5.4}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {8}{\ignorespaces Applying boundary and intersection conditions, solving the PDE.\relax }}{32}{algocf.8}\protected@file@percent }
+\newlabel{alg:msBCapplication}{{8}{32}{Boundary matching and solving the PDE}{algocf.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Validation Tests Multishape}{32}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}Testing Differentiation, Interpolation, Convolution and Integration}{33}{subsubsection.2.6.1}\protected@file@percent }
+\newlabel{sec:ValidationDiffIntetc}{{2.6.1}{33}{Testing Differentiation, Interpolation, Convolution and Integration}{subsubsection.2.6.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Different discretizations of the box (a - g).\relax }}{33}{figure.caption.25}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{F2}{{1}{33}{Different discretizations of the box (a - g).\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Quadrilateral domain (q).\relax }}{33}{figure.caption.26}\protected@file@percent }
+\newlabel{F3a}{{2}{33}{Quadrilateral domain (q).\relax }{figure.caption.26}{}}
+\newlabel{eq:exactsol1}{{21}{33}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.2.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Different discretizations of the wedge (h - k).\relax }}{34}{figure.caption.27}\protected@file@percent }
+\newlabel{F4}{{3}{34}{Different discretizations of the wedge (h - k).\relax }{figure.caption.27}{}}
+\newlabel{eq:ErrorMeasure1}{{22}{34}{Testing Differentiation, Interpolation, Convolution and Integration}{equation.2.22}{}}
+\citation{Hutomo_2019}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}Exact Tests}{35}{subsubsection.2.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Table $\Grad  $\relax }}{36}{table.caption.28}\protected@file@percent }
+\newlabel{Tab:Grad}{{1}{36}{Table $\Grad $\relax }{table.caption.28}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Table $\Div  $\relax }}{36}{table.caption.29}\protected@file@percent }
+\newlabel{Tab:div}{{2}{36}{Table $\Div $\relax }{table.caption.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Table $\Lap  $\relax }}{37}{table.caption.30}\protected@file@percent }
+\newlabel{Tab:Lap}{{3}{37}{Table $\Lap $\relax }{table.caption.30}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Table Interp\relax }}{37}{table.caption.31}\protected@file@percent }
+\newlabel{Tab:Interp}{{4}{37}{Table Interp\relax }{table.caption.31}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Table Interp Compare\relax }}{38}{table.caption.32}\protected@file@percent }
+\newlabel{Tab:InterpComp}{{5}{38}{Table Interp Compare\relax }{table.caption.32}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Table Comparing interpolation errors on wedges, when $N_1 \not =N_2$.\relax }}{38}{table.caption.33}\protected@file@percent }
+\newlabel{Tab:InterpPol}{{6}{38}{Table Comparing interpolation errors on wedges, when $N_1 \neq N_2$.\relax }{table.caption.33}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Table Conv\relax }}{38}{table.caption.34}\protected@file@percent }
+\newlabel{Tab:Conv}{{7}{38}{Table Conv\relax }{table.caption.34}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Table Int\relax }}{39}{table.caption.35}\protected@file@percent }
+\newlabel{Tab:Int}{{8}{39}{Table Int\relax }{table.caption.35}{}}
+\newlabel{eq:DirichletExactSol}{{24}{39}{Exact Tests - Dirichlet Conditions}{equation.2.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Table Dirichlet Exact Solution 1\relax }}{40}{table.caption.41}\protected@file@percent }
+\newlabel{Tab:DirichletEx1}{{9}{40}{Table Dirichlet Exact Solution 1\relax }{table.caption.41}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Table Dirichlet Exact Solution 1 on two multishapes\relax }}{40}{table.caption.42}\protected@file@percent }
+\newlabel{Tab:DirichletEx1MS}{{10}{40}{Table Dirichlet Exact Solution 1 on two multishapes\relax }{table.caption.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Exact solution on the box.\relax }}{41}{figure.caption.37}\protected@file@percent }
+\newlabel{F3}{{4}{41}{Exact solution on the box.\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Exact solution on the wedge.\relax }}{42}{figure.caption.38}\protected@file@percent }
+\newlabel{F5}{{5}{42}{Exact solution on the wedge.\relax }{figure.caption.38}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Table Dirichlet Exact Solution 2\relax }}{43}{table.caption.44}\protected@file@percent }
+\newlabel{Tab:DirichletEx2}{{11}{43}{Table Dirichlet Exact Solution 2\relax }{table.caption.44}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Table No-Flux Exact Solution\relax }}{43}{table.caption.48}\protected@file@percent }
+\newlabel{Tab:NoFluxEx}{{12}{43}{Table No-Flux Exact Solution\relax }{table.caption.48}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }}{43}{table.caption.49}\protected@file@percent }
+\newlabel{Tab:NoFluxCorr}{{13}{43}{Table No-Flux Exact Solution with Corrected Normal Vectors at Intersections\relax }{table.caption.49}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Example 1 multishape\relax }}{44}{figure.caption.39}\protected@file@percent }
+\newlabel{F6}{{6}{44}{Example 1 multishape\relax }{figure.caption.39}{}}
+\citation{Boyd1}
+\citation{FEMIntegroPaper}
+\citation{GoddardPseudospectralCode1}
+\citation{Boyd1}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Example 2 multishape\relax }}{45}{figure.caption.40}\protected@file@percent }
+\newlabel{F7}{{7}{45}{Example 2 multishape\relax }{figure.caption.40}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Table Forward Problem on Box\relax }}{45}{table.caption.55}\protected@file@percent }
+\newlabel{Tab:FWProbBox}{{14}{45}{Table Forward Problem on Box\relax }{table.caption.55}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Exact solution on the box with no-flux boundary conditions.\relax }}{46}{figure.caption.46}\protected@file@percent }
+\newlabel{F3b}{{8}{46}{Exact solution on the box with no-flux boundary conditions.\relax }{figure.caption.46}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Table Forward Problem on Wedge\relax }}{46}{table.caption.56}\protected@file@percent }
+\newlabel{Tab:FWProbWedge}{{15}{46}{Table Forward Problem on Wedge\relax }{table.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Original, non-sensible normals are compared to new, customized normals.\relax }}{47}{figure.caption.47}\protected@file@percent }
+\newlabel{FNorm}{{9}{47}{Original, non-sensible normals are compared to new, customized normals.\relax }{figure.caption.47}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Table Forward Examples 1 and 2\relax }}{47}{table.caption.57}\protected@file@percent }
+\newlabel{Tab:Example12}{{16}{47}{Table Forward Examples 1 and 2\relax }{table.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Forward Example on box discretizations\relax }}{48}{figure.caption.51}\protected@file@percent }
+\newlabel{FFW1}{{10}{48}{Forward Example on box discretizations\relax }{figure.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}PDE-Constrained Optimization}{48}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}General PDECO Stuff}{48}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Forward Example on wedge discretizations\relax }}{49}{figure.caption.52}\protected@file@percent }
+\newlabel{FFW2}{{11}{49}{Forward Example on wedge discretizations\relax }{figure.caption.52}{}}
+\citation{TroeltzschFredi2010OCoP}
+\citation{PearsonThesis}
+\citation{DeLosReyesOptimization}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }}{50}{figure.caption.53}\protected@file@percent }
+\newlabel{F8}{{12}{50}{Forward Problem 1, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.53}{}}
+\newlabel{sysPDEconOpti1}{{25}{50}{General PDECO Stuff}{equation.3.25}{}}
+\citation{LASRY2006619}
+\citation{LASRY2006679}
+\citation{LASRY4}
+\citation{Lasry2007}
+\citation{Huang1}
+\citation{CuckerSmale1}
+\citation{CuckerSmale2}
+\citation{Fornasier_2014}
+\citation{Fornasier_2014no2}
+\citation{fornasier_lisini_orrieri_savare_2019}
+\citation{piccoli2014no1}
+\citation{Fornasier_20161no1}
+\citation{burger2019meanfield}
+\citation{burger2019instantaneous}
+\citation{burger2016controlling}
+\citation{ChengC.Z1976Tiot}
+\citation{albi2016selective}
+\citation{albi2016mean}
+\citation{carrillo2019mean}
+\citation{Pinnau_2017}
+\citation{carrillo2018no1}
+\citation{Pinnau_2017}
+\citation{gilbertstrang1}
+\citation{albi2016mean}
+\citation{albi2016mean}
+\citation{carrillo2018no1}
+\citation{Albi_2014no1}
+\citation{albi2014kinetic}
+\citation{albi2016mean}
+\citation{Fornasier_2014no2}
+\citation{burger2016controlling}
+\citation{fornasier_lisini_orrieri_savare_2019}
+\citation{burger2019meanfield}
+\citation{burger2016controlling}
+\citation{albi2016mean}
+\citation{carrillo2018no1}
+\citation{albi2016mean}
+\citation{Pinnau_2017}
+\citation{burger2019instantaneous}
+\citation{burger2016controlling}
+\citation{albi2016mean}
+\citation{Burger1}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }}{51}{figure.caption.54}\protected@file@percent }
+\newlabel{F9}{{13}{51}{Forward Problem 2, different colour scale for each plot to highlight particle mass location\relax }{figure.caption.54}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Literature Review Mean Field PDECO}{51}{subsection.3.2}\protected@file@percent }
+\citation{DeLosReyesOptimization}
+\citation{TroeltzschFredi2010OCoP}
+\citation{TroeltzschFredi2010OCoP}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Optimality Conditions}{53}{subsection.3.3}\protected@file@percent }
+\newlabel{sysLagrangian1}{{26}{54}{Optimality Conditions}{equation.3.26}{}}
+\citation{DeLosReyesOptimization}
+\citation{FrechetProductrule1}
+\citation{DeLosReyesOptimization}
+\citation{DeLosReyesOptimization}
+\newlabel{sysLagrangian2}{{27}{55}{Optimality Conditions}{equation.3.27}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Fr\'echet Differentiation}{55}{subsubsection.3.3.1}\protected@file@percent }
+\citation{DeLosReyesOptimization}
+\citation{DeLosReyesOptimization}
+\citation{FrechetProductrule1}
+\citation{TroeltzschFredi2010OCoP}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Deriving the Adjoint Equation}{56}{subsubsection.3.3.2}\protected@file@percent }
+\newlabel{secOptimalityAdjoint1}{{3.3.2}{56}{Deriving the Adjoint Equation}{subsubsection.3.3.2}{}}
+\citation{TroeltzschFredi2010OCoP}
+\citation{TroeltzschFredi2010OCoP}
+\newlabel{eqnLagrRhoDeriv}{{28}{57}{Deriving the Adjoint Equation}{equation.3.28}{}}
+\newlabel{condHChoice1}{{29}{57}{Deriving the Adjoint Equation}{equation.3.29}{}}
+\newlabel{eqnOptiAdjRho1}{{30}{57}{Deriving the Adjoint Equation}{equation.3.30}{}}
+\newlabel{condHChoice2}{{31}{57}{Deriving the Adjoint Equation}{equation.3.31}{}}
+\citation{TroeltzschFredi2010OCoP}
+\newlabel{eqnOptiAdjRho2}{{32}{58}{Deriving the Adjoint Equation}{equation.3.32}{}}
+\newlabel{eqnOptiAdjRhoFTC}{{33}{58}{Deriving the Adjoint Equation}{equation.3.33}{}}
+\newlabel{eqnOptiAdjRho3}{{34}{58}{Deriving the Adjoint Equation}{equation.3.34}{}}
+\newlabel{eqnPOmPPartOmEqual}{{35}{58}{Deriving the Adjoint Equation}{equation.3.35}{}}
+\newlabel{eqnOptiAdjRhoBC1}{{36}{59}{Deriving the Adjoint Equation}{equation.3.36}{}}
+\newlabel{sysAdjointEquation}{{37}{59}{Deriving the Adjoint Equation}{equation.3.37}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}The First-Order Optimality System}{59}{subsubsection.3.3.3}\protected@file@percent }
+\newlabel{secOptimalityGradient1}{{3.3.3}{59}{The First-Order Optimality System}{subsubsection.3.3.3}{}}
+\newlabel{secOptimalityStateEqnDerivation1}{{3.3.3}{59}{The First-Order Optimality System}{subsubsection.3.3.3}{}}
+\newlabel{eqnGradientEquation}{{38}{59}{The First-Order Optimality System}{equation.3.38}{}}
+\newlabel{sysForwardEquation}{{39}{60}{The First-Order Optimality System}{equation.3.39}{}}
+\newlabel{sysFirstOderOptimality1}{{40}{60}{The First-Order Optimality System}{equation.3.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Adding a Non-Local Term}{60}{subsubsection.3.3.4}\protected@file@percent }
+\newlabel{secOptimalitySysNonLocal1}{{3.3.4}{60}{Adding a Non-Local Term}{subsubsection.3.3.4}{}}
+\newlabel{sysPDEconstroptiAndNonlocal1}{{41}{61}{Adding a Non-Local Term}{equation.3.41}{}}
+\newlabel{sysLagrangianNonLocal1}{{42}{61}{Adding a Non-Local Term}{equation.3.42}{}}
+\newlabel{sysLagrangianPlusNonLocal}{{43}{62}{Adding a Non-Local Term}{equation.3.43}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Deriving the Adjoint Equation with the Non-Local Term}{62}{subsubsection.3.3.5}\protected@file@percent }
+\citation{TroeltzschFredi2010OCoP}
+\newlabel{eqnAdjointNonlocal1}{{44}{64}{Deriving the Adjoint Equation with the Non-Local Term}{equation.3.44}{}}
+\newlabel{eqnPOmPPartOmEqualNonLoc}{{45}{64}{Deriving the Adjoint Equation with the Non-Local Term}{equation.3.45}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}The First Order Optimality System Including the Non-Local Term}{65}{subsubsection.3.3.6}\protected@file@percent }
+\newlabel{sysFirstOderOptimalityNonLocal1}{{47}{66}{The First Order Optimality System Including the Non-Local Term}{equation.3.47}{}}
+\newlabel{eqn:ADFlowOCP}{{48}{66}{The First Order Optimality System Including the Non-Local Term}{equation.3.48}{}}
+\newlabel{eqn:AdvDiffLinear}{{49}{67}{The First Order Optimality System Including the Non-Local Term}{equation.3.49}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Deriving OCP with general Flow Term and Periodic Boundary Conditions}{67}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Periodic Boundary Conditions 1D Advection-Diffusion}{67}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Periodic Boundary Conditions in a General Domain}{69}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Periodic Boundary Conditions for a General Flux}{71}{subsubsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Subdomain and Boundary Observation with Non-Constant Flux}{74}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Numerical Methods for PDECO}{76}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Standard Approaches}{76}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Optimization Methods we use}{77}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Newton-Krylov Algorithm}{77}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Fixed Point Algorithm}{77}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{sec:Method_SolverFP}{{4.2.2}{77}{Fixed Point Algorithm}{subsubsection.4.2.2}{}}
+\citation{Roth1}
+\citation{Burger1}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Picard Multiple Shooting}{78}{subsubsection.4.2.3}\protected@file@percent }
+\citation{bvp4cPaper1}
+\citation{CarraroIndMultipleShooting}
+\citation{CarraroDirectIndirectMultipleShooting}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Multiple Shooting}{79}{subsubsection.4.2.4}\protected@file@percent }
+\newlabel{secNumericsOneDDiffusion1}{{4.2.4}{80}{One-Dimensional Diffusion}{section*.58}{}}
+\newlabel{sysOneDimHeatEqunOptisys1}{{50}{80}{One-Dimensional Diffusion}{equation.4.50}{}}
+\newlabel{sysOptimDiffAdjBW1}{{51}{81}{One-Dimensional Diffusion}{equation.4.51}{}}
+\newlabel{sysOptimDiffAdjBW2}{{52}{82}{One-Dimensional Diffusion}{equation.4.52}{}}
+\newlabel{eqnErrorINitoptiguess}{{53}{82}{One-Dimensional Diffusion}{equation.4.53}{}}
+\newlabel{secOneDDiffusionNonlocalOptim1}{{4.2.4}{83}{One-Dimensional Diffusion with a Non-Local Term}{section*.59}{}}
+\newlabel{sysoptinonlocandheat1D}{{55}{84}{One-Dimensional Diffusion with a Non-Local Term}{equation.4.55}{}}
+\newlabel{eqn1Dgaussian}{{56}{84}{One-Dimensional Diffusion with a Non-Local Term}{equation.4.56}{}}
+\newlabel{OptmSysNonloc1alpha}{{57}{85}{One-Dimensional Diffusion with a Non-Local Term}{equation.4.57}{}}
+\newlabel{sec2Dprobsnum1}{{4.2.4}{86}{Two-Dimensional Problems}{section*.60}{}}
+\citation{Powell1}
+\newlabel{OptmSysNonloc1alpha2D}{{58}{87}{Two-Dimensional Problems with a Non-Local Term}{equation.4.58}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}{\scshape  MATLAB}'s Inbuilt Optimization Solver \texttt  {fsolve}}{87}{subsubsection.4.2.5}\protected@file@percent }
+\newlabel{sec:fsolvedescription}{{4.2.5}{87}{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt {fsolve}}{subsubsection.4.2.5}{}}
+\citation{Powell1}
+\citation{fsolve1}
+\newlabel{eqn:trustregionsubprob1}{{59}{88}{{\scshape MATLAB}'s Inbuilt Optimization Solver \texttt {fsolve}}{equation.4.59}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Validation of the Numerical Methods}{88}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Error Measure}{89}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:ErrorMeasure}{{5.1}{89}{Error Measure}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Validation with Exact Solutions}{89}{subsection.5.2}\protected@file@percent }
+\newlabel{sysOptimalHeating1}{{60}{90}{Validation with Exact Solutions}{equation.5.60}{}}
+\newlabel{sysPotimaltiyheatequn1}{{61}{90}{Validation with Exact Solutions}{equation.5.61}{}}
+\newlabel{eqnStateEqnDiff1DExact1}{{62}{91}{Validation with Exact Solutions}{equation.5.62}{}}
+\citation{GuettelPearson1}
+\citation{Powell1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Validation Against \texttt  {fsolve}}{92}{subsection.5.3}\protected@file@percent }
+\newlabel{TabA3:Prob11}{{5.3}{92}{Validation Against \texttt {fsolve}}{table.caption.62}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Comparing the fixed point method with \texttt  {fsolve}.\relax }}{93}{table.caption.62}\protected@file@percent }
+\newlabel{TabA3:Prob1}{{17}{93}{Comparing the fixed point method with \texttt {fsolve}.\relax }{table.caption.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Perturbing $w$}{93}{subsection.5.4}\protected@file@percent }
+\newlabel{TabA2:Prob11}{{5.4}{94}{Perturbing $w$}{table.caption.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Additional Observations}{94}{subsection.5.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Errors in $\mathbf  {w}_{uc}$, $\mathbf  {w}_{c}$, $\rho $, and $q$, for four different perturbations of $\mathbf  {w}$, and for a range of $\beta $ values.\relax }}{95}{table.caption.63}\protected@file@percent }
+\newlabel{TabA2:Prob1}{{18}{95}{Errors in $\mathbf {w}_{uc}$, $\mathbf {w}_{c}$, $\rho $, and $\adj $, for four different perturbations of $\mathbf {w}$, and for a range of $\beta $ values.\relax }{table.caption.63}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Numerical Experiments}{96}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Examples on a box in two and three dimensions}{97}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Two-dimensional Examples}{97}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}Linear (source) control problem with no-flux boundary conditions}{97}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Source Control No-Flux Problem: Cost when $w=0$ and optimal control cost for a range of $\kappa $, $\beta $. The value of $\mathcal  J_{c}$ for $\beta = 10^{-5}$ is of order $10^{-5}$. Note that for $\beta = 10$, the cost functionals differ by $10^{-4}$, while for $\beta = 10^3$ they differ by $10^{-7}$.\relax }}{98}{table.caption.64}\protected@file@percent }
+\newlabel{TabSCN}{{19}{98}{Source Control No-Flux Problem: Cost when $w=0$ and optimal control cost for a range of $\kappa $, $\beta $. The value of $\mathcal J_{c}$ for $\beta = 10^{-5}$ is of order $10^{-5}$. Note that for $\beta = 10$, the cost functionals differ by $10^{-4}$, while for $\beta = 10^3$ they differ by $10^{-7}$.\relax }{table.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Neumann Source Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }}{98}{figure.caption.65}\protected@file@percent }
+\newlabel{FSCN1}{{14}{98}{Neumann Source Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }{figure.caption.65}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}Linear (source) control problem with Dirichlet boundary conditions}{98}{subsubsection.6.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Neumann Source Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }}{99}{figure.caption.66}\protected@file@percent }
+\newlabel{FSCN2}{{15}{99}{Neumann Source Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }{figure.caption.66}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Neumann Source Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }}{99}{figure.caption.67}\protected@file@percent }
+\newlabel{FSCN3}{{16}{99}{Neumann Source Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }{figure.caption.67}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}Non-linear (flow) control problem with no-flux boundary conditions}{99}{subsubsection.6.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Source Control Dirichlet Problem: Cost $\mathcal  {J}_{uc}$ of applying no control (i.e., $\mathaccentV {vec}17E{w} = \mathaccentV {vec}17E{0}$)and optimal control cost $\mathcal  {J}_{c}$ for a range of values of the interaction strength $\kappa $ and regularization parameter $\beta $. The value of $\mathcal  J_{c}$ for $\beta = 10^{-5}$ is of order $10^{-5}$. Note that for $\beta = 10$, the cost functionals differ by $10{-5}$, while for $\beta = 10^3$ they differ by $10^{-7}$ for $\kappa = 0$ and $\kappa = 1$ and by $10^{-8}$ for $\kappa = -1$.\relax }}{100}{table.caption.71}\protected@file@percent }
+\newlabel{TabSCD}{{20}{100}{Source Control Dirichlet Problem: Cost $\mathcal {J}_{uc}$ of applying no control (i.e., $\vec {w} = \vec {0}$)and optimal control cost $\mathcal {J}_{c}$ for a range of values of the interaction strength $\kappa $ and regularization parameter $\beta $. The value of $\mathcal J_{c}$ for $\beta = 10^{-5}$ is of order $10^{-5}$. Note that for $\beta = 10$, the cost functionals differ by $10{-5}$, while for $\beta = 10^3$ they differ by $10^{-7}$ for $\kappa = 0$ and $\kappa = 1$ and by $10^{-8}$ for $\kappa = -1$.\relax }{table.caption.71}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Flow Control No-Flux Problem: Cost when $\mathaccentV {vec}17E{w}=\mathaccentV {vec}17E{0}$ and optimal control cost for a range of $\kappa $, $\beta $. Note that for $\beta = 10$, the cost functionals differ by $10^{-5}$, while for $\beta = 10^3$ they differ by $10^{-7}$ (++ two in the wrong direction ++).\relax }}{100}{table.caption.78}\protected@file@percent }
+\newlabel{TabFCN}{{21}{100}{Flow Control No-Flux Problem: Cost when $\vec {w}=\vec {0}$ and optimal control cost for a range of $\kappa $, $\beta $. Note that for $\beta = 10$, the cost functionals differ by $10^{-5}$, while for $\beta = 10^3$ they differ by $10^{-7}$ (++ two in the wrong direction ++).\relax }{table.caption.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Neumann Source Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph  {$V_{\text  {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }}{101}{figure.caption.68}\protected@file@percent }
+\newlabel{FSCN1c}{{17}{101}{Neumann Source Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph {$V_{\text {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }{figure.caption.68}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Neumann Source Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{101}{figure.caption.69}\protected@file@percent }
+\newlabel{FSCN2c}{{18}{101}{Neumann Source Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.69}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.4}Non-linear (flow) control problem with Dirichlet boundary conditions}{101}{subsubsection.6.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Neumann Source Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{102}{figure.caption.70}\protected@file@percent }
+\newlabel{FSCN3c}{{19}{102}{Neumann Source Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Dirichlet Source Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }}{102}{figure.caption.72}\protected@file@percent }
+\newlabel{F2a}{{20}{102}{Dirichlet Source Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }{figure.caption.72}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Three-dimensional Example}{102}{subsection.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Dirichlet Source Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }}{103}{figure.caption.73}\protected@file@percent }
+\newlabel{F2b}{{21}{103}{Dirichlet Source Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }{figure.caption.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Dirichlet Source Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }}{103}{figure.caption.74}\protected@file@percent }
+\newlabel{F2c}{{22}{103}{Dirichlet Source Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }{figure.caption.74}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Examples on a multishape}{103}{subsection.6.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Dirichlet Source Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph  {$V_{\text  {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }}{104}{figure.caption.75}\protected@file@percent }
+\newlabel{F2ac}{{23}{104}{Dirichlet Source Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph {$V_{\text {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }{figure.caption.75}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Dirichlet Source Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{104}{figure.caption.76}\protected@file@percent }
+\newlabel{F2bc}{{24}{104}{Dirichlet Source Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.76}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Dirichlet Source Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{105}{figure.caption.77}\protected@file@percent }
+\newlabel{F2cc}{{25}{105}{Dirichlet Source Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.77}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Neumann Flow Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }}{105}{figure.caption.79}\protected@file@percent }
+\newlabel{F3a}{{26}{105}{Neumann Flow Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }{figure.caption.79}{}}
+\citation{ArcherSed1}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Neumann Flow Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }}{106}{figure.caption.80}\protected@file@percent }
+\newlabel{F3b}{{27}{106}{Neumann Flow Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Neumann Flow Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }}{106}{figure.caption.81}\protected@file@percent }
+\newlabel{F3c}{{28}{106}{Neumann Flow Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }{figure.caption.81}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Industrial Motivation Revisited}{106}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Sedimentation}{106}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Background DDFT}{106}{subsection.8.1}\protected@file@percent }
+\citation{ArcherSed1}
+\citation{ArcherSed1}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Neumann Flow Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph  {$V_{\text  {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }}{107}{figure.caption.82}\protected@file@percent }
+\newlabel{F3ac}{{29}{107}{Neumann Flow Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph {$V_{\text {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }{figure.caption.82}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Neumann Flow Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{107}{figure.caption.83}\protected@file@percent }
+\newlabel{F3bc}{{30}{107}{Neumann Flow Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.83}{}}
+\newlabel{Eq1}{{63}{107}{Background DDFT}{equation.8.63}{}}
+\citation{RosenfeldFMT}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Neumann Flow Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{108}{figure.caption.84}\protected@file@percent }
+\newlabel{F3cc}{{31}{108}{Neumann Flow Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.84}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Flow Control Dirichlet Problem: Cost when $w=0$ and optimal control cost for a range of $\kappa $, $\beta $. For $\beta = 10$, the cost functionals differ by $10^{-4}$ for $\kappa = 0$ and $\kappa = 1$ and by $10^{-2}$ for $\kappa = -1$. For $\beta = 10^3$, the cost functionals differ by $10^{-7}$ for $\kappa = 0$, by $10^{-6}$ for $\kappa = 1$, and by $10^{-4}$ for $\kappa = -1$.\relax }}{108}{table.caption.85}\protected@file@percent }
+\newlabel{TabFCD}{{22}{108}{Flow Control Dirichlet Problem: Cost when $w=0$ and optimal control cost for a range of $\kappa $, $\beta $. For $\beta = 10$, the cost functionals differ by $10^{-4}$ for $\kappa = 0$ and $\kappa = 1$ and by $10^{-2}$ for $\kappa = -1$. For $\beta = 10^3$, the cost functionals differ by $10^{-7}$ for $\kappa = 0$, by $10^{-6}$ for $\kappa = 1$, and by $10^{-4}$ for $\kappa = -1$.\relax }{table.caption.85}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1}The Hard Disk Approximation}{108}{subsubsection.8.1.1}\protected@file@percent }
+\citation{Roth_2010FMTReview}
+\citation{Roth_2010FMTReview}
+\citation{RosenfeldFMT}
+\citation{Percus1976}
+\citation{Rosenfeld2DInterp}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Dirichlet Flow Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }}{109}{figure.caption.86}\protected@file@percent }
+\newlabel{F5a}{{32}{109}{Dirichlet Flow Control: Optimal $\rho $ for $\kappa = 0$ and $\beta = 10^{-3}$.\relax }{figure.caption.86}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Dirichlet Flow Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }}{109}{figure.caption.87}\protected@file@percent }
+\newlabel{F5b}{{33}{109}{Dirichlet Flow Control: Optimal $\rho $ for $\kappa = -1$ and $\beta = 10^{-3}$.\relax }{figure.caption.87}{}}
+\newlabel{eqn:WeightedDensities}{{64}{109}{The Hard Disk Approximation}{equation.8.64}{}}
+\citation{Reiss1959}
+\citation{Reiss1960}
+\citation{Helfand1961}
+\citation{PercusYevick1}
+\citation{RosenfeldSPT}
+\citation{DFTWinkelmann2001}
+\citation{DFTRoth1}
+\citation{DFTRoth2}
+\citation{DFTGonzalez1997}
+\citation{DFTCuesta2008}
+\citation{DFTLoewen2002}
+\citation{GrafLoewen1999}
+\citation{DuBois2002}
+\citation{Chamoux1998}
+\citation{Chamoux1996}
+\citation{ArcherSed1}
+\citation{ArcherSed2008}
+\citation{ArcherSed2011}
+\citation{ArcherSed2013}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Dirichlet Flow Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }}{110}{figure.caption.88}\protected@file@percent }
+\newlabel{F5c}{{34}{110}{Dirichlet Flow Control: Optimal $\rho $ for $\kappa = 1$ and $\beta = 10^{-3}$.\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Dirichlet Flow Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph  {$V_{\text  {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }}{110}{figure.caption.89}\protected@file@percent }
+\newlabel{F5ac}{{35}{110}{Dirichlet Flow Control: Optimal control for $\kappa = 0$ and $\beta = 10^{-3}$. A contour plot of the external potential \emph {$V_{\text {ext}}$} is superimposed on the control plots for reference, with a corresponding colorbar on the left-hand side.\relax }{figure.caption.89}{}}
+\newlabel{eqn:SPTFunctional2D}{{65}{110}{The Hard Disk Approximation}{equation.8.65}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces Dirichlet Flow Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{111}{figure.caption.90}\protected@file@percent }
+\newlabel{F5bc}{{36}{111}{Dirichlet Flow Control: Optimal control for $\kappa = -1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces Dirichlet Flow Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph  {$V_{\text  {ext}}$} as before.\relax }}{111}{figure.caption.91}\protected@file@percent }
+\newlabel{F5cc}{{37}{111}{Dirichlet Flow Control: Optimal control for $\kappa = 1$ and $\beta = 10^{-3}$ and contour plot of the external potential \emph {$V_{\text {ext}}$} as before.\relax }{figure.caption.91}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.2}Deriving the equation of motion}{111}{subsubsection.8.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces External Potential $V_{ext}$\relax }}{112}{figure.caption.92}\protected@file@percent }
+\newlabel{F1}{{38}{112}{External Potential $V_{ext}$\relax }{figure.caption.92}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces Optimal state $\rho $ for $\kappa = 1$.\relax }}{113}{figure.caption.93}\protected@file@percent }
+\newlabel{F2}{{39}{113}{Optimal state $\rho $ for $\kappa = 1$.\relax }{figure.caption.93}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Optimal state $\rho $ for $\kappa = 0$.\relax }}{113}{figure.caption.94}\protected@file@percent }
+\newlabel{F3}{{40}{113}{Optimal state $\rho $ for $\kappa = 0$.\relax }{figure.caption.94}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}OCP}{113}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Optimal state $\rho $ for $\kappa = -1$.\relax }}{114}{figure.caption.95}\protected@file@percent }
+\newlabel{F4}{{41}{114}{Optimal state $\rho $ for $\kappa = -1$.\relax }{figure.caption.95}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {42}{\ignorespaces Optimal control $\mathbf  {w}$ for $\kappa = 1$.\relax }}{114}{figure.caption.96}\protected@file@percent }
+\newlabel{F5}{{42}{114}{Optimal control $\w $ for $\kappa = 1$.\relax }{figure.caption.96}{}}
+\newlabel{eq:OCP1}{{66}{114}{OCP}{equation.8.66}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.1}Calculating Frech\'et Derivatives}{114}{subsubsection.8.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {43}{\ignorespaces Optimal control $\mathbf  {w}$ for $\kappa = 0$.\relax }}{115}{figure.caption.97}\protected@file@percent }
+\newlabel{F6}{{43}{115}{Optimal control $\w $ for $\kappa = 0$.\relax }{figure.caption.97}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {44}{\ignorespaces Optimal control $\mathbf  {w}$ for $\kappa = -1$.\relax }}{115}{figure.caption.98}\protected@file@percent }
+\newlabel{F7}{{44}{115}{Optimal control $\w $ for $\kappa = -1$.\relax }{figure.caption.98}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {45}{\ignorespaces Convergence of the Newton-Krylov Algorithm for no-flux source control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }}{116}{figure.caption.99}\protected@file@percent }
+\newlabel{Con1}{{45}{116}{Convergence of the Newton-Krylov Algorithm for no-flux source control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }{figure.caption.99}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces Convergence of the Newton-Krylov Algorithm for Dirichlet source control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }}{117}{figure.caption.100}\protected@file@percent }
+\newlabel{Con2}{{46}{117}{Convergence of the Newton-Krylov Algorithm for Dirichlet source control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }{figure.caption.100}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.2}Adjoint Equation}{117}{subsubsection.8.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces Convergence of the Newton-Krylov Algorithm for Dirichlet flow control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }}{118}{figure.caption.101}\protected@file@percent }
+\newlabel{Con3}{{47}{118}{Convergence of the Newton-Krylov Algorithm for Dirichlet flow control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }{figure.caption.101}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces Convergence of the Newton-Krylov Algorithm for no-flux flow control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }}{119}{figure.caption.102}\protected@file@percent }
+\newlabel{Con4}{{48}{119}{Convergence of the Newton-Krylov Algorithm for no-flux flow control. Top three plots show the convergence in the state variable for different $\kappa $, while the bottom plots show the convergence in the adjoint variable.\relax }{figure.caption.102}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces Domain Example 1\relax }}{120}{figure.caption.104}\protected@file@percent }
+\newlabel{Dom1}{{49}{120}{Domain Example 1\relax }{figure.caption.104}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {50}{\ignorespaces Example 1, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = -1$\relax }}{121}{figure.caption.105}\protected@file@percent }
+\newlabel{FEx1a}{{50}{121}{Example 1, $\widehat \rho $, $\kappa = -1$\relax }{figure.caption.105}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {51}{\ignorespaces Example 1, optimal $\rho $ and $\mathbf  {w}$, $\kappa = -1$\relax }}{122}{figure.caption.106}\protected@file@percent }
+\newlabel{FEx1b}{{51}{122}{Example 1, optimal $\rho $ and $\w $, $\kappa = -1$\relax }{figure.caption.106}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.3}Frech\'et Derivatives for Boundary Terms}{122}{subsubsection.8.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {52}{\ignorespaces Example 1, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = 1$\relax }}{123}{figure.caption.107}\protected@file@percent }
+\newlabel{FEx1c}{{52}{123}{Example 1, $\widehat \rho $, $\kappa = 1$\relax }{figure.caption.107}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.2.4}Boundary Terms}{123}{subsubsection.8.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {53}{\ignorespaces Example 1, optimal $\rho $, $\mathbf  {w}$, $\kappa = 1$\relax }}{124}{figure.caption.108}\protected@file@percent }
+\newlabel{FEx1d}{{53}{124}{Example 1, optimal $\rho $, $\w $, $\kappa = 1$\relax }{figure.caption.108}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {54}{\ignorespaces Domain Example 2\relax }}{125}{figure.caption.110}\protected@file@percent }
+\newlabel{Dom2}{{54}{125}{Domain Example 2\relax }{figure.caption.110}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {55}{\ignorespaces Example 2, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = -1$\relax }}{126}{figure.caption.111}\protected@file@percent }
+\newlabel{FEx2a}{{55}{126}{Example 2, $\widehat \rho $, $\kappa = -1$\relax }{figure.caption.111}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {56}{\ignorespaces Example 2, optimal $\rho $ and $\mathbf  {w}$, $\kappa = -1$\relax }}{127}{figure.caption.112}\protected@file@percent }
+\newlabel{FEx2b}{{56}{127}{Example 2, optimal $\rho $ and $\w $, $\kappa = -1$\relax }{figure.caption.112}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Time-Independent Control}{127}{subsection.8.3}\protected@file@percent }
+\newlabel{sec:TimeIndependentControl}{{8.3}{127}{Time-Independent Control}{subsection.8.3}{}}
+\newlabel{eqn:LwGradientEqn}{{67}{127}{Time-Independent Control}{equation.8.67}{}}
+\citation{ArcherSed1}
+\citation{ArcherSed1}
+\citation{ArcherSed1}
+\@writefile{lof}{\contentsline {figure}{\numberline {57}{\ignorespaces Example 2, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = 1$\relax }}{128}{figure.caption.113}\protected@file@percent }
+\newlabel{FEx2c}{{57}{128}{Example 2, $\widehat \rho $, $\kappa = 1$\relax }{figure.caption.113}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Numerical Examples}{128}{subsection.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}Replicating examples from the paper in a periodic box}{128}{subsubsection.8.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {58}{\ignorespaces Example 2, optimal $\rho $ and $\mathbf  {w}$, $\kappa = 1$\relax }}{129}{figure.caption.114}\protected@file@percent }
+\newlabel{FEx2d}{{58}{129}{Example 2, optimal $\rho $ and $\w $, $\kappa = 1$\relax }{figure.caption.114}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.2}Replicating examples from the paper in a box with noflux BCs}{129}{subsubsection.8.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.3}Optimization in a Box}{129}{subsubsection.8.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {59}{\ignorespaces Domain and Flow Example 3\relax }}{130}{figure.caption.116}\protected@file@percent }
+\newlabel{Dom3}{{59}{130}{Domain and Flow Example 3\relax }{figure.caption.116}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.4}Optimization in a Box - Time-Independent Control}{130}{subsubsection.8.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {60}{\ignorespaces Example 3, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = -1$\relax }}{131}{figure.caption.117}\protected@file@percent }
+\newlabel{FEx3a}{{60}{131}{Example 3, $\widehat \rho $, $\kappa = -1$\relax }{figure.caption.117}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.5}Optimization in a Periodic Box}{131}{subsubsection.8.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.6}Optimization in a Periodic Box - Time-Independent Control}{131}{subsubsection.8.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.7}Optimization in a Multishape}{131}{subsubsection.8.4.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {61}{\ignorespaces Example 3, optimal $\rho $ and $\mathbf  {w}$, $\kappa = -1$\relax }}{132}{figure.caption.118}\protected@file@percent }
+\newlabel{FEx3b}{{61}{132}{Example 3, optimal $\rho $ and $\w $, $\kappa = -1$\relax }{figure.caption.118}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.8}Optimization in a Multishape - Time-Independent Control}{132}{subsubsection.8.4.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Inertial Equations}{132}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Background DDFT}{132}{subsection.9.1}\protected@file@percent }
+\citation{Archer1}
+\citation{Archer1}
+\citation{Archer1}
+\@writefile{lof}{\contentsline {figure}{\numberline {62}{\ignorespaces Example 3, $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$, $\kappa = 1$\relax }}{133}{figure.caption.119}\protected@file@percent }
+\newlabel{FEx3c}{{62}{133}{Example 3, $\widehat \rho $, $\kappa = 1$\relax }{figure.caption.119}{}}
+\newlabel{eqn:freeenergy1}{{68}{133}{Background DDFT}{equation.9.68}{}}
+\citation{Archer1}
+\@writefile{lof}{\contentsline {figure}{\numberline {63}{\ignorespaces Example 3, optimal $\rho $ and $\mathbf  {w}$, $\kappa = 1$\relax }}{134}{figure.caption.120}\protected@file@percent }
+\newlabel{FEx3d}{{63}{134}{Example 3, optimal $\rho $ and $\w $, $\kappa = 1$\relax }{figure.caption.120}{}}
+\newlabel{eqn:INeqns1}{{69}{134}{Background DDFT}{equation.9.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {64}{\ignorespaces Figure 8 in paper, periodic domain\relax }}{135}{figure.caption.121}\protected@file@percent }
+\newlabel{F5}{{64}{135}{Figure 8 in paper, periodic domain\relax }{figure.caption.121}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {65}{\ignorespaces Figure 10 in paper, periodic domain\relax }}{136}{figure.caption.122}\protected@file@percent }
+\newlabel{F7}{{65}{136}{Figure 10 in paper, periodic domain\relax }{figure.caption.122}{}}
+\newlabel{eqn:ADeqn1}{{70}{136}{Background DDFT}{equation.9.70}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}OCP}{136}{subsection.9.2}\protected@file@percent }
+\newlabel{sec:INOptimalityConditions}{{9.2}{136}{OCP}{subsection.9.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}PDE-Constrained Optimization Problem}{136}{subsubsection.9.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {66}{\ignorespaces Figure 8 in paper, no flux BCs, ++ fix wrong dimensions ++\relax }}{137}{figure.caption.123}\protected@file@percent }
+\newlabel{F5b}{{66}{137}{Figure 8 in paper, no flux BCs, ++ fix wrong dimensions ++\relax }{figure.caption.123}{}}
+\citation{DeLosReyesOptimization}
+\@writefile{lof}{\contentsline {figure}{\numberline {67}{\ignorespaces Figure 10 in paper, no flux BCs, ++ fix wrong dimensions ++\relax }}{138}{figure.caption.124}\protected@file@percent }
+\newlabel{F7b}{{67}{138}{Figure 10 in paper, no flux BCs, ++ fix wrong dimensions ++\relax }{figure.caption.124}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.2}Adjoint Equation 1}{138}{subsubsection.9.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {68}{\ignorespaces Forward $\rho $ for $c = 0.01$\relax }}{139}{figure.caption.125}\protected@file@percent }
+\newlabel{Fa1}{{68}{139}{Forward $\rho $ for $c = 0.01$\relax }{figure.caption.125}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {69}{\ignorespaces Optimal $\rho $ for $c = 0.01$\relax }}{140}{figure.caption.126}\protected@file@percent }
+\newlabel{Fa2}{{69}{140}{Optimal $\rho $ for $c = 0.01$\relax }{figure.caption.126}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {70}{\ignorespaces Optimal Control for $c = 0.01$\relax }}{141}{figure.caption.127}\protected@file@percent }
+\newlabel{Fa3}{{70}{141}{Optimal Control for $c = 0.01$\relax }{figure.caption.127}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {71}{\ignorespaces Time-independent; Forward $\rho $ for $a = 0.01$\relax }}{142}{figure.caption.128}\protected@file@percent }
+\newlabel{F6a}{{71}{142}{Time-independent; Forward $\rho $ for $a = 0.01$\relax }{figure.caption.128}{}}
+\newlabel{eqn:INAdj1}{{71}{142}{Adjoint Equation 1}{equation.9.71}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.3}Adjoint Equation 2}{142}{subsubsection.9.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {72}{\ignorespaces Time-independent; Optimal $\rho $ for $a = 0.01$\relax }}{143}{figure.caption.129}\protected@file@percent }
+\newlabel{F7a}{{72}{143}{Time-independent; Optimal $\rho $ for $a = 0.01$\relax }{figure.caption.129}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {73}{\ignorespaces Time-independent; Optimal Control for $a = 0.01$\relax }}{144}{figure.caption.130}\protected@file@percent }
+\newlabel{F8a}{{73}{144}{Time-independent; Optimal Control for $a = 0.01$\relax }{figure.caption.130}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {74}{\ignorespaces $\nabla V_{ext}$ of target and optimal control $\mathbf  {w}$.\relax }}{145}{figure.caption.131}\protected@file@percent }
+\newlabel{F1a}{{74}{145}{$\nabla V_{ext}$ of target and optimal control $\w $.\relax }{figure.caption.131}{}}
+\newlabel{CondAdj1}{{73}{145}{Adjoint Equation 2}{equation.9.73}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {75}{\ignorespaces Multishape Example 1: Optimal $\rho $\relax }}{146}{figure.caption.132}\protected@file@percent }
+\newlabel{FM0}{{75}{146}{Multishape Example 1: Optimal $\rho $\relax }{figure.caption.132}{}}
+\newlabel{eqn:INAdj2}{{74}{146}{Adjoint Equation 2}{equation.9.74}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.4}The Gradient Equation}{146}{subsubsection.9.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.5}Rewriting the Equations for Implementation}{146}{subsubsection.9.2.5}\protected@file@percent }
+\newlabel{sec:INImplementation}{{9.2.5}{146}{Rewriting the Equations for Implementation}{subsubsection.9.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {76}{\ignorespaces Multishape Example 1: Optimal control\relax }}{147}{figure.caption.133}\protected@file@percent }
+\newlabel{FM0a}{{76}{147}{Multishape Example 1: Optimal control\relax }{figure.caption.133}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {77}{\ignorespaces Multishape Example 2: Optimal $\rho $\relax }}{148}{figure.caption.134}\protected@file@percent }
+\newlabel{FM1a}{{77}{148}{Multishape Example 2: Optimal $\rho $\relax }{figure.caption.134}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Numerical Examples}{148}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}Example 1}{148}{subsubsection.9.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {78}{\ignorespaces Multishape Example 2: Optimal control\relax }}{149}{figure.caption.135}\protected@file@percent }
+\newlabel{FM2a}{{78}{149}{Multishape Example 2: Optimal control\relax }{figure.caption.135}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {79}{\ignorespaces Multishape Example 3:Flow profile determining $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \rho $}\mathaccent "0362{\rho }$\relax }}{150}{figure.caption.136}\protected@file@percent }
+\newlabel{FM3}{{79}{150}{Multishape Example 3:Flow profile determining $\hr $\relax }{figure.caption.136}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.2}Example 2}{150}{subsubsection.9.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {80}{\ignorespaces Multishape Example 3: Optimal $\rho $\relax }}{151}{figure.caption.137}\protected@file@percent }
+\newlabel{FM3a}{{80}{151}{Multishape Example 3: Optimal $\rho $\relax }{figure.caption.137}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.3}Example 3}{151}{subsubsection.9.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {81}{\ignorespaces Multishape Example 3: Optimal control\relax }}{152}{figure.caption.138}\protected@file@percent }
+\newlabel{FM3b}{{81}{152}{Multishape Example 3: Optimal control\relax }{figure.caption.138}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Multiple Species}{152}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Background DDFT}{152}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}OCP}{152}{subsection.10.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {82}{\ignorespaces Multishape Example 1 (time independent control): Optimal $\rho $\relax }}{153}{figure.caption.139}\protected@file@percent }
+\newlabel{FM1}{{82}{153}{Multishape Example 1 (time independent control): Optimal $\rho $\relax }{figure.caption.139}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {83}{\ignorespaces Multishape Example 1 (time independent control): Optimal control\relax }}{154}{figure.caption.140}\protected@file@percent }
+\newlabel{FM2}{{83}{154}{Multishape Example 1 (time independent control): Optimal control\relax }{figure.caption.140}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {84}{\ignorespaces Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }}{155}{figure.caption.142}\protected@file@percent }
+\newlabel{F1}{{84}{155}{Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }{figure.caption.142}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Adjoint 1}{155}{subsection.10.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {85}{\ignorespaces Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = 1$\relax }}{156}{figure.caption.143}\protected@file@percent }
+\newlabel{F1a}{{85}{156}{Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = 1$\relax }{figure.caption.143}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {86}{\ignorespaces Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = -1$\relax }}{157}{figure.caption.144}\protected@file@percent }
+\newlabel{F1b}{{86}{157}{Example 1, $\eta = 0.1$, $\gamma = 1$, $\kappa = -1$\relax }{figure.caption.144}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Adjoint 2}{157}{subsection.10.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {87}{\ignorespaces Example 1, $\eta = 1$, $\gamma = 1$, $\kappa = 0$\relax }}{158}{figure.caption.145}\protected@file@percent }
+\newlabel{F2}{{87}{158}{Example 1, $\eta = 1$, $\gamma = 1$, $\kappa = 0$\relax }{figure.caption.145}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Gradient Equation}{158}{subsection.10.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {88}{\ignorespaces Example 1, $\eta = 0.1$, $\gamma = 10$, $\kappa = 0$\relax }}{159}{figure.caption.146}\protected@file@percent }
+\newlabel{F3}{{88}{159}{Example 1, $\eta = 0.1$, $\gamma = 10$, $\kappa = 0$\relax }{figure.caption.146}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {89}{\ignorespaces Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }}{160}{figure.caption.147}\protected@file@percent }
+\newlabel{F4}{{89}{160}{Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }{figure.caption.147}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.6}Numerical Examples}{160}{subsection.10.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {90}{\ignorespaces Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = 1$\relax }}{161}{figure.caption.148}\protected@file@percent }
+\newlabel{F4a}{{90}{161}{Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = 1$\relax }{figure.caption.148}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Industry application 1: Sedimentation}{161}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Industry application 2: Inertial multiple species}{161}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Some stuff to put somewhere some time}{161}{section.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}Averaging from 3D to 2D - unfinished}{161}{subsection.13.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {91}{\ignorespaces Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = -1$\relax }}{162}{figure.caption.149}\protected@file@percent }
+\newlabel{F4b}{{91}{162}{Example 2, $\eta = 0.1$, $\gamma = 1$, $\kappa = -1$\relax }{figure.caption.149}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {92}{\ignorespaces Example 2, $\eta = 0.01$, $\gamma = 0.1$, $\kappa = 0$\relax }}{163}{figure.caption.150}\protected@file@percent }
+\newlabel{F5}{{92}{163}{Example 2, $\eta = 0.01$, $\gamma = 0.1$, $\kappa = 0$\relax }{figure.caption.150}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {93}{\ignorespaces Example 3, $\eta = 1$, $\gamma = 1$, $\kappa = 0$\relax }}{164}{figure.caption.151}\protected@file@percent }
+\newlabel{F6}{{93}{164}{Example 3, $\eta = 1$, $\gamma = 1$, $\kappa = 0$\relax }{figure.caption.151}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {94}{\ignorespaces Example 3, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }}{165}{figure.caption.152}\protected@file@percent }
+\newlabel{F7}{{94}{165}{Example 3, $\eta = 0.1$, $\gamma = 1$, $\kappa = 0$\relax }{figure.caption.152}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {13.1.1}Exact Solution}{165}{subsubsection.13.1.1}\protected@file@percent }
 \bibdata{GeneralBib}
+\bibcite{RexLoewen1}{{1}{}{{}}{{}}}
+\bibcite{GoddardPseudospectralCode1}{{2}{}{{}}{{}}}
+\bibcite{Tarazona2008}{{3}{}{{}}{{}}}
+\bibcite{CalculusofVariations1}{{4}{}{{}}{{}}}
+\bibcite{bibTrefethen}{{5}{}{{}}{{}}}
+\bibcite{Boyd1}{{6}{}{{}}{{}}}
+\bibcite{bibTrefethenBerrut1}{{7}{}{{}}{{}}}
+\bibcite{ClenCurt1}{{8}{}{{}}{{}}}
+\bibcite{FEMIntegroPaper}{{9}{}{{}}{{}}}
+\bibcite{TroeltzschFredi2010OCoP}{{10}{}{{}}{{}}}
+\bibcite{PearsonThesis}{{11}{}{{}}{{}}}
+\bibcite{DeLosReyesOptimization}{{12}{}{{}}{{}}}
+\bibcite{LASRY2006619}{{13}{}{{}}{{}}}
+\bibcite{LASRY2006679}{{14}{}{{}}{{}}}
+\bibcite{LASRY4}{{15}{}{{}}{{}}}
+\bibcite{Lasry2007}{{16}{}{{}}{{}}}
+\bibcite{Huang1}{{17}{}{{}}{{}}}
+\bibcite{CuckerSmale1}{{18}{}{{}}{{}}}
+\bibcite{CuckerSmale2}{{19}{}{{}}{{}}}
+\bibcite{Fornasier_2014}{{20}{}{{}}{{}}}
+\bibcite{Fornasier_2014no2}{{21}{}{{}}{{}}}
+\bibcite{fornasier_lisini_orrieri_savare_2019}{{22}{}{{}}{{}}}
+\bibcite{piccoli2014no1}{{23}{}{{}}{{}}}
+\bibcite{Fornasier_20161no1}{{24}{}{{}}{{}}}
+\bibcite{burger2019meanfield}{{25}{}{{}}{{}}}
+\bibcite{burger2019instantaneous}{{26}{}{{}}{{}}}
+\bibcite{burger2016controlling}{{27}{}{{}}{{}}}
+\bibcite{ChengC.Z1976Tiot}{{28}{}{{}}{{}}}
+\bibcite{albi2016selective}{{29}{}{{}}{{}}}
+\bibcite{albi2016mean}{{30}{}{{}}{{}}}
+\bibcite{carrillo2019mean}{{31}{}{{}}{{}}}
+\bibcite{Pinnau_2017}{{32}{}{{}}{{}}}
+\bibcite{carrillo2018no1}{{33}{}{{}}{{}}}
+\bibcite{gilbertstrang1}{{34}{}{{}}{{}}}
+\bibcite{Albi_2014no1}{{35}{}{{}}{{}}}
+\bibcite{albi2014kinetic}{{36}{}{{}}{{}}}
+\bibcite{Burger1}{{37}{}{{}}{{}}}
+\bibcite{FrechetProductrule1}{{38}{}{{}}{{}}}
+\bibcite{bvp4cPaper1}{{39}{}{{}}{{}}}
+\bibcite{CarraroIndMultipleShooting}{{40}{}{{}}{{}}}
+\bibcite{CarraroDirectIndirectMultipleShooting}{{41}{}{{}}{{}}}
+\bibcite{Roth1}{{42}{}{{}}{{}}}
+\bibcite{Powell1}{{43}{}{{}}{{}}}
+\bibcite{fsolve1}{{44}{}{{}}{{}}}
+\bibcite{GuettelPearson1}{{45}{}{{}}{{}}}
+\bibcite{ArcherSed1}{{46}{}{{}}{{}}}
+\bibcite{RosenfeldFMT}{{47}{}{{}}{{}}}
+\bibcite{Roth_2010FMTReview}{{48}{}{{}}{{}}}
+\bibcite{Percus1976}{{49}{}{{}}{{}}}
+\bibcite{Rosenfeld2DInterp}{{50}{}{{}}{{}}}
+\bibcite{Reiss1959}{{51}{}{{}}{{}}}
+\bibcite{Reiss1960}{{52}{}{{}}{{}}}
+\bibcite{Helfand1961}{{53}{}{{}}{{}}}
+\bibcite{PercusYevick1}{{54}{}{{}}{{}}}
+\bibcite{RosenfeldSPT}{{55}{}{{}}{{}}}
+\bibcite{DFTWinkelmann2001}{{56}{}{{}}{{}}}
+\bibcite{DFTRoth1}{{57}{}{{}}{{}}}
+\bibcite{DFTRoth2}{{58}{}{{}}{{}}}
+\bibcite{DFTGonzalez1997}{{59}{}{{}}{{}}}
+\bibcite{DFTCuesta2008}{{60}{}{{}}{{}}}
+\bibcite{DFTLoewen2002}{{61}{}{{}}{{}}}
+\bibcite{GrafLoewen1999}{{62}{}{{}}{{}}}
+\bibcite{DuBois2002}{{63}{}{{}}{{}}}
+\bibcite{Chamoux1998}{{64}{}{{}}{{}}}
+\bibcite{Chamoux1996}{{65}{}{{}}{{}}}
+\bibcite{ArcherSed2008}{{66}{}{{}}{{}}}
+\bibcite{ArcherSed2011}{{67}{}{{}}{{}}}
+\bibcite{ArcherSed2013}{{68}{}{{}}{{}}}
+\bibcite{Archer1}{{69}{}{{}}{{}}}
 \bibstyle{unsrt}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
