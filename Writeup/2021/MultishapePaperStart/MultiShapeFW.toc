@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Model Equations}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Multishape Implementation}{1}{section.2}% 
+\contentsline {subsubsection}{\numberline {2.0.1}Setting up the multishape}{2}{subsubsection.2.0.1}% 
+\contentsline {subsubsection}{\numberline {2.0.2}Boundaries and intersections}{3}{subsubsection.2.0.2}% 
+\contentsline {subsubsection}{\numberline {2.0.3}Interpolation, differentiation, integration and convolution}{7}{subsubsection.2.0.3}% 
+\contentsline {subsubsection}{\numberline {2.0.4}Boundary matching and solving the PDE}{9}{subsubsection.2.0.4}% 
+\contentsline {subsubsection}{\numberline {2.0.5}Exact Tests}{9}{subsubsection.2.0.5}% 

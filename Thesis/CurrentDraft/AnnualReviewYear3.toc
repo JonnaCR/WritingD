@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}Some other stuff}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Introduction}{1}{section.2}% 
+\contentsline {section}{\numberline {3}Multishape Implementation}{1}{section.3}% 
+\contentsline {subsubsection}{\numberline {3.0.1}Setting up the multishape}{2}{subsubsection.3.0.1}% 
+\contentsline {subsubsection}{\numberline {3.0.2}Boundaries and intersections}{3}{subsubsection.3.0.2}% 
+\contentsline {subsubsection}{\numberline {3.0.3}Interpolation, differentiation, integration and convolution}{7}{subsubsection.3.0.3}% 
+\contentsline {subsubsection}{\numberline {3.0.4}Boundary matching and solving the PDE}{9}{subsubsection.3.0.4}% 
+\contentsline {subsection}{\numberline {3.1}Validation Tests Multishape}{9}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Testing Differentiation, Interpolation, Convolution and Integration}{10}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Exact Tests}{12}{subsubsection.3.1.2}% 
+\contentsline {section}{\numberline {4}Derivation of Optimality Conditions with Periodic Boundary Conditions}{24}{section.4}% 
+\contentsline {section}{\numberline {5}Sedimentation}{29}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Forward Problem}{29}{subsection.5.1}% 
+\contentsline {subsubsection}{\numberline {5.1.1}The Hard Disk Approximation}{29}{subsubsection.5.1.1}% 
+\contentsline {subsubsection}{\numberline {5.1.2}Deriving the equation of motion}{31}{subsubsection.5.1.2}% 
+\contentsline {subsection}{\numberline {5.2}Derivation of Optimality Conditions}{32}{subsection.5.2}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Calculating Frech\'et Derivatives}{32}{subsubsection.5.2.1}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Adjoint Equation}{33}{subsubsection.5.2.2}% 
+\contentsline {subsubsection}{\numberline {5.2.3}Frech\'et Derivatives for Boundary Terms}{35}{subsubsection.5.2.3}% 
+\contentsline {subsubsection}{\numberline {5.2.4}Boundary Terms}{36}{subsubsection.5.2.4}% 
+\contentsline {subsubsection}{\numberline {5.2.5}Derivation of Time-Independent Control}{38}{subsubsection.5.2.5}% 
+\contentsline {subsection}{\numberline {5.3}Numerical Examples}{38}{subsection.5.3}% 
+\contentsline {subsubsection}{\numberline {5.3.1}Replicating examples from the paper in a periodic box}{39}{subsubsection.5.3.1}% 
+\contentsline {subsubsection}{\numberline {5.3.2}Replicating examples from the paper in a box with noflux BCs}{40}{subsubsection.5.3.2}% 
+\contentsline {subsubsection}{\numberline {5.3.3}Optimization in a Box}{41}{subsubsection.5.3.3}% 
+\contentsline {subsubsection}{\numberline {5.3.4}Optimization in a Box - Time-Independent Control}{41}{subsubsection.5.3.4}% 
+\contentsline {subsubsection}{\numberline {5.3.5}Optimization in a Periodic Box}{42}{subsubsection.5.3.5}% 
+\contentsline {subsubsection}{\numberline {5.3.6}Optimization in a Periodic Box - Time-Independent Control}{42}{subsubsection.5.3.6}% 
+\contentsline {subsubsection}{\numberline {5.3.7}Optimization in a Multishape}{42}{subsubsection.5.3.7}% 
+\contentsline {subsubsection}{\numberline {5.3.8}Optimization in a Multishape - Time-Independent Control}{43}{subsubsection.5.3.8}% 
+\contentsline {section}{\numberline {6}Newton-Krylov}{43}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Method}{43}{subsection.6.1}% 
+\contentsline {subsection}{\numberline {6.2}2D and 3D Examples}{43}{subsection.6.2}% 

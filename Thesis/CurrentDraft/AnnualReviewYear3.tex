@@ -1,0 +1,138 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{proj1}
+\usepackage{natbib}
+\usepackage{fancyhdr}  
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[autolanguage,nosepfour]{numprint}
+\usepackage{multirow}
+\linespread{1.25} 
+\setlength{\parindent}{0cm}
+\graphicspath{{Images/}}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{bbm}
+\usepackage[ruled,vlined]{algorithm2e}
+
+%\usepackage[sc,osf]{mathpazo}
+\usepackage{subcaption}
+\usepackage[a4paper, top=1in, left=1.0in, right=1.0in, bottom=1in, includehead, includefoot]{geometry} %Usually have top as 1in
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={black}}
+\usepackage{color}
+\urlstyle{same}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\adja}{q_a}
+\newcommand{\adjb}{q_b}
+\newcommand{\adjaB}{q_{a,\partial \Omega}}
+\newcommand{\adjbB}{q_{b,\partial \Omega}}
+\newcommand{\adjB}{q_{\partial \Omega}}
+\newcommand{\Adja}{\mathbf{p}}
+\newcommand{\Adjb}{q}
+\newcommand{\adj}{q}
+\newcommand{\Adjc}{{q}_{\partial \Omega}}
+\newcommand{\ra}{\rho_a}
+\newcommand{\rb}{\rho_b}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\ve}{\mathbf{v}}
+\newcommand{\n}{\mathbf{n}}
+\newcommand{\h}{\mathbf{h}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\hr}{\widehat \rho}
+\newcommand{\jf}{\mathbf j}
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Grad}{Grad}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Lap}{Lap}
+
+
+
+\title{{\huge Annual Review \\ PDE-Constrained Optimization \\for Multiscale Particle Dynamics} \\ with Industrial Applications}
+\author{Jonna C. Roden\\ \\Supervision by Dr Ben Goddard and Dr John Pearson\\ \vspace{0.5cm} Maxwell Institute Graduate School for Analysis and its Applications}
+\date{\today}
+
+
+\pagenumbering{gobble}
+\begin{document}
+	\maketitle
+	
+	\newpage
+	%\section*{Acknowledgements}
+	%+ Later +
+	%\newpage
+	\pagenumbering{Roman} 
+	\tableofcontents
+	%\newpage
+	%\listoffigures
+	%\listoftables
+	\newpage
+	\pagenumbering{arabic} 
+	
+	\section{Some other stuff}
+	\begin{itemize}
+		\item Sparse to Fine Grid Stuff
+		\item Final time target derivation
+		\item Averaging 3D to 2D
+		\item Flow around Constriction
+		\item Inertial Equations Examples
+		\item Multiple Species (tbc) Optimality Conditions
+	\end{itemize}
+
+
+	\section{Introduction}
+	At the point of the second year review, a good point was reached to develop both the models and the numerical methods further towards eventual industrial applications. 
+	At first, the implementation of the inertial equations, which were derived in the second year report, has been completed, and a few representative 1D examples were developed.\\
+	\\
+	A large part of the efforts during this year has been put into the development of the 'MultiShape' implementation for PDE-constrained optimization problems. This is a spectral element method, which can be seen as an extension to the pseudospectral methods we have been using throughout this work.\\
+	This extension has been applied to problems 
+	
+
+	
+	\section{Multishape Implementation}
+	\input{MultiShapeNotes}	
+	
+	
+	\section{Derivation of Optimality Conditions with Periodic Boundary Conditions}
+	\input{ChapterPeriodicBCDerivation}
+	\section{Sedimentation}
+	\subsection{Forward Problem}
+	\input{ChapterSedimentationForwardModel}
+	\subsection{Derivation of Optimality Conditions}
+	\input{ChapterSedimentationOptimalityConditions}
+	\subsubsection{Derivation of Time-Independent Control}
+	\input{ChapterSedimentationTimeIndependentControl}
+	
+	\subsection{Numerical Examples}
+	\input{ChapterSEDExamplesFW}
+	\input{ChapterSEDExamplesOpt}
+	
+	\section{Newton-Krylov}
+	\subsection{Method}
+	\subsection{2D and 3D Examples}
+	
+
+
+	
+	\pagebreak	
+	\bibliography{GeneralBib}
+	\bibliographystyle{unsrt}
+	
+\end{document}

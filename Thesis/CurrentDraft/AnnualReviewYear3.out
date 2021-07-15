@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Some other stuff}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Multishape Implementation}{}% 3
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Setting up the multishape}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.0.2}{Boundaries and intersections}{subsubsection.3.0.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.0.3}{Interpolation, differentiation, integration and convolution}{subsubsection.3.0.1}% 6
+\BOOKMARK [3][-]{subsubsection.3.0.4}{Boundary matching and solving the PDE}{subsubsection.3.0.1}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Validation Tests Multishape}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Testing Differentiation, Interpolation, Convolution and Integration}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Exact Tests}{subsection.3.1}% 10
+\BOOKMARK [1][-]{section.4}{Derivation of Optimality Conditions with Periodic Boundary Conditions}{}% 11
+\BOOKMARK [1][-]{section.5}{Sedimentation}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Forward Problem}{section.5}% 13
+\BOOKMARK [3][-]{subsubsection.5.1.1}{The Hard Disk Approximation}{subsection.5.1}% 14
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Deriving the equation of motion}{subsection.5.1}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Derivation of Optimality Conditions}{section.5}% 16
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Calculating Frech\351t Derivatives}{subsection.5.2}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Adjoint Equation}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Frech\351t Derivatives for Boundary Terms}{subsection.5.2}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Boundary Terms}{subsection.5.2}% 20
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Derivation of Time-Independent Control}{subsection.5.2}% 21
+\BOOKMARK [2][-]{subsection.5.3}{Numerical Examples}{section.5}% 22
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Replicating examples from the paper in a periodic box}{subsection.5.3}% 23
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Replicating examples from the paper in a box with noflux BCs}{subsection.5.3}% 24
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Optimization in a Box}{subsection.5.3}% 25
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Optimization in a Box - Time-Independent Control}{subsection.5.3}% 26
+\BOOKMARK [3][-]{subsubsection.5.3.5}{Optimization in a Periodic Box}{subsection.5.3}% 27
+\BOOKMARK [3][-]{subsubsection.5.3.6}{Optimization in a Periodic Box - Time-Independent Control}{subsection.5.3}% 28
+\BOOKMARK [3][-]{subsubsection.5.3.7}{Optimization in a Multishape}{subsection.5.3}% 29
+\BOOKMARK [3][-]{subsubsection.5.3.8}{Optimization in a Multishape - Time-Independent Control}{subsection.5.3}% 30
+\BOOKMARK [1][-]{section.6}{Newton-Krylov}{}% 31
+\BOOKMARK [2][-]{subsection.6.1}{Method}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.2}{2D and 3D Examples}{section.6}% 33
