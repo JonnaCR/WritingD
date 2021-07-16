@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  15 JUL 2021 09:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  15 JUL 2021 16:49
 entering extended mode
 **./AnnualReviewYear3.tex
 (AnnualReviewYear3.tex
@@ -646,20 +646,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `AnnualReviewYear3.toc'.
 
- [1] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
+ [1]
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 96.
 ("C:\Users\s1452504\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--106
-
- []
-
-(MultiShapeNotes.tex
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+ (MultiShapeNotes.tex
 
 Package natbib Warning: Citation `SEMPatera84' on page 1 undefined on input lin
 e 6.
@@ -717,128 +715,66 @@ Overfull \vbox (10.35956pt too high) has occurred while \output is active []
 LaTeX Warning: Reference `sec:2DQuadConv' on page 9 undefined on input line 205
 .
 
-<Images/BoxSections.png, id=254, 1445.4pt x 704.6325pt>
-File: Images/BoxSections.png Graphic file (type png)
-<use Images/BoxSections.png>
-Package pdftex.def Info: Images/BoxSections.png  used on input line 238.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 238--239
- [][] 
- []
-
-<Images/quad.png, id=255, 526.96875pt x 395.22656pt>
-File: Images/quad.png Graphic file (type png)
-<use Images/quad.png>
-Package pdftex.def Info: Images/quad.png  used on input line 244.
-(pdftex.def)             Requested size: 184.44182pt x 138.33136pt.
-<Images/WedgeSections.png, id=256, 1445.4pt x 704.6325pt>
-File: Images/WedgeSections.png Graphic file (type png)
-<use Images/WedgeSections.png>
-Package pdftex.def Info: Images/WedgeSections.png  used on input line 250.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 250--251
- [][] 
- []
+Package natbib Warning: Citation `Hutomo_2019' on page 9 undefined on input lin
+e 235.
 
 [9]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `F2' on page 10 undefined on input line 241.
 
-[10 <./Images/BoxSections.png (PNG copy)> <./Images/quad.png (PNG copy)>]
-[11 <./Images/WedgeSections.png (PNG copy)>] (TabGrad.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--22
- [][] 
- []
 
-) (TabDiv.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--22
- [][] 
- []
+LaTeX Warning: Reference `F3a' on page 10 undefined on input line 241.
 
-) (TabLap.tex
-Overfull \hbox (58.23322pt too wide) in paragraph at lines 3--22
- [][] 
- []
-
-) (TabInterp.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--22
- [][] 
- []
-
-) (TabInterpComp.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--20
- [][] 
- []
-
-) (TabInterpPol.tex
-Overfull \hbox (58.23322pt too wide) in paragraph at lines 3--15
- [][] 
- []
-
-) (TabConv.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--20
- [][] 
- []
-
-) (TabInt.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--20
- [][] 
- []
-
-)
-
-Package natbib Warning: Citation `Hutomo_2019' on page 12 undefined on input li
-ne 297.
-
-[12] [13] [14] [15]
-<Images/boxEx.png, id=328, 1445.4pt x 704.6325pt>
+<Images/boxEx.png, id=244, 1445.4pt x 704.6325pt>
 File: Images/boxEx.png Graphic file (type png)
 <use Images/boxEx.png>
-Package pdftex.def Info: Images/boxEx.png  used on input line 308.
+Package pdftex.def Info: Images/boxEx.png  used on input line 246.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 308--309
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/wedgeEx.png, id=332, 1445.4pt x 704.6325pt>
+
+LaTeX Warning: Reference `F4' on page 10 undefined on input line 252.
+
+<Images/wedgeEx.png, id=247, 1445.4pt x 704.6325pt>
 File: Images/wedgeEx.png Graphic file (type png)
 <use Images/wedgeEx.png>
-Package pdftex.def Info: Images/wedgeEx.png  used on input line 319.
+Package pdftex.def Info: Images/wedgeEx.png  used on input line 257.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 319--320
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 257--258
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/example1.png, id=337, 1445.4pt x 704.6325pt>
+<Images/example1.png, id=252, 1445.4pt x 704.6325pt>
 File: Images/example1.png Graphic file (type png)
 <use Images/example1.png>
-Package pdftex.def Info: Images/example1.png  used on input line 327.
+Package pdftex.def Info: Images/example1.png  used on input line 265.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 327--328
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 265--266
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/example2.png, id=338, 1445.4pt x 704.6325pt>
+<Images/example2.png, id=253, 1445.4pt x 704.6325pt>
 File: Images/example2.png Graphic file (type png)
 <use Images/example2.png>
-Package pdftex.def Info: Images/example2.png  used on input line 335.
+Package pdftex.def Info: Images/example2.png  used on input line 273.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 335--336
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 273--274
  [][] 
  []
 
@@ -855,32 +791,36 @@ Overfull \hbox (58.31888pt too wide) in paragraph at lines 3--13
  [][] 
  []
 
-) [16] [17] (TabDirichletEx2.tex
+) [10] [11] (TabDirichletEx2.tex
 Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--23
  [][] 
  []
 
-) [18 <./Images/boxEx.png (PNG copy)>]
-<Images/boxExNoFlux.png, id=370, 1445.4pt x 704.6325pt>
+)
+
+LaTeX Warning: Reference `F2' on page 12 undefined on input line 301.
+
+<Images/boxExNoFlux.png, id=277, 1445.4pt x 704.6325pt>
 File: Images/boxExNoFlux.png Graphic file (type png)
 <use Images/boxExNoFlux.png>
-Package pdftex.def Info: Images/boxExNoFlux.png  used on input line 367.
+Package pdftex.def Info: Images/boxExNoFlux.png  used on input line 305.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 367--368
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 305--306
  [][] 
  []
 
+[12 <./Images/boxEx.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/NormalCorrected.png, id=371, 1445.4pt x 704.6325pt>
+<Images/NormalCorrected.png, id=286, 1445.4pt x 704.6325pt>
 File: Images/NormalCorrected.png Graphic file (type png)
 <use Images/NormalCorrected.png>
-Package pdftex.def Info: Images/NormalCorrected.png  used on input line 374.
+Package pdftex.def Info: Images/NormalCorrected.png  used on input line 312.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 374--375
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 312--313
  [][] 
  []
 
@@ -898,60 +838,70 @@ Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--14
  []
 
 )
-<Images/FWBox.png, id=375, 1445.4pt x 704.6325pt>
+
+LaTeX Warning: Reference `F2' on page 13 undefined on input line 320.
+
+<Images/FWBox.png, id=289, 1445.4pt x 704.6325pt>
 File: Images/FWBox.png Graphic file (type png)
 <use Images/FWBox.png>
-Package pdftex.def Info: Images/FWBox.png  used on input line 408.
+Package pdftex.def Info: Images/FWBox.png  used on input line 346.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 408--409
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 346--347
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19 <./Images/wedgeEx.png (PNG copy)>] [20]
-<Images/FWWedge.png, id=393, 1445.4pt x 704.6325pt>
+
+LaTeX Warning: Reference `F4' on page 13 undefined on input line 352.
+
+<Images/FWWedge.png, id=292, 1445.4pt x 704.6325pt>
 File: Images/FWWedge.png Graphic file (type png)
 <use Images/FWWedge.png>
-Package pdftex.def Info: Images/FWWedge.png  used on input line 439.
+Package pdftex.def Info: Images/FWWedge.png  used on input line 377.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 439--440
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 377--378
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/ex1.png, id=395, 1445.4pt x 704.6325pt>
+[13 <./Images/wedgeEx.png (PNG copy)>] [14]
+<Images/ex1.png, id=310, 1445.4pt x 704.6325pt>
 File: Images/ex1.png Graphic file (type png)
 <use Images/ex1.png>
-Package pdftex.def Info: Images/ex1.png  used on input line 455.
+Package pdftex.def Info: Images/ex1.png  used on input line 393.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 455--456
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 393--394
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/ex2.png, id=397, 1445.4pt x 704.6325pt>
+<Images/ex2.png, id=312, 1445.4pt x 704.6325pt>
 File: Images/ex2.png Graphic file (type png)
 <use Images/ex2.png>
-Package pdftex.def Info: Images/ex2.png  used on input line 468.
+Package pdftex.def Info: Images/ex2.png  used on input line 406.
 (pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 468--469
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21 <./Images/example1.png (PNG copy)>] (TabFWProbBox.tex
+
+LaTeX Warning: Reference `sec:ValidationDiffIntetc' on page 15 undefined on inp
+ut line 411.
+
+(TabFWProbBox.tex
 Overfull \hbox (36.98291pt too wide) in paragraph at lines 3--17
  [][] 
  []
@@ -966,25 +916,26 @@ Overfull \hbox (66.6061pt too wide) in paragraph at lines 3--13
  [][] 
  []
 
-)) (ChapterPeriodicBCDerivation.tex [22 <./Images/example2.png (PNG copy)>]
-[23 <./Images/boxExNoFlux.png (PNG copy)>] [24 <./Images/NormalCorrected.png (P
-NG copy)>]
+)) (ChapterPeriodicBCDerivation.tex [15 <./Images/example1.png (PNG copy)>]
+[16] [17 <./Images/example2.png (PNG copy)>]
 Overfull \hbox (45.22362pt too wide) detected at line 29
 []
  []
 
-[25 <./Images/FWBox.png (PNG copy)>]
+[18 <./Images/boxExNoFlux.png (PNG copy)>]
 Overfull \hbox (2.07845pt too wide) detected at line 48
 []
  []
 
-[26 <./Images/FWWedge.png (PNG copy)>] [27 <./Images/ex1.png (PNG copy)>]
+[19 <./Images/NormalCorrected.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 76--81
 
  []
 
-) (ChapterSedimentationForwardModel.tex [28 <./Images/ex2.png (PNG copy)>]
-[29] [30]) (ChapterSedimentationOptimalityConditions.tex [31] [32] [33]
+[20 <./Images/FWBox.png (PNG copy)>]) (ChapterSedimentationForwardModel.tex
+[21 <./Images/FWWedge.png (PNG copy)>] [22 <./Images/ex1.png (PNG copy)>]
+[23 <./Images/ex2.png (PNG copy)>] [24])
+(ChapterSedimentationOptimalityConditions.tex [25] [26] [27]
 Overfull \hbox (63.55605pt too wide) detected at line 73
 []
  []
@@ -999,7 +950,7 @@ Overfull \hbox (61.2748pt too wide) detected at line 88
 []
  []
 
-[34]
+[28]
 Overfull \hbox (15.41628pt too wide) detected at line 94
 []
  []
@@ -1009,7 +960,7 @@ Overfull \hbox (60.19765pt too wide) detected at line 101
 []
  []
 
-[35]
+[29]
 Overfull \hbox (59.96765pt too wide) detected at line 138
 []
  []
@@ -1019,35 +970,35 @@ Overfull \hbox (22.8831pt too wide) detected at line 144
 []
  []
 
-[36]
+[30]
 Overfull \hbox (36.55768pt too wide) detected at line 163
 []
  []
 
-[37]) (ChapterSedimentationTimeIndependentControl.tex)
+[31]) (ChapterSedimentationTimeIndependentControl.tex)
 (ChapterSEDExamplesFW.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--15
 
  []
 
-[38]
-<Images/Plotrhobar0072.png, id=552, 2168.1pt x 1227.83719pt>
+[32]
+<Images/Plotrhobar0072.png, id=464, 2168.1pt x 1227.83719pt>
 File: Images/Plotrhobar0072.png Graphic file (type png)
 <use Images/Plotrhobar0072.png>
 Package pdftex.def Info: Images/Plotrhobar0072.png  used on input line 19.
 (pdftex.def)             Requested size: 433.61232pt x 245.56308pt.
-<Images/Plotrhobar02.png, id=553, 2168.1pt x 1227.83719pt>
+<Images/Plotrhobar02.png, id=465, 2168.1pt x 1227.83719pt>
 File: Images/Plotrhobar02.png Graphic file (type png)
 <use Images/Plotrhobar02.png>
 Package pdftex.def Info: Images/Plotrhobar02.png  used on input line 25.
 (pdftex.def)             Requested size: 433.61232pt x 245.56308pt.
- [39 <./Images/Plotrhobar0072.png (PNG copy)>]
-<Images/FW0072.png, id=560, 1445.4pt x 685.8122pt>
+ [33 <./Images/Plotrhobar0072.png (PNG copy)>]
+<Images/FW0072.png, id=472, 1445.4pt x 685.8122pt>
 File: Images/FW0072.png Graphic file (type png)
 <use Images/FW0072.png>
 Package pdftex.def Info: Images/FW0072.png  used on input line 37.
 (pdftex.def)             Requested size: 289.07487pt x 137.16pt.
-<Images/FW02.png, id=561, 1445.4pt x 685.8122pt>
+<Images/FW02.png, id=473, 1445.4pt x 685.8122pt>
 File: Images/FW02.png Graphic file (type png)
 <use Images/FW02.png>
 Package pdftex.def Info: Images/FW02.png  used on input line 43.
@@ -1061,7 +1012,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 43--44
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (ChapterSEDExamplesOpt.tex
-<Images/F11.png, id=565, 1445.4pt x 685.8122pt>
+<Images/F11.png, id=477, 1445.4pt x 685.8122pt>
 File: Images/F11.png Graphic file (type png)
 <use Images/F11.png>
 Package pdftex.def Info: Images/F11.png  used on input line 10.
@@ -1071,7 +1022,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 10--11
  [][] 
  []
 
-<Images/F21.png, id=566, 1445.4pt x 685.8122pt>
+<Images/F21.png, id=478, 1445.4pt x 685.8122pt>
 File: Images/F21.png Graphic file (type png)
 <use Images/F21.png>
 Package pdftex.def Info: Images/F21.png  used on input line 16.
@@ -1081,7 +1032,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 16--17
  [][] 
  []
 
-<Images/F31.png, id=567, 1445.4pt x 685.8122pt>
+<Images/F31.png, id=479, 1445.4pt x 685.8122pt>
 File: Images/F31.png Graphic file (type png)
 <use Images/F31.png>
 Package pdftex.def Info: Images/F31.png  used on input line 22.
@@ -1091,7 +1042,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 22--23
  [][] 
  []
 
-[40 <./Images/Plotrhobar02.png (PNG copy)> <./Images/FW0072.png (PNG copy)>]
+[34 <./Images/Plotrhobar02.png (PNG copy)> <./Images/FW0072.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1101,7 +1052,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C1.png, id=579, 1445.4pt x 685.8122pt>
+<Images/C1.png, id=490, 1445.4pt x 685.8122pt>
 File: Images/C1.png Graphic file (type png)
 <use Images/C1.png>
 Package pdftex.def Info: Images/C1.png  used on input line 35.
@@ -1114,7 +1065,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 35--36
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C2.png, id=580, 1445.4pt x 685.8122pt>
+<Images/C2.png, id=491, 1445.4pt x 685.8122pt>
 File: Images/C2.png Graphic file (type png)
 <use Images/C2.png>
 Package pdftex.def Info: Images/C2.png  used on input line 41.
@@ -1127,7 +1078,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 41--42
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C3.png, id=581, 1445.4pt x 685.8122pt>
+<Images/C3.png, id=492, 1445.4pt x 685.8122pt>
 File: Images/C3.png Graphic file (type png)
 <use Images/C3.png>
 Package pdftex.def Info: Images/C3.png  used on input line 47.
@@ -1140,12 +1091,12 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 47--48
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/V1.png, id=583, 632.3625pt x 474.27188pt>
+<Images/V1.png, id=494, 632.3625pt x 474.27188pt>
 File: Images/V1.png Graphic file (type png)
 <use Images/V1.png>
 Package pdftex.def Info: Images/V1.png  used on input line 58.
 (pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
-<Images/W1.png, id=584, 632.3625pt x 474.27188pt>
+<Images/W1.png, id=495, 632.3625pt x 474.27188pt>
 File: Images/W1.png Graphic file (type png)
 <use Images/W1.png>
 Package pdftex.def Info: Images/W1.png  used on input line 59.
@@ -1153,7 +1104,7 @@ Package pdftex.def Info: Images/W1.png  used on input line 59.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiOpt1a.png, id=587, 1445.4pt x 685.8122pt>
+<Images/MultiOpt1a.png, id=498, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt1a.png Graphic file (type png)
 <use Images/MultiOpt1a.png>
 Package pdftex.def Info: Images/MultiOpt1a.png  used on input line 72.
@@ -1163,7 +1114,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 72--73
  [][] 
  []
 
-<Images/MultiCont1a.png, id=588, 1445.4pt x 685.8122pt>
+<Images/MultiCont1a.png, id=499, 1445.4pt x 685.8122pt>
 File: Images/MultiCont1a.png Graphic file (type png)
 <use Images/MultiCont1a.png>
 Package pdftex.def Info: Images/MultiCont1a.png  used on input line 78.
@@ -1173,7 +1124,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 78--79
  [][] 
  []
 
-<Images/MultiOpt2.png, id=591, 1445.4pt x 685.8122pt>
+<Images/MultiOpt2.png, id=502, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt2.png Graphic file (type png)
 <use Images/MultiOpt2.png>
 Package pdftex.def Info: Images/MultiOpt2.png  used on input line 87.
@@ -1183,7 +1134,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 87--88
  [][] 
  []
 
-<Images/MultiCont2.png, id=592, 1445.4pt x 685.8122pt>
+<Images/MultiCont2.png, id=503, 1445.4pt x 685.8122pt>
 File: Images/MultiCont2.png Graphic file (type png)
 <use Images/MultiCont2.png>
 Package pdftex.def Info: Images/MultiCont2.png  used on input line 93.
@@ -1193,7 +1144,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-<Images/MultiwFW.png, id=596, 1445.4pt x 685.8122pt>
+<Images/MultiwFW.png, id=507, 1445.4pt x 685.8122pt>
 File: Images/MultiwFW.png Graphic file (type png)
 <use Images/MultiwFW.png>
 Package pdftex.def Info: Images/MultiwFW.png  used on input line 104.
@@ -1203,7 +1154,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 104--105
  [][] 
  []
 
-<Images/MultiOpt3.png, id=597, 1445.4pt x 685.8122pt>
+<Images/MultiOpt3.png, id=508, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt3.png Graphic file (type png)
 <use Images/MultiOpt3.png>
 Package pdftex.def Info: Images/MultiOpt3.png  used on input line 110.
@@ -1213,7 +1164,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
-<Images/MultiCont3.png, id=598, 1445.4pt x 685.8122pt>
+<Images/MultiCont3.png, id=509, 1445.4pt x 685.8122pt>
 File: Images/MultiCont3.png Graphic file (type png)
 <use Images/MultiCont3.png>
 Package pdftex.def Info: Images/MultiCont3.png  used on input line 116.
@@ -1239,7 +1190,7 @@ Overfull \hbox (38.28159pt too wide) in paragraph at lines 69--120
 ++++++++++++++++++
  []
 
-[41 <./Images/FW02.png (PNG copy)>]
+[35 <./Images/FW02.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1252,7 +1203,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42 <./Images/F11.png (PNG copy)>]
+[36 <./Images/F11.png (PNG copy)>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1262,7 +1213,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiOpt1.png, id=623, 1445.4pt x 685.8122pt>
+<Images/MultiOpt1.png, id=535, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt1.png Graphic file (type png)
 <use Images/MultiOpt1.png>
 Package pdftex.def Info: Images/MultiOpt1.png  used on input line 128.
@@ -1275,7 +1226,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 128--129
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiCont1.png, id=624, 1445.4pt x 685.8122pt>
+<Images/MultiCont1.png, id=536, 1445.4pt x 685.8122pt>
 File: Images/MultiCont1.png Graphic file (type png)
 <use Images/MultiCont1.png>
 Package pdftex.def Info: Images/MultiCont1.png  used on input line 134.
@@ -1288,8 +1239,8 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 134--135
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [43 <./Images/F21.png (PNG copy)>] (AnnualReviewYear3.bbl [44 <./Images/F31.p
-ng (PNG copy)>] [45 <./Images/C1.png (PNG copy)>] [46 <./Images/C2.png (PNG cop
+) [37 <./Images/F21.png (PNG copy)>] (AnnualReviewYear3.bbl [38 <./Images/F31.p
+ng (PNG copy)>] [39 <./Images/C1.png (PNG copy)>] [40 <./Images/C2.png (PNG cop
 y)>])
 
 Package natbib Warning: There were undefined citations.
@@ -1298,62 +1249,77 @@ Package natbib Warning: There were undefined citations.
 Package caption Warning: Unused \captionsetup[sub] on input line 25.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-[47 <./Images/C3.png (PNG copy)>] [48 <./Images/V1.png (PNG copy)> <./Images/W1
-.png (PNG copy)> <./Images/MultiOpt1a.png (PNG copy)>] [49 <./Images/MultiCont1
-a.png (PNG copy)> <./Images/MultiOpt2.png (PNG copy)>] [50 <./Images/MultiCont2
-.png (PNG copy)> <./Images/MultiwFW.png (PNG copy)>] [51 <./Images/MultiOpt3.pn
-g (PNG copy)> <./Images/MultiCont3.png (PNG copy)>] [52 <./Images/MultiOpt1.png
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
+[41 <./Images/C3.png (PNG copy)>] [42 <./Images/V1.png (PNG copy)> <./Images/W1
+.png (PNG copy)> <./Images/MultiOpt1a.png (PNG copy)>] [43 <./Images/MultiCont1
+a.png (PNG copy)> <./Images/MultiOpt2.png (PNG copy)>] [44 <./Images/MultiCont2
+.png (PNG copy)> <./Images/MultiwFW.png (PNG copy)>] [45 <./Images/MultiOpt3.pn
+g (PNG copy)> <./Images/MultiCont3.png (PNG copy)>] [46 <./Images/MultiOpt1.png
  (PNG copy)> <./Images/MultiCont1.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
  (AnnualReviewYear3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
-Package rerunfilecheck Info: File `AnnualReviewYear3.out' has not changed.
-(rerunfilecheck)             Checksum: 10FA387DBA42CD0C1196702A8B2499DD;2857.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
 
+
+Package rerunfilecheck Warning: File `AnnualReviewYear3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `AnnualReviewYear3.out':
+(rerunfilecheck)             Before: 0396FA07CC07F6F5E7A54D8508DB242D;2603
+(rerunfilecheck)             After:  7590F463991DD08FA44DF1C7AFB8C9BA;2427.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
  ) 
 Here is how much of TeX's memory you used:
- 11991 strings out of 492946
- 184291 string characters out of 3124935
- 354784 words of memory out of 3000000
- 15448 multiletter control sequences out of 15000+200000
+ 11916 strings out of 492946
+ 182872 string characters out of 3124935
+ 310868 words of memory out of 3000000
+ 15423 multiletter control sequences out of 15000+200000
  13487 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,32n,56p,1226b,588s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s1452504/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s145
-2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex
-8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s1
-452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
-fb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr17.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s145250
-4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C
-:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/s1452504/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on AnnualReviewYear3.pdf (55 pages, 5892305 bytes).
+pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.5} has been referenced but does not exist, 
+replaced by a fixed one
+
+<C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/s1452504/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/s14525
+04/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.
+pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/s145
+2504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s1452504/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/s1452504/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/
+Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/s1452504/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on AnnualReviewYear3.pdf (48 pages, 5478424 bytes).
 PDF statistics:
- 773 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
- 435 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 679 PDF objects out of 1000 (max. 8388607)
+ 168 named destinations out of 1000 (max. 500000)
+ 396 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -18,17 +18,17 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Boundaries and intersections}{26}{subsubsection.2.4.2}% 
 \contentsline {subsubsection}{\numberline {2.4.3}Interpolation, differentiation, integration and convolution}{30}{subsubsection.2.4.3}% 
 \contentsline {subsubsection}{\numberline {2.4.4}Boundary matching and solving the PDE}{32}{subsubsection.2.4.4}% 
-\contentsline {subsection}{\numberline {2.5}Validation Tests Multishape}{32}{subsection.2.5}% 
-\contentsline {subsubsection}{\numberline {2.5.1}Testing Differentiation, Interpolation, Convolution and Integration}{33}{subsubsection.2.5.1}% 
-\contentsline {subsubsection}{\numberline {2.5.2}Exact Tests}{35}{subsubsection.2.5.2}% 
-\contentsline {section}{\numberline {3}PDE-Constrained Optimization}{48}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}General PDECO Stuff}{48}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Literature Review Mean Field PDECO}{51}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {2.4.5}Exact Tests}{32}{subsubsection.2.4.5}% 
+\contentsline {subsection}{\numberline {2.5}Validation Tests Multishape}{40}{subsection.2.5}% 
+\contentsline {subsubsection}{\numberline {2.5.1}Testing Differentiation, Interpolation, Convolution and Integration}{40}{subsubsection.2.5.1}% 
+\contentsline {section}{\numberline {3}PDE-Constrained Optimization}{47}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}General PDECO Stuff}{47}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Literature Review Mean Field PDECO}{50}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Optimality Conditions}{53}{subsection.3.3}% 
 \contentsline {subsubsection}{\numberline {3.3.1}Fr\'echet Differentiation}{55}{subsubsection.3.3.1}% 
-\contentsline {subsubsection}{\numberline {3.3.2}Deriving the Adjoint Equation}{56}{subsubsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Deriving the Adjoint Equation}{57}{subsubsection.3.3.2}% 
 \contentsline {subsubsection}{\numberline {3.3.3}The First-Order Optimality System}{59}{subsubsection.3.3.3}% 
-\contentsline {subsubsection}{\numberline {3.3.4}Adding a Non-Local Term}{60}{subsubsection.3.3.4}% 
+\contentsline {subsubsection}{\numberline {3.3.4}Adding a Non-Local Term}{61}{subsubsection.3.3.4}% 
 \contentsline {subsubsection}{\numberline {3.3.5}Deriving the Adjoint Equation with the Non-Local Term}{62}{subsubsection.3.3.5}% 
 \contentsline {subsubsection}{\numberline {3.3.6}The First Order Optimality System Including the Non-Local Term}{65}{subsubsection.3.3.6}% 
 \contentsline {subsection}{\numberline {3.4}Deriving OCP with general Flow Term and Periodic Boundary Conditions}{67}{subsection.3.4}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  15 JUL 2021 09:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.1)  15 JUL 2021 16:48
 entering extended mode
 **./ThesisCurrent.tex
 (ThesisCurrent.tex
@@ -787,37 +787,223 @@ Overfull \vbox (10.35956pt too high) has occurred while \output is active []
 
 
 [31]
-<Images/BoxSections.png, id=849, 1445.4pt x 704.6325pt>
-File: Images/BoxSections.png Graphic file (type png)
-<use Images/BoxSections.png>
-Package pdftex.def Info: Images/BoxSections.png  used on input line 238.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
 
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 238--239
- [][] 
- []
-
-<Images/quad.png, id=850, 526.96875pt x 395.22656pt>
-File: Images/quad.png Graphic file (type png)
-<use Images/quad.png>
-Package pdftex.def Info: Images/quad.png  used on input line 244.
-(pdftex.def)             Requested size: 184.44182pt x 138.33136pt.
-<Images/WedgeSections.png, id=851, 1445.4pt x 704.6325pt>
-File: Images/WedgeSections.png Graphic file (type png)
-<use Images/WedgeSections.png>
-Package pdftex.def Info: Images/WedgeSections.png  used on input line 250.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 250--251
- [][] 
- []
+Package natbib Warning: Citation `Hutomo_2019' on page 32 undefined on input li
+ne 235.
 
 [32]
+<Images/boxEx.png, id=861, 1445.4pt x 704.6325pt>
+File: Images/boxEx.png Graphic file (type png)
+<use Images/boxEx.png>
+Package pdftex.def Info: Images/boxEx.png  used on input line 246.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 246--247
+ [][] 
+ []
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33 <./Images/BoxSections.png (PNG copy)> <./Images/quad.png (PNG copy)>]
-[34 <./Images/WedgeSections.png (PNG copy)>] (TabGrad.tex
+<Images/wedgeEx.png, id=865, 1445.4pt x 704.6325pt>
+File: Images/wedgeEx.png Graphic file (type png)
+<use Images/wedgeEx.png>
+Package pdftex.def Info: Images/wedgeEx.png  used on input line 257.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 257--258
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/example1.png, id=870, 1445.4pt x 704.6325pt>
+File: Images/example1.png Graphic file (type png)
+<use Images/example1.png>
+Package pdftex.def Info: Images/example1.png  used on input line 265.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 265--266
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/example2.png, id=871, 1445.4pt x 704.6325pt>
+File: Images/example2.png Graphic file (type png)
+<use Images/example2.png>
+Package pdftex.def Info: Images/example2.png  used on input line 273.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 273--274
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(TabDirichletEx1.tex
+Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--23
+ [][] 
+ []
+
+) (TabDirichletEx1MS.tex
+Overfull \hbox (58.31888pt too wide) in paragraph at lines 3--13
+ [][] 
+ []
+
+) [33] [34] (TabDirichletEx2.tex
+Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--23
+ [][] 
+ []
+
+)
+<Images/boxExNoFlux.png, id=901, 1445.4pt x 704.6325pt>
+File: Images/boxExNoFlux.png Graphic file (type png)
+<use Images/boxExNoFlux.png>
+Package pdftex.def Info: Images/boxExNoFlux.png  used on input line 305.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 305--306
+ [][] 
+ []
+
+[35 <./Images/boxEx.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/NormalCorrected.png, id=911, 1445.4pt x 704.6325pt>
+File: Images/NormalCorrected.png Graphic file (type png)
+<use Images/NormalCorrected.png>
+Package pdftex.def Info: Images/NormalCorrected.png  used on input line 312.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 312--313
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(TabNoFluxEx.tex
+Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--18
+ [][] 
+ []
+
+) (TabNoFluxCorr.tex
+Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--14
+ [][] 
+ []
+
+)
+<Images/FWBox.png, id=915, 1445.4pt x 704.6325pt>
+File: Images/FWBox.png Graphic file (type png)
+<use Images/FWBox.png>
+Package pdftex.def Info: Images/FWBox.png  used on input line 346.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 346--347
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/FWWedge.png, id=919, 1445.4pt x 704.6325pt>
+File: Images/FWWedge.png Graphic file (type png)
+<use Images/FWWedge.png>
+Package pdftex.def Info: Images/FWWedge.png  used on input line 377.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 377--378
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[36 <./Images/wedgeEx.png (PNG copy)>] [37]
+<Images/ex1.png, id=940, 1445.4pt x 704.6325pt>
+File: Images/ex1.png Graphic file (type png)
+<use Images/ex1.png>
+Package pdftex.def Info: Images/ex1.png  used on input line 393.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 393--394
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Images/ex2.png, id=942, 1445.4pt x 704.6325pt>
+File: Images/ex2.png Graphic file (type png)
+<use Images/ex2.png>
+Package pdftex.def Info: Images/ex2.png  used on input line 406.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 406--407
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(TabFWProbBox.tex
+Overfull \hbox (36.98291pt too wide) in paragraph at lines 3--17
+ [][] 
+ []
+
+) (TabFWProbWedge.tex
+Overfull \hbox (36.67876pt too wide) in paragraph at lines 3--14
+ [][] 
+ []
+
+) (Example12.tex
+Overfull \hbox (66.6061pt too wide) in paragraph at lines 3--13
+ [][] 
+ []
+
+)) (MultiShapeValidationTests.tex [38 <./Images/example1.png (PNG copy)>]
+[39]
+<Images/BoxSections.png, id=960, 1445.4pt x 704.6325pt>
+File: Images/BoxSections.png Graphic file (type png)
+<use Images/BoxSections.png>
+Package pdftex.def Info: Images/BoxSections.png  used on input line 10.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 10--11
+ [][] 
+ []
+
+<Images/quad.png, id=961, 526.96875pt x 395.22656pt>
+File: Images/quad.png Graphic file (type png)
+<use Images/quad.png>
+Package pdftex.def Info: Images/quad.png  used on input line 16.
+(pdftex.def)             Requested size: 184.44182pt x 138.33136pt.
+<Images/WedgeSections.png, id=962, 1445.4pt x 704.6325pt>
+File: Images/WedgeSections.png Graphic file (type png)
+<use Images/WedgeSections.png>
+Package pdftex.def Info: Images/WedgeSections.png  used on input line 22.
+(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
+
+Overfull \hbox (52.92969pt too wide) in paragraph at lines 22--23
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[40 <./Images/example2.png (PNG copy)>] [41 <./Images/boxExNoFlux.png (PNG copy
+)>] (TabGrad.tex
 Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--22
  [][] 
  []
@@ -857,226 +1043,47 @@ Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--20
  [][] 
  []
 
-)
-
-Package natbib Warning: Citation `Hutomo_2019' on page 35 undefined on input li
-ne 297.
-
-[35] [36] [37] [38]
-<Images/boxEx.png, id=926, 1445.4pt x 704.6325pt>
-File: Images/boxEx.png Graphic file (type png)
-<use Images/boxEx.png>
-Package pdftex.def Info: Images/boxEx.png  used on input line 308.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 308--309
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/wedgeEx.png, id=930, 1445.4pt x 704.6325pt>
-File: Images/wedgeEx.png Graphic file (type png)
-<use Images/wedgeEx.png>
-Package pdftex.def Info: Images/wedgeEx.png  used on input line 319.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 319--320
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/example1.png, id=935, 1445.4pt x 704.6325pt>
-File: Images/example1.png Graphic file (type png)
-<use Images/example1.png>
-Package pdftex.def Info: Images/example1.png  used on input line 327.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 327--328
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/example2.png, id=936, 1445.4pt x 704.6325pt>
-File: Images/example2.png Graphic file (type png)
-<use Images/example2.png>
-Package pdftex.def Info: Images/example2.png  used on input line 335.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 335--336
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(TabDirichletEx1.tex
-Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--23
- [][] 
- []
-
-) (TabDirichletEx1MS.tex
-Overfull \hbox (58.31888pt too wide) in paragraph at lines 3--13
- [][] 
- []
-
-) [39] [40] (TabDirichletEx2.tex
-Overfull \hbox (62.48328pt too wide) in paragraph at lines 3--23
- [][] 
- []
-
-) [41 <./Images/boxEx.png (PNG copy)>]
-<Images/boxExNoFlux.png, id=968, 1445.4pt x 704.6325pt>
-File: Images/boxExNoFlux.png Graphic file (type png)
-<use Images/boxExNoFlux.png>
-Package pdftex.def Info: Images/boxExNoFlux.png  used on input line 367.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 367--368
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/NormalCorrected.png, id=969, 1445.4pt x 704.6325pt>
-File: Images/NormalCorrected.png Graphic file (type png)
-<use Images/NormalCorrected.png>
-Package pdftex.def Info: Images/NormalCorrected.png  used on input line 374.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 374--375
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(TabNoFluxEx.tex
-Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--18
- [][] 
- []
-
-) (TabNoFluxCorr.tex
-Overfull \hbox (45.48303pt too wide) in paragraph at lines 3--14
- [][] 
- []
-
-)
-<Images/FWBox.png, id=973, 1445.4pt x 704.6325pt>
-File: Images/FWBox.png Graphic file (type png)
-<use Images/FWBox.png>
-Package pdftex.def Info: Images/FWBox.png  used on input line 408.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 408--409
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[42 <./Images/wedgeEx.png (PNG copy)>] [43]
-<Images/FWWedge.png, id=991, 1445.4pt x 704.6325pt>
-File: Images/FWWedge.png Graphic file (type png)
-<use Images/FWWedge.png>
-Package pdftex.def Info: Images/FWWedge.png  used on input line 439.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 439--440
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/ex1.png, id=993, 1445.4pt x 704.6325pt>
-File: Images/ex1.png Graphic file (type png)
-<use Images/ex1.png>
-Package pdftex.def Info: Images/ex1.png  used on input line 455.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 455--456
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Images/ex2.png, id=995, 1445.4pt x 704.6325pt>
-File: Images/ex2.png Graphic file (type png)
-<use Images/ex2.png>
-Package pdftex.def Info: Images/ex2.png  used on input line 468.
-(pdftex.def)             Requested size: 505.89758pt x 246.62508pt.
-
-Overfull \hbox (52.92969pt too wide) in paragraph at lines 468--469
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[44 <./Images/example1.png (PNG copy)>] (TabFWProbBox.tex
-Overfull \hbox (36.98291pt too wide) in paragraph at lines 3--17
- [][] 
- []
-
-) (TabFWProbWedge.tex
-Overfull \hbox (36.67876pt too wide) in paragraph at lines 3--14
- [][] 
- []
-
-) (Example12.tex
-Overfull \hbox (66.6061pt too wide) in paragraph at lines 3--13
- [][] 
- []
-
-)) (ComparisonwithFDMandFEM.tex) [45 <./Images/example2.png (PNG copy)>]
-[46 <./Images/boxExNoFlux.png (PNG copy)>] [47 <./Images/NormalCorrected.png (P
-NG copy)>] (PDECOIntro.tex [48 <./Images/FWBox.png (PNG copy)>] [49 <./Images/F
-WWedge.png (PNG copy)>]) [50 <./Images/ex1.png (PNG copy)>]
-(MeanFieldOCPReview.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+) [42 <./Images/NormalCorrected.png (PNG copy)>]) (ComparisonwithFDMandFEM.tex)
+[43 <./Images/FWBox.png (PNG copy)>] [44] [45] [46] [47 <./Images/FWWedge.png (
+PNG copy)>] (PDECOIntro.tex [48 <./Images/ex1.png (PNG copy)>]) [49 <./Images/e
+x2.png (PNG copy)>] (MeanFieldOCPReview.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--150
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
-[51 <./Images/ex2.png (PNG copy)>] [52] (PDECOOptimalityConditionsBasics.tex
-[53]
+[50 <./Images/BoxSections.png (PNG copy)>] [51 <./Images/quad.png (PNG copy)>]
+[52 <./Images/WedgeSections.png (PNG copy)>]
+(PDECOOptimalityConditionsBasics.tex [53]
 Overfull \hbox (2.65187pt too wide) detected at line 21
 []
  []
 
-
+[54]
 Overfull \hbox (16.55704pt too wide) detected at line 52
 []
  []
 
-[54] [55]
+[55] [56]
 Overfull \hbox (5.4655pt too wide) detected at line 145
 []
  []
 
-[56] [57] [58] [59] [60] [61]
+[57] [58] [59] [60] [61]
 Overfull \hbox (0.24254pt too wide) detected at line 338
 []
  []
@@ -1190,10 +1197,10 @@ Overfull \hbox (10.5326pt too wide) detected at line 238
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 203.
+(Font)              using `OT1/cmr/bx/n' instead on input line 204.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 203.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 204.
 (fsolveAlgorithm.tex [87]) [88] (ErrorMeasure.tex
 
 LaTeX Warning: Reference `sec:Validation' on page 89 undefined on input line 3.
@@ -1209,7 +1216,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--33
 
 [90] [91])
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 231.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 232.
  (Comparisonwithfsolve.tex
 
 LaTeX Warning: Reference `sec:Examples1d' on page 92 undefined on input line 2.
@@ -1218,14 +1225,14 @@ LaTeX Warning: Reference `sec:Examples1d' on page 92 undefined on input line 2.
 (fixptvsfsolve.tex))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 237.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 237.
 
 (Perturbingw.tex [92] [93] (wPertExample.tex))
-Underfull \hbox (badness 10000) in paragraph at lines 240--251
+Underfull \hbox (badness 10000) in paragraph at lines 241--252
 
  []
 
@@ -1238,7 +1245,7 @@ LaTeX Warning: Reference `AdvDiff_Linear' on page 97 undefined on input line 8.
 LaTeX Warning: Reference `NoFlux_Linear' on page 97 undefined on input line 8.
 
 (SCNExample2D.tex)
-<Images/SCNk0.png, id=1495, 3519.1475pt x 1052.93375pt>
+<Images/SCNk0.png, id=1509, 3519.1475pt x 1052.93375pt>
 File: Images/SCNk0.png Graphic file (type png)
 <use Images/SCNk0.png>
 Package pdftex.def Info: Images/SCNk0.png  used on input line 24.
@@ -1247,7 +1254,7 @@ Package pdftex.def Info: Images/SCNk0.png  used on input line 24.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNkn1.png, id=1496, 3519.1475pt x 1052.93375pt>
+<Images/SCNkn1.png, id=1510, 3519.1475pt x 1052.93375pt>
 File: Images/SCNkn1.png Graphic file (type png)
 <use Images/SCNkn1.png>
 Package pdftex.def Info: Images/SCNkn1.png  used on input line 30.
@@ -1255,7 +1262,7 @@ Package pdftex.def Info: Images/SCNkn1.png  used on input line 30.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNk1.png, id=1497, 3519.1475pt x 1052.93375pt>
+<Images/SCNk1.png, id=1511, 3519.1475pt x 1052.93375pt>
 File: Images/SCNk1.png Graphic file (type png)
 <use Images/SCNk1.png>
 Package pdftex.def Info: Images/SCNk1.png  used on input line 36.
@@ -1263,7 +1270,7 @@ Package pdftex.def Info: Images/SCNk1.png  used on input line 36.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNk0c.png, id=1498, 3679.7475pt x 1050.92625pt>
+<Images/SCNk0c.png, id=1512, 3679.7475pt x 1050.92625pt>
 File: Images/SCNk0c.png Graphic file (type png)
 <use Images/SCNk0c.png>
 Package pdftex.def Info: Images/SCNk0c.png  used on input line 44.
@@ -1271,7 +1278,7 @@ Package pdftex.def Info: Images/SCNk0c.png  used on input line 44.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNkn1c.png, id=1499, 3679.7475pt x 1050.92625pt>
+<Images/SCNkn1c.png, id=1513, 3679.7475pt x 1050.92625pt>
 File: Images/SCNkn1c.png Graphic file (type png)
 <use Images/SCNkn1c.png>
 Package pdftex.def Info: Images/SCNkn1c.png  used on input line 50.
@@ -1279,7 +1286,7 @@ Package pdftex.def Info: Images/SCNkn1c.png  used on input line 50.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNk1c.png, id=1500, 3679.7475pt x 1050.92625pt>
+<Images/SCNk1c.png, id=1514, 3679.7475pt x 1050.92625pt>
 File: Images/SCNk1c.png Graphic file (type png)
 <use Images/SCNk1c.png>
 Package pdftex.def Info: Images/SCNk1c.png  used on input line 56.
@@ -1295,7 +1302,7 @@ LaTeX Warning: Reference `AdvDiff_Linear' on page 97 undefined on input line 63
 LaTeX Warning: Reference `Dirichlet' on page 97 undefined on input line 63.
 
 [97] [98 <./Images/SCNk0.png (PNG copy)>] (SCDExample2D.tex)
-<Images/SCDk0.png, id=1523, 3521.155pt x 1052.93375pt>
+<Images/SCDk0.png, id=1537, 3521.155pt x 1052.93375pt>
 File: Images/SCDk0.png Graphic file (type png)
 <use Images/SCDk0.png>
 Package pdftex.def Info: Images/SCDk0.png  used on input line 76.
@@ -1304,7 +1311,7 @@ Package pdftex.def Info: Images/SCDk0.png  used on input line 76.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDkn1.png, id=1524, 3521.155pt x 1052.93375pt>
+<Images/SCDkn1.png, id=1538, 3521.155pt x 1052.93375pt>
 File: Images/SCDkn1.png Graphic file (type png)
 <use Images/SCDkn1.png>
 Package pdftex.def Info: Images/SCDkn1.png  used on input line 82.
@@ -1312,7 +1319,7 @@ Package pdftex.def Info: Images/SCDkn1.png  used on input line 82.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDk1.png, id=1525, 3521.155pt x 1052.93375pt>
+<Images/SCDk1.png, id=1539, 3521.155pt x 1052.93375pt>
 File: Images/SCDk1.png Graphic file (type png)
 <use Images/SCDk1.png>
 Package pdftex.def Info: Images/SCDk1.png  used on input line 88.
@@ -1320,7 +1327,7 @@ Package pdftex.def Info: Images/SCDk1.png  used on input line 88.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDk0c.png, id=1526, 3661.68pt x 1050.92625pt>
+<Images/SCDk0c.png, id=1540, 3661.68pt x 1050.92625pt>
 File: Images/SCDk0c.png Graphic file (type png)
 <use Images/SCDk0c.png>
 Package pdftex.def Info: Images/SCDk0c.png  used on input line 95.
@@ -1328,7 +1335,7 @@ Package pdftex.def Info: Images/SCDk0c.png  used on input line 95.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDkn1c.png, id=1527, 3661.68pt x 1050.92625pt>
+<Images/SCDkn1c.png, id=1541, 3661.68pt x 1050.92625pt>
 File: Images/SCDkn1c.png Graphic file (type png)
 <use Images/SCDkn1c.png>
 Package pdftex.def Info: Images/SCDkn1c.png  used on input line 101.
@@ -1336,7 +1343,7 @@ Package pdftex.def Info: Images/SCDkn1c.png  used on input line 101.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDk1c.png, id=1528, 3661.68pt x 1050.92625pt>
+<Images/SCDk1c.png, id=1542, 3661.68pt x 1050.92625pt>
 File: Images/SCDk1c.png Graphic file (type png)
 <use Images/SCDk1c.png>
 Package pdftex.def Info: Images/SCDk1c.png  used on input line 107.
@@ -1351,7 +1358,7 @@ LaTeX Warning: Reference `AdvDiff' on page 99 undefined on input line 115.
 LaTeX Warning: Reference `NoFlux' on page 99 undefined on input line 115.
 
 (FCNExample2D.tex)
-<Images/FCNk0.png, id=1536, 3521.155pt x 1052.93375pt>
+<Images/FCNk0.png, id=1550, 3521.155pt x 1052.93375pt>
 File: Images/FCNk0.png Graphic file (type png)
 <use Images/FCNk0.png>
 Package pdftex.def Info: Images/FCNk0.png  used on input line 128.
@@ -1360,7 +1367,7 @@ Package pdftex.def Info: Images/FCNk0.png  used on input line 128.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNkn1.png, id=1537, 3521.155pt x 1052.93375pt>
+<Images/FCNkn1.png, id=1551, 3521.155pt x 1052.93375pt>
 File: Images/FCNkn1.png Graphic file (type png)
 <use Images/FCNkn1.png>
 Package pdftex.def Info: Images/FCNkn1.png  used on input line 134.
@@ -1368,7 +1375,7 @@ Package pdftex.def Info: Images/FCNkn1.png  used on input line 134.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNk1.png, id=1538, 3521.155pt x 1052.93375pt>
+<Images/FCNk1.png, id=1552, 3521.155pt x 1052.93375pt>
 File: Images/FCNk1.png Graphic file (type png)
 <use Images/FCNk1.png>
 Package pdftex.def Info: Images/FCNk1.png  used on input line 140.
@@ -1376,7 +1383,7 @@ Package pdftex.def Info: Images/FCNk1.png  used on input line 140.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNk0c.png, id=1539, 3411.74625pt x 1050.92625pt>
+<Images/FCNk0c.png, id=1553, 3411.74625pt x 1050.92625pt>
 File: Images/FCNk0c.png Graphic file (type png)
 <use Images/FCNk0c.png>
 Package pdftex.def Info: Images/FCNk0c.png  used on input line 148.
@@ -1384,7 +1391,7 @@ Package pdftex.def Info: Images/FCNk0c.png  used on input line 148.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNkn1c.png, id=1540, 3411.74625pt x 1050.92625pt>
+<Images/FCNkn1c.png, id=1554, 3411.74625pt x 1050.92625pt>
 File: Images/FCNkn1c.png Graphic file (type png)
 <use Images/FCNkn1c.png>
 Package pdftex.def Info: Images/FCNkn1c.png  used on input line 154.
@@ -1392,7 +1399,7 @@ Package pdftex.def Info: Images/FCNkn1c.png  used on input line 154.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNk1c.png, id=1541, 3411.74625pt x 1050.92625pt>
+<Images/FCNk1c.png, id=1555, 3411.74625pt x 1050.92625pt>
 File: Images/FCNk1c.png Graphic file (type png)
 <use Images/FCNk1c.png>
 Package pdftex.def Info: Images/FCNk1c.png  used on input line 160.
@@ -1414,7 +1421,7 @@ Overfull \hbox (33.66397pt too wide) detected at line 171
 [99 <./Images/SCNkn1.png (PNG copy)> <./Images/SCNk1.png (PNG copy)>] [100]
 [101 <./Images/SCNk0c.png (PNG copy)> <./Images/SCNkn1c.png (PNG copy)>]
 (FCDExample2D.tex)
-<Images/FCDk0.png, id=1573, 3519.1475pt x 1052.93375pt>
+<Images/FCDk0.png, id=1587, 3519.1475pt x 1052.93375pt>
 File: Images/FCDk0.png Graphic file (type png)
 <use Images/FCDk0.png>
 Package pdftex.def Info: Images/FCDk0.png  used on input line 180.
@@ -1423,7 +1430,7 @@ Package pdftex.def Info: Images/FCDk0.png  used on input line 180.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDkn1.png, id=1574, 3519.1475pt x 1052.93375pt>
+<Images/FCDkn1.png, id=1588, 3519.1475pt x 1052.93375pt>
 File: Images/FCDkn1.png Graphic file (type png)
 <use Images/FCDkn1.png>
 Package pdftex.def Info: Images/FCDkn1.png  used on input line 186.
@@ -1431,7 +1438,7 @@ Package pdftex.def Info: Images/FCDkn1.png  used on input line 186.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDk1.png, id=1575, 3519.1475pt x 1052.93375pt>
+<Images/FCDk1.png, id=1589, 3519.1475pt x 1052.93375pt>
 File: Images/FCDk1.png Graphic file (type png)
 <use Images/FCDk1.png>
 Package pdftex.def Info: Images/FCDk1.png  used on input line 192.
@@ -1439,7 +1446,7 @@ Package pdftex.def Info: Images/FCDk1.png  used on input line 192.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDk0c.png, id=1576, 3411.74625pt x 1050.92625pt>
+<Images/FCDk0c.png, id=1590, 3411.74625pt x 1050.92625pt>
 File: Images/FCDk0c.png Graphic file (type png)
 <use Images/FCDk0c.png>
 Package pdftex.def Info: Images/FCDk0c.png  used on input line 201.
@@ -1447,7 +1454,7 @@ Package pdftex.def Info: Images/FCDk0c.png  used on input line 201.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDkn1c.png, id=1577, 3411.74625pt x 1050.92625pt>
+<Images/FCDkn1c.png, id=1591, 3411.74625pt x 1050.92625pt>
 File: Images/FCDkn1c.png Graphic file (type png)
 <use Images/FCDkn1c.png>
 Package pdftex.def Info: Images/FCDkn1c.png  used on input line 207.
@@ -1455,7 +1462,7 @@ Package pdftex.def Info: Images/FCDkn1c.png  used on input line 207.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDk1c.png, id=1578, 3411.74625pt x 1050.92625pt>
+<Images/FCDk1c.png, id=1592, 3411.74625pt x 1050.92625pt>
 File: Images/FCDk1c.png Graphic file (type png)
 <use Images/FCDk1c.png>
 Package pdftex.def Info: Images/FCDk1c.png  used on input line 213.
@@ -1470,7 +1477,7 @@ LaTeX Warning: Reference `AdvDiff' on page 102 undefined on input line 219.
 LaTeX Warning: Reference `NoFlux' on page 102 undefined on input line 219.
 
 [102 <./Images/SCNk1c.png (PNG copy)> <./Images/SCDk0.png (PNG copy)>]
-<Images/Vext3D.png, id=1598, 526.96875pt x 395.22656pt>
+<Images/Vext3D.png, id=1612, 526.96875pt x 395.22656pt>
 File: Images/Vext3D.png Graphic file (type png)
 <use Images/Vext3D.png>
 Package pdftex.def Info: Images/Vext3D.png  used on input line 234.
@@ -1479,7 +1486,7 @@ Package pdftex.def Info: Images/Vext3D.png  used on input line 234.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/rhok1.png, id=1599, 3587.4025pt x 965.6075pt>
+<Images/rhok1.png, id=1613, 3587.4025pt x 965.6075pt>
 File: Images/rhok1.png Graphic file (type png)
 <use Images/rhok1.png>
 Package pdftex.def Info: Images/rhok1.png  used on input line 243.
@@ -1487,7 +1494,7 @@ Package pdftex.def Info: Images/rhok1.png  used on input line 243.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/rhok0.png, id=1600, 3587.4025pt x 965.6075pt>
+<Images/rhok0.png, id=1614, 3587.4025pt x 965.6075pt>
 File: Images/rhok0.png Graphic file (type png)
 <use Images/rhok0.png>
 Package pdftex.def Info: Images/rhok0.png  used on input line 249.
@@ -1495,7 +1502,7 @@ Package pdftex.def Info: Images/rhok0.png  used on input line 249.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/rhokn1.png, id=1601, 3587.4025pt x 965.6075pt>
+<Images/rhokn1.png, id=1615, 3587.4025pt x 965.6075pt>
 File: Images/rhokn1.png Graphic file (type png)
 <use Images/rhokn1.png>
 Package pdftex.def Info: Images/rhokn1.png  used on input line 255.
@@ -1503,7 +1510,7 @@ Package pdftex.def Info: Images/rhokn1.png  used on input line 255.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Controlk1.png, id=1602, 3099.58pt x 966.61125pt>
+<Images/Controlk1.png, id=1616, 3099.58pt x 966.61125pt>
 File: Images/Controlk1.png Graphic file (type png)
 <use Images/Controlk1.png>
 Package pdftex.def Info: Images/Controlk1.png  used on input line 262.
@@ -1511,7 +1518,7 @@ Package pdftex.def Info: Images/Controlk1.png  used on input line 262.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Controlk0.png, id=1603, 3099.58pt x 966.61125pt>
+<Images/Controlk0.png, id=1617, 3099.58pt x 966.61125pt>
 File: Images/Controlk0.png Graphic file (type png)
 <use Images/Controlk0.png>
 Package pdftex.def Info: Images/Controlk0.png  used on input line 268.
@@ -1519,7 +1526,7 @@ Package pdftex.def Info: Images/Controlk0.png  used on input line 268.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Controlkn1.png, id=1604, 3099.58pt x 966.61125pt>
+<Images/Controlkn1.png, id=1618, 3099.58pt x 966.61125pt>
 File: Images/Controlkn1.png Graphic file (type png)
 <use Images/Controlkn1.png>
 Package pdftex.def Info: Images/Controlkn1.png  used on input line 274.
@@ -1527,7 +1534,7 @@ Package pdftex.def Info: Images/Controlkn1.png  used on input line 274.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCNConvergence.png, id=1609, 3672.72125pt x 2278.5125pt>
+<Images/SCNConvergence.png, id=1623, 3672.72125pt x 2278.5125pt>
 File: Images/SCNConvergence.png Graphic file (type png)
 <use Images/SCNConvergence.png>
 Package pdftex.def Info: Images/SCNConvergence.png  used on input line 283.
@@ -1535,7 +1542,7 @@ Package pdftex.def Info: Images/SCNConvergence.png  used on input line 283.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/SCDConvergence.png, id=1610, 3672.72125pt x 2278.5125pt>
+<Images/SCDConvergence.png, id=1624, 3672.72125pt x 2278.5125pt>
 File: Images/SCDConvergence.png Graphic file (type png)
 <use Images/SCDConvergence.png>
 Package pdftex.def Info: Images/SCDConvergence.png  used on input line 289.
@@ -1543,7 +1550,7 @@ Package pdftex.def Info: Images/SCDConvergence.png  used on input line 289.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCDConvergence.png, id=1611, 3672.72125pt x 2278.5125pt>
+<Images/FCDConvergence.png, id=1625, 3672.72125pt x 2278.5125pt>
 File: Images/FCDConvergence.png Graphic file (type png)
 <use Images/FCDConvergence.png>
 Package pdftex.def Info: Images/FCDConvergence.png  used on input line 295.
@@ -1551,7 +1558,7 @@ Package pdftex.def Info: Images/FCDConvergence.png  used on input line 295.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FCNConvergence.png, id=1612, 3672.72125pt x 2278.5125pt>
+<Images/FCNConvergence.png, id=1626, 3672.72125pt x 2278.5125pt>
 File: Images/FCNConvergence.png Graphic file (type png)
 <use Images/FCNConvergence.png>
 Package pdftex.def Info: Images/FCNConvergence.png  used on input line 301.
@@ -1561,7 +1568,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (ChapterNumericalExamplesOverdMultiShape.tex [103 <./Images/SCDkn1.png (PNG c
 opy)> <./Images/SCDk1.png (PNG copy)>]
-<Images/Dom1.png, id=1623, 632.3625pt x 474.27188pt>
+<Images/Dom1.png, id=1637, 632.3625pt x 474.27188pt>
 File: Images/Dom1.png Graphic file (type png)
 <use Images/Dom1.png>
 Package pdftex.def Info: Images/Dom1.png  used on input line 18.
@@ -1570,12 +1577,12 @@ Package pdftex.def Info: Images/Dom1.png  used on input line 18.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW1n1.png, id=1628, 632.3625pt x 474.27188pt>
+<Images/FW1n1.png, id=1642, 632.3625pt x 474.27188pt>
 File: Images/FW1n1.png Graphic file (type png)
 <use Images/FW1n1.png>
 Package pdftex.def Info: Images/FW1n1.png  used on input line 25.
 (pdftex.def)             Requested size: 379.42043pt x 284.56532pt.
-<Images/Opt1n1.png, id=1629, 632.3625pt x 474.27188pt>
+<Images/Opt1n1.png, id=1643, 632.3625pt x 474.27188pt>
 File: Images/Opt1n1.png Graphic file (type png)
 <use Images/Opt1n1.png>
 Package pdftex.def Info: Images/Opt1n1.png  used on input line 31.
@@ -1586,7 +1593,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW11.png, id=1630, 632.3625pt x 474.27188pt>
+<Images/FW11.png, id=1644, 632.3625pt x 474.27188pt>
 File: Images/FW11.png Graphic file (type png)
 <use Images/FW11.png>
 Package pdftex.def Info: Images/FW11.png  used on input line 38.
@@ -1594,7 +1601,7 @@ Package pdftex.def Info: Images/FW11.png  used on input line 38.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Opt11.png, id=1631, 632.3625pt x 474.27188pt>
+<Images/Opt11.png, id=1645, 632.3625pt x 474.27188pt>
 File: Images/Opt11.png Graphic file (type png)
 <use Images/Opt11.png>
 Package pdftex.def Info: Images/Opt11.png  used on input line 44.
@@ -1602,7 +1609,7 @@ Package pdftex.def Info: Images/Opt11.png  used on input line 44.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Dom2.png, id=1633, 632.3625pt x 474.27188pt>
+<Images/Dom2.png, id=1647, 632.3625pt x 474.27188pt>
 File: Images/Dom2.png Graphic file (type png)
 <use Images/Dom2.png>
 Package pdftex.def Info: Images/Dom2.png  used on input line 58.
@@ -1611,12 +1618,12 @@ Package pdftex.def Info: Images/Dom2.png  used on input line 58.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW2n1.png, id=1649, 1445.4pt x 685.8122pt>
+<Images/FW2n1.png, id=1663, 1445.4pt x 685.8122pt>
 File: Images/FW2n1.png Graphic file (type png)
 <use Images/FW2n1.png>
 Package pdftex.def Info: Images/FW2n1.png  used on input line 67.
 (pdftex.def)             Requested size: 433.62335pt x 205.74524pt.
-<Images/Opt2n1.png, id=1650, 1445.4pt x 685.8122pt>
+<Images/Opt2n1.png, id=1664, 1445.4pt x 685.8122pt>
 File: Images/Opt2n1.png Graphic file (type png)
 <use Images/Opt2n1.png>
 Package pdftex.def Info: Images/Opt2n1.png  used on input line 73.
@@ -1627,7 +1634,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW21.png, id=1651, 1445.4pt x 685.8122pt>
+<Images/FW21.png, id=1665, 1445.4pt x 685.8122pt>
 File: Images/FW21.png Graphic file (type png)
 <use Images/FW21.png>
 Package pdftex.def Info: Images/FW21.png  used on input line 80.
@@ -1635,7 +1642,7 @@ Package pdftex.def Info: Images/FW21.png  used on input line 80.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Opt21.png, id=1652, 1445.4pt x 685.8122pt>
+<Images/Opt21.png, id=1666, 1445.4pt x 685.8122pt>
 File: Images/Opt21.png Graphic file (type png)
 <use Images/Opt21.png>
 Package pdftex.def Info: Images/Opt21.png  used on input line 86.
@@ -1643,12 +1650,12 @@ Package pdftex.def Info: Images/Opt21.png  used on input line 86.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Dom3.png, id=1654, 632.3625pt x 474.27188pt>
+<Images/Dom3.png, id=1668, 632.3625pt x 474.27188pt>
 File: Images/Dom3.png Graphic file (type png)
 <use Images/Dom3.png>
 Package pdftex.def Info: Images/Dom3.png  used on input line 107.
 (pdftex.def)             Requested size: 252.94052pt x 189.70538pt.
-<Images/Flow3.png, id=1655, 632.3625pt x 474.27188pt>
+<Images/Flow3.png, id=1669, 632.3625pt x 474.27188pt>
 File: Images/Flow3.png Graphic file (type png)
 <use Images/Flow3.png>
 Package pdftex.def Info: Images/Flow3.png  used on input line 108.
@@ -1656,12 +1663,12 @@ Package pdftex.def Info: Images/Flow3.png  used on input line 108.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW3n1.png, id=1658, 1445.4pt x 685.8122pt>
+<Images/FW3n1.png, id=1672, 1445.4pt x 685.8122pt>
 File: Images/FW3n1.png Graphic file (type png)
 <use Images/FW3n1.png>
 Package pdftex.def Info: Images/FW3n1.png  used on input line 116.
 (pdftex.def)             Requested size: 433.62335pt x 205.74524pt.
-<Images/Opt3n1.png, id=1659, 1445.4pt x 685.8122pt>
+<Images/Opt3n1.png, id=1673, 1445.4pt x 685.8122pt>
 File: Images/Opt3n1.png Graphic file (type png)
 <use Images/Opt3n1.png>
 Package pdftex.def Info: Images/Opt3n1.png  used on input line 122.
@@ -1673,12 +1680,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW31.png, id=1673, 1445.4pt x 685.8122pt>
+<Images/FW31.png, id=1687, 1445.4pt x 685.8122pt>
 File: Images/FW31.png Graphic file (type png)
 <use Images/FW31.png>
 Package pdftex.def Info: Images/FW31.png  used on input line 130.
 (pdftex.def)             Requested size: 433.62335pt x 205.74524pt.
-<Images/Opt31.png, id=1674, 1445.4pt x 685.8122pt>
+<Images/Opt31.png, id=1688, 1445.4pt x 685.8122pt>
 File: Images/Opt31.png Graphic file (type png)
 <use Images/Opt31.png>
 Package pdftex.def Info: Images/Opt31.png  used on input line 136.
@@ -1747,7 +1754,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--15
  []
 
 [128 <./Images/FW21.png (PNG copy)>]
-<Images/Plotrhobar0072.png, id=1850, 2168.1pt x 1227.83719pt>
+<Images/Plotrhobar0072.png, id=1864, 2168.1pt x 1227.83719pt>
 File: Images/Plotrhobar0072.png Graphic file (type png)
 <use Images/Plotrhobar0072.png>
 Package pdftex.def Info: Images/Plotrhobar0072.png  used on input line 19.
@@ -1756,7 +1763,7 @@ Package pdftex.def Info: Images/Plotrhobar0072.png  used on input line 19.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Plotrhobar02.png, id=1851, 2168.1pt x 1227.83719pt>
+<Images/Plotrhobar02.png, id=1865, 2168.1pt x 1227.83719pt>
 File: Images/Plotrhobar02.png Graphic file (type png)
 <use Images/Plotrhobar02.png>
 Package pdftex.def Info: Images/Plotrhobar02.png  used on input line 25.
@@ -1764,7 +1771,7 @@ Package pdftex.def Info: Images/Plotrhobar02.png  used on input line 25.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW0072.png, id=1854, 1445.4pt x 685.8122pt>
+<Images/FW0072.png, id=1868, 1445.4pt x 685.8122pt>
 File: Images/FW0072.png Graphic file (type png)
 <use Images/FW0072.png>
 Package pdftex.def Info: Images/FW0072.png  used on input line 37.
@@ -1772,7 +1779,7 @@ Package pdftex.def Info: Images/FW0072.png  used on input line 37.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/FW02.png, id=1855, 1445.4pt x 685.8122pt>
+<Images/FW02.png, id=1869, 1445.4pt x 685.8122pt>
 File: Images/FW02.png Graphic file (type png)
 <use Images/FW02.png>
 Package pdftex.def Info: Images/FW02.png  used on input line 43.
@@ -1786,7 +1793,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 43--44
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (ChapterSEDExamplesOpt.tex
-<Images/F11.png, id=1859, 1445.4pt x 685.8122pt>
+<Images/F11.png, id=1873, 1445.4pt x 685.8122pt>
 File: Images/F11.png Graphic file (type png)
 <use Images/F11.png>
 Package pdftex.def Info: Images/F11.png  used on input line 10.
@@ -1796,7 +1803,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 10--11
  [][] 
  []
 
-<Images/F21.png, id=1860, 1445.4pt x 685.8122pt>
+<Images/F21.png, id=1874, 1445.4pt x 685.8122pt>
 File: Images/F21.png Graphic file (type png)
 <use Images/F21.png>
 Package pdftex.def Info: Images/F21.png  used on input line 16.
@@ -1806,7 +1813,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 16--17
  [][] 
  []
 
-<Images/F31.png, id=1861, 1445.4pt x 685.8122pt>
+<Images/F31.png, id=1875, 1445.4pt x 685.8122pt>
 File: Images/F31.png Graphic file (type png)
 <use Images/F31.png>
 Package pdftex.def Info: Images/F31.png  used on input line 22.
@@ -1826,7 +1833,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C1.png, id=1871, 1445.4pt x 685.8122pt>
+<Images/C1.png, id=1885, 1445.4pt x 685.8122pt>
 File: Images/C1.png Graphic file (type png)
 <use Images/C1.png>
 Package pdftex.def Info: Images/C1.png  used on input line 35.
@@ -1839,7 +1846,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 35--36
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C2.png, id=1872, 1445.4pt x 685.8122pt>
+<Images/C2.png, id=1886, 1445.4pt x 685.8122pt>
 File: Images/C2.png Graphic file (type png)
 <use Images/C2.png>
 Package pdftex.def Info: Images/C2.png  used on input line 41.
@@ -1852,7 +1859,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 41--42
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/C3.png, id=1873, 1445.4pt x 685.8122pt>
+<Images/C3.png, id=1887, 1445.4pt x 685.8122pt>
 File: Images/C3.png Graphic file (type png)
 <use Images/C3.png>
 Package pdftex.def Info: Images/C3.png  used on input line 47.
@@ -1866,12 +1873,12 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 47--48
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [130 <./Images/Dom3.png (PNG copy)> <./Images/Flow3.png (PNG copy)>]
-<Images/V1.png, id=1885, 632.3625pt x 474.27188pt>
+<Images/V1.png, id=1899, 632.3625pt x 474.27188pt>
 File: Images/V1.png Graphic file (type png)
 <use Images/V1.png>
 Package pdftex.def Info: Images/V1.png  used on input line 58.
 (pdftex.def)             Requested size: 221.33018pt x 165.99763pt.
-<Images/W1.png, id=1886, 632.3625pt x 474.27188pt>
+<Images/W1.png, id=1900, 632.3625pt x 474.27188pt>
 File: Images/W1.png Graphic file (type png)
 <use Images/W1.png>
 Package pdftex.def Info: Images/W1.png  used on input line 59.
@@ -1880,7 +1887,7 @@ Package pdftex.def Info: Images/W1.png  used on input line 59.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiOpt1a.png, id=1889, 1445.4pt x 685.8122pt>
+<Images/MultiOpt1a.png, id=1903, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt1a.png Graphic file (type png)
 <use Images/MultiOpt1a.png>
 Package pdftex.def Info: Images/MultiOpt1a.png  used on input line 72.
@@ -1890,7 +1897,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 72--73
  [][] 
  []
 
-<Images/MultiCont1a.png, id=1890, 1445.4pt x 685.8122pt>
+<Images/MultiCont1a.png, id=1904, 1445.4pt x 685.8122pt>
 File: Images/MultiCont1a.png Graphic file (type png)
 <use Images/MultiCont1a.png>
 Package pdftex.def Info: Images/MultiCont1a.png  used on input line 78.
@@ -1900,7 +1907,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 78--79
  [][] 
  []
 
-<Images/MultiOpt2.png, id=1893, 1445.4pt x 685.8122pt>
+<Images/MultiOpt2.png, id=1907, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt2.png Graphic file (type png)
 <use Images/MultiOpt2.png>
 Package pdftex.def Info: Images/MultiOpt2.png  used on input line 87.
@@ -1910,7 +1917,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 87--88
  [][] 
  []
 
-<Images/MultiCont2.png, id=1894, 1445.4pt x 685.8122pt>
+<Images/MultiCont2.png, id=1908, 1445.4pt x 685.8122pt>
 File: Images/MultiCont2.png Graphic file (type png)
 <use Images/MultiCont2.png>
 Package pdftex.def Info: Images/MultiCont2.png  used on input line 93.
@@ -1920,7 +1927,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 93--94
  [][] 
  []
 
-<Images/MultiwFW.png, id=1898, 1445.4pt x 685.8122pt>
+<Images/MultiwFW.png, id=1912, 1445.4pt x 685.8122pt>
 File: Images/MultiwFW.png Graphic file (type png)
 <use Images/MultiwFW.png>
 Package pdftex.def Info: Images/MultiwFW.png  used on input line 104.
@@ -1930,7 +1937,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 104--105
  [][] 
  []
 
-<Images/MultiOpt3.png, id=1899, 1445.4pt x 685.8122pt>
+<Images/MultiOpt3.png, id=1913, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt3.png Graphic file (type png)
 <use Images/MultiOpt3.png>
 Package pdftex.def Info: Images/MultiOpt3.png  used on input line 110.
@@ -1940,7 +1947,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
-<Images/MultiCont3.png, id=1900, 1445.4pt x 685.8122pt>
+<Images/MultiCont3.png, id=1914, 1445.4pt x 685.8122pt>
 File: Images/MultiCont3.png Graphic file (type png)
 <use Images/MultiCont3.png>
 Package pdftex.def Info: Images/MultiCont3.png  used on input line 116.
@@ -1988,7 +1995,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiOpt1.png, id=1912, 1445.4pt x 685.8122pt>
+<Images/MultiOpt1.png, id=1926, 1445.4pt x 685.8122pt>
 File: Images/MultiOpt1.png Graphic file (type png)
 <use Images/MultiOpt1.png>
 Package pdftex.def Info: Images/MultiOpt1.png  used on input line 128.
@@ -2001,7 +2008,7 @@ Overfull \hbox (52.92969pt too wide) in paragraph at lines 128--129
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/MultiCont1.png, id=1913, 1445.4pt x 685.8122pt>
+<Images/MultiCont1.png, id=1927, 1445.4pt x 685.8122pt>
 File: Images/MultiCont1.png Graphic file (type png)
 <use Images/MultiCont1.png>
 Package pdftex.def Info: Images/MultiCont1.png  used on input line 134.
@@ -2030,27 +2037,27 @@ line 253.
 
 ) [147 <./Images/MultiCont1a.png (PNG copy)>] (ChapterInertialNumericalEx1D.tex
 [148 <./Images/MultiOpt2.png (PNG copy)>]
-<Images/Example1IN.png, id=2016, 8945.42pt x 5545.71875pt>
+<Images/Example1IN.png, id=2030, 8945.42pt x 5545.71875pt>
 File: Images/Example1IN.png Graphic file (type png)
 <use Images/Example1IN.png>
 Package pdftex.def Info: Images/Example1IN.png  used on input line 17.
 (pdftex.def)             Requested size: 357.75586pt x 221.79097pt.
-<Images/Example111.png, id=2019, 8945.42pt x 5545.71875pt>
+<Images/Example111.png, id=2033, 8945.42pt x 5545.71875pt>
 File: Images/Example111.png Graphic file (type png)
 <use Images/Example111.png>
 Package pdftex.def Info: Images/Example111.png  used on input line 25.
 (pdftex.def)             Requested size: 357.75586pt x 221.79097pt.
-<Images/Example11n1.png, id=2020, 8945.42pt x 5545.71875pt>
+<Images/Example11n1.png, id=2034, 8945.42pt x 5545.71875pt>
 File: Images/Example11n1.png Graphic file (type png)
 <use Images/Example11n1.png>
 Package pdftex.def Info: Images/Example11n1.png  used on input line 31.
 (pdftex.def)             Requested size: 357.75586pt x 221.79097pt.
-<Images/Example1a.png, id=2022, 8945.42pt x 5545.71875pt>
+<Images/Example1a.png, id=2036, 8945.42pt x 5545.71875pt>
 File: Images/Example1a.png Graphic file (type png)
 <use Images/Example1a.png>
 Package pdftex.def Info: Images/Example1a.png  used on input line 39.
 (pdftex.def)             Requested size: 357.75586pt x 221.79097pt.
-<Images/Example1b.png, id=2024, 8945.42pt x 5545.71875pt>
+<Images/Example1b.png, id=2038, 8945.42pt x 5545.71875pt>
 File: Images/Example1b.png Graphic file (type png)
 <use Images/Example1b.png>
 Package pdftex.def Info: Images/Example1b.png  used on input line 46.
@@ -2073,7 +2080,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [149 <./Images/MultiCont2.png (PNG copy)>] [150 <./Images/MultiwFW.png (PNG cop
 y)>]
-<Images/Example2a.png, id=2039, 9005.645pt x 5545.71875pt>
+<Images/Example2a.png, id=2053, 9005.645pt x 5545.71875pt>
 File: Images/Example2a.png Graphic file (type png)
 <use Images/Example2a.png>
 Package pdftex.def Info: Images/Example2a.png  used on input line 69.
@@ -2082,7 +2089,7 @@ Package pdftex.def Info: Images/Example2a.png  used on input line 69.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Example211.png, id=2040, 9005.645pt x 5545.71875pt>
+<Images/Example211.png, id=2054, 9005.645pt x 5545.71875pt>
 File: Images/Example211.png Graphic file (type png)
 <use Images/Example211.png>
 Package pdftex.def Info: Images/Example211.png  used on input line 75.
@@ -2090,7 +2097,7 @@ Package pdftex.def Info: Images/Example211.png  used on input line 75.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Example21n1.png, id=2041, 9005.645pt x 5545.71875pt>
+<Images/Example21n1.png, id=2055, 9005.645pt x 5545.71875pt>
 File: Images/Example21n1.png Graphic file (type png)
 <use Images/Example21n1.png>
 Package pdftex.def Info: Images/Example21n1.png  used on input line 81.
@@ -2098,7 +2105,7 @@ Package pdftex.def Info: Images/Example21n1.png  used on input line 81.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Example2b.png, id=2042, 9005.645pt x 5545.71875pt>
+<Images/Example2b.png, id=2056, 9005.645pt x 5545.71875pt>
 File: Images/Example2b.png Graphic file (type png)
 <use Images/Example2b.png>
 Package pdftex.def Info: Images/Example2b.png  used on input line 88.
@@ -2106,7 +2113,7 @@ Package pdftex.def Info: Images/Example2b.png  used on input line 88.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Example3b.png, id=2045, 9005.645pt x 5545.71875pt>
+<Images/Example3b.png, id=2059, 9005.645pt x 5545.71875pt>
 File: Images/Example3b.png Graphic file (type png)
 <use Images/Example3b.png>
 Package pdftex.def Info: Images/Example3b.png  used on input line 105.
@@ -2114,7 +2121,7 @@ Package pdftex.def Info: Images/Example3b.png  used on input line 105.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Images/Example3a.png, id=2046, 9005.645pt x 5545.71875pt>
+<Images/Example3a.png, id=2060, 9005.645pt x 5545.71875pt>
 File: Images/Example3a.png Graphic file (type png)
 <use Images/Example3a.png>
 Package pdftex.def Info: Images/Example3a.png  used on input line 112.
@@ -2153,7 +2160,7 @@ y)>]) (ChapterAvgAD3Dto2D.tex [160 <./Images/Example2a.png (PNG copy)>]
 [161 <./Images/Example211.png (PNG copy)>] [162 <./Images/Example21n1.png (PNG 
 copy)>] [163 <./Images/Example2b.png (PNG copy)>] [164 <./Images/Example3b.png 
 (PNG copy)>])
-Underfull \hbox (badness 10000) in paragraph at lines 64--389
+Underfull \hbox (badness 10000) in paragraph at lines 64--390
 
  []
 
@@ -2166,15 +2173,21 @@ Package natbib Warning: There were undefined citations.
 Package caption Warning: Unused \captionsetup[sub] on input line 25.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 396.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 397.
 [171]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 396.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 397.
  (ThesisCurrent.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 396.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 396.
-Package rerunfilecheck Info: File `ThesisCurrent.out' has not changed.
-(rerunfilecheck)             Checksum: 9B55007342FDF45F5B7CAD0A5194E0C3;8908.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 397.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 397.
 
+
+Package rerunfilecheck Warning: File `ThesisCurrent.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ThesisCurrent.out':
+(rerunfilecheck)             Before: 9B55007342FDF45F5B7CAD0A5194E0C3;8908
+(rerunfilecheck)             After:  BD07B34A3063E966E37B8CCD4F86210A;8908.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2184,52 +2197,94 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 396.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 397.
  ) 
 Here is how much of TeX's memory you used:
- 13213 strings out of 492946
- 206900 string characters out of 3124935
- 372804 words of memory out of 3000000
+ 13230 strings out of 492946
+ 207257 string characters out of 3124935
+ 375804 words of memory out of 3000000
  16087 multiletter control sequences out of 15000+200000
  17587 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,32n,56p,1222b,703s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\s1452504\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbm/dpi65
-7\bbm10.pk><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cmextra/cmbsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s1452
-504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb>
-<C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmcsc10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/s1452504/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/
-s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
-2.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/s1452504/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/U
-sers/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/s1452504/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/s1452504/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s
-1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/s1452504/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/s14
-52504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.p
+pdfTeX warning (dest): name{table.caption.35} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.34} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.32} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.29} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.28} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.54} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.53} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.52} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.51} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.49} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.42} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.41} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.5.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+ <C:\Users\s1452504\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbm/dpi657\
+bbm10.pk><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cmextra/cmbsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/s1452504/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/s145250
+4/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C
+:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmcsc10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmex10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/s1452504/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/s1
+452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/s1452504/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Use
+rs/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/s1452504/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/s1452504/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/s14
+52504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmtt12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ThesisCurrent.pdf (176 pages, 39436878 bytes).
+onts/cm/cmsy6.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/s1452504/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/s1452
+504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmtt12.pfb><C:/Users/s1452504/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ThesisCurrent.pdf (176 pages, 39436834 bytes).
 PDF statistics:
- 2351 PDF objects out of 2487 (max. 8388607)
- 605 named destinations out of 1000 (max. 500000)
+ 2369 PDF objects out of 2487 (max. 8388607)
+ 619 named destinations out of 1000 (max. 500000)
  1321 words of extra memory for PDF output out of 10000 (max. 10000000)
 

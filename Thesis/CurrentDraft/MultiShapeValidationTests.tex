@@ -1,0 +1,62 @@
+
+\subsection{Validation Tests Multishape}
+(Note: all the things from this section are in PDECO/MultiShapeTesting in Matlab. The following files are particularly relevant:
+PlottingNormalComparison, TablesExactSolutions, TableForwardExamples, TablesDiffIntetc and MultiShapeAssorted. The other files are called inside these wrappers. Plotting is currently commented out but burried in there somewhere...)
+
+\subsubsection{Testing Differentiation, Interpolation, Convolution and Integration} \label{sec:ValidationDiffIntetc}
+TablesDiffIntetc() in Matlab
+	\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{BoxSections.png}
+	\caption{Different discretizations of the box (a - g).} 
+	\label{F2}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{quad.png}
+	\caption{Quadrilateral domain (q).} 
+	\label{F3a}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{WedgeSections.png}
+	\caption{Different discretizations of the wedge (h - k).} 
+	\label{F4}
+\end{figure}
+
+
+We investigate the accuracy of differentiation, interpolation, integration and convolution comparing different discretizations of the box and a wedge. The different discretizations can be seen in Figures \ref{F2}, \ref{F3a} and \ref{F4}.
+The operations are validated using the exact solution
+\begin{align}\label{eq:exactsol1}
+	\rho &= \exp( \alpha_1  t + \beta_1 y_1 + \beta_2 y_2),\\
+	\nabla \rho &= [\beta_1 \rho, \beta_2 \rho],\notag \\
+	\nabla^2 \rho &= \nabla \cdot \nabla \rho = (\beta_1^2 + \beta_2^2)\rho,\notag
+\end{align}
+where $	\beta_1 = 0.1 $, $\beta_2 = 0.1$, $\alpha_1 = -0.5$.
+
+
+We test each of the operators $\Grad$, $\Div$ and $\Lap$ by computing the error between the numerical and the exact solution
+\begin{align}\label{eq:ErrorMeasure1}
+	\mathcal E_{\text{Abs}} (f)&= \max \max \abs{f_{num} - f_{ex}}\\
+	\mathcal E_{\text{Rel}} (f)&= \frac{\mathcal E_{\text{Abs}}(f) }{ \max \max \abs{f_{ex}}}.
+\end{align}
+The $\Div$ operator is tested by taking the divergence of the exact solution for $\nabla \rho$ and comparing it to the exact solution for $\nabla^2 \rho$. Note that the exact $\nabla \rho$ has to be transformed into polar coordinates first. The solutions can be seen in Tables \ref{Tab:Grad}, \ref{Tab:div} and \ref{Tab:Lap}.
+
+We investigate the functionality of the interpolation matrix by interpolating from the different multishapes onto a uniform grid. This grid is created by setting up a uniform rectangular grid which fully contains the multishape. Then we loop through the shapes and interpolate the test function $\rho$ \eqref{eq:exactsol1} onto the uniform points that lie inside each shape. In the end we discard the points that lie outside the multishape. This causes the final solution on the uniform grid to vary in size, depending on the discretization of the multishape. We test the functionality by comparing the interpolated function values to $\rho$ evaluated on the uniform grid points, using \eqref{eq:ErrorMeasure1}. The results can be seen in Table \ref{Tab:Interp}.
+
+In a second test we interpolate a function $\rho$, \eqref{eq:exactsol1}, computed with $N =50$ on shapes (a) and (h) respectively onto a uniform grid, as described above. Then we compute \eqref{eq:exactsol1} on the multishapes (b), (f), and (g) with $N = 10$, $N = 20$ and $N = 30$. We interpolate this onto the same uniform grid as shape (a) using the physical interpolation function. The values of $\rho$ coming from (a) can be compared with those from (b), (f), and (g) on the uniform grid, using (a) as a reference solution. Similarly, the solution on shape (h) serves as reference solution for multishapes (j) and (k). The errors, computed using \eqref{eq:ErrorMeasure1} can be seen in Table \ref{Tab:InterpComp}.
+
+Finally, we investigate what happens when we consider interpolation to a uniform grid with $N_1 \neq N_2$ for the wedge, when compared to the exact solution on the uniform grid. This is interesting, because when the solution is interpolated onto a uniform grid (in Cartesian coordinates), it is to be expected that more points are needed in the angular direction than in the radial direction, since in Cartesian coordinates points are more densely clustered in radial direction, as can be seen in Figure \ref{F4}. This is indeed what happens, as can be seen in Table \ref{Tab:InterpPol}. We get considerably better results for small $N_1$ than for small $N_2$ and vice versa. We could investigate whether this behaviour changes when we choose a shape with small angle and long radius instead.
+
+We consider a similar approach for testing the convolution matrix. We compute the convolution matrix with $N = 50$ on shape (a) (or (h) respectively) and apply it to the function $\rho$ in equation \eqref{eq:exactsol1}. We then interpolate this onto the other shapes and compute the error \eqref{eq:ErrorMeasure1} with the convolution of $\rho$ on that shape. We use the value of the convolution on a single shape with $N = 50$ as the reference value for the multishape convolution. The results are displayed in Table \ref{Tab:Conv}.
+
+For the integration vector, we compute the integral of $\rho$ on shape (a) and compare this to the integral of $\rho$ on multishapes (b), (f) and (g). We then compare the integral of $\rho$ on the single shape (h) to the one on discretizations (j) and (k). The errors computed with \eqref{eq:ErrorMeasure1} can be seen in Table \ref{Tab:Int}, where again the value of the integral on the single shape is the reference for the multishape integration.
+\input{TabGrad}
+\input{TabDiv}
+\input{TabLap}
+\input{TabInterp}
+\input{TabInterpComp}
+\input{TabInterpPol}
+\input{TabConv}
+\input{TabInt}
+
